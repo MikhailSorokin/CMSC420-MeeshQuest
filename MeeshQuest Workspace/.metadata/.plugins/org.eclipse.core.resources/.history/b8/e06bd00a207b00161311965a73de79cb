@@ -1,0 +1,80 @@
+package cmsc420.meeshquest.utilities;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import cmsc420.xml.XmlUtility;
+
+/**
+ * 
+ * This class will take in a XML file and read,
+ * line by line, the command that is in the XML
+ * file and see if it is first, a valid command,
+ * and if so, execute it.
+ * 
+ * @author Mikhail Sorokin
+ *
+ */
+public class XmlParser {
+
+	private Document results = null;
+	private String path;
+	
+	public XmlParser(String filePath) {
+		path = filePath;
+	}
+	
+	public void LoadXMLFile() {
+		try {
+			File filePath = new File(path);
+			System.setIn(new FileInputStream(filePath));
+			Document d = XmlUtility.parse(filePath);
+			Document doc = XmlUtility.validateNoNamespace(filePath);
+			results = XmlUtility.getDocumentBuilder().newDocument();
+
+			Element commandNode = doc.getDocumentElement();
+			
+			final NodeList childNodes = commandNode.getChildNodes();
+			for (int childInd = 0; childInd < childNodes.getLength(); childInd++) {
+				if (childNodes.item(childInd).getNodeType() == Document.ELEMENT_NODE) {
+					ExecuteCommand((Element)childNodes.item(childInd));
+				}
+			}
+			
+		} catch (SAXException | IOException | ParserConfigurationException e) {
+			System.err.println("There was an error with parsing your given file. "
+					+ "Please try a new file!");
+		}
+		finally {
+            try {
+				XmlUtility.print(results);
+			} catch (TransformerException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//TODO: When successfully made a command, add a results node if there isn't one
+	//in the docs already. Else, add a failNode
+	//TODO: Make this function create xml elements when needed
+	public void CreateXmlElement() {
+		//results.createElement("")
+	}
+	
+	private void ExecuteCommand(Element command) {
+		//Execute CreateCity comand
+		if (command.getNodeName().equals("createCity")) {
+			System.out.println(command.getNodeValue());
+		}
+	}
+	
+}

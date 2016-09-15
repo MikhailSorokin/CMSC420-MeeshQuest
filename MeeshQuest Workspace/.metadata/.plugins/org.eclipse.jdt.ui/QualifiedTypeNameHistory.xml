@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="cmsc420.drawing.CanvasPlus"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="cmsc420.util.SkipList.Node"/>
+<fullyQualifiedTypeName name="meeshquestp1.utilities.MeeshQuestGUI"/>
+<fullyQualifiedTypeName name="cmsc420.xml.XmlUtility"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Document"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+</qualifiedTypeNameHistroy>

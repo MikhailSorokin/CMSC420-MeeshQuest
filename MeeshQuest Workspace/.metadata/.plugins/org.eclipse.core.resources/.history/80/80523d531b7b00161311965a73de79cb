@@ -1,0 +1,19 @@
+package meeshquest.generaldriver;
+
+import meeshquestp1.utilities.*;
+
+public class MapQuestDriver {
+
+	public static String fileName = "TODO";
+	public static boolean shouldDrawMap = false; //specify if you want GUI to be used
+	
+	public static void main(String[] args) {
+		if (shouldDrawMap) {		
+			MeeshQuestGUI.DrawGUI();
+		}
+		//Probably should make this static
+		XmlParser xmlParser = new XmlParser(fileName);
+		xmlParser.LoadXMLFile();
+	}
+
+}
