@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="zoro"/>
+      <x value="2"/>
+      <y value="2"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="zoro"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1"/>
+      <y value="1"/>
+    </parameters>
+    <output>
+      <city color="black" name="zoro" radius="2" x="2" y="2"/>
+    </output>
+  </success>
+</results>

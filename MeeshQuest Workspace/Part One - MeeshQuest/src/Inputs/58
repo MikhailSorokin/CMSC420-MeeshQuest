@@ -1,0 +1,17 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part1in.xsd"
+	spatialWidth="4"
+	spatialHeight="4">
+ 
+<createCity name="Baltimore" x="2" y="2" radius="5" color="orange"/>
+<createCity name="Chicago" x="3" y="3" radius="5" color="blue"/>
+<createCity name="Denver" x="2" y="3" radius="5" color="green"/>
+<createCity name="Boston" x="0" y="1" radius="5" color="red"/>
+<printAvlTree/>
+ <mapCity name="Baltimore"/>
+  <mapCity name="Chicago"/>
+  <mapCity name="Denver"/>
+  <mapCity name="Boston"/>
+<saveMap name="Hello"/>
+</commands>

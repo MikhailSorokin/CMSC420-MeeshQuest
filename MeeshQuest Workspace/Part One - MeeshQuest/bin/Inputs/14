@@ -1,0 +1,14 @@
+<commands
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="part1in.xsd"
+        spatialWidth="8"
+        spatialHeight="8">
+
+
+    <createCity name="London" x="4" y="2" radius="2" color="green"/>
+    <mapCity name="London"/>
+    <clearAll/>
+    <listCities sortBy="name"/>
+    <listCities sortBy="coordinate"/>
+    <printMXQuadtree/>
+    </commands>

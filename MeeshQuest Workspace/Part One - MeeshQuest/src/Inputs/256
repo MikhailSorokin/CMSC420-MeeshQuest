@@ -1,0 +1,12 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part1in.xsd"
+	spatialWidth="256"
+	spatialHeight="256"
+	>
+	 <createCity color="black" radius="5" y="1000" x="14000" name="Baltimore"/>
+
+<mapCity name="Baltimore"/>
+	 <mapCity name="Baltimore"/>
+
+</commands>

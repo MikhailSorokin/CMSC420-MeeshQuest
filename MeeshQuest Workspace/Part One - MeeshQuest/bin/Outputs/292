@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Boston"/>
+      <x value="71"/>
+      <y value="42"/>
+      <radius value="50"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Boston"/>
+      <x value="72"/>
+      <y value="43"/>
+      <radius value="50"/>
+      <color value="red"/>
+    </parameters>
+  </error>
+</results>

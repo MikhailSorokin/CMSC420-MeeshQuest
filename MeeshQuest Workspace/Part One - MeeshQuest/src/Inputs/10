@@ -1,0 +1,17 @@
+<commands
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="part1in.xsd"
+        spatialWidth="1024"
+        spatialHeight="1024">
+    <clearAll/>
+    <createCity name="Wyoming" x="10" y="60" radius="2" color="red"/>
+    <createCity name="Washington" x="10" y="60" radius="2" color="red"/>
+    <createCity name="Paris" x="10" y="40" radius="2" color="red"/>
+	<createCity name="Zealand" x="30" y="40" radius="1" color="green"/>
+    <listCities sortBy="name"/>
+    <listCities sortBy="coordinate"/>
+    <createCity name="Paris" x="60" y="80" radius="2" color="red"/>
+    <listCities sortBy="coordinate"/>
+    <deleteCity name="Paris"/>
+	<listCities sortBy="name"/>
+</commands>

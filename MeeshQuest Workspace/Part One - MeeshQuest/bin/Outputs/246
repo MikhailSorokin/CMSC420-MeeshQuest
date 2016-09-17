@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="8"/>
+      <y value="8"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="LA"/>
+      <x value="2"/>
+      <y value="8"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="WXZ"/>
+      <x value="2"/>
+      <y value="4"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="WXZ" radius="5" x="2" y="4"/>
+        <city color="black" name="LA" radius="5" x="2" y="8"/>
+        <city color="black" name="Baltimore" radius="5" x="8" y="8"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="LA"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="AABC"/>
+      <x value="2"/>
+      <y value="8"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="WXZ" radius="5" x="2" y="4"/>
+        <city color="black" name="AABC" radius="5" x="2" y="8"/>
+        <city color="black" name="Baltimore" radius="5" x="8" y="8"/>
+      </cityList>
+    </output>
+  </success>
+</results>

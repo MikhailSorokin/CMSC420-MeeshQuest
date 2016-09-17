@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" name="Baltimore" radius="5" x="140" y="37"/>
+    </output>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="100"/>
+      <y value="200"/>
+    </parameters>
+  </error>
+</results>

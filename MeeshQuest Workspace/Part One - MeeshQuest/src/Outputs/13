@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="4"/>
+      <y value="2"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="London"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="4" y="4">
+          <white/>
+          <white/>
+          <white/>
+          <gray x="6" y="2">
+            <gray x="5" y="3">
+              <white/>
+              <white/>
+              <black name="London" x="4" y="2"/>
+              <white/>
+            </gray>
+            <white/>
+            <white/>
+            <white/>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

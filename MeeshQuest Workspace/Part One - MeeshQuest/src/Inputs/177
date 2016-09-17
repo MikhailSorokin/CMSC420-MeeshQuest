@@ -1,0 +1,13 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part1in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024">
+ <createCity name="Baltimore" y="37" x="140" radius="8" color="black"/>
+ <createCity name="Chicago" x="120" y="220" radius="9" color="black"/>
+ <createCity name="New_York" x="200" y="300" radius="10" color="black"/>
+ <mapCity name="Baltimore"/>
+ <mapCity name="Chicago"/>
+ <mapCity name="New_York"/>
+ <rangeCities x="" y="" radius="100" />
+</commands>

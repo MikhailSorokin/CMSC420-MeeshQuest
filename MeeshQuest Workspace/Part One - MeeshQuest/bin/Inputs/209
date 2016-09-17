@@ -1,0 +1,14 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part1in.xsd"
+	spatialWidth="8"
+	spatialHeight="8">
+ <createCity name="Baltimore" y="8" x="8" radius="5" color="black"/>
+ <mapCity name="Baltimore" /> 
+ <createCity name="Chicago" x="4" y="4" radius="5"  color="black"/>
+ <mapCity name="Chicago" />
+ <printMXQuadtree />
+ <deleteCity name="Baltimore" />
+ <deleteCity name="Baltimore" />
+ <deleteCity name="Chicago" />
+</commands>

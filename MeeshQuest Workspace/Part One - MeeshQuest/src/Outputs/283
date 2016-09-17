@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="6"/>
+      <y value="6"/>
+      <radius value="1"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="7"/>
+      <y value="7"/>
+      <radius value="1"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="6"/>
+      <y value="5"/>
+      <radius value="1"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="6"/>
+      <y value="7"/>
+      <radius value="10"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="8"/>
+      <y value="7"/>
+      <radius value="1"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="blue" name="C" radius="1" x="6" y="5"/>
+        <city color="blue" name="A" radius="1" x="6" y="6"/>
+        <city color="blue" name="D" radius="10" x="6" y="7"/>
+        <city color="blue" name="B" radius="1" x="7" y="7"/>
+        <city color="blue" name="E" radius="1" x="8" y="7"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="6"/>
+      <y value="6"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="blue" name="C" radius="1" x="6" y="5"/>
+        <city color="blue" name="A" radius="1" x="6" y="6"/>
+        <city color="blue" name="D" radius="10" x="6" y="7"/>
+        <city color="blue" name="B" radius="1" x="7" y="7"/>
+        <city color="blue" name="E" radius="1" x="8" y="7"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="1"/>
+      <y value="6"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="blue" name="C" radius="1" x="6" y="5"/>
+        <city color="blue" name="A" radius="1" x="6" y="6"/>
+        <city color="blue" name="D" radius="10" x="6" y="7"/>
+        <city color="blue" name="B" radius="1" x="7" y="7"/>
+        <city color="blue" name="E" radius="1" x="8" y="7"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="8"/>
+      <y value="8"/>
+    </parameters>
+    <output>
+      <city color="blue" name="B" radius="1" x="7" y="7"/>
+    </output>
+  </success>
+</results>

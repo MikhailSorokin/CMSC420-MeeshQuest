@@ -1,0 +1,33 @@
+<commands
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="part1in.xsd"
+        spatialWidth="1024"
+        spatialHeight="1024">
+    <clearAll/>
+    <listCities sortBy="name"/>
+    <listCities sortBy="coordinate"/>
+    <unmapCity name="Paris"/>
+    <createCity name="Paris" x="10" y="40" radius="2" color="red"/>
+    <deleteCity name="Paris"/>
+    <mapCity name="Paris"/>
+    <unmapCity name="Paris"/>
+    <createCity name="London" x="1000" y="40" radius="2" color="green"/>
+    <createCity name="Paris" x="120" y="400" radius="2" color="black"/>
+    <createCity name="Troy" x="10" y="40" radius="2" color="black"/>
+    <createCity name="Baltimore" x="180" y="600" radius="2" color="red"/>
+    <createCity name="College" x="181" y="600" radius="2" color="red"/>
+    <createCity name="Berlin" x="4000" y="890" radius="7" color="blue"/>
+    <createCity name="Munich" x="400" y="890" radius="7" color="orange"/>
+    <createCity name="Venice" x="700" y="590" radius="7" color="red"/>
+    <createCity name="Cairo" x="200" y="390" radius="7" color="blue"/>
+    <mapCity name="Cairo"/>
+    <mapCity name="Paris"/>
+    <mapCity name="College"/>
+    <rangeCities x="512" y="512" radius="500"/>
+
+
+
+
+
+
+</commands>

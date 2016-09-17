@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="S"/>
+      <x value="2"/>
+      <y value="1"/>
+      <radius value="1"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="red" name="S" radius="1" x="2" y="1"/>
+      </cityList>
+    </output>
+  </success>
+</results>

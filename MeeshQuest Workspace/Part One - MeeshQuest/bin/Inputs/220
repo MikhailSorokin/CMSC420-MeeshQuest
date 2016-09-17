@@ -1,0 +1,22 @@
+<commands spatialWidth="256" spatialHeight="256">
+	<createCity name="Dallas" x="30" y="45" radius="12" color="blue"/>
+	<createCity name="Seattle" x="22" y="12" radius="4" color="green"/>
+	<createCity name="San Francisco" x="2" y="43" radius="7" color="red"/>
+	<createCity name="Washington DC" x="78" y="30" radius="10" color="yellow"/>
+	<createCity name="New York" x="82" y="25" radius="15" color="torquoise"/>
+	<createCity name="Savannah" x="50" y="73" radius="5" color="green"/>
+	<createCity name="Richmond" x="80" y="35" radius="11" color="blue"/>
+	<createCity name="Annapolis" x="79" y="67" radius="8" color="red"/>
+	<createCity name="Frederick" x="70" y="44" radius="2" color="pink"/>
+	<deleteCity name="San Francisco"/>
+	<deleteCity name="Dallas"/>
+	<deleteCity name="Seattle"/>
+	<deleteCity name="Washington DC"/>
+	<deleteCity name="New York"/>
+	<deleteCity name="Savannah"/>
+	<deleteCity name="Richmond"/>
+	<deleteCity name="Annapolis"/>
+	<deleteCity name="Frederick"/>
+	<printAvlTree/>
+	<printMXQuadtree/>
+</commands>

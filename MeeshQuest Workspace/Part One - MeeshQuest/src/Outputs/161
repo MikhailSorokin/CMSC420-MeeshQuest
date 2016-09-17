@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="8"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="88"/>
+      <y value="34"/>
+      <radius value="9"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="10"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="New_York"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <gray x="128" y="384">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="192" y="320">
+                <white/>
+                <white/>
+                <white/>
+                <gray x="224" y="288">
+                  <gray x="208" y="304">
+                    <white/>
+                    <white/>
+                    <gray x="200" y="296">
+                      <white/>
+                      <gray x="204" y="300">
+                        <gray x="202" y="302">
+                          <white/>
+                          <white/>
+                          <gray x="201" y="301">
+                            <white/>
+                            <white/>
+                            <black name="New_York" x="200" y="300"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                        </gray>
+                        <white/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+              </gray>
+            </gray>
+            <white/>
+            <gray x="128" y="128">
+              <white/>
+              <white/>
+              <gray x="64" y="64">
+                <white/>
+                <white/>
+                <white/>
+                <gray x="96" y="32">
+                  <gray x="80" y="48">
+                    <white/>
+                    <white/>
+                    <white/>
+                    <gray x="88" y="40">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="92" y="36">
+                        <white/>
+                        <white/>
+                        <gray x="90" y="34">
+                          <gray x="89" y="35">
+                            <white/>
+                            <white/>
+                            <black name="Chicago" x="88" y="34"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                          <white/>
+                          <white/>
+                        </gray>
+                        <white/>
+                      </gray>
+                    </gray>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+              </gray>
+              <gray x="192" y="64">
+                <white/>
+                <white/>
+                <gray x="160" y="32">
+                  <gray x="144" y="48">
+                    <white/>
+                    <white/>
+                    <gray x="136" y="40">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="140" y="36">
+                        <white/>
+                        <gray x="142" y="38">
+                          <white/>
+                          <white/>
+                          <gray x="141" y="37">
+                            <black name="Baltimore" x="140" y="37"/>
+                            <white/>
+                            <white/>
+                            <white/>
+                          </gray>
+                          <white/>
+                        </gray>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="11"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="12"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="13"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Zurich"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="512" y="512">
+          <white/>
+          <gray x="768" y="768">
+            <white/>
+            <gray x="896" y="896">
+              <white/>
+              <gray x="960" y="960">
+                <white/>
+                <gray x="992" y="992">
+                  <white/>
+                  <gray x="1008" y="1008">
+                    <white/>
+                    <white/>
+                    <gray x="1000" y="1000">
+                      <white/>
+                      <gray x="1004" y="1004">
+                        <white/>
+                        <white/>
+                        <gray x="1002" y="1002">
+                          <white/>
+                          <white/>
+                          <gray x="1001" y="1001">
+                            <white/>
+                            <white/>
+                            <black name="Zurich" x="1000" y="1000"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                        </gray>
+                        <white/>
+                      </gray>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <white/>
+            <white/>
+          </gray>
+          <gray x="256" y="256">
+            <gray x="128" y="384">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="192" y="320">
+                <white/>
+                <white/>
+                <white/>
+                <gray x="224" y="288">
+                  <gray x="208" y="304">
+                    <white/>
+                    <white/>
+                    <gray x="200" y="296">
+                      <white/>
+                      <gray x="204" y="300">
+                        <gray x="202" y="302">
+                          <white/>
+                          <white/>
+                          <gray x="201" y="301">
+                            <white/>
+                            <white/>
+                            <black name="New_York" x="200" y="300"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                        </gray>
+                        <white/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+              </gray>
+            </gray>
+            <gray x="384" y="384">
+              <white/>
+              <gray x="448" y="448">
+                <white/>
+                <gray x="480" y="480">
+                  <white/>
+                  <white/>
+                  <gray x="464" y="464">
+                    <white/>
+                    <white/>
+                    <gray x="456" y="456">
+                      <white/>
+                      <white/>
+                      <gray x="452" y="452">
+                        <white/>
+                        <white/>
+                        <gray x="450" y="450">
+                          <white/>
+                          <gray x="451" y="451">
+                            <white/>
+                            <white/>
+                            <black name="Amsterdam" x="450" y="450"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                          <white/>
+                        </gray>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+                <gray x="480" y="416">
+                  <white/>
+                  <white/>
+                  <white/>
+                  <gray x="496" y="400">
+                    <white/>
+                    <gray x="504" y="408">
+                      <white/>
+                      <white/>
+                      <gray x="500" y="404">
+                        <white/>
+                        <white/>
+                        <white/>
+                        <gray x="502" y="402">
+                          <white/>
+                          <white/>
+                          <gray x="501" y="401">
+                            <white/>
+                            <white/>
+                            <black name="Paris" x="500" y="400"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                        </gray>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                  </gray>
+                </gray>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <gray x="128" y="128">
+              <white/>
+              <white/>
+              <gray x="64" y="64">
+                <white/>
+                <white/>
+                <white/>
+                <gray x="96" y="32">
+                  <gray x="80" y="48">
+                    <white/>
+                    <white/>
+                    <white/>
+                    <gray x="88" y="40">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="92" y="36">
+                        <white/>
+                        <white/>
+                        <gray x="90" y="34">
+                          <gray x="89" y="35">
+                            <white/>
+                            <white/>
+                            <black name="Chicago" x="88" y="34"/>
+                            <white/>
+                          </gray>
+                          <white/>
+                          <white/>
+                          <white/>
+                        </gray>
+                        <white/>
+                      </gray>
+                    </gray>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+              </gray>
+              <gray x="192" y="64">
+                <white/>
+                <white/>
+                <gray x="160" y="32">
+                  <gray x="144" y="48">
+                    <white/>
+                    <white/>
+                    <gray x="136" y="40">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="140" y="36">
+                        <white/>
+                        <gray x="142" y="38">
+                          <white/>
+                          <white/>
+                          <gray x="141" y="37">
+                            <black name="Baltimore" x="140" y="37"/>
+                            <white/>
+                            <white/>
+                            <white/>
+                          </gray>
+                          <white/>
+                        </gray>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+</results>

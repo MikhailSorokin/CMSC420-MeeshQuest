@@ -1,0 +1,9 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part1in.xsd"
+	spatialWidth="256"
+	spatialHeight="256"
+	>
+	<deleteCity name ="city1" />
+ <listCities sortBy="name"/> 
+</commands>

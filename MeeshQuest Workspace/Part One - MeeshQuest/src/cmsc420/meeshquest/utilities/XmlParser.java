@@ -1,11 +1,8 @@
 package cmsc420.meeshquest.utilities;
 
-import java.awt.geom.Point2D;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Set;
-import java.util.TreeMap;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -15,7 +12,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import cmsc420.meeshquest.citymapobjects.City;
 import cmsc420.xml.XmlUtility;
 
 /**
@@ -29,13 +25,13 @@ import cmsc420.xml.XmlUtility;
  *
  */
 public class XmlParser {
-
-	private TreeMap<String, City> nameToCity = new TreeMap<String, City>();
-	private TreeMap<Point2D.Float, City> coordinatesToCity = new TreeMap<Point2D.Float, City>();
 	
-	private Document results = null;
+	public static Document results = null;
+	public static Element currElement = null;
+	public boolean aboutToSubmit = true; //use for submit server stuff!
+	
 	private String path;
-	private Element currElement = null;
+	private MethodMediator methodMediator = new MethodMediator(); //TODO: Maybe make this class static?
 	
 	public XmlParser(String filePath) {
 		path = filePath;
@@ -43,10 +39,14 @@ public class XmlParser {
 	
 	public void LoadXMLFile() {
 		try {
-			File filePath = new File(path);
-			System.setIn(new FileInputStream(filePath));
-			Document doc = XmlUtility.parse(filePath);
-			//XmlUtility.validateNoNamespace(filePath);
+			Document doc = null;
+			if (!aboutToSubmit) {
+				File filePath = new File(path);
+				System.setIn(new FileInputStream(filePath));
+				doc = XmlUtility.parse(filePath);
+			} else {
+				doc = XmlUtility.validateNoNamespace(System.in);
+			}
 			//something wrong with location of xchema. Must be relative to location or sumthing.
 
 			results = XmlUtility.getDocumentBuilder().newDocument();
@@ -77,95 +77,6 @@ public class XmlParser {
 		}
 	}
 	
-	//TODO: When successfully made a command, add a results node if there isn't one
-	//in the docs already. Else, add a failNode
-	//TODO: Make this function create xml elements when needed
-	public void CreateXmlElement() {
-		//results.createElement("")
-	}
-	
-	/**
-	 * Creates a city based on the parameters, which are given by the 
-	 * @param name
-	 * @param x
-	 * @param y
-	 * @param radius
-	 * @param color
-	 */
-	private void CreateCity(String name, int x, int y, int radius, String color) {
-		Element successElement = results.createElement("success");
-		currElement.appendChild(successElement);
-		
-		Element commandElement = results.createElement("command");
-		commandElement.setAttribute("name", "createCity");
-		successElement.appendChild(commandElement);
-		
-		Element parametersElement = results.createElement("parameters");
-		successElement.appendChild(parametersElement);
-		
-		Element nameElement = results.createElement("name");
-		nameElement.setAttribute("value", name);
-		parametersElement.appendChild(nameElement);
-		
-		Element xCoordElement = results.createElement("x");
-		xCoordElement.setAttribute("value", Integer.toString(x));
-		parametersElement.appendChild(xCoordElement);
-		
-		Element yCoordElement = results.createElement("y");
-		yCoordElement.setAttribute("value", Integer.toString(y));
-		parametersElement.appendChild(yCoordElement);
-		
-		Element radiusElement = results.createElement("radius");
-		radiusElement.setAttribute("value", Integer.toString(radius));
-		parametersElement.appendChild(radiusElement);
-		
-		Element colorElement = results.createElement("color");
-		colorElement.setAttribute("value", color);
-		parametersElement.appendChild(colorElement);
-		
-		Element outputElement = results.createElement("output");
-		successElement.appendChild(outputElement);
-		
-		City city = new City(name, x, y, radius, color);
-		if (!nameToCity.containsKey(name)) {
-			nameToCity.put(name, city);
-		} else if(!coordinatesToCity.containsKey(name)) {
-			coordinatesToCity.put(city.getCoordinates(), city);
-		}
-	}
-	
-	private void ListCities(String sortMethod) {
-		if (sortMethod.equals("name")) {
-			Element successElement = results.createElement("success");
-			currElement.appendChild(successElement);
-			
-			Element commandElement = results.createElement("command");
-			commandElement.setAttribute("name", "listCities");
-			successElement.appendChild(commandElement);
-			
-			Element parametersElement = results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-			
-			Element sortByElement = results.createElement("sortBy");
-			sortByElement.setAttribute("value", "name");
-			parametersElement.appendChild(sortByElement);
-			
-			Element outputElement = results.createElement("output");
-			successElement.appendChild(outputElement);
-			
-			Element cityListElement = results.createElement("cityList");
-			outputElement.appendChild(cityListElement);
-			
-			Set<String> cityKeys = nameToCity.keySet();
-			for (int cityInd = 0; cityInd < cityKeys.size(); cityInd++) {
-				nameToCity.get(cityKeys[i]);
-			}
-			
-		} else if (sortMethod == "coordinates") {
-			
-		}
-	}
-	
 	private void ExecuteCommand(Element command) {
 		//Execute CreateCity command
 		if (command.getNodeName().equals("createCity")) {
@@ -174,7 +85,7 @@ public class XmlParser {
 			int cityYCoord = Integer.parseInt(command.getAttribute("y"));
 			int radius = Integer.parseInt(command.getAttribute("radius"));
 			String color = command.getAttribute("color");
-			CreateCity(cityName, cityXCoord, cityYCoord, radius, color);
+			methodMediator.CreateCity(cityName, cityXCoord, cityYCoord, radius, color);
 		} 
 		//Execute DeleteCity command
 		else if (command.getNodeName().equals("deleteCity")) {
@@ -185,7 +96,7 @@ public class XmlParser {
 		//Execute ClearAll command
 		else if (command.getNodeName().equals("listCities")) {
 			String sortMethod = command.getAttribute("sortBy");
-			ListCities(sortMethod);
+			methodMediator.ListCities(sortMethod);
 		} 
 		//Execute ListCities command
 		else if (command.getNodeName().equals("mapCity")) {

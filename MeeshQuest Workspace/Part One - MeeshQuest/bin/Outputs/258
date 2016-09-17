@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="a"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="a"/>
+      <x value="128"/>
+      <y value="129"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="b"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+</results>

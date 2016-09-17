@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="2"/>
+      <y value="8"/>
+      <radius value="1"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+  </error>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+</results>

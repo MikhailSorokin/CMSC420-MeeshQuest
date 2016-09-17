@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="4"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="3"/>
+      <y value="1"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <white/>
+                        <white/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="2" height="1" maxImbalance="1">
+        <node name="A" radius="1">
+          <node name="B" radius="1">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="5"/>
+      <y value="5"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="4"/>
+      <y value="5"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="3"/>
+      <y value="3"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="4" height="2" maxImbalance="1">
+        <node name="B" radius="1">
+          <node name="C" radius="1">
+            <node name="D" radius="1">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node name="A" radius="1">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <error type="nameNotInDictionary">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <error type="nameNotInDictionary">
+    <command name="unmapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="4" height="2" maxImbalance="1">
+        <node name="B" radius="1">
+          <node name="C" radius="1">
+            <node name="D" radius="1">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node name="A" radius="1">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <error type="nameNotInDictionary">
+    <command name="unmapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="4" height="2" maxImbalance="1">
+        <node name="B" radius="1">
+          <node name="C" radius="1">
+            <node name="D" radius="1">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node name="A" radius="1">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="D" radius="1" x="4" y="5"/>
+        <city color="black" name="C" radius="1" x="5" y="5"/>
+        <city color="black" name="B" radius="1" x="3" y="1"/>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="B" radius="1" x="3" y="1"/>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+        <city color="black" name="D" radius="1" x="4" y="5"/>
+        <city color="black" name="C" radius="1" x="5" y="5"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="cityDoesNotExist">
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="4" height="2" maxImbalance="1">
+        <node name="B" radius="1">
+          <node name="C" radius="1">
+            <node name="D" radius="1">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node name="A" radius="1">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="D" radius="1" x="4" y="5"/>
+        <city color="black" name="C" radius="1" x="5" y="5"/>
+        <city color="black" name="B" radius="1" x="3" y="1"/>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="B" radius="1" x="3" y="1"/>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+        <city color="black" name="D" radius="1" x="4" y="5"/>
+        <city color="black" name="C" radius="1" x="5" y="5"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="BB"/>
+      <x value="6"/>
+      <y value="5"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="BB"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="BB"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" name="BB" radius="1" x="6" y="5"/>
+    </output>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" name="A" radius="1" x="4" y="4"/>
+    </output>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <white/>
+                        <black name="B" x="3" y="1"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" name="B" radius="1" x="3" y="1"/>
+    </output>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <black name="C" x="5" y="5"/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" name="C" radius="1" x="5" y="5"/>
+    </output>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <white/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="cityDoesNotExist">
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <black name="D" x="4" y="5"/>
+                        <white/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="cityDoesNotExist">
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="FF"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" name="D" radius="1" x="4" y="5"/>
+    </output>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="5" height="2" maxImbalance="1">
+        <node name="B" radius="1">
+          <node name="C" radius="1">
+            <node name="D" radius="1">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node name="BB" radius="1">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node name="A" radius="1">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="4"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityDoesNotExist">
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+  <error type="nameNotInDictionary">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="1" height="0" maxImbalance="1">
+        <node name="A" radius="1">
+          <emptyChild/>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <gray x="6" y="6">
+                      <white/>
+                      <white/>
+                      <gray x="5" y="5">
+                        <white/>
+                        <white/>
+                        <black name="A" x="4" y="4"/>
+                        <white/>
+                      </gray>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="unmapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Hehe"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Hehe" radius="1" x="256" y="256"/>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="A" radius="1" x="4" y="4"/>
+        <city color="black" name="Hehe" radius="1" x="256" y="256"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Hehe"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="1" height="0" maxImbalance="1">
+        <node name="A" radius="1">
+          <emptyChild/>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printMXQuadtree"/>
+    <parameters/>
+  </error>
+</results>

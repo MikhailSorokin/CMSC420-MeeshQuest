@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="S"/>
+      <x value="2"/>
+      <y value="1"/>
+      <radius value="1"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="S"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <white/>
+              <gray x="16" y="16">
+                <white/>
+                <white/>
+                <gray x="8" y="8">
+                  <white/>
+                  <white/>
+                  <gray x="4" y="4">
+                    <white/>
+                    <white/>
+                    <gray x="2" y="2">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <gray x="3" y="1">
+                        <black name="S" x="2" y="1"/>
+                        <white/>
+                        <white/>
+                        <white/>
+                      </gray>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

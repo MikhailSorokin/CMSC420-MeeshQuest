@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="81"/>
+      <y value="47"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="84"/>
+      <y value="33"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="L"/>
+      <x value="118"/>
+      <y value="33"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="M"/>
+      <x value="80"/>
+      <y value="25"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Bo"/>
+      <x value="71"/>
+      <y value="42"/>
+      <radius value="50"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="M"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="B" radius="5" x="0" y="0"/>
+        <city color="black" name="M" radius="5" x="80" y="25"/>
+        <city color="black" name="A" radius="5" x="84" y="33"/>
+        <city color="black" name="L" radius="5" x="118" y="33"/>
+        <city color="black" name="Bo" radius="50" x="71" y="42"/>
+        <city color="black" name="C" radius="5" x="81" y="47"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="L"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="M"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Bo"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="M"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printMXQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree>
+        <gray x="64" y="64">
+          <white/>
+          <white/>
+          <gray x="32" y="32">
+            <white/>
+            <white/>
+            <gray x="16" y="16">
+              <white/>
+              <white/>
+              <gray x="8" y="8">
+                <white/>
+                <white/>
+                <gray x="4" y="4">
+                  <white/>
+                  <white/>
+                  <gray x="2" y="2">
+                    <white/>
+                    <white/>
+                    <gray x="1" y="1">
+                      <white/>
+                      <white/>
+                      <black name="B" x="0" y="0"/>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <gray x="96" y="32">
+            <gray x="80" y="48">
+              <white/>
+              <white/>
+              <gray x="72" y="40">
+                <gray x="68" y="44">
+                  <white/>
+                  <white/>
+                  <white/>
+                  <gray x="70" y="42">
+                    <white/>
+                    <gray x="71" y="43">
+                      <white/>
+                      <white/>
+                      <white/>
+                      <black name="Bo" x="71" y="42"/>
+                    </gray>
+                    <white/>
+                    <white/>
+                  </gray>
+                </gray>
+                <white/>
+                <white/>
+                <white/>
+              </gray>
+              <gray x="88" y="40">
+                <gray x="84" y="44">
+                  <gray x="82" y="46">
+                    <gray x="81" y="47">
+                      <white/>
+                      <black name="C" x="81" y="47"/>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+                <white/>
+                <gray x="84" y="36">
+                  <white/>
+                  <white/>
+                  <white/>
+                  <gray x="86" y="34">
+                    <white/>
+                    <white/>
+                    <gray x="85" y="33">
+                      <black name="A" x="84" y="33"/>
+                      <white/>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                </gray>
+                <white/>
+              </gray>
+            </gray>
+            <gray x="112" y="48">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="120" y="40">
+                <white/>
+                <white/>
+                <gray x="116" y="36">
+                  <white/>
+                  <white/>
+                  <white/>
+                  <gray x="118" y="34">
+                    <white/>
+                    <white/>
+                    <white/>
+                    <gray x="119" y="33">
+                      <black name="L" x="118" y="33"/>
+                      <white/>
+                      <white/>
+                      <white/>
+                    </gray>
+                  </gray>
+                </gray>
+                <white/>
+              </gray>
+            </gray>
+            <gray x="80" y="16">
+              <white/>
+              <gray x="88" y="24">
+                <gray x="84" y="28">
+                  <white/>
+                  <white/>
+                  <gray x="82" y="26">
+                    <white/>
+                    <white/>
+                    <gray x="81" y="25">
+                      <black name="M" x="80" y="25"/>
+                      <white/>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                  </gray>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+                <white/>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,12 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part1in.xsd"
+    spatialWidth="256"
+    spatialHeight="256">
+    <createCity name="a" y="128" x="128" radius="1" color="black"/>
+    <createCity name="b" y="129" x="128" radius="1" color="black"/>
+    <createCity name="c" y="128" x="129" radius="1" color="black"/>
+    <createCity name="d" y="128" x="127" radius="1" color="black"/>
+    <createCity name="f" y="127" x="128" radius="1" color="black"/>
+    <printMXQuadtree/>
+</commands>
