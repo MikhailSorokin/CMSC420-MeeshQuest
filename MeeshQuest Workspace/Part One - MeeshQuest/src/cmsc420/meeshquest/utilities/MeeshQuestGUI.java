@@ -6,7 +6,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import cmsc420.util.SkipList.Node;
 import cmsc420.xml.XmlUtility;
 
 /**

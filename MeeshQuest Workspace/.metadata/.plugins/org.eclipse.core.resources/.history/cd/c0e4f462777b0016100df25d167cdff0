@@ -1,0 +1,160 @@
+package cmsc420.meeshquest.utilities;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
+import cmsc420.meeshquest.citymapobjects.City;
+import cmsc420.xml.XmlUtility;
+
+/**
+ * 
+ * This class will take in a XML file and read,
+ * line by line, the command that is in the XML
+ * file and see if it is first, a valid command,
+ * and if so, execute it.
+ * 
+ * @author Mikhail Sorokin
+ *
+ */
+public class XmlParser {
+
+	private TreeMap<String, >
+	
+	private Document results = null;
+	private String path;
+	
+	public XmlParser(String filePath) {
+		path = filePath;
+	}
+	
+	public void LoadXMLFile() {
+		try {
+			File filePath = new File(path);
+			System.setIn(new FileInputStream(filePath));
+			Document doc = XmlUtility.parse(filePath);
+			XmlUtility.validateNoNamespace(filePath);
+			//something wrong with location of xchema. Must be relative to location or sumthing.
+			
+			results = XmlUtility.getDocumentBuilder().newDocument();
+
+			Element commandNode = doc.getDocumentElement();
+			
+			final NodeList childNodes = commandNode.getChildNodes();
+			for (int childInd = 0; childInd < childNodes.getLength(); childInd++) {
+				if (childNodes.item(childInd).getNodeType() == Document.ELEMENT_NODE) {
+					ExecuteCommand((Element)childNodes.item(childInd));
+				}
+			}
+			
+		} catch (SAXException | IOException | ParserConfigurationException e) {
+			System.err.println("There was an error with parsing your given file. "
+					+ "Please try a new file!");
+		}
+		finally {
+            try {
+				XmlUtility.print(results);
+			} catch (TransformerException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//TODO: When successfully made a command, add a results node if there isn't one
+	//in the docs already. Else, add a failNode
+	//TODO: Make this function create xml elements when needed
+	public void CreateXmlElement() {
+		//results.createElement("")
+	}
+	
+	private void CreateCity(String name, int x, int y, int radius, String color) {
+		City city = new City(name, x, y, radius, color);
+		
+	}
+	
+	private void ExecuteCommand(Element command) {
+		//Execute CreateCity command
+		if (command.getNodeName().equals("createCity")) {
+			String cityName = command.getAttribute("name");
+			int cityXCoord = Integer.parseInt(command.getAttribute("x"));
+			int cityYCoord = Integer.parseInt(command.getAttribute("y"));
+			int radius = Integer.parseInt(command.getAttribute("radius"));
+			String color = command.getAttribute("color");
+			CreateCity(cityName, cityXCoord, cityYCoord, radius, color);
+			System.out.println(command.getAttributeNode("name"));
+			/*
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);*/
+		} 
+		//Execute DeleteCity command
+		else if (command.getNodeName().equals("deleteCity")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute ClearAll command
+		else if (command.getNodeName().equals("listCities")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute ListCities command
+		else if (command.getNodeName().equals("mapCity")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute UnmapCity command
+		else if (command.getNodeName().equals("unmapCity")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute printMXQuadtree command
+		else if (command.getNodeName().equals("printMXQuadtree")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute saveMap command
+		else if (command.getNodeName().equals("saveMap")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute rangeCities command
+		else if (command.getNodeName().equals("rangeCities")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute nearestCity command
+		else if (command.getNodeName().equals("nearestCity")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Execute printAvlTree command
+		else if (command.getNodeName().equals("createCity")) {
+			Element elt = results.createElement("success");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		} 
+		//Write a failure command
+		else {
+			Element elt = results.createElement("failure");
+			elt.setAttribute("test", "5");
+			results.appendChild(elt);
+		}
+	}
+	
+}

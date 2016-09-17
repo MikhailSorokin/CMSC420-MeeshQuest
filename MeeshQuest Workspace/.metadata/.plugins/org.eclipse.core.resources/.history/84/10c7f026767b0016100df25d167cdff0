@@ -1,0 +1,12 @@
+package cmsc420.meeshquest.citymapobjects;
+
+public class City extends Point2D {
+
+	private String name;
+	
+	
+	public City(String name, int x, int y, int radius, String color) {
+		
+	}
+	
+}

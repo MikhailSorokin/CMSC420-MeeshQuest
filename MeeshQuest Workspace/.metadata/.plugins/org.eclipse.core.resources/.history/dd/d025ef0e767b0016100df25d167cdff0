@@ -1,0 +1,5 @@
+package cmsc420.meeshquest.citymapobjects;
+
+public class City {
+
+}
