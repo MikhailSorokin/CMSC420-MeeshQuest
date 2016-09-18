@@ -28,7 +28,7 @@ public class XmlParser {
 	
 	public static Document results = null;
 	public static Element currElement = null;
-	public boolean aboutToSubmit = true; //use for submit server stuff!
+	public boolean aboutToSubmit = false; //use for submit server stuff!
 	
 	private String path;
 	private MethodMediator methodMediator = new MethodMediator(); //TODO: Maybe make this class static?
@@ -40,6 +40,7 @@ public class XmlParser {
 	public void LoadXMLFile() {
 		try {
 			Document doc = null;
+			results = XmlUtility.getDocumentBuilder().newDocument();
 			if (!aboutToSubmit) {
 				File filePath = new File(path);
 				System.setIn(new FileInputStream(filePath));
@@ -49,7 +50,6 @@ public class XmlParser {
 			}
 			//something wrong with location of xchema. Must be relative to location or sumthing.
 
-			results = XmlUtility.getDocumentBuilder().newDocument();
 			Element commandNode = doc.getDocumentElement();
 			
 			Element resultsTag = results.createElement("results");
@@ -65,8 +65,8 @@ public class XmlParser {
 			}
 			
 		} catch (SAXException | IOException | ParserConfigurationException e) {
-			System.err.println("There was an error with parsing given file. "
-					+ "Please try a new file!");
+			Element fatalErrorElem = results.createElement("fatalError");
+			results.appendChild(fatalErrorElem);
 		}
 		finally {
             try {
@@ -89,16 +89,19 @@ public class XmlParser {
 		} 
 		//Execute DeleteCity command
 		else if (command.getNodeName().equals("deleteCity")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			String cityName = command.getAttribute("name");
+			methodMediator.DeleteCity(cityName);
 		} 
 		//Execute ClearAll command
+		else if (command.getNodeName().equals("clearAll")) {
+			methodMediator.ClearAll();
+		} 
+		//Execute ListCities command
 		else if (command.getNodeName().equals("listCities")) {
 			String sortMethod = command.getAttribute("sortBy");
 			methodMediator.ListCities(sortMethod);
 		} 
-		//Execute ListCities command
+		//Execute MapCity command
 		else if (command.getNodeName().equals("mapCity")) {
 			Element elt = results.createElement("success");
 			elt.setAttribute("test", "5");
@@ -136,15 +139,12 @@ public class XmlParser {
 		} 
 		//Execute printAvlTree command
 		else if (command.getNodeName().equals("printAvlTree")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			methodMediator.PrintAVLTree();
 		} 
 		//Write a failure command
 		else {
-			Element elt = results.createElement("failure");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			Element undefinedErrorElem = results.createElement("fatalError");
+			currElement.appendChild(undefinedErrorElem);
 		}
 	}
 	

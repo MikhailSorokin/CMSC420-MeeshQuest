@@ -9,9 +9,12 @@ import java.util.TreeMap;
 import org.w3c.dom.Element;
 
 import cmsc420.meeshquest.citymapobjects.City;
+import cmsc420.meeshquest.datastructures.AVLTree;
+import cmsc420.meeshquest.datastructures.MXQuadtree;
 
 public class MethodMediator {
 
+	//DataStructures
 	private Map<String, City> nameToCity = new TreeMap<String, City>(
 			new Comparator<String>() {
 
@@ -50,6 +53,9 @@ public class MethodMediator {
 				
 			}
 	);
+	
+	private AVLTree avlTree = new AVLTree();
+	private MXQuadtree mxQuadTree = new MXQuadtree();
 	
 	//TODO: When successfully made a command, add a results node if there isn't one
 	//in the docs already. Else, add a failNode
@@ -114,6 +120,8 @@ public class MethodMediator {
 			CreateCityErrorOutput("duplicateCityCoordinates", name, x, y, radius, color);
 			return;
 		}
+		
+		avlTree.insert(city);
 		
 		Element successElement = XmlParser.results.createElement("success");
 		XmlParser.currElement.appendChild(successElement);
@@ -221,6 +229,120 @@ public class MethodMediator {
 		} else {
 			//TODO: Handle FATAL error here!
 		}
+	}
+	
+	private void DeleteCityError(String name) {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", "cityDoesNotExist");
+		XmlParser.currElement.appendChild(errorElement);
+		
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "deleteCity");
+		errorElement.appendChild(commandElement);
+		
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+		
+		Element nameElement = XmlParser.results.createElement("name");
+		nameElement.setAttribute("value", name);
+		parametersElement.appendChild(nameElement);
+
+	}
+	
+	public void DeleteCity(String name) {
+		if (nameToCity.containsKey(name)) {
+			
+			//TODO: FIRST. If a city is mapped in MXQuadTree structure, remove it from the structure!
+			//After that, remove from the dictionary
+			
+			nameToCity.remove(name);
+			
+			Element successElement = XmlParser.results.createElement("success");
+			XmlParser.currElement.appendChild(successElement);
+			
+			Element commandElement = XmlParser.results.createElement("command");
+			commandElement.setAttribute("name", "deleteCity");
+			successElement.appendChild(commandElement);
+			
+			Element parametersElement = XmlParser.results.createElement("parameters");
+			successElement.appendChild(parametersElement);
+
+			Element deletedElement = XmlParser.results.createElement("name");
+			deletedElement.setAttribute("value", name);
+			successElement.appendChild(deletedElement);
+			
+			Element outputElement = XmlParser.results.createElement("output");
+			successElement.appendChild(outputElement);
+		} else {
+			DeleteCityError(name);
+		}
+		
+	}
+
+	private void AVLTreeError() {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", "emptyTree");
+		XmlParser.currElement.appendChild(errorElement);
+		
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "printAvlTree");
+		errorElement.appendChild(commandElement);
+		
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+	}
+	
+	public void PrintAVLTree() {
+		if (!avlTree.isEmpty()) {
+			
+			Element successElement = XmlParser.results.createElement("success");
+			XmlParser.currElement.appendChild(successElement);
+			
+			Element commandElement = XmlParser.results.createElement("command");
+			commandElement.setAttribute("name", "printAvlTree");
+			successElement.appendChild(commandElement);
+			
+			Element parametersElement = XmlParser.results.createElement("parameters");
+			successElement.appendChild(parametersElement);
+
+			Element outputElement = XmlParser.results.createElement("output");
+			successElement.appendChild(outputElement);
+
+			Element avlTreeElement = XmlParser.results.createElement("AvlGTree");
+			outputElement.appendChild(avlTreeElement);
+			avlTreeElement.setAttribute("cardinality", Integer.toString(avlTree.countNodes()));
+			avlTreeElement.setAttribute("height", Integer.toString(avlTree.height()));
+			//TODO: For Part One, maxImbalance is ALWAYS 1. For later parts, this won't be the case!
+			avlTreeElement.setAttribute("maxImbalance", "1");
+			
+			avlTree.preorder(avlTreeElement); //TODO: Access the XmlParser results in that area
+		} else {
+			AVLTreeError();
+		}
+		
+	}
+
+	/**
+	 * Clears the MX QuadTree, Dictionary and AVLTree data structures.
+	 * There are no error outputs for this method
+	 */
+	public void ClearAll() {
+		nameToCity.clear();
+		coordinatesToCity.clear();
+		avlTree.makeEmpty();
+		
+		Element successElement = XmlParser.results.createElement("success");
+		XmlParser.currElement.appendChild(successElement);
+		
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "clearAll");
+		successElement.appendChild(commandElement);
+		
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		successElement.appendChild(parametersElement);
+		
+		Element outputElement = XmlParser.results.createElement("output");
+		successElement.appendChild(outputElement);
 	}
 	
 }

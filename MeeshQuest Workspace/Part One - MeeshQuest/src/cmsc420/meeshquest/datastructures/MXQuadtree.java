@@ -2,4 +2,17 @@ package cmsc420.meeshquest.datastructures;
 
 public class MXQuadtree {
 
+	private WhiteNode root;     
+
+    /* Constructor */
+    public MXQuadtree()
+    {
+        root = WhiteNode.singleton;
+    }
+    /* Function to check if quadTree is empty */
+    public boolean isEmpty()
+    {
+        return root == null;
+    }
+	
 }

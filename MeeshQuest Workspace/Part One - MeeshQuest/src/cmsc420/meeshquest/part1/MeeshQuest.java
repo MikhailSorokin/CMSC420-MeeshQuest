@@ -15,7 +15,7 @@ import cmsc420.meeshquest.utilities.XmlParser;
  */
 public class MeeshQuest {
 
-	public static String fileName = "src/Inputs/part1.primary.input.xml";
+	public static String fileName = "src/Inputs/part1.fatalerror.input.xml";
 	public static boolean shouldDrawMap = false; //specify if you want GUI to be used
 	
 	public static void main(String[] args) {

@@ -1,0 +1,5 @@
+package cmsc420.meeshquest.datastructures;
+
+public abstract class Node {
+
+}

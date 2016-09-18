@@ -1,0 +1,7 @@
+package cmsc420.meeshquest.datastructures;
+
+public class White extends Node {
+
+	public static White singleton = this;
+	
+}

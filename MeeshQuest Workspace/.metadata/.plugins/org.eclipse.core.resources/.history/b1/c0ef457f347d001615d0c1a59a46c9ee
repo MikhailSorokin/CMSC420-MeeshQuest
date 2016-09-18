@@ -1,0 +1,14 @@
+package cmsc420.meeshquest.datastructures;
+
+public abstract class Node {
+
+	public Node quadrantOne, quadrantTwo, quadrantThree, quadrantFour;
+	
+	public Node() {
+		quadrantOne = null;
+		quadrantTwo = null;
+		quadrantThree = null;
+		quadrantFour = null;
+	}
+	
+}
