@@ -1,0 +1,25 @@
+package cmsc420.meeshquest.datastructures;
+
+/**
+ * This is a singleton class which extends
+ * an abstract class Node. A GreyNode represents a
+ * coordinate link to four more nodes.
+ * @author Mikhail Sorokin
+ *
+ */
+public class GreyNode extends Node {
+	
+	private Node quadrantOne, quadrantTwo, quadrantThree, quadrantFour;
+	private int[] coords;
+	
+	public GreyNode(int xCoord, int yCoord) {
+		coords = new int[2];
+		coords[0] = xCoord;
+		coords[1] = yCoord;
+	}
+	
+	public int[] getCoords() {
+		return coords;
+	}
+	
+}

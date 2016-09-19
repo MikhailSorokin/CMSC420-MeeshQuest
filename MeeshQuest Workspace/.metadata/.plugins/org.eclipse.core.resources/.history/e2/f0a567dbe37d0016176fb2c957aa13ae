@@ -1,0 +1,50 @@
+package cmsc420.meeshquest.datastructures;
+
+import cmsc420.meeshquest.citymapobjects.City;
+
+/**
+ * This is a singleton class which extends
+ * an abstract class Node. A GreyNode represents a
+ * coordinate link to four more nodes.
+ * @author Mikhail Sorokin
+ *
+ */
+public class GreyNode extends Node {
+	
+	public Node quadrantOne, quadrantTwo, quadrantThree, quadrantFour;
+	private int[] coords;
+	
+	public GreyNode(int xCoord, int yCoord) {
+		coords = new int[2];
+		coords[0] = xCoord;
+		coords[1] = yCoord;
+		quadrantOne = quadrantTwo = quadrantThree = quadrantFour = WhiteNode.singleton;
+	}
+	
+	public int[] getCoords() {
+		return coords;
+	}
+
+
+	@Override
+	protected Node add(City cityData) {
+    	if (this == null) {
+    		return new GreyNode((int)cityData.getX(), (int)cityData.getY());
+    	} else if (cityData.getX() < this.getCoords()[0] && cityData.getY() > this.getCoords()[1]) {
+    		this.quadrantOne = add(cityData);
+    	} else if (cityData.getX() > node.getCoords()[0] && cityData.getY() > node.getCoords()[1]) {
+    		this.quadrantTwo = insert(cityData, node.quadrantTwo);
+    	} else if (cityData.getX() < node.getCoords()[0] && cityData.getY() < node.getCoords()[1]) {
+    		node.quadrantThree = insert(cityData, node.quadrantThree);
+    	} else if (cityData.getX() > node.getCoords()[0] && cityData.getY() < node.getCoords()[1]) { {
+    		node.quadrantFour = insert(cityData, node.quadrantFour);
+    	}
+    	return node;
+	}
+
+	@Override
+	protected void delete() {
+
+	}
+	
+}

@@ -1,0 +1,33 @@
+package cmsc420.meeshquest.datastructures;
+
+import cmsc420.meeshquest.citymapobjects.City;
+import cmsc420.meeshquest.utilities.XmlParser;
+
+public class MXQuadtree {
+
+	private GreyNode root;     
+
+    /* Constructor */
+    public MXQuadtree()
+    {
+        root = new GreyNode(XmlParser.spatialWidth/2, XmlParser.spatialHeight/2);
+    }
+    /* Function to check if quadTree is empty */
+    public boolean isEmpty()
+    {
+        return root == null;
+    }
+	
+    public void insert(City cityData) {
+    	root = insert(cityData, root);
+    }
+    
+    private GreyNode insert(City cityData, GreyNode node) {
+    	if (cityData.getX() < node.getCoords()[0]) {
+    		node.quadrantOne = insert(cityData, node.quadrantOne);
+    	} else     	if (cityData.getX() < node.getCoords()[0]) {
+    		node.quadrantOne = insert(cityData, node.quadrantOne);
+    	}
+    }
+    
+}

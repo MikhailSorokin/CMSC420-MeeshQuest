@@ -1,0 +1,15 @@
+package cmsc420.meeshquest.datastructures;
+
+import cmsc420.meeshquest.citymapobjects.City;
+
+public abstract class Node {
+	protected City data;
+	
+	public Node() {
+		data = null;
+	}
+	
+	protected abstract void add(City cityData, WhiteNode );
+	protected abstract void delete();
+	
+}

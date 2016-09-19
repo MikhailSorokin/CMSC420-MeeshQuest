@@ -10,4 +10,6 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D.Float"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.City"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.utilities.XmlParser"/>
 </qualifiedTypeNameHistroy>

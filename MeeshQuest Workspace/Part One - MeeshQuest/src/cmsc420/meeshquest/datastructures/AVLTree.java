@@ -166,17 +166,24 @@ public class AVLTree implements Comparator<City>
         return found;
     }
     /* Function for inorder traversal */
-    public void inorder()
+    public void inorder(Element parentElement)
     {
-        inorder(root);
+        inorder(root, parentElement);
     }
-    private void inorder(AVLNode r)
+    private void inorder(AVLNode r, Element parentElement)
     {
         if (r != null)
         {
-            inorder(r.left);
-            //TODO: Call element stuff
-            inorder(r.right);
+            inorder(r.left, parentElement);
+        	Element nodeElement = XmlParser.results.createElement("node");
+        	nodeElement.setAttribute("name", r.data.getName());
+        	nodeElement.setAttribute("radius", Integer.toString(r.data.getRadius()));
+        	parentElement.appendChild(nodeElement);
+            inorder(r.right, nodeElement);
+        } else {
+        	//If Null, create empty children Node
+        	Element emptyChildElement = XmlParser.results.createElement("emptyChild"); 
+        	parentElement.appendChild(emptyChildElement);
         }
     }
     /* Function for preorder traversal */
