@@ -1,7 +1,0 @@
-package cmsc420.meeshquest.citymapobjects;
-
-public class City {
-
-	public City(String name, int x, int y, int radius, String color)
-	
-}

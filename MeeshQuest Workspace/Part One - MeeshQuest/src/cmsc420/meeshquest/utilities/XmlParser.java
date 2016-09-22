@@ -118,15 +118,11 @@ public class XmlParser {
 		} 
 		//Execute printMXQuadtree command
 		else if (command.getNodeName().equals("printMXQuadtree")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			methodMediator.PrintMXQuadtree();
 		} 
 		//Execute saveMap command
 		else if (command.getNodeName().equals("saveMap")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			methodMediator.SaveMap();
 		} 
 		//Execute rangeCities command
 		else if (command.getNodeName().equals("rangeCities")) {

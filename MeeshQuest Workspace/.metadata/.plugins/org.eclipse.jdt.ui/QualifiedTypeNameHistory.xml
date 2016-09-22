@@ -12,4 +12,5 @@
 <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.City"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.utilities.XmlParser"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

@@ -315,7 +315,7 @@ public class MethodMediator {
 			//TODO: For Part One, maxImbalance is ALWAYS 1. For later parts, this won't be the case!
 			avlTreeElement.setAttribute("maxImbalance", "1");
 			
-			avlTree.preorder(avlTreeElement); //TODO: Access the XmlParser results in that area
+			avlTree.preorder(avlTreeElement); //DONE: Access the XmlParser results in that area
 		} else {
 			AVLTreeError();
 		}
@@ -330,6 +330,7 @@ public class MethodMediator {
 		nameToCity.clear();
 		coordinatesToCity.clear();
 		avlTree.makeEmpty();
+		mxQuadtree.makeEmpty();
 		
 		Element successElement = XmlParser.results.createElement("success");
 		XmlParser.currElement.appendChild(successElement);
@@ -344,14 +345,32 @@ public class MethodMediator {
 		Element outputElement = XmlParser.results.createElement("output");
 		successElement.appendChild(outputElement);
 	}
+	
+	private void MapCityErrorOutput(String errorType, String name) {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", errorType);
+		XmlParser.currElement.appendChild(errorElement);
+		
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "mapCity");
+		errorElement.appendChild(commandElement);
+		
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+		
+		Element nameElement = XmlParser.results.createElement("name");
+		nameElement.setAttribute("value", name);
+		parametersElement.appendChild(nameElement);
+	}
 
 	public void MapCity(String cityName) {
+		//TODO: Need case for when city has already been mapped
 		if (nameToCity.get(cityName) == null) {
-			//process NameNotInDictionary
+			MapCityErrorOutput("nameNotInDictionary", cityName);
 		} else if (nameToCity.get(cityName).getX() < 0 || nameToCity.get(cityName).getY() < 0
 				|| nameToCity.get(cityName).getX() > XmlParser.spatialWidth 
 				|| nameToCity.get(cityName).getY() > XmlParser.spatialHeight) {
-			//process outOfBounds error
+			MapCityErrorOutput("cityOutOfBounds", cityName); //TODO: See if works
 		} else {
 			mxQuadtree.insert(nameToCity.get(cityName));
 			
@@ -372,6 +391,49 @@ public class MethodMediator {
 			Element outputElement = XmlParser.results.createElement("output");
 			successElement.appendChild(outputElement);
 		}
+	}
+
+	private void EmptyMXTreeError() {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", "mapIsEmpty");
+		XmlParser.currElement.appendChild(errorElement);
+		
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "printMXQuadtree");
+		errorElement.appendChild(commandElement);
+		
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+	}
+	
+	public void PrintMXQuadtree() {
+		if (!mxQuadtree.isEmpty()) {
+		
+			Element successElement = XmlParser.results.createElement("success");
+			XmlParser.currElement.appendChild(successElement);
+			
+			Element commandElement = XmlParser.results.createElement("command");
+			commandElement.setAttribute("name", "printMXQuadtree");
+			successElement.appendChild(commandElement);
+			
+			Element parametersElement = XmlParser.results.createElement("parameters");
+			successElement.appendChild(parametersElement);
+
+			Element outputElement = XmlParser.results.createElement("output");
+			successElement.appendChild(outputElement);
+
+			Element quadTreeElement = XmlParser.results.createElement("quadtree");
+			outputElement.appendChild(quadTreeElement);
+			
+			mxQuadtree.inorder(quadTreeElement); //DONE: Access the XmlParser results in that area
+		} else {
+			EmptyMXTreeError(); //DONE: Made a method to handle empty tree error.
+		}
+	}
+
+	public void SaveMap() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

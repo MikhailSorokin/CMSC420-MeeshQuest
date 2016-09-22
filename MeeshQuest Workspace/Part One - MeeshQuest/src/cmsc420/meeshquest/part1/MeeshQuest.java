@@ -15,7 +15,7 @@ import cmsc420.meeshquest.utilities.XmlParser;
  */
 public class MeeshQuest {
 
-	public static String fileName = "src/Inputs/part1.public.avl.input.xml";
+	public static String fileName = "src/Inputs/custom.mxquadtree.input.xml";
 	public static boolean shouldDrawMap = false; //specify if you want GUI to be used
 	
 	public static void main(String[] args) {

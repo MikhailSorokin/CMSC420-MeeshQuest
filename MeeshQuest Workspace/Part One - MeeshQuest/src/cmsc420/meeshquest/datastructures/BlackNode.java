@@ -10,8 +10,10 @@ import cmsc420.meeshquest.citymapobjects.City;
 public class BlackNode extends Node {
 
 	private int[] coords;
+	private String cityName;
 	
-	public BlackNode(int xCoord, int yCoord) {
+	public BlackNode(String cityName, int xCoord, int yCoord) {
+		this.setCityName(cityName);
 		coords = new int[2];
 		coords[0] = xCoord;
 		coords[1] = yCoord;
@@ -30,6 +32,14 @@ public class BlackNode extends Node {
 	@Override
 	protected void delete() {
 
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
 	
 }

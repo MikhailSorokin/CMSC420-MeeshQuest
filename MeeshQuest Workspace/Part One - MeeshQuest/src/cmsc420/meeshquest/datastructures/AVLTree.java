@@ -56,7 +56,7 @@ public class AVLTree implements Comparator<City>
     
 	@Override
 	public int compare(City inserted, City data) {
-		return data.getName().compareTo(inserted.getName());
+		return inserted.getName().compareTo(data.getName());
 	}   
     
     /* Function to insert data recursively */
@@ -166,20 +166,20 @@ public class AVLTree implements Comparator<City>
         return found;
     }
     /* Function for inorder traversal */
-    public void inorder(Element parentElement)
+    public void reverseinorder(Element parentElement)
     {
-        inorder(root, parentElement);
+        reverseinorder(root, parentElement);
     }
-    private void inorder(AVLNode r, Element parentElement)
+    private void reverseinorder(AVLNode r, Element parentElement)
     {
         if (r != null)
         {
-            inorder(r.left, parentElement);
+        	reverseinorder(r.right, parentElement);
         	Element nodeElement = XmlParser.results.createElement("node");
         	nodeElement.setAttribute("name", r.data.getName());
         	nodeElement.setAttribute("radius", Integer.toString(r.data.getRadius()));
         	parentElement.appendChild(nodeElement);
-            inorder(r.right, nodeElement);
+        	reverseinorder(r.left, nodeElement);
         } else {
         	//If Null, create empty children Node
         	Element emptyChildElement = XmlParser.results.createElement("emptyChild"); 
@@ -199,8 +199,8 @@ public class AVLTree implements Comparator<City>
         	nodeElement.setAttribute("name", r.data.getName());
         	nodeElement.setAttribute("radius", Integer.toString(r.data.getRadius()));
         	parentElement.appendChild(nodeElement);
-            preorder(r.left, nodeElement);             
-            preorder(r.right, nodeElement);
+            preorder(r.right, nodeElement);             
+            preorder(r.left, nodeElement);
         } else {
         	//If Null, create empty children Node
         	Element emptyChildElement = XmlParser.results.createElement("emptyChild"); 

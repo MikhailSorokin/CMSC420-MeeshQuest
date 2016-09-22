@@ -12,13 +12,19 @@ import cmsc420.meeshquest.citymapobjects.City;
 public class GreyNode extends Node {
 	
 	public Node quadrantOne, quadrantTwo, quadrantThree, quadrantFour;
+	public int[] upperLeft, upperRight, lowerLeft, lowerRight;
+	
 	private int[] coords;
 	
 	public GreyNode(int xCoord, int yCoord) {
 		coords = new int[2];
 		coords[0] = xCoord;
 		coords[1] = yCoord;
-		quadrantOne = quadrantTwo = quadrantThree = quadrantFour = WhiteNode.singleton;
+		quadrantOne = quadrantTwo = quadrantThree = quadrantFour = WhiteNode.getInstance();
+		upperLeft = new int[2];
+		upperRight = new int[2];
+		lowerLeft = new int[2];
+		lowerRight = new int[2];
 	}
 	
 	public int[] getCoords() {
@@ -27,22 +33,105 @@ public class GreyNode extends Node {
 
 
 	@Override
+	//TODO: Need to figure out the math
 	protected Node add(City cityData) {
-    	/*if (coords[0] <= 1 && coords[0] <= 1) {
-    		return new BlackNode((int)cityData.getX(), (int)cityData.getY());
-    	} else if (node == null) {
-    		return new GreyNode(node.getX(), node.getY());
-    	} else if (cityData.getX() < this.getCoords()[0] && cityData.getY() > this.getCoords()[1]) {
-    		this.quadrantOne = add(cityData, node);
-    	} else if (cityData.getX() > this.getCoords()[0] && cityData.getY() > this.getCoords()[1]) {
-    		this.quadrantTwo = add(cityData, node);
-    	} else if (cityData.getX() < this.getCoords()[0] && cityData.getY() < this.getCoords()[1]) {
-    		this.quadrantThree = add(cityData, node);
-    	} else if (cityData.getX() > this.getCoords()[0] && cityData.getY() < this.getCoords()[1]) {
-    		this.quadrantFour = add(cityData, node);
+		int val = (upperRight[0] - upperLeft[0])/2;
+    	if (val == 1) {
+    		//TODO: Want to return in the BlackNode class
+    		BlackNode blackNode = new BlackNode(cityData.getName(), (int)cityData.getX(), (int)cityData.getY());
+    		blackNode.data[0] = (int)cityData.getX();
+    		blackNode.data[1] = (int)cityData.getY();
+    		if (cityData.getX() <= coords[0] && cityData.getY() >= coords[1]) {
+    			this.quadrantOne = blackNode;
+    		} else if (cityData.getX() >= coords[0] && cityData.getY() >= coords[1]) {
+    			this.quadrantTwo = blackNode;
+    		}  else if (cityData.getX() <= coords[0] && cityData.getY() <= coords[1]) {
+    			this.quadrantThree = blackNode;
+    		} else {
+    			this.quadrantFour = blackNode;
+    		}
+    	} else {
+    		int newXSplit, newYSplit;
+			if (cityData.getX() <= this.getCoords()[0] && cityData.getY() >= this.getCoords()[1]) {
+				if (this.quadrantOne == WhiteNode.getInstance()) {
+					newXSplit = (int)(upperLeft[0] + coords[0])/2;
+					newYSplit = (int)(upperLeft[1] + coords[1])/2;
+		    		GreyNode deeperQ1Node = new GreyNode(newXSplit, newYSplit);
+		    		deeperQ1Node.data[0] = newXSplit;
+		    		deeperQ1Node.data[1] = newYSplit;
+		    		
+		    		for (int i = 0; i < 2; i++) {
+			    		deeperQ1Node.upperLeft[i] = upperLeft[i];
+			    		deeperQ1Node.upperRight[i] = (upperLeft[i] + upperRight[i])/2;
+			    		deeperQ1Node.lowerLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
+			    		deeperQ1Node.lowerRight[i] = coords[i];
+		    		}
+		    		this.quadrantOne = deeperQ1Node;
+		    		deeperQ1Node.add(cityData);
+				} else {
+					this.quadrantOne.add(cityData);
+				}
+	    	} else if (cityData.getX() >= this.getCoords()[0] && cityData.getY() >= this.getCoords()[1]) {
+				if (this.quadrantTwo == WhiteNode.getInstance()) {
+					newXSplit = (int)(upperRight[0] + coords[0])/2;
+					newYSplit = (int)(upperRight[1] + coords[1])/2;
+		    		GreyNode deeperQ2Node = new GreyNode(newXSplit, newYSplit);
+		    		deeperQ2Node.data[0] = newXSplit;
+		    		deeperQ2Node.data[1] = newYSplit;
+		    		
+		    		for (int i = 0; i < 2; i++) {
+		    			deeperQ2Node.upperLeft[i] = (upperLeft[i] + upperRight[i])/2;
+		    			deeperQ2Node.upperRight[i] = upperRight[i];
+		    			deeperQ2Node.lowerLeft[i] = coords[i];
+		    			deeperQ2Node.lowerRight[i] = (upperRight[i] + lowerRight[i])/2;
+		    		}
+		    		this.quadrantTwo = deeperQ2Node;
+		    		deeperQ2Node.add(cityData);
+				} else {
+					this.quadrantTwo.add(cityData);
+				}
+	    	} else if (cityData.getX() <= this.getCoords()[0] && cityData.getY() <= this.getCoords()[1]) {
+				if (this.quadrantThree == WhiteNode.getInstance()) {
+					newXSplit = (int)(lowerLeft[0] + coords[0])/2;
+					newYSplit = (int)(lowerLeft[1] + coords[1])/2;
+		    		GreyNode deeperQ3Node = new GreyNode(newXSplit, newYSplit);
+		    		deeperQ3Node.data[0] = newXSplit;
+		    		deeperQ3Node.data[1] = newYSplit;
+		    		
+		    		for (int i = 0; i < 2; i++) {
+		    			deeperQ3Node.upperLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
+		    			deeperQ3Node.upperRight[i] = coords[i];
+		    			deeperQ3Node.lowerLeft[i] = lowerLeft[i];
+		    			deeperQ3Node.lowerRight[i] = (lowerLeft[i] + lowerRight[i])/2;
+		    		}
+		    		this.quadrantThree = deeperQ3Node;
+		    		deeperQ3Node.add(cityData);
+				} else {
+					this.quadrantThree.add(cityData);
+				}
+	    	} else if (cityData.getX() >= this.getCoords()[0] && cityData.getY() <= this.getCoords()[1]) {
+				if (this.quadrantFour == WhiteNode.getInstance()) {
+					newXSplit = (int)(lowerRight[0] + coords[0])/2;
+					newYSplit = (int)(lowerRight[1] + coords[1])/2;
+		    		GreyNode deeperQ4Node = new GreyNode(newXSplit, newYSplit);
+		    		deeperQ4Node.data[0] = newXSplit;
+		    		deeperQ4Node.data[1] = newYSplit;
+		    		
+		    		for (int i = 0; i < 2; i++) {
+		    			deeperQ4Node.upperLeft[i] = coords[i];
+		    			deeperQ4Node.upperRight[i] = (upperRight[i] + lowerRight[i])/2;
+		    			deeperQ4Node.lowerLeft[i] = (lowerLeft[i] + lowerRight[i])/2;
+		    			deeperQ4Node.lowerRight[i] = lowerRight[i];
+		    		}
+		    		this.quadrantFour = deeperQ4Node;
+		    		deeperQ4Node.add(cityData);
+				} else {
+					this.quadrantFour.add(cityData);
+				}
+	    	}
     	}
-    	return this;*/
-		return null;
+    	//If duplicate, just return this.
+    	return this;
 	}
 
 	@Override
