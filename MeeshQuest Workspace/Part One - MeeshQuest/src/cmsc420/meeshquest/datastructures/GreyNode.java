@@ -41,21 +41,28 @@ public class GreyNode extends Node {
     		BlackNode blackNode = new BlackNode(cityData.getName(), (int)cityData.getX(), (int)cityData.getY());
     		blackNode.data[0] = (int)cityData.getX();
     		blackNode.data[1] = (int)cityData.getY();
-    		if (cityData.getX() <= coords[0] && cityData.getY() >= coords[1]) {
-    			this.quadrantOne = blackNode;
-    		} else if (cityData.getX() >= coords[0] && cityData.getY() >= coords[1]) {
+    		if ((int)(cityData.getX()) <= upperRight[0] && (int)cityData.getY() >= coords[1]
+					&& (int)cityData.getX() >= coords[0]) {
     			this.quadrantTwo = blackNode;
-    		}  else if (cityData.getX() <= coords[0] && cityData.getY() <= coords[1]) {
-    			this.quadrantThree = blackNode;
-    		} else {
+    		} else if ((int)(cityData.getX()) <= lowerRight[0] && (int)cityData.getY() <= coords[1]
+					&& (int)cityData.getX() >= coords[0]) {
     			this.quadrantFour = blackNode;
+    		}  else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() < coords[1]
+					&& (int)cityData.getX() < coords[0]) {
+    			this.quadrantThree = blackNode;
+    		} else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() >= coords[1]
+					&& (int)cityData.getX() < coords[0]) {
+    			this.quadrantOne = blackNode;
     		}
     	} else {
     		int newXSplit, newYSplit;
-			if (cityData.getX() <= this.getCoords()[0] && cityData.getY() >= this.getCoords()[1]) {
+			if ((int)(cityData.getX()) >= upperLeft[0] && (int)cityData.getY() >= coords[1]
+					&& (int)cityData.getX() < coords[0]) {
 				if (this.quadrantOne == WhiteNode.getInstance()) {
 					newXSplit = (int)(upperLeft[0] + coords[0])/2;
 					newYSplit = (int)(upperLeft[1] + coords[1])/2;
+					//System.out.println(cityData.getName() + " : " + newXSplit + " : " + newYSplit);
+
 		    		GreyNode deeperQ1Node = new GreyNode(newXSplit, newYSplit);
 		    		deeperQ1Node.data[0] = newXSplit;
 		    		deeperQ1Node.data[1] = newYSplit;
@@ -71,7 +78,8 @@ public class GreyNode extends Node {
 				} else {
 					this.quadrantOne.add(cityData);
 				}
-	    	} else if (cityData.getX() >= this.getCoords()[0] && cityData.getY() >= this.getCoords()[1]) {
+	    	} else if ((int)(cityData.getX()) <= upperRight[0] && (int)cityData.getY() >= coords[1]
+					&& (int)cityData.getX() >= coords[0]) {
 				if (this.quadrantTwo == WhiteNode.getInstance()) {
 					newXSplit = (int)(upperRight[0] + coords[0])/2;
 					newYSplit = (int)(upperRight[1] + coords[1])/2;
@@ -90,7 +98,8 @@ public class GreyNode extends Node {
 				} else {
 					this.quadrantTwo.add(cityData);
 				}
-	    	} else if (cityData.getX() <= this.getCoords()[0] && cityData.getY() <= this.getCoords()[1]) {
+	    	} else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() <= coords[1]
+					&& (int)cityData.getX() < coords[0]) {
 				if (this.quadrantThree == WhiteNode.getInstance()) {
 					newXSplit = (int)(lowerLeft[0] + coords[0])/2;
 					newYSplit = (int)(lowerLeft[1] + coords[1])/2;
@@ -109,7 +118,8 @@ public class GreyNode extends Node {
 				} else {
 					this.quadrantThree.add(cityData);
 				}
-	    	} else if (cityData.getX() >= this.getCoords()[0] && cityData.getY() <= this.getCoords()[1]) {
+	    	} else if ((int)(cityData.getX()) <= lowerRight[0] && (int)cityData.getY() < coords[1]
+					&& (int)cityData.getX() >= coords[0]) {
 				if (this.quadrantFour == WhiteNode.getInstance()) {
 					newXSplit = (int)(lowerRight[0] + coords[0])/2;
 					newYSplit = (int)(lowerRight[1] + coords[1])/2;

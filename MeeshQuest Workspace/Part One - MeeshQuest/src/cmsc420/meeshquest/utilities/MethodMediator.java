@@ -435,5 +435,35 @@ public class MethodMediator {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void UnmapCity(String cityName) {
+		//TODO: Need case for when city has already been mapped
+		if (nameToCity.get(cityName) == null) {
+			MapCityErrorOutput("nameNotInDictionary", cityName);
+		} else if (nameToCity.get(cityName).getX() < 0 || nameToCity.get(cityName).getY() < 0
+				|| nameToCity.get(cityName).getX() > XmlParser.spatialWidth 
+				|| nameToCity.get(cityName).getY() > XmlParser.spatialHeight) {
+			MapCityErrorOutput("cityOutOfBounds", cityName); //TODO: See if works
+		} else {
+			mxQuadtree.insert(nameToCity.get(cityName));
+			
+			Element successElement = XmlParser.results.createElement("success");
+			XmlParser.currElement.appendChild(successElement);
+			
+			Element commandElement = XmlParser.results.createElement("command");
+			commandElement.setAttribute("name", "mapCity");
+			successElement.appendChild(commandElement);
+			
+			Element parametersElement = XmlParser.results.createElement("parameters");
+			successElement.appendChild(parametersElement);
+			
+			Element mappedCityElement = XmlParser.results.createElement("name");
+			mappedCityElement.setAttribute("value", cityName);
+			parametersElement.appendChild(mappedCityElement);
+			
+			Element outputElement = XmlParser.results.createElement("output");
+			successElement.appendChild(outputElement);
+		}
+	}
 	
 }

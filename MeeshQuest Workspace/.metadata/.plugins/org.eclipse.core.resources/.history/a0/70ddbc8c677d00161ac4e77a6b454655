@@ -1,0 +1,32 @@
+package cmsc420.meeshquest.datastructures;
+
+import cmsc420.meeshquest.citymapobjects.City;
+
+public class MXQuadtree {
+
+	private WhiteNode root;     
+
+    /* Constructor */
+    public MXQuadtree()
+    {
+        root = WhiteNode.singleton;
+    }
+    /* Function to check if quadTree is empty */
+    public boolean isEmpty()
+    {
+        return root == null;
+    }
+    
+    /* Function to insert data */
+    public void insert(City data)
+    {
+        root = insert(data, root);
+    }
+    
+    /* Function to insert data */
+    public void insert(City data)
+    {
+        root = insert(data, root);
+    }
+	
+}

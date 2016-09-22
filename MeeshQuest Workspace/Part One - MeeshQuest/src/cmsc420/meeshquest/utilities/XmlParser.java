@@ -112,9 +112,8 @@ public class XmlParser {
 		} 
 		//Execute UnmapCity command
 		else if (command.getNodeName().equals("unmapCity")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			String cityName = command.getAttribute("name");
+			methodMediator.UnmapCity(cityName);
 		} 
 		//Execute printMXQuadtree command
 		else if (command.getNodeName().equals("printMXQuadtree")) {
