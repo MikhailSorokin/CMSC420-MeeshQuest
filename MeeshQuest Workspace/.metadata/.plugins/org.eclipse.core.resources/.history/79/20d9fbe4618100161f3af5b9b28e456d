@@ -1,0 +1,45 @@
+package cmsc420.meeshquest.datastructures;
+
+import cmsc420.meeshquest.citymapobjects.City;
+
+/**
+ * A Black Node holds information about the city.
+ * @author Mikhail Sorokin
+ *
+ */
+public class BlackNode extends Node {
+
+	private int[] coords;
+	private String cityName;
+	
+	public BlackNode(String cityName, int xCoord, int yCoord) {
+		this.setCityName(cityName);
+		coords = new int[2];
+		coords[0] = xCoord;
+		coords[1] = yCoord;
+	}
+	
+	public int[] getCoords() {
+		return coords;
+	}
+
+	//TODO: Finish this and in all of the other Node classes!
+	@Override
+	protected Node add(City cityData) {
+		return null;
+	}
+
+	@Override
+	protected void delete(String cityName) {
+		return;
+	}
+
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+	
+}

@@ -14,14 +14,141 @@ import cmsc420.meeshquest.utilities.XmlParser;
  */
 public class AVLTree implements Comparator<City>
 {
+	public int countInsertions;
     private AVLNode root;     
 
     /* Constructor */
     public AVLTree()
     {
+    	countInsertions = 0;
         root = null;
     }
-    /* Function to check if tree is empty */
+    
+ // A version of remove from http://www.dreamincode.net/forums/topic/214510-working-example-of-avl-tree-remove-method/
+ // but it needs some attention and does not appear to be 100% correct
+
+   /**
+    * Remove from the tree. Nothing is done if x is not found.
+    * @param x the item to remove.
+    */
+   public void remove(City x) {
+       root = remove(x, root);
+   }
+
+   public AVLNode remove(City x, AVLNode t) {
+       if (t==null) {
+           //System.out.println("Sorry but you're mistaken, " + t + " doesn't exist in this tree :)\n");
+           return null;
+       }
+   
+       if (compare(x, t.data) < 0 ) {
+           t.left = remove(x,t.left);
+           int l = t.left != null ? t.left.height : 0;
+   
+           if((t.right != null) && (t.right.height - l >= 2)) {
+               int rightHeight = t.right.right != null ? t.right.right.height : 0;
+               int leftHeight = t.right.left != null ? t.right.left.height : 0;
+   
+               if(rightHeight >= leftHeight)
+                   t = rotateWithLeftChild(t);            
+               else
+                   t = doubleWithRightChild(t);
+           }
+       }
+       else if (compare(x, t.data) > 0) {
+           t.right = remove(x,t.right);
+           int r = t.right != null ? t.right.height : 0;
+           if((t.left != null) && (t.left.height - r >= 2)) {
+               int leftHeight = t.left.left != null ? t.left.left.height : 0;
+               int rightHeight = t.left.right != null ? t.left.right.height : 0;
+               if(leftHeight >= rightHeight)
+                   t = rotateWithRightChild(t);               
+               else
+                   t = doubleWithLeftChild(t);
+           }
+       }
+       /*
+          Here, we have ended up when we are node which shall be removed. 
+          Check if there is a left-hand node, if so pick out the largest element out, and move down to the root.
+        */
+       else if(t.left != null) {
+           t.data = findMax(t.left).data;
+           remove(t.data, t.left);
+        
+           if((t.right != null) && (t.right.height - t.left.height >= 2)) {
+               int rightHeight = t.right.right != null ? t.right.right.height : 0;
+               int leftHeight = t.right.left != null ? t.right.left.height : 0;
+        
+               if(rightHeight >= leftHeight)
+                   t = rotateWithLeftChild(t);            
+               else
+                   t = doubleWithRightChild(t);
+           }
+       }
+        
+       else
+           t = (t.left != null) ? t.left : t.right;
+        
+       if(t != null) {
+           int leftHeight = t.left != null ? t.left.height : 0;
+           int rightHeight = t.right!= null ? t.right.height : 0;
+           t.height = Math.max(leftHeight,rightHeight) + 1;
+       }
+       return t;
+   } //End of remove...
+    
+   /**
+    * Find the smallest item in the tree.
+    * @return smallest item or null if empty.
+    */
+   public City findMin( )
+   {
+       if( isEmpty( ) ) return null;
+
+       return findMin( root ).data;
+   }
+
+   /**
+    * Find the largest item in the tree.
+    * @return the largest item of null if empty.
+    */
+   public City findMax( )
+   {
+       if( isEmpty( ) ) return null;
+       return findMax( root ).data;
+   }
+
+   /**
+    * Internal method to find the smallest item in a subtree.
+    * @param t the node that roots the tree.
+    * @return node containing the smallest item.
+    */
+   private AVLNode findMin(AVLNode t)
+   {
+       if( t == null )
+           return t;
+
+       while( t.left != null )
+           t = t.left;
+       return t;
+   }
+
+   /**
+    * Internal method to find the largest item in a subtree.
+    * @param t the node that roots the tree.
+    * @return node containing the largest item.
+    */
+   private AVLNode findMax( AVLNode t )
+   {
+       if( t == null )
+           return t;
+
+       while( t.right != null )
+           t = t.right;
+       return t;
+   }
+
+	/* Function to check if tree is empty */
     public boolean isEmpty()
     {
         return root == null;
@@ -35,6 +162,7 @@ public class AVLTree implements Comparator<City>
     public void insert(City data)
     {
         root = insert(data, root);
+        countInsertions++;
     }
     
     /* Function to get height of root */
@@ -165,27 +293,7 @@ public class AVLTree implements Comparator<City>
         }
         return found;
     }
-    /* Function for inorder traversal */
-    public void reverseinorder(Element parentElement)
-    {
-        reverseinorder(root, parentElement);
-    }
-    private void reverseinorder(AVLNode r, Element parentElement)
-    {
-        if (r != null)
-        {
-        	reverseinorder(r.right, parentElement);
-        	Element nodeElement = XmlParser.results.createElement("node");
-        	nodeElement.setAttribute("name", r.data.getName());
-        	nodeElement.setAttribute("radius", Integer.toString(r.data.getRadius()));
-        	parentElement.appendChild(nodeElement);
-        	reverseinorder(r.left, nodeElement);
-        } else {
-        	//If Null, create empty children Node
-        	Element emptyChildElement = XmlParser.results.createElement("emptyChild"); 
-        	parentElement.appendChild(emptyChildElement);
-        }
-    }
+
     /* Function for preorder traversal */
     public void preorder(Element parentElement)
     {
@@ -207,19 +315,20 @@ public class AVLTree implements Comparator<City>
         	parentElement.appendChild(emptyChildElement);
         }
     }
-    /* Function for postorder traversal */
-    public void postorder()
-    {
-        postorder(root);
+    
+    public int getDepth() {
+    	return getDepth(root);
     }
-    private void postorder(AVLNode r)
-    {
-        if (r != null)
-        {
-            postorder(r.left);             
-            postorder(r.right);
-            System.out.print(r.data +" ");
-        }
-    }
+    
+    private int getDepth(AVLNode n) {
+        int leftHeight = 0, rightHeight = 0;
+        
+        if (n.right != null)
+          rightHeight = getDepth(n.right);
+        if (n.left != null)
+          leftHeight = getDepth(n.left);
+        
+        return Math.max(rightHeight, leftHeight)+1;
+      }
   
 }

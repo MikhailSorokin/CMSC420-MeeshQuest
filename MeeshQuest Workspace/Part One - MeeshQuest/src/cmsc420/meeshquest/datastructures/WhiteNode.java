@@ -42,8 +42,9 @@ public class WhiteNode extends Node {
 	}
 
 	@Override
-	protected void delete() {
-
+	protected void delete(String name) {
+		// TODO Auto-generated method stub
+		
 	}
-	
+
 }

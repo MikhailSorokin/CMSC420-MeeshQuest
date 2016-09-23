@@ -7,6 +7,6 @@ public abstract class Node {
 	protected int[] data = new int[2];
 	
 	protected abstract Node add(City cityData);
-	protected abstract void delete();
+	protected abstract void delete(String name);
 	
 }

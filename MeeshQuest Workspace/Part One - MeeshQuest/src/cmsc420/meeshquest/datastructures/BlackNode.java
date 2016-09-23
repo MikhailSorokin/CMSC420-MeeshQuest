@@ -30,8 +30,10 @@ public class BlackNode extends Node {
 	}
 
 	@Override
-	protected void delete() {
-
+	protected void delete(String cityName) {
+		if (cityName.equals(this.cityName)) {
+			
+		}
 	}
 
 	public String getCityName() {

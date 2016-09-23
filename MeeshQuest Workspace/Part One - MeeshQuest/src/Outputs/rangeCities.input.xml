@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <error type="nameNotInDictionary">
+    <command name="unmapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="10"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="deleteCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="nameNotInDictionary">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+  </error>
+  <error type="nameNotInDictionary">
+    <command name="unmapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="1000"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="120"/>
+      <y value="400"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy"/>
+      <x value="10"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="180"/>
+      <y value="600"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="College"/>
+      <x value="181"/>
+      <y value="600"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="4000"/>
+      <y value="890"/>
+      <radius value="7"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Munich"/>
+      <x value="400"/>
+      <y value="890"/>
+      <radius value="7"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Venice"/>
+      <x value="700"/>
+      <y value="590"/>
+      <radius value="7"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Cairo"/>
+      <x value="200"/>
+      <y value="390"/>
+      <radius value="7"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Cairo"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="College"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="500"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Paris" radius="2" x="120" y="400"/>
+        <city color="red" name="College" radius="2" x="181" y="600"/>
+        <city color="blue" name="Cairo" radius="7" x="200" y="390"/>
+      </cityList>
+    </output>
+  </success>
+</results>

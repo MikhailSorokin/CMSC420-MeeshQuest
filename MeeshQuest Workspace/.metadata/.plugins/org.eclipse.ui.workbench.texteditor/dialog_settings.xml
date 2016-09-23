@@ -2,16 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="printAvlTree" key="selection"/>
+		<item value="PrintAVLTree" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
 			<item value="printavltree"/>
-			<item value="data"/>
-			<item value="insert"/>
-			<item value="returnVal"/>
+			<item value="remove"/>
+			<item value="printavl"/>
+			<item value="pritnavl"/>
+			<item value="depth"/>
+			<item value="epth"/>
+			<item value="max"/>
+			<item value="findmax"/>
 		</list>
 		<list key="replacehistory">
 			<item value="compareVal"/>

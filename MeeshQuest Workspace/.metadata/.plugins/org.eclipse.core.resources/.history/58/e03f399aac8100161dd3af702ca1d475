@@ -1,0 +1,129 @@
+package cmsc420.meeshquest.datastructures;
+
+import org.w3c.dom.Element;
+
+import cmsc420.meeshquest.citymapobjects.City;
+import cmsc420.meeshquest.utilities.XmlParser;
+
+public class MXQuadtree {
+
+	private GreyNode root;     
+
+	public MXQuadtree() {
+		root = null;
+	}
+	
+    /* Function to check if quadTree is empty */
+    public boolean isEmpty()
+    {
+        return root == null;
+    }
+    
+    /* Make the tree logically empty */
+    public void makeEmpty()
+    {
+        root = null;
+    }
+	
+    public void insert(City cityData) {
+    	if (root == null) {
+    		root = new GreyNode(XmlParser.spatialWidth/2, XmlParser.spatialHeight/2);
+    		root.data[0] = root.getCoords()[0];
+    		root.data[1] = root.getCoords()[1];
+    		root.upperLeft[0] = 0;
+    		root.upperLeft[1] = XmlParser.spatialHeight;
+    		
+    		root.upperRight[0] = XmlParser.spatialWidth;
+    		root.upperRight[1] = XmlParser.spatialHeight;
+    		
+    		root.lowerLeft[0] = 0;
+    		root.lowerLeft[1] = 0;
+    		
+    		root.lowerRight[0] = XmlParser.spatialWidth;
+    		root.lowerRight[1] = 0;
+    	}
+    	root = (GreyNode)root.add(cityData);
+    }
+    
+    /* Function for inorder traversal */
+    public void inorder(Element parentElement)
+    {
+        inorder(root, parentElement);
+    }
+    private void inorder(Node node, Element parentElement)
+    {
+        if (node.getClass().getSimpleName().equals("GreyNode"))
+        {
+        	Element grayNode = XmlParser.results.createElement("gray");
+        	grayNode.setAttribute("x", Integer.toString((int)node.data[0]));
+        	grayNode.setAttribute("y", Integer.toString((int)node.data[1]));
+        	parentElement.appendChild(grayNode);
+        	
+        	GreyNode greyNode = (GreyNode)node;
+            inorder(greyNode.quadrantOne, grayNode);
+            inorder(greyNode.quadrantTwo, grayNode);
+            inorder(greyNode.quadrantThree, grayNode);
+            inorder(greyNode.quadrantFour, grayNode);
+        } else if (node.getClass().getSimpleName().equals("BlackNode")) { 
+        	Element blackNode = XmlParser.results.createElement("black");
+        	blackNode.setAttribute("name", ((BlackNode) node).getCityName());
+        	blackNode.setAttribute("x", Integer.toString((int)node.data[0]));
+        	blackNode.setAttribute("y", Integer.toString((int)node.data[1]));
+        	parentElement.appendChild(blackNode);
+        } else if (node.getClass().getSimpleName().equals("WhiteNode")) {
+        	//If Null, create empty children Node
+        	Element emptyChildElement = XmlParser.results.createElement("white"); 
+        	parentElement.appendChild(emptyChildElement);
+        }
+    }
+    
+	public City findClosestPoint(String cityName) {
+		 return findClosestPoint(cityName, root);
+	}
+	
+	private int closestCity;
+	
+	private City findClosestPoint(String cityName, Node node) {
+        if (node.getClass().getSimpleName().equals("GreyNode"))
+        {
+        	GreyNode greyNode = (GreyNode)node;
+        	findClosestPoint(cityName, greyNode.quadrantOne);
+        	findClosestPoint(cityName, greyNode.quadrantTwo);
+        	findClosestPoint(cityName, greyNode.quadrantThree);
+        	findClosestPoint(cityName, greyNode.quadrantFour);
+        } else if (node.getClass().getSimpleName().equals("BlackNode")) { 
+        	Element blackNode = XmlParser.results.createElement("black");
+        	blackNode.setAttribute("name", ((BlackNode) node).getCityName());
+        	blackNode.setAttribute("x", Integer.toString((int)node.data[0]));
+        	blackNode.setAttribute("y", Integer.toString((int)node.data[1]));
+        	parentElement.appendChild(blackNode);
+        } else if (node.getClass().getSimpleName().equals("WhiteNode")) {
+        	//If Null, create empty children Node
+        	Element emptyChildElement = XmlParser.results.createElement("white"); 
+        	parentElement.appendChild(emptyChildElement);
+        }
+	}
+
+	public boolean contains(String cityName) {
+		 return contains(cityName, root); //TODO: See if this works
+	}
+	
+	private boolean contains(String cityName, Node node) {
+		if (node != null) {
+			if (node.getClass().getSimpleName().equals("GreyNode"))
+	        {
+	        	GreyNode greyNode = (GreyNode)node;
+	        	contains(cityName, greyNode.quadrantOne);
+	        	contains(cityName, greyNode.quadrantTwo);
+	        	contains(cityName, greyNode.quadrantThree);
+	        	contains(cityName, greyNode.quadrantFour);
+	        } else if (node.getClass().getSimpleName().equals("BlackNode")) { 
+	        	if (((BlackNode) node).getCityName().equals(cityName)) {
+	        		return true;
+	        	}
+	        }
+		}
+		return false;
+	}
+    
+}

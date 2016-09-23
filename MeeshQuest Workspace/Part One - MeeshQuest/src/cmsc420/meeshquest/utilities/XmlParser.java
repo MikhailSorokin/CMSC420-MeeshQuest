@@ -121,19 +121,22 @@ public class XmlParser {
 		} 
 		//Execute saveMap command
 		else if (command.getNodeName().equals("saveMap")) {
-			methodMediator.SaveMap();
+			String mapName = command.getAttribute("name");
+			methodMediator.SaveMap(mapName);
 		} 
 		//Execute rangeCities command
 		else if (command.getNodeName().equals("rangeCities")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			int cityXCoord = Integer.parseInt(command.getAttribute("x"));
+			int cityYCoord = Integer.parseInt(command.getAttribute("y"));
+			int radius = Integer.parseInt(command.getAttribute("radius"));
+			String saveMap = command.getAttribute("saveMap");
+			methodMediator.RangeCities(cityXCoord, cityYCoord, radius, saveMap);
 		} 
 		//Execute nearestCity command
 		else if (command.getNodeName().equals("nearestCity")) {
-			Element elt = results.createElement("success");
-			elt.setAttribute("test", "5");
-			results.appendChild(elt);
+			int cityXCoord = Integer.parseInt(command.getAttribute("x"));
+			int cityYCoord = Integer.parseInt(command.getAttribute("y"));
+			methodMediator.NearestCity(cityXCoord, cityYCoord);
 		} 
 		//Execute printAvlTree command
 		else if (command.getNodeName().equals("printAvlTree")) {

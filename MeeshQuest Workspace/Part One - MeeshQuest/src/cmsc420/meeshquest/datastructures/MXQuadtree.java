@@ -1,5 +1,7 @@
 package cmsc420.meeshquest.datastructures;
 
+import java.util.ArrayList;
+
 import org.w3c.dom.Element;
 
 import cmsc420.meeshquest.citymapobjects.City;
@@ -76,5 +78,79 @@ public class MXQuadtree {
         	parentElement.appendChild(emptyChildElement);
         }
     }
+    
+	public String findClosestPoint(int givenX, int givenY) {
+		currDistance = Double.MAX_VALUE;
+		closestCity = "";
+		return findClosestPoint(givenX, givenY, root);
+	}
+	
+	private double currDistance;
+	private String closestCity;
+	
+	private String findClosestPoint(int givenX, int givenY, Node node) {
+        if (node.getClass().getSimpleName().equals("GreyNode"))
+        {
+        	GreyNode greyNode = (GreyNode)node;
+        	findClosestPoint(givenX, givenY, greyNode.quadrantOne);
+        	findClosestPoint(givenX, givenY, greyNode.quadrantTwo);
+        	findClosestPoint(givenX, givenY, greyNode.quadrantThree);
+        	findClosestPoint(givenX, givenY, greyNode.quadrantFour);
+        } else if (node.getClass().getSimpleName().equals("BlackNode")) { 
+        	double distance = Math.sqrt(Math.pow(node.data[0] - givenX,2) + Math.pow(node.data[1] - givenY,2));
+        	if (distance < currDistance) {
+        		closestCity = ((BlackNode) node).getCityName();
+        		currDistance = distance;
+        	}
+        }
+        
+        return closestCity;
+	}
+
+	public boolean contains(String cityName) {
+		 return contains(cityName, root); //TODO: See if this works
+	}
+	
+	private boolean contains(String cityName, Node node) {
+		if (node != null) {
+			if (node.getClass().getSimpleName().equals("GreyNode"))
+	        {
+	        	GreyNode greyNode = (GreyNode)node;
+	        	contains(cityName, greyNode.quadrantOne);
+	        	contains(cityName, greyNode.quadrantTwo);
+	        	contains(cityName, greyNode.quadrantThree);
+	        	contains(cityName, greyNode.quadrantFour);
+	        } else if (node.getClass().getSimpleName().equals("BlackNode")) { 
+	        	if (((BlackNode) node).getCityName().equals(cityName)) {
+	        		return true;
+	        	}
+	        }
+		}
+		return false;
+	}
+
+	public ArrayList<String> findRangeValues(int cityXCoord, int cityYCoord, int radius) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	private String findRangeValues(int givenX, int givenY, Node node) {
+        if (node.getClass().getSimpleName().equals("GreyNode"))
+        {
+        	GreyNode greyNode = (GreyNode)node;
+        	findClosestPoint(givenX, givenY, greyNode.quadrantOne);
+        	findClosestPoint(givenX, givenY, greyNode.quadrantTwo);
+        	findClosestPoint(givenX, givenY, greyNode.quadrantThree);
+        	findClosestPoint(givenX, givenY, greyNode.quadrantFour);
+        } else if (node.getClass().getSimpleName().equals("BlackNode")) { 
+        	double distance = Math.sqrt(Math.pow(node.data[0] - givenX,2) + Math.pow(node.data[1] - givenY,2));
+        	if (distance < currDistance) {
+        		closestCity = ((BlackNode) node).getCityName();
+        		currDistance = distance;
+        	}
+        }
+        
+        return closestCity;
+	}
     
 }

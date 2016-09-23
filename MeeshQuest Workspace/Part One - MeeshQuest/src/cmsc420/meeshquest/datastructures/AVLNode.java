@@ -8,9 +8,9 @@ import cmsc420.meeshquest.citymapobjects.City;
  */
  
 public class AVLNode {
-    AVLNode left, right;
-    City data;
-    int height;
+    protected AVLNode left, right;
+    protected City data;
+    protected int height;
 
     /* Constructor */
     public AVLNode()
