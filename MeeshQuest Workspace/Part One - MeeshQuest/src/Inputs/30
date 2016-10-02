@@ -1,9 +1,0 @@
-<commands
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="part1in.xsd"
-	spatialWidth="25"
-	spatialHeight="25"
-	>
- <createCity name="Harambe" x="2" y="1" radius="1" color="red"></createCity>
- <listCities sortBy="name"/>
-</commands>

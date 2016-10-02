@@ -1,9 +1,0 @@
-<commands
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="part1in.xsd"
- 	spatialWidth="128"
- 	spatialHeight="128">
- <createCity name="A" y="64" x="64" radius="1" color="black"/>
- <mapCity name="A" />
- <printMXQuadtree />
-</commands>
