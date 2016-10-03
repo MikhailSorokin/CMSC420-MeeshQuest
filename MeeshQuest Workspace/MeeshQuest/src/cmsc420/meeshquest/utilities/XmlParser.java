@@ -28,9 +28,10 @@ public class XmlParser {
 	
 	public static Document results = null;
 	public static Element currElement = null;
-	public boolean aboutToSubmit = true; //use for submit server stuff!
+	public boolean aboutToSubmit = false; //use for submit server stuff!
 	public static int spatialWidth;
 	public static int spatialHeight;
+	public static int maxImbalance;
 	
 	private String path;
 	private MethodMediator methodMediator = new MethodMediator(); //TODO: Maybe make this class static?
@@ -55,6 +56,7 @@ public class XmlParser {
 			Element commandNode = doc.getDocumentElement();
 			spatialWidth = Integer.parseInt(commandNode.getAttribute("spatialWidth"));
 			spatialHeight = Integer.parseInt(commandNode.getAttribute("spatialHeight"));
+			maxImbalance = Integer.parseInt(commandNode.getAttribute("g"));
 			
 			Element resultsTag = results.createElement("results");
 			results.appendChild(resultsTag);
@@ -84,12 +86,13 @@ public class XmlParser {
 	private void ExecuteCommand(Element command) {
 		//Execute CreateCity command
 		if (command.getNodeName().equals("createCity")) {
+			String id = command.getAttribute("id");
 			String cityName = command.getAttribute("name");
 			int cityXCoord = Integer.parseInt(command.getAttribute("x"));
 			int cityYCoord = Integer.parseInt(command.getAttribute("y"));
 			int radius = Integer.parseInt(command.getAttribute("radius"));
 			String color = command.getAttribute("color");
-			methodMediator.CreateCity(cityName, cityXCoord, cityYCoord, radius, color);
+			methodMediator.CreateCity(id, cityName, cityXCoord, cityYCoord, radius, color);
 		} 
 		//Execute DeleteCity command
 		else if (command.getNodeName().equals("deleteCity")) {
@@ -103,7 +106,8 @@ public class XmlParser {
 		//Execute ListCities command
 		else if (command.getNodeName().equals("listCities")) {
 			String sortMethod = command.getAttribute("sortBy");
-			methodMediator.ListCities(sortMethod);
+			String id = command.getAttribute("id");
+			methodMediator.ListCities(id, sortMethod);
 		} 
 		//Execute MapCity command
 		else if (command.getNodeName().equals("mapCity")) {
@@ -145,6 +149,14 @@ public class XmlParser {
 		else if (command.getNodeName().equals("printAvlTree")) {
 			methodMediator.PrintAVLTree();
 		} 
+		//Execute printAvlTree command
+		else if (command.getNodeName().equals("printPMQuadtree")) {
+			methodMediator.PrintPMQuadtree();
+		} else if (command.getNodeName().equals("mapRoad")) {
+			String startVertex = command.getAttribute("start");
+			String endVertex = command.getAttribute("end");
+			methodMediator.MapRoad(startVertex, endVertex);
+		}
 		//Write a failure command
 		else {
 			Element undefinedErrorElem = results.createElement("fatalError");

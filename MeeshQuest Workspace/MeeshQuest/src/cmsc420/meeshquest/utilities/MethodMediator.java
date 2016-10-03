@@ -11,8 +11,9 @@ import java.util.TreeMap;
 import org.w3c.dom.Element;
 
 import cmsc420.meeshquest.citymapobjects.City;
-import cmsc420.meeshquest.datastructures.AvlTree;
+import cmsc420.meeshquest.datastructures.AvlGTree;
 import cmsc420.meeshquest.datastructures.MXQuadtree;
+import cmsc420.meeshquest.datastructures.PMQuadtree;
 
 public class MethodMediator {
 
@@ -53,8 +54,16 @@ public class MethodMediator {
 
 			});
 
-	private AvlTree avlTree = new AvlTree();
+	protected final AvlGTree<City, Integer> avlTree = new AvlGTree<City, Integer>(new Comparator<City>() {
+
+		@Override
+		public int compare(City o1, City o2) {
+				return o2.getName().compareTo(o1.getName());
+			}
+	}, 1);
+	
 	private MXQuadtree mxQuadtree = new MXQuadtree();
+	private PMQuadtree pmQuadtree = new PMQuadtree();
 
 	private void CreateCityErrorOutput(String errorType, String name, int x, int y, int radius, String color) {
 		Element errorElement = XmlParser.results.createElement("error");
@@ -98,13 +107,14 @@ public class MethodMediator {
 	 * @param radius
 	 * @param color
 	 */
-	public void CreateCity(String name, int x, int y, int radius, String color) {
+	public void CreateCity(String id, String name, int x, int y, int radius, String color) {
 		City city = new City(name, x, y, radius, color);
 		
 		if (!coordinatesToCity.containsKey(new Point2D.Float(x, y))) {
 			if (!nameToCity.containsKey(name)) {
 				coordinatesToCity.put(city.getCoordinates(), city);
 				nameToCity.put(name, city);
+				avlTree.put(city, city.getRadius());
 			} else {
 				CreateCityErrorOutput("duplicateCityName", name, x, y, radius, color);
 				return;
@@ -119,6 +129,9 @@ public class MethodMediator {
 
 		Element commandElement = XmlParser.results.createElement("command");
 		commandElement.setAttribute("name", "createCity");
+		if (!id.equals("")) {
+			commandElement.setAttribute("id", id);
+		}
 		successElement.appendChild(commandElement);
 
 		Element parametersElement = XmlParser.results.createElement("parameters");
@@ -172,7 +185,7 @@ public class MethodMediator {
 	 * 
 	 * @param sortMethod
 	 */
-	public void ListCities(String sortMethod) {
+	public void ListCities(String id, String sortMethod) {
 
 		if (nameToCity.size() >= 1) {
 
@@ -181,6 +194,9 @@ public class MethodMediator {
 
 			Element commandElement = XmlParser.results.createElement("command");
 			commandElement.setAttribute("name", "listCities");
+			if (!id.equals("")) {
+				commandElement.setAttribute("id", id);
+			}
 			successElement.appendChild(commandElement);
 
 			Element parametersElement = XmlParser.results.createElement("parameters");
@@ -336,11 +352,10 @@ public class MethodMediator {
 
 			Element avlTreeElement = XmlParser.results.createElement("AvlGTree");
 			outputElement.appendChild(avlTreeElement);
-			avlTreeElement.setAttribute("cardinality", Integer.toString(avlTree.nodeCount));
+			avlTreeElement.setAttribute("cardinality", Integer.toString(avlTree.size()));
 			avlTreeElement.setAttribute("height", Integer.toString(avlTree.height()));
-			// TODO: For Part One, maxImbalance is ALWAYS 1. For later parts,
-			// this won't be the case!
-			avlTreeElement.setAttribute("maxImbalance", "1");
+
+			avlTreeElement.setAttribute("maxImbalance", Integer.toString(XmlParser.maxImbalance));
 
 			avlTree.preorder(avlTreeElement); // DONE: Access the XmlParser
 												// results in that area
@@ -357,7 +372,7 @@ public class MethodMediator {
 	public void ClearAll() {
 		nameToCity.clear();
 		coordinatesToCity.clear();
-		avlTree.makeEmpty();
+		avlTree.clear();
 		mxQuadtree.makeEmpty();
 
 		Element successElement = XmlParser.results.createElement("success");
@@ -396,15 +411,15 @@ public class MethodMediator {
 		if (nameToCity.get(cityName) == null) {
 			MapCityErrorOutput("nameNotInDictionary", cityName);
 		} else if (mxQuadtree.contains(cityName)) {
-			avlTree.insert(nameToCity.get(cityName));
-			 MapCityErrorOutput("cityAlreadyMapped", cityName); 
+			avlTree.put(nameToCity.get(cityName), nameToCity.get(cityName).getRadius());
+			MapCityErrorOutput("cityAlreadyMapped", cityName); 
 		} else if (nameToCity.get(cityName).getX() < 0 || nameToCity.get(cityName).getY() < 0
 				|| nameToCity.get(cityName).getX() >= XmlParser.spatialWidth
 				|| nameToCity.get(cityName).getY() >= XmlParser.spatialHeight) {
 			MapCityErrorOutput("cityOutOfBounds", cityName); // TODO: See if
 																// works
 		} else {
-			avlTree.insert(nameToCity.get(cityName));
+			avlTree.put(nameToCity.get(cityName), nameToCity.get(cityName).getRadius());
 			mxQuadtree.insert(nameToCity.get(cityName));
 
 			Element successElement = XmlParser.results.createElement("success");
@@ -532,7 +547,7 @@ public class MethodMediator {
 	
 	private void NearestCityError(int x, int y) {
 		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "mapIsEmpty");
+		errorElement.setAttribute("type", "cityNotFound");
 		XmlParser.currElement.appendChild(errorElement);
 
 		Element commandElement = XmlParser.results.createElement("command");
@@ -656,7 +671,6 @@ public class MethodMediator {
 		}
 	}
 
-	// TODO: FIX THIS UP FURTHEr
 	private void NoCitiesExistError(int cityXCoord, int cityYCoord, int radius, String mapName) {
 		Element errorElement = XmlParser.results.createElement("error");
 		errorElement.setAttribute("type", "noCitiesExistInRange");
@@ -686,6 +700,119 @@ public class MethodMediator {
 			saveMapElem.setAttribute("value", mapName);
 			parametersElement.appendChild(saveMapElem);
 		}
+	}
+
+	public void PrintPMQuadtree() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void MapRoad(String startCityName, String endCityName) {
+		// TODO: Need case for when city has already been mapped
+		if (nameToCity.get(startCityName) == null) {
+			DoesntExistError("startPointDoesNotExist", "", startCityName);
+		} else if (nameToCity.get(endCityName) == null) {
+			DoesntExistError("endPointDoesNotExist", "", endCityName);
+		} else if (startCityName.equals(endCityName)) {
+			EqualityError("startEqualsEnd", "", startCityName, endCityName);
+		} else if (nameToCity.get(startCityName).getX() < 0 || nameToCity.get(endCityName).getY() < 0
+				|| nameToCity.get(startCityName).getX() >= XmlParser.spatialWidth
+				|| nameToCity.get(startCityName).getY() >= XmlParser.spatialHeight
+				|| nameToCity.get(endCityName).getX() >= XmlParser.spatialWidth
+				|| nameToCity.get(endCityName).getY() >= XmlParser.spatialHeight) {
+			OutOfBoundsError("roadOutOfBounds", "", startCityName, endCityName);
+		} else {
+			Element successElement = XmlParser.results.createElement("success");
+			XmlParser.currElement.appendChild(successElement);
+
+			Element commandElement = XmlParser.results.createElement("command");
+			commandElement.setAttribute("name", "mapRoad");
+			successElement.appendChild(commandElement);
+
+			Element parametersElement = XmlParser.results.createElement("parameters");
+			successElement.appendChild(parametersElement);
+
+			Element startElement = XmlParser.results.createElement("start");
+			startElement.setAttribute("value", startCityName);
+			parametersElement.appendChild(startElement);
+			
+			Element endElement = XmlParser.results.createElement("end");
+			endElement.setAttribute("value", endCityName);
+			parametersElement.appendChild(endElement);
+
+			Element outputElement = XmlParser.results.createElement("output");
+			successElement.appendChild(outputElement);
+
+			Element roadcreatedElement = XmlParser.results.createElement("roadCreated");
+			roadcreatedElement.setAttribute("start", startCityName);
+			roadcreatedElement.setAttribute("end", endCityName);
+			outputElement.appendChild(roadcreatedElement);
+		}
+	}
+
+	private void EqualityError(String errorName, String id, String start, String end) {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", errorName);
+		XmlParser.currElement.appendChild(errorElement);
+
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "mapRoad");
+		//commandElement.setAttribute("id", id);
+		errorElement.appendChild(commandElement);
+
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+
+		Element startElement = XmlParser.results.createElement("start");
+		startElement.setAttribute("value", start);
+		
+		Element endElement = XmlParser.results.createElement("end");
+		endElement.setAttribute("value", end);
+		
+		parametersElement.appendChild(startElement);
+		parametersElement.appendChild(endElement);
+	}
+
+	private void DoesntExistError(String errorName, String id, String start) {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", errorName);
+		XmlParser.currElement.appendChild(errorElement);
+
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "mapRoad");
+		//commandElement.setAttribute("id", id);
+		errorElement.appendChild(commandElement);
+
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+
+		Element startElement = XmlParser.results.createElement("start");
+		startElement.setAttribute("value", start);
+		
+		parametersElement.appendChild(startElement);
+	}
+	
+	private void OutOfBoundsError(String errorName, String id, String start, String end) {
+		Element errorElement = XmlParser.results.createElement("error");
+		errorElement.setAttribute("type", errorName);
+		XmlParser.currElement.appendChild(errorElement);
+
+		Element commandElement = XmlParser.results.createElement("command");
+		commandElement.setAttribute("name", "mapRoad");
+		//commandElement.setAttribute("id", id);
+		errorElement.appendChild(commandElement);
+
+		Element parametersElement = XmlParser.results.createElement("parameters");
+		errorElement.appendChild(parametersElement);
+
+		Element startElement = XmlParser.results.createElement("start");
+		startElement.setAttribute("value", start);
+		
+		Element endElement = XmlParser.results.createElement("end");
+		endElement.setAttribute("value", end);
+		
+		parametersElement.appendChild(startElement);
+		parametersElement.appendChild(endElement);
 	}
 
 }
