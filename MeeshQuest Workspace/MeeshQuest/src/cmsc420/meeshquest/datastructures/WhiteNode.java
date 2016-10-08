@@ -47,4 +47,16 @@ public class WhiteNode extends Node {
 		
 	}
 
+	@Override
+	protected Node addPM(City cityData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected Node addPM(City startCityData, City endCityData) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

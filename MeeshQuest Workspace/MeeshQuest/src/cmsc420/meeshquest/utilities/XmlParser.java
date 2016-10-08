@@ -156,6 +156,9 @@ public class XmlParser {
 			String startVertex = command.getAttribute("start");
 			String endVertex = command.getAttribute("end");
 			methodMediator.MapRoad(startVertex, endVertex);
+		} else if (command.getNodeName().equals("mapCity")) {
+			String nameVertex = command.getAttribute("name");
+			methodMediator.MapCity(nameVertex);
 		}
 		//Write a failure command
 		else {

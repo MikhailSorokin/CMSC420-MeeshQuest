@@ -374,7 +374,8 @@ public class MethodMediator {
 		coordinatesToCity.clear();
 		avlTree.clear();
 		mxQuadtree.makeEmpty();
-
+		pmQuadtree.makeEmpty();
+		
 		Element successElement = XmlParser.results.createElement("success");
 		XmlParser.currElement.appendChild(successElement);
 
@@ -420,7 +421,7 @@ public class MethodMediator {
 																// works
 		} else {
 			avlTree.put(nameToCity.get(cityName), nameToCity.get(cityName).getRadius());
-			mxQuadtree.insert(nameToCity.get(cityName));
+			pmQuadtree.insert(nameToCity.get(cityName));
 
 			Element successElement = XmlParser.results.createElement("success");
 			XmlParser.currElement.appendChild(successElement);
@@ -590,8 +591,8 @@ public class MethodMediator {
 			Element outputElement = XmlParser.results.createElement("output");
 			successElement.appendChild(outputElement);
 
-			String cityName = mxQuadtree.findClosestPoint(cityXCoord, cityYCoord);
-
+			String cityName = pmQuadtree.findClosestPoint(cityXCoord, cityYCoord);
+			
 			Element cityUnmappedElement = XmlParser.results.createElement("city");
 			cityUnmappedElement.setAttribute("name", cityName);
 			cityUnmappedElement.setAttribute("x", Integer.toString((int) nameToCity.get(cityName).getX()));
@@ -703,6 +704,34 @@ public class MethodMediator {
 	}
 
 	public void PrintPMQuadtree() {
+		if (!pmQuadtree.isEmpty()) {
+
+			Element successElement = XmlParser.results.createElement("success");
+			XmlParser.currElement.appendChild(successElement);
+
+			Element commandElement = XmlParser.results.createElement("command");
+			commandElement.setAttribute("name", "printPMQuadtree");
+			successElement.appendChild(commandElement);
+
+			Element parametersElement = XmlParser.results.createElement("parameters");
+			successElement.appendChild(parametersElement);
+
+			Element outputElement = XmlParser.results.createElement("output");
+			successElement.appendChild(outputElement);
+
+			Element quadTreeElement = XmlParser.results.createElement("quadtree");
+			quadTreeElement.setAttribute("order", "3");
+			outputElement.appendChild(quadTreeElement);
+
+			pmQuadtree.inorder(quadTreeElement); // DONE: Access the XmlParser
+													// results in that area
+		} else {
+			EmptyPMTreeError(); // TODO: Make a method to handle empty tree
+								// error.
+		}
+	}
+
+	private void EmptyPMTreeError() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -743,6 +772,8 @@ public class MethodMediator {
 			Element outputElement = XmlParser.results.createElement("output");
 			successElement.appendChild(outputElement);
 
+			pmQuadtree.insertPM(nameToCity.get(startCityName), nameToCity.get(endCityName));
+			
 			Element roadcreatedElement = XmlParser.results.createElement("roadCreated");
 			roadcreatedElement.setAttribute("start", startCityName);
 			roadcreatedElement.setAttribute("end", endCityName);

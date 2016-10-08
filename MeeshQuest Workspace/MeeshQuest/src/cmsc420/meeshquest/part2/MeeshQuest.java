@@ -15,7 +15,7 @@ import cmsc420.meeshquest.utilities.XmlParser;
  */
 public class MeeshQuest {
 
-	public static String fileName = "src/Inputs/part2/part2.public.avlg.input.xml";
+	public static String fileName = "src/Inputs/part2/part2.public.shorterpmqt.input.xml";
 	public static boolean shouldDrawMap = false; //specify if you want GUI to be used
 	
 	public static void main(String[] args) {

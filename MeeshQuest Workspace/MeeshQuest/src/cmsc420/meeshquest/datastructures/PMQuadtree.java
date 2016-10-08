@@ -1,5 +1,6 @@
 package cmsc420.meeshquest.datastructures;
 
+import java.awt.geom.Line2D;
 import java.util.ArrayList;
 
 import org.w3c.dom.Element;
@@ -47,6 +48,46 @@ public class PMQuadtree {
     		root.lowerRight[1] = 0;
     	}
     	root = (GreyNode)root.add(cityData);
+    }
+    
+    public void insertPM(City cityData) {
+    	if (root == null) {
+    		root = new GreyNode(XmlParser.spatialWidth/2, XmlParser.spatialHeight/2, null);
+    		root.data[0] = root.getCoords()[0];
+    		root.data[1] = root.getCoords()[1];
+    		root.upperLeft[0] = 0;
+    		root.upperLeft[1] = XmlParser.spatialHeight;
+    		
+    		root.upperRight[0] = XmlParser.spatialWidth;
+    		root.upperRight[1] = XmlParser.spatialHeight;
+    		
+    		root.lowerLeft[0] = 0;
+    		root.lowerLeft[1] = 0;
+    		
+    		root.lowerRight[0] = XmlParser.spatialWidth;
+    		root.lowerRight[1] = 0;
+    	}
+    	root = (GreyNode)root.addPM(cityData);
+    }
+    
+    public void insertPM(City startCityData, City endCityData) {
+    	if (root == null) {
+    		root = new GreyNode(XmlParser.spatialWidth/2, XmlParser.spatialHeight/2, null);
+    		root.data[0] = root.getCoords()[0];
+    		root.data[1] = root.getCoords()[1];
+    		root.upperLeft[0] = 0;
+    		root.upperLeft[1] = XmlParser.spatialHeight;
+    		
+    		root.upperRight[0] = XmlParser.spatialWidth;
+    		root.upperRight[1] = XmlParser.spatialHeight;
+    		
+    		root.lowerLeft[0] = 0;
+    		root.lowerLeft[1] = 0;
+    		
+    		root.lowerRight[0] = XmlParser.spatialWidth;
+    		root.lowerRight[1] = 0;
+    	}
+    	root = (GreyNode)root.addPM(startCityData, endCityData);
     }
     
     public void delete(String cityName) {
