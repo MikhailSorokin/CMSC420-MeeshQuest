@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="PrintPMQuadtree" key="selection"/>
+		<item value="addRoadCreatedNode" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="printpmquadtree"/>
+			<item value="addRoadCreatedNode"/>
+			<item value="tostring"/>
+			<item value="hash"/>
+			<item value="equals"/>
+			<item value="submap"/>
+			<item value="cardinality"/>
+			<item value="setrange"/>
 			<item value="maproad"/>
-			<item value="insert"/>
-			<item value="insertpm"/>
-			<item value="pm"/>
-			<item value="add"/>
-			<item value="addpm"/>
-			<item value="printmxquadtree"/>
 		</list>
 		<list key="replacehistory">
 			<item value="compareVal"/>
@@ -24,8 +24,8 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="523" key="DIALOG_X_ORIGIN"/>
-		<item value="269" key="DIALOG_Y_ORIGIN"/>
+		<item value="384" key="DIALOG_HEIGHT"/>
+		<item value="762" key="DIALOG_X_ORIGIN"/>
+		<item value="272" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,0 +1,21 @@
+	public void test_public.avlg() throws Exception {
+		runXmlTest("part2.public.avlg");
+	}
+	public void test_public.listCities() throws Exception {
+		runXmlTest("part2.public.listCities");
+	}
+	public void test_public.nearestCity() throws Exception {
+		runXmlTest("part2.public.nearestCity");
+	}
+	public void test_public.pmquadtree() throws Exception {
+		runXmlTest("part2.public.pmquadtree");
+	}
+	public void test_public.range() throws Exception {
+		runXmlTest("part2.public.range");
+	}
+	public void test_public.shorterpmqt() throws Exception {
+		runXmlTest("part2.public.shorterpmqt");
+	}
+	public void test_public.shortestPath() throws Exception {
+		runXmlTest("part2.public.shortestPath");
+	}

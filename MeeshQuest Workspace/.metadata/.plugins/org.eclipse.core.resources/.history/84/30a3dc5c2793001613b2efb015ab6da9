@@ -1,0 +1,18 @@
+package cmsc420.meeshquest.citymapobjects;
+
+import cmsc420.geom.Geometry2D;
+
+public class Line implements Geometry2D {
+
+	protected startCity, endCity;
+	
+	public Line(City startCity, City endCity) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int getType() {
+		return Geometry2D.SEGMENT;
+	}
+
+}

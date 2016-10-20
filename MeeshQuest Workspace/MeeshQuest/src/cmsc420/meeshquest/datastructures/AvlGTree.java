@@ -1,8 +1,7 @@
 package cmsc420.meeshquest.datastructures;
 
-import java.util.Collection;
+import java.util.AbstractMap;
 import java.util.Comparator;
-import java.util.Map;
 import java.util.Set;
 import java.util.SortedMap;
 
@@ -10,12 +9,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
 import cmsc420.meeshquest.citymapobjects.City;
-import cmsc420.meeshquest.utilities.XmlParser;
 
 /**
  * E. Wang's AVL-g tree implementation.
  */
-public class AvlGTree<K, V> {
+public class AvlGTree<K, V> extends AbstractMap<K,V> implements SortedMap<K,V> {
     
 	public final int g;
    
@@ -24,21 +22,21 @@ public class AvlGTree<K, V> {
     private long size = 0;
 
     public AvlGTree() {
-        this.g = XmlParser.maxImbalance;
+        this.g = 1;
     }
 
     public AvlGTree(final Comparator<? super K> comp) {
         this.comparator = comp;
-        this.g = XmlParser.maxImbalance;
+        this.g = 2;
     }
 
     public AvlGTree(final int g) {
-        this.g = XmlParser.maxImbalance;
+        this.g = g;
     }
 
     public AvlGTree(final Comparator<? super K> comp, final int g) {
         this.comparator = comp;
-        this.g = XmlParser.maxImbalance;
+        this.g = g;
     }
 
     public Comparator<? super K> comparator() {
@@ -202,11 +200,16 @@ public class AvlGTree<K, V> {
             return comparator == null ? ((Comparable<? super K>) k1)
                     .compareTo((K) k2) : comparator.compare((K) k1, (K) k2);
         }
+        
+        /* Mikhail - Make this to make the coordinate for a point easier.*/
+        private String coordinateToString(City cityKey) {
+        	return "(" + (int)cityKey.getPoint().getX() + "," + (int)cityKey.getPoint().getY() + ")";
+        }
 
         public Node buildXmlNode(final Node parent) {
             final Element e = parent.getOwnerDocument().createElement("node");
-            e.setAttribute("name", key.toString());
-            e.setAttribute("radius", value.toString());
+            e.setAttribute("key", key.toString());
+            e.setAttribute("value", coordinateToString((City)key));
 
             if (left != null) {
                 e.appendChild(left.buildXmlNode(e));
@@ -357,27 +360,40 @@ public class AvlGTree<K, V> {
                 .createElement("emptyChild") : root.buildXmlNode(rootNode));
         return rootNode;
     }
-    
-    /* Function for preorder traversal */
-    public void preorder(Element parentElement)
-    {
-        preorder(root, parentElement);
-    }
-    private void preorder(AvlNode<K, V> r, Element parentElement)
-    {
-        if (r != null)
-        {
-        	Element nodeElement = XmlParser.results.createElement("node");
-        	nodeElement.setAttribute("key", (String) ((City) r.getKey()).getName());
-        	nodeElement.setAttribute("value", "(" + (int)((City) r.getKey()).getX() + "," + (int)((City) r.getKey()).getY() + ")");
-        	parentElement.appendChild(nodeElement);
-            preorder(r.left, nodeElement);             
-            preorder(r.right, nodeElement);
-        } else {
-        	//If Null, create empty children Node
-        	Element emptyChildElement = XmlParser.results.createElement("emptyChild"); 
-        	parentElement.appendChild(emptyChildElement);
-        }
-    }
-	
+
+	@Override
+	public K firstKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SortedMap<K, V> headMap(K arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public K lastKey() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SortedMap<K, V> subMap(K arg0, K arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SortedMap<K, V> tailMap(K arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<java.util.Map.Entry<K, V>> entrySet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

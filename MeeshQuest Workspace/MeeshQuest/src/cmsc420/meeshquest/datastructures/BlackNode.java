@@ -1,110 +1,101 @@
 package cmsc420.meeshquest.datastructures;
 
-import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Float;
+import java.util.ArrayList;
 
+import cmsc420.geom.Geometry2D;
 import cmsc420.meeshquest.citymapobjects.City;
+import cmsc420.meeshquest.citymapobjects.Line;
+import cmsc420.meeshquest.citymapobjects.Point;
+
 
 /**
- * A Black Node holds information about the city.
- * @author Mikhail Sorokin
- *
+ * Represents a leaf node of a PR Quadtree.
  */
 public class BlackNode extends Node {
 
-	private int[] coords;
-	private String cityName;
-	private String startCityName, endCityName;
-	private GreyNode parent;
-	private City vertex;
+	protected City startVertex, endVertex;
 	private int cardinality = 0;
+	private ArrayList<Geometry2D> geometryList = new ArrayList<Geometry2D>();
+	private boolean isValid = true; //returns whether or not the node has less than two times accessed with same node
 	
-	public BlackNode(String cityName, int xCoord, int yCoord, GreyNode greyNode) {
-		this.setCityName(cityName);
-		coords = new int[2];
-		coords[0] = xCoord;
-		coords[1] = yCoord;
-		setParent(greyNode);
-	}
-	
-	public BlackNode(String startCityName, String endCityName, Line2D.Double line, GreyNode greyNode) {
-		this.startCityName = startCityName;
-		this.endCityName = endCityName;
-		coords = new int[4];
-		coords[0] = (int) line.getX1();
-		coords[1] = (int) line.getY1();
-		coords[2] = (int) line.getX2();
-		coords[3] = (int) line.getY2();
-		setParent(greyNode);
-	}
-	
-	
-	public int[] getCoords() {
-		return coords;
+	/**
+	 * Constructs and initializes a leaf node.
+	 */
+	public BlackNode() {
+		super(Node.LEAF);
 	}
 
-	//TODO: Finish this and in all of the other Node classes!
-	@Override
-	protected Node add(City cityData) {
-		return null;
-	}
-
-	@Override
-	protected void delete(String cityName) {
-		if (cityName.equals(this.cityName)) {
-			
+	public Node add(City newCity, Point2D.Float origin, int width,
+			int height) {
+		if (startVertex == null && GreyNode.numberNodes < 1) {
+			/* node is empty, add city */
+			startVertex = newCity;
+			return this;
+		} else {
+			/* have not reached minimum partition, partition node and then add city */
+			GreyNode internalNode = new GreyNode(origin, width,
+					height);
+			if (startVertex != null)
+				internalNode.add(startVertex, origin, width, height);
+			internalNode.add(newCity, origin, width, height);
+			return internalNode;
 		}
 	}
+	
+	//TODO: Don't think newCity will end up being used because it is a part of the geometry function.
+	public Node add(Geometry2D g, City newCity, Float origin, int width, int height) {
 
-	public String getCityName() {
-		return cityName;
-	}
+		geometryList.add(g);
 
-	public void setCityName(String cityName) {
-		this.cityName = cityName;
+		Node finale = this;
+		//TODO: Need a check to make sure that
+		if (isValid) {
+			startVertex = newCity;
+			endVertex = newCity;
+			cardinality = 1;
+			isValid = false;
+			return finale;
+		} else {
+			//This is commented out in order to TRACE this!
+			finale = partition(g, newCity, origin, width, height);
+		}
+		return finale;
 	}
 	
-	public String getStartCityName() {
-		return startCityName;
+	public Node partition(Geometry2D g, City newCity, Float origin, int width, int height) {
+		/* If we have not partitioned enough, partition node and then add city. */
+		GreyNode internalNode = new GreyNode(origin, width,
+				height);
+		for (Geometry2D gElement : geometryList) {
+			internalNode.add(gElement, newCity, origin, width, height);
+		}
+		return internalNode;
 	}
 
-	public void setStartCityName(String cityName) {
-		this.startCityName = cityName;
+	public Node remove(City city, Point2D.Float origin, int width,
+			int height) {
+		if (this.startVertex != city) {
+			/* city not here */
+			throw new IllegalArgumentException();
+		} else {
+			/* remove city, node becomes empty */
+			this.startVertex = null;
+			return WhiteNode.instance;
+		}
 	}
 	
-	public String getEndCityName() {
-		return endCityName;
-	}
-
-	public void setEndCityName(String cityName) {
-		this.endCityName = cityName;
-	}
-
-	public GreyNode getParent() {
-		return parent;
-	}
-
-	public void setParent(GreyNode parent) {
-		this.parent = parent;
-	}
-
-	@Override
-	protected Node addPM(City cityData) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected Node addPM(City startCityData, City endCityData) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public void addVertex(City cityData) {
-		this.vertex = cityData;
+		this.startVertex = cityData;
 	}
 	
-	public City getVertex() {
-		return vertex;
+	public City getStartVertex() {
+		return startVertex;
+	}
+	
+	public City getEndVertex() {
+		return endVertex;
 	}
 
 	public void setCardinality(int cardinality) {

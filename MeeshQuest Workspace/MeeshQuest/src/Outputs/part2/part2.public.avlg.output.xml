@@ -19,7 +19,7 @@
     <command name="printAvlTree"/>
     <parameters/>
     <output>
-      <AvlGTree cardinality="1" height="1" maxImbalance="3">
+      <AvlGTree cardinality="1" height="0" maxImbalance="3">
         <node key="Baltimore" value="(140,37)">
           <emptyChild/>
           <emptyChild/>
@@ -42,7 +42,7 @@
     <command name="printAvlTree"/>
     <parameters/>
     <output>
-      <AvlGTree cardinality="2" height="2" maxImbalance="3">
+      <AvlGTree cardinality="2" height="1" maxImbalance="3">
         <node key="Baltimore" value="(140,37)">
           <node key="Chicago" value="(133,34)">
             <emptyChild/>
@@ -68,7 +68,7 @@
     <command name="printAvlTree"/>
     <parameters/>
     <output>
-      <AvlGTree cardinality="3" height="3" maxImbalance="3">
+      <AvlGTree cardinality="3" height="2" maxImbalance="3">
         <node key="Baltimore" value="(140,37)">
           <node key="Chicago" value="(133,34)">
             <node key="New_York" value="(200,300)">
@@ -124,7 +124,7 @@
     <command name="printAvlTree"/>
     <parameters/>
     <output>
-      <AvlGTree cardinality="3" height="3" maxImbalance="3">
+      <AvlGTree cardinality="3" height="2" maxImbalance="3">
         <node key="Baltimore" value="(140,37)">
           <node key="Chicago" value="(133,34)">
             <node key="New_York" value="(200,300)">
@@ -175,7 +175,7 @@
     <command name="printAvlTree"/>
     <parameters/>
     <output>
-      <AvlGTree cardinality="6" height="4" maxImbalance="3">
+      <AvlGTree cardinality="6" height="3" maxImbalance="3">
         <node key="Chicago" value="(133,34)">
           <node key="New_York" value="(200,300)">
             <node key="Zurich" value="(1000,1000)">

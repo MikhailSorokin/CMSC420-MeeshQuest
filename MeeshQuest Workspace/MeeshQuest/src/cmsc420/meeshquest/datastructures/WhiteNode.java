@@ -1,5 +1,9 @@
 package cmsc420.meeshquest.datastructures;
 
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Float;
+
+import cmsc420.geom.Geometry2D;
 import cmsc420.meeshquest.citymapobjects.City;
 
 /**
@@ -11,52 +15,32 @@ import cmsc420.meeshquest.citymapobjects.City;
  */
 public class WhiteNode extends Node {
 
-	private static WhiteNode instance = null;
+	/** empty PR Quadtree node */
+	public static WhiteNode instance = new WhiteNode();
 	
+	/**
+	 * Constructs and initializes an empty node.
+	 */
 	public WhiteNode() {
-		//Exists only to defeat instantiation.
+		super(Node.EMPTY);
 	}
 
-	public static WhiteNode getInstance() {
-		if (instance == null) {
-			instance = new WhiteNode();
-		}
-		return instance;
+	public Node add(City city, Point2D.Float origin, int width, int height) {
+		Node blackNode = new BlackNode();
+		return blackNode.add(city, origin, width, height);
 	}
 	
-	@Override
-	protected Node add(City cityData) {
-    	/*if (this == null) {
-    		return singleton
-    	} else if (cityData.getX() < node.getCoords()[0] && cityData.getY() > node.getCoords()[1]) {
-    		node.quadrantOne = insert(cityData, node.quadrantOne);
-    	} else if (cityData.getX() > node.getCoords()[0] && cityData.getY() > node.getCoords()[1]) {
-    		node.quadrantTwo = insert(cityData, node.quadrantTwo);
-    	} else if (cityData.getX() < node.getCoords()[0] && cityData.getY() < node.getCoords()[1]) {
-    		node.quadrantThree = insert(cityData, node.quadrantThree);
-    	} else if (cityData.getX() > node.getCoords()[0] && cityData.getY() < node.getCoords()[1]) { {
-    		node.quadrantFour = insert(cityData, node.quadrantFour);
-    	}
-    	return node;*/
-		return null;
-	}
 
 	@Override
-	protected void delete(String name) {
-		// TODO Auto-generated method stub
-		
+	public Node add(Geometry2D g, City city, Float origin, int width, int height) {
+		Node blackNode = new BlackNode();
+		return blackNode.add(g, city, origin, width, height);
 	}
 
-	@Override
-	protected Node addPM(City cityData) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	protected Node addPM(City startCityData, City endCityData) {
-		// TODO Auto-generated method stub
-		return null;
+	public Node remove(City city, Point2D.Float origin, int width,
+			int height) {
+		/* should never get here, nothing to remove */
+		throw new IllegalArgumentException();
 	}
 
 }

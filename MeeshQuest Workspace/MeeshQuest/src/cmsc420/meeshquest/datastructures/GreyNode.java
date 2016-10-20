@@ -1,458 +1,268 @@
 package cmsc420.meeshquest.datastructures;
 
 import java.awt.geom.Line2D;
-import java.awt.geom.PathIterator;
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Float;
+import java.awt.geom.Rectangle2D;
 
+import cmsc420.geom.Geometry2D;
 import cmsc420.meeshquest.citymapobjects.City;
+import cmsc420.meeshquest.citymapobjects.Line;
+
 
 /**
- * This is a singleton class which extends
- * an abstract class Node. A GreyNode represents a
- * coordinate link to four more nodes.
- * @author Mikhail Sorokin
- *
+ * Represents an internal node of a MX Quadtree.
  */
 public class GreyNode extends Node {
+	public static int numberNodes = 0;
 	
-	public Node quadrantOne, quadrantTwo, quadrantThree, quadrantFour;
-	public int[] upperLeft, upperRight, lowerLeft, lowerRight;
-	public GreyNode parent;
+	/** children nodes of this node */
+	public Node children[];
 	
-	private int[] coords;
-	
-	public GreyNode(int xCoord, int yCoord, GreyNode parent) {
-		coords = new int[2];
-		coords[0] = xCoord;
-		coords[1] = yCoord;
-		quadrantOne = quadrantTwo = quadrantThree = quadrantFour = WhiteNode.getInstance();
-		upperLeft = new int[2];
-		upperRight = new int[2];
-		lowerLeft = new int[2];
-		lowerRight = new int[2];
-		this.parent = parent;
-	}
-	
-	public int[] getCoords() {
-		return coords;
-	}
+	/** rectangular quadrants of the children nodes */
+	protected Rectangle2D.Float[] regions;
 
+	/** origin of the rectangular bounds of this node */
+	public Point2D.Float origin;
 
-	@Override
-	//FIXED: Need to figure out the math
-	protected Node add(City cityData) {
-		int highXVal = (upperRight[0] - upperLeft[0])/2;
-		int highYVal = (upperRight[1] - lowerRight[1])/2;
-		int lowXVal = (lowerRight[0] - lowerLeft[0])/2;
-		int lowYVal = (upperLeft[1] - lowerLeft[1])/2;
-    	if ((lowXVal == 1 && highXVal == 1) || (lowYVal == 1 && highYVal == 1)) {
-    		//System.out.println(lowXVal + ", " + lowYVal + ", " + highXVal + ", " + highYVal);
-    		AddBlackNode(cityData);
-    	} else {
-    		int newXSplit, newYSplit;
-			if ((int)(cityData.getX()) >= upperLeft[0] && (int)cityData.getY() >= coords[1]
-					&& (int)cityData.getX() < coords[0]) {
-				if (this.quadrantOne == WhiteNode.getInstance()) {
-					newXSplit = (int)(upperLeft[0] + coords[0])/2;
-					newYSplit = (int)(upperLeft[1] + coords[1])/2;
-		    		GreyNode deeperQ1Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ1Node.data[0] = newXSplit;
-		    		deeperQ1Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-			    		deeperQ1Node.upperLeft[i] = upperLeft[i];
-			    		deeperQ1Node.upperRight[i] = (upperLeft[i] + upperRight[i])/2;
-			    		deeperQ1Node.lowerLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
-			    		deeperQ1Node.lowerRight[i] = coords[i];
-		    		}
-		    		this.quadrantOne = deeperQ1Node;
-		    		deeperQ1Node.add(cityData);
-				} else {
-					this.quadrantOne.add(cityData);
-				}
-	    	} else if ((int)(cityData.getX()) <= upperRight[0] && (int)cityData.getY() >= coords[1]
-					&& (int)cityData.getX() >= coords[0]) {
-				if (this.quadrantTwo == WhiteNode.getInstance()) {
-					newXSplit = (int)(upperRight[0] + coords[0])/2;
-					newYSplit = (int)(upperRight[1] + coords[1])/2;
+	/** origins of the rectangular bounds of each child node */
+	protected Point2D.Float[] origins;
 
-		    		GreyNode deeperQ2Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ2Node.data[0] = newXSplit;
-		    		deeperQ2Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ2Node.upperLeft[i] = (upperLeft[i] + upperRight[i])/2;
-		    			deeperQ2Node.upperRight[i] = upperRight[i];
-		    			deeperQ2Node.lowerLeft[i] = coords[i];
-		    			deeperQ2Node.lowerRight[i] = (upperRight[i] + lowerRight[i])/2;
-		    		}
-		    		this.quadrantTwo = deeperQ2Node;
-		    		deeperQ2Node.add(cityData);
-				} else {
-					this.quadrantTwo.add(cityData);
-				}
-	    	} else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() <= coords[1]
-					&& (int)cityData.getX() < coords[0]) {
-				if (this.quadrantThree == WhiteNode.getInstance()) {
-					newXSplit = (int)(lowerLeft[0] + coords[0])/2;
-					newYSplit = (int)(lowerLeft[1] + coords[1])/2;
-					GreyNode deeperQ3Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ3Node.data[0] = newXSplit;
-		    		deeperQ3Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ3Node.upperLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
-		    			deeperQ3Node.upperRight[i] = coords[i];
-		    			deeperQ3Node.lowerLeft[i] = lowerLeft[i];
-		    			deeperQ3Node.lowerRight[i] = (lowerLeft[i] + lowerRight[i])/2;
-		    		}
-		    		this.quadrantThree = deeperQ3Node;
-		    		deeperQ3Node.add(cityData);
-				} else {
-					this.quadrantThree.add(cityData);
-				}
-	    	} else if ((int)(cityData.getX()) <= lowerRight[0] && (int)cityData.getY() < coords[1]
-					&& (int)cityData.getX() >= coords[0]) {
-				if (this.quadrantFour == WhiteNode.getInstance()) {
-					newXSplit = (int)(lowerRight[0] + coords[0])/2;
-					newYSplit = (int)(lowerRight[1] + coords[1])/2;
-					
-					GreyNode deeperQ4Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ4Node.data[0] = newXSplit;
-		    		deeperQ4Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ4Node.upperLeft[i] = coords[i];
-		    			deeperQ4Node.upperRight[i] = (upperRight[i] + lowerRight[i])/2;
-		    			deeperQ4Node.lowerLeft[i] = (lowerLeft[i] + lowerRight[i])/2;
-		    			deeperQ4Node.lowerRight[i] = lowerRight[i];
-		    		}
-		    		this.quadrantFour = deeperQ4Node;
-		    		deeperQ4Node.add(cityData);
-				} else {
-					this.quadrantFour.add(cityData);
-				}
-	    	}
-    	}
-    	//If duplicate, just return this.
-    	return this;
-	}
+	/** width of the rectangular bounds of this node */
+	public int width;
 
-	protected Node addPM(City cityData) {
-		int highXVal = (upperRight[0] - upperLeft[0])/2;
-		int highYVal = (upperRight[1] - lowerRight[1])/2;
-		int lowXVal = (lowerRight[0] - lowerLeft[0])/2;
-		int lowYVal = (upperLeft[1] - lowerLeft[1])/2;
-    	
-		/*if a node isn't contained within this quadrant, add a black node to it.*/
-		/*if (!containsVertexInQuadrant(cityData)) {
-			AddBlackNode(cityData);
-		}*/
-		
-		if ((lowXVal == 1 && highXVal == 1) || (lowYVal == 1 && highYVal == 1)) {
-    		//System.out.println(lowXVal + ", " + lowYVal + ", " + highXVal + ", " + highYVal);
-    		AddBlackNode(cityData);
-    	} else {
-    		int newXSplit, newYSplit;
-			if ((int)(cityData.getX()) >= upperLeft[0] && (int)cityData.getY() >= coords[1]
-					&& (int)cityData.getX() < coords[0]) {
-				if (this.quadrantOne == WhiteNode.getInstance()) {
-					newXSplit = (int)(upperLeft[0] + coords[0])/2;
-					newYSplit = (int)(upperLeft[1] + coords[1])/2;
-		    		GreyNode deeperQ1Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ1Node.data[0] = newXSplit;
-		    		deeperQ1Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-			    		deeperQ1Node.upperLeft[i] = upperLeft[i];
-			    		deeperQ1Node.upperRight[i] = (upperLeft[i] + upperRight[i])/2;
-			    		deeperQ1Node.lowerLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
-			    		deeperQ1Node.lowerRight[i] = coords[i];
-		    		}
-		    		this.quadrantOne = deeperQ1Node;
-		    		deeperQ1Node.add(cityData);
-				} else {
-					this.quadrantOne.add(cityData);
-				}
-	    	} else if ((int)(cityData.getX()) <= upperRight[0] && (int)cityData.getY() >= coords[1]
-					&& (int)cityData.getX() >= coords[0]) {
-				if (this.quadrantTwo == WhiteNode.getInstance()) {
-					newXSplit = (int)(upperRight[0] + coords[0])/2;
-					newYSplit = (int)(upperRight[1] + coords[1])/2;
+	/** height of the rectangular bounds of this node */
+	public int height;
 
-		    		GreyNode deeperQ2Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ2Node.data[0] = newXSplit;
-		    		deeperQ2Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ2Node.upperLeft[i] = (upperLeft[i] + upperRight[i])/2;
-		    			deeperQ2Node.upperRight[i] = upperRight[i];
-		    			deeperQ2Node.lowerLeft[i] = coords[i];
-		    			deeperQ2Node.lowerRight[i] = (upperRight[i] + lowerRight[i])/2;
-		    		}
-		    		this.quadrantTwo = deeperQ2Node;
-		    		deeperQ2Node.add(cityData);
-				} else {
-					this.quadrantTwo.add(cityData);
-				}
-	    	} else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() <= coords[1]
-					&& (int)cityData.getX() < coords[0]) {
-				if (this.quadrantThree == WhiteNode.getInstance()) {
-					newXSplit = (int)(lowerLeft[0] + coords[0])/2;
-					newYSplit = (int)(lowerLeft[1] + coords[1])/2;
-					GreyNode deeperQ3Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ3Node.data[0] = newXSplit;
-		    		deeperQ3Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ3Node.upperLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
-		    			deeperQ3Node.upperRight[i] = coords[i];
-		    			deeperQ3Node.lowerLeft[i] = lowerLeft[i];
-		    			deeperQ3Node.lowerRight[i] = (lowerLeft[i] + lowerRight[i])/2;
-		    		}
-		    		this.quadrantThree = deeperQ3Node;
-		    		deeperQ3Node.add(cityData);
-				} else {
-					this.quadrantThree.add(cityData);
-				}
-	    	} else if ((int)(cityData.getX()) <= lowerRight[0] && (int)cityData.getY() < coords[1]
-					&& (int)cityData.getX() >= coords[0]) {
-				if (this.quadrantFour == WhiteNode.getInstance()) {
-					newXSplit = (int)(lowerRight[0] + coords[0])/2;
-					newYSplit = (int)(lowerRight[1] + coords[1])/2;
-					
-					GreyNode deeperQ4Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ4Node.data[0] = newXSplit;
-		    		deeperQ4Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ4Node.upperLeft[i] = coords[i];
-		    			deeperQ4Node.upperRight[i] = (upperRight[i] + lowerRight[i])/2;
-		    			deeperQ4Node.lowerLeft[i] = (lowerLeft[i] + lowerRight[i])/2;
-		    			deeperQ4Node.lowerRight[i] = lowerRight[i];
-		    		}
-		    		this.quadrantFour = deeperQ4Node;
-		    		deeperQ4Node.add(cityData);
-				} else {
-					this.quadrantFour.add(cityData);
-				}
-	    	}
-    	}
-    	//If duplicate, just return this.
-    	return this;
-	}
-	
-	@Override
-	protected void delete(String cityName) {
-		
-	}
-	
-	private void AddBlackNode(City cityData) {
-		//TODO: Want to return in the BlackNode class
-		BlackNode blackNode = new BlackNode(cityData.getName(), (int)cityData.getX(), (int)cityData.getY(), this);
-		blackNode.data[0] = (int)cityData.getX();
-		blackNode.data[1] = (int)cityData.getY();
-		if ((int)(cityData.getX()) <= upperRight[0] && (int)cityData.getY() >= coords[1]
-				&& (int)cityData.getX() >= coords[0]) {
-			this.quadrantTwo = blackNode;
-		} else if ((int)(cityData.getX()) <= lowerRight[0] && (int)cityData.getY() <= coords[1]
-				&& (int)cityData.getX() >= coords[0]) {
-			this.quadrantFour = blackNode;
-		}  else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() < coords[1]
-				&& (int)cityData.getX() < coords[0]) {
-			this.quadrantThree = blackNode;
-		} else if ((int)(cityData.getX()) >= lowerLeft[0] && (int)cityData.getY() >= coords[1]
-				&& (int)cityData.getX() < coords[0]) {
-			this.quadrantOne = blackNode;
+	/** half of the width of the rectangular bounds of this node */
+	protected int halfWidth;
+
+	/** half of the height of the rectangular bounds of this node */
+	protected int halfHeight;
+
+	/**
+	 * Constructs and initializes this internal MX Quadtree node.
+	 * 
+	 * @param origin
+	 *            origin of the rectangular bounds of this node
+	 * @param width
+	 *            width of the rectangular bounds of this node
+	 * @param height
+	 *            height of the rectangular bounds of this node
+	 */
+	public GreyNode(Point2D.Float origin, int width, int height) {
+		super(Node.INTERNAL);
+
+		this.origin = origin;
+
+		children = new Node[4];
+		for (int i = 0; i < 4; i++) {
+			children[i] = WhiteNode.instance;
 		}
+
+		this.width = width;
+		this.height = height;
+
+		halfWidth = width >> 1;
+		halfHeight = height >> 1;
+
+		origins = new Point2D.Float[4];
+		origins[0] = new Point2D.Float(origin.x, origin.y + halfHeight);
+		origins[1] = new Point2D.Float(origin.x + halfWidth, origin.y
+				+ halfHeight);
+		origins[2] = new Point2D.Float(origin.x, origin.y);
+		origins[3] = new Point2D.Float(origin.x + halfWidth, origin.y);
+
+		numberNodes++;
+		regions = new Rectangle2D.Float[4];
+		int i = 0;
+		while (i < 4) {
+			regions[i] = new Rectangle2D.Float(origins[i].x, origins[i].y,
+					halfWidth, halfHeight);
+			i++;
+		}
+
 	}
 
-	public GreyNode addPM(City startCityData, City endCityData) {
-		/*if a node isn't contained within this quadrant, add a black node to it.*/
-		Line2D.Double line = new Line2D.Double(startCityData.getX(), startCityData.getY(),
-				endCityData.getX(),
-				endCityData.getY());
-		int cardinality = 0;
-		
-		/* TODO: Have a check for start and end of cityData. Right now, it is just start.*/
-		if ((coords[0] == startCityData.getX() && coords[1] == startCityData.getY())
-			|| (coords[0] == endCityData.getX() && coords[1] == endCityData.getY())){
-			BlackNode blackNode = null;
-			int startY = 0, startX = 0, endY = 0, endX = 0;
-			
-			boolean test = line.getPathIterator(at);
-			
-			for (int quadrant = 1; quadrant <= 4; quadrant++) {
-			
-				if (quadrant == 1 && (coords[0] == startCityData.getX() && coords[1] == startCityData.getY())) {
-					startY = (int) line.getY1();
-					startX = (int) upperLeft[0];
-					endY = (int) upperLeft[1];
-					endX = (int) line.getX1();
-				} else if (quadrant == 2 && (coords[0] == startCityData.getX() && coords[1] == startCityData.getY())) {
-					startY = (int) line.getY1();
-					startX = (int) line.getX1();
-					endY = (int) upperRight[1];
-					endX = (int) upperRight[0];
-				} else if (quadrant == 3 && (coords[0] == startCityData.getX() && coords[1] == startCityData.getY())) {
-					startY = (int) lowerLeft[1];
-					startX = (int) lowerLeft[0];
-					endY = (int) line.getY1();
-					endX = (int) line.getX1();
-				} else if (quadrant == 4 && (coords[0] == startCityData.getX() && coords[1] == startCityData.getY())) {
-					startY = (int)(lowerLeft[1] + lowerRight[1])/2;
-					startX = (int) line.getX1();
-					endY = (int) line.getY1();
-					endX = (int) lowerRight[0];
-				}
-				
-				if (quadrant == 1 && (coords[0] == endCityData.getX() && coords[1] == endCityData.getY())) {
-					startY = (int) line.getY1();
-					startX = (int) upperLeft[0];
-					endY = (int) upperLeft[1];
-					endX = (int) line.getX1();
-				} else if (quadrant == 2 && (coords[0] == endCityData.getX() && coords[1] == endCityData.getY())) {
-					startY = (int) line.getY1();
-					startX = (int) line.getX1();
-					endY = (int) upperRight[1];
-					endX = (int) upperRight[0];
-				} else if (quadrant == 3 && (coords[0] == endCityData.getX() && coords[1] == endCityData.getY())) {
-					startY = (int) lowerLeft[1];
-					startX = (int) lowerLeft[0];
-					endY = (int) line.getY1();
-					endX = (int) line.getX1();
-				} else if (quadrant == 4 && (coords[0] == endCityData.getX() && coords[1] == endCityData.getY())) {
-					startY = (int)(lowerLeft[1] + lowerRight[1])/2;
-					startX = (int) line.getX1();
-					endY = (int) line.getY1();
-					endX = (int) lowerRight[0];
-				}
-				
-				for (int pointY = startY; pointY < endY; pointY++) {
-					for (int pointX = startX; pointX < endX; pointX++) {
-						if (line.contains(pointX, pointY)) {
-							blackNode = new BlackNode(startCityData.getName(), endCityData.getName(),
-									line, this);
-							cardinality++;
-							
-							if (pointX == startCityData.getX() && pointY == startCityData.getY()
-									&& line.contains(pointX, pointY)) {
-								blackNode.addVertex(startCityData);
-								cardinality++;
-							} else if (pointX == endCityData.getX() && pointY == endCityData.getY()
-									&& line.contains(pointX, pointY)) {
-								blackNode.addVertex(endCityData);
-								cardinality++;
-							}
-							
-							blackNode.setCardinality(cardinality);
-							//Just add the node here if it is in quadrant loop
-							if (quadrant == 1)
-								this.quadrantOne = blackNode;
-							else if (quadrant == 2)
-								this.quadrantTwo = blackNode;
-							else if (quadrant == 3)
-								this.quadrantThree = blackNode;
-							else if (quadrant == 4)
-								this.quadrantFour = blackNode;
-							
-							cardinality = 0;
-						}
+	public Node add(City city, Point2D.Float origin, int width, int height) {
+		final Point2D cityLocation = city.getPoint();
+		for (int i = 0; i < 4; i++) {
+			if (intersects(cityLocation, regions[i])) {
+				children[i] = children[i].add(city, origins[i], halfWidth,
+						halfHeight);
+				break;
+			}
+		}
+		return this;
+	}
+	
+	@Override
+	public Node add(Geometry2D g, City city, Float origin, int width, int height) {
+		for (int i = 0; i < 4; i++ ) {
+			if (g.getType() == Geometry2D.POINT) {
+				Point2D cityPoint = city.getPoint();
+				if (intersects(cityPoint, regions[i])) {
+					children[i] = children[i].add(g, city, origin, halfWidth, halfHeight);
+					/*if (existsPointInRegion[i]) {
+						children[i] = ((BlackNode) children[i]).partition(g, city, origin, halfWidth, halfHeight);
 					}
+					else {
+						//TODO: Problem most likely something to do with these booleans, must change them around.
+						existsPointInRegion[i] = true;
+						children[i] = new BlackNode();
+					}*/
+				}
+			} else if (g.getType() == Geometry2D.SEGMENT) {
+				if (intersects(((Line)g).getLine(), regions[i])) {
+						children[i] = children[i].add(g, city, origins[i], halfWidth,
+								halfHeight);
 				}
 			}
 		}
-		
-		/*if ((lowXVal == 1 && highXVal == 1) || (lowYVal == 1 && highYVal == 1)) {
-    		//System.out.println(lowXVal + ", " + lowYVal + ", " + highXVal + ", " + highYVal);
-    		AddBlackNode(cityData);
-    	}*/ else {
-    		int newXSplit, newYSplit;
-			if ((int)(startCityData.getX()) >= upperLeft[0] && (int)startCityData.getY() >= coords[1]
-					&& (int)startCityData.getX() < coords[0]) {
-				if (this.quadrantOne == WhiteNode.getInstance()) {
-					newXSplit = (int)(upperLeft[0] + coords[0])/2;
-					newYSplit = (int)(upperLeft[1] + coords[1])/2;
-		    		GreyNode deeperQ1Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ1Node.data[0] = newXSplit;
-		    		deeperQ1Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-			    		deeperQ1Node.upperLeft[i] = upperLeft[i];
-			    		deeperQ1Node.upperRight[i] = (upperLeft[i] + upperRight[i])/2;
-			    		deeperQ1Node.lowerLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
-			    		deeperQ1Node.lowerRight[i] = coords[i];
-		    		}
-		    		this.quadrantOne = deeperQ1Node;
-		    		deeperQ1Node.addPM(startCityData, endCityData);
-				} else {
-					this.quadrantOne.addPM(startCityData, endCityData);
-				}
-	    	} else if ((int)(startCityData.getX()) <= upperRight[0] && (int)startCityData.getY() >= coords[1]
-					&& (int)startCityData.getX() >= coords[0]) {
-				if (this.quadrantTwo == WhiteNode.getInstance()) {
-					newXSplit = (int)(upperRight[0] + coords[0])/2;
-					newYSplit = (int)(upperRight[1] + coords[1])/2;
+		return this;
+	}
 
-		    		GreyNode deeperQ2Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ2Node.data[0] = newXSplit;
-		    		deeperQ2Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ2Node.upperLeft[i] = (upperLeft[i] + upperRight[i])/2;
-		    			deeperQ2Node.upperRight[i] = upperRight[i];
-		    			deeperQ2Node.lowerLeft[i] = coords[i];
-		    			deeperQ2Node.lowerRight[i] = (upperRight[i] + lowerRight[i])/2;
-		    		}
-		    		this.quadrantTwo = deeperQ2Node;
-		    		deeperQ2Node.addPM(startCityData, endCityData);
-				} else {
-					this.quadrantTwo.addPM(startCityData, endCityData);
-				}
-	    	} else if ((int)(startCityData.getX()) >= lowerLeft[0] && (int)startCityData.getY() <= coords[1]
-					&& (int)startCityData.getX() < coords[0]) {
-				if (this.quadrantThree == WhiteNode.getInstance()) {
-					newXSplit = (int)(lowerLeft[0] + coords[0])/2;
-					newYSplit = (int)(lowerLeft[1] + coords[1])/2;
-					GreyNode deeperQ3Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ3Node.data[0] = newXSplit;
-		    		deeperQ3Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ3Node.upperLeft[i] = (upperLeft[i] + lowerLeft[i])/2;
-		    			deeperQ3Node.upperRight[i] = coords[i];
-		    			deeperQ3Node.lowerLeft[i] = lowerLeft[i];
-		    			deeperQ3Node.lowerRight[i] = (lowerLeft[i] + lowerRight[i])/2;
-		    		}
-		    		this.quadrantThree = deeperQ3Node;
-		    		deeperQ3Node.addPM(startCityData, endCityData);
-				} else {
-					this.quadrantThree.addPM(startCityData, endCityData);
-				}
-	    	} else if ((int)(startCityData.getX()) <= lowerRight[0] && (int)startCityData.getY() < coords[1]
-					&& (int)startCityData.getX() >= coords[0]) {
-				if (this.quadrantFour == WhiteNode.getInstance()) {
-					newXSplit = (int)(lowerRight[0] + coords[0])/2;
-					newYSplit = (int)(lowerRight[1] + coords[1])/2;
-					
-					GreyNode deeperQ4Node = new GreyNode(newXSplit, newYSplit, this);
-		    		deeperQ4Node.data[0] = newXSplit;
-		    		deeperQ4Node.data[1] = newYSplit;
-		    		
-		    		for (int i = 0; i < 2; i++) {
-		    			deeperQ4Node.upperLeft[i] = coords[i];
-		    			deeperQ4Node.upperRight[i] = (upperRight[i] + lowerRight[i])/2;
-		    			deeperQ4Node.lowerLeft[i] = (lowerLeft[i] + lowerRight[i])/2;
-		    			deeperQ4Node.lowerRight[i] = lowerRight[i];
-		    		}
-		    		this.quadrantFour = deeperQ4Node;
-		    		deeperQ4Node.addPM(startCityData, endCityData);
-				} else {
-					this.quadrantFour.addPM(startCityData, endCityData);
-				}
-	    	}
-    	}
-    	//If duplicate, just return this.
-    	return this;
+	public Node remove(City city, Point2D.Float origin, int width,
+			int height) {
+		final Point2D cityLocation = city.getPoint();
+		for (int i = 0; i < 4; i++) {
+			if (intersects(cityLocation, regions[i])) {
+				children[i] = children[i].remove(city, origins[i],
+						halfWidth, halfHeight);
+			}
+		}
+		return this;
 	}
 	
+	public static boolean intersects(Line2D line, Rectangle2D rect) {
+		return (rect.intersectsLine(line));
+	}
+	
+	/**
+	 * Returns if a point lies within a given rectangular bounds according to
+	 * the rules of the MX Quadtree.
+	 * 
+	 * @param point
+	 *            point to be checked
+	 * @param rect
+	 *            rectangular bounds the point is being checked against
+	 * @return true if the point lies within the rectangular bounds, false
+	 *         otherwise
+	 */	
+	public static boolean intersects(Point2D point, Rectangle2D rect) {
+		//Issue is that it is not getting partitioned enough
+		System.out.println(point.getX() >= rect.getMinX());
+		System.out.println(point.getX() <= rect.getMaxX());
+		System.out.println(rect.getMinY());
+		System.out.println(point.getY() <= rect.getMaxY());
+		return (point.getX() >= rect.getMinX() && point.getX() <= rect.getMaxX()
+				&& point.getY() >= rect.getMinY() && point.getY() <= rect
+				.getMaxY());
+	}
+
+	/**
+	 * Gets the number of empty child nodes contained by this internal node.
+	 * 
+	 * @return the number of empty child nodes
+	 */
+	protected int getNumEmptyNodes() {
+		int numEmptyNodes = 0;
+		for (Node node : children) {
+			if (node == WhiteNode.instance) {
+				numEmptyNodes++;
+			}
+		}
+		return numEmptyNodes;
+	}
+
+	/**
+	 * Gets the number of leaf child nodes contained by this internal node.
+	 * 
+	 * @return the number of leaf child nodes
+	 */
+	protected int getNumLeafNodes() {
+		int numLeafNodes = 0;
+		for (Node node : children) {
+			if (node.getType() == Node.LEAF) {
+				numLeafNodes++;
+			}
+		}
+		return numLeafNodes;
+	}
+
+	/**
+	 * Gets the child node of this node according to which quadrant it falls
+	 * in
+	 * 
+	 * @param quadrant
+	 *            quadrant number (top left is 0, top right is 1, bottom
+	 *            left is 2, bottom right is 3)
+	 * @return child node
+	 */
+	public Node getChild(int quadrant) {
+		if (quadrant < 0 || quadrant > 3) {
+			throw new IllegalArgumentException();
+		} else {
+			return children[quadrant];
+		}
+	}
+
+	/**
+	 * Gets the rectangular region for the specified child node of this
+	 * internal node.
+	 * 
+	 * @param quadrant
+	 *            quadrant that child lies within
+	 * @return rectangular region for this child node
+	 */
+	public Rectangle2D.Float getChildRegion(int quadrant) {
+		if (quadrant < 0 || quadrant > 3) {
+			throw new IllegalArgumentException();
+		} else {
+			return regions[quadrant];
+		}
+	}
+
+	/**
+	 * Gets the rectangular region contained by this internal node.
+	 * 
+	 * @return rectangular region contained by this internal node
+	 */
+	public Rectangle2D.Float getRegion() {
+		return new Rectangle2D.Float(origin.x, origin.y, width, height);
+	}
+
+	/**
+	 * Gets the center X coordinate of this node's rectangular bounds.
+	 * 
+	 * @return center X coordinate of this node's rectangular bounds
+	 */
+	public int getCenterX() {
+		return (int) origin.x + halfWidth;
+	}
+
+	/**
+	 * Gets the center Y coordinate of this node's rectangular bounds.
+	 * 
+	 * @return center Y coordinate of this node's rectangular bounds
+	 */
+	public int getCenterY() {
+		return (int) origin.y + halfHeight;
+	}
+
+	/**
+	 * Gets half the width of this internal node.
+	 * @return half the width of this internal node
+	 */
+	public int getHalfWidth() {
+		return halfWidth;
+	}
+
+	/** 
+	 * Gets half the height of this internal node.
+	 * @return half the height of this internal node
+	 */
+	public int getHalfHeight() {
+		return halfHeight;
+	}
 }

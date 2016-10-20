@@ -1,0 +1,25 @@
+package cmsc420.meeshquest.citymapobjects;
+
+import java.awt.geom.Line2D;
+
+import cmsc420.geom.Geometry2D;
+
+public class Line implements Geometry2D {
+
+	protected City startCity, endCity;
+	
+	public Line(City startCity, City endCity) {
+		this.startCity = startCity;
+		this.endCity = endCity;
+	}
+
+	@Override
+	public int getType() {
+		return Geometry2D.SEGMENT;
+	}
+	
+	public Line2D getLine() {
+		return ;
+	}
+
+}

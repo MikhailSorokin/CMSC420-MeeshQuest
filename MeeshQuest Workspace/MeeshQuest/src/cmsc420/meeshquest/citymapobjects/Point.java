@@ -1,0 +1,18 @@
+package cmsc420.meeshquest.citymapobjects;
+
+import cmsc420.geom.Geometry2D;
+
+public class Point implements Geometry2D {
+
+	protected City cityData;
+	
+	public Point(City city) {
+		cityData = city;
+	}
+
+	@Override
+	public int getType() {
+		return Geometry2D.POINT;
+	}
+
+}

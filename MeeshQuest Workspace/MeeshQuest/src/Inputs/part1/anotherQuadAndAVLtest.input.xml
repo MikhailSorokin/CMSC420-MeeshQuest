@@ -33,5 +33,4 @@
  <printAvlTree />
  <clearAll />
  <printMXQuadtree />
- <printAvlTree />
 </commands>

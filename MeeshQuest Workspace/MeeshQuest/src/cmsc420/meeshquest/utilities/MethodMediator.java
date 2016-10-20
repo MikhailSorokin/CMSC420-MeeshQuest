@@ -1,849 +1,1009 @@
+/**
+ * @(#)Command.java        1.1 
+ * 
+ * 2014/09/09
+ *
+ * @author Ruofei Du, Ben Zoller (University of Maryland, College Park), 2014
+ * 
+ * All rights reserved. Permission is granted for use and modification in CMSC420 
+ * at the University of Maryland.
+ */
 package cmsc420.meeshquest.utilities;
 
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Float;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.awt.geom.Rectangle2D;
+import java.io.IOException;
+import java.util.Collection;
 import java.util.Comparator;
-import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import cmsc420.geom.Circle2D;
+import cmsc420.geom.Shape2DDistanceCalculator;
 import cmsc420.meeshquest.citymapobjects.City;
-import cmsc420.meeshquest.datastructures.AvlGTree;
+import cmsc420.meeshquest.citymapobjects.CityLocationComparator;
+import cmsc420.meeshquest.citymapobjects.CityNameComparator;
+import cmsc420.meeshquest.datastructures.BlackNode;
+import cmsc420.meeshquest.datastructures.GreyNode;
+import cmsc420.meeshquest.datastructures.GuardedAvlGTree;
 import cmsc420.meeshquest.datastructures.MXQuadtree;
+import cmsc420.meeshquest.datastructures.Node;
 import cmsc420.meeshquest.datastructures.PMQuadtree;
-
+import cmsc420.meeshquest.exception.CityAlreadyMappedException;
+import cmsc420.meeshquest.exception.CityOutOfBoundsException;
+/**
+ * Processes each command in the MeeshQuest program. Takes in an XML command
+ * node, processes the node, and outputs the results.
+ * 
+ * @author Ben Zoller
+ * @version 2.0, 23 Jan 2007
+ */
 public class MethodMediator {
+	/** output DOM Document tree */
+	protected Document results;
 
-	// DataStructures
-	private Map<String, City> nameToCity = new TreeMap<String, City>(new Comparator<String>() {
+	/** root node of results document */
+	protected Element resultsNode;
+
+	/**
+	 * stores created cities sorted by their names (used with listCities command)
+	 */
+	protected final TreeMap<String, City> citiesByName = new TreeMap<String, City>(new Comparator<String>() {
 
 		@Override
-		public int compare(String name1, String name2) {
-			return name2.compareTo(name1);
+		public int compare(String o1, String o2) {
+			return o2.compareTo(o1);
 		}
 
 	});
 
 	/**
-	 * TODO: Make sure this implementation is correct.
+	 * stores created cities sorted by their locations (used with listCities command)
 	 */
-	private TreeMap<Point2D.Float, City> coordinatesToCity = new TreeMap<Point2D.Float, City>(
-			new Comparator<Point2D.Float>() {
+	protected final TreeSet<City> citiesByLocation = new TreeSet<City>(
+			new CityLocationComparator());
 
-				@Override
-				public int compare(Float point1, Float point2) {
-					int compareVal = 0;
-					if (point1.getY() < point2.getY()) {
-						compareVal = -1;
-					} else if (point1.getY() > point2.getY()) {
-						compareVal = 1;
-					} else {
-						if (point1.getX() < point2.getX()) {
-							compareVal = -1;
-						} else if (point1.getX() > point2.getX()) {
-							compareVal = 1;
-						} else {
-							compareVal = 0;
-						}
-					}
-					return compareVal;
-				}
+	/**
+	 * stores all cities ever mapped in an Avl Tree sorted by their name (new cities with same name overwrite old ones)
+	 */
+	protected GuardedAvlGTree<City, Integer> allMappedCitiesByName;
 
-			});
-
-	protected final AvlGTree<City, Integer> avlTree = new AvlGTree<City, Integer>(new Comparator<City>() {
-
-		@Override
-		public int compare(City o1, City o2) {
-				return o2.getName().compareTo(o1.getName());
-			}
-	}, 1);
+	/** stores mapped cities in a spatial data structure */
+	protected final MXQuadtree mxQuadtree = new MXQuadtree();
 	
-	private MXQuadtree mxQuadtree = new MXQuadtree();
-	private PMQuadtree pmQuadtree = new PMQuadtree();
+	/** stores mapped cities in a spatial data structure */
+	protected final PMQuadtree pmQuadtree = new PMQuadtree();
 
-	private void CreateCityErrorOutput(String errorType, String name, int x, int y, int radius, String color) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", errorType);
-		XmlParser.currElement.appendChild(errorElement);
+	/* Mikhail Add - g and pmOrder*/
+	protected int g, pmOrder;
+	
+	/** spatial width and height of the MX Quadtree */
+	protected int spatialWidth, spatialHeight;
 
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "createCity");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element nameElement = XmlParser.results.createElement("name");
-		nameElement.setAttribute("value", name);
-		parametersElement.appendChild(nameElement);
-
-		Element xCoordElement = XmlParser.results.createElement("x");
-		xCoordElement.setAttribute("value", Integer.toString(x));
-		parametersElement.appendChild(xCoordElement);
-
-		Element yCoordElement = XmlParser.results.createElement("y");
-		yCoordElement.setAttribute("value", Integer.toString(y));
-		parametersElement.appendChild(yCoordElement);
-
-		Element radiusElement = XmlParser.results.createElement("radius");
-		radiusElement.setAttribute("value", Integer.toString(radius));
-		parametersElement.appendChild(radiusElement);
-
-		Element colorElement = XmlParser.results.createElement("color");
-		colorElement.setAttribute("value", color);
-		parametersElement.appendChild(colorElement);
+	/**
+	 * Set the DOM Document tree to send the of processed commands to.
+	 * 
+	 * Creates the root results node.
+	 * 
+	 * @param results
+	 *            DOM Document tree
+	 */
+	public void setResults(Document results) {
+		this.results = results;
+		resultsNode = results.createElement("results");
+		results.appendChild(resultsNode);
 	}
 
 	/**
-	 * Creates a city based on the parameters, which are given by the
+	 * Creates a command result element. Initializes the command name.
 	 * 
-	 * @param name
-	 * @param x
-	 * @param y
-	 * @param radius
-	 * @param color
+	 * @param node
+	 *            the command node to be processed
+	 * @return the results node for the command
 	 */
-	public void CreateCity(String id, String name, int x, int y, int radius, String color) {
-		City city = new City(name, x, y, radius, color);
+	private Element getCommandNode(final Element node) {
+		final Element commandNode = results.createElement("command");
+		commandNode.setAttribute("name", node.getNodeName());
+		String idAttribute = node.getAttribute("id");
+		if (!idAttribute.equals("")) {
+			commandNode.setAttribute("id", idAttribute);
+		}
+		return commandNode;
+	}
+
+	/**
+	 * Processes an integer attribute for a command. Appends the parameter to
+	 * the parameters node of the results. Should not throw a number format
+	 * exception if the attribute has been defined to be an integer in the
+	 * schema and the XML has been validated beforehand.
+	 * 
+	 * @param commandNode
+	 *            node containing information about the command
+	 * @param attributeName
+	 *            integer attribute to be processed
+	 * @param parametersNode
+	 *            node to append parameter information to
+	 * @return integer attribute value
+	 */
+	private int processIntegerAttribute(final Element commandNode,
+			final String attributeName, final Element parametersNode) {
+		final String value = commandNode.getAttribute(attributeName);
+
+		if (parametersNode != null) {
+			/* add the parameters to results */
+			final Element attributeNode = results.createElement(attributeName);
+			attributeNode.setAttribute("value", value);
+			parametersNode.appendChild(attributeNode);
+		}
+
+		/* return the integer value */
+		return Integer.parseInt(value);
+	}
+
+	/**
+	 * Processes a string attribute for a command. Appends the parameter to the
+	 * parameters node of the results.
+	 * 
+	 * @param commandNode
+	 *            node containing information about the command
+	 * @param attributeName
+	 *            string attribute to be processed
+	 * @param parametersNode
+	 *            node to append parameter information to
+	 * @return string attribute value
+	 */
+	private String processStringAttribute(final Element commandNode,
+			final String attributeName, final Element parametersNode) {
+		final String value = commandNode.getAttribute(attributeName);
+
+		if (parametersNode != null) {
+			/* add parameters to results */
+			final Element attributeNode = results.createElement(attributeName);
+			attributeNode.setAttribute("value", value);
+			parametersNode.appendChild(attributeNode);
+		}
+
+		/* return the string value */
+		return value;
+	}
+
+	/**
+	 * Reports that the requested command could not be performed because of an
+	 * error. Appends information about the error to the results.
+	 * 
+	 * @param type
+	 *            type of error that occurred
+	 * @param command
+	 *            command node being processed
+	 * @param parameters
+	 *            parameters of command
+	 */
+	private void addErrorNode(final String type, final Element command,
+			final Element parameters) {
+		final Element error = results.createElement("error");
+		error.setAttribute("type", type);
+		error.appendChild(command);
+		error.appendChild(parameters);
+		resultsNode.appendChild(error);
+	}
+
+	/**
+	 * Reports that a command was successfully performed. Appends the report to
+	 * the results.
+	 * 
+	 * @param command
+	 *            command not being processed
+	 * @param parameters
+	 *            parameters used by the command
+	 * @param output
+	 *            any details to be reported about the command processed
+	 */
+	private void addSuccessNode(final Element command,
+			final Element parameters, final Element output) {
+		final Element success = results.createElement("success");
+		success.appendChild(command);
+		success.appendChild(parameters);
+		success.appendChild(output);
+		resultsNode.appendChild(success);
+	}
+
+	/**
+	 * Processes the commands node (root of all commands). Gets the spatial
+	 * width and height of the map and send the data to the appropriate data
+	 * structures.
+	 * 
+	 * @param node
+	 *            commands node to be processed
+	 */
+	public void processCommands(final Element node) {
+		spatialWidth = Integer.parseInt(node.getAttribute("spatialWidth"));
+		spatialHeight = Integer.parseInt(node.getAttribute("spatialHeight"));
+		g = Integer.parseInt(node.getAttribute("g"));
+		allMappedCitiesByName = new GuardedAvlGTree<City, Integer>(new Comparator<City>() {
+
+			@Override
+			public int compare(City o1, City o2) {
+					return o2.getName().compareTo(o1.getName());
+				}
+		}, g);
+		pmOrder = Integer.parseInt(node.getAttribute("pmOrder"));
 		
-		if (!coordinatesToCity.containsKey(new Point2D.Float(x, y))) {
-			if (!nameToCity.containsKey(name)) {
-				coordinatesToCity.put(city.getCoordinates(), city);
-				nameToCity.put(name, city);
-				avlTree.put(city, city.getRadius());
-			} else {
-				CreateCityErrorOutput("duplicateCityName", name, x, y, radius, color);
-				return;
-			}
+		/* set MX Quadtree range */
+		mxQuadtree.setRange(spatialWidth, spatialHeight);
+		pmQuadtree.setRange(spatialWidth, spatialHeight);
+	}
+
+	/**
+	 * Processes a createCity command. Creates a city in the dictionary (Note:
+	 * does not map the city). An error occurs if a city with that name or
+	 * location is already in the dictionary.
+	 * 
+	 * @param node
+	 *            createCity node to be processed
+	 */
+	public void processCreateCity(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String name = processStringAttribute(node, "name", parametersNode);
+		final int x = processIntegerAttribute(node, "x", parametersNode);
+		final int y = processIntegerAttribute(node, "y", parametersNode);
+		final int radius = processIntegerAttribute(node, "radius",
+				parametersNode);
+		final String color = processStringAttribute(node, "color",
+				parametersNode);
+
+		/* create the city */
+		final City city = new City(name, x, y, radius, color);
+
+		if (citiesByLocation.contains(city)) {
+			addErrorNode("duplicateCityCoordinates", commandNode,
+					parametersNode);
+		} else if (citiesByName.containsKey(name)) {
+			addErrorNode("duplicateCityName", commandNode, parametersNode);
 		} else {
-			CreateCityErrorOutput("duplicateCityCoordinates", name, x, y, radius, color);
+			final Element outputNode = results.createElement("output");
+
+			/* add city to dictionary */
+			citiesByName.put(name, city);
+			citiesByLocation.add(city);
+			allMappedCitiesByName.put(city, city.getRadius());
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	/**
+	 * Processes a deleteCity command. Deletes a city from the dictionary. An
+	 * error occurs if the city does not exist or is currently mapped.
+	 * 
+	 * @param node
+	 *            deleteCity node being processed
+	 */
+	public void processDeleteCity(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final String name = processStringAttribute(node, "name", parametersNode);
+
+		if (!citiesByName.containsKey(name)) {
+			/* city with name does not exist */
+			addErrorNode("cityDoesNotExist", commandNode, parametersNode);
+		} else {
+			/* delete city */
+			final Element outputNode = results.createElement("output");
+			final City deletedCity = citiesByName.get(name);
+
+			if (mxQuadtree.contains(name)) {
+				/* city is mapped */
+				mxQuadtree.remove(deletedCity);
+				addCityNode(outputNode, "cityUnmapped", deletedCity);
+			}
+
+			citiesByName.remove(name);
+			citiesByLocation.remove(deletedCity);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	/**
+	 * Clears all the data structures do there are not cities or roads in
+	 * existence in the dictionary or on the map.
+	 * 
+	 * @param node
+	 *            clearAll node to be processed
+	 */
+	public void processClearAll(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		/* clear data structures */
+		citiesByName.clear();
+		citiesByLocation.clear();
+		allMappedCitiesByName.clear();
+		mxQuadtree.clear();
+
+		/* add success node to results */
+		addSuccessNode(commandNode, parametersNode, outputNode);
+	}
+
+	/**
+	 * Lists all the cities, either by name or by location.
+	 * 
+	 * @param node
+	 *            listCities node to be processed
+	 */
+	public void processListCities(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final String sortBy = processStringAttribute(node, "sortBy",
+				parametersNode);
+
+		if (citiesByName.isEmpty()) {
+			addErrorNode("noCitiesToList", commandNode, parametersNode);
+		} else {
+			final Element outputNode = results.createElement("output");
+			final Element cityListNode = results.createElement("cityList");
+
+			Collection<City> cityCollection = null;
+			if (sortBy.equals("name")) {
+				cityCollection = citiesByName.values();
+			} else if (sortBy.equals("coordinate")) {
+				cityCollection = citiesByLocation;
+			} else {
+				/* XML validator failed */
+				System.exit(-1);
+			}
+
+			for (City c : cityCollection) {
+				addCityNode(cityListNode, c);
+			}
+			outputNode.appendChild(cityListNode);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	/**
+	 * Creates a city node containing information about a city. Appends the city
+	 * node to the passed in node.
+	 * 
+	 * @param node
+	 *            node which the city node will be appended to
+	 * @param cityNodeName
+	 *            name of city node
+	 * @param city
+	 *            city which the city node will describe
+	 */
+	private void addCityNode(final Element node, final String cityNodeName,
+			final City city) {
+		final Element cityNode = results.createElement(cityNodeName);
+		cityNode.setAttribute("name", city.getName());
+		cityNode.setAttribute("x", Integer.toString((int) city.getX()));
+		cityNode.setAttribute("y", Integer.toString((int) city.getY()));
+		cityNode.setAttribute("radius", Integer
+				.toString((int) city.getRadius()));
+		cityNode.setAttribute("color", city.getColor());
+		node.appendChild(cityNode);
+	}
+
+	/**
+	 * Creates a city node containing information about a city. Appends the city
+	 * node to the passed in node.
+	 * 
+	 * @param node
+	 *            node which the city node will be appended to
+	 * @param city
+	 *            city which the city node will describe
+	 */
+	private void addCityNode(final Element node, final City city) {
+		addCityNode(node, "city", city);
+	}
+	
+	private void addRoadCreatedNode(final Element node, final String roadNodeName,
+			final City startCity, final City endCity) {
+		final Element cityNode = results.createElement(roadNodeName);
+		cityNode.setAttribute("end", endCity.getName());
+		cityNode.setAttribute("start", startCity.getName());
+		node.appendChild(cityNode);
+	}
+	
+	private void addRoadCreatedNode(final Element node, final City startCity, final City endCity) {
+		addRoadCreatedNode(node, "roadCreated", startCity, endCity);
+	}
+
+	/**
+	 * Maps a city to the spatial map. For part two, maps an isolated city that is not an 
+	 * endpoint of any roads, i.e., the city is not connected to any roads.
+	 * 
+	 * @param node
+	 *            mapCity command node to be processed
+	 */
+	public void processMapCity(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String name = processStringAttribute(node, "name", parametersNode);
+
+		final Element outputNode = results.createElement("output");
+
+		if (!citiesByName.containsKey(name)) {
+			addErrorNode("nameNotInDictionary", commandNode, parametersNode);
+		} else if (pmQuadtree.contains(name)) {
+			addErrorNode("cityAlreadyMapped", commandNode, parametersNode);
+		} else {
+			City city = citiesByName.get(name);
+			try {
+				/* insert city into MX Quadtree and PM Quadtree */
+				mxQuadtree.add(city);
+				pmQuadtree.add(city);
+				allMappedCitiesByName.put(city, city.getRadius());
+
+				/* add success node to results */
+				addSuccessNode(commandNode, parametersNode, outputNode);
+			} catch (CityAlreadyMappedException e) {
+				addErrorNode("cityAlreadyMapped", commandNode, parametersNode);
+			} catch (CityOutOfBoundsException e) {
+				addErrorNode("cityOutOfBounds", commandNode, parametersNode);
+			}
+		}
+	}
+
+	/**
+	 * Removes a city from the spatial map.
+	 * 
+	 * @param node
+	 *            unmapCity command node to be processed
+	 */
+	public void processUnmapCity(Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String name = processStringAttribute(node, "name", parametersNode);
+
+		final Element outputNode = results.createElement("output");
+
+		if (!citiesByName.containsKey(name)) {
+			addErrorNode("nameNotInDictionary", commandNode, parametersNode);
+		} else if (!mxQuadtree.contains(name)) {
+			addErrorNode("cityNotMapped", commandNode, parametersNode);
+		} else {
+			City city = citiesByName.get(name);
+
+			/* unmap the city in the MX Quadtree */
+			mxQuadtree.remove(city);
+			
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	/**
+	 * Processes a saveMap command. Saves the graphical map to a given file.
+	 * 
+	 * @param node
+	 *            saveMap command to be processed
+	 * @throws IOException
+	 *             problem accessing the image file
+	 */
+	public void processSaveMap(final Element node) throws IOException {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String name = processStringAttribute(node, "name", parametersNode);
+
+		final Element outputNode = results.createElement("output");
+
+		/* add success node to results */
+		addSuccessNode(commandNode, parametersNode, outputNode);
+	}
+
+	/**
+	 * Prints out the structure of the MX Quadtree in a human-readable format.
+	 * 
+	 * @param node
+	 *            printMXQuadtree command to be processed
+	 */
+	public void processPrintMXQuadtree(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		if (mxQuadtree.isEmpty()) {
+			/* empty MX Quadtree */
+			addErrorNode("mapIsEmpty", commandNode, parametersNode);
+		} else {
+			/* print MX Quadtree */
+			final Element quadtreeNode = results.createElement("quadtree");
+			printMXQuadtreeHelper(mxQuadtree.getRoot(), quadtreeNode);
+
+			outputNode.appendChild(quadtreeNode);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+	
+	public void processPrintPMQuadtree(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		if (pmQuadtree.isEmpty()) {
+			/* empty MX Quadtree */
+			addErrorNode("mapIsEmpty", commandNode, parametersNode);
+		} else {
+			/* print MX Quadtree */
+			final Element quadtreeNode = results.createElement("quadtree");
+			quadtreeNode.setAttribute("order", Integer.toString(pmOrder));
+			printPMQuadtreeHelper(pmQuadtree.getRoot(), quadtreeNode);
+
+			outputNode.appendChild(quadtreeNode);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	public void processPrintAvlTree(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		if (allMappedCitiesByName.isEmpty()) {
+			addErrorNode("emptyTree", commandNode, parametersNode);
+		} else {
+			outputNode.appendChild(allMappedCitiesByName.createXml(outputNode));
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	/**
+	 * Traverses each node of the MX Quadtree.
+	 * 
+	 * @param currentNode
+	 *            MX Quadtree node being printed
+	 * @param xmlNode
+	 *            XML node representing the current MX Quadtree node
+	 */
+	private void printMXQuadtreeHelper(final Node currentNode,
+			final Element xmlNode) {
+		if (currentNode.getType() == Node.EMPTY) {
+			Element white = results.createElement("white");
+			xmlNode.appendChild(white);
+		} else {
+			if (currentNode.getType() == Node.LEAF) {
+				/* leaf node */
+				final BlackNode blackNode = (BlackNode) currentNode;
+				final Element black = results.createElement("black");
+				black.setAttribute("name", blackNode.getStartVertex().getName());
+				black.setAttribute("x", Integer.toString((int) blackNode
+						.getStartVertex().getX()));
+				black.setAttribute("y", Integer.toString((int) blackNode
+						.getStartVertex().getY()));
+				xmlNode.appendChild(black);
+			} else {
+				/* internal node */
+				final GreyNode currentInternal = (GreyNode) currentNode;
+				final Element gray = results.createElement("gray");
+				gray.setAttribute("x", Integer.toString((int) currentInternal
+						.getCenterX()));
+				gray.setAttribute("y", Integer.toString((int) currentInternal
+						.getCenterY()));
+				for (int i = 0; i < 4; i++) {
+					printMXQuadtreeHelper(currentInternal.getChild(i), gray);
+				}
+				xmlNode.appendChild(gray);
+			}
+		}
+	}
+	
+	/**
+	 * Traverses each node of the PM Quadtree.
+	 * 
+	 * @param currentNode
+	 *            PM Quadtree node being printed
+	 * @param xmlNode
+	 *            XML node representing the current PM Quadtree node
+	 */
+	private void printPMQuadtreeHelper(final Node currentNode,
+			final Element xmlNode) {
+		if (currentNode.getType() == Node.EMPTY) {
+			Element white = results.createElement("white");
+			xmlNode.appendChild(white);
+		} else {
+			if (currentNode.getType() == Node.LEAF) {
+				/* leaf node */
+				final BlackNode blackNode = (BlackNode) currentNode;
+				final Element black = results.createElement("black");
+				black.setAttribute("cardinality", Integer.toString(blackNode.getCardinality()));
+				addCityNode(black, blackNode.getStartVertex());
+				if (blackNode.getCardinality() >= 2) {
+					addRoadCreatedNode(black, "road", blackNode.getStartVertex(), blackNode.getEndVertex());
+				}
+				xmlNode.appendChild(black);
+			} else {
+				/* internal node */
+				final GreyNode currentInternal = (GreyNode) currentNode;
+				final Element gray = results.createElement("gray");
+				gray.setAttribute("x", Integer.toString((int) currentInternal
+						.getCenterX()));
+				gray.setAttribute("y", Integer.toString((int) currentInternal
+						.getCenterY()));
+				for (int i = 0; i < 4; i++) {
+					printPMQuadtreeHelper(currentInternal.getChild(i), gray);
+				}
+				xmlNode.appendChild(gray);
+			}
+		}
+	}
+
+	/**
+	 * Finds the mapped cities within the range of a given point.
+	 * 
+	 * @param node
+	 *            rangeCities command to be processed
+	 * @throws IOException
+	 */
+	public void processRangeCities(final Element node) throws IOException {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		final TreeSet<City> citiesInRange = new TreeSet<City>(
+				new CityNameComparator());
+
+		/* extract values from command */
+		final int x = processIntegerAttribute(node, "x", parametersNode);
+		final int y = processIntegerAttribute(node, "y", parametersNode);
+		final int radius = processIntegerAttribute(node, "radius",
+				parametersNode);
+
+		String pathFile = "";
+		if (node.getAttribute("saveMap").compareTo("") != 0) {
+			pathFile = processStringAttribute(node, "saveMap", parametersNode);
+		}
+		/* get cities within range */
+		final Point2D.Double point = new Point2D.Double(x, y);
+		rangeCitiesHelper(point, radius, mxQuadtree.getRoot(), citiesInRange);
+
+		/* print out cities within range */
+		if (citiesInRange.isEmpty()) {
+			addErrorNode("noCitiesExistInRange", commandNode, parametersNode);
+		} else {
+			/* get city list */
+			final Element cityListNode = results.createElement("cityList");
+			for (City city : citiesInRange) {
+				addCityNode(cityListNode, city);
+			}
+			outputNode.appendChild(cityListNode);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+
+	/**
+	 * Determines if any cities within the MX Quadtree not are within the radius
+	 * of a given point.
+	 * 
+	 * @param point
+	 *            point from which the cities are measured
+	 * @param radius
+	 *            radius from which the given points are measured
+	 * @param node
+	 *            MX Quadtree node being examined
+	 * @param citiesInRange
+	 *            a list of cities found to be in range
+	 */
+	private void rangeCitiesHelper(final Point2D.Double point,
+			final int radius, final Node node, final TreeSet<City> citiesInRange) {
+		if (node.getType() == Node.LEAF) {
+			final BlackNode leaf = (BlackNode) node;
+			final double distance = point.distance(leaf.getStartVertex().getPoint());
+			if (distance <= radius) {
+				/* city is in range */
+				final City city = leaf.getStartVertex();
+				citiesInRange.add(city);
+			}
+		} else if (node.getType() == Node.INTERNAL) {
+			/* check each quadrant of internal node */
+			final GreyNode internal = (GreyNode) node;
+
+			final Circle2D.Double circle = new Circle2D.Double(point, radius);
+			for (int i = 0; i < 4; i++) {
+				if (mxQuadtree.intersects(circle, internal.getChildRegion(i))) {
+					rangeCitiesHelper(point, radius, internal.getChild(i),
+							citiesInRange);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Finds the nearest city to a given point.
+	 * 
+	 * @param node
+	 *            nearestCity command being processed
+	 */
+	public void processNearestCity(Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		/* extract attribute values from command */
+		final int x = processIntegerAttribute(node, "x", parametersNode);
+		final int y = processIntegerAttribute(node, "y", parametersNode);
+
+		final Point2D.Float point = new Point2D.Float(x, y);
+
+		if (citiesByName.size() <= 0) {
+			addErrorNode("mapIsEmpty", commandNode, parametersNode);
 			return;
 		}
 
-		Element successElement = XmlParser.results.createElement("success");
-		XmlParser.currElement.appendChild(successElement);
+		//final PriorityQueue<NearestCity> nearCities = new PriorityQueue<NearestCity>(
+		//		citiesByName.size());
 
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "createCity");
-		if (!id.equals("")) {
-			commandElement.setAttribute("id", id);
-		}
-		successElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		successElement.appendChild(parametersElement);
-
-		Element nameElement = XmlParser.results.createElement("name");
-		nameElement.setAttribute("value", name);
-		parametersElement.appendChild(nameElement);
-
-		Element xCoordElement = XmlParser.results.createElement("x");
-		xCoordElement.setAttribute("value", Integer.toString(x));
-		parametersElement.appendChild(xCoordElement);
-
-		Element yCoordElement = XmlParser.results.createElement("y");
-		yCoordElement.setAttribute("value", Integer.toString(y));
-		parametersElement.appendChild(yCoordElement);
-
-		Element radiusElement = XmlParser.results.createElement("radius");
-		radiusElement.setAttribute("value", Integer.toString(radius));
-		parametersElement.appendChild(radiusElement);
-
-		Element colorElement = XmlParser.results.createElement("color");
-		colorElement.setAttribute("value", color);
-		parametersElement.appendChild(colorElement);
-
-		Element outputElement = XmlParser.results.createElement("output");
-		successElement.appendChild(outputElement);
-
-	}
-
-	private void NoCitiesToListError(String sortMethod) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "noCitiesToList");
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "listCities");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element sortByElement = XmlParser.results.createElement("sortBy");
-		sortByElement.setAttribute("value", sortMethod);
-		parametersElement.appendChild(sortByElement);
-	}
-
-	/**
-	 * A method to sort all of the cities in order. One can specify how they
-	 * would like to sort the elements.
-	 * 
-	 * @param sortMethod
-	 */
-	public void ListCities(String id, String sortMethod) {
-
-		if (nameToCity.size() >= 1) {
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "listCities");
-			if (!id.equals("")) {
-				commandElement.setAttribute("id", id);
-			}
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element sortByElement = XmlParser.results.createElement("sortBy");
-
-			if (sortMethod.equals("name")) {
-				sortByElement.setAttribute("value", "name");
-				parametersElement.appendChild(sortByElement);
-
-				Element outputElement = XmlParser.results.createElement("output");
-				successElement.appendChild(outputElement);
-
-				Element cityListElement = XmlParser.results.createElement("cityList");
-				outputElement.appendChild(cityListElement);
-
-				for (String entry : nameToCity.keySet()) {
-					City cityFromKey = nameToCity.get(entry);
-
-					Element cityElement = XmlParser.results.createElement("city");
-					cityElement.setAttribute("color", cityFromKey.getColor());
-					cityElement.setAttribute("name", cityFromKey.getName());
-					cityElement.setAttribute("radius", Integer.toString(cityFromKey.getRadius()));
-					cityElement.setAttribute("x", Integer.toString((int) cityFromKey.getX()));
-					cityElement.setAttribute("y", Integer.toString((int) cityFromKey.getY()));
-
-					cityListElement.appendChild(cityElement);
-				}
-
-			} else if (sortMethod.equals("coordinate")) {
-				sortByElement.setAttribute("value", "coordinate");
-				parametersElement.appendChild(sortByElement);
-
-				Element outputElement = XmlParser.results.createElement("output");
-				successElement.appendChild(outputElement);
-
-				Element cityListElement = XmlParser.results.createElement("cityList");
-				outputElement.appendChild(cityListElement);
-
-				for (Point2D.Float entry : coordinatesToCity.keySet()) {
-					City cityFromKey = coordinatesToCity.get(entry);
-
-					Element cityElement = XmlParser.results.createElement("city");
-					cityElement.setAttribute("color", cityFromKey.getColor());
-					cityElement.setAttribute("name", cityFromKey.getName());
-					cityElement.setAttribute("radius", Integer.toString(cityFromKey.getRadius()));
-					cityElement.setAttribute("x", Integer.toString((int) cityFromKey.getX()));
-					cityElement.setAttribute("y", Integer.toString((int) cityFromKey.getY()));
-
-					cityListElement.appendChild(cityElement);
-				}
-			}
+		if (mxQuadtree.getRoot().getType() == Node.EMPTY) {
+			addErrorNode("cityNotFound", commandNode, parametersNode);
 		} else {
-			NoCitiesToListError(sortMethod);
+
+			//
+			//nearCities.add(new NearestCity(null, Double.POSITIVE_INFINITY));
+			//
+
+			//nearestCityHelper(prQuadtree.getRoot(), point, nearCities);
+			//NearestCity nearestCity = nearCities.remove();
+			City n = nearestCityHelper2(mxQuadtree.getRoot(), point);
+			//addCityNode(outputNode, nearestCity.getCity());
+			addCityNode(outputNode, n);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
 		}
 	}
 
-	private void DeleteCityError(String name) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "cityDoesNotExist");
-		XmlParser.currElement.appendChild(errorElement);
 
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "deleteCity");
-		errorElement.appendChild(commandElement);
+	public void processMapRoad(Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
 
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element nameElement = XmlParser.results.createElement("name");
-		nameElement.setAttribute("value", name);
-		parametersElement.appendChild(nameElement);
-
-	}
-
-	public void DeleteCity(String name) {
-		if (nameToCity.containsKey(name)) {
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "deleteCity");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element deletedElement = XmlParser.results.createElement("name");
-			deletedElement.setAttribute("value", name);
-			parametersElement.appendChild(deletedElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-
-			// FIXED: FIRST. If a city is mapped in MXQuadTree structure, remove
-			// it from the structure!
-			// After that, remove from the dictionary
-			if (mxQuadtree.contains(name)) {
-				mxQuadtree.delete(name);
-				Element cityUnmappedElement =
-				XmlParser.results.createElement("cityUnmapped");
-				cityUnmappedElement.setAttribute("name", name);
-				cityUnmappedElement.setAttribute("x", Integer.toString((int)
-				nameToCity.get(name).getX()));
-				cityUnmappedElement.setAttribute("y", Integer.toString((int)
-				nameToCity.get(name).getY()));
-				cityUnmappedElement.setAttribute("color",
-				nameToCity.get(name).getColor());
-				cityUnmappedElement.setAttribute("radius",
-				Integer.toString(nameToCity.get(name).getRadius()));
-				outputElement.appendChild(cityUnmappedElement);
-			}
-
-			Point2D.Float coordinate = nameToCity.get(name).getCoordinates();
-			nameToCity.remove(name);
-			coordinatesToCity.remove(coordinate);
-		} else {
-			DeleteCityError(name);
-		}
-
-	}
-
-	private void AVLTreeError() {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "emptyTree");
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "printAvlTree");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-	}
-
-	public void PrintAVLTree() {
-		if (!avlTree.isEmpty()) {
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "printAvlTree");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-
-			Element avlTreeElement = XmlParser.results.createElement("AvlGTree");
-			outputElement.appendChild(avlTreeElement);
-			avlTreeElement.setAttribute("cardinality", Integer.toString(avlTree.size()));
-			avlTreeElement.setAttribute("height", Integer.toString(avlTree.height()));
-
-			avlTreeElement.setAttribute("maxImbalance", Integer.toString(XmlParser.maxImbalance));
-
-			avlTree.preorder(avlTreeElement); // DONE: Access the XmlParser
-												// results in that area
-		} else {
-			AVLTreeError();
-		}
-
-	}
-
-	/**
-	 * Clears the MX QuadTree, Dictionary and AVLTree data structures. There are
-	 * no error outputs for this method
-	 */
-	public void ClearAll() {
-		nameToCity.clear();
-		coordinatesToCity.clear();
-		avlTree.clear();
-		mxQuadtree.makeEmpty();
-		pmQuadtree.makeEmpty();
+		/* extract attribute values from command */
+		final String startCityName = processStringAttribute(node, "start", parametersNode);
+		final String endCityName = processStringAttribute(node, "end", parametersNode);
 		
-		Element successElement = XmlParser.results.createElement("success");
-		XmlParser.currElement.appendChild(successElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "clearAll");
-		successElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		successElement.appendChild(parametersElement);
-
-		Element outputElement = XmlParser.results.createElement("output");
-		successElement.appendChild(outputElement);
-	}
-
-	private void MapCityErrorOutput(String errorType, String name) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", errorType);
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "mapCity");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element nameElement = XmlParser.results.createElement("name");
-		nameElement.setAttribute("value", name);
-		parametersElement.appendChild(nameElement);
-	}
-
-	public void MapCity(String cityName) {
 		// TODO: Need case for when city has already been mapped
-		if (nameToCity.get(cityName) == null) {
-			MapCityErrorOutput("nameNotInDictionary", cityName);
-		} else if (mxQuadtree.contains(cityName)) {
-			avlTree.put(nameToCity.get(cityName), nameToCity.get(cityName).getRadius());
-			MapCityErrorOutput("cityAlreadyMapped", cityName); 
-		} else if (nameToCity.get(cityName).getX() < 0 || nameToCity.get(cityName).getY() < 0
-				|| nameToCity.get(cityName).getX() >= XmlParser.spatialWidth
-				|| nameToCity.get(cityName).getY() >= XmlParser.spatialHeight) {
-			MapCityErrorOutput("cityOutOfBounds", cityName); // TODO: See if
-																// works
-		} else {
-			avlTree.put(nameToCity.get(cityName), nameToCity.get(cityName).getRadius());
-			pmQuadtree.insert(nameToCity.get(cityName));
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "mapCity");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element mappedCityElement = XmlParser.results.createElement("name");
-			mappedCityElement.setAttribute("value", cityName);
-			parametersElement.appendChild(mappedCityElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-		}
-	}
-
-	private void EmptyMXTreeError() {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "mapIsEmpty");
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "printMXQuadtree");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-	}
-
-	public void PrintMXQuadtree() {
-		if (!mxQuadtree.isEmpty()) {
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "printMXQuadtree");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-
-			Element quadTreeElement = XmlParser.results.createElement("quadtree");
-			outputElement.appendChild(quadTreeElement);
-
-			mxQuadtree.inorder(quadTreeElement); // DONE: Access the XmlParser
-													// results in that area
-		} else {
-			EmptyMXTreeError(); // DONE: Made a method to handle empty tree
-								// error.
-		}
-	}
-
-	public void SaveMap(String mapName) {
-		Element successElement = XmlParser.results.createElement("success");
-		XmlParser.currElement.appendChild(successElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "saveMap");
-		successElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		successElement.appendChild(parametersElement);
-
-		Element mapNameElement = XmlParser.results.createElement("name");
-		mapNameElement.setAttribute("value", mapName);
-		parametersElement.appendChild(mapNameElement);
-
-		Element outputElement = XmlParser.results.createElement("output");
-		successElement.appendChild(outputElement);
-	}
-
-	private void UnmapCityErrorOutput(String errorType, String name) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", errorType);
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "unmapCity");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element nameElement = XmlParser.results.createElement("name");
-		nameElement.setAttribute("value", name);
-		parametersElement.appendChild(nameElement);
-	}
-
-	public void UnmapCity(String cityName) {
-		// TODO: Need case for when city has already been mapped
-		if (nameToCity.get(cityName) == null) {
-			UnmapCityErrorOutput("nameNotInDictionary", cityName);
-		} else if (!mxQuadtree.contains(cityName)) {
-			UnmapCityErrorOutput("cityNotMapped", cityName); //TODO: See if
-		} else {
-			mxQuadtree.delete(cityName);
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "unmapCity");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element mappedCityElement = XmlParser.results.createElement("name");
-			mappedCityElement.setAttribute("value", cityName);
-			parametersElement.appendChild(mappedCityElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-		}
-	}
-	
-	private void NearestCityError(int x, int y) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "cityNotFound");
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "nearestCity");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-		
-		Element xElement = XmlParser.results.createElement("x");
-		xElement.setAttribute("value", Integer.toString(x));
-		parametersElement.appendChild(xElement);
-		
-		Element yElement = XmlParser.results.createElement("y");
-		yElement.setAttribute("value", Integer.toString(y));
-		parametersElement.appendChild(yElement);
-	}
-
-	public void NearestCity(int cityXCoord, int cityYCoord) {
-		if (!mxQuadtree.isEmpty()) {
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "nearestCity");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element xElement = XmlParser.results.createElement("x");
-			xElement.setAttribute("value", Integer.toString(cityXCoord));
-			parametersElement.appendChild(xElement);
-
-			Element yElement = XmlParser.results.createElement("y");
-			yElement.setAttribute("value", Integer.toString(cityYCoord));
-			parametersElement.appendChild(yElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-
-			String cityName = pmQuadtree.findClosestPoint(cityXCoord, cityYCoord);
-			
-			Element cityUnmappedElement = XmlParser.results.createElement("city");
-			cityUnmappedElement.setAttribute("name", cityName);
-			cityUnmappedElement.setAttribute("x", Integer.toString((int) nameToCity.get(cityName).getX()));
-			cityUnmappedElement.setAttribute("y", Integer.toString((int) nameToCity.get(cityName).getY()));
-			cityUnmappedElement.setAttribute("color", nameToCity.get(cityName).getColor());
-			cityUnmappedElement.setAttribute("radius", Integer.toString(nameToCity.get(cityName).getRadius()));
-			outputElement.appendChild(cityUnmappedElement);
-
-		} else {
-			NearestCityError(cityXCoord, cityYCoord); // DONE: Made a method to handle empty tree
-								// error.
-		}
-	}
-
-	public void RangeCities(int cityXCoord, int cityYCoord, int radius, String saveMap) {
-		ArrayList<String> cityNames = mxQuadtree.findRangeValues(cityXCoord, cityYCoord, radius);
-		
-		if (cityNames.size() > 0) {
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-	
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "rangeCities");
-			successElement.appendChild(commandElement);
-	
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-	
-			Element xElement = XmlParser.results.createElement("x");
-			xElement.setAttribute("value", Integer.toString(cityXCoord));
-			parametersElement.appendChild(xElement);
-	
-			Element yElement = XmlParser.results.createElement("y");
-			yElement.setAttribute("value", Integer.toString(cityYCoord));
-			parametersElement.appendChild(yElement);
-	
-			Element radiusElement = XmlParser.results.createElement("radius");
-			radiusElement.setAttribute("value", Integer.toString(radius));
-			parametersElement.appendChild(radiusElement);
-	
-			if (!saveMap.equals("")) {
-				Element saveMapElem = XmlParser.results.createElement("saveMap");
-				saveMapElem.setAttribute("value", saveMap);
-				parametersElement.appendChild(saveMapElem);
-			}
-	
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-	
-			Element cityListElement = XmlParser.results.createElement("cityList");
-			outputElement.appendChild(cityListElement);
-	
-			Collections.sort(cityNames, new Comparator<String>() {
-				@Override
-				public int compare(String firstCity, String secondCity) {
-	
-					return secondCity.compareTo(firstCity);
-				}
-			});
-	
-	
-			for (int cityInd = 0; cityInd < cityNames.size(); cityInd++) {
-				Element cityUnmappedElement = XmlParser.results.createElement("city");
-				cityUnmappedElement.setAttribute("name", cityNames.get(cityInd));
-				cityUnmappedElement.setAttribute("x",
-						Integer.toString((int) nameToCity.get(cityNames.get(cityInd)).getX()));
-				cityUnmappedElement.setAttribute("y",
-						Integer.toString((int) nameToCity.get(cityNames.get(cityInd)).getY()));
-				cityUnmappedElement.setAttribute("color", nameToCity.get(cityNames.get(cityInd)).getColor());
-				cityUnmappedElement.setAttribute("radius",
-						Integer.toString(nameToCity.get(cityNames.get(cityInd)).getRadius()));
-				cityListElement.appendChild(cityUnmappedElement);
-			}
-
-		} else {
-			NoCitiesExistError(cityXCoord, cityYCoord, radius, saveMap);
-		}
-	}
-
-	private void NoCitiesExistError(int cityXCoord, int cityYCoord, int radius, String mapName) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", "noCitiesExistInRange");
-		XmlParser.currElement.appendChild(errorElement);
-
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "rangeCities");
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element xCoordElement = XmlParser.results.createElement("x");
-		xCoordElement.setAttribute("value", Integer.toString(cityXCoord));
-		parametersElement.appendChild(xCoordElement);
-
-		Element yCoordElement = XmlParser.results.createElement("y");
-		yCoordElement.setAttribute("value", Integer.toString(cityYCoord));
-		parametersElement.appendChild(yCoordElement);
-
-		Element radiusElement = XmlParser.results.createElement("radius");
-		radiusElement.setAttribute("value", Integer.toString(radius));
-		parametersElement.appendChild(radiusElement);
-		
-		if (!mapName.equals("")) {
-			Element saveMapElem = XmlParser.results.createElement("saveMap");
-			saveMapElem.setAttribute("value", mapName);
-			parametersElement.appendChild(saveMapElem);
-		}
-	}
-
-	public void PrintPMQuadtree() {
-		if (!pmQuadtree.isEmpty()) {
-
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "printPMQuadtree");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-
-			Element quadTreeElement = XmlParser.results.createElement("quadtree");
-			quadTreeElement.setAttribute("order", "3");
-			outputElement.appendChild(quadTreeElement);
-
-			pmQuadtree.inorder(quadTreeElement); // DONE: Access the XmlParser
-													// results in that area
-		} else {
-			EmptyPMTreeError(); // TODO: Make a method to handle empty tree
-								// error.
-		}
-	}
-
-	private void EmptyPMTreeError() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void MapRoad(String startCityName, String endCityName) {
-		// TODO: Need case for when city has already been mapped
-		if (nameToCity.get(startCityName) == null) {
-			DoesntExistError("startPointDoesNotExist", "", startCityName);
-		} else if (nameToCity.get(endCityName) == null) {
-			DoesntExistError("endPointDoesNotExist", "", endCityName);
+		if (citiesByName.get(startCityName) == null) {
+			addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
+		} else if (citiesByName.get(endCityName) == null) {
+			addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
 		} else if (startCityName.equals(endCityName)) {
-			EqualityError("startEqualsEnd", "", startCityName, endCityName);
-		} else if (nameToCity.get(startCityName).getX() < 0 || nameToCity.get(endCityName).getY() < 0
-				|| nameToCity.get(startCityName).getX() >= XmlParser.spatialWidth
-				|| nameToCity.get(startCityName).getY() >= XmlParser.spatialHeight
-				|| nameToCity.get(endCityName).getX() >= XmlParser.spatialWidth
-				|| nameToCity.get(endCityName).getY() >= XmlParser.spatialHeight) {
-			OutOfBoundsError("roadOutOfBounds", "", startCityName, endCityName);
+			addErrorNode("startEqualsEnd", commandNode, parametersNode);
 		} else {
-			Element successElement = XmlParser.results.createElement("success");
-			XmlParser.currElement.appendChild(successElement);
-
-			Element commandElement = XmlParser.results.createElement("command");
-			commandElement.setAttribute("name", "mapRoad");
-			successElement.appendChild(commandElement);
-
-			Element parametersElement = XmlParser.results.createElement("parameters");
-			successElement.appendChild(parametersElement);
-
-			Element startElement = XmlParser.results.createElement("start");
-			startElement.setAttribute("value", startCityName);
-			parametersElement.appendChild(startElement);
+			//FIXED: Rename to addRoadCreatedNode
+			try {
+				pmQuadtree.add(citiesByName.get(startCityName), citiesByName.get(endCityName));
+			} catch (CityAlreadyMappedException e) {
+				addErrorNode("cityAlreadyMapped", commandNode, parametersNode);
+			} catch (CityOutOfBoundsException e) {
+				addErrorNode("roadOutOfBounds", commandNode, parametersNode);
+			} 
 			
-			Element endElement = XmlParser.results.createElement("end");
-			endElement.setAttribute("value", endCityName);
-			parametersElement.appendChild(endElement);
-
-			Element outputElement = XmlParser.results.createElement("output");
-			successElement.appendChild(outputElement);
-
-			pmQuadtree.insertPM(nameToCity.get(startCityName), nameToCity.get(endCityName));
+			addRoadCreatedNode(outputNode, citiesByName.get(startCityName), citiesByName.get(endCityName));
 			
-			Element roadcreatedElement = XmlParser.results.createElement("roadCreated");
-			roadcreatedElement.setAttribute("start", startCityName);
-			roadcreatedElement.setAttribute("end", endCityName);
-			outputElement.appendChild(roadcreatedElement);
+			addSuccessNode(commandNode, parametersNode, outputNode);
 		}
 	}
 
-	private void EqualityError(String errorName, String id, String start, String end) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", errorName);
-		XmlParser.currElement.appendChild(errorElement);
+	/**
+	 * 2/25/2011
+	 * @param root
+	 * @param point
+	 */
+	private City nearestCityHelper2(Node root, Point2D.Float point) {
+		PriorityQueue<QuadrantDistance> q = new PriorityQueue<QuadrantDistance>();
+		Node currNode = root;
+		while (currNode.getType() != Node.LEAF) {
+			GreyNode g = (GreyNode) currNode;
+			for (int i = 0; i < 4; i++) {
+				Node kid = g.children[i];
+				if (kid.getType() != Node.EMPTY) {
+					q.add(new QuadrantDistance(kid, point));
+				}
+			}
+			currNode = q.remove().quadtreeNode;
+		}
 
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "mapRoad");
-		//commandElement.setAttribute("id", id);
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element startElement = XmlParser.results.createElement("start");
-		startElement.setAttribute("value", start);
-		
-		Element endElement = XmlParser.results.createElement("end");
-		endElement.setAttribute("value", end);
-		
-		parametersElement.appendChild(startElement);
-		parametersElement.appendChild(endElement);
+		return ((BlackNode) currNode).getStartVertex();
 	}
 
-	private void DoesntExistError(String errorName, String id, String start) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", errorName);
-		XmlParser.currElement.appendChild(errorElement);
+	class QuadrantDistance implements Comparable<QuadrantDistance> {
+		public Node quadtreeNode;
+		private double distance;
 
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "mapRoad");
-		//commandElement.setAttribute("id", id);
-		errorElement.appendChild(commandElement);
+		public QuadrantDistance(Node node, Point2D.Float pt) {
+			quadtreeNode = node;
+			if (node.getType() == Node.INTERNAL) {
+				GreyNode gray = (GreyNode) node;
+				distance = Shape2DDistanceCalculator.distance(pt, 
+						new Rectangle2D.Float(gray.origin.x, gray.origin.y, gray.width, gray.height));
+			} else if (node.getType() == Node.LEAF) {
+				BlackNode leaf = (BlackNode) node;
+				distance = pt.distance(leaf.getStartVertex().pt);
+			} else {
+				throw new IllegalArgumentException("Only leaf or internal node can be passed in");
+			}
+		}
 
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element startElement = XmlParser.results.createElement("start");
-		startElement.setAttribute("value", start);
-		
-		parametersElement.appendChild(startElement);
+		public int compareTo(QuadrantDistance qd) {
+			if (distance < qd.distance) {
+				return -1;
+			} else if (distance > qd.distance) {
+				return 1;
+			} else {
+				if (quadtreeNode.getType() != qd.quadtreeNode.getType()) {
+					if (quadtreeNode.getType() == Node.INTERNAL) {
+						return -1;
+					} else {
+						return 1;
+					}
+				} else if (quadtreeNode.getType() == Node.LEAF) {
+					// both are leaves
+					return ((BlackNode) qd.quadtreeNode).getStartVertex().getName().compareTo(
+							((BlackNode) quadtreeNode).getStartVertex().getName());
+				} else {
+					// both are internals
+					return 0;
+				}
+			}
+		}
 	}
-	
-	private void OutOfBoundsError(String errorName, String id, String start, String end) {
-		Element errorElement = XmlParser.results.createElement("error");
-		errorElement.setAttribute("type", errorName);
-		XmlParser.currElement.appendChild(errorElement);
 
-		Element commandElement = XmlParser.results.createElement("command");
-		commandElement.setAttribute("name", "mapRoad");
-		//commandElement.setAttribute("id", id);
-		errorElement.appendChild(commandElement);
-
-		Element parametersElement = XmlParser.results.createElement("parameters");
-		errorElement.appendChild(parametersElement);
-
-		Element startElement = XmlParser.results.createElement("start");
-		startElement.setAttribute("value", start);
-		
-		Element endElement = XmlParser.results.createElement("end");
-		endElement.setAttribute("value", end);
-		
-		parametersElement.appendChild(startElement);
-		parametersElement.appendChild(endElement);
-	}
-
+	//	/**
+	//	 * Examines the distance from each city in a MX Quadtree node from the given
+	//	 * point.
+	//	 * 
+	//	 * @param node
+	//	 *            MX Quadtree node being examined
+	//	 * @param point
+	//	 *            point
+	//	 * @param nearCities
+	//	 *            priority queue of cities organized by how close they are to
+	//	 *            the point
+	//	 */
+	//	private void nearestCityHelper(Node node, Point2D.Float point,
+	//			PriorityQueue<NearestCity> nearCities) {
+	//		if (node.getType() == Node.LEAF) {
+	//			LeafNode leaf = (LeafNode) node;
+	//			NearestCity nearCity = new NearestCity(leaf.getCity(), point
+	//					.distance(leaf.getCity().toPoint2D()));
+	//			if (nearCity.compareTo(nearCities.peek()) < 0) {
+	//				nearCities.add(nearCity);
+	//			}
+	//		} else if (node.getType() == Node.INTERNAL) {
+	//			InternalNode internal = (InternalNode) node;
+	//			TreeSet<NearestQuadrant> nearestQuadrants = new TreeSet<NearestQuadrant>();
+	//			for (int i = 0; i < 4; i++) {
+	//				nearestQuadrants.add(new NearestQuadrant(Shape2DDistanceCalculator.distance(point, internal
+	//						.getChildRegion(i)), i));
+	//			}
+	//			
+	//			for (NearestQuadrant nearQuadrant : nearestQuadrants) {
+	//				final int i = nearQuadrant.getQuadrant(); 
+	//				
+	//				if (Shape2DDistanceCalculator.distance(point, internal
+	//						.getChildRegion(i)) <= nearCities.peek().getDistance()) {
+	//
+	//					nearestCityHelper(internal.getChild(i), point, nearCities);
+	//				}
+	//			}
+	//		}
+	//	}
+	//	
+	//	private class NearestQuadrant implements Comparable<NearestQuadrant> {
+	//
+	//		private double distance;
+	//		
+	//		private int quadrant;
+	//		
+	//		public NearestQuadrant(double distance, int quadrant) {
+	//			this.distance = distance;
+	//			this.quadrant = quadrant;
+	//		}
+	//
+	//		public int getQuadrant() {
+	//			return quadrant;
+	//		}
+	//
+	//		public int compareTo(NearestQuadrant o) {
+	//			if (distance < o.distance) {
+	//				return -1;
+	//			} else if (distance > o.distance) {
+	//				return 1;
+	//			} else {
+	//				if (quadrant < o.quadrant) {
+	//					return -1;
+	//				} else if (quadrant > o.quadrant) {
+	//					return 1;
+	//				} else {
+	//					return 0;
+	//				}
+	//			}
+	//		}
+	//		
+	//	}
+	//
+	//	/**
+	//	 * Used with the nearestCity command. Each NearestCity contains a city and
+	//	 * the city's distance from a give point. A NearestCity is less than another
+	//	 * if it's distance is smaller than the other's.
+	//	 * 
+	//	 * @author Ben Zoller
+	//	 * @version 1.0
+	//	 */
+	//	private class NearestCity implements Comparable<NearestCity> {
+	//		/** city */
+	//		private final City city;
+	//
+	//		/** city's distance to a point */
+	//		private final double distance;
+	//
+	//		/**
+	//		 * Constructs a city and it's distance from a point.
+	//		 * 
+	//		 * @param city
+	//		 *            city
+	//		 * @param distance
+	//		 *            distance from a point
+	//		 */
+	//		private NearestCity(final City city, final double distance) {
+	//			this.city = city;
+	//			this.distance = distance;
+	//		}
+	//
+	//		/**
+	//		 * Gets the city
+	//		 * 
+	//		 * @return city
+	//		 */
+	//		private City getCity() {
+	//			return city;
+	//		}
+	//
+	//		/**
+	//		 * Compares one city to another based on their distances.
+	//		 * 
+	//		 * @param otherNearCity
+	//		 *            other city
+	//		 * @return distance comparison results
+	//		 */
+	//		public int compareTo(final NearestCity otherNearCity) {
+	//			if (distance < otherNearCity.distance) {
+	//				return -1;
+	//			} else if (distance > otherNearCity.distance) {
+	//				return 1;
+	//			} else {
+	//				return city.getName().compareTo(otherNearCity.city.getName());
+	//			}
+	//		}
+	//
+	//		/**
+	//		 * Gets the distance
+	//		 * 
+	//		 * @return distance
+	//		 */
+	//		public double getDistance() {
+	//			return distance;
+	//		}
+	//	}
 }
