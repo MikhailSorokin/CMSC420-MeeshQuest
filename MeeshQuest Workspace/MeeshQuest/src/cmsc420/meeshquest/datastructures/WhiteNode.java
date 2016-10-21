@@ -32,9 +32,9 @@ public class WhiteNode extends Node {
 	
 
 	@Override
-	public Node add(Geometry2D g, City city, Float origin, int width, int height) {
+	public Node add(Geometry2D g, Float origin, int width, int height) {
 		Node blackNode = new BlackNode();
-		return blackNode.add(g, city, origin, width, height);
+		return blackNode.add(g, origin, width, height);
 	}
 
 	public Node remove(City city, Point2D.Float origin, int width,

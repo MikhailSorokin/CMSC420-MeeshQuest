@@ -110,9 +110,12 @@ public class PMQuadtree {
 			throw new CityOutOfBoundsException();
 		}
 
+		//TODO: Need to call this an isolatedCity
 		/* insert city into PRQuadTree */
 		cityNames.add(city.getName());
-		root = root.add(new Point(city), city, spatialOrigin, spatialWidth, spatialHeight);
+		root = root.add(new Point(city), spatialOrigin, spatialWidth, spatialHeight);
+		
+		//removeLists(root);
 	}
 	
 	/**
@@ -140,9 +143,38 @@ public class PMQuadtree {
 		cityNames.add(startCity.getName());
 		cityNames.add(endCity.getName());
 		
-		root = root.add(new Point(startCity), startCity, spatialOrigin, spatialWidth, spatialHeight);
-		root = root.add(new Point(endCity), startCity, spatialOrigin, spatialWidth, spatialHeight);
-		root = root.add(new Line(startCity, endCity), endCity, spatialOrigin, spatialWidth, spatialHeight);
+		//Need a check to see if a point is already contained;
+		Point start = new Point(startCity);
+		Point end = new Point(endCity);
+		//check(root, start);
+		//if (!status)
+			root = root.add(start, spatialOrigin, spatialWidth, spatialHeight);
+		//status = false;
+		//check(root, end);
+		//if (!status)
+			root = root.add(end, spatialOrigin, spatialWidth, spatialHeight);
+		status = false;
+		root = root.add(new Line(startCity, endCity), spatialOrigin, spatialWidth, spatialHeight);
+
+	}
+	
+	private boolean status = false;
+	
+	private void check(final Node currentNode, final Point searchPoint) {
+		if (currentNode.getType() == Node.LEAF) {
+			/* leaf node */
+			final BlackNode blackNode = (BlackNode) currentNode;
+			if (blackNode.getAllList().contains(searchPoint)) {
+				status = true;	
+				return;
+			}
+		} else if (currentNode.getType() == Node.INTERNAL) {
+			/* internal node */
+			final GreyNode currentInternal = (GreyNode) currentNode;
+			for (int i = 0; i < 4; i++) {
+				check(currentInternal.getChild(i), searchPoint);
+			}
+		} 
 	}
 
 	/**

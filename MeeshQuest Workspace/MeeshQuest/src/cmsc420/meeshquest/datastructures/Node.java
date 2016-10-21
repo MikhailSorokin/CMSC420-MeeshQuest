@@ -59,7 +59,7 @@ public abstract class Node {
 	 * @param height
 	 * @return
 	 */
-	public abstract Node add(Geometry2D g, City city, Point2D.Float origin, int width,
+	public abstract Node add(Geometry2D g, Point2D.Float origin, int width,
 			int height);
 
 

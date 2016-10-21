@@ -8,6 +8,7 @@ import java.awt.geom.Rectangle2D;
 import cmsc420.geom.Geometry2D;
 import cmsc420.meeshquest.citymapobjects.City;
 import cmsc420.meeshquest.citymapobjects.Line;
+import cmsc420.meeshquest.citymapobjects.Point;
 
 
 /**
@@ -97,24 +98,16 @@ public class GreyNode extends Node {
 	}
 	
 	@Override
-	public Node add(Geometry2D g, City city, Float origin, int width, int height) {
+	public Node add(Geometry2D g, Float origin, int width, int height) {
 		for (int i = 0; i < 4; i++ ) {
 			if (g.getType() == Geometry2D.POINT) {
-				Point2D cityPoint = city.getPoint();
-				if (intersects(cityPoint, regions[i])) {
-					children[i] = children[i].add(g, city, origin, halfWidth, halfHeight);
-					/*if (existsPointInRegion[i]) {
-						children[i] = ((BlackNode) children[i]).partition(g, city, origin, halfWidth, halfHeight);
-					}
-					else {
-						//TODO: Problem most likely something to do with these booleans, must change them around.
-						existsPointInRegion[i] = true;
-						children[i] = new BlackNode();
-					}*/
+				Point2D singlePoint = ((Point)g).getCity().getPoint();
+				if (intersects(singlePoint, regions[i])) {
+					children[i] = children[i].add(g, origins[i], halfWidth, halfHeight);
 				}
 			} else if (g.getType() == Geometry2D.SEGMENT) {
 				if (intersects(((Line)g).getLine(), regions[i])) {
-						children[i] = children[i].add(g, city, origins[i], halfWidth,
+						children[i] = children[i].add(g, origins[i], halfWidth,
 								halfHeight);
 				}
 			}
@@ -151,10 +144,6 @@ public class GreyNode extends Node {
 	 */	
 	public static boolean intersects(Point2D point, Rectangle2D rect) {
 		//Issue is that it is not getting partitioned enough
-		System.out.println(point.getX() >= rect.getMinX());
-		System.out.println(point.getX() <= rect.getMaxX());
-		System.out.println(rect.getMinY());
-		System.out.println(point.getY() <= rect.getMaxY());
 		return (point.getX() >= rect.getMinX() && point.getX() <= rect.getMaxX()
 				&& point.getY() >= rect.getMinY() && point.getY() <= rect
 				.getMaxY());

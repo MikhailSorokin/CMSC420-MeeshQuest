@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import cmsc420.geom.Geometry2D;
 import cmsc420.meeshquest.citymapobjects.City;
-import cmsc420.meeshquest.citymapobjects.Line;
 import cmsc420.meeshquest.citymapobjects.Point;
 
 
@@ -15,10 +14,11 @@ import cmsc420.meeshquest.citymapobjects.Point;
  */
 public class BlackNode extends Node {
 
-	protected City startVertex, endVertex;
+	protected City mxCity;
 	private int cardinality = 0;
 	private ArrayList<Geometry2D> geometryList = new ArrayList<Geometry2D>();
-	private boolean isValid = true; //returns whether or not the node has less than two times accessed with same node
+	private ArrayList<Geometry2D> allVertexList = new ArrayList<Geometry2D>(); 
+	//whether or not the node has less than two times accessed with same node
 	
 	/**
 	 * Constructs and initializes a leaf node.
@@ -29,73 +29,60 @@ public class BlackNode extends Node {
 
 	public Node add(City newCity, Point2D.Float origin, int width,
 			int height) {
-		if (startVertex == null && GreyNode.numberNodes < 1) {
-			/* node is empty, add city */
-			startVertex = newCity;
+		if (mxCity == null) {
+			//node is empty, add city
+			mxCity = newCity;
 			return this;
 		} else {
-			/* have not reached minimum partition, partition node and then add city */
+			//have not reached minimum partition, partition node and then add city
 			GreyNode internalNode = new GreyNode(origin, width,
 					height);
-			if (startVertex != null)
-				internalNode.add(startVertex, origin, width, height);
+			if (mxCity != null)
+				internalNode.add(mxCity, origin, width, height);
 			internalNode.add(newCity, origin, width, height);
 			return internalNode;
 		}
 	}
 	
 	//TODO: Don't think newCity will end up being used because it is a part of the geometry function.
-	public Node add(Geometry2D g, City newCity, Float origin, int width, int height) {
-
+	public Node add(Geometry2D g, Float origin, int width, int height) {
+		
 		geometryList.add(g);
 
 		Node finale = this;
 		//TODO: Need a check to make sure that
-		if (isValid) {
-			startVertex = newCity;
-			endVertex = newCity;
-			cardinality = 1;
-			isValid = false;
-			return finale;
+		if (!containsVertex() || g.getType() == Geometry2D.SEGMENT) {
+			cardinality += 1;
+			allVertexList.add(g);
 		} else {
 			//This is commented out in order to TRACE this!
-			finale = partition(g, newCity, origin, width, height);
+			finale = partition(g, origin, width, height);
 		}
 		return finale;
 	}
 	
-	public Node partition(Geometry2D g, City newCity, Float origin, int width, int height) {
+	private boolean containsVertex() {
+		for (Geometry2D g : allVertexList) {
+			if (g.getType() == Geometry2D.POINT) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public Node partition(Geometry2D g, Float origin, int width, int height) {
 		/* If we have not partitioned enough, partition node and then add city. */
 		GreyNode internalNode = new GreyNode(origin, width,
 				height);
-		for (Geometry2D gElement : geometryList) {
-			internalNode.add(gElement, newCity, origin, width, height);
+		for (Geometry2D gElement : allVertexList) {
+ 			internalNode.add(gElement, origin, width, height);
 		}
 		return internalNode;
 	}
 
 	public Node remove(City city, Point2D.Float origin, int width,
 			int height) {
-		if (this.startVertex != city) {
-			/* city not here */
-			throw new IllegalArgumentException();
-		} else {
-			/* remove city, node becomes empty */
-			this.startVertex = null;
-			return WhiteNode.instance;
-		}
-	}
-	
-	public void addVertex(City cityData) {
-		this.startVertex = cityData;
-	}
-	
-	public City getStartVertex() {
-		return startVertex;
-	}
-	
-	public City getEndVertex() {
-		return endVertex;
+		return WhiteNode.instance;
 	}
 
 	public void setCardinality(int cardinality) {
@@ -104,6 +91,14 @@ public class BlackNode extends Node {
 	
 	public int getCardinality() {
 		return cardinality;
+	}
+	
+	public City getStartVertex() {
+		return mxCity;
+	}
+	
+	public ArrayList<Geometry2D> getAllList() {
+		return allVertexList;
 	}
 	
 }
