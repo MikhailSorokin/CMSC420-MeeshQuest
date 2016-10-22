@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="1000"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="1">
+          <isolatedCity color="black" name="Paris" radius="2" x="512" y="512"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="London"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <black cardinality="1">
+            <isolatedCity color="black" name="Paris" radius="2" x="512" y="512"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="Paris" radius="2" x="512" y="512"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="Paris" radius="2" x="512" y="512"/>
+          </black>
+          <gray x="768" y="256">
+            <black cardinality="1">
+              <isolatedCity color="black" name="Paris" radius="2" x="512" y="512"/>
+            </black>
+            <white/>
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="green" name="London" radius="2" x="1000" y="40"/>
+            </black>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Paris" radius="2" x="512" y="512"/>
+        <city color="green" name="London" radius="2" x="1000" y="40"/>
+      </cityList>
+    </output>
+  </success>
+</results>

@@ -7,9 +7,16 @@ import cmsc420.geom.Geometry2D;
 public class Point implements Geometry2D {
 
 	protected City singleCity;
+	protected String typeCity;
 	
 	public Point(City city) {
 		singleCity = city;
+		typeCity = "";
+	}
+	
+	public Point(City city, String type) {
+		singleCity = city;
+		this.typeCity = type;
 	}
 
 	@Override
@@ -23,6 +30,10 @@ public class Point implements Geometry2D {
 	
 	public City getCity() {
 		return singleCity;
+	}
+	
+	public String isolatedString() {
+		return typeCity;
 	}
 
 }

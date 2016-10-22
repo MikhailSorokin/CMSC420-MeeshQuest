@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A1"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="A2"/>
+      <x value="384"/>
+      <y value="128"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="A3"/>
+      <x value="128"/>
+      <y value="384"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="A4"/>
+      <x value="384"/>
+      <y value="384"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A1"/>
+      <end value="A2"/>
+    </parameters>
+    <output>
+      <roadCreated end="A2" start="A1"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A4"/>
+      <end value="A3"/>
+    </parameters>
+    <output>
+      <roadCreated end="A3" start="A4"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A5"/>
+      <x value="254"/>
+      <y value="254"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A4"/>
+      <end value="A5"/>
+    </parameters>
+    <output>
+      <roadCreated end="A5" start="A4"/>
+    </output>
+  </success>
+  <success>
+    <command id="6" name="rangeRoads"/>
+    <parameters>
+      <x value="254"/>
+      <y value="254"/>
+      <radius value="200"/>
+      <saveMap value="range1"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="A5" start="A4"/>
+        <road end="A4" start="A3"/>
+        <road end="A2" start="A1"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command id="6" name="rangeRoads"/>
+    <parameters>
+      <x value="254"/>
+      <y value="254"/>
+      <radius value="100"/>
+      <saveMap value="range2"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="A5" start="A4"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command id="6" name="rangeRoads"/>
+    <parameters>
+      <x value="199"/>
+      <y value="199"/>
+      <radius value="150"/>
+      <saveMap value="range3"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="A5" start="A4"/>
+        <road end="A2" start="A1"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command id="6" name="rangeRoads"/>
+    <parameters>
+      <x value="199"/>
+      <y value="353"/>
+      <radius value="150"/>
+      <saveMap value="range4"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="A5" start="A4"/>
+        <road end="A4" start="A3"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command id="6" name="rangeRoads"/>
+    <parameters>
+      <x value="353"/>
+      <y value="199"/>
+      <radius value="150"/>
+      <saveMap value="range5"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="A5" start="A4"/>
+        <road end="A2" start="A1"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command id="6" name="rangeRoads"/>
+    <parameters>
+      <x value="353"/>
+      <y value="353"/>
+      <radius value="150"/>
+      <saveMap value="range6"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="A5" start="A4"/>
+        <road end="A4" start="A3"/>
+      </roadList>
+    </output>
+  </success>
+</results>

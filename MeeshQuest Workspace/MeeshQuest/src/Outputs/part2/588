@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="10"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="8"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="12"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Q"/>
+      <x value="10"/>
+      <y value="6"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <roadCreated end="A" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Q"/>
+    </parameters>
+    <output>
+      <roadCreated end="Q" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Q"/>
+      <end value="Z"/>
+    </parameters>
+    <output>
+      <roadCreated end="Z" start="Q"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Z"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <roadCreated end="A" start="Z"/>
+    </output>
+  </success>
+  <success>
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Q"/>
+      <saveHTML value="file"/>
+    </parameters>
+    <output>
+      <path hops="1" length="2.828">
+        <road end="Q" start="A"/>
+      </path>
+    </output>
+  </success>
+</results>

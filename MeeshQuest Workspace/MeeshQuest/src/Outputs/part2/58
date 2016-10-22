@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="100"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="1000"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <black cardinality="3">
+            <city color="black" name="B" radius="0" x="100" y="1000"/>
+            <road end="C" start="B"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="1">
+            <road end="C" start="B"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="A" radius="0" x="100" y="100"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="C" radius="0" x="1000" y="100"/>
+            <road end="C" start="B"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="test1"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

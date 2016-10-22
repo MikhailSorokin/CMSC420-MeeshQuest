@@ -1,0 +1,23 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="32"
+    spatialHeight="32"
+    g="1"
+    pmOrder="3">
+    
+ <printPMQuadtree/>
+ 
+<createCity name="at0to0" x="0" y="0" radius="0" color="black"/>
+<createCity name="at32to32" x="32" y="32" radius="0" color="black"/>
+
+<createCity name="at5to6" x="5" y="6" radius="0" color="black"/>
+<createCity name="at28to29" x="28" y="29" radius="0" color="black"/>
+
+ <mapRoad start="at0to0" end="at32to32"/>
+ <mapRoad start="at5to6" end="at28to29"/>
+
+<printPMQuadtree/>
+<saveMap name="test2map"/>
+ 
+</commands>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="500"/>
+      <y value="500"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="200"/>
+      <y value="420"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="100"/>
+      <y value="320"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="600"/>
+      <y value="740"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="800"/>
+      <y value="20"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadCreated end="F" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="500"/>
+      <y value="50"/>
+    </parameters>
+    <output>
+      <road end="F" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="200"/>
+      <y value="300"/>
+    </parameters>
+    <output>
+      <road end="E" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="100"/>
+      <y value="50"/>
+    </parameters>
+    <output>
+      <road end="E" start="C"/>
+    </output>
+  </success>
+  <error type="roadIsNotMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="R"/>
+    </parameters>
+  </error>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="F"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="800"/>
+      <y value="50"/>
+    </parameters>
+    <output>
+      <road end="F" start="A"/>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="N"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="800"/>
+      <y value="50"/>
+    </parameters>
+    <output>
+      <road end="F" start="A"/>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="N"/>
+    </parameters>
+  </error>
+  <error type="roadIsNotMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="N"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Paris"/>
+      <end value="Zurich"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="1000"/>
+      <y value="1000"/>
+    </parameters>
+    <output>
+      <road end="E" start="C"/>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Paris"/>
+      <end value="Amsterdam"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="450"/>
+      <y value="430"/>
+    </parameters>
+    <output>
+      <road end="F" start="A"/>
+    </output>
+  </success>
+  <error type="roadIsNotMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Zurich"/>
+      <end value="Paris"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="50"/>
+    </parameters>
+    <output>
+      <road end="E" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <city color="black" name="E" radius="2" x="600" y="740"/>
+    </output>
+  </success>
+</results>

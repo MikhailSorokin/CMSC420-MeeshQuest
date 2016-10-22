@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="10"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="8"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="12"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="10"/>
+      <y value="6"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Q"/>
+      <x value="20"/>
+      <y value="6"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="D"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <roadCreated end="A" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Q"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="noPathExists">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="Q"/>
+      <end value="A"/>
+      <saveHTML value="file"/>
+    </parameters>
+  </error>
+</results>

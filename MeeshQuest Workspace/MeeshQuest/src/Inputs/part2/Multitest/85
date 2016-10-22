@@ -1,0 +1,31 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	pmOrder="3"
+ 	g="1" 
+ 	spatialWidth="256" 
+ 	spatialHeight="256">
+ <createCity id="1"  name="A" x="128" y="32" radius="0" color="red"/>
+ <createCity id="2"  name="B" x="128" y="64" radius="0" color="orange"/>
+ <createCity id="2"  name="C" x="96" y="64" radius="0" color="orange"/>
+ <createCity id="2"  name="E" x="160" y="64" radius="0" color="orange"/>
+ <createCity id="2"  name="D" x="96" y="128" radius="0" color="orange"/>
+ <createCity id="4"  name="F" x="160" y="128" color="green" radius="0" />
+ <createCity id="2"  name="G" x="128" y="128" radius="0" color="orange"/>
+ <createCity id="2"  name="Z" x="256" y="256" radius="0" color="orange"/>
+
+ <mapRoad id="33"  start="A" end="B"/>
+ <mapRoad id="33"  start="B" end="C"/>
+ <mapRoad id="33"  start="B" end="E"/>
+ <mapRoad id="33"  start="D" end="C"/>
+ <mapRoad id="33"  start="F" end="E"/>
+ <mapRoad id="33"  start="F" end="G"/>
+ <mapRoad id="33"  start="D" end="G"/>
+
+ <shortestPath id="57"  start="A" end="G" />
+ <shortestPath id="57"  start="G" end="A" />
+ <shortestPath id="57"  start="Z" end="Z" />
+
+ <saveMap name="shortestPath23"/>
+
+</commands>

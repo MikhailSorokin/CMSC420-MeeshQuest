@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="1000"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="10"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="X"/>
+      <x value="-10"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="2000"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="-11"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="2001"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="347"/>
+      <y value="568"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="H"/>
+      <x value="-20"/>
+      <y value="-100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="I"/>
+      <x value="888"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="J"/>
+      <x value="300"/>
+      <y value="-60"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="K"/>
+      <x value="777"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="L"/>
+      <x value="100"/>
+      <y value="777"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="M"/>
+      <x value="851"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="N"/>
+      <x value="5"/>
+      <y value="5"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="X"/>
+      <end value="Z"/>
+    </parameters>
+    <output>
+      <roadCreated end="Z" start="X"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadCreated end="F" start="E"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="G"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="H"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="I"/>
+      <end value="J"/>
+    </parameters>
+    <output>
+      <roadCreated end="J" start="I"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="K"/>
+      <end value="L"/>
+    </parameters>
+    <output>
+      <roadCreated end="L" start="K"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="N"/>
+    </parameters>
+    <output>
+      <roadCreated end="N" start="M"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="test1"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

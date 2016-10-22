@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="76"/>
+      <y value="39"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="81"/>
+      <y value="47"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="nameNotInDictionary">
+    <command id="3" name="mapCity"/>
+    <parameters>
+      <name value="Batimore"/>
+    </parameters>
+  </error>
+</results>

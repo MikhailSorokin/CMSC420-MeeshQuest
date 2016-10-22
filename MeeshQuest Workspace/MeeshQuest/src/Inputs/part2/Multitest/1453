@@ -1,0 +1,21 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+ 
+ <createCity name="Baltimore" x="750" y="750" radius="0" color="black"/>
+ <createCity name="Chicago" x="133" y="34" radius="0" color="black"/>
+  <createCity name="Orlando" x="550" y="34" radius="0" color="black"/>
+    <createCity name="TestCity" x="1" y="1" radius="0" color="black"/>
+ 
+ <mapRoad start="Baltimore" end="Chicago"/>
+  <mapRoad start="Baltimore" end="Chicago"/>
+ <mapCity name="Orlando"/>
+ <mapCity name="TestCity"/>
+ 
+ <printPMQuadtree/>
+ 
+</commands>

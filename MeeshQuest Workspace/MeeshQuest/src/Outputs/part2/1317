@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1"/>
+      <x value="1"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A2"/>
+      <x value="100"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A1"/>
+      <end value="A2"/>
+    </parameters>
+    <output>
+      <roadCreated end="A2" start="A1"/>
+    </output>
+  </success>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A1"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A2"/>
+    </parameters>
+  </error>
+</results>

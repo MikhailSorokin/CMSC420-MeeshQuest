@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="roadIsNotMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="New_York"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="New_York"/>
+    </parameters>
+    <output>
+      <roadCreated end="New_York" start="Chicago"/>
+    </output>
+  </success>
+  <error type="noOtherCitiesMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="New_York"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="New_York"/>
+    </parameters>
+    <output>
+      <city color="black" name="Baltimore" radius="0" x="140" y="37"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="New_York"/>
+      <end value="Chicago"/>
+    </parameters>
+    <output>
+      <city color="black" name="Baltimore" radius="0" x="140" y="37"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Zurich"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <roadCreated end="Paris" start="Zurich"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Amsterdam"/>
+      <end value="New_York"/>
+    </parameters>
+    <output>
+      <roadCreated end="New_York" start="Amsterdam"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Zurich"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <city color="black" name="Amsterdam" radius="0" x="450" y="450"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="New_York"/>
+    </parameters>
+    <output>
+      <city color="black" name="Baltimore" radius="0" x="140" y="37"/>
+    </output>
+  </success>
+</results>

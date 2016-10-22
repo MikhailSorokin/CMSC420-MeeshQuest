@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Toronto"/>
+      <x value="100"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Auckland"/>
+      <x value="2000"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Tokyo"/>
+      <x value="1700"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Cairo"/>
+      <x value="1000"/>
+      <y value="200"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Vancouver"/>
+      <x value="0"/>
+      <y value="1025"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <roadCreated end="Paris" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Vancouver"/>
+    </parameters>
+    <output>
+      <roadCreated end="Vancouver" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="Tokyo" start="Paris"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="2000"/>
+      <y value="2000"/>
+    </parameters>
+    <output>
+      <road end="Vancouver" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="black" name="Paris" radius="0" x="500" y="400"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="450"/>
+      <y value="450"/>
+    </parameters>
+    <output>
+      <road end="Tokyo" start="Paris"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="1000"/>
+      <y value="200"/>
+    </parameters>
+    <output>
+      <road end="Tokyo" start="Paris"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="part2.public.ACTfile12"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

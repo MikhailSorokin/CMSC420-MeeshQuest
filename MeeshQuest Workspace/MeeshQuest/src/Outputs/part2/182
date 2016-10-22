@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="16"/>
+      <y value="2"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="35"/>
+      <y value="49"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="55"/>
+      <y value="49"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="32"/>
+      <y value="32"/>
+      <radius value="10"/>
+      <saveMap value="image"/>
+    </parameters>
+  </error>
+</results>

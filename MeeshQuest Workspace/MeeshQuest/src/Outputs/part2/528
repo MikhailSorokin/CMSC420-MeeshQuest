@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="16"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="7"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="3"/>
+      <y value="5"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="E"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <black cardinality="3">
+            <city color="black" name="B" radius="0" x="7" y="8"/>
+            <road end="E" start="B"/>
+            <road end="E" start="A"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="A" radius="0" x="16" y="16"/>
+            <road end="E" start="A"/>
+          </black>
+          <gray x="4" y="4">
+            <black cardinality="4">
+              <city color="black" name="C" radius="0" x="3" y="5"/>
+              <road end="E" start="C"/>
+              <road end="E" start="B"/>
+              <road end="E" start="A"/>
+            </black>
+            <black cardinality="3">
+              <city color="black" name="B" radius="0" x="7" y="8"/>
+              <road end="E" start="B"/>
+              <road end="E" start="A"/>
+            </black>
+            <black cardinality="4">
+              <city color="black" name="E" radius="0" x="0" y="0"/>
+              <road end="E" start="C"/>
+              <road end="E" start="B"/>
+              <road end="E" start="A"/>
+            </black>
+            <black cardinality="1">
+              <road end="E" start="A"/>
+            </black>
+          </gray>
+          <black cardinality="1">
+            <road end="E" start="A"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

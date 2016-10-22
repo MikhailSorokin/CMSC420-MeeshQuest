@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="128"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="126"/>
+      <y value="130"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="130"/>
+      <y value="130"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <path hops="2" length="30.828">
+        <road end="B" start="A"/>
+        <straight/>
+        <road end="C" start="B"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <path hops="2" length="30.828">
+        <road end="B" start="A"/>
+        <right/>
+        <road end="D" start="B"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="128"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="126"/>
+      <y value="130"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="130"/>
+      <y value="130"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <path hops="2" length="58.067">
+        <road end="A" start="B"/>
+        <right/>
+        <road end="C" start="A"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="B"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <path hops="2" length="58.067">
+        <road end="A" start="B"/>
+        <left/>
+        <road end="D" start="A"/>
+      </path>
+    </output>
+  </success>
+</results>

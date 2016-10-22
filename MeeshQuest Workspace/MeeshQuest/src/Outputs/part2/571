@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="10"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="10"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="8"/>
+      <y value="4"/>
+      <radius value="1"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="10"/>
+      <y value="6"/>
+      <radius value="1"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="B"/>
+    </output>
+  </success>
+  <error type="nonExistentEnd">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+      <saveHTML value="file"/>
+    </parameters>
+  </error>
+</results>

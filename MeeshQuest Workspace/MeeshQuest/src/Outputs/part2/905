@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="SW"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="NE"/>
+      <x value="520"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="SW"/>
+      <end value="NE"/>
+    </parameters>
+    <output>
+      <roadCreated end="NE" start="SW"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <black cardinality="1">
+            <road end="SW" start="NE"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="NE" radius="0" x="520" y="1000"/>
+            <road end="SW" start="NE"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="SW" radius="0" x="256" y="256"/>
+            <road end="SW" start="NE"/>
+          </black>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

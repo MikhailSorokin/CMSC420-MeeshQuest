@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="a"/>
+      <x value="7"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="b"/>
+      <x value="10"/>
+      <y value="18"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="c"/>
+      <x value="15"/>
+      <y value="5"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a"/>
+      <end value="b"/>
+    </parameters>
+    <output>
+      <roadCreated end="b" start="a"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b"/>
+      <end value="c"/>
+    </parameters>
+    <output>
+      <roadCreated end="c" start="b"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="5"/>
+      <y value="5"/>
+      <radius value="20"/>
+      <saveMap value="offsetroad1.jpg"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="c" start="b"/>
+        <road end="b" start="a"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="12"/>
+      <y value="21"/>
+      <radius value="12"/>
+      <saveMap value="offsetroad2.jpg"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="c" start="b"/>
+        <road end="b" start="a"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="16"/>
+      <saveMap value="offsetroad3.jpg"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="c" start="b"/>
+        <road end="b" start="a"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="3" height="2" maxImbalance="5">
+        <node key="a" value="(7,8)">
+          <node key="b" value="(10,18)">
+            <node key="c" value="(15,5)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

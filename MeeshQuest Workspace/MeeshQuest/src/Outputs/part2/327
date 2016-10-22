@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="12" name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="94"/>
+      <y value="98"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="13" name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="98"/>
+      <y value="94"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="23" name="createCity"/>
+    <parameters>
+      <name value="Milan"/>
+      <x value="100"/>
+      <y value="75"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="35" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <roadCreated end="Paris" start="Milan"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Zurich"/>
+    </parameters>
+    <output>
+      <roadCreated end="Zurich" start="Milan"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <gray x="96" y="96">
+              <black cardinality="2">
+                <city color="blue" name="Paris" radius="0" x="94" y="98"/>
+                <road end="Paris" start="Milan"/>
+              </black>
+              <white/>
+              <black cardinality="1">
+                <road end="Paris" start="Milan"/>
+              </black>
+              <gray x="112" y="80">
+                <black cardinality="3">
+                  <city color="blue" name="Zurich" radius="0" x="98" y="94"/>
+                  <road end="Zurich" start="Milan"/>
+                  <road end="Paris" start="Milan"/>
+                </black>
+                <white/>
+                <black cardinality="3">
+                  <city color="blue" name="Milan" radius="0" x="100" y="75"/>
+                  <road end="Zurich" start="Milan"/>
+                  <road end="Paris" start="Milan"/>
+                </black>
+                <white/>
+              </gray>
+            </gray>
+            <white/>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="1"/>
+      <y value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Atlanta"/>
+    </parameters>
+    <output>
+      <roadCreated end="Atlanta" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command id="4" name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="64" y="64">
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="0" x="64" y="64"/>
+            <road end="Baltimore" start="Atlanta"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="0" x="64" y="64"/>
+            <road end="Baltimore" start="Atlanta"/>
+          </black>
+          <gray x="32" y="32">
+            <black cardinality="1">
+              <road end="Baltimore" start="Atlanta"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" name="Baltimore" radius="0" x="64" y="64"/>
+              <road end="Baltimore" start="Atlanta"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" name="Atlanta" radius="0" x="1" y="1"/>
+              <road end="Baltimore" start="Atlanta"/>
+            </black>
+            <black cardinality="1">
+              <road end="Baltimore" start="Atlanta"/>
+            </black>
+          </gray>
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="0" x="64" y="64"/>
+            <road end="Baltimore" start="Atlanta"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="5" name="saveMap"/>
+    <parameters>
+      <name value="test"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityAlreadyMapped">
+    <command id="6" name="mapCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+    </parameters>
+  </error>
+</results>

@@ -1,0 +1,135 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	pmOrder="3"
+ 	g="1" 
+ 	spatialWidth="256" 
+ 	spatialHeight="256">
+ <createCity id="1"  name="A" x="0" y="0" radius="0" color="red"/>
+ <createCity id="2"  name="B" x="0" y="64" radius="0" color="orange"/>
+ <createCity id="3"  name="C" x="0" y="128" radius="0" color="yellow"/>
+ <createCity id="4"  name="D" x="0" y="192" color="green" radius="0" />
+ <createCity id="4"  name="E" x="0" y="256" color="green" radius="0" />
+ <createCity id="4"  name="F" x="64" y="0" color="green" radius="0" />
+ <createCity id="4"  name="G" x="64" y="64" color="green" radius="0" />
+ <createCity id="4"  name="H" x="64" y="128" color="green" radius="0" />
+ <createCity id="4"  name="I" x="64" y="192" color="green" radius="0" />
+ <createCity id="4"  name="J" x="64" y="256" color="green" radius="0" />
+ <createCity id="4"  name="K" x="128" y="0" color="green" radius="0" />
+ <createCity id="4"  name="L" x="128" y="64" color="green" radius="0" />
+ <createCity id="4"  name="M" x="128" y="128" color="green" radius="0" />
+ <createCity id="4"  name="N" x="128" y="192" color="green" radius="0" />
+ <createCity id="4"  name="O" x="128" y="256" color="green" radius="0" />
+ <createCity id="4"  name="P" x="192" y="0" color="green" radius="0" />
+ <createCity id="4"  name="Q" x="192" y="64" color="green" radius="0" />
+ <createCity id="4"  name="R" x="192" y="128" color="green" radius="0" />
+ <createCity id="4"  name="S" x="190" y="192" color="green" radius="0" />
+ <createCity id="4"  name="T" x="192" y="256" color="green" radius="0" />
+ <createCity id="4"  name="U" x="256" y="0" color="green" radius="0" />
+ <createCity id="4"  name="V" x="256" y="64" color="green" radius="0" />
+ <createCity id="4"  name="W" x="256" y="128" color="green" radius="0" />
+ <createCity id="4"  name="X" x="256" y="192" color="green" radius="0" />
+ <createCity id="4"  name="Y" x="256" y="256" color="green" radius="0" />
+ <createCity id="4"  name="Z" x="140" y="27" color="green" radius="0" />
+
+
+ <mapRoad id="33"  start="E" end="J"/>
+ <mapRoad id="33"  start="J" end="O"/>
+ <mapRoad id="34"  start="E" end="D"/>
+ <mapRoad id="34"  start="J" end="I"/>
+ <mapRoad id="34"  start="D" end="I"/>
+
+ <printPMQuadtree/>
+
+ <mapRoad id="34"  start="D" end="C"/>
+ <mapRoad id="34"  start="I" end="M"/>
+ <mapRoad id="34"  start="S" end="M"/>
+ <mapRoad id="34"  start="S" end="W"/>
+ <mapRoad id="34"  start="G" end="M"/>
+ <mapRoad id="34"  start="Q" end="W"/>
+ <mapRoad id="34"  start="G" end="K"/>
+ <mapRoad id="34"  start="Q" end="K"/>
+ <mapRoad id="34"  start="Q" end="U"/>
+
+ <printPMQuadtree/>
+
+ <printPMQuadtree/>
+ <printAvlTree/>
+ <listCities sortBy="name"/>
+ <listCities sortBy="coordinates"/>
+ <nearestCityToRoad start="I" end="M"/>
+ <nearestIsolatedCity x="200" y="120"/>
+ <nearestRoad x="200" y="256"/>
+ <nearestCity x="200" y="120"/>
+ <shortestPath id="57"  start="U" end="E" />
+ <shortestPath id="57"  start="E" end="U" />
+
+ <mapCity name="A"/>
+ <mapCity name="B"/>
+
+ <printPMQuadtree/>
+ <printAvlTree/>
+ <listCities sortBy="name"/>
+ <listCities sortBy="coordinates"/>
+ <nearestCityToRoad start="I" end="M"/>
+ <nearestIsolatedCity x="200" y="120"/>
+ <nearestRoad x="200" y="256"/>
+ <nearestCity x="200" y="120"/>
+ <shortestPath id="57"  start="U" end="E" />
+ <shortestPath id="57"  start="E" end="U" />
+
+
+ <mapCity name="H"/>
+ <mapCity name="N"/>
+ <mapCity name="F"/>
+
+ <printPMQuadtree/>
+ <printAvlTree/>
+ <listCities sortBy="name"/>
+ <listCities sortBy="coordinates"/>
+ <nearestCityToRoad start="I" end="M"/>
+ <nearestIsolatedCity x="200" y="120"/>
+ <nearestRoad x="200" y="256"/>
+ <nearestCity x="200" y="120"/>
+ <shortestPath id="57"  start="U" end="E" />
+ <shortestPath id="57"  start="E" end="U" />
+
+ <mapCity name="T"/>
+ <mapCity name="X"/>
+ <mapCity name="Y"/>
+ <mapCity name="P"/>
+ <mapCity name="V"/>
+ <mapCity name="L"/>
+ <mapCity name="R"/>
+ <mapRoad start="C" end="G"/>
+
+ <printPMQuadtree/>
+ <printAvlTree/>
+ <listCities sortBy="name"/>
+ <listCities sortBy="coordinates"/>
+ <nearestCityToRoad start="I" end="M"/>
+ <nearestCityToRoad start="W" end="S"/>
+ <nearestIsolatedCity x="200" y="120"/>
+ <nearestRoad x="200" y="256"/>
+ <nearestCity x="200" y="120"/>
+ <shortestPath id="57"  start="U" end="E" />
+ <shortestPath id="57"  start="E" end="U" />
+
+ <mapRoad start="M" end="Q"/>
+
+ <printPMQuadtree/>
+ <printAvlTree/>
+ <listCities sortBy="name"/>
+ <listCities sortBy="coordinates"/>
+ <nearestCityToRoad start="I" end="M"/>
+ <nearestCityToRoad start="Q" end="M"/>
+ <nearestIsolatedCity x="200" y="120"/>
+ <nearestRoad x="200" y="256"/>
+ <nearestCity x="200" y="120"/>
+ <shortestPath id="57"  start="U" end="E" />
+ <shortestPath id="57"  start="E" end="U" />
+
+  
+ <saveMap name="shortestPath21"/>
+
+</commands>

@@ -1,0 +1,1050 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="32"
+	spatialHeight="32"
+	g="3"
+	pmOrder="3">
+<createCity name="C0" x="11" y="3" radius="10" color="black"/>
+<createCity name="C1" x="34" y="4" radius="10" color="black"/>
+<createCity name="C2" x="7" y="24" radius="10" color="black"/>
+<createCity name="C3" x="29" y="16" radius="10" color="black"/>
+<createCity name="C4" x="11" y="13" radius="10" color="black"/>
+<createCity name="C5" x="9" y="34" radius="10" color="black"/>
+<createCity name="C6" x="5" y="33" radius="10" color="black"/>
+<createCity name="C7" x="13" y="33" radius="10" color="black"/>
+<createCity name="C8" x="49" y="15" radius="10" color="black"/>
+<createCity name="C9" x="21" y="27" radius="10" color="black"/>
+<createCity name="C10" x="48" y="38" radius="10" color="black"/>
+<createCity name="C11" x="14" y="8" radius="10" color="black"/>
+<createCity name="C12" x="0" y="36" radius="10" color="black"/>
+<createCity name="C13" x="46" y="24" radius="10" color="black"/>
+<createCity name="C14" x="30" y="18" radius="10" color="black"/>
+<createCity name="C15" x="47" y="7" radius="10" color="black"/>
+<createCity name="C16" x="14" y="10" radius="10" color="black"/>
+<createCity name="C17" x="47" y="48" radius="10" color="black"/>
+<createCity name="C18" x="37" y="33" radius="10" color="black"/>
+<createCity name="C19" x="1" y="11" radius="10" color="black"/>
+<createCity name="C20" x="37" y="13" radius="10" color="black"/>
+<createCity name="C21" x="29" y="19" radius="10" color="black"/>
+<createCity name="C22" x="37" y="13" radius="10" color="black"/>
+<createCity name="C23" x="5" y="16" radius="10" color="black"/>
+<createCity name="C24" x="12" y="26" radius="10" color="black"/>
+<createCity name="C25" x="32" y="1" radius="10" color="black"/>
+<createCity name="C26" x="9" y="19" radius="10" color="black"/>
+<createCity name="C27" x="41" y="39" radius="10" color="black"/>
+<createCity name="C28" x="43" y="44" radius="10" color="black"/>
+<createCity name="C29" x="31" y="41" radius="10" color="black"/>
+<createCity name="C30" x="31" y="12" radius="10" color="black"/>
+<createCity name="C31" x="50" y="17" radius="10" color="black"/>
+<createCity name="C32" x="11" y="34" radius="10" color="black"/>
+<createCity name="C33" x="4" y="27" radius="10" color="black"/>
+<createCity name="C34" x="16" y="16" radius="10" color="black"/>
+<createCity name="C35" x="14" y="39" radius="10" color="black"/>
+<createCity name="C36" x="34" y="50" radius="10" color="black"/>
+<createCity name="C37" x="5" y="36" radius="10" color="black"/>
+<createCity name="C38" x="13" y="36" radius="10" color="black"/>
+<createCity name="C39" x="14" y="43" radius="10" color="black"/>
+<createCity name="C40" x="14" y="31" radius="10" color="black"/>
+<createCity name="C41" x="49" y="46" radius="10" color="black"/>
+<createCity name="C42" x="27" y="19" radius="10" color="black"/>
+<createCity name="C43" x="37" y="15" radius="10" color="black"/>
+<createCity name="C44" x="28" y="39" radius="10" color="black"/>
+<createCity name="C45" x="37" y="34" radius="10" color="black"/>
+<createCity name="C46" x="4" y="25" radius="10" color="black"/>
+<createCity name="C47" x="35" y="38" radius="10" color="black"/>
+<createCity name="C48" x="6" y="24" radius="10" color="black"/>
+<createCity name="C49" x="11" y="29" radius="10" color="black"/>
+<createCity name="C50" x="15" y="24" radius="10" color="black"/>
+<createCity name="C51" x="6" y="37" radius="10" color="black"/>
+<createCity name="C52" x="42" y="37" radius="10" color="black"/>
+<createCity name="C53" x="22" y="3" radius="10" color="black"/>
+<createCity name="C54" x="6" y="49" radius="10" color="black"/>
+<createCity name="C55" x="10" y="40" radius="10" color="black"/>
+<createCity name="C56" x="43" y="8" radius="10" color="black"/>
+<createCity name="C57" x="18" y="30" radius="10" color="black"/>
+<createCity name="C58" x="45" y="36" radius="10" color="black"/>
+<createCity name="C59" x="47" y="35" radius="10" color="black"/>
+<createCity name="C60" x="42" y="18" radius="10" color="black"/>
+<createCity name="C61" x="29" y="17" radius="10" color="black"/>
+<createCity name="C62" x="38" y="14" radius="10" color="black"/>
+<createCity name="C63" x="20" y="25" radius="10" color="black"/>
+<createCity name="C64" x="2" y="9" radius="10" color="black"/>
+<createCity name="C65" x="18" y="18" radius="10" color="black"/>
+<createCity name="C66" x="7" y="7" radius="10" color="black"/>
+<createCity name="C67" x="33" y="9" radius="10" color="black"/>
+<createCity name="C68" x="25" y="8" radius="10" color="black"/>
+<createCity name="C69" x="49" y="8" radius="10" color="black"/>
+<createCity name="C70" x="43" y="9" radius="10" color="black"/>
+<createCity name="C71" x="1" y="9" radius="10" color="black"/>
+<createCity name="C72" x="10" y="41" radius="10" color="black"/>
+<createCity name="C73" x="30" y="30" radius="10" color="black"/>
+<createCity name="C74" x="6" y="21" radius="10" color="black"/>
+<createCity name="C75" x="29" y="45" radius="10" color="black"/>
+<createCity name="C76" x="18" y="41" radius="10" color="black"/>
+<createCity name="C77" x="18" y="45" radius="10" color="black"/>
+<createCity name="C78" x="32" y="26" radius="10" color="black"/>
+<createCity name="C79" x="48" y="23" radius="10" color="black"/>
+<createCity name="C80" x="10" y="47" radius="10" color="black"/>
+<createCity name="C81" x="33" y="46" radius="10" color="black"/>
+<createCity name="C82" x="13" y="13" radius="10" color="black"/>
+<createCity name="C83" x="40" y="29" radius="10" color="black"/>
+<createCity name="C84" x="47" y="4" radius="10" color="black"/>
+<createCity name="C85" x="3" y="42" radius="10" color="black"/>
+<createCity name="C86" x="32" y="14" radius="10" color="black"/>
+<createCity name="C87" x="46" y="24" radius="10" color="black"/>
+<createCity name="C88" x="10" y="3" radius="10" color="black"/>
+<createCity name="C89" x="26" y="7" radius="10" color="black"/>
+<createCity name="C90" x="1" y="13" radius="10" color="black"/>
+<createCity name="C91" x="11" y="12" radius="10" color="black"/>
+<createCity name="C92" x="22" y="0" radius="10" color="black"/>
+<createCity name="C93" x="8" y="16" radius="10" color="black"/>
+<createCity name="C94" x="50" y="42" radius="10" color="black"/>
+<createCity name="C95" x="47" y="13" radius="10" color="black"/>
+<createCity name="C96" x="25" y="22" radius="10" color="black"/>
+<createCity name="C97" x="26" y="17" radius="10" color="black"/>
+<createCity name="C98" x="17" y="11" radius="10" color="black"/>
+<createCity name="C99" x="37" y="12" radius="10" color="black"/>
+<createCity name="C100" x="41" y="6" radius="10" color="black"/>
+<createCity name="C101" x="31" y="35" radius="10" color="black"/>
+<createCity name="C102" x="19" y="7" radius="10" color="black"/>
+<createCity name="C103" x="1" y="0" radius="10" color="black"/>
+<createCity name="C104" x="9" y="5" radius="10" color="black"/>
+<createCity name="C105" x="46" y="23" radius="10" color="black"/>
+<createCity name="C106" x="46" y="12" radius="10" color="black"/>
+<createCity name="C107" x="22" y="49" radius="10" color="black"/>
+<createCity name="C108" x="25" y="47" radius="10" color="black"/>
+<createCity name="C109" x="14" y="36" radius="10" color="black"/>
+<createCity name="C110" x="36" y="19" radius="10" color="black"/>
+<createCity name="C111" x="43" y="8" radius="10" color="black"/>
+<createCity name="C112" x="31" y="40" radius="10" color="black"/>
+<createCity name="C113" x="31" y="33" radius="10" color="black"/>
+<createCity name="C114" x="39" y="24" radius="10" color="black"/>
+<createCity name="C115" x="47" y="5" radius="10" color="black"/>
+<createCity name="C116" x="43" y="2" radius="10" color="black"/>
+<createCity name="C117" x="2" y="31" radius="10" color="black"/>
+<createCity name="C118" x="4" y="14" radius="10" color="black"/>
+<createCity name="C119" x="21" y="43" radius="10" color="black"/>
+<createCity name="C120" x="27" y="48" radius="10" color="black"/>
+<createCity name="C121" x="18" y="41" radius="10" color="black"/>
+<createCity name="C122" x="9" y="22" radius="10" color="black"/>
+<createCity name="C123" x="35" y="35" radius="10" color="black"/>
+<createCity name="C124" x="4" y="47" radius="10" color="black"/>
+<createCity name="C125" x="50" y="13" radius="10" color="black"/>
+<createCity name="C126" x="10" y="17" radius="10" color="black"/>
+<createCity name="C127" x="41" y="25" radius="10" color="black"/>
+<createCity name="C128" x="6" y="28" radius="10" color="black"/>
+<createCity name="C129" x="31" y="10" radius="10" color="black"/>
+<createCity name="C130" x="5" y="19" radius="10" color="black"/>
+<createCity name="C131" x="50" y="33" radius="10" color="black"/>
+<createCity name="C132" x="50" y="21" radius="10" color="black"/>
+<createCity name="C133" x="30" y="14" radius="10" color="black"/>
+<createCity name="C134" x="36" y="9" radius="10" color="black"/>
+<createCity name="C135" x="18" y="48" radius="10" color="black"/>
+<createCity name="C136" x="5" y="3" radius="10" color="black"/>
+<createCity name="C137" x="42" y="31" radius="10" color="black"/>
+<createCity name="C138" x="17" y="40" radius="10" color="black"/>
+<createCity name="C139" x="14" y="35" radius="10" color="black"/>
+<createCity name="C140" x="50" y="14" radius="10" color="black"/>
+<createCity name="C141" x="23" y="0" radius="10" color="black"/>
+<createCity name="C142" x="46" y="50" radius="10" color="black"/>
+<createCity name="C143" x="36" y="28" radius="10" color="black"/>
+<createCity name="C144" x="31" y="7" radius="10" color="black"/>
+<createCity name="C145" x="32" y="20" radius="10" color="black"/>
+<createCity name="C146" x="16" y="22" radius="10" color="black"/>
+<createCity name="C147" x="6" y="35" radius="10" color="black"/>
+<createCity name="C148" x="17" y="20" radius="10" color="black"/>
+<createCity name="C149" x="7" y="49" radius="10" color="black"/>
+<createCity name="C150" x="9" y="14" radius="10" color="black"/>
+<createCity name="C151" x="4" y="28" radius="10" color="black"/>
+<createCity name="C152" x="7" y="43" radius="10" color="black"/>
+<createCity name="C153" x="36" y="28" radius="10" color="black"/>
+<createCity name="C154" x="3" y="31" radius="10" color="black"/>
+<createCity name="C155" x="15" y="30" radius="10" color="black"/>
+<createCity name="C156" x="19" y="39" radius="10" color="black"/>
+<createCity name="C157" x="14" y="50" radius="10" color="black"/>
+<createCity name="C158" x="38" y="5" radius="10" color="black"/>
+<createCity name="C159" x="22" y="17" radius="10" color="black"/>
+<createCity name="C160" x="30" y="4" radius="10" color="black"/>
+<createCity name="C161" x="9" y="41" radius="10" color="black"/>
+<createCity name="C162" x="23" y="25" radius="10" color="black"/>
+<createCity name="C163" x="8" y="8" radius="10" color="black"/>
+<createCity name="C164" x="28" y="23" radius="10" color="black"/>
+<createCity name="C165" x="46" y="23" radius="10" color="black"/>
+<createCity name="C166" x="32" y="45" radius="10" color="black"/>
+<createCity name="C167" x="1" y="26" radius="10" color="black"/>
+<createCity name="C168" x="3" y="32" radius="10" color="black"/>
+<createCity name="C169" x="4" y="11" radius="10" color="black"/>
+<createCity name="C170" x="34" y="0" radius="10" color="black"/>
+<createCity name="C171" x="7" y="25" radius="10" color="black"/>
+<createCity name="C172" x="11" y="39" radius="10" color="black"/>
+<createCity name="C173" x="44" y="6" radius="10" color="black"/>
+<createCity name="C174" x="27" y="13" radius="10" color="black"/>
+<createCity name="C175" x="26" y="1" radius="10" color="black"/>
+<createCity name="C176" x="3" y="40" radius="10" color="black"/>
+<createCity name="C177" x="41" y="19" radius="10" color="black"/>
+<createCity name="C178" x="31" y="11" radius="10" color="black"/>
+<createCity name="C179" x="43" y="12" radius="10" color="black"/>
+<createCity name="C180" x="9" y="17" radius="10" color="black"/>
+<createCity name="C181" x="36" y="17" radius="10" color="black"/>
+<createCity name="C182" x="50" y="48" radius="10" color="black"/>
+<createCity name="C183" x="12" y="14" radius="10" color="black"/>
+<createCity name="C184" x="35" y="28" radius="10" color="black"/>
+<createCity name="C185" x="44" y="40" radius="10" color="black"/>
+<createCity name="C186" x="23" y="38" radius="10" color="black"/>
+<createCity name="C187" x="28" y="15" radius="10" color="black"/>
+<createCity name="C188" x="25" y="10" radius="10" color="black"/>
+<createCity name="C189" x="41" y="35" radius="10" color="black"/>
+<createCity name="C190" x="37" y="2" radius="10" color="black"/>
+<createCity name="C191" x="22" y="41" radius="10" color="black"/>
+<createCity name="C192" x="14" y="3" radius="10" color="black"/>
+<createCity name="C193" x="22" y="6" radius="10" color="black"/>
+<createCity name="C194" x="7" y="4" radius="10" color="black"/>
+<createCity name="C195" x="48" y="23" radius="10" color="black"/>
+<createCity name="C196" x="5" y="1" radius="10" color="black"/>
+<createCity name="C197" x="3" y="29" radius="10" color="black"/>
+<createCity name="C198" x="29" y="41" radius="10" color="black"/>
+<createCity name="C199" x="30" y="15" radius="10" color="black"/>
+<mapCity   name="C0"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C1"/>
+<mapCity   name="C2"/>
+<mapRoad  start="C3" end="C141"/>
+<mapCity   name="C4"/>
+<mapCity   name="C5"/>
+<mapRoad  start="C6" end="C10"/>
+<mapCity   name="C7"/>
+<mapCity   name="C8"/>
+<mapCity   name="C9"/>
+<mapCity   name="C10"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C11"/>
+<mapCity   name="C12"/>
+<mapCity   name="C13"/>
+<mapCity   name="C14"/>
+<mapCity   name="C15"/>
+<mapRoad  start="C16" end="C176"/>
+<mapCity   name="C17"/>
+<mapCity   name="C18"/>
+<mapCity   name="C19"/>
+<mapCity   name="C20"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C21"/>
+<mapRoad  start="C22" end="C195"/>
+<mapRoad  start="C23" end="C185"/>
+<mapCity   name="C24"/>
+<mapCity   name="C25"/>
+<mapRoad  start="C26" end="C33"/>
+<mapRoad  start="C27" end="C41"/>
+<mapCity   name="C28"/>
+<mapCity   name="C29"/>
+<mapCity   name="C30"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C31" end="C196"/>
+<mapCity   name="C32"/>
+<mapCity   name="C33"/>
+<mapRoad  start="C34" end="C88"/>
+<mapCity   name="C35"/>
+<mapRoad  start="C36" end="C123"/>
+<mapCity   name="C37"/>
+<mapCity   name="C38"/>
+<mapRoad  start="C39" end="C90"/>
+<mapRoad  start="C40" end="C172"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C41"/>
+<mapCity   name="C42"/>
+<mapCity   name="C43"/>
+<mapCity   name="C44"/>
+<mapCity   name="C45"/>
+<mapCity   name="C46"/>
+<mapCity   name="C47"/>
+<mapRoad  start="C48" end="C31"/>
+<mapCity   name="C49"/>
+<mapRoad  start="C50" end="C107"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C51" end="C173"/>
+<mapCity   name="C52"/>
+<mapCity   name="C53"/>
+<mapRoad  start="C54" end="C163"/>
+<mapCity   name="C55"/>
+<mapCity   name="C56"/>
+<mapRoad  start="C57" end="C143"/>
+<mapCity   name="C58"/>
+<mapCity   name="C59"/>
+<mapRoad  start="C60" end="C166"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C61" end="C146"/>
+<mapCity   name="C62"/>
+<mapRoad  start="C63" end="C121"/>
+<mapRoad  start="C64" end="C17"/>
+<mapCity   name="C65"/>
+<mapRoad  start="C66" end="C80"/>
+<mapCity   name="C67"/>
+<mapRoad  start="C68" end="C117"/>
+<mapCity   name="C69"/>
+<mapCity   name="C70"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C71"/>
+<mapRoad  start="C72" end="C160"/>
+<mapRoad  start="C73" end="C159"/>
+<mapRoad  start="C74" end="C173"/>
+<mapRoad  start="C75" end="C182"/>
+<mapRoad  start="C76" end="C197"/>
+<mapRoad  start="C77" end="C163"/>
+<mapCity   name="C78"/>
+<mapRoad  start="C79" end="C73"/>
+<mapRoad  start="C80" end="C186"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C81" end="C76"/>
+<mapRoad  start="C82" end="C47"/>
+<mapCity   name="C83"/>
+<mapRoad  start="C84" end="C198"/>
+<mapCity   name="C85"/>
+<mapRoad  start="C86" end="C11"/>
+<mapCity   name="C87"/>
+<mapCity   name="C88"/>
+<mapCity   name="C89"/>
+<mapCity   name="C90"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C91" end="C199"/>
+<mapCity   name="C92"/>
+<mapCity   name="C93"/>
+<mapCity   name="C94"/>
+<mapCity   name="C95"/>
+<mapRoad  start="C96" end="C46"/>
+<mapRoad  start="C97" end="C47"/>
+<mapCity   name="C98"/>
+<mapRoad  start="C99" end="C125"/>
+<mapCity   name="C100"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C101"/>
+<mapRoad  start="C102" end="C178"/>
+<mapCity   name="C103"/>
+<mapCity   name="C104"/>
+<mapCity   name="C105"/>
+<mapCity   name="C106"/>
+<mapCity   name="C107"/>
+<mapRoad  start="C108" end="C141"/>
+<mapRoad  start="C109" end="C22"/>
+<mapCity   name="C110"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C111"/>
+<mapCity   name="C112"/>
+<mapRoad  start="C113" end="C49"/>
+<mapRoad  start="C114" end="C138"/>
+<mapCity   name="C115"/>
+<mapCity   name="C116"/>
+<mapRoad  start="C117" end="C199"/>
+<mapRoad  start="C118" end="C62"/>
+<mapRoad  start="C119" end="C65"/>
+<mapCity   name="C120"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C121"/>
+<mapRoad  start="C122" end="C47"/>
+<mapRoad  start="C123" end="C184"/>
+<mapCity   name="C124"/>
+<mapCity   name="C125"/>
+<mapRoad  start="C126" end="C13"/>
+<mapCity   name="C127"/>
+<mapCity   name="C128"/>
+<mapCity   name="C129"/>
+<mapRoad  start="C130" end="C32"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C131" end="C57"/>
+<mapRoad  start="C132" end="C14"/>
+<mapCity   name="C133"/>
+<mapRoad  start="C134" end="C110"/>
+<mapCity   name="C135"/>
+<mapCity   name="C136"/>
+<mapRoad  start="C137" end="C98"/>
+<mapCity   name="C138"/>
+<mapRoad  start="C139" end="C30"/>
+<mapRoad  start="C140" end="C141"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C141"/>
+<mapRoad  start="C142" end="C14"/>
+<mapCity   name="C143"/>
+<mapRoad  start="C144" end="C98"/>
+<mapCity   name="C145"/>
+<mapCity   name="C146"/>
+<mapRoad  start="C147" end="C39"/>
+<mapRoad  start="C148" end="C196"/>
+<mapRoad  start="C149" end="C139"/>
+<mapCity   name="C150"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C151"/>
+<mapRoad  start="C152" end="C174"/>
+<mapCity   name="C153"/>
+<mapRoad  start="C154" end="C77"/>
+<mapCity   name="C155"/>
+<mapRoad  start="C156" end="C131"/>
+<mapRoad  start="C157" end="C123"/>
+<mapCity   name="C158"/>
+<mapCity   name="C159"/>
+<mapCity   name="C160"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C161" end="C88"/>
+<mapRoad  start="C162" end="C5"/>
+<mapCity   name="C163"/>
+<mapCity   name="C164"/>
+<mapRoad  start="C165" end="C66"/>
+<mapRoad  start="C166" end="C169"/>
+<mapCity   name="C167"/>
+<mapRoad  start="C168" end="C149"/>
+<mapCity   name="C169"/>
+<mapCity   name="C170"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C171"/>
+<mapRoad  start="C172" end="C189"/>
+<mapCity   name="C173"/>
+<mapRoad  start="C174" end="C13"/>
+<mapRoad  start="C175" end="C137"/>
+<mapRoad  start="C176" end="C91"/>
+<mapCity   name="C177"/>
+<mapCity   name="C178"/>
+<mapRoad  start="C179" end="C104"/>
+<mapRoad  start="C180" end="C28"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C181"/>
+<mapCity   name="C182"/>
+<mapRoad  start="C183" end="C130"/>
+<mapCity   name="C184"/>
+<mapCity   name="C185"/>
+<mapCity   name="C186"/>
+<mapCity   name="C187"/>
+<mapRoad  start="C188" end="C86"/>
+<mapRoad  start="C189" end="C83"/>
+<mapCity   name="C190"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C191" end="C62"/>
+<mapRoad  start="C192" end="C126"/>
+<mapCity   name="C193"/>
+<mapCity   name="C194"/>
+<mapCity   name="C195"/>
+<mapRoad  start="C196" end="C197"/>
+<mapRoad  start="C197" end="C136"/>
+<mapRoad  start="C198" end="C130"/>
+<mapRoad  start="C199" end="C99"/>
+<nearestCity x="30" y="13"/>
+<nearestIsolatedCity x="30" y="13"/>
+<nearestRoad x="30" y="13"/>
+<nearestCity x="48" y="2"/>
+<nearestIsolatedCity x="48" y="2"/>
+<nearestRoad x="48" y="2"/>
+<nearestCity x="9" y="31"/>
+<nearestIsolatedCity x="9" y="31"/>
+<nearestRoad x="9" y="31"/>
+<nearestCity x="50" y="15"/>
+<nearestIsolatedCity x="50" y="15"/>
+<nearestRoad x="50" y="15"/>
+<nearestCity x="25" y="11"/>
+<nearestIsolatedCity x="25" y="11"/>
+<nearestRoad x="25" y="11"/>
+<nearestCity x="30" y="12"/>
+<nearestIsolatedCity x="30" y="12"/>
+<nearestRoad x="30" y="12"/>
+<nearestCity x="2" y="16"/>
+<nearestIsolatedCity x="2" y="16"/>
+<nearestRoad x="2" y="16"/>
+<nearestCity x="50" y="34"/>
+<nearestIsolatedCity x="50" y="34"/>
+<nearestRoad x="50" y="34"/>
+<nearestCity x="30" y="6"/>
+<nearestIsolatedCity x="30" y="6"/>
+<nearestRoad x="30" y="6"/>
+<nearestCity x="31" y="41"/>
+<nearestIsolatedCity x="31" y="41"/>
+<nearestRoad x="31" y="41"/>
+<nearestCity x="23" y="23"/>
+<nearestIsolatedCity x="23" y="23"/>
+<nearestRoad x="23" y="23"/>
+<nearestCity x="28" y="29"/>
+<nearestIsolatedCity x="28" y="29"/>
+<nearestRoad x="28" y="29"/>
+<nearestCity x="37" y="23"/>
+<nearestIsolatedCity x="37" y="23"/>
+<nearestRoad x="37" y="23"/>
+<nearestCity x="10" y="46"/>
+<nearestIsolatedCity x="10" y="46"/>
+<nearestRoad x="10" y="46"/>
+<nearestCity x="1" y="14"/>
+<nearestIsolatedCity x="1" y="14"/>
+<nearestRoad x="1" y="14"/>
+<nearestCity x="15" y="5"/>
+<nearestIsolatedCity x="15" y="5"/>
+<nearestRoad x="15" y="5"/>
+<nearestCity x="46" y="21"/>
+<nearestIsolatedCity x="46" y="21"/>
+<nearestRoad x="46" y="21"/>
+<nearestCity x="8" y="20"/>
+<nearestIsolatedCity x="8" y="20"/>
+<nearestRoad x="8" y="20"/>
+<nearestCity x="44" y="15"/>
+<nearestIsolatedCity x="44" y="15"/>
+<nearestRoad x="44" y="15"/>
+<nearestCity x="37" y="47"/>
+<nearestIsolatedCity x="37" y="47"/>
+<nearestRoad x="37" y="47"/>
+<nearestCity x="17" y="20"/>
+<nearestIsolatedCity x="17" y="20"/>
+<nearestRoad x="17" y="20"/>
+<nearestCity x="2" y="27"/>
+<nearestIsolatedCity x="2" y="27"/>
+<nearestRoad x="2" y="27"/>
+<nearestCity x="16" y="48"/>
+<nearestIsolatedCity x="16" y="48"/>
+<nearestRoad x="16" y="48"/>
+<nearestCity x="40" y="37"/>
+<nearestIsolatedCity x="40" y="37"/>
+<nearestRoad x="40" y="37"/>
+<nearestCity x="20" y="7"/>
+<nearestIsolatedCity x="20" y="7"/>
+<nearestRoad x="20" y="7"/>
+<nearestCity x="48" y="19"/>
+<nearestIsolatedCity x="48" y="19"/>
+<nearestRoad x="48" y="19"/>
+<nearestCity x="34" y="39"/>
+<nearestIsolatedCity x="34" y="39"/>
+<nearestRoad x="34" y="39"/>
+<nearestCity x="21" y="27"/>
+<nearestIsolatedCity x="21" y="27"/>
+<nearestRoad x="21" y="27"/>
+<nearestCity x="5" y="8"/>
+<nearestIsolatedCity x="5" y="8"/>
+<nearestRoad x="5" y="8"/>
+<nearestCity x="37" y="39"/>
+<nearestIsolatedCity x="37" y="39"/>
+<nearestRoad x="37" y="39"/>
+<nearestCity x="4" y="3"/>
+<nearestIsolatedCity x="4" y="3"/>
+<nearestRoad x="4" y="3"/>
+<nearestCity x="22" y="12"/>
+<nearestIsolatedCity x="22" y="12"/>
+<nearestRoad x="22" y="12"/>
+<nearestCity x="6" y="45"/>
+<nearestIsolatedCity x="6" y="45"/>
+<nearestRoad x="6" y="45"/>
+<nearestCity x="35" y="4"/>
+<nearestIsolatedCity x="35" y="4"/>
+<nearestRoad x="35" y="4"/>
+<nearestCity x="28" y="35"/>
+<nearestIsolatedCity x="28" y="35"/>
+<nearestRoad x="28" y="35"/>
+<nearestCity x="7" y="28"/>
+<nearestIsolatedCity x="7" y="28"/>
+<nearestRoad x="7" y="28"/>
+<nearestCity x="9" y="4"/>
+<nearestIsolatedCity x="9" y="4"/>
+<nearestRoad x="9" y="4"/>
+<nearestCity x="16" y="23"/>
+<nearestIsolatedCity x="16" y="23"/>
+<nearestRoad x="16" y="23"/>
+<nearestCity x="1" y="34"/>
+<nearestIsolatedCity x="1" y="34"/>
+<nearestRoad x="1" y="34"/>
+<nearestCity x="2" y="18"/>
+<nearestIsolatedCity x="2" y="18"/>
+<nearestRoad x="2" y="18"/>
+<nearestCity x="31" y="22"/>
+<nearestIsolatedCity x="31" y="22"/>
+<nearestRoad x="31" y="22"/>
+<nearestCity x="24" y="44"/>
+<nearestIsolatedCity x="24" y="44"/>
+<nearestRoad x="24" y="44"/>
+<nearestCity x="0" y="10"/>
+<nearestIsolatedCity x="0" y="10"/>
+<nearestRoad x="0" y="10"/>
+<nearestCity x="2" y="30"/>
+<nearestIsolatedCity x="2" y="30"/>
+<nearestRoad x="2" y="30"/>
+<nearestCity x="40" y="27"/>
+<nearestIsolatedCity x="40" y="27"/>
+<nearestRoad x="40" y="27"/>
+<nearestCity x="4" y="21"/>
+<nearestIsolatedCity x="4" y="21"/>
+<nearestRoad x="4" y="21"/>
+<nearestCity x="47" y="6"/>
+<nearestIsolatedCity x="47" y="6"/>
+<nearestRoad x="47" y="6"/>
+<nearestCity x="31" y="33"/>
+<nearestIsolatedCity x="31" y="33"/>
+<nearestRoad x="31" y="33"/>
+<nearestCity x="8" y="50"/>
+<nearestIsolatedCity x="8" y="50"/>
+<nearestRoad x="8" y="50"/>
+<nearestCity x="45" y="35"/>
+<nearestIsolatedCity x="45" y="35"/>
+<nearestRoad x="45" y="35"/>
+<nearestCity x="32" y="8"/>
+<nearestIsolatedCity x="32" y="8"/>
+<nearestRoad x="32" y="8"/>
+<nearestCity x="16" y="3"/>
+<nearestIsolatedCity x="16" y="3"/>
+<nearestRoad x="16" y="3"/>
+<nearestCity x="36" y="14"/>
+<nearestIsolatedCity x="36" y="14"/>
+<nearestRoad x="36" y="14"/>
+<nearestCity x="48" y="5"/>
+<nearestIsolatedCity x="48" y="5"/>
+<nearestRoad x="48" y="5"/>
+<nearestCity x="28" y="19"/>
+<nearestIsolatedCity x="28" y="19"/>
+<nearestRoad x="28" y="19"/>
+<nearestCity x="32" y="34"/>
+<nearestIsolatedCity x="32" y="34"/>
+<nearestRoad x="32" y="34"/>
+<nearestCity x="11" y="18"/>
+<nearestIsolatedCity x="11" y="18"/>
+<nearestRoad x="11" y="18"/>
+<nearestCity x="1" y="6"/>
+<nearestIsolatedCity x="1" y="6"/>
+<nearestRoad x="1" y="6"/>
+<nearestCity x="4" y="35"/>
+<nearestIsolatedCity x="4" y="35"/>
+<nearestRoad x="4" y="35"/>
+<nearestCity x="42" y="31"/>
+<nearestIsolatedCity x="42" y="31"/>
+<nearestRoad x="42" y="31"/>
+<nearestCity x="49" y="20"/>
+<nearestIsolatedCity x="49" y="20"/>
+<nearestRoad x="49" y="20"/>
+<nearestCity x="30" y="34"/>
+<nearestIsolatedCity x="30" y="34"/>
+<nearestRoad x="30" y="34"/>
+<nearestCity x="13" y="47"/>
+<nearestIsolatedCity x="13" y="47"/>
+<nearestRoad x="13" y="47"/>
+<nearestCity x="24" y="42"/>
+<nearestIsolatedCity x="24" y="42"/>
+<nearestRoad x="24" y="42"/>
+<nearestCity x="16" y="10"/>
+<nearestIsolatedCity x="16" y="10"/>
+<nearestRoad x="16" y="10"/>
+<nearestCity x="40" y="45"/>
+<nearestIsolatedCity x="40" y="45"/>
+<nearestRoad x="40" y="45"/>
+<nearestCity x="38" y="18"/>
+<nearestIsolatedCity x="38" y="18"/>
+<nearestRoad x="38" y="18"/>
+<nearestCity x="25" y="12"/>
+<nearestIsolatedCity x="25" y="12"/>
+<nearestRoad x="25" y="12"/>
+<nearestCity x="27" y="15"/>
+<nearestIsolatedCity x="27" y="15"/>
+<nearestRoad x="27" y="15"/>
+<nearestCity x="50" y="29"/>
+<nearestIsolatedCity x="50" y="29"/>
+<nearestRoad x="50" y="29"/>
+<nearestCity x="17" y="1"/>
+<nearestIsolatedCity x="17" y="1"/>
+<nearestRoad x="17" y="1"/>
+<nearestCity x="23" y="50"/>
+<nearestIsolatedCity x="23" y="50"/>
+<nearestRoad x="23" y="50"/>
+<nearestCity x="28" y="7"/>
+<nearestIsolatedCity x="28" y="7"/>
+<nearestRoad x="28" y="7"/>
+<nearestCity x="7" y="50"/>
+<nearestIsolatedCity x="7" y="50"/>
+<nearestRoad x="7" y="50"/>
+<nearestCity x="11" y="48"/>
+<nearestIsolatedCity x="11" y="48"/>
+<nearestRoad x="11" y="48"/>
+<nearestCity x="39" y="18"/>
+<nearestIsolatedCity x="39" y="18"/>
+<nearestRoad x="39" y="18"/>
+<nearestCity x="26" y="42"/>
+<nearestIsolatedCity x="26" y="42"/>
+<nearestRoad x="26" y="42"/>
+<nearestCity x="39" y="33"/>
+<nearestIsolatedCity x="39" y="33"/>
+<nearestRoad x="39" y="33"/>
+<nearestCity x="2" y="10"/>
+<nearestIsolatedCity x="2" y="10"/>
+<nearestRoad x="2" y="10"/>
+<nearestCity x="6" y="43"/>
+<nearestIsolatedCity x="6" y="43"/>
+<nearestRoad x="6" y="43"/>
+<nearestCity x="15" y="14"/>
+<nearestIsolatedCity x="15" y="14"/>
+<nearestRoad x="15" y="14"/>
+<nearestCity x="34" y="35"/>
+<nearestIsolatedCity x="34" y="35"/>
+<nearestRoad x="34" y="35"/>
+<nearestCity x="39" y="18"/>
+<nearestIsolatedCity x="39" y="18"/>
+<nearestRoad x="39" y="18"/>
+<nearestCity x="25" y="46"/>
+<nearestIsolatedCity x="25" y="46"/>
+<nearestRoad x="25" y="46"/>
+<nearestCity x="0" y="24"/>
+<nearestIsolatedCity x="0" y="24"/>
+<nearestRoad x="0" y="24"/>
+<nearestCity x="4" y="23"/>
+<nearestIsolatedCity x="4" y="23"/>
+<nearestRoad x="4" y="23"/>
+<nearestCity x="23" y="18"/>
+<nearestIsolatedCity x="23" y="18"/>
+<nearestRoad x="23" y="18"/>
+<nearestCity x="36" y="0"/>
+<nearestIsolatedCity x="36" y="0"/>
+<nearestRoad x="36" y="0"/>
+<nearestCity x="6" y="24"/>
+<nearestIsolatedCity x="6" y="24"/>
+<nearestRoad x="6" y="24"/>
+<nearestCity x="18" y="41"/>
+<nearestIsolatedCity x="18" y="41"/>
+<nearestRoad x="18" y="41"/>
+<nearestCity x="50" y="31"/>
+<nearestIsolatedCity x="50" y="31"/>
+<nearestRoad x="50" y="31"/>
+<nearestCity x="35" y="7"/>
+<nearestIsolatedCity x="35" y="7"/>
+<nearestRoad x="35" y="7"/>
+<nearestCity x="38" y="26"/>
+<nearestIsolatedCity x="38" y="26"/>
+<nearestRoad x="38" y="26"/>
+<nearestCity x="35" y="38"/>
+<nearestIsolatedCity x="35" y="38"/>
+<nearestRoad x="35" y="38"/>
+<nearestCity x="18" y="12"/>
+<nearestIsolatedCity x="18" y="12"/>
+<nearestRoad x="18" y="12"/>
+<nearestCity x="16" y="16"/>
+<nearestIsolatedCity x="16" y="16"/>
+<nearestRoad x="16" y="16"/>
+<nearestCity x="1" y="30"/>
+<nearestIsolatedCity x="1" y="30"/>
+<nearestRoad x="1" y="30"/>
+<nearestCity x="43" y="39"/>
+<nearestIsolatedCity x="43" y="39"/>
+<nearestRoad x="43" y="39"/>
+<nearestCity x="39" y="7"/>
+<nearestIsolatedCity x="39" y="7"/>
+<nearestRoad x="39" y="7"/>
+<nearestCity x="3" y="2"/>
+<nearestIsolatedCity x="3" y="2"/>
+<nearestRoad x="3" y="2"/>
+<nearestCity x="43" y="27"/>
+<nearestIsolatedCity x="43" y="27"/>
+<nearestRoad x="43" y="27"/>
+<nearestCity x="27" y="48"/>
+<nearestIsolatedCity x="27" y="48"/>
+<nearestRoad x="27" y="48"/>
+<nearestCity x="49" y="1"/>
+<nearestIsolatedCity x="49" y="1"/>
+<nearestRoad x="49" y="1"/>
+<nearestCity x="26" y="14"/>
+<nearestIsolatedCity x="26" y="14"/>
+<nearestRoad x="26" y="14"/>
+<nearestCity x="12" y="38"/>
+<nearestIsolatedCity x="12" y="38"/>
+<nearestRoad x="12" y="38"/>
+<nearestCity x="23" y="13"/>
+<nearestIsolatedCity x="23" y="13"/>
+<nearestRoad x="23" y="13"/>
+<nearestCity x="11" y="44"/>
+<nearestIsolatedCity x="11" y="44"/>
+<nearestRoad x="11" y="44"/>
+<nearestCity x="1" y="48"/>
+<nearestIsolatedCity x="1" y="48"/>
+<nearestRoad x="1" y="48"/>
+<nearestCity x="17" y="31"/>
+<nearestIsolatedCity x="17" y="31"/>
+<nearestRoad x="17" y="31"/>
+<nearestCity x="24" y="5"/>
+<nearestIsolatedCity x="24" y="5"/>
+<nearestRoad x="24" y="5"/>
+<nearestCity x="24" y="24"/>
+<nearestIsolatedCity x="24" y="24"/>
+<nearestRoad x="24" y="24"/>
+<nearestCity x="45" y="21"/>
+<nearestIsolatedCity x="45" y="21"/>
+<nearestRoad x="45" y="21"/>
+<nearestCity x="24" y="14"/>
+<nearestIsolatedCity x="24" y="14"/>
+<nearestRoad x="24" y="14"/>
+<nearestCity x="35" y="8"/>
+<nearestIsolatedCity x="35" y="8"/>
+<nearestRoad x="35" y="8"/>
+<nearestCity x="48" y="40"/>
+<nearestIsolatedCity x="48" y="40"/>
+<nearestRoad x="48" y="40"/>
+<nearestCity x="20" y="0"/>
+<nearestIsolatedCity x="20" y="0"/>
+<nearestRoad x="20" y="0"/>
+<nearestCity x="26" y="37"/>
+<nearestIsolatedCity x="26" y="37"/>
+<nearestRoad x="26" y="37"/>
+<nearestCity x="12" y="14"/>
+<nearestIsolatedCity x="12" y="14"/>
+<nearestRoad x="12" y="14"/>
+<nearestCity x="25" y="13"/>
+<nearestIsolatedCity x="25" y="13"/>
+<nearestRoad x="25" y="13"/>
+<nearestCity x="14" y="8"/>
+<nearestIsolatedCity x="14" y="8"/>
+<nearestRoad x="14" y="8"/>
+<nearestCity x="21" y="20"/>
+<nearestIsolatedCity x="21" y="20"/>
+<nearestRoad x="21" y="20"/>
+<nearestCity x="17" y="38"/>
+<nearestIsolatedCity x="17" y="38"/>
+<nearestRoad x="17" y="38"/>
+<nearestCity x="47" y="45"/>
+<nearestIsolatedCity x="47" y="45"/>
+<nearestRoad x="47" y="45"/>
+<nearestCity x="41" y="17"/>
+<nearestIsolatedCity x="41" y="17"/>
+<nearestRoad x="41" y="17"/>
+<nearestCity x="35" y="43"/>
+<nearestIsolatedCity x="35" y="43"/>
+<nearestRoad x="35" y="43"/>
+<nearestCity x="10" y="14"/>
+<nearestIsolatedCity x="10" y="14"/>
+<nearestRoad x="10" y="14"/>
+<nearestCity x="31" y="29"/>
+<nearestIsolatedCity x="31" y="29"/>
+<nearestRoad x="31" y="29"/>
+<nearestCity x="7" y="27"/>
+<nearestIsolatedCity x="7" y="27"/>
+<nearestRoad x="7" y="27"/>
+<nearestCity x="2" y="38"/>
+<nearestIsolatedCity x="2" y="38"/>
+<nearestRoad x="2" y="38"/>
+<nearestCity x="0" y="44"/>
+<nearestIsolatedCity x="0" y="44"/>
+<nearestRoad x="0" y="44"/>
+<nearestCity x="1" y="23"/>
+<nearestIsolatedCity x="1" y="23"/>
+<nearestRoad x="1" y="23"/>
+<nearestCity x="31" y="31"/>
+<nearestIsolatedCity x="31" y="31"/>
+<nearestRoad x="31" y="31"/>
+<nearestCity x="1" y="17"/>
+<nearestIsolatedCity x="1" y="17"/>
+<nearestRoad x="1" y="17"/>
+<nearestCity x="43" y="12"/>
+<nearestIsolatedCity x="43" y="12"/>
+<nearestRoad x="43" y="12"/>
+<nearestCity x="25" y="24"/>
+<nearestIsolatedCity x="25" y="24"/>
+<nearestRoad x="25" y="24"/>
+<nearestCity x="43" y="31"/>
+<nearestIsolatedCity x="43" y="31"/>
+<nearestRoad x="43" y="31"/>
+<nearestCity x="13" y="48"/>
+<nearestIsolatedCity x="13" y="48"/>
+<nearestRoad x="13" y="48"/>
+<nearestCity x="34" y="31"/>
+<nearestIsolatedCity x="34" y="31"/>
+<nearestRoad x="34" y="31"/>
+<nearestCity x="32" y="8"/>
+<nearestIsolatedCity x="32" y="8"/>
+<nearestRoad x="32" y="8"/>
+<nearestCity x="9" y="6"/>
+<nearestIsolatedCity x="9" y="6"/>
+<nearestRoad x="9" y="6"/>
+<nearestCity x="47" y="25"/>
+<nearestIsolatedCity x="47" y="25"/>
+<nearestRoad x="47" y="25"/>
+<nearestCity x="40" y="8"/>
+<nearestIsolatedCity x="40" y="8"/>
+<nearestRoad x="40" y="8"/>
+<nearestCity x="32" y="22"/>
+<nearestIsolatedCity x="32" y="22"/>
+<nearestRoad x="32" y="22"/>
+<nearestCity x="31" y="42"/>
+<nearestIsolatedCity x="31" y="42"/>
+<nearestRoad x="31" y="42"/>
+<nearestCity x="24" y="7"/>
+<nearestIsolatedCity x="24" y="7"/>
+<nearestRoad x="24" y="7"/>
+<nearestCity x="10" y="34"/>
+<nearestIsolatedCity x="10" y="34"/>
+<nearestRoad x="10" y="34"/>
+<nearestCity x="42" y="3"/>
+<nearestIsolatedCity x="42" y="3"/>
+<nearestRoad x="42" y="3"/>
+<nearestCity x="41" y="11"/>
+<nearestIsolatedCity x="41" y="11"/>
+<nearestRoad x="41" y="11"/>
+<nearestCity x="32" y="36"/>
+<nearestIsolatedCity x="32" y="36"/>
+<nearestRoad x="32" y="36"/>
+<nearestCity x="20" y="35"/>
+<nearestIsolatedCity x="20" y="35"/>
+<nearestRoad x="20" y="35"/>
+<nearestCity x="5" y="44"/>
+<nearestIsolatedCity x="5" y="44"/>
+<nearestRoad x="5" y="44"/>
+<nearestCity x="28" y="33"/>
+<nearestIsolatedCity x="28" y="33"/>
+<nearestRoad x="28" y="33"/>
+<nearestCity x="49" y="33"/>
+<nearestIsolatedCity x="49" y="33"/>
+<nearestRoad x="49" y="33"/>
+<nearestCity x="40" y="16"/>
+<nearestIsolatedCity x="40" y="16"/>
+<nearestRoad x="40" y="16"/>
+<nearestCity x="1" y="35"/>
+<nearestIsolatedCity x="1" y="35"/>
+<nearestRoad x="1" y="35"/>
+<nearestCity x="20" y="25"/>
+<nearestIsolatedCity x="20" y="25"/>
+<nearestRoad x="20" y="25"/>
+<nearestCity x="45" y="9"/>
+<nearestIsolatedCity x="45" y="9"/>
+<nearestRoad x="45" y="9"/>
+<nearestCity x="27" y="50"/>
+<nearestIsolatedCity x="27" y="50"/>
+<nearestRoad x="27" y="50"/>
+<nearestCity x="3" y="46"/>
+<nearestIsolatedCity x="3" y="46"/>
+<nearestRoad x="3" y="46"/>
+<nearestCity x="3" y="7"/>
+<nearestIsolatedCity x="3" y="7"/>
+<nearestRoad x="3" y="7"/>
+<nearestCity x="6" y="41"/>
+<nearestIsolatedCity x="6" y="41"/>
+<nearestRoad x="6" y="41"/>
+<nearestCity x="14" y="3"/>
+<nearestIsolatedCity x="14" y="3"/>
+<nearestRoad x="14" y="3"/>
+<nearestCity x="8" y="31"/>
+<nearestIsolatedCity x="8" y="31"/>
+<nearestRoad x="8" y="31"/>
+<nearestCity x="17" y="26"/>
+<nearestIsolatedCity x="17" y="26"/>
+<nearestRoad x="17" y="26"/>
+<nearestCity x="14" y="22"/>
+<nearestIsolatedCity x="14" y="22"/>
+<nearestRoad x="14" y="22"/>
+<nearestCity x="1" y="6"/>
+<nearestIsolatedCity x="1" y="6"/>
+<nearestRoad x="1" y="6"/>
+<nearestCity x="0" y="43"/>
+<nearestIsolatedCity x="0" y="43"/>
+<nearestRoad x="0" y="43"/>
+<nearestCity x="29" y="24"/>
+<nearestIsolatedCity x="29" y="24"/>
+<nearestRoad x="29" y="24"/>
+<nearestCity x="19" y="6"/>
+<nearestIsolatedCity x="19" y="6"/>
+<nearestRoad x="19" y="6"/>
+<nearestCity x="11" y="17"/>
+<nearestIsolatedCity x="11" y="17"/>
+<nearestRoad x="11" y="17"/>
+<nearestCity x="27" y="38"/>
+<nearestIsolatedCity x="27" y="38"/>
+<nearestRoad x="27" y="38"/>
+<nearestCity x="20" y="49"/>
+<nearestIsolatedCity x="20" y="49"/>
+<nearestRoad x="20" y="49"/>
+<nearestCity x="20" y="44"/>
+<nearestIsolatedCity x="20" y="44"/>
+<nearestRoad x="20" y="44"/>
+<nearestCity x="15" y="30"/>
+<nearestIsolatedCity x="15" y="30"/>
+<nearestRoad x="15" y="30"/>
+<nearestCity x="30" y="24"/>
+<nearestIsolatedCity x="30" y="24"/>
+<nearestRoad x="30" y="24"/>
+<nearestCity x="22" y="50"/>
+<nearestIsolatedCity x="22" y="50"/>
+<nearestRoad x="22" y="50"/>
+<nearestCity x="50" y="21"/>
+<nearestIsolatedCity x="50" y="21"/>
+<nearestRoad x="50" y="21"/>
+<nearestCity x="42" y="40"/>
+<nearestIsolatedCity x="42" y="40"/>
+<nearestRoad x="42" y="40"/>
+<nearestCity x="50" y="45"/>
+<nearestIsolatedCity x="50" y="45"/>
+<nearestRoad x="50" y="45"/>
+<nearestCity x="14" y="29"/>
+<nearestIsolatedCity x="14" y="29"/>
+<nearestRoad x="14" y="29"/>
+<nearestCity x="46" y="37"/>
+<nearestIsolatedCity x="46" y="37"/>
+<nearestRoad x="46" y="37"/>
+<nearestCity x="1" y="14"/>
+<nearestIsolatedCity x="1" y="14"/>
+<nearestRoad x="1" y="14"/>
+<nearestCity x="19" y="21"/>
+<nearestIsolatedCity x="19" y="21"/>
+<nearestRoad x="19" y="21"/>
+<nearestCity x="39" y="27"/>
+<nearestIsolatedCity x="39" y="27"/>
+<nearestRoad x="39" y="27"/>
+<nearestCity x="27" y="28"/>
+<nearestIsolatedCity x="27" y="28"/>
+<nearestRoad x="27" y="28"/>
+<nearestCity x="44" y="20"/>
+<nearestIsolatedCity x="44" y="20"/>
+<nearestRoad x="44" y="20"/>
+<nearestCity x="3" y="21"/>
+<nearestIsolatedCity x="3" y="21"/>
+<nearestRoad x="3" y="21"/>
+<nearestCity x="41" y="38"/>
+<nearestIsolatedCity x="41" y="38"/>
+<nearestRoad x="41" y="38"/>
+<nearestCity x="6" y="45"/>
+<nearestIsolatedCity x="6" y="45"/>
+<nearestRoad x="6" y="45"/>
+<nearestCity x="49" y="18"/>
+<nearestIsolatedCity x="49" y="18"/>
+<nearestRoad x="49" y="18"/>
+<nearestCity x="6" y="2"/>
+<nearestIsolatedCity x="6" y="2"/>
+<nearestRoad x="6" y="2"/>
+<nearestCity x="1" y="40"/>
+<nearestIsolatedCity x="1" y="40"/>
+<nearestRoad x="1" y="40"/>
+<nearestCity x="20" y="12"/>
+<nearestIsolatedCity x="20" y="12"/>
+<nearestRoad x="20" y="12"/>
+<nearestCity x="25" y="0"/>
+<nearestIsolatedCity x="25" y="0"/>
+<nearestRoad x="25" y="0"/>
+<nearestCity x="22" y="11"/>
+<nearestIsolatedCity x="22" y="11"/>
+<nearestRoad x="22" y="11"/>
+<nearestCity x="23" y="39"/>
+<nearestIsolatedCity x="23" y="39"/>
+<nearestRoad x="23" y="39"/>
+<nearestCity x="8" y="28"/>
+<nearestIsolatedCity x="8" y="28"/>
+<nearestRoad x="8" y="28"/>
+<nearestCity x="41" y="2"/>
+<nearestIsolatedCity x="41" y="2"/>
+<nearestRoad x="41" y="2"/>
+<nearestCity x="24" y="42"/>
+<nearestIsolatedCity x="24" y="42"/>
+<nearestRoad x="24" y="42"/>
+<nearestCity x="34" y="16"/>
+<nearestIsolatedCity x="34" y="16"/>
+<nearestRoad x="34" y="16"/>
+
+<saveMap name="test8"/>
+</commands>

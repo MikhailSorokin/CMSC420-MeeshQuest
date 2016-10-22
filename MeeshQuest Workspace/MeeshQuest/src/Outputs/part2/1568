@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="200"/>
+      <y value="200"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="150"/>
+      <y value="50"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Denver"/>
+      <x value="50"/>
+      <y value="190"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="3" height="2" maxImbalance="2">
+        <node key="Baltimore" value="(200,200)">
+          <node key="Chicago" value="(150,50)">
+            <node key="Denver" value="(50,190)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="Denver"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Denver"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="1">
+          <isolatedCity color="black" name="Chicago" radius="5" x="150" y="50"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Denver" radius="5" x="50" y="190"/>
+        <city color="black" name="Chicago" radius="5" x="150" y="50"/>
+        <city color="black" name="Baltimore" radius="5" x="200" y="200"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="NeverGoingToGiveYouUp"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

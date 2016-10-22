@@ -1,0 +1,26 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	spatialWidth="32"
+ 	spatialHeight="32"
+ 	pmOrder="3"
+ 	g="1">
+ 	
+<createCity id="1" name="Baltimore" x="8" y="16" radius="0" color="black"/>
+<createCity id="2" name="Chicago" x="24" y="16" radius="0"  color="black"/>
+<createCity id="3" name="Denver" x="12" y="14" radius="0" color="black"/>
+
+<createCity id="4" name="Atlanta" x="7" y="16" radius="0" color="black"/>
+<createCity id="5" name="Albuquerque" x="25" y="16" radius="0" color="black"/>
+<saveMap name="part2.public.ACTfile15" />
+
+<mapRoad start="Chicago" end="Baltimore"/>
+<mapRoad start="Chicago" end="Denver"/>
+
+<mapRoad start="Chicago" end="Albuquerque"/>
+<mapRoad start="Denver" end="Atlanta"/>
+
+<NearestCityToRoad start="Chicago" end="Baltimore" />
+<NearestCityToRoad start="Chicago" end="Denver" />
+
+</commands>

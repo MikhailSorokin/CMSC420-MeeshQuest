@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="8"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Chicago"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="8"/>
+      <y value="8"/>
+    </parameters>
+  </error>
+</results>

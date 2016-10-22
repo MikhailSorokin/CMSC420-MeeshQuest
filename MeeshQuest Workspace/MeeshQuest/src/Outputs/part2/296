@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="510"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="5"/>
+      <y value="238"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="2" height="1" maxImbalance="3">
+        <node key="E" value="(512,512)">
+          <emptyChild/>
+          <node key="A" value="(5,238)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printPMQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="10"/>
+      <y value="10"/>
+    </parameters>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+  </error>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="10"/>
+      <y value="13"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="100"/>
+      <y value="1024"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="51"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="800"/>
+      <y value="712"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="1026"/>
+      <y value="-1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="X"/>
+      <x value="1026"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Y"/>
+      <x value="512"/>
+      <y value="1024"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="W"/>
+      <x value="1024"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadCreated end="F" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <city color="black" name="C" radius="0" x="100" y="1024"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="500"/>
+      <y value="500"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="C" radius="0" x="100" y="1024"/>
+    </output>
+  </success>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="F"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="10"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <city color="black" name="A" radius="0" x="512" y="512"/>
+    </output>
+  </success>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="F"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="G"/>
+    </parameters>
+  </error>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="G"/>
+    </parameters>
+  </error>
+  <error type="startEqualsEnd">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="C"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="D"/>
+    </parameters>
+  </error>
+  <error type="startEqualsEnd">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="E"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="F"/>
+    </parameters>
+  </error>
+  <error type="roadOutOfBounds">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="X"/>
+      <end value="F"/>
+    </parameters>
+  </error>
+  <error type="cityOutOfBounds">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="F"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+  </error>
+  <error type="nameNotInDictionary">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Z"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="9" height="4" maxImbalance="3">
+        <node key="D" value="(51,12)">
+          <node key="E" value="(800,712)">
+            <node key="F" value="(1026,-1)">
+              <node key="X" value="(1026,100)">
+                <node key="Y" value="(512,1024)">
+                  <emptyChild/>
+                  <emptyChild/>
+                </node>
+                <node key="W" value="(1024,512)">
+                  <emptyChild/>
+                  <emptyChild/>
+                </node>
+              </node>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node key="B" value="(10,13)">
+            <node key="C" value="(100,1024)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="A" value="(512,512)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <gray x="256" y="768">
+            <black cardinality="1">
+              <isolatedCity color="black" name="C" radius="0" x="100" y="1024"/>
+            </black>
+            <white/>
+            <white/>
+            <black cardinality="2">
+              <city color="black" name="A" radius="0" x="512" y="512"/>
+              <road end="F" start="A"/>
+            </black>
+          </gray>
+          <gray x="768" y="768">
+            <white/>
+            <white/>
+            <black cardinality="2">
+              <city color="black" name="A" radius="0" x="512" y="512"/>
+              <road end="F" start="A"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="E" radius="0" x="800" y="712"/>
+            </black>
+          </gray>
+          <gray x="256" y="256">
+            <white/>
+            <black cardinality="2">
+              <city color="black" name="A" radius="0" x="512" y="512"/>
+              <road end="F" start="A"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="B" radius="0" x="10" y="13"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="2">
+            <city color="black" name="A" radius="0" x="512" y="512"/>
+            <road end="F" start="A"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="10"/>
+      <y value="10"/>
+      <radius value="1"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="10"/>
+      <y value="10"/>
+      <radius value="1500"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="E" radius="0" x="800" y="712"/>
+        <city color="black" name="C" radius="0" x="100" y="1024"/>
+        <city color="black" name="B" radius="0" x="10" y="13"/>
+        <city color="black" name="A" radius="0" x="512" y="512"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="1025"/>
+      <y value="1025"/>
+      <radius value="600"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="E" radius="0" x="800" y="712"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="13"/>
+      <y value="13"/>
+      <radius value="3"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="B" radius="0" x="10" y="13"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="510"/>
+      <y value="510"/>
+      <radius value="1"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="1026"/>
+      <y value="0"/>
+      <radius value="100"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="F" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="10"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <city color="black" name="A" radius="0" x="512" y="512"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1025"/>
+      <y value="1025"/>
+    </parameters>
+    <output>
+      <city color="black" name="A" radius="0" x="512" y="512"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="10"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="B" radius="0" x="10" y="13"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="F" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Y"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <roadCreated end="A" start="Y"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="W"/>
+    </parameters>
+    <output>
+      <roadCreated end="W" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="500"/>
+      <y value="500"/>
+    </parameters>
+    <output>
+      <road end="Y" start="A"/>
+    </output>
+  </success>
+  <error type="roadIsNotMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="as"/>
+      <end value="df"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Y"/>
+    </parameters>
+    <output>
+      <city color="black" name="E" radius="0" x="800" y="712"/>
+    </output>
+  </success>
+  <error type="roadIsNotMapped">
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="as"/>
+      <end value="df"/>
+    </parameters>
+  </error>
+</results>

@@ -1,0 +1,59 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	pmOrder="3"
+ 	g="1" 
+ 	spatialWidth="256" 
+ 	spatialHeight="256">
+ <createCity id="1"  name="A" x="128" y="128" radius="0" color="red"/>
+ <createCity id="2"  name="B" x="64" y="192" radius="0" color="orange"/>
+ <createCity id="3"  name="C" x="96" y="192" radius="0" color="yellow"/>
+ <createCity id="4"  name="D" x="128" y="192" color="green" radius="0" />
+ <createCity id="4"  name="E" x="160" y="192" color="green" radius="0" />
+ <createCity id="4"  name="F" x="192" y="192" color="green" radius="0" />
+ <createCity id="4"  name="G" x="64" y="160" color="green" radius="0" />
+ <createCity id="4"  name="H" x="192" y="160" color="green" radius="0" />
+ <createCity id="4"  name="I" x="64" y="128" color="green" radius="0" />
+ <createCity id="4"  name="J" x="192" y="128" color="green" radius="0" />
+ <createCity id="4"  name="K" x="64" y="96" color="green" radius="0" />
+ <createCity id="4"  name="L" x="192" y="96" color="green" radius="0" />
+ <createCity id="4"  name="M" x="64" y="64" color="green" radius="0" />
+ <createCity id="4"  name="N" x="96" y="64" color="green" radius="0" />
+ <createCity id="4"  name="O" x="128" y="64" color="green" radius="0" />
+ <createCity id="4"  name="P" x="160" y="64" color="green" radius="0" />
+ <createCity id="4"  name="Q" x="192" y="64" color="green" radius="0" />
+
+ <mapRoad id="33"  start="A" end="B"/>
+ <mapRoad id="33"  start="A" end="C"/>
+ <mapRoad id="34"  start="A" end="D"/>
+ <mapRoad id="34"  start="A" end="E"/>
+ <mapRoad id="34"  start="A" end="F"/>
+ <mapRoad id="34"  start="A" end="G"/>
+ <mapRoad id="34"  start="A" end="H"/>
+ <mapRoad id="34"  start="A" end="I"/>
+ <mapRoad id="34"  start="A" end="J"/>
+ <mapRoad id="34"  start="A" end="K"/>
+ <mapRoad id="34"  start="A" end="L"/>
+ <mapRoad id="34"  start="A" end="M"/>
+ <mapRoad id="34"  start="A" end="N"/>
+ <mapRoad id="34"  start="A" end="O"/>
+ <mapRoad id="34"  start="A" end="P"/>
+ <mapRoad id="34"  start="A" end="Q"/>
+ 
+ <shortestPath id="57"  start="I" end="G" />
+ <shortestPath id="57"  start="I" end="B" />
+ <shortestPath id="57"  start="I" end="C" />
+ <shortestPath id="57"  start="I" end="D" />
+ <shortestPath id="57"  start="I" end="E" />
+ <shortestPath id="57"  start="I" end="F" />
+ <shortestPath id="57"  start="I" end="H" />
+ <shortestPath id="57"  start="I" end="J" />
+ <shortestPath id="57"  start="I" end="L" />
+ <shortestPath id="57"  start="I" end="Q" />
+ <shortestPath id="57"  start="I" end="P" />
+ <shortestPath id="57"  start="I" end="O" />
+ <shortestPath id="57"  start="I" end="N" />
+ <shortestPath id="57"  start="I" end="M" />
+ <shortestPath id="57"  start="I" end="K" />
+
+</commands>

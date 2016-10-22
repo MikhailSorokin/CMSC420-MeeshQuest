@@ -1,0 +1,59 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+	
+	 <createCity name="Baltimore" x="140" y="37" radius="0" color="black"/>
+	 <createCity name="Chicago" x="133" y="34" radius="0" color="black"/>
+	 <createCity name="New_York" x="200" y="300" radius="0" color="black"/>
+	 <createCity name="Toronto" x="100" y="400" radius="0" color="black"/>
+	 <createCity name="Zurich" x="1000" y="1000" radius="0" color="black"/>
+	 <createCity name="Paris" x="500" y="400" radius="0" color="black"/>
+	 <createCity name="Amsterdam" x="450" y="450" radius="0" color="black"/>
+	 <createCity name="Auckland" x="200" y="2" radius="0" color="black"/>
+	 <createCity name="Tokyo" x="900" y="1000" radius="0" color="black"/>
+	 <createCity name="Cairo" x="1000" y="200" radius="0" color="black"/>
+	 <createCity name="Vancouver" x="0" y="1020" radius="0" color="black"/>
+
+	 <mapCity name="Cairo" />
+
+	 <mapCity name="Toronto" />
+
+	 <mapRoad start="Sydney" end="Auckland"/>
+	 <mapRoad start="Auckland" end="Sydney"/>
+	 <mapRoad start="Auckland" end="Auckland"/>
+	 <mapRoad start="Cairo" end="Chicago"/>
+	 <mapRoad start="Chicago" end="Cairo"/>
+	 <mapRoad start="Chicago" end="New_York"/>
+	 <mapRoad start="Chicago" end="New_York"/>
+	 <mapRoad start="New_York" end="Chicago"/>
+	 <mapRoad start="Tokyo" end="Auckland"/> 
+	 
+	 <mapRoad start="Baltimore" end="Chicago"/>
+	 <mapRoad start="New_York" end="Zurich"/>
+	 <mapRoad start="Zurich" end="Paris"/>
+	  
+	 <mapRoad start="Paris" end="Amsterdam"/>
+
+	 <mapRoad start="Tokyo" end="Paris"/>
+	 <mapRoad start="Tokyo" end="Vancouver"/>
+	 
+	 <saveMap name="part2.public.ACTfile12"/>
+	 <printPMQuadtree />
+	 <nearestCity x="0" y="0" />
+	 <nearestIsolatedCity x="0" y="0" />
+	 <nearestCity x="1024" y="1024" />
+	 <nearestIsolatedCity x="1024" y="1024" />
+	 <nearestCity x="475" y="425" />
+	 <nearestIsolatedCity x="475" y="425" />
+	 <nearestCity x="1700" y="1000" />
+	 <nearestIsolatedCity x="1700" y="1000" />
+	 <nearestCity x="1000" y="200" />
+	 <nearestIsolatedCity x="1000" y="200" />
+	 <nearestCity x="450" y="450" />
+	 <nearestIsolatedCity x="450" y="450" />
+ 
+</commands>

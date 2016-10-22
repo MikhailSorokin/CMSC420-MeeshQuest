@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="1"/>
+      <y value="1"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="255"/>
+      <y value="255"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="300"/>
+      <y value="300"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="200"/>
+      <y value="210"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="210"/>
+      <y value="190"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="240"/>
+      <y value="220"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="220"/>
+      <y value="230"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="H"/>
+      <x value="250"/>
+      <y value="251"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="I"/>
+      <x value="203"/>
+      <y value="245"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="J"/>
+      <x value="200"/>
+      <y value="240"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="F"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="F"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="I"/>
+      <end value="J"/>
+    </parameters>
+    <output>
+      <roadCreated end="J" start="I"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="H"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadCreated end="F" start="D"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="J"/>
+    </parameters>
+    <output>
+      <roadCreated end="J" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="I"/>
+    </parameters>
+    <output>
+      <roadCreated end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="C" start="B"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="255"/>
+      <y value="255"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="J" start="B"/>
+        <road end="F" start="B"/>
+        <road end="C" start="B"/>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="240"/>
+      <y value="240"/>
+      <radius value="20"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="H" start="D"/>
+        <road end="F" start="D"/>
+        <road end="J" start="B"/>
+        <road end="F" start="B"/>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="110"/>
+      <radius value="7"/>
+      <saveMap value="road"/>
+    </parameters>
+  </error>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="300"/>
+      <y value="300"/>
+      <radius value="0"/>
+    </parameters>
+  </error>
+</results>

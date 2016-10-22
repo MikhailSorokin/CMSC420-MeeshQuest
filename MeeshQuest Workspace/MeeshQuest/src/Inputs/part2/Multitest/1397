@@ -1,0 +1,16 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="128"
+	spatialHeight="128"
+	pmOrder="3"
+	g="3"
+	>
+	<listCities sortBy="name" id="22"/>
+	<createCity name="Berlin" x="30" y="45" radius="12" color="blue" id="4"/>
+	<listCities sortBy ="coordinate" id="75"/>
+	<createCity name="Hamburg" x="70" y="120" radius="8" color="red" id="5"/>
+	<createCity name="Frankfurt" x="25" y="3" radius="12" color="green" id="6"/>
+	<createCity name="Munich" x="3" y="7" radius="4" color="blue" id="31"/>
+	<listCities sortBy="name"/>
+</commands>

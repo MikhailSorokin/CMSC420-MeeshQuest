@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="16"/>
+      <y value="2"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="35"/>
+      <y value="49"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="23"/>
+      <y value="55"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <roadCreated end="A" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="24"/>
+      <y value="30"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+</results>

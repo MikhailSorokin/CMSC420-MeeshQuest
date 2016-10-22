@@ -1,0 +1,28 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="256"
+	spatialHeight="256"
+	pmOrder="3"
+	g="2">
+<createCity name="Baltimore" x="200" y="200" radius="5" color="black"/>
+<createCity name="Chicago" x="150" y="50" radius="5" color="black"/>
+<createCity name="Denver" x="50" y="190" radius="5" color="black"/>
+<createCity name="Boston" x="100" y="228" radius="5" color="black"/>
+<createCity name="A" x="200" y="220" radius="5" color="black"/>
+<createCity name="B" x="128" y="128" radius="5" color="black"/>
+<createCity name="C" x="350" y="350" radius="5" color="black"/>
+<printAvlTree/>
+        <mapRoad start="A" end="B"/>
+                <mapRoad start="B" end="Denver"/>
+                <mapRoad start="A" end="Denver"/>
+                               <mapCity name="Chicago"/>
+                              <mapRoad start="A" end="C"/>                              
+                <printPMQuadtree />
+                <listCities sortBy="name"/>    
+                                <rangeRoads x="128" y="128" radius="100" saveMap="Map"/>  
+<nearestCity x="100" y="100"/>       
+<nearestIsolatedCity  x="100" y="100"/>        
+ <nearestRoad  x="0" y="0"/>        
+
+</commands>

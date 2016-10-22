@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="1050"/>
+      <y value="1050"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="-50"/>
+      <y value="-50"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="H"/>
+      <x value="1080"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="F"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <roadCreated end="G" start="F"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="H"/>
+    </parameters>
+    <output>
+      <roadCreated end="H" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="1000"/>
+      <y value="1000"/>
+    </parameters>
+    <output>
+      <road end="G" start="F"/>
+    </output>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="200"/>
+      <y value="200"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="300"/>
+      <y value="300"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="400"/>
+      <y value="400"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="500"/>
+      <y value="500"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="600"/>
+      <y value="600"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="700"/>
+      <y value="700"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="800"/>
+      <y value="800"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="900"/>
+      <y value="900"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1000"/>
+      <y value="1000"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="2">
+          <road end="H" start="G"/>
+          <road end="G" start="F"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+</results>

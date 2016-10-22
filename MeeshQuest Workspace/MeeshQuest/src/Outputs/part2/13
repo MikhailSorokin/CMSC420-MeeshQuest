@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="-10"/>
+      <y value="2000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="0"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startOrEndIsIsolated">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="D"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="100"/>
+      <y value="100"/>
+    </parameters>
+    <output>
+      <city color="black" name="C" radius="0" x="0" y="300"/>
+    </output>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+</results>

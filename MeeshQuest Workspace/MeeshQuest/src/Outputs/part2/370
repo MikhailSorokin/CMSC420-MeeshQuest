@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="16" name="createCity"/>
+    <parameters>
+      <name value="Warsaw"/>
+      <x value="200"/>
+      <y value="150"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="25" name="createCity"/>
+    <parameters>
+      <name value="Minsk"/>
+      <x value="200"/>
+      <y value="160"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="11" name="createCity"/>
+    <parameters>
+      <name value="Stockholm"/>
+      <x value="140"/>
+      <y value="190"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="41" name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Warsaw"/>
+    </parameters>
+    <output>
+      <roadCreated end="Warsaw" start="Berlin"/>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="44" name="mapRoad"/>
+    <parameters>
+      <start value="Athens"/>
+      <end value="Varna"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="45" name="mapRoad"/>
+    <parameters>
+      <start value="Stockholm"/>
+      <end value="Minsk"/>
+    </parameters>
+    <output>
+      <roadCreated end="Minsk" start="Stockholm"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="a"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <black cardinality="2">
+            <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+            <road end="Warsaw" start="Berlin"/>
+          </black>
+          <gray x="192" y="192">
+            <white/>
+            <white/>
+            <gray x="160" y="160">
+              <black cardinality="2">
+                <city color="blue" name="Stockholm" radius="0" x="140" y="190"/>
+                <road end="Stockholm" start="Minsk"/>
+              </black>
+              <black cardinality="1">
+                <road end="Stockholm" start="Minsk"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Warsaw" start="Berlin"/>
+              </black>
+              <black cardinality="1">
+                <road end="Warsaw" start="Berlin"/>
+              </black>
+            </gray>
+            <gray x="224" y="160">
+              <black cardinality="2">
+                <city color="blue" name="Minsk" radius="0" x="200" y="160"/>
+                <road end="Stockholm" start="Minsk"/>
+              </black>
+              <white/>
+              <gray x="208" y="144">
+                <gray x="200" y="152">
+                  <black cardinality="2">
+                    <city color="blue" name="Minsk" radius="0" x="200" y="160"/>
+                    <road end="Stockholm" start="Minsk"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="blue" name="Minsk" radius="0" x="200" y="160"/>
+                    <road end="Stockholm" start="Minsk"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="blue" name="Warsaw" radius="0" x="200" y="150"/>
+                    <road end="Warsaw" start="Berlin"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="blue" name="Warsaw" radius="0" x="200" y="150"/>
+                    <road end="Warsaw" start="Berlin"/>
+                  </black>
+                </gray>
+                <white/>
+                <white/>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+          </gray>
+          <black cardinality="2">
+            <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+            <road end="Warsaw" start="Berlin"/>
+          </black>
+          <black cardinality="2">
+            <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+            <road end="Warsaw" start="Berlin"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

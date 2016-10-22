@@ -1,0 +1,43 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	pmOrder="3"
+ 	g="1" 
+ 	spatialWidth="256" 
+ 	spatialHeight="256">
+ <createCity id="1"  name="A" x="0" y="0" radius="0" color="red"/>
+ <createCity id="2"  name="B" x="0" y="64" radius="0" color="orange"/>
+ <createCity id="3"  name="C" x="0" y="128" radius="0" color="yellow"/>
+ <createCity id="4"  name="D" x="0" y="192" color="green" radius="0" />
+ <createCity id="4"  name="E" x="0" y="256" color="green" radius="0" />
+ <createCity id="4"  name="F" x="64" y="0" color="green" radius="0" />
+ <createCity id="4"  name="G" x="64" y="64" color="green" radius="0" />
+ <createCity id="4"  name="H" x="64" y="128" color="green" radius="0" />
+ <createCity id="4"  name="I" x="64" y="192" color="green" radius="0" />
+ <createCity id="4"  name="J" x="64" y="256" color="green" radius="0" />
+ <createCity id="4"  name="K" x="128" y="0" color="green" radius="0" />
+ <createCity id="4"  name="L" x="128" y="64" color="green" radius="0" />
+ <createCity id="4"  name="M" x="128" y="128" color="green" radius="0" />
+ <createCity id="4"  name="N" x="128" y="192" color="green" radius="0" />
+ <createCity id="4"  name="O" x="128" y="256" color="green" radius="0" />
+ <createCity id="4"  name="P" x="192" y="0" color="green" radius="0" />
+ <createCity id="4"  name="Q" x="192" y="64" color="green" radius="0" />
+ <createCity id="4"  name="R" x="192" y="128" color="green" radius="0" />
+ <createCity id="4"  name="S" x="192" y="192" color="green" radius="0" />
+ <createCity id="4"  name="T" x="192" y="256" color="green" radius="0" />
+ <createCity id="4"  name="U" x="256" y="0" color="green" radius="0" />
+ <createCity id="4"  name="V" x="256" y="64" color="green" radius="0" />
+ <createCity id="4"  name="W" x="256" y="128" color="green" radius="0" />
+ <createCity id="4"  name="X" x="256" y="192" color="green" radius="0" />
+ <createCity id="4"  name="Y" x="256" y="256" color="green" radius="0" />
+ <createCity id="4"  name="Z" x="140" y="27" color="green" radius="0" />
+
+
+ <mapRoad id="33"  start="G" end="M"/>
+ <mapRoad id="33"  start="M" end="I"/>
+
+ <shortestPath id="57"  start="G" end="I" />
+
+ <saveMap name="shortestPath22"/>
+
+</commands>

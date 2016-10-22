@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="12" name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="94"/>
+      <y value="98"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="23" name="createCity"/>
+    <parameters>
+      <name value="Milan"/>
+      <x value="100"/>
+      <y value="75"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="13" name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="98"/>
+      <y value="94"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Madrid"/>
+      <x value="45"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Andorra"/>
+      <x value="55"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="70"/>
+      <y value="140"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="Madrid"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="Madrid"/>
+    </output>
+  </success>
+  <success>
+    <command id="35" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <roadCreated end="Paris" start="Milan"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Zurich"/>
+    </parameters>
+    <output>
+      <roadCreated end="Zurich" start="Milan"/>
+    </output>
+  </success>
+  <success>
+    <command id="38" name="mapRoad"/>
+    <parameters>
+      <start value="Paris"/>
+      <end value="Zurich"/>
+    </parameters>
+    <output>
+      <roadCreated end="Zurich" start="Paris"/>
+    </output>
+  </success>
+  <success>
+    <command id="40" name="mapRoad"/>
+    <parameters>
+      <start value="Paris"/>
+      <end value="Berlin"/>
+    </parameters>
+    <output>
+      <roadCreated end="Berlin" start="Paris"/>
+    </output>
+  </success>
+  <success>
+    <command id="42" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="Milan"/>
+    </output>
+  </success>
+  <error type="nonExistentEnd">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Athens"/>
+      <saveHTML value="shortestPathPublic.output.fromBerlinToAthens"/>
+    </parameters>
+  </error>
+</results>

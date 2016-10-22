@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="50"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="258"/>
+      <y value="128"/>
+      <radius value="50"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Annapolis"/>
+      <x value="514"/>
+      <y value="514"/>
+      <radius value="50"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Tokyo"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="50"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10" name="createCity"/>
+    <parameters>
+      <name value="Kyoto"/>
+      <x value="320"/>
+      <y value="510"/>
+      <radius value="40"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10" name="createCity"/>
+    <parameters>
+      <name value="Fargo"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="40"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10" name="createCity"/>
+    <parameters>
+      <name value="Phantasia"/>
+      <x value="314"/>
+      <y value="54"/>
+      <radius value="50"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="11" name="createCity"/>
+    <parameters>
+      <name value="Magic_City"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="60"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Berlin"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Annapolis"/>
+    </parameters>
+    <output>
+      <roadCreated end="Annapolis" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Fargo"/>
+      <end value="Kyoto"/>
+    </parameters>
+    <output>
+      <roadCreated end="Kyoto" start="Fargo"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Kyoto"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Kyoto"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Phantasia"/>
+    </parameters>
+    <output>
+      <roadCreated end="Phantasia" start="Berlin"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Magic_City"/>
+    </parameters>
+    <output>
+      <roadCreated end="Magic_City" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Phantasia"/>
+      <end value="Magic_City"/>
+    </parameters>
+    <output>
+      <roadCreated end="Magic_City" start="Phantasia"/>
+    </output>
+  </success>
+  <success>
+    <command id="30" name="shortestPath"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Baltimore"/>
+      <saveMap value="berlinBaltMap"/>
+      <saveHTML value="berlinToBalt"/>
+    </parameters>
+    <output>
+      <path hops="1" length="130.000">
+        <road end="Baltimore" start="Berlin"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="30" name="shortestPath"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Berlin"/>
+      <saveMap value="berlinMap"/>
+      <saveHTML value="berlin"/>
+    </parameters>
+    <output>
+      <path hops="0" length="0.000"/>
+    </output>
+  </success>
+  <error type="nonExistentEnd">
+    <command id="31" name="shortestPath"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Annapolis"/>
+      <saveMap value="berlinAnnaMap"/>
+      <saveHTML value="berlinAnna"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Annapolis"/>
+    </parameters>
+    <output>
+      <roadCreated end="Annapolis" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Tokyo"/>
+    </output>
+  </success>
+  <error type="nonExistentEnd">
+    <command id="32" name="shortestPath"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Annapolis"/>
+      <saveMap value="berlinAnnaMap"/>
+      <saveHTML value="berlinAnna"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="33" name="shortestPath"/>
+    <parameters>
+      <start value="Kyoto"/>
+      <end value="Fargo"/>
+    </parameters>
+    <output>
+      <path hops="1" length="192.010">
+        <road end="Fargo" start="Kyoto"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="shortestPath"/>
+    <parameters>
+      <start value="Kyoto"/>
+      <end value="Fargo"/>
+      <saveMap value="kyotoFargoMap"/>
+      <saveHTML value="kyotoFargo"/>
+    </parameters>
+    <output>
+      <path hops="1" length="192.010">
+        <road end="Fargo" start="Kyoto"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="35" name="shortestPath"/>
+    <parameters>
+      <start value="Fargo"/>
+      <end value="Tokyo"/>
+      <saveMap value="fargoTokyoMap"/>
+      <saveHTML value="fargoTokyo"/>
+    </parameters>
+    <output>
+      <path hops="3" length="867.016">
+        <road end="Kyoto" start="Fargo"/>
+        <left/>
+        <road end="Baltimore" start="Kyoto"/>
+        <right/>
+        <road end="Tokyo" start="Baltimore"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="shortestPath"/>
+    <parameters>
+      <start value="Fargo"/>
+      <end value="Phantasia"/>
+      <saveMap value="fargoPhantasia"/>
+      <saveHTML value="fargoPhantasia"/>
+    </parameters>
+    <output>
+      <path hops="4" length="909.189">
+        <road end="Kyoto" start="Fargo"/>
+        <left/>
+        <road end="Baltimore" start="Kyoto"/>
+        <right/>
+        <road end="Berlin" start="Baltimore"/>
+        <left/>
+        <road end="Phantasia" start="Berlin"/>
+      </path>
+    </output>
+  </success>
+  <error type="nonExistentEnd">
+    <command id="37" name="shortestPath"/>
+    <parameters>
+      <start value="Phantasia"/>
+      <end value="Magic_City"/>
+      <saveMap value="phantasiaMap"/>
+      <saveHTML value="phantasiaMagic"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="256" y="256">
+          <black cardinality="2">
+            <road end="Tokyo" start="Magic_City"/>
+            <road end="Tokyo" start="Annapolis"/>
+          </black>
+          <gray x="384" y="384">
+            <black cardinality="5">
+              <city color="blue" name="Kyoto" radius="40" x="320" y="510"/>
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Kyoto" start="Fargo"/>
+              <road end="Kyoto" start="Baltimore"/>
+              <road end="Tokyo" start="Annapolis"/>
+            </black>
+            <black cardinality="5">
+              <city color="blue" name="Fargo" radius="40" x="512" y="512"/>
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Kyoto" start="Fargo"/>
+              <road end="Tokyo" start="Annapolis"/>
+              <road end="Baltimore" start="Annapolis"/>
+            </black>
+            <black cardinality="4">
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Kyoto" start="Baltimore"/>
+              <road end="Tokyo" start="Annapolis"/>
+              <road end="Baltimore" start="Annapolis"/>
+            </black>
+            <black cardinality="4">
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Phantasia" start="Magic_City"/>
+              <road end="Tokyo" start="Annapolis"/>
+              <road end="Baltimore" start="Annapolis"/>
+            </black>
+          </gray>
+          <gray x="128" y="128">
+            <black cardinality="5">
+              <city color="red" name="Berlin" radius="50" x="128" y="128"/>
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Phantasia" start="Berlin"/>
+              <road end="Berlin" start="Baltimore"/>
+              <road end="Tokyo" start="Annapolis"/>
+            </black>
+            <black cardinality="5">
+              <city color="red" name="Berlin" radius="50" x="128" y="128"/>
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Phantasia" start="Berlin"/>
+              <road end="Berlin" start="Baltimore"/>
+              <road end="Tokyo" start="Annapolis"/>
+            </black>
+            <gray x="64" y="64">
+              <black cardinality="2">
+                <road end="Tokyo" start="Magic_City"/>
+                <road end="Tokyo" start="Annapolis"/>
+              </black>
+              <black cardinality="5">
+                <city color="red" name="Berlin" radius="50" x="128" y="128"/>
+                <road end="Tokyo" start="Magic_City"/>
+                <road end="Phantasia" start="Berlin"/>
+                <road end="Berlin" start="Baltimore"/>
+                <road end="Tokyo" start="Annapolis"/>
+              </black>
+              <black cardinality="4">
+                <city color="red" name="Tokyo" radius="50" x="0" y="0"/>
+                <road end="Tokyo" start="Magic_City"/>
+                <road end="Tokyo" start="Baltimore"/>
+                <road end="Tokyo" start="Annapolis"/>
+              </black>
+              <black cardinality="3">
+                <road end="Tokyo" start="Magic_City"/>
+                <road end="Tokyo" start="Baltimore"/>
+                <road end="Tokyo" start="Annapolis"/>
+              </black>
+            </gray>
+            <black cardinality="6">
+              <city color="red" name="Berlin" radius="50" x="128" y="128"/>
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Phantasia" start="Berlin"/>
+              <road end="Tokyo" start="Baltimore"/>
+              <road end="Berlin" start="Baltimore"/>
+              <road end="Tokyo" start="Annapolis"/>
+            </black>
+          </gray>
+          <gray x="384" y="128">
+            <black cardinality="8">
+              <city color="red" name="Baltimore" radius="50" x="258" y="128"/>
+              <road end="Tokyo" start="Magic_City"/>
+              <road end="Phantasia" start="Magic_City"/>
+              <road end="Tokyo" start="Baltimore"/>
+              <road end="Kyoto" start="Baltimore"/>
+              <road end="Berlin" start="Baltimore"/>
+              <road end="Tokyo" start="Annapolis"/>
+              <road end="Baltimore" start="Annapolis"/>
+            </black>
+            <black cardinality="1">
+              <road end="Phantasia" start="Magic_City"/>
+            </black>
+            <gray x="320" y="64">
+              <black cardinality="6">
+                <city color="red" name="Baltimore" radius="50" x="258" y="128"/>
+                <road end="Phantasia" start="Berlin"/>
+                <road end="Tokyo" start="Baltimore"/>
+                <road end="Kyoto" start="Baltimore"/>
+                <road end="Berlin" start="Baltimore"/>
+                <road end="Baltimore" start="Annapolis"/>
+              </black>
+              <black cardinality="1">
+                <road end="Phantasia" start="Magic_City"/>
+              </black>
+              <black cardinality="3">
+                <city color="red" name="Phantasia" radius="50" x="314" y="54"/>
+                <road end="Phantasia" start="Magic_City"/>
+                <road end="Phantasia" start="Berlin"/>
+              </black>
+              <black cardinality="1">
+                <road end="Phantasia" start="Magic_City"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="8" height="3" maxImbalance="1">
+        <node key="Berlin" value="(128,128)">
+          <node key="Kyoto" value="(320,510)">
+            <node key="Phantasia" value="(314,54)">
+              <node key="Tokyo" value="(0,0)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="Magic_City" value="(1000,1000)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+            <node key="Fargo" value="(512,512)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="Baltimore" value="(258,128)">
+            <emptyChild/>
+            <node key="Annapolis" value="(514,514)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

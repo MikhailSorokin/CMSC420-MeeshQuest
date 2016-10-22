@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="50"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Madrid"/>
+      <x value="50"/>
+      <y value="20"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Cat"/>
+      <x value="50"/>
+      <y value="30"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="50"/>
+      <y value="40"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Andorra"/>
+      <x value="40"/>
+      <y value="30"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Zebra"/>
+      <x value="40"/>
+      <y value="20"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Apple"/>
+      <x value="60"/>
+      <y value="30"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Banana"/>
+      <x value="60"/>
+      <y value="20"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Donut"/>
+      <x value="70"/>
+      <y value="30"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Madrid"/>
+    </parameters>
+    <output>
+      <roadCreated end="Madrid" start="Berlin"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="Madrid"/>
+      <end value="Cat"/>
+    </parameters>
+    <output>
+      <roadCreated end="Cat" start="Madrid"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="Cat"/>
+      <end value="Geneva"/>
+    </parameters>
+    <output>
+      <roadCreated end="Geneva" start="Cat"/>
+    </output>
+  </success>
+  <success>
+    <command id="35" name="mapRoad"/>
+    <parameters>
+      <start value="Cat"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="Cat"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Zebra"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="Zebra"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Cat"/>
+      <end value="Apple"/>
+    </parameters>
+    <output>
+      <roadCreated end="Apple" start="Cat"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Banana"/>
+      <end value="Apple"/>
+    </parameters>
+    <output>
+      <roadCreated end="Apple" start="Banana"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Banana"/>
+      <end value="Madrid"/>
+    </parameters>
+    <output>
+      <roadCreated end="Madrid" start="Banana"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Zebra"/>
+      <end value="Madrid"/>
+    </parameters>
+    <output>
+      <roadCreated end="Madrid" start="Zebra"/>
+    </output>
+  </success>
+  <success>
+    <command id="36" name="mapRoad"/>
+    <parameters>
+      <start value="Apple"/>
+      <end value="Donut"/>
+    </parameters>
+    <output>
+      <roadCreated end="Donut" start="Apple"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="testMAP"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="51" name="shortestPath"/>
+    <parameters>
+      <start value="Geneva"/>
+      <end value="Andorra"/>
+      <saveMap value="test"/>
+      <saveHTML value="test"/>
+    </parameters>
+    <output>
+      <path hops="2" length="20.000">
+        <road end="Cat" start="Geneva"/>
+        <right/>
+        <road end="Andorra" start="Cat"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="51" name="shortestPath"/>
+    <parameters>
+      <start value="Banana"/>
+      <end value="Andorra"/>
+      <saveMap value="test2"/>
+      <saveHTML value="test2"/>
+    </parameters>
+    <output>
+      <path hops="3" length="30.000">
+        <road end="Apple" start="Banana"/>
+        <left/>
+        <road end="Cat" start="Apple"/>
+        <straight/>
+        <road end="Andorra" start="Cat"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="51" name="shortestPath"/>
+    <parameters>
+      <start value="Zebra"/>
+      <end value="Apple"/>
+      <saveMap value="test3"/>
+      <saveHTML value="test3"/>
+    </parameters>
+    <output>
+      <path hops="3" length="30.000">
+        <road end="Madrid" start="Zebra"/>
+        <straight/>
+        <road end="Banana" start="Madrid"/>
+        <left/>
+        <road end="Apple" start="Banana"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="51" name="shortestPath"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Andorra"/>
+      <saveMap value="test4"/>
+      <saveHTML value="test4"/>
+    </parameters>
+    <output>
+      <path hops="3" length="30.000">
+        <road end="Madrid" start="Berlin"/>
+        <straight/>
+        <road end="Cat" start="Madrid"/>
+        <left/>
+        <road end="Andorra" start="Cat"/>
+      </path>
+    </output>
+  </success>
+</results>

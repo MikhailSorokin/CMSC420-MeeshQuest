@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="39"/>
+      <y value="76"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="81"/>
+      <y value="47"/>
+      <radius value="35"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="84"/>
+      <y value="33"/>
+      <radius value="40"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Los_Angeles"/>
+      <x value="118"/>
+      <y value="33"/>
+      <radius value="80"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printPMQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Los_Angeles"/>
+    </parameters>
+    <output>
+      <roadCreated end="Los_Angeles" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="64" y="64">
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="30" x="39" y="76"/>
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+          <white/>
+          <black cardinality="1">
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="Los_Angeles" radius="80" x="118" y="33"/>
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="64" y="64">
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="30" x="39" y="76"/>
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+          <white/>
+          <black cardinality="1">
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+          <gray x="96" y="32">
+            <black cardinality="2">
+              <isolatedCity color="black" name="Chicago" radius="35" x="81" y="47"/>
+              <road end="Los_Angeles" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" name="Los_Angeles" radius="80" x="118" y="33"/>
+              <road end="Los_Angeles" start="Baltimore"/>
+            </black>
+            <white/>
+            <white/>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Los_Angeles"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Los_Angeles"/>
+      <end value="Atlanta"/>
+    </parameters>
+    <output>
+      <roadCreated end="Atlanta" start="Los_Angeles"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="test"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="64" y="64">
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="30" x="39" y="76"/>
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+          <white/>
+          <black cardinality="1">
+            <road end="Los_Angeles" start="Baltimore"/>
+          </black>
+          <gray x="96" y="32">
+            <gray x="80" y="48">
+              <black cardinality="1">
+                <road end="Los_Angeles" start="Baltimore"/>
+              </black>
+              <black cardinality="1">
+                <road end="Los_Angeles" start="Baltimore"/>
+              </black>
+              <white/>
+              <gray x="88" y="40">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Chicago" radius="35" x="81" y="47"/>
+                </black>
+                <black cardinality="1">
+                  <road end="Los_Angeles" start="Baltimore"/>
+                </black>
+                <black cardinality="2">
+                  <city color="black" name="Atlanta" radius="40" x="84" y="33"/>
+                  <road end="Los_Angeles" start="Atlanta"/>
+                </black>
+                <black cardinality="1">
+                  <road end="Los_Angeles" start="Atlanta"/>
+                </black>
+              </gray>
+            </gray>
+            <black cardinality="3">
+              <city color="black" name="Los_Angeles" radius="80" x="118" y="33"/>
+              <road end="Los_Angeles" start="Baltimore"/>
+              <road end="Los_Angeles" start="Atlanta"/>
+            </black>
+            <white/>
+            <white/>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

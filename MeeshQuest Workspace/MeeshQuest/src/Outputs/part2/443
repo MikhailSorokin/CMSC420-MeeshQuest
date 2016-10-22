@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="26" name="createCity"/>
+    <parameters>
+      <name value="A25"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="27" name="createCity"/>
+    <parameters>
+      <name value="A26"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="27" name="createCity"/>
+    <parameters>
+      <name value="A28"/>
+      <x value="32"/>
+      <y value="32"/>
+      <radius value="30"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A25"/>
+      <end value="A26"/>
+    </parameters>
+    <output>
+      <roadCreated end="A26" start="A25"/>
+    </output>
+  </success>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A26"/>
+      <end value="A27"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A28"/>
+      <end value="A26"/>
+    </parameters>
+    <output>
+      <roadCreated end="A26" start="A28"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="32" y="32">
+          <black cardinality="3">
+            <city color="black" name="A28" radius="30" x="32" y="32"/>
+            <road end="A28" start="A26"/>
+            <road end="A26" start="A25"/>
+          </black>
+          <gray x="48" y="48">
+            <black cardinality="2">
+              <road end="A28" start="A26"/>
+              <road end="A26" start="A25"/>
+            </black>
+            <black cardinality="3">
+              <city color="black" name="A26" radius="30" x="64" y="64"/>
+              <road end="A28" start="A26"/>
+              <road end="A26" start="A25"/>
+            </black>
+            <black cardinality="3">
+              <city color="black" name="A28" radius="30" x="32" y="32"/>
+              <road end="A28" start="A26"/>
+              <road end="A26" start="A25"/>
+            </black>
+            <black cardinality="2">
+              <road end="A28" start="A26"/>
+              <road end="A26" start="A25"/>
+            </black>
+          </gray>
+          <gray x="16" y="16">
+            <black cardinality="1">
+              <road end="A26" start="A25"/>
+            </black>
+            <black cardinality="3">
+              <city color="black" name="A28" radius="30" x="32" y="32"/>
+              <road end="A28" start="A26"/>
+              <road end="A26" start="A25"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" name="A25" radius="30" x="0" y="0"/>
+              <road end="A26" start="A25"/>
+            </black>
+            <black cardinality="1">
+              <road end="A26" start="A25"/>
+            </black>
+          </gray>
+          <black cardinality="3">
+            <city color="black" name="A28" radius="30" x="32" y="32"/>
+            <road end="A28" start="A26"/>
+            <road end="A26" start="A25"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="yoyo"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="30"/>
+      <y value="49"/>
+    </parameters>
+  </error>
+</results>

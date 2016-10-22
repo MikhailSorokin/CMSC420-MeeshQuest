@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" spatialHeight="16" spatialWidth="16" pmOrder="3" xsi:noNamespaceSchemaLocation="part2in.xsd">
+<createCity color="red" x="0" y="0" name="A" radius="0"/>
+<createCity color="red" x="17" y="17" name="B" radius="0"/>
+<createCity color="red" x="1" y="16" name="C" radius="0"/>
+<createCity color="red" x="16" y="0" name="D" radius="0"/>
+<mapRoad start="A" end="B"/>
+<nearestCity x="16" y="16"/>
+<nearestCityToRoad start="A" end="B"/>
+
+</commands>

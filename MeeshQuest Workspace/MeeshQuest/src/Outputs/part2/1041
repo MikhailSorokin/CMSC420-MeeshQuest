@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="a"/>
+      <x value="4"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="b"/>
+      <x value="4"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="c"/>
+      <x value="4"/>
+      <y value="5"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="d"/>
+      <x value="4"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a"/>
+      <end value="b"/>
+    </parameters>
+    <output>
+      <roadCreated end="b" start="a"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <black cardinality="2">
+            <city color="blue" name="a" radius="0" x="4" y="12"/>
+            <road end="b" start="a"/>
+          </black>
+          <white/>
+          <black cardinality="2">
+            <city color="blue" name="b" radius="0" x="4" y="4"/>
+            <road end="b" start="a"/>
+          </black>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="d"/>
+      <end value="c"/>
+    </parameters>
+    <output>
+      <roadCreated end="c" start="d"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <gray x="4" y="12">
+            <black cardinality="2">
+              <city color="blue" name="a" radius="0" x="4" y="12"/>
+              <road end="b" start="a"/>
+            </black>
+            <black cardinality="2">
+              <city color="blue" name="a" radius="0" x="4" y="12"/>
+              <road end="b" start="a"/>
+            </black>
+            <gray x="2" y="10">
+              <white/>
+              <gray x="3" y="11">
+                <white/>
+                <black cardinality="2">
+                  <city color="blue" name="a" radius="0" x="4" y="12"/>
+                  <road end="b" start="a"/>
+                </black>
+                <white/>
+                <black cardinality="3">
+                  <city color="blue" name="d" radius="0" x="4" y="10"/>
+                  <road end="d" start="c"/>
+                  <road end="b" start="a"/>
+                </black>
+              </gray>
+              <white/>
+              <black cardinality="3">
+                <city color="blue" name="d" radius="0" x="4" y="10"/>
+                <road end="d" start="c"/>
+                <road end="b" start="a"/>
+              </black>
+            </gray>
+            <gray x="6" y="10">
+              <gray x="5" y="11">
+                <black cardinality="2">
+                  <city color="blue" name="a" radius="0" x="4" y="12"/>
+                  <road end="b" start="a"/>
+                </black>
+                <white/>
+                <black cardinality="3">
+                  <city color="blue" name="d" radius="0" x="4" y="10"/>
+                  <road end="d" start="c"/>
+                  <road end="b" start="a"/>
+                </black>
+                <white/>
+              </gray>
+              <white/>
+              <black cardinality="3">
+                <city color="blue" name="d" radius="0" x="4" y="10"/>
+                <road end="d" start="c"/>
+                <road end="b" start="a"/>
+              </black>
+              <white/>
+            </gray>
+          </gray>
+          <white/>
+          <gray x="4" y="4">
+            <gray x="2" y="6">
+              <white/>
+              <black cardinality="2">
+                <road end="d" start="c"/>
+                <road end="b" start="a"/>
+              </black>
+              <white/>
+              <gray x="3" y="5">
+                <white/>
+                <black cardinality="3">
+                  <city color="blue" name="c" radius="0" x="4" y="5"/>
+                  <road end="d" start="c"/>
+                  <road end="b" start="a"/>
+                </black>
+                <white/>
+                <gray x="3" y="4">
+                  <white/>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+              </gray>
+            </gray>
+            <gray x="6" y="6">
+              <black cardinality="2">
+                <road end="d" start="c"/>
+                <road end="b" start="a"/>
+              </black>
+              <white/>
+              <gray x="5" y="5">
+                <black cardinality="3">
+                  <city color="blue" name="c" radius="0" x="4" y="5"/>
+                  <road end="d" start="c"/>
+                  <road end="b" start="a"/>
+                </black>
+                <white/>
+                <gray x="4" y="4">
+                  <black cardinality="2">
+                    <city color="blue" name="b" radius="0" x="4" y="4"/>
+                    <road end="b" start="a"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="blue" name="b" radius="0" x="4" y="4"/>
+                    <road end="b" start="a"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="blue" name="b" radius="0" x="4" y="4"/>
+                    <road end="b" start="a"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="blue" name="b" radius="0" x="4" y="4"/>
+                    <road end="b" start="a"/>
+                  </black>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <black cardinality="2">
+              <city color="blue" name="b" radius="0" x="4" y="4"/>
+              <road end="b" start="a"/>
+            </black>
+            <black cardinality="2">
+              <city color="blue" name="b" radius="0" x="4" y="4"/>
+              <road end="b" start="a"/>
+            </black>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="8"/>
+      <y value="8"/>
+      <radius value="4"/>
+      <saveMap value="offsetroad1.jpg"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="d" start="c"/>
+        <road end="b" start="a"/>
+      </roadList>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="f"/>
+      <x value="4"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="e"/>
+      <x value="0"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="d"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="c"/>
+      <x value="4"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="b"/>
+      <x value="2"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="h"/>
+      <x value="3"/>
+      <y value="3"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="6" height="4" maxImbalance="4">
+        <node key="f" value="(4,0)">
+          <node key="h" value="(3,3)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+          <node key="e" value="(0,4)">
+            <emptyChild/>
+            <node key="d" value="(0,0)">
+              <emptyChild/>
+              <node key="c" value="(4,4)">
+                <emptyChild/>
+                <node key="b" value="(2,2)">
+                  <emptyChild/>
+                  <emptyChild/>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="a"/>
+      <x value="1"/>
+      <y value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="7" height="5" maxImbalance="4">
+        <node key="f" value="(4,0)">
+          <node key="h" value="(3,3)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+          <node key="e" value="(0,4)">
+            <emptyChild/>
+            <node key="d" value="(0,0)">
+              <emptyChild/>
+              <node key="c" value="(4,4)">
+                <emptyChild/>
+                <node key="b" value="(2,2)">
+                  <emptyChild/>
+                  <node key="a" value="(1,1)">
+                    <emptyChild/>
+                    <emptyChild/>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

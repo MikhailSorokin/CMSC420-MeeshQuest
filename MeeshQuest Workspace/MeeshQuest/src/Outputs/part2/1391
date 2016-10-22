@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="1000"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="120"/>
+      <y value="400"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy"/>
+      <x value="10"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy"/>
+      <x value="10"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy1"/>
+      <x value="10"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Troy" radius="2" x="10" y="40"/>
+        <city color="green" name="London" radius="2" x="1000" y="40"/>
+        <city color="black" name="Paris" radius="2" x="120" y="400"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Troy" radius="2" x="10" y="40"/>
+        <city color="black" name="Paris" radius="2" x="120" y="400"/>
+        <city color="green" name="London" radius="2" x="1000" y="40"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy"/>
+      <x value="10"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy"/>
+      <x value="11"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Troy1"/>
+      <x value="100"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="1000"/>
+      <y value="40"/>
+      <radius value="2"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="120"/>
+      <y value="400"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Troy"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Troy1"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="London"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <black cardinality="1">
+              <isolatedCity color="black" name="Paris" radius="2" x="120" y="400"/>
+            </black>
+            <white/>
+            <gray x="128" y="128">
+              <white/>
+              <white/>
+              <gray x="64" y="64">
+                <white/>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Troy" radius="2" x="10" y="40"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Troy1" radius="2" x="100" y="40"/>
+                </black>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="green" name="London" radius="2" x="1000" y="40"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Troy1" radius="2" x="100" y="40"/>
+        <city color="black" name="Troy" radius="2" x="10" y="40"/>
+        <city color="black" name="Paris" radius="2" x="120" y="400"/>
+        <city color="green" name="London" radius="2" x="1000" y="40"/>
+      </cityList>
+    </output>
+  </success>
+</results>

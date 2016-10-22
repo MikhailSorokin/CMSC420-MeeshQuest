@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" spatialHeight="1024" spatialWidth="1024" pmOrder="3" xsi:noNamespaceSchemaLocation="part2in.xsd">
+<createCity color="red" x="57" y="86" name="A0B0" radius="0"/>
+<createCity color="red" x="68" y="146" name="A0B1" radius="0"/>
+<createCity color="red" x="19" y="273" name="A0B2" radius="0"/>
+<createCity color="red" x="97" y="311" name="A0B3" radius="0"/>
+<createCity color="red" x="63" y="426" name="A0B4" radius="0"/>
+<createCity color="red" x="75" y="558" name="A0B5" radius="0"/>
+<createCity color="red" x="32" y="670" name="A0B6" radius="0"/>
+<createCity color="red" x="64" y="797" name="A0B7" radius="0"/>
+<createCity color="red" x="8" y="854" name="A0B8" radius="0"/>
+<createCity color="red" x="88" y="941" name="A0B9" radius="0"/>
+<createCity color="red" x="115" y="14" name="A1B0" radius="0"/>
+<createCity color="red" x="190" y="100" name="A1B1" radius="0"/>
+<createCity color="red" x="156" y="290" name="A1B2" radius="0"/>
+<createCity color="red" x="170" y="357" name="A1B3" radius="0"/>
+<createCity color="red" x="144" y="448" name="A1B4" radius="0"/>
+<createCity color="red" x="133" y="581" name="A1B5" radius="0"/>
+<createCity color="red" x="122" y="652" name="A1B6" radius="0"/>
+<createCity color="red" x="157" y="782" name="A1B7" radius="0"/>
+<createCity color="red" x="191" y="895" name="A1B8" radius="0"/>
+<createCity color="red" x="112" y="936" name="A1B9" radius="0"/>
+<createCity color="red" x="202" y="91" name="A2B0" radius="0"/>
+<createCity color="red" x="283" y="197" name="A2B1" radius="0"/>
+<createCity color="red" x="241" y="226" name="A2B2" radius="0"/>
+<createCity color="red" x="277" y="371" name="A2B3" radius="0"/>
+<createCity color="red" x="260" y="481" name="A2B4" radius="0"/>
+<createCity color="red" x="220" y="561" name="A2B5" radius="0"/>
+<createCity color="red" x="268" y="662" name="A2B6" radius="0"/>
+<createCity color="red" x="264" y="706" name="A2B7" radius="0"/>
+<createCity color="red" x="216" y="845" name="A2B8" radius="0"/>
+<createCity color="red" x="260" y="925" name="A2B9" radius="0"/>
+<createCity color="red" x="304" y="94" name="A3B0" radius="0"/>
+<createCity color="red" x="322" y="143" name="A3B1" radius="0"/>
+<createCity color="red" x="321" y="239" name="A3B2" radius="0"/>
+<createCity color="red" x="328" y="332" name="A3B3" radius="0"/>
+<createCity color="red" x="343" y="439" name="A3B4" radius="0"/>
+<createCity color="red" x="339" y="537" name="A3B5" radius="0"/>
+<createCity color="red" x="395" y="682" name="A3B6" radius="0"/>
+<createCity color="red" x="391" y="749" name="A3B7" radius="0"/>
+<createCity color="red" x="354" y="804" name="A3B8" radius="0"/>
+<createCity color="red" x="372" y="963" name="A3B9" radius="0"/>
+<createCity color="red" x="429" y="47" name="A4B0" radius="0"/>
+<createCity color="red" x="474" y="176" name="A4B1" radius="0"/>
+<createCity color="red" x="411" y="236" name="A4B2" radius="0"/>
+<createCity color="red" x="476" y="390" name="A4B3" radius="0"/>
+<createCity color="red" x="445" y="462" name="A4B4" radius="0"/>
+<createCity color="red" x="447" y="589" name="A4B5" radius="0"/>
+<createCity color="red" x="426" y="697" name="A4B6" radius="0"/>
+<createCity color="red" x="462" y="723" name="A4B7" radius="0"/>
+<createCity color="red" x="492" y="829" name="A4B8" radius="0"/>
+<createCity color="red" x="478" y="919" name="A4B9" radius="0"/>
+<createCity color="red" x="548" y="43" name="A5B0" radius="0"/>
+<createCity color="red" x="591" y="114" name="A5B1" radius="0"/>
+<createCity color="red" x="511" y="282" name="A5B2" radius="0"/>
+<createCity color="red" x="594" y="341" name="A5B3" radius="0"/>
+<createCity color="red" x="581" y="464" name="A5B4" radius="0"/>
+<createCity color="red" x="521" y="565" name="A5B5" radius="0"/>
+<createCity color="red" x="556" y="613" name="A5B6" radius="0"/>
+<createCity color="red" x="580" y="702" name="A5B7" radius="0"/>
+<createCity color="red" x="590" y="832" name="A5B8" radius="0"/>
+<createCity color="red" x="547" y="964" name="A5B9" radius="0"/>
+<createCity color="red" x="643" y="8" name="A6B0" radius="0"/>
+<createCity color="red" x="695" y="118" name="A6B1" radius="0"/>
+<createCity color="red" x="646" y="245" name="A6B2" radius="0"/>
+<createCity color="red" x="602" y="347" name="A6B3" radius="0"/>
+<createCity color="red" x="675" y="426" name="A6B4" radius="0"/>
+<createCity color="red" x="640" y="580" name="A6B5" radius="0"/>
+<createCity color="red" x="695" y="601" name="A6B6" radius="0"/>
+<createCity color="red" x="666" y="787" name="A6B7" radius="0"/>
+<createCity color="red" x="620" y="877" name="A6B8" radius="0"/>
+<createCity color="red" x="688" y="985" name="A6B9" radius="0"/>
+<createCity color="red" x="744" y="74" name="A7B0" radius="0"/>
+<createCity color="red" x="735" y="186" name="A7B1" radius="0"/>
+<createCity color="red" x="789" y="297" name="A7B2" radius="0"/>
+<createCity color="red" x="758" y="340" name="A7B3" radius="0"/>
+<createCity color="red" x="784" y="488" name="A7B4" radius="0"/>
+<createCity color="red" x="761" y="596" name="A7B5" radius="0"/>
+<createCity color="red" x="702" y="616" name="A7B6" radius="0"/>
+<createCity color="red" x="722" y="704" name="A7B7" radius="0"/>
+<createCity color="red" x="702" y="863" name="A7B8" radius="0"/>
+<createCity color="red" x="792" y="985" name="A7B9" radius="0"/>
+<createCity color="red" x="824" y="34" name="A8B0" radius="0"/>
+<createCity color="red" x="858" y="139" name="A8B1" radius="0"/>
+<createCity color="red" x="887" y="271" name="A8B2" radius="0"/>
+<createCity color="red" x="822" y="363" name="A8B3" radius="0"/>
+<createCity color="red" x="827" y="430" name="A8B4" radius="0"/>
+<createCity color="red" x="821" y="520" name="A8B5" radius="0"/>
+<createCity color="red" x="896" y="697" name="A8B6" radius="0"/>
+<createCity color="red" x="813" y="745" name="A8B7" radius="0"/>
+<createCity color="red" x="882" y="878" name="A8B8" radius="0"/>
+<createCity color="red" x="835" y="943" name="A8B9" radius="0"/>
+<createCity color="red" x="910" y="91" name="A9B0" radius="0"/>
+<createCity color="red" x="974" y="159" name="A9B1" radius="0"/>
+<createCity color="red" x="914" y="248" name="A9B2" radius="0"/>
+<createCity color="red" x="950" y="385" name="A9B3" radius="0"/>
+<createCity color="red" x="969" y="479" name="A9B4" radius="0"/>
+<createCity color="red" x="989" y="591" name="A9B5" radius="0"/>
+<createCity color="red" x="949" y="621" name="A9B6" radius="0"/>
+<createCity color="red" x="915" y="723" name="A9B7" radius="0"/>
+<createCity color="red" x="955" y="823" name="A9B8" radius="0"/>
+<createCity color="red" x="937" y="932" name="A9B9" radius="0"/>
+<mapRoad start="A1B1" end="A0B1"/>
+<mapRoad start="A1B1" end="A1B0"/>
+<mapRoad start="A1B2" end="A0B2"/>
+<mapRoad start="A1B2" end="A1B1"/>
+<mapRoad start="A1B3" end="A0B3"/>
+<mapRoad start="A1B3" end="A1B2"/>
+<mapRoad start="A1B4" end="A0B4"/>
+<mapRoad start="A1B4" end="A1B3"/>
+<mapRoad start="A1B5" end="A0B5"/>
+<mapRoad start="A1B5" end="A1B4"/>
+<mapRoad start="A1B6" end="A0B6"/>
+<mapRoad start="A1B6" end="A1B5"/>
+<mapRoad start="A1B7" end="A0B7"/>
+<mapRoad start="A1B7" end="A1B6"/>
+<mapRoad start="A1B8" end="A0B8"/>
+<mapRoad start="A1B8" end="A1B7"/>
+<mapRoad start="A1B9" end="A0B9"/>
+<mapRoad start="A1B9" end="A1B8"/>
+<mapRoad start="A2B1" end="A1B1"/>
+<mapRoad start="A2B1" end="A2B0"/>
+<mapRoad start="A2B2" end="A1B2"/>
+<mapRoad start="A2B2" end="A2B1"/>
+<mapRoad start="A2B3" end="A1B3"/>
+<mapRoad start="A2B3" end="A2B2"/>
+<mapRoad start="A2B4" end="A1B4"/>
+<mapRoad start="A2B4" end="A2B3"/>
+<mapRoad start="A2B5" end="A1B5"/>
+<mapRoad start="A2B5" end="A2B4"/>
+<mapRoad start="A2B6" end="A1B6"/>
+<mapRoad start="A2B6" end="A2B5"/>
+<mapRoad start="A2B7" end="A1B7"/>
+<mapRoad start="A2B7" end="A2B6"/>
+<mapRoad start="A2B8" end="A1B8"/>
+<mapRoad start="A2B8" end="A2B7"/>
+<mapRoad start="A2B9" end="A1B9"/>
+<mapRoad start="A2B9" end="A2B8"/>
+<mapRoad start="A3B1" end="A2B1"/>
+<mapRoad start="A3B1" end="A3B0"/>
+<mapRoad start="A3B2" end="A2B2"/>
+<mapRoad start="A3B2" end="A3B1"/>
+<mapRoad start="A3B3" end="A2B3"/>
+<mapRoad start="A3B3" end="A3B2"/>
+<mapRoad start="A3B4" end="A2B4"/>
+<mapRoad start="A3B4" end="A3B3"/>
+<mapRoad start="A3B5" end="A2B5"/>
+<mapRoad start="A3B5" end="A3B4"/>
+<mapRoad start="A3B6" end="A2B6"/>
+<mapRoad start="A3B6" end="A3B5"/>
+<mapRoad start="A3B7" end="A2B7"/>
+<mapRoad start="A3B7" end="A3B6"/>
+<mapRoad start="A3B8" end="A2B8"/>
+<mapRoad start="A3B8" end="A3B7"/>
+<mapRoad start="A3B9" end="A2B9"/>
+<mapRoad start="A3B9" end="A3B8"/>
+<mapRoad start="A4B1" end="A3B1"/>
+<mapRoad start="A4B1" end="A4B0"/>
+<mapRoad start="A4B2" end="A3B2"/>
+<mapRoad start="A4B2" end="A4B1"/>
+<mapRoad start="A4B3" end="A3B3"/>
+<mapRoad start="A4B3" end="A4B2"/>
+<mapRoad start="A4B4" end="A3B4"/>
+<mapRoad start="A4B4" end="A4B3"/>
+<mapRoad start="A4B5" end="A3B5"/>
+<mapRoad start="A4B5" end="A4B4"/>
+<mapRoad start="A4B6" end="A3B6"/>
+<mapRoad start="A4B6" end="A4B5"/>
+<mapRoad start="A4B7" end="A3B7"/>
+<mapRoad start="A4B7" end="A4B6"/>
+<mapRoad start="A4B8" end="A3B8"/>
+<mapRoad start="A4B8" end="A4B7"/>
+<mapRoad start="A4B9" end="A3B9"/>
+<mapRoad start="A4B9" end="A4B8"/>
+<mapRoad start="A5B1" end="A4B1"/>
+<mapRoad start="A5B1" end="A5B0"/>
+<mapRoad start="A5B2" end="A4B2"/>
+<mapRoad start="A5B2" end="A5B1"/>
+<mapRoad start="A5B3" end="A4B3"/>
+<mapRoad start="A5B3" end="A5B2"/>
+<mapRoad start="A5B4" end="A4B4"/>
+<mapRoad start="A5B4" end="A5B3"/>
+<mapRoad start="A5B5" end="A4B5"/>
+<mapRoad start="A5B5" end="A5B4"/>
+<mapRoad start="A5B6" end="A4B6"/>
+<mapRoad start="A5B6" end="A5B5"/>
+<mapRoad start="A5B7" end="A4B7"/>
+<mapRoad start="A5B7" end="A5B6"/>
+<mapRoad start="A5B8" end="A4B8"/>
+<mapRoad start="A5B8" end="A5B7"/>
+<mapRoad start="A5B9" end="A4B9"/>
+<mapRoad start="A5B9" end="A5B8"/>
+<mapRoad start="A6B1" end="A5B1"/>
+<mapRoad start="A6B1" end="A6B0"/>
+<mapRoad start="A6B2" end="A5B2"/>
+<mapRoad start="A6B2" end="A6B1"/>
+<mapRoad start="A6B3" end="A5B3"/>
+<mapRoad start="A6B3" end="A6B2"/>
+<mapRoad start="A6B4" end="A5B4"/>
+<mapRoad start="A6B4" end="A6B3"/>
+<mapRoad start="A6B5" end="A5B5"/>
+<mapRoad start="A6B5" end="A6B4"/>
+<mapRoad start="A6B6" end="A5B6"/>
+<mapRoad start="A6B6" end="A6B5"/>
+<mapRoad start="A6B7" end="A5B7"/>
+<mapRoad start="A6B7" end="A6B6"/>
+<mapRoad start="A6B8" end="A5B8"/>
+<mapRoad start="A6B8" end="A6B7"/>
+<mapRoad start="A6B9" end="A5B9"/>
+<mapRoad start="A6B9" end="A6B8"/>
+<mapRoad start="A7B1" end="A6B1"/>
+<mapRoad start="A7B1" end="A7B0"/>
+<mapRoad start="A7B2" end="A6B2"/>
+<mapRoad start="A7B2" end="A7B1"/>
+<mapRoad start="A7B3" end="A6B3"/>
+<mapRoad start="A7B3" end="A7B2"/>
+<mapRoad start="A7B4" end="A6B4"/>
+<mapRoad start="A7B4" end="A7B3"/>
+<mapRoad start="A7B5" end="A6B5"/>
+<mapRoad start="A7B5" end="A7B4"/>
+<mapRoad start="A7B6" end="A6B6"/>
+<mapRoad start="A7B6" end="A7B5"/>
+<mapRoad start="A7B7" end="A6B7"/>
+<mapRoad start="A7B7" end="A7B6"/>
+<mapRoad start="A7B8" end="A6B8"/>
+<mapRoad start="A7B8" end="A7B7"/>
+<mapRoad start="A7B9" end="A6B9"/>
+<mapRoad start="A7B9" end="A7B8"/>
+<mapRoad start="A8B1" end="A7B1"/>
+<mapRoad start="A8B1" end="A8B0"/>
+<mapRoad start="A8B2" end="A7B2"/>
+<mapRoad start="A8B2" end="A8B1"/>
+<mapRoad start="A8B3" end="A7B3"/>
+<mapRoad start="A8B3" end="A8B2"/>
+<mapRoad start="A8B4" end="A7B4"/>
+<mapRoad start="A8B4" end="A8B3"/>
+<mapRoad start="A8B5" end="A7B5"/>
+<mapRoad start="A8B5" end="A8B4"/>
+<mapRoad start="A8B6" end="A7B6"/>
+<mapRoad start="A8B6" end="A8B5"/>
+<mapRoad start="A8B7" end="A7B7"/>
+<mapRoad start="A8B7" end="A8B6"/>
+<mapRoad start="A8B8" end="A7B8"/>
+<mapRoad start="A8B8" end="A8B7"/>
+<mapRoad start="A8B9" end="A7B9"/>
+<mapRoad start="A8B9" end="A8B8"/>
+<mapRoad start="A9B1" end="A8B1"/>
+<mapRoad start="A9B1" end="A9B0"/>
+<mapRoad start="A9B2" end="A8B2"/>
+<mapRoad start="A9B2" end="A9B1"/>
+<mapRoad start="A9B3" end="A8B3"/>
+<mapRoad start="A9B3" end="A9B2"/>
+<mapRoad start="A9B4" end="A8B4"/>
+<mapRoad start="A9B4" end="A9B3"/>
+<mapRoad start="A9B5" end="A8B5"/>
+<mapRoad start="A9B5" end="A9B4"/>
+<mapRoad start="A9B6" end="A8B6"/>
+<mapRoad start="A9B6" end="A9B5"/>
+<mapRoad start="A9B7" end="A8B7"/>
+<mapRoad start="A9B7" end="A9B6"/>
+<mapRoad start="A9B8" end="A8B8"/>
+<mapRoad start="A9B8" end="A9B7"/>
+<mapRoad start="A9B9" end="A8B9"/>
+<mapRoad start="A9B9" end="A9B8"/>
+<shortestPath start="A4B8" end="A8B7"/>
+<shortestPath start="A2B7" end="A9B0"/>
+<shortestPath start="A8B5" end="A2B7"/>
+<shortestPath start="A1B7" end="A3B9"/>
+<shortestPath start="A2B4" end="A8B9"/>
+<shortestPath start="A6B5" end="A2B8"/>
+<shortestPath start="A6B8" end="A9B5"/>
+<shortestPath start="A5B0" end="A4B2"/>
+<shortestPath start="A3B0" end="A2B0"/>
+<rangeCities x="765" y="659" radius="9" saveMap="cities1"/>
+<rangeCities x="495" y="376" radius="43" saveMap="cities2"/>
+<rangeCities x="348" y="287" radius="38" saveMap="cities3"/>
+<rangeCities x="75" y="223" radius="296" saveMap="cities4"/>
+<rangeCities x="89" y="104" radius="211" saveMap="cities5"/>
+<rangeCities x="632" y="620" radius="13" saveMap="cities6"/>
+<rangeCities x="766" y="849" radius="69" saveMap="cities7"/>
+<rangeCities x="529" y="122" radius="290" saveMap="cities8"/>
+<rangeCities x="152" y="534" radius="88" saveMap="cities9"/>
+<rangeRoads x="931" y="904" radius="205" saveMap="roads1"/>
+<rangeRoads x="603" y="798" radius="77" saveMap="roads2"/>
+<rangeRoads x="266" y="838" radius="166" saveMap="roads3"/>
+<rangeRoads x="840" y="767" radius="226" saveMap="roads4"/>
+<rangeRoads x="864" y="270" radius="212" saveMap="roads5"/>
+<rangeRoads x="400" y="421" radius="155" saveMap="roads6"/>
+<rangeRoads x="971" y="384" radius="207" saveMap="roads7"/>
+<rangeRoads x="624" y="439" radius="234" saveMap="roads8"/>
+<rangeRoads x="5" y="197" radius="199" saveMap="roads9"/>
+<nearestCity x="530" y="578"/>
+<nearestCity x="873" y="653"/>
+<nearestCity x="129" y="328"/>
+<nearestCity x="95" y="360"/>
+<nearestCity x="22" y="258"/>
+<nearestCity x="421" y="291"/>
+<nearestCity x="779" y="149"/>
+<nearestCity x="336" y="667"/>
+<nearestCity x="4" y="435"/>
+<nearestRoad x="228" y="917"/>
+<nearestRoad x="626" y="578"/>
+<nearestRoad x="480" y="474"/>
+<nearestRoad x="478" y="309"/>
+<nearestRoad x="62" y="201"/>
+<nearestRoad x="481" y="28"/>
+<nearestRoad x="135" y="119"/>
+<nearestRoad x="615" y="522"/>
+<nearestRoad x="117" y="661"/>
+<nearestCityToRoad start="A2B0" end="A3B0"/>
+<nearestCityToRoad start="A8B1" end="A9B1"/>
+<nearestCityToRoad start="A6B7" end="A7B7"/>
+<nearestCityToRoad start="A2B7" end="A3B7"/>
+<nearestCityToRoad start="A8B3" end="A9B3"/>
+<nearestCityToRoad start="A5B2" end="A6B2"/>
+<nearestCityToRoad start="A0B4" end="A1B4"/>
+<nearestCityToRoad start="A4B0" end="A5B0"/>
+<nearestCityToRoad start="A2B1" end="A3B1"/>
+<saveMap name="test"/>
+</commands>

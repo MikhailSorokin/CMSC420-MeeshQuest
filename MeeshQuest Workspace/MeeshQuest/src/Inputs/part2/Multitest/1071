@@ -1,0 +1,23 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="32"
+    spatialHeight="32"
+    g="1"
+    pmOrder="3">
+    
+    <printPMQuadtree/>
+    <createCity name="A1" x="-1" y="0" radius="0" color="black"/>
+    <createCity name="A2" x="0" y="16" radius="0" color="black"/>
+    <createCity name="A3" x="0" y="32" radius="0" color="black"/>
+    <createCity name="A4" x="16" y="32" radius="0" color="black"/>
+    <createCity name="A5" x="16" y="16" radius="0" color="black"/>
+    <createCity name="A6" x="16" y="0" radius="0" color="black"/>
+    <createCity name="A7" x="32" y="0" radius="0" color="black"/>
+    <createCity name="A8" x="32" y="16" radius="0" color="black"/>
+    <createCity name="A9" x="32" y="32" radius="0" color="black"/>
+    
+    
+    <mapRoad start="A2" end="A1"/>
+    <printPMQuadtree/>
+</commands>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="1024"/>
+      <y value="1024"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="1024"/>
+      <y value="0"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="0"/>
+      <y value="1024"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="510"/>
+      <y value="510"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <roadCreated end="A" start="C"/>
+    </output>
+  </success>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadCreated end="F" start="B"/>
+    </output>
+  </success>
+  <error type="startOrEndIsIsolated">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="512"/>
+      <y value="512"/>
+    </parameters>
+    <output>
+      <city color="black" name="F" radius="2" x="510" y="510"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1024"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="black" name="C" radius="2" x="1024" y="0"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="E" radius="2" x="512" y="512"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="C" start="A"/>
+    </output>
+  </success>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+  </error>
+</results>

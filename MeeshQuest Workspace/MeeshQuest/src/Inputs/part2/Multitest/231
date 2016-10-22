@@ -1,0 +1,61 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+
+<!--  ERRORS  -->
+<printAvlTree/>
+<listCities  sortBy="coordinate"/>
+<listCities sortBy="name"/>
+<clearAll/>
+<nearestCity x="50" y="10"/>
+<nearestIsolatedCity x ="20" y="30"/>
+<rangeCities x="50" y="50" radius="20" saveMap="part2.public.range.2"/>
+<createCity   name="Berlin" x="128" y="128" radius="0" color="red"/>
+<createCity  name="Geneva" x="90" y="70" radius="0" color="orange"/>
+<createCity   name="GenevaCoordinateError" x="90" y="70" radius="0" color="orange"/>
+<createCity  name="Berlin" x="1281" y="1281" radius="0" color="red"/>
+<printPMQuadtree/>
+<!--  ERRORS  -->
+<mapRoad start="Berlin" end="Geneva"/>
+<mapRoad start="Big" end="Fu"/>
+<mapRoad start="Berlin" end="SomeWhere"/>
+
+<mapRoad start="Here" end="Geneva"/>
+<mapRoad start="Berlin" end="Geneva"/>
+<mapRoad start="BerlinNameError" end="Geneva"/>
+<printAvlTree/>
+<nearestIsolatedCity x ="20" y="30"/>
+<nearestIsolatedCity x="128" y="128"/>
+<listCities sortBy="coordinate"/>
+<rangeCities x="50" y="50" radius="20" saveMap="part2.public.range.1"/>
+<createCity name="F" x="20" y="280" color="black" radius="2"/>
+<createCity name="D" x="20" y="100" color="black" radius="2"/>
+<printAvlTree/>
+<createCity name="G" x="10" y="20" color="black" radius="2"/>
+<createCity name="A1" x="1" y="50" radius="0" color="black"/>
+<printAvlTree/>
+<createCity name="A2" x="100" y="50" radius="0" color="black"/>
+<createCity name="A3" x="50" y="50" radius="0" color="black"/>
+<printAvlTree/>
+<printPMQuadtree/>
+<createCity name="A4" x="1" y="100" radius="0" color="black"/>
+<createCity name="A5" x="50" y="100" radius="0" color="black"/>
+<createCity name="A6" x="100" y="100" radius="0" color="black"/>
+<printAvlTree/>
+<printPMQuadtree/>
+<createCity name="A7" x="105" y="105" radius="0" color="black"/>
+<listCities  sortBy="coordinate"/>
+<printAvlTree/>
+<printPMQuadtree/>
+<mapRoad start="A1" end="A2"/>
+<mapRoad start="A1" end="A4"/>
+<mapRoad start="A1" end="A5"/>
+<mapRoad start="A1" end="A6"/>
+<printPMQuadtree/>
+<rangeCities x="50" y="50" radius="20" saveMap="part2.public.range.2"/>
+
+</commands>

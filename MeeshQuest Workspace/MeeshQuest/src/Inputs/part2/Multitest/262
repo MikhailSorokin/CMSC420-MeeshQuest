@@ -1,0 +1,22 @@
+<commands
+	
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	
+xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	
+spatialWidth="128"
+ 	
+spatialHeight="128"
+ 	
+pmOrder="3"
+ 	
+g="1">
+ 
+
+<createCity id="1" name="Baltimore" y="64" x="64" radius="0" color="black"/>
+ 
+<createCity id="3" name="Atlanta" x="1" y="1" radius="0"  color="black"/>
+<mapCity name="Baltimore"/>
+<mapCity name="Atlanta"/>
+<printPMQuadtree/>
+</commands>

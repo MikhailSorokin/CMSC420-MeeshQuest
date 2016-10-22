@@ -1,0 +1,34 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="1"
+	pmOrder="3">
+ <createCity name="Baltimore" x="140" y="37" radius="0" color="black"/>
+ <createCity name="Chicago" x="133" y="34" radius="0" color="black"/>
+ <createCity name="New_York" x="200" y="300" radius="0" color="black"/>
+ <createCity name="Zurich" x="1000" y="1000" radius="0" color="black"/>
+ <createCity name="Paris" x="500" y="400" radius="0" color="black"/>
+ <createCity name="Amsterdam" x="450" y="450" radius="0" color="black"/>
+ 
+ <createCity name="Greenbelt" x="800" y="675" radius="0" color="black"/>
+ <createCity name="Lanham" x="300" y="750" radius="0" color="black"/>
+ <createCity name="College_Park" x="900" y="260" radius="0" color="black"/>
+ 
+  <createCity name="Columbia" x="510" y="95" radius="0" color="black"/>
+   <createCity name="Silver_Spring" x="290" y="400" radius="0" color="black"/>
+    <createCity name="Washington" x="780" y="40" radius="0" color="black"/>
+ 
+ <createCity name="A" x="200" y="400" radius="0" color="black"/>
+ <createCity name="B" x="200" y="800" radius="0" color="black"/>
+ <createCity name="C" x="800" y="400" radius="0" color="black"/>
+ <createCity name="D" x="800" y="800" radius="0" color="black"/>
+ 
+ <mapRoad start="A" end="B"/>
+ <mapRoad start="C" end="D"/>
+ 
+ <nearestRoad x="500" y="600"/>
+ 
+ <saveMap name="part2.testing.nearest"/>
+</commands>

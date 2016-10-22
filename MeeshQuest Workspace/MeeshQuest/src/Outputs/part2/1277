@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="noCitiesToList">
+    <command id="1" name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+  </error>
+  <error type="noCitiesToList">
+    <command id="2" name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Alpha"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Bravo"/>
+      <x value="0"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="Charlie"/>
+      <x value="1024"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

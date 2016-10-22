@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="nonExistentStart">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="Bosnia"/>
+      <end value="Paris"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="Amsterdam"/>
+      <end value="Poopingheim"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="New_York"/>
+      <end value="Paris"/>
+    </parameters>
+  </error>
+</results>

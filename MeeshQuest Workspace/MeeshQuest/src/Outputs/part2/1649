@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="390"/>
+      <y value="70"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="Lisbon"/>
+      <end value="Madrid"/>
+    </parameters>
+  </error>
+</results>

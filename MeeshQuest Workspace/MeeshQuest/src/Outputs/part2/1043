@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Tokyo"/>
+      <x value="1700"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Vancouver"/>
+      <x value="0"/>
+      <y value="1025"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <roadCreated end="Paris" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Tokyo"/>
+      <end value="Vancouver"/>
+    </parameters>
+    <output>
+      <roadCreated end="Vancouver" start="Tokyo"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1024"/>
+      <y value="1024"/>
+    </parameters>
+    <output>
+      <city color="black" name="Paris" radius="0" x="500" y="400"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="part2.public.ACTfile12"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

@@ -1,0 +1,71 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+ 
+ <createCity name="E" x="512" y="512" radius="0" color="black"/>
+ <createCity name="E" x="512" y="512" radius="0" color="black"/>
+ <createCity name="E" x="510" y="512" radius="0" color="black"/>
+ <createCity name="A" x="512" y="512" radius="0" color="black"/>
+ <createCity name="A" x="5" y="238" radius="0" color="black"/>
+ <printAvlTree/>
+ <printPMQuadtree/>
+ <clearAll/>
+ <nearestCity x="10" y="10"/>
+ <listCities sortBy="name"/>
+ <printAvlTree/>
+ <createCity name="A" x="512" y="512" radius="0" color="black"/>
+ <createCity name="B" x="10" y="13" radius="0" color="black"/>
+ <createCity name="C" x="100" y="1024" radius="0" color="black"/>
+ <createCity name="D" x="51" y="12" radius="0" color="black"/>
+ <createCity name="E" x="800" y="712" radius="0" color="black"/>
+ <createCity name="F" x="1026" y="-1" radius="0" color="black"/>
+ <createCity name="X" x="1026" y="100" radius="0" color="black"/>
+ <createCity name="Y" x="512" y="1024" radius="0" color="black"/>
+ <createCity name="W" x="1024" y="512" radius="0" color="black"/>
+
+ <mapCity name="C"/>
+ <nearestRoad x="0" y="0"/>
+ <mapRoad start="A" end="F"/>
+ <nearestIsolatedCity x="500" y="500"/>
+ <mapCity name="F"/>
+ <mapCity name="B"/>
+ <mapCity name="E"/>
+ <nearestCity x="10" y="10"/>
+ <mapRoad start="A" end="F"/>
+ <mapRoad start="G" end="G"/>
+ <mapRoad start="A" end="G"/>
+ <mapRoad start="A" end="A"/>
+ <mapRoad start="E" end="C"/>
+ <mapRoad start="E" end="D"/>
+ <mapRoad start="E" end="E"/>
+ <mapRoad start="E" end="F"/>
+ <mapRoad start="X" end="F"/>
+ <mapCity name="F"/>
+ <mapCity name="C"/>
+ <mapCity name="Z"/>
+ <mapCity name="A"/>
+ <printAvlTree/>
+ <printPMQuadtree/>
+ <rangeCities x="10" y="10" radius="1"/>
+ <rangeCities x="10" y="10" radius="1500"/>
+ <rangeCities x="1025" y="1025" radius="600"/>
+ <rangeCities x="13" y="13" radius="3"/>
+ <rangeRoads x="510" y="510" radius="1"/>
+ <rangeRoads x="1026" y="0" radius="100"/>
+ <nearestCity x="10" y="10"/>
+ <nearestCity x="1025" y="1025"/>
+ <nearestIsolatedCity x="10" y="10"/>
+ <nearestRoad x="0" y="0"/>
+ <mapRoad start="Y" end="A"/>
+ <mapRoad start="A" end="W"/>
+ <nearestRoad x="500" y="500"/>
+ <nearestCityToRoad start="as" end="df"/>
+ <nearestCityToRoad start="Y" end="A"/>
+ <nearestCityToRoad start="as" end="df"/>
+
+
+ </commands>

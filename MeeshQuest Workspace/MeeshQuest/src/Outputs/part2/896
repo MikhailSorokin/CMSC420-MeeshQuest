@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="1002"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Blah"/>
+      <x value="451"/>
+      <y value="451"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Chicago"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Paris"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Paris"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="New_York"/>
+      <end value="Amsterdam"/>
+    </parameters>
+    <output>
+      <roadCreated end="Amsterdam" start="New_York"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Zurich"/>
+      <end value="Amsterdam"/>
+    </parameters>
+    <output>
+      <roadCreated end="Amsterdam" start="Zurich"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Amsterdam"/>
+      <end value="Chicago"/>
+    </parameters>
+    <output>
+      <roadCreated end="Chicago" start="Amsterdam"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Blah"/>
+      <end value="Chicago"/>
+    </parameters>
+    <output>
+      <roadCreated end="Chicago" start="Blah"/>
+    </output>
+  </success>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="30000"/>
+      <y value="-3000"/>
+      <radius value="3"/>
+    </parameters>
+  </error>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="30000"/>
+      <y value="-3000"/>
+      <radius value="0"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="3"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="Chicago" start="Blah"/>
+        <road end="Chicago" start="Baltimore"/>
+        <road end="Chicago" start="Amsterdam"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="3"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="Chicago" start="Blah"/>
+        <road end="Zurich" start="Amsterdam"/>
+        <road end="New_York" start="Amsterdam"/>
+        <road end="Chicago" start="Amsterdam"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="3"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="Paris" start="Baltimore"/>
+        <road end="Chicago" start="Baltimore"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="Paris" start="Baltimore"/>
+        <road end="Chicago" start="Baltimore"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="0"/>
+    </parameters>
+  </error>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="10"/>
+    </parameters>
+  </error>
+</results>

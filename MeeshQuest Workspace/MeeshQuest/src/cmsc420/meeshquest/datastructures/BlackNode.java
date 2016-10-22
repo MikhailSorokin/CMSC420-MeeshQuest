@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import cmsc420.geom.Geometry2D;
 import cmsc420.meeshquest.citymapobjects.City;
-import cmsc420.meeshquest.citymapobjects.Point;
 
 
 /**
@@ -74,7 +73,7 @@ public class BlackNode extends Node {
 		/* If we have not partitioned enough, partition node and then add city. */
 		GreyNode internalNode = new GreyNode(origin, width,
 				height);
-		for (Geometry2D gElement : allVertexList) {
+		for (Geometry2D gElement : geometryList) {
  			internalNode.add(gElement, origin, width, height);
 		}
 		return internalNode;

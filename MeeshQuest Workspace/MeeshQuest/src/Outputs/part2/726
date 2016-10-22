@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="8"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="16"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <black cardinality="1">
+            <isolatedCity color="black" name="Chicago" radius="0" x="8" y="10"/>
+          </black>
+          <gray x="12" y="12">
+            <white/>
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="Chicago" radius="0" x="8" y="10"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="Baltimore" radius="0" x="16" y="10"/>
+            </black>
+          </gray>
+          <white/>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

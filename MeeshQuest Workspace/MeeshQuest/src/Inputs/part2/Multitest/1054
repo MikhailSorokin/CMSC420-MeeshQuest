@@ -1,0 +1,17 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+ <printAvlTree/>
+ 
+ <createCity id="1" name="Baltimore" x="140" y="37" radius="0" color="black"/>
+ <createCity id="2" name="Charlestown" x="740" y="837" radius="0" color="black"/>
+ <createCity id="3" name="Babbage" x="741" y="838" radius="0" color="black"/>
+ 
+ <mapCity id="4" name="Baltimore"/>
+ <mapCity id="5" name="Charlestown"/>
+ <mapCity id="6" name="Babbage"/>
+</commands>

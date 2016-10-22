@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A2"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A3"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A4"/>
+      <x value="128"/>
+      <y value="150"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A5"/>
+      <x value="50"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A6"/>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A7"/>
+      <x value="105"/>
+      <y value="105"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A8"/>
+      <x value="200"/>
+      <y value="105"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A9"/>
+      <x value="105"/>
+      <y value="205"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A1"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="1">
+          <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A2"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="ex2.jpg"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+          <gray x="64" y="64">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A2" radius="0" x="0" y="0"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A3"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="ex3.jpg"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+          <gray x="192" y="192">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A3" radius="0" x="256" y="256"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+            </black>
+            <white/>
+          </gray>
+          <gray x="64" y="64">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A2" radius="0" x="0" y="0"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A4"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="ex4.jpg"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <gray x="64" y="192">
+            <white/>
+            <white/>
+            <white/>
+            <gray x="96" y="160">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="112" y="144">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A4" radius="0" x="128" y="150"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="192" y="192">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A3" radius="0" x="256" y="256"/>
+            </black>
+            <gray x="160" y="160">
+              <white/>
+              <white/>
+              <gray x="144" y="144">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A4" radius="0" x="128" y="150"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <gray x="64" y="64">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A2" radius="0" x="0" y="0"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A6"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="ex6.jpg"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <gray x="64" y="192">
+            <white/>
+            <white/>
+            <white/>
+            <gray x="96" y="160">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="112" y="144">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A4" radius="0" x="128" y="150"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="192" y="192">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A3" radius="0" x="256" y="256"/>
+            </black>
+            <gray x="160" y="160">
+              <white/>
+              <white/>
+              <gray x="144" y="144">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A4" radius="0" x="128" y="150"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <gray x="64" y="64">
+            <white/>
+            <gray x="96" y="96">
+              <white/>
+              <gray x="112" y="112">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A6" radius="0" x="100" y="100"/>
+                </black>
+                <white/>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A2" radius="0" x="0" y="0"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A7"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="ex7.jpg"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <gray x="64" y="192">
+            <white/>
+            <white/>
+            <white/>
+            <gray x="96" y="160">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="112" y="144">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A4" radius="0" x="128" y="150"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="192" y="192">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A3" radius="0" x="256" y="256"/>
+            </black>
+            <gray x="160" y="160">
+              <white/>
+              <white/>
+              <gray x="144" y="144">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A4" radius="0" x="128" y="150"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+                <white/>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <gray x="64" y="64">
+            <white/>
+            <gray x="96" y="96">
+              <white/>
+              <gray x="112" y="112">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+                </black>
+                <gray x="104" y="104">
+                  <white/>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="A7" radius="0" x="105" y="105"/>
+                  </black>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="A6" radius="0" x="100" y="100"/>
+                  </black>
+                  <white/>
+                </gray>
+                <white/>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A2" radius="0" x="0" y="0"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A1" radius="0" x="128" y="128"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

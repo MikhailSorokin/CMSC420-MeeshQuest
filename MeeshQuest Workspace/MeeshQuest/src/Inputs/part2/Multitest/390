@@ -1,0 +1,198 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	spatialWidth="512"
+ 	spatialHeight="512"
+ 	pmOrder="3"
+ 	g="1">
+ <createCity id="1"  name="Berlin" x="128" y="128" radius="0" color="red"/>
+ <createCity id="2"  name="Geneva" x="90" y="70" radius="0" color="orange"/>
+ <createCity id="3"  name="Madrid" radius="0" x="45" y="50" color="yellow"/>
+ <createCity id="4"  name="Andorra" x="55" color="green" y="50" radius="0" />
+ <createCity id="5"  name="London" x="70" y="140" radius="0" color="blue"/>
+ <createCity id="6"  name="Edinburgh" x="70" y="165" radius="0" color="blue"/>
+ <createCity id="7"  name="Athens" x="200" y="40" radius="0" color="blue"/>
+ <createCity id="8"  name="Varna" x="210" y="100" radius="0" color="blue"/>
+ <createCity id="9"  name="Moscow" x="220" y="220" radius="0" color="blue"/>
+ <createCity id="10"  name="St_Petersburg" x="225" y="225" radius="0" color="blue"/>
+ <createCity id="11"  name="Stockholm" x="140" y="190" radius="0" color="blue"/>
+ <createCity id="12"  name="Paris" x="94" y="98" radius="0" color="blue"/>
+ <createCity id="13"  name="Zurich" x="98" y="94" radius="0" color="blue"/>
+ <createCity id="14"  name="Lisbon" x="20" y="20" radius="0" color="blue"/>
+ <createCity id="15"  name="Seville" x="30" y="10" radius="0" color="blue"/>
+ <createCity id="16"  name="Warsaw" x="200" y="150" radius="0" color="blue"/>
+ <createCity id="17"  name="Nantes" x="75" y="80" radius="0" color="blue"/>
+ <createCity id="18"  name="Brussels" x="100" y="105" radius="0" color="blue"/>
+ <createCity id="19"  name="Amsterdam" x="110" y="118" radius="0" color="blue"/>
+ <createCity id="20"  name="Kiev" x="240" y="95" radius="0" color="blue"/>
+ <createCity id="21"  name="Coppenhagen" x="120" y="140" radius="0" color="blue"/>
+ <createCity id="22"  name="Prague" x="130" y="100" radius="0" color="blue"/>
+ <createCity id="23"  name="Milan" x="100" y="75" radius="0" color="blue"/>
+ <createCity id="24"  name="Rome" x="50" y="120" radius="0" color="blue"/>
+ <createCity id="25"  name="Minsk" x="200" y="160" radius="0" color="blue"/>
+ <createCity id="26"  name="Istanbul" x="250" y="20" radius="0" color="blue"/>
+ <createCity id="27"  name="Belgrade" x="75" y="220" radius="0" color="blue"/>
+ <createCity id="28"  name="Helsinki" x="150" y="200" radius="0" color="blue"/>
+ <createCity id="29"  name="Bergen" x="120" y="200" radius="0" color="blue"/>
+ <createCity id="30"  name="Stavanger" x="120" y="190" radius="0" color="blue"/>
+ <createCity id="31"  name="Oslo" x="130" y="190" radius="0" color="blue"/>
+ <createCity id="32"  name="Trondheim" x="130" y="200" radius="0" color="blue"/>
+<createCity id="1" name="A0" x="0" y="0" radius="30" color="black"/>
+<createCity id="2" name="A1" x="1" y="1" radius="30" color="black"/>
+<createCity id="3" name="A2" x="2" y="2" radius="30" color="black"/>
+<createCity id="4" name="A3" x="3" y="3" radius="30" color="black"/>
+<createCity id="5" name="A4" x="4" y="4" radius="30" color="black"/>
+<createCity id="6" name="A5" x="5" y="5" radius="30" color="black"/>
+<createCity id="7" name="A6" x="6" y="6" radius="30" color="black"/>
+<createCity id="8" name="A7" x="7" y="7" radius="30" color="black"/>
+<createCity id="9" name="A8" x="8" y="8" radius="30" color="black"/>
+<createCity id="10" name="A9" x="9" y="9" radius="30" color="black"/>
+<createCity id="11" name="A10" x="10" y="10" radius="30" color="black"/>
+<createCity id="12" name="A11" x="11" y="11" radius="30" color="black"/>
+<createCity id="13" name="A12" x="12" y="12" radius="30" color="black"/>
+<createCity id="14" name="A13" x="13" y="13" radius="30" color="black"/>
+<createCity id="15" name="A14" x="14" y="14" radius="30" color="black"/>
+<createCity id="16" name="A15" x="15" y="15" radius="30" color="black"/>
+<createCity id="17" name="A16" x="16" y="16" radius="30" color="black"/>
+<createCity id="18" name="A17" x="17" y="17" radius="30" color="black"/>
+<createCity id="19" name="A18" x="18" y="18" radius="30" color="black"/>
+<createCity id="20" name="A19" x="19" y="19" radius="30" color="black"/>
+<createCity id="21" name="A20" x="20" y="20" radius="30" color="black"/>
+<createCity id="22" name="A21" x="21" y="21" radius="30" color="black"/>
+<createCity id="23" name="A22" x="22" y="22" radius="30" color="black"/>
+<createCity id="24" name="A23" x="23" y="23" radius="30" color="black"/>
+<createCity id="25" name="A24" x="24" y="24" radius="30" color="black"/>
+<createCity id="26" name="A25" x="25" y="25" radius="30" color="black"/>
+<createCity id="27" name="A26" x="26" y="26" radius="30" color="black"/>
+<createCity id="28" name="A27" x="27" y="27" radius="30" color="black"/>
+<createCity id="29" name="A28" x="28" y="28" radius="30" color="black"/>
+<createCity id="30" name="A29" x="29" y="29" radius="30" color="black"/>
+<createCity id="31" name="A30" x="30" y="30" radius="30" color="black"/>
+<createCity id="32" name="A31" x="31" y="31" radius="30" color="black"/>
+<createCity id="33" name="A32" x="32" y="32" radius="30" color="black"/>
+<createCity id="34" name="A33" x="33" y="33" radius="30" color="black"/>
+<createCity id="35" name="A34" x="34" y="34" radius="30" color="black"/>
+<createCity id="36" name="A35" x="35" y="35" radius="30" color="black"/>
+<createCity id="37" name="A36" x="36" y="36" radius="30" color="black"/>
+<createCity id="38" name="A37" x="37" y="37" radius="30" color="black"/>
+<createCity id="39" name="A38" x="38" y="38" radius="30" color="black"/>
+<createCity id="40" name="A39" x="39" y="39" radius="30" color="black"/>
+<createCity id="41" name="A40" x="40" y="40" radius="30" color="black"/>
+<createCity id="42" name="A41" x="41" y="41" radius="30" color="black"/>
+<createCity id="43" name="A42" x="42" y="42" radius="30" color="black"/>
+<createCity id="44" name="A43" x="43" y="43" radius="30" color="black"/>
+<createCity id="45" name="A44" x="44" y="44" radius="30" color="black"/>
+<createCity id="46" name="A45" x="45" y="45" radius="30" color="black"/>
+<createCity id="47" name="A46" x="46" y="46" radius="30" color="black"/>
+<createCity id="48" name="A47" x="47" y="47" radius="30" color="black"/>
+<createCity id="49" name="A48" x="48" y="48" radius="30" color="black"/>
+<createCity id="50" name="A49" x="49" y="49" radius="30" color="black"/>
+<mapRoad start="A0" end="A1"/>
+<mapRoad start="A1" end="A2"/>
+<mapRoad start="A2" end="A3"/>
+<mapRoad start="A3" end="A4"/>
+<mapRoad start="A4" end="A5"/>
+<mapRoad start="A5" end="A6"/>
+<mapRoad start="A6" end="A7"/>
+<mapRoad start="A7" end="A8"/>
+<mapRoad start="A8" end="A9"/>
+<mapRoad start="A9" end="A10"/>
+<mapRoad start="A10" end="A11"/>
+<mapRoad start="A11" end="A12"/>
+<mapRoad start="A12" end="A13"/>
+<mapRoad start="A13" end="A14"/>
+<mapRoad start="A14" end="A15"/>
+<mapRoad start="A15" end="A16"/>
+<mapRoad start="A16" end="A17"/>
+<mapRoad start="A17" end="A18"/>
+<mapRoad start="A18" end="A19"/>
+<mapRoad start="A19" end="A20"/>
+<mapRoad start="A20" end="A21"/>
+<mapRoad start="A21" end="A22"/>
+<mapRoad start="A22" end="A23"/>
+<mapRoad start="A23" end="A24"/>
+<mapRoad start="A24" end="A25"/>
+<mapRoad start="A25" end="A26"/>
+<mapRoad start="A26" end="A27"/>
+<mapRoad start="A27" end="A28"/>
+<mapRoad start="A28" end="A29"/>
+<mapRoad start="A29" end="A30"/>
+<mapRoad start="A30" end="A31"/>
+<mapRoad start="A31" end="A32"/>
+<mapRoad start="A32" end="A33"/>
+<mapRoad start="A33" end="A34"/>
+<mapRoad start="A34" end="A35"/>
+<mapRoad start="A35" end="A36"/>
+<mapRoad start="A36" end="A37"/>
+<mapRoad start="A37" end="A38"/>
+<mapRoad start="A38" end="A39"/>
+<mapRoad start="A39" end="A40"/>
+<mapRoad start="A40" end="A41"/>
+<mapRoad start="A41" end="A49"/>
+<mapCity name="A42"/>
+<mapCity name="A43"/>
+<mapCity name="A44"/>
+<mapCity name="A45"/>
+<mapCity name="A46"/>
+<mapCity name="A47"/>
+<mapCity name="A48"/>
+<mapCity name="A49"/>
+<mapCity name="A42"/>
+<mapCity name="A41"/>
+<mapCity name="A40"/>
+<mapCity name="A11"/>
+<mapCity name="A13"/>
+<mapCity name="A12"/>
+<mapCity name="A14"/>
+<mapCity name="A13"/>
+<mapCity name="A16"/>
+
+ <mapRoad id="33"  start="Lisbon" end="Madrid"/>
+ <mapRoad id="34"  start="Madrid" end="Andorra"/>
+ <mapRoad id="35"  start="Milan" end="Paris"/>
+ <mapRoad id="36"  start="Milan" end="Zurich"/>
+ <mapRoad id="37"  start="Milan" end="Rome"/>
+ <mapRoad id="38"  start="Paris" end="Zurich"/>
+ <mapRoad id="39"  start="London" end="Edinburgh"/>
+ <mapRoad id="40"  start="Paris" end="Berlin"/>
+ <mapRoad id="41"  start="Berlin" end="Warsaw"/>
+ <nearestIsolatedCity id="100" x="200" y="200"/>
+<nearestIsolatedCity id="30" x="123" y="265"/>
+<nearestIsolatedCity id="100" x="2" y="21"/>
+<nearestIsolatedCity id="100" x="40" y="2000"/>
+<nearestIsolatedCity id="100" x="340" y="210"/>
+
+
+ <mapRoad id="42"  start="Milan" end="Andorra"/>
+ <mapRoad id="43"  start="Milan" end="Athens"/>
+ <mapRoad id="44"  start="Athens" end="Varna"/>
+ <mapRoad id="45"  start="Stockholm" end="Minsk"/>
+ <mapRoad id="46"  start="Moscow" end="Stockholm"/>
+ <mapRoad id="47"  start="Moscow" end="Kiev"/>
+ <saveMap name="a"/>
+ <printPMQuadtree/>
+
+ <mapRoad id="48"  start="Varna" end="Kiev"/>
+  <printPMQuadtree/>
+<mapRoad id="49"  start="Moscow" end="Helsinki"/>
+ <printPMQuadtree/>
+
+<nearestCityToRoad id="100" start="Moscow" end="Helsinki"/>
+<nearestCityToRoad id="100" start="London" end="Edinburgh"/>
+<nearestCityToRoad id="100" start="Berlin" end="Warsaw"/>
+<nearestCityToRoad id="100" start="Moscow" end="Prague"/>
+
+
+ <mapRoad id="50"  start="Oslo" end="Stavanger" />
+ <printPMQuadtree/>
+ <mapRoad id="52"  start="Varna" end="Moscow"/>
+ <printPMQuadtree/>
+ <shortestPath id="53"  start="Lisbon" end="Moscow" />
+ <shortestPath id="54"  start="Kiev" end="Andorra" />
+ <shortestPath id="55"  start="Berlin" end="Stockholm" />
+ <shortestPath id="56"  start="Minsk" end="Paris" />
+ <shortestPath id="57"  start="Edinburgh" end="Rome" />
+
+
+
+</commands>

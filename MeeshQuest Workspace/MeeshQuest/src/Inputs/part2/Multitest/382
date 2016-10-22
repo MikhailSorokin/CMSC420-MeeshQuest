@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	spatialWidth="128"
+ 	spatialHeight="128"
+ 	pmOrder = "3"
+ 	g = "3">
+	
+	<createCity name="Riverrun" x="45" y="75" radius="5" color="black"/>
+	<createCity name="Braavos" x="150" y="90" radius="5" color="black"/>
+	<createCity name="Pentos" x="165" y="75" radius="5" color="blue"/>
+	<createCity name="Winterfell" x="50" y="110" radius="5" color="black"/>
+	<createCity name="Kings_Landing" x="60" y="60" radius="5" color="black"/>
+	
+	
+	<mapRoad start="Fartsburgh" end="UrMumsHouse"/>
+	<mapRoad start="Riverrun" end="Blork"/>
+	<mapRoad start="Winterfell" end="Kings_Landing"/>
+	
+	<mapCity name="Riverrun"/>
+	<printPMQuadtree/>
+
+</commands>

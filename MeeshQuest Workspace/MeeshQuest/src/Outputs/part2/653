@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1"/>
+      <x value="1"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A11"/>
+      <x value="12"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A2"/>
+      <x value="100"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A21"/>
+      <x value="110"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A3"/>
+      <x value="50"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A31"/>
+      <x value="55"/>
+      <y value="58"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A4"/>
+      <x value="1"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A5"/>
+      <x value="50"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A6"/>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A7"/>
+      <x value="105"/>
+      <y value="105"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A11"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A21"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A31"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startOrEndIsIsolated">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A21"/>
+      <end value="A2"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="110"/>
+      <y value="50"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="64" y="64">
+          <white/>
+          <white/>
+          <gray x="32" y="32">
+            <black cardinality="1">
+              <isolatedCity color="black" name="A11" radius="0" x="12" y="50"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A31" radius="0" x="55" y="58"/>
+            </black>
+            <white/>
+            <white/>
+          </gray>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A21" radius="0" x="110" y="50"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

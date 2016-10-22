@@ -1,0 +1,30 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+	
+	 
+	 <createCity name="Paris" x="500" y="400" radius="0" color="black"/>
+	 
+	 <createCity name="Tokyo" x="1700" y="1000" radius="0" color="black"/>
+	
+	 <createCity name="Vancouver" x="0" y="1025" radius="0" color="black"/>
+
+	
+
+	 <mapRoad start="Tokyo" end="Paris"/>
+	 <mapRoad start="Tokyo" end="Vancouver"/>
+	 
+	 <nearestRoad x="1024" y="1024" />
+	  <nearestRoad x="2000" y="2000" />
+	 	 
+	 <nearestCity x="1024" y="1024" />
+	 <nearestRoad x="512" y="512" />
+	 <nearestCity x="512" y="512" />
+	 
+	 <saveMap name="part2.public.ACTfile12"/>
+
+</commands>

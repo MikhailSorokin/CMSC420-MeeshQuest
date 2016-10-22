@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="0"/>
+      <y value="1023"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="1023"/>
+      <y value="0"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="512"/>
+      <y value="512"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1024"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+</results>

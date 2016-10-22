@@ -1,0 +1,24 @@
+<commands
+	
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	
+xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	
+spatialWidth="128"
+ 	
+spatialHeight="128"
+ 	
+pmOrder="3"
+ 	
+g="1">
+ 
+
+<createCity id="1" name="Baltimore" y="64" x="64" radius="0" color="black"/>
+ 
+<createCity id="2" name="Atlanta" x="1" y="1" radius="0"  color="black"/>
+<mapRoad id="3" start="Baltimore" end="Atlanta"/>
+<printPMQuadtree id="4"/>
+<saveMap name="test" id="5"/>
+<mapCity name="Atlanta" id="6"/>
+
+</commands>

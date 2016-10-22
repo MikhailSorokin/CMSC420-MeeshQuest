@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="0"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="0"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="0"/>
+      <y value="192"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="0"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="64"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="H"/>
+      <x value="64"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="I"/>
+      <x value="64"/>
+      <y value="192"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="J"/>
+      <x value="64"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="K"/>
+      <x value="128"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="L"/>
+      <x value="128"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="M"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="N"/>
+      <x value="128"/>
+      <y value="192"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="O"/>
+      <x value="128"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="P"/>
+      <x value="192"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Q"/>
+      <x value="192"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="R"/>
+      <x value="192"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="S"/>
+      <x value="192"/>
+      <y value="192"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="T"/>
+      <x value="192"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="U"/>
+      <x value="256"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="V"/>
+      <x value="256"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="W"/>
+      <x value="256"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="X"/>
+      <x value="256"/>
+      <y value="192"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Y"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="140"/>
+      <y value="27"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="D"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="J"/>
+    </parameters>
+    <output>
+      <roadCreated end="J" start="E"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="J"/>
+      <end value="I"/>
+    </parameters>
+    <output>
+      <roadCreated end="I" start="J"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="H"/>
+    </parameters>
+    <output>
+      <roadCreated end="H" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="H"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <roadCreated end="G" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="L"/>
+    </parameters>
+    <output>
+      <roadCreated end="L" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="L"/>
+      <end value="Q"/>
+    </parameters>
+    <output>
+      <roadCreated end="Q" start="L"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="Q"/>
+      <end value="K"/>
+    </parameters>
+    <output>
+      <roadCreated end="K" start="Q"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="J"/>
+      <end value="O"/>
+    </parameters>
+    <output>
+      <roadCreated end="O" start="J"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="O"/>
+      <end value="N"/>
+    </parameters>
+    <output>
+      <roadCreated end="N" start="O"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="N"/>
+      <end value="M"/>
+    </parameters>
+    <output>
+      <roadCreated end="M" start="N"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="V"/>
+    </parameters>
+    <output>
+      <roadCreated end="V" start="M"/>
+    </output>
+  </success>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="V"/>
+      <end value="Z"/>
+    </parameters>
+    <output>
+      <roadCreated end="Z" start="V"/>
+    </output>
+  </success>
+  <success>
+    <command id="42" name="mapCity"/>
+    <parameters>
+      <name value="X"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Z"/>
+    </parameters>
+    <output>
+      <path hops="10" length="776.866">
+        <road end="B" start="A"/>
+        <straight/>
+        <road end="C" start="B"/>
+        <straight/>
+        <road end="D" start="C"/>
+        <straight/>
+        <road end="E" start="D"/>
+        <right/>
+        <road end="J" start="E"/>
+        <straight/>
+        <road end="O" start="J"/>
+        <right/>
+        <road end="N" start="O"/>
+        <straight/>
+        <road end="M" start="N"/>
+        <left/>
+        <road end="V" start="M"/>
+        <right/>
+        <road end="Z" start="V"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="Z"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <path hops="10" length="776.866">
+        <road end="V" start="Z"/>
+        <left/>
+        <road end="M" start="V"/>
+        <right/>
+        <road end="N" start="M"/>
+        <straight/>
+        <road end="O" start="N"/>
+        <left/>
+        <road end="J" start="O"/>
+        <straight/>
+        <road end="E" start="J"/>
+        <left/>
+        <road end="D" start="E"/>
+        <straight/>
+        <road end="C" start="D"/>
+        <straight/>
+        <road end="B" start="C"/>
+        <straight/>
+        <road end="A" start="B"/>
+      </path>
+    </output>
+  </success>
+  <error type="nonExistentEnd">
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Y"/>
+    </parameters>
+  </error>
+  <error type="noPathExists">
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="X"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <path hops="0" length="0.000"/>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1"/>
+      <x value="1"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A1"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="50"/>
+      <y value="50"/>
+      <radius value="20"/>
+      <saveMap value="part2.public.range.1"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1"/>
+      <y value="50"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="128"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="A1" radius="0" x="1" y="50"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="1"/>
+      <y value="50"/>
+      <radius value="5"/>
+      <saveMap value="part2.public.range.4"/>
+    </parameters>
+  </error>
+</results>

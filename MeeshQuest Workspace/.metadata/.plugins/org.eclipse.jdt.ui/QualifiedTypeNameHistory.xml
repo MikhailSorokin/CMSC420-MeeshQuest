@@ -17,7 +17,6 @@
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.PMQuadtree"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
-<fullyQualifiedTypeName name="cmsc420.geom.Geometry2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Line2D"/>
 <fullyQualifiedTypeName name="java.awt.geom.Line2D.Double"/>
 <fullyQualifiedTypeName name="java.util.SortedMap"/>
@@ -27,4 +26,5 @@
 <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.Line"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.Point"/>
+<fullyQualifiedTypeName name="cmsc420.geom.Geometry2D"/>
 </qualifiedTypeNameHistroy>

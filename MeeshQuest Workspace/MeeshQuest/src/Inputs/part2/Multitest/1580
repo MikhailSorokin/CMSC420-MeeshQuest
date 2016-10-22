@@ -1,0 +1,17 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="256"
+    spatialHeight="256"
+    pmOrder="3"
+    g="1">
+    <createCity name="Hagerstown" y="128" x="128" radius="1" color="black" id="1"/>
+    <createCity name="LaPlata" y="129" x="128" radius="1" color="black" id="2"/>
+    <createCity name="Ellicot" y="128" x="129" radius="1" color="black" id="3"/>
+    <createCity name="Baltimore" y="128" x="127" radius="1" color="black" id="4"/>
+    <createCity name="Ellicot" y="127" x="128" radius="1" color="black" id="5"/>
+    <createCity name="Baltimore" y="128" x="127" radius="1" color="black" id="6"/>
+    <createCity name="Hagerstown" y="120" x="128" radius="1" color="black" id="7"/>
+    <createCity name="LaPlata" y="129" x="120" radius="1" color="black" id="8"/>
+    <createCity name="Clinton" y="120" x="120" radius="1" color="black" id="9"/>
+</commands>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="part2in.xsd"
+  spatialWidth="256"
+  spatialHeight="256"
+  pmOrder="3"
+  g="1">
+  
+	<createCity name="A" x="16" y="2" color="black" radius="2"/>
+    <createCity name="B" x="112" y="59" color="black" radius="2"/>
+	<createCity name="C" x="55" y="43" color="black" radius="2"/>
+	<createCity name="D" x="35" y="49" color="black" radius="2"/>
+	<createCity name="E" x="3" y="119" color="black" radius="2"/>
+	<createCity name="F" x="13" y="45" color="black" radius="2"/>
+	<createCity name="G" x="17" y="23" color="black" radius="2"/>
+	<createCity name="H" x="23" y="36" color="black" radius="2"/>
+	<createCity name="H" x="23" y="45" color="black" radius="2"/>
+	<createCity name="I" x="200" y="78" color="black" radius="2"/>
+	<createCity name="J" x="99" y="128" color="black" radius="2"/>
+	<createCity name="K" x="230" y="54" color="black" radius="2"/>
+	<createCity name="L" x="189" y="107" color="black" radius="2"/>
+	<createCity name="M" x="145" y="98" color="black" radius="2"/>
+	<createCity name="N" x="23" y="119" color="black" radius="2"/>
+	<createCity name="O" x="400" y="400" color="black" radius="2"/>
+	<createCity name="P" x="400" y="401" color="black" radius="2"/>
+	
+	
+	
+	
+	
+	<mapRoad start="Z" end="A"/>
+	<mapRoad start="A" end="X"/>
+	
+	<mapRoad start="A" end="A"/>
+	
+	<mapCity name="I"/>
+	<mapRoad start="I" end="A"/>
+	<mapRoad start="A" end="I"/>
+	
+	<mapRoad start="A" end="B"/>
+	<mapRoad start="A" end="B"/>
+	<mapRoad start="B" end="A"/>
+	
+	<mapRoad start="A" end="O"/>
+	<mapRoad start="O" end="P"/>
+	
+	
+	
+	
+	
+	<mapCity name="Q"/>
+	
+	<mapCity name="B"/>
+	<mapCity name="A"/>
+	
+	<mapCity name="O"/>
+	
+	<mapCity name="D"/>
+	
+	<printPMQuadtree/>
+	
+	<saveMap name="hi"/>
+</commands>

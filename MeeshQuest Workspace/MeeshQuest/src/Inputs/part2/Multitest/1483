@@ -1,0 +1,38 @@
+<commands
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+
+	spatialWidth="1024"
+
+	spatialHeight="1024"
+
+	g="3"
+
+	pmOrder="3">
+
+
+
+
+ <createCity id="89" name="Alpha" x="-5" y="-5" radius="1" color="black" />
+
+ <createCity id="107" name="Sierra" x="1024" y="768" radius="1" color="black" />
+
+ <createCity id="113" name="Yankee" x="2000" y="2000" radius="1" color="black" />
+ 
+ <createCity id="28" name="Zulu" x="512" y="384" radius="1" color="black" />
+
+
+ <mapRoad id="138" start="Yankee" end="Alpha" />
+
+ <mapRoad id="139" start="Sierra" end="Yankee" />
+
+ <mapRoad id="145" start="Yankee" end="Zulu" />
+
+
+<printPMQuadtree/>
+ <nearestRoad x="2000" y="2000"/>
+ <rangeRoads x="2000" y="2000" radius="4000"/>
+
+</commands>

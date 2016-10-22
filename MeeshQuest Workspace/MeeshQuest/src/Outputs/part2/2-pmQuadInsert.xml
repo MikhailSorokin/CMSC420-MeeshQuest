@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="90"/>
+      <y value="70"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Madrid"/>
+      <x value="45"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Andorra"/>
+      <x value="55"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="70"/>
+      <y value="140"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="6" name="createCity"/>
+    <parameters>
+      <name value="Edinburgh"/>
+      <x value="70"/>
+      <y value="165"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="7" name="createCity"/>
+    <parameters>
+      <name value="Athens"/>
+      <x value="200"/>
+      <y value="40"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printPMQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="Madrid"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="Madrid"/>
+    </output>
+  </success>
+  <success>
+    <command id="39" name="mapRoad"/>
+    <parameters>
+      <start value="London"/>
+      <end value="Edinburgh"/>
+    </parameters>
+    <output>
+      <roadCreated end="Edinburgh" start="London"/>
+    </output>
+  </success>
+  <success>
+    <command id="39" name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Madrid"/>
+    </parameters>
+    <output>
+      <roadCreated end="Madrid" start="Berlin"/>
+    </output>
+  </success>
+  <success>
+    <command id="39" name="mapRoad"/>
+    <parameters>
+      <start value="Edinburgh"/>
+      <end value="Athens"/>
+    </parameters>
+    <output>
+      <roadCreated end="Athens" start="Edinburgh"/>
+    </output>
+  </success>
+  <success>
+    <command id="39" name="mapRoad"/>
+    <parameters>
+      <start value="London"/>
+      <end value="Geneva"/>
+    </parameters>
+    <output>
+      <roadCreated end="Geneva" start="London"/>
+    </output>
+  </success>
+  <success>
+    <command id="39" name="mapRoad"/>
+    <parameters>
+      <start value="London"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="London"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <gray x="64" y="192">
+            <white/>
+            <white/>
+            <white/>
+            <gray x="96" y="160">
+              <black cardinality="3">
+                <city color="blue" name="Edinburgh" radius="0" x="70" y="165"/>
+                <road end="London" start="Edinburgh"/>
+                <road end="Edinburgh" start="Athens"/>
+              </black>
+              <white/>
+              <black cardinality="5">
+                <city color="blue" name="London" radius="0" x="70" y="140"/>
+                <road end="London" start="Geneva"/>
+                <road end="London" start="Edinburgh"/>
+                <road end="Edinburgh" start="Athens"/>
+                <road end="London" start="Andorra"/>
+              </black>
+              <black cardinality="3">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Madrid" start="Berlin"/>
+                <road end="Edinburgh" start="Athens"/>
+              </black>
+            </gray>
+          </gray>
+          <black cardinality="2">
+            <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+            <road end="Madrid" start="Berlin"/>
+          </black>
+          <gray x="64" y="64">
+            <black cardinality="2">
+              <road end="Madrid" start="Berlin"/>
+              <road end="London" start="Andorra"/>
+            </black>
+            <gray x="96" y="96">
+              <black cardinality="3">
+                <road end="London" start="Geneva"/>
+                <road end="Madrid" start="Berlin"/>
+                <road end="London" start="Andorra"/>
+              </black>
+              <black cardinality="3">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Madrid" start="Berlin"/>
+                <road end="Edinburgh" start="Athens"/>
+              </black>
+              <black cardinality="3">
+                <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+                <road end="London" start="Geneva"/>
+                <road end="Madrid" start="Berlin"/>
+              </black>
+              <white/>
+            </gray>
+            <gray x="32" y="32">
+              <white/>
+              <gray x="48" y="48">
+                <black cardinality="3">
+                  <city color="yellow" name="Madrid" radius="0" x="45" y="50"/>
+                  <road end="Madrid" start="Berlin"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="Andorra" radius="0" x="55" y="50"/>
+                  <road end="Madrid" start="Berlin"/>
+                  <road end="Madrid" start="Andorra"/>
+                  <road end="London" start="Andorra"/>
+                </black>
+                <white/>
+                <white/>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <gray x="192" y="64">
+            <black cardinality="3">
+              <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+              <road end="Madrid" start="Berlin"/>
+              <road end="Edinburgh" start="Athens"/>
+            </black>
+            <white/>
+            <black cardinality="1">
+              <road end="Edinburgh" start="Athens"/>
+            </black>
+            <black cardinality="2">
+              <city color="blue" name="Athens" radius="0" x="200" y="40"/>
+              <road end="Edinburgh" start="Athens"/>
+            </black>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="128"/>
+      <y value="32"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="128"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="96"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="160"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="96"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="160"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="D"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="F"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="F"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="F"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <roadCreated end="G" start="F"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <roadCreated end="G" start="D"/>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="A"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <path hops="4" length="160.000">
+        <road end="B" start="A"/>
+        <left/>
+        <road end="C" start="B"/>
+        <right/>
+        <road end="D" start="C"/>
+        <right/>
+        <road end="G" start="D"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="G"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <path hops="4" length="160.000">
+        <road end="D" start="G"/>
+        <left/>
+        <road end="C" start="D"/>
+        <left/>
+        <road end="B" start="C"/>
+        <right/>
+        <road end="A" start="B"/>
+      </path>
+    </output>
+  </success>
+  <error type="nonExistentStart">
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="Z"/>
+      <end value="Z"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="shortestPath23"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

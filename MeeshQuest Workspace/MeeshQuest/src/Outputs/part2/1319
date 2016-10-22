@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="1024"/>
+      <y value="1024"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="511"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Chicago"/>
+    </parameters>
+    <output>
+      <roadCreated end="Chicago" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="0" x="1024" y="1024"/>
+            <road end="Chicago" start="Baltimore"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="Chicago" radius="0" x="511" y="0"/>
+            <road end="Chicago" start="Baltimore"/>
+          </black>
+          <black cardinality="1">
+            <road end="Chicago" start="Baltimore"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

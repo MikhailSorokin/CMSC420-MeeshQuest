@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Hagerstown"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="LaPlata"/>
+      <x value="128"/>
+      <y value="129"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Ellicot"/>
+      <x value="129"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="127"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityName">
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="Ellicot"/>
+      <x value="128"/>
+      <y value="127"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="6" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="127"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityName">
+    <command id="7" name="createCity"/>
+    <parameters>
+      <name value="Hagerstown"/>
+      <x value="128"/>
+      <y value="120"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityName">
+    <command id="8" name="createCity"/>
+    <parameters>
+      <name value="LaPlata"/>
+      <x value="120"/>
+      <y value="129"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="9" name="createCity"/>
+    <parameters>
+      <name value="Clinton"/>
+      <x value="120"/>
+      <y value="120"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

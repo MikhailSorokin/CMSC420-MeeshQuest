@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A4"/>
+      <x value="1"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A5"/>
+      <x value="50"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A4"/>
+      <end value="A5"/>
+    </parameters>
+    <output>
+      <roadCreated end="A5" start="A4"/>
+    </output>
+  </success>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="15"/>
+      <saveMap value="part2.public.range.2"/>
+    </parameters>
+  </error>
+</results>

@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="90"/>
+      <y value="70"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="GenevaCoordinateError"/>
+      <x value="90"/>
+      <y value="70"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityName">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="1281"/>
+      <y value="1281"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Geneva"/>
+    </parameters>
+    <output>
+      <roadCreated end="Geneva" start="Berlin"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <white/>
+            <white/>
+            <gray x="128" y="128">
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <gray x="64" y="64">
+                <white/>
+                <gray x="96" y="96">
+                  <white/>
+                  <black cardinality="2">
+                    <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="1">
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Big"/>
+      <end value="Fu"/>
+    </parameters>
+  </error>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="SomeWhere"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Here"/>
+      <end value="Geneva"/>
+    </parameters>
+  </error>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Geneva"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="BerlinNameError"/>
+      <end value="Geneva"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="2" height="1" maxImbalance="3">
+        <node key="Berlin" value="(128,128)">
+          <node key="Geneva" value="(90,70)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="20"/>
+      <y value="30"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="128"/>
+      <y value="128"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+        <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="50"/>
+      <y value="50"/>
+      <radius value="20"/>
+      <saveMap value="part2.public.range.1"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <x value="20"/>
+      <y value="280"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="20"/>
+      <y value="100"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="4" height="3" maxImbalance="3">
+        <node key="Berlin" value="(128,128)">
+          <node key="Geneva" value="(90,70)">
+            <emptyChild/>
+            <node key="F" value="(20,280)">
+              <emptyChild/>
+              <node key="D" value="(20,100)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+          <emptyChild/>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="10"/>
+      <y value="20"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1"/>
+      <x value="1"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="6" height="3" maxImbalance="3">
+        <node key="Berlin" value="(128,128)">
+          <node key="Geneva" value="(90,70)">
+            <emptyChild/>
+            <node key="F" value="(20,280)">
+              <node key="G" value="(10,20)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="D" value="(20,100)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+          <node key="A1" value="(1,50)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A2"/>
+      <x value="100"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A3"/>
+      <x value="50"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="8" height="3" maxImbalance="3">
+        <node key="Berlin" value="(128,128)">
+          <node key="Geneva" value="(90,70)">
+            <emptyChild/>
+            <node key="F" value="(20,280)">
+              <node key="G" value="(10,20)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="D" value="(20,100)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+          <node key="A1" value="(1,50)">
+            <node key="A2" value="(100,50)">
+              <node key="A3" value="(50,50)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <white/>
+            <white/>
+            <gray x="128" y="128">
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <gray x="64" y="64">
+                <white/>
+                <gray x="96" y="96">
+                  <white/>
+                  <black cardinality="2">
+                    <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="1">
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A4"/>
+      <x value="1"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A5"/>
+      <x value="50"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A6"/>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="11" height="5" maxImbalance="3">
+        <node key="Berlin" value="(128,128)">
+          <node key="Geneva" value="(90,70)">
+            <emptyChild/>
+            <node key="F" value="(20,280)">
+              <node key="G" value="(10,20)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="D" value="(20,100)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+          <node key="A2" value="(100,50)">
+            <node key="A3" value="(50,50)">
+              <node key="A4" value="(1,100)">
+                <node key="A5" value="(50,100)">
+                  <node key="A6" value="(100,100)">
+                    <emptyChild/>
+                    <emptyChild/>
+                  </node>
+                  <emptyChild/>
+                </node>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+            <node key="A1" value="(1,50)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <white/>
+            <white/>
+            <gray x="128" y="128">
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <gray x="64" y="64">
+                <white/>
+                <gray x="96" y="96">
+                  <white/>
+                  <black cardinality="2">
+                    <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="1">
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A7"/>
+      <x value="105"/>
+      <y value="105"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="G" radius="2" x="10" y="20"/>
+        <city color="black" name="A1" radius="0" x="1" y="50"/>
+        <city color="black" name="A3" radius="0" x="50" y="50"/>
+        <city color="black" name="A2" radius="0" x="100" y="50"/>
+        <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+        <city color="black" name="A4" radius="0" x="1" y="100"/>
+        <city color="black" name="D" radius="2" x="20" y="100"/>
+        <city color="black" name="A5" radius="0" x="50" y="100"/>
+        <city color="black" name="A6" radius="0" x="100" y="100"/>
+        <city color="black" name="A7" radius="0" x="105" y="105"/>
+        <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+        <city color="black" name="F" radius="2" x="20" y="280"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="12" height="5" maxImbalance="3">
+        <node key="Berlin" value="(128,128)">
+          <node key="Geneva" value="(90,70)">
+            <emptyChild/>
+            <node key="F" value="(20,280)">
+              <node key="G" value="(10,20)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="D" value="(20,100)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+          <node key="A2" value="(100,50)">
+            <node key="A4" value="(1,100)">
+              <node key="A5" value="(50,100)">
+                <node key="A6" value="(100,100)">
+                  <node key="A7" value="(105,105)">
+                    <emptyChild/>
+                    <emptyChild/>
+                  </node>
+                  <emptyChild/>
+                </node>
+                <emptyChild/>
+              </node>
+              <node key="A3" value="(50,50)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+            <node key="A1" value="(1,50)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <white/>
+            <white/>
+            <gray x="128" y="128">
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <gray x="64" y="64">
+                <white/>
+                <gray x="96" y="96">
+                  <white/>
+                  <black cardinality="2">
+                    <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                  <black cardinality="1">
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A1"/>
+      <end value="A2"/>
+    </parameters>
+    <output>
+      <roadCreated end="A2" start="A1"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A1"/>
+      <end value="A4"/>
+    </parameters>
+    <output>
+      <roadCreated end="A4" start="A1"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A1"/>
+      <end value="A5"/>
+    </parameters>
+    <output>
+      <roadCreated end="A5" start="A1"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A1"/>
+      <end value="A6"/>
+    </parameters>
+    <output>
+      <roadCreated end="A6" start="A1"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <white/>
+            <white/>
+            <gray x="128" y="128">
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+              <gray x="64" y="64">
+                <gray x="32" y="96">
+                  <black cardinality="2">
+                    <city color="black" name="A4" radius="0" x="1" y="100"/>
+                    <road end="A4" start="A1"/>
+                  </black>
+                  <black cardinality="2">
+                    <city color="black" name="A5" radius="0" x="50" y="100"/>
+                    <road end="A5" start="A1"/>
+                  </black>
+                  <black cardinality="3">
+                    <road end="A6" start="A1"/>
+                    <road end="A5" start="A1"/>
+                    <road end="A4" start="A1"/>
+                  </black>
+                  <black cardinality="2">
+                    <road end="A6" start="A1"/>
+                    <road end="A5" start="A1"/>
+                  </black>
+                </gray>
+                <gray x="96" y="96">
+                  <black cardinality="1">
+                    <road end="A6" start="A1"/>
+                  </black>
+                  <gray x="112" y="112">
+                    <white/>
+                    <black cardinality="2">
+                      <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                      <road end="Geneva" start="Berlin"/>
+                    </black>
+                    <black cardinality="3">
+                      <city color="black" name="A6" radius="0" x="100" y="100"/>
+                      <road end="Geneva" start="Berlin"/>
+                      <road end="A6" start="A1"/>
+                    </black>
+                    <black cardinality="1">
+                      <road end="Geneva" start="Berlin"/>
+                    </black>
+                  </gray>
+                  <black cardinality="3">
+                    <city color="orange" name="Geneva" radius="0" x="90" y="70"/>
+                    <road end="Geneva" start="Berlin"/>
+                    <road end="A6" start="A1"/>
+                  </black>
+                  <black cardinality="1">
+                    <road end="Geneva" start="Berlin"/>
+                  </black>
+                </gray>
+                <black cardinality="5">
+                  <city color="black" name="A1" radius="0" x="1" y="50"/>
+                  <road end="A6" start="A1"/>
+                  <road end="A5" start="A1"/>
+                  <road end="A4" start="A1"/>
+                  <road end="A2" start="A1"/>
+                </black>
+                <black cardinality="2">
+                  <city color="black" name="A2" radius="0" x="100" y="50"/>
+                  <road end="A2" start="A1"/>
+                </black>
+              </gray>
+              <black cardinality="2">
+                <city color="red" name="Berlin" radius="0" x="128" y="128"/>
+                <road end="Geneva" start="Berlin"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="50"/>
+      <y value="50"/>
+      <radius value="20"/>
+      <saveMap value="part2.public.range.2"/>
+    </parameters>
+  </error>
+</results>

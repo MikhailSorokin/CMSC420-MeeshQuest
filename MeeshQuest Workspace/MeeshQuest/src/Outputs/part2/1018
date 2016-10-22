@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="SW"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="NE"/>
+      <x value="520"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="600"/>
+      <y value="600"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="800"/>
+      <y value="600"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <gray x="768" y="768">
+            <white/>
+            <white/>
+            <black cardinality="2">
+              <city color="black" name="A" radius="0" x="600" y="600"/>
+              <road end="B" start="A"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" name="B" radius="0" x="800" y="600"/>
+              <road end="B" start="A"/>
+            </black>
+          </gray>
+          <white/>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

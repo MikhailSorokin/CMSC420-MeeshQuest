@@ -611,6 +611,44 @@ public class MethodMediator {
 		}
 	}
 	
+
+	public static Comparator<Geometry2D> getCompByName() {
+		Comparator<Geometry2D> comp = new Comparator<Geometry2D>() {
+			@Override
+			public int compare(Geometry2D s1, Geometry2D s2) {
+				if (s1.getType() == Geometry2D.POINT) {
+					return -1;
+				} else if (s2.getType() == Geometry2D.POINT) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+		};
+		return comp;
+	}
+	
+	public static Comparator<Geometry2D> getCompByRoad() {
+		Comparator<Geometry2D> comp = new Comparator<Geometry2D>() {
+			@Override
+			public int compare(Geometry2D s1, Geometry2D s2) {
+				if (s1.getType() == Geometry2D.SEGMENT && s2.getType() == Geometry2D.SEGMENT) {
+					if (((Line)s1).getStartCity().getName().toLowerCase().compareTo(
+							((Line)s2).getStartCity().getName().toLowerCase()) > 0) {
+						return 1; 
+					} else {
+						return -1;
+					}
+				} else if (s2.getType() == Geometry2D.POINT) {
+					return 1;
+				} else {
+					return 0;
+				}
+			}
+		};
+		return comp;
+	}
+	
 	/**
 	 * Traverses each node of the PM Quadtree.
 	 * 
@@ -631,14 +669,22 @@ public class MethodMediator {
 				final Element black = results.createElement("black");
 				black.setAttribute("cardinality", Integer.toString(blackNode.getCardinality()));
 
-				
+				blackNode.getAllList().sort(MethodMediator.getCompByName());
+				blackNode.getAllList().sort(MethodMediator.getCompByRoad());
 				for (Geometry2D g : blackNode.getAllList()) {
 					if (g.getType() == Geometry2D.POINT) {
 						Point singlePoint = ((Point)g);
-						addCityNode(black, singlePoint.getCity());
+						if (!singlePoint.isolatedString().equals("")) 
+							addCityNode(black, "isolatedCity", singlePoint.getCity());
+						else addCityNode(black, singlePoint.getCity());
 					} else if (g.getType() == Geometry2D.SEGMENT) {
 						Line road = ((Line)g);
-						addRoadCreatedNode(black, "road", road.getStartCity(), road.getEndCity());
+						if (road.getStartCity().getName().toLowerCase().compareTo
+								(road.getEndCity().getName().toLowerCase()) <= 0) {
+							addRoadCreatedNode(black, "road", road.getStartCity(), road.getEndCity());
+						} else {
+							addRoadCreatedNode(black, "road", road.getEndCity(), road.getStartCity());
+						}
 					}
 				}
 				xmlNode.appendChild(black);
@@ -685,7 +731,7 @@ public class MethodMediator {
 		}
 		/* get cities within range */
 		final Point2D.Double point = new Point2D.Double(x, y);
-		rangeCitiesHelper(point, radius, mxQuadtree.getRoot(), citiesInRange);
+		rangeCitiesHelper(point, radius, pmQuadtree.getRoot(), citiesInRange);
 
 		/* print out cities within range */
 		if (citiesInRange.isEmpty()) {
@@ -720,11 +766,18 @@ public class MethodMediator {
 			final int radius, final Node node, final TreeSet<City> citiesInRange) {
 		if (node.getType() == Node.LEAF) {
 			final BlackNode leaf = (BlackNode) node;
-			final double distance = point.distance(leaf.getStartVertex().getPoint());
-			if (distance <= radius) {
-				/* city is in range */
-				final City city = leaf.getStartVertex();
-				citiesInRange.add(city);
+			//FOR PM Quadtree, it should work like this
+			
+			for (Geometry2D g : leaf.getAllList()) {
+				if (g.getType() == Geometry2D.POINT) {
+					final double distance = point.distance(((Point) g).getPoint());
+					
+					if (distance <= radius) {
+						/* city is in range */
+						final City city = ((Point) g).getCity();
+						citiesInRange.add(city);
+					}
+				}
 			}
 		} else if (node.getType() == Node.INTERNAL) {
 			/* check each quadrant of internal node */
@@ -732,7 +785,7 @@ public class MethodMediator {
 
 			final Circle2D.Double circle = new Circle2D.Double(point, radius);
 			for (int i = 0; i < 4; i++) {
-				if (mxQuadtree.intersects(circle, internal.getChildRegion(i))) {
+				if (pmQuadtree.intersects(circle, internal.getChildRegion(i))) {
 					rangeCitiesHelper(point, radius, internal.getChild(i),
 							citiesInRange);
 				}

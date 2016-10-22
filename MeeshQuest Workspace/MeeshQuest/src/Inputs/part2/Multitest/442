@@ -1,0 +1,19 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	spatialWidth="64"
+ 	spatialHeight="64"
+ 	pmOrder="3"
+ 	g="1">
+
+<createCity id="26" name="A25" x="0" y="0" radius="30" color="black"/>
+<createCity id="27" name="A26" x="64" y="64" radius="30" color="black"/>
+<createCity id="27" name="A28" x="32" y="32" radius="30" color="black"/>
+<mapRoad start="A25" end="A26"/>
+<mapRoad start="A26" end="A27"/>
+<mapCity name="A28"/>
+
+<printPMQuadtree/>
+<saveMap name="yoyo"/>
+<nearestIsolatedCity x="30" y="49"/>
+</commands>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" spatialHeight="16" spatialWidth="16" pmOrder="3" xsi:noNamespaceSchemaLocation="part2in.xsd">
+ 
+<createCity id="1" color="red" x="8" y="10" name="A" radius="0" />
+<createCity id="2" color="red" x="10" y="8" name="B" radius="0" />
+<createCity id="3" color="red" x="8" y="6" name="C" radius="0" />
+<createCity id="4" color="red" x="6" y="8" name="D" radius="0" />
+<createCity id="5" color="red" x="8" y="8" name="E" radius="0" />
+
+<createCity id="6" color="red" x="8" y="18" name="AO" radius="0" />
+<createCity id="7" color="red" x="18" y="8" name="BO" radius="0" />
+<createCity id="8" color="red" x="8" y="-2" name="CO" radius="0" />
+<createCity id="9" color="red" x="-2" y="8" name="DO" radius="0" />
+
+<mapRoad start="AO" end="BO"/>
+<mapRoad start="BO" end="CO"/>
+<mapRoad start="CO" end="DO"/>
+<mapRoad start="DO" end="AO"/>
+
+<mapRoad id="12" start="A" end="B"/>
+<mapRoad id="13" start="B" end="C"/>
+<mapRoad id="14" start="C" end="D"/>
+<mapRoad id="15" start="D" end="A"/>
+
+<rangeRoads id="16" x="8" y="8" radius="2"/>
+<rangeRoads id="17" x="8" y="8" radius="1"/>
+<rangeCities id="18" x="8" y="8" radius="2"/>
+<nearestRoad id="19" x="8" y="8"/>
+<nearestCity id="20" x="8" y="8"/>
+<mapCity id="21" name="E"/>
+<shortestPath id="22" start="C" end="E"/>
+<shortestPath id="23" start="E" end="C"/>
+<shortestPath id="24" start="E" end="E"/>
+
+<clearAll />
+<createCity id="25" color="red" x="8" y="18" name="A" radius="0" />
+<createCity id="26" color="red" x="18" y="14" name="B" radius="0" />
+<createCity id="26" color="red" x="10" y="14" name="C" radius="0" />
+<createCity id="26" color="red" x="14" y="14" name="D" radius="0" />
+<mapRoad id="27" start="A" end="B"/>
+<mapCity id="28" name="C"/>
+<mapCity id="29" name="D"/>
+<rangeRoads x="8" y="16" radius="2"/>
+<nearestRoad x="8" y="8"/>
+
+
+</commands>

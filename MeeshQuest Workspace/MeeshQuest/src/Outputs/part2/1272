@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="32"/>
+      <y value="32"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="20"/>
+      <y value="20"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="asd"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="32" y="32">
+          <black cardinality="2">
+            <city color="black" name="A" radius="2" x="32" y="32"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="A" radius="2" x="32" y="32"/>
+            <road end="B" start="A"/>
+          </black>
+          <gray x="16" y="16">
+            <white/>
+            <gray x="24" y="24">
+              <black cardinality="1">
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="2">
+                <city color="black" name="A" radius="2" x="32" y="32"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="2">
+                <city color="black" name="B" radius="2" x="20" y="20"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="1">
+                <road end="B" start="A"/>
+              </black>
+            </gray>
+            <white/>
+            <white/>
+          </gray>
+          <black cardinality="2">
+            <city color="black" name="A" radius="2" x="32" y="32"/>
+            <road end="B" start="A"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

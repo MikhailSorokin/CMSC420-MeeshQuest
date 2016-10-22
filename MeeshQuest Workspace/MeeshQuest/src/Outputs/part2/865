@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="100"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="999"/>
+      <y value="999"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="1000"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="1000"/>
+      <y value="1000"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="1000"/>
+      <radius value="5"/>
+      <saveMap value="part2.public.range.4"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="C" start="B"/>
+      </roadList>
+    </output>
+  </success>
+</results>

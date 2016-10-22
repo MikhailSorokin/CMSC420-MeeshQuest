@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="1"/>
+      <y value="1"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="200"/>
+      <y value="300"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="34" name="createCity"/>
+    <parameters>
+      <name value="a3"/>
+      <x value="2"/>
+      <y value="0"/>
+      <radius value="7"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="35" name="createCity"/>
+    <parameters>
+      <name value="a2"/>
+      <x value="0"/>
+      <y value="2"/>
+      <radius value="7"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="999" name="createCity"/>
+    <parameters>
+      <name value="b1"/>
+      <x value="128"/>
+      <y value="64"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1000" name="createCity"/>
+    <parameters>
+      <name value="b2"/>
+      <x value="128"/>
+      <y value="32"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1001" name="createCity"/>
+    <parameters>
+      <name value="b3"/>
+      <x value="96"/>
+      <y value="64"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1002" name="createCity"/>
+    <parameters>
+      <name value="b4"/>
+      <x value="96"/>
+      <y value="32"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a2"/>
+      <end value="a3"/>
+    </parameters>
+    <output>
+      <roadCreated end="a3" start="a2"/>
+    </output>
+  </success>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a2"/>
+      <end value="Istanbul"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b2"/>
+      <end value="b1"/>
+    </parameters>
+    <output>
+      <roadCreated end="b1" start="b2"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b3"/>
+      <end value="b4"/>
+    </parameters>
+    <output>
+      <roadCreated end="b4" start="b3"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b2"/>
+      <end value="b4"/>
+    </parameters>
+    <output>
+      <roadCreated end="b4" start="b2"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b1"/>
+      <end value="b3"/>
+    </parameters>
+    <output>
+      <roadCreated end="b3" start="b1"/>
+    </output>
+  </success>
+  <success>
+    <command id="108" name="nearestCity"/>
+    <parameters>
+      <x value="1"/>
+      <y value="1"/>
+    </parameters>
+    <output>
+      <city color="black" name="a3" radius="7" x="2" y="0"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="dan.nearestcity1"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="50"/>
+      <y value="75"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="9991" name="createCity"/>
+    <parameters>
+      <name value="b1"/>
+      <x value="128"/>
+      <y value="64"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10001" name="createCity"/>
+    <parameters>
+      <name value="b2"/>
+      <x value="128"/>
+      <y value="32"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10011" name="createCity"/>
+    <parameters>
+      <name value="b3"/>
+      <x value="96"/>
+      <y value="64"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10021" name="createCity"/>
+    <parameters>
+      <name value="b4"/>
+      <x value="96"/>
+      <y value="32"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b3"/>
+      <end value="b4"/>
+    </parameters>
+    <output>
+      <roadCreated end="b4" start="b3"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b2"/>
+      <end value="b4"/>
+    </parameters>
+    <output>
+      <roadCreated end="b4" start="b2"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="b1"/>
+      <end value="b3"/>
+    </parameters>
+    <output>
+      <roadCreated end="b3" start="b1"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="50"/>
+      <y value="75"/>
+    </parameters>
+    <output>
+      <city color="black" name="b3" radius="2" x="96" y="64"/>
+    </output>
+  </success>
+</results>

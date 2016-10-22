@@ -1,0 +1,55 @@
+<commands
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="part2in.xsd"
+spatialWidth="512" spatialHeight="512" pmOrder="3" g="1">
+<createCity name="pants" x="39" y="74" radius="34" color="black"/>
+<createCity name="cake" x="18" y="47" radius="39" color="black"/>
+<createCity name="cheese" x="50" y="19" radius="10" color="black"/>
+<createCity name="face" x="64" y="64" radius="100" color="black"/>
+<createCity name="star" x="63" y="63" radius="15" color="black"/>
+<createCity name="shooting" x="65" y="65" radius="17" color="black"/>
+<createCity name="up" x="64" y="63" radius="35" color="black"/>
+<createCity name="run" x="63" y="64" radius="78" color="black"/>
+<createCity name="jump" x="64" y="65" radius="20" color="black"/>
+<createCity name="ear" x="65" y="64" radius="64" color="black"/>
+<createCity name="huge" x="0" y="0" radius="64" color="black"/>
+<createCity name="take" x="1" y="0" radius="64" color="black"/>
+<createCity name="chill" x="0" y="1" radius="64" color="black"/>
+<createCity name="credit" x="20" y="18" radius="64" color="black"/>
+<createCity name="concerto" x="90" y="64" radius="64" color="black"/>
+<createCity name="mining" x="120" y="42" radius="64" color="black"/>
+<createCity name="melancholy" x="99" y="78" radius="64" color="black"/>
+<createCity name="stickerbush" x="5" y="67" radius="64" color="black"/>
+<createCity name="symphony" x="45" y="127" radius="64" color="black"/>
+<createCity name="tear" x="126" y="128" radius="64" color="black"/>
+<createCity name="final" x="128" y="126" radius="64" color="black"/>
+<createCity name="state" x="127" y="28" radius="64" color="black"/>
+<mapCity name="pants"/>
+<mapCity name="symphony"/>
+<mapCity name="cake"/>
+<mapCity name="mining"/>
+<mapCity name="cheese"/>
+<mapCity name="run"/>
+<mapCity name="take"/>
+<mapCity name="up"/>
+<mapCity name="stickerbush"/>
+<mapCity name="shooting"/>
+<mapCity name="huge"/>
+<printPMQuadtree/>
+<mapCity name="star"/>
+<mapCity name="ear"/>
+<mapCity name="melancholy"/>
+<mapCity name="chill"/>
+<mapCity name="face"/>
+<mapCity name="jump"/>
+<mapCity name="state"/>
+<mapCity name="credit"/>
+<printPMQuadtree/>
+<mapCity name="concerto"/>
+<mapCity name="final"/>
+<mapCity name="tear"/>
+<printPMQuadtree/>
+<mapCity name="tear"/>
+<printPMQuadtree/>
+<clearAll/>
+</commands>

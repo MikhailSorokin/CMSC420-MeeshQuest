@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="34"/>
+      <y value="30"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="30"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="-2"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Los_Angeles"/>
+      <x value="2"/>
+      <y value="-2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Chicago"/>
+    </parameters>
+    <output>
+      <roadCreated end="Chicago" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="1">
+          <road end="Chicago" start="Baltimore"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="part2.public.myTest2"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Atlanta"/>
+      <end value="Los_Angeles"/>
+    </parameters>
+    <output>
+      <roadCreated end="Los_Angeles" start="Atlanta"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="2">
+          <road end="Chicago" start="Baltimore"/>
+          <road end="Los_Angeles" start="Atlanta"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="part2.public.myTest3"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

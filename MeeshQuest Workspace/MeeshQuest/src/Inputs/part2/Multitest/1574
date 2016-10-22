@@ -1,0 +1,270 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+<createCity name="C0" x="334" y="710" radius="10" color="black"/>
+<createCity name="C1" x="88" y="372" radius="10" color="black"/>
+<createCity name="C2" x="705" y="872" radius="10" color="black"/>
+<createCity name="C3" x="885" y="45" radius="10" color="black"/>
+<createCity name="C4" x="1" y="388" radius="10" color="black"/>
+<createCity name="C5" x="796" y="200" radius="10" color="black"/>
+<createCity name="C6" x="1010" y="253" radius="10" color="black"/>
+<createCity name="C7" x="375" y="330" radius="10" color="black"/>
+<createCity name="C8" x="1016" y="633" radius="10" color="black"/>
+<createCity name="C9" x="649" y="42" radius="10" color="black"/>
+<createCity name="C10" x="594" y="234" radius="10" color="black"/>
+<createCity name="C11" x="220" y="315" radius="10" color="black"/>
+<createCity name="C12" x="825" y="157" radius="10" color="black"/>
+<createCity name="C13" x="706" y="851" radius="10" color="black"/>
+<createCity name="C14" x="721" y="983" radius="10" color="black"/>
+<createCity name="C15" x="644" y="879" radius="10" color="black"/>
+<createCity name="C16" x="672" y="683" radius="10" color="black"/>
+<createCity name="C17" x="205" y="529" radius="10" color="black"/>
+<createCity name="C18" x="615" y="29" radius="10" color="black"/>
+<createCity name="C19" x="53" y="618" radius="10" color="black"/>
+<createCity name="C20" x="783" y="751" radius="10" color="black"/>
+<createCity name="C21" x="777" y="655" radius="10" color="black"/>
+<createCity name="C22" x="732" y="168" radius="10" color="black"/>
+<createCity name="C23" x="389" y="358" radius="10" color="black"/>
+<createCity name="C24" x="120" y="681" radius="10" color="black"/>
+<createCity name="C25" x="872" y="480" radius="10" color="black"/>
+<createCity name="C26" x="794" y="601" radius="10" color="black"/>
+<createCity name="C27" x="483" y="46" radius="10" color="black"/>
+<createCity name="C28" x="843" y="405" radius="10" color="black"/>
+<createCity name="C29" x="378" y="702" radius="10" color="black"/>
+<createCity name="C30" x="747" y="352" radius="10" color="black"/>
+<createCity name="C31" x="333" y="772" radius="10" color="black"/>
+<createCity name="C32" x="875" y="914" radius="10" color="black"/>
+<createCity name="C33" x="270" y="152" radius="10" color="black"/>
+<createCity name="C34" x="464" y="218" radius="10" color="black"/>
+<createCity name="C35" x="516" y="95" radius="10" color="black"/>
+<createCity name="C36" x="395" y="515" radius="10" color="black"/>
+<createCity name="C37" x="137" y="174" radius="10" color="black"/>
+<createCity name="C38" x="390" y="7" radius="10" color="black"/>
+<createCity name="C39" x="843" y="465" radius="10" color="black"/>
+<createCity name="C40" x="599" y="48" radius="10" color="black"/>
+<createCity name="C41" x="645" y="280" radius="10" color="black"/>
+<createCity name="C42" x="838" y="236" radius="10" color="black"/>
+<createCity name="C43" x="758" y="621" radius="10" color="black"/>
+<createCity name="C44" x="814" y="710" radius="10" color="black"/>
+<createCity name="C45" x="617" y="7" radius="10" color="black"/>
+<createCity name="C46" x="593" y="613" radius="10" color="black"/>
+<createCity name="C47" x="268" y="794" radius="10" color="black"/>
+<createCity name="C48" x="924" y="944" radius="10" color="black"/>
+<createCity name="C49" x="503" y="272" radius="10" color="black"/>
+<mapRoad  start="C0" end="C41"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C1" end="C8"/>
+<mapCity   name="C2"/>
+<mapRoad  start="C3" end="C24"/>
+<mapCity   name="C4"/>
+<mapCity   name="C5"/>
+<mapRoad  start="C6" end="C8"/>
+<mapRoad  start="C7" end="C33"/>
+<mapCity   name="C8"/>
+<mapRoad  start="C9" end="C15"/>
+<mapRoad  start="C10" end="C40"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C11" end="C47"/>
+<mapRoad  start="C12" end="C4"/>
+<mapCity   name="C13"/>
+<mapCity   name="C14"/>
+<mapRoad  start="C15" end="C33"/>
+<mapCity   name="C16"/>
+<mapCity   name="C17"/>
+<mapRoad  start="C18" end="C32"/>
+<mapRoad  start="C19" end="C4"/>
+<mapRoad  start="C20" end="C43"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapRoad  start="C21" end="C46"/>
+<mapRoad  start="C22" end="C7"/>
+<mapCity   name="C23"/>
+<mapRoad  start="C24" end="C42"/>
+<mapRoad  start="C25" end="C25"/>
+<mapRoad  start="C26" end="C2"/>
+<mapCity   name="C27"/>
+<mapRoad  start="C28" end="C5"/>
+<mapRoad  start="C29" end="C41"/>
+<mapCity   name="C30"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C31"/>
+<mapCity   name="C32"/>
+<mapRoad  start="C33" end="C37"/>
+<mapRoad  start="C34" end="C2"/>
+<mapRoad  start="C35" end="C16"/>
+<mapCity   name="C36"/>
+<mapCity   name="C37"/>
+<mapCity   name="C38"/>
+<mapCity   name="C39"/>
+<mapRoad  start="C40" end="C10"/>
+<printPMQuadtree />
+<printAvlTree />
+<mapCity   name="C41"/>
+<mapRoad  start="C42" end="C36"/>
+<mapCity   name="C43"/>
+<mapCity   name="C44"/>
+<mapRoad  start="C45" end="C39"/>
+<mapCity   name="C46"/>
+<mapRoad  start="C47" end="C46"/>
+<mapRoad  start="C48" end="C27"/>
+<mapCity   name="C49"/>
+<nearestCity x="148" y="656"/>
+<nearestIsolatedCity x="148" y="656"/>
+<nearestRoad x="148" y="656"/>
+<nearestCity x="19" y="688"/>
+<nearestIsolatedCity x="19" y="688"/>
+<nearestRoad x="19" y="688"/>
+<nearestCity x="234" y="541"/>
+<nearestIsolatedCity x="234" y="541"/>
+<nearestRoad x="234" y="541"/>
+<nearestCity x="32" y="945"/>
+<nearestIsolatedCity x="32" y="945"/>
+<nearestRoad x="32" y="945"/>
+<nearestCity x="818" y="949"/>
+<nearestIsolatedCity x="818" y="949"/>
+<nearestRoad x="818" y="949"/>
+<nearestCity x="420" y="458"/>
+<nearestIsolatedCity x="420" y="458"/>
+<nearestRoad x="420" y="458"/>
+<nearestCity x="598" y="472"/>
+<nearestIsolatedCity x="598" y="472"/>
+<nearestRoad x="598" y="472"/>
+<nearestCity x="287" y="263"/>
+<nearestIsolatedCity x="287" y="263"/>
+<nearestRoad x="287" y="263"/>
+<nearestCity x="417" y="899"/>
+<nearestIsolatedCity x="417" y="899"/>
+<nearestRoad x="417" y="899"/>
+<nearestCity x="868" y="505"/>
+<nearestIsolatedCity x="868" y="505"/>
+<nearestRoad x="868" y="505"/>
+<nearestCity x="1004" y="740"/>
+<nearestIsolatedCity x="1004" y="740"/>
+<nearestRoad x="1004" y="740"/>
+<nearestCity x="643" y="868"/>
+<nearestIsolatedCity x="643" y="868"/>
+<nearestRoad x="643" y="868"/>
+<nearestCity x="766" y="235"/>
+<nearestIsolatedCity x="766" y="235"/>
+<nearestRoad x="766" y="235"/>
+<nearestCity x="860" y="134"/>
+<nearestIsolatedCity x="860" y="134"/>
+<nearestRoad x="860" y="134"/>
+<nearestCity x="62" y="641"/>
+<nearestIsolatedCity x="62" y="641"/>
+<nearestRoad x="62" y="641"/>
+<nearestCity x="568" y="436"/>
+<nearestIsolatedCity x="568" y="436"/>
+<nearestRoad x="568" y="436"/>
+<nearestCity x="619" y="958"/>
+<nearestIsolatedCity x="619" y="958"/>
+<nearestRoad x="619" y="958"/>
+<nearestCity x="906" y="392"/>
+<nearestIsolatedCity x="906" y="392"/>
+<nearestRoad x="906" y="392"/>
+<nearestCity x="791" y="939"/>
+<nearestIsolatedCity x="791" y="939"/>
+<nearestRoad x="791" y="939"/>
+<nearestCity x="965" y="518"/>
+<nearestIsolatedCity x="965" y="518"/>
+<nearestRoad x="965" y="518"/>
+<nearestCity x="139" y="591"/>
+<nearestIsolatedCity x="139" y="591"/>
+<nearestRoad x="139" y="591"/>
+<nearestCity x="833" y="657"/>
+<nearestIsolatedCity x="833" y="657"/>
+<nearestRoad x="833" y="657"/>
+<nearestCity x="987" y="961"/>
+<nearestIsolatedCity x="987" y="961"/>
+<nearestRoad x="987" y="961"/>
+<nearestCity x="549" y="41"/>
+<nearestIsolatedCity x="549" y="41"/>
+<nearestRoad x="549" y="41"/>
+<nearestCity x="458" y="90"/>
+<nearestIsolatedCity x="458" y="90"/>
+<nearestRoad x="458" y="90"/>
+<nearestCity x="688" y="372"/>
+<nearestIsolatedCity x="688" y="372"/>
+<nearestRoad x="688" y="372"/>
+<nearestCity x="729" y="781"/>
+<nearestIsolatedCity x="729" y="781"/>
+<nearestRoad x="729" y="781"/>
+<nearestCity x="640" y="48"/>
+<nearestIsolatedCity x="640" y="48"/>
+<nearestRoad x="640" y="48"/>
+<nearestCity x="853" y="725"/>
+<nearestIsolatedCity x="853" y="725"/>
+<nearestRoad x="853" y="725"/>
+<nearestCity x="808" y="859"/>
+<nearestIsolatedCity x="808" y="859"/>
+<nearestRoad x="808" y="859"/>
+<nearestCity x="532" y="1016"/>
+<nearestIsolatedCity x="532" y="1016"/>
+<nearestRoad x="532" y="1016"/>
+<nearestCity x="267" y="156"/>
+<nearestIsolatedCity x="267" y="156"/>
+<nearestRoad x="267" y="156"/>
+<nearestCity x="782" y="81"/>
+<nearestIsolatedCity x="782" y="81"/>
+<nearestRoad x="782" y="81"/>
+<nearestCity x="469" y="485"/>
+<nearestIsolatedCity x="469" y="485"/>
+<nearestRoad x="469" y="485"/>
+<nearestCity x="380" y="486"/>
+<nearestIsolatedCity x="380" y="486"/>
+<nearestRoad x="380" y="486"/>
+<nearestCity x="146" y="245"/>
+<nearestIsolatedCity x="146" y="245"/>
+<nearestRoad x="146" y="245"/>
+<nearestCity x="24" y="524"/>
+<nearestIsolatedCity x="24" y="524"/>
+<nearestRoad x="24" y="524"/>
+<nearestCity x="935" y="575"/>
+<nearestIsolatedCity x="935" y="575"/>
+<nearestRoad x="935" y="575"/>
+<nearestCity x="23" y="439"/>
+<nearestIsolatedCity x="23" y="439"/>
+<nearestRoad x="23" y="439"/>
+<nearestCity x="659" y="256"/>
+<nearestIsolatedCity x="659" y="256"/>
+<nearestRoad x="659" y="256"/>
+<nearestCity x="846" y="512"/>
+<nearestIsolatedCity x="846" y="512"/>
+<nearestRoad x="846" y="512"/>
+<nearestCity x="923" y="782"/>
+<nearestIsolatedCity x="923" y="782"/>
+<nearestRoad x="923" y="782"/>
+<nearestCity x="663" y="959"/>
+<nearestIsolatedCity x="663" y="959"/>
+<nearestRoad x="663" y="959"/>
+<nearestCity x="1014" y="647"/>
+<nearestIsolatedCity x="1014" y="647"/>
+<nearestRoad x="1014" y="647"/>
+<nearestCity x="634" y="676"/>
+<nearestIsolatedCity x="634" y="676"/>
+<nearestRoad x="634" y="676"/>
+<nearestCity x="848" y="84"/>
+<nearestIsolatedCity x="848" y="84"/>
+<nearestRoad x="848" y="84"/>
+<nearestCity x="11" y="737"/>
+<nearestIsolatedCity x="11" y="737"/>
+<nearestRoad x="11" y="737"/>
+<nearestCity x="598" y="42"/>
+<nearestIsolatedCity x="598" y="42"/>
+<nearestRoad x="598" y="42"/>
+<nearestCity x="964" y="982"/>
+<nearestIsolatedCity x="964" y="982"/>
+<nearestRoad x="964" y="982"/>
+<nearestCity x="424" y="677"/>
+<nearestIsolatedCity x="424" y="677"/>
+<nearestRoad x="424" y="677"/>
+
+<saveMap name="test8"/>
+</commands>

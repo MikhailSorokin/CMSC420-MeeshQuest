@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="90"/>
+      <y value="70"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Madrid"/>
+      <x value="45"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Andorra"/>
+      <x value="55"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="London"/>
+      <x value="70"/>
+      <y value="140"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="6" name="createCity"/>
+    <parameters>
+      <name value="Edinburgh"/>
+      <x value="70"/>
+      <y value="165"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="Lisbon"/>
+      <end value="Madrid"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="34" name="mapRoad"/>
+    <parameters>
+      <start value="Madrid"/>
+      <end value="Andorra"/>
+    </parameters>
+    <output>
+      <roadCreated end="Andorra" start="Madrid"/>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="35" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Paris"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="a"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="42" name="mapRoad"/>
+    <parameters>
+      <start value="Milan"/>
+      <end value="Andorra"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="52" name="mapRoad"/>
+    <parameters>
+      <start value="Varna"/>
+      <end value="Moscow"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <white/>
+          <white/>
+          <gray x="64" y="64">
+            <white/>
+            <white/>
+            <gray x="32" y="32">
+              <white/>
+              <gray x="48" y="48">
+                <black cardinality="2">
+                  <city color="yellow" name="Madrid" radius="0" x="45" y="50"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="Andorra" radius="0" x="55" y="50"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <white/>
+                <white/>
+              </gray>
+              <white/>
+              <white/>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="nonExistentStart">
+    <command id="53" name="shortestPath"/>
+    <parameters>
+      <start value="Lisbon"/>
+      <end value="Moscow"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command id="54" name="shortestPath"/>
+    <parameters>
+      <start value="Kiev"/>
+      <end value="Andorra"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command id="55" name="shortestPath"/>
+    <parameters>
+      <start value="Berlin"/>
+      <end value="Stockholm"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command id="56" name="shortestPath"/>
+    <parameters>
+      <start value="Minsk"/>
+      <end value="Paris"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command id="57" name="shortestPath"/>
+    <parameters>
+      <start value="Edinburgh"/>
+      <end value="Rome"/>
+    </parameters>
+  </error>
+</results>

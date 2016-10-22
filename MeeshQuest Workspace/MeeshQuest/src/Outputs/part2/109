@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="100"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="1000"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="O"/>
+      <x value="1024"/>
+      <y value="1024"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <error type="endPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="E"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="D"/>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="N"/>
+    </parameters>
+  </error>
+  <error type="endPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="M"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="P"/>
+      <end value="D"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="O"/>
+      <end value="E"/>
+    </parameters>
+    <output>
+      <roadCreated end="E" start="O"/>
+    </output>
+  </success>
+  <error type="nameNotInDictionary">
+    <command id="1" name="mapCity"/>
+    <parameters>
+      <name value="F"/>
+    </parameters>
+  </error>
+  <error type="nameNotInDictionary">
+    <command id="1" name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command id="1" name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command id="1" name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command id="1" name="mapCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command id="1" name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+  </error>
+  <error type="cityAlreadyMapped">
+    <command name="mapCity"/>
+    <parameters>
+      <name value="O"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="X"/>
+      <end value="E"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="J"/>
+      <end value="Z"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="J"/>
+      <end value="J"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="1" name="mapRoad"/>
+    <parameters>
+      <start value="J"/>
+      <end value="I"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="I"/>
+      <end value="J"/>
+    </parameters>
+  </error>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="D"/>
+      <end value="E"/>
+    </parameters>
+  </error>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="D"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="K"/>
+      <end value="H"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <gray x="256" y="768">
+            <black cardinality="3">
+              <city color="black" name="B" radius="0" x="100" y="1000"/>
+              <road end="E" start="B"/>
+              <road end="C" start="B"/>
+            </black>
+            <black cardinality="2">
+              <road end="E" start="B"/>
+              <road end="C" start="B"/>
+            </black>
+            <white/>
+            <black cardinality="5">
+              <city color="black" name="E" radius="0" x="512" y="512"/>
+              <road end="O" start="E"/>
+              <road end="E" start="D"/>
+              <road end="E" start="C"/>
+              <road end="E" start="B"/>
+            </black>
+          </gray>
+          <gray x="768" y="768">
+            <black cardinality="3">
+              <road end="O" start="E"/>
+              <road end="E" start="C"/>
+              <road end="C" start="B"/>
+            </black>
+            <gray x="896" y="896">
+              <black cardinality="3">
+                <road end="O" start="E"/>
+                <road end="E" start="C"/>
+                <road end="C" start="B"/>
+              </black>
+              <gray x="960" y="960">
+                <black cardinality="3">
+                  <road end="O" start="E"/>
+                  <road end="E" start="C"/>
+                  <road end="C" start="B"/>
+                </black>
+                <gray x="992" y="992">
+                  <black cardinality="3">
+                    <road end="O" start="E"/>
+                    <road end="E" start="C"/>
+                    <road end="C" start="B"/>
+                  </black>
+                  <gray x="1008" y="1008">
+                    <black cardinality="1">
+                      <road end="O" start="E"/>
+                    </black>
+                    <black cardinality="2">
+                      <city color="black" name="O" radius="0" x="1024" y="1024"/>
+                      <road end="O" start="E"/>
+                    </black>
+                    <black cardinality="5">
+                      <city color="black" name="C" radius="0" x="1000" y="1000"/>
+                      <road end="O" start="E"/>
+                      <road end="E" start="C"/>
+                      <road end="D" start="C"/>
+                      <road end="C" start="B"/>
+                    </black>
+                    <black cardinality="1">
+                      <road end="O" start="E"/>
+                    </black>
+                  </gray>
+                  <black cardinality="2">
+                    <road end="O" start="E"/>
+                    <road end="E" start="C"/>
+                  </black>
+                  <black cardinality="3">
+                    <road end="O" start="E"/>
+                    <road end="E" start="C"/>
+                    <road end="D" start="C"/>
+                  </black>
+                </gray>
+                <black cardinality="2">
+                  <road end="O" start="E"/>
+                  <road end="E" start="C"/>
+                </black>
+                <black cardinality="3">
+                  <road end="O" start="E"/>
+                  <road end="E" start="C"/>
+                  <road end="D" start="C"/>
+                </black>
+              </gray>
+              <black cardinality="2">
+                <road end="O" start="E"/>
+                <road end="E" start="C"/>
+              </black>
+              <black cardinality="3">
+                <road end="O" start="E"/>
+                <road end="E" start="C"/>
+                <road end="D" start="C"/>
+              </black>
+            </gray>
+            <black cardinality="5">
+              <city color="black" name="E" radius="0" x="512" y="512"/>
+              <road end="O" start="E"/>
+              <road end="E" start="D"/>
+              <road end="E" start="C"/>
+              <road end="E" start="B"/>
+            </black>
+            <black cardinality="3">
+              <road end="O" start="E"/>
+              <road end="E" start="C"/>
+              <road end="D" start="C"/>
+            </black>
+          </gray>
+          <black cardinality="5">
+            <city color="black" name="E" radius="0" x="512" y="512"/>
+            <road end="O" start="E"/>
+            <road end="E" start="D"/>
+            <road end="E" start="C"/>
+            <road end="E" start="B"/>
+          </black>
+          <gray x="768" y="256">
+            <black cardinality="5">
+              <city color="black" name="E" radius="0" x="512" y="512"/>
+              <road end="O" start="E"/>
+              <road end="E" start="D"/>
+              <road end="E" start="C"/>
+              <road end="E" start="B"/>
+            </black>
+            <black cardinality="2">
+              <road end="E" start="D"/>
+              <road end="D" start="C"/>
+            </black>
+            <white/>
+            <black cardinality="3">
+              <city color="black" name="D" radius="0" x="1000" y="100"/>
+              <road end="E" start="D"/>
+              <road end="D" start="C"/>
+            </black>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="test1"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

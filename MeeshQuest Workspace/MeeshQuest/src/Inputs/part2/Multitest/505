@@ -1,0 +1,18 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="32"
+	spatialHeight="32"
+	g="3"
+	pmOrder="3">
+	
+	<createCity name="A" x="8" y="0" radius="3" color="black"/>
+	<createCity name="B" x="8" y="4" radius="3" color="black"/> 
+	<createCity name="C" x="6" y="1" radius="3" color="black"/>
+	
+	<mapRoad start="A" end="B"/>
+	<mapRoad start="B" end="C"/>
+	<mapRoad start="C" end="D"/>
+	
+	<shortestPath start="A" end="C"/>
+</commands>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" spatialHeight="16" spatialWidth="16" pmOrder="3" xsi:noNamespaceSchemaLocation="part2in.xsd">
+ 
+<createCity id="1" color="red" x="0" y="0" name="A" radius="0" />
+<createCity id="3" color="red" x="8" y="8" name="T1" radius="0"/>
+
+<mapCity id="4" name="T1"/>
+<printPMQuadtree id="5"/>
+<mapCity id="6" name="A"/>
+
+<printPMQuadtree id="7"/>
+</commands>

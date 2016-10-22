@@ -1,0 +1,14 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="4"
+	spatialHeight="4"
+	pmOrder="3"
+	>
+	
+  <createCity name="A" x="-1" y="-1" radius="1" color="red"/> 
+  <createCity name="B" x="5" y="5" radius="1"  color="red"/>
+
+   <mapRoad start="A" end="B" />
+   <saveMap name="hello" />
+</commands>

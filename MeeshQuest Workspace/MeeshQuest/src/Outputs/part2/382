@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Riverrun"/>
+      <x value="45"/>
+      <y value="75"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Braavos"/>
+      <x value="150"/>
+      <y value="90"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Pentos"/>
+      <x value="165"/>
+      <y value="75"/>
+      <radius value="5"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Winterfell"/>
+      <x value="50"/>
+      <y value="110"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Kings_Landing"/>
+      <x value="60"/>
+      <y value="60"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Fartsburgh"/>
+      <end value="UrMumsHouse"/>
+    </parameters>
+  </error>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Riverrun"/>
+      <end value="Blork"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Winterfell"/>
+      <end value="Kings_Landing"/>
+    </parameters>
+    <output>
+      <roadCreated end="Kings_Landing" start="Winterfell"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Riverrun"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="64" y="64">
+          <gray x="32" y="96">
+            <white/>
+            <black cardinality="2">
+              <city color="black" name="Winterfell" radius="5" x="50" y="110"/>
+              <road end="Winterfell" start="Kings_Landing"/>
+            </black>
+            <white/>
+            <black cardinality="2">
+              <isolatedCity color="black" name="Riverrun" radius="5" x="45" y="75"/>
+              <road end="Winterfell" start="Kings_Landing"/>
+            </black>
+          </gray>
+          <white/>
+          <black cardinality="2">
+            <city color="black" name="Kings_Landing" radius="5" x="60" y="60"/>
+            <road end="Winterfell" start="Kings_Landing"/>
+          </black>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

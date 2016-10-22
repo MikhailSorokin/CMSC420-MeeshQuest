@@ -1,0 +1,9 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="256"
+    spatialHeight="256"
+    pmOrder="3"
+    g="1">
+    <listCities sortBy="coordinate" id="1"/>
+</commands>

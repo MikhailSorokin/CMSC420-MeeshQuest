@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="32"/>
+      <y value="32"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Madrid"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Madrid"/>
+      <end value="Geneva"/>
+    </parameters>
+    <output>
+      <roadCreated end="Geneva" start="Madrid"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Geneva"/>
+      <end value="Berlin"/>
+    </parameters>
+    <output>
+      <roadCreated end="Berlin" start="Geneva"/>
+    </output>
+  </success>
+  <success>
+    <command id="51" name="shortestPath"/>
+    <parameters>
+      <start value="Madrid"/>
+      <end value="Madrid"/>
+    </parameters>
+    <output>
+      <path hops="0" length="0.000"/>
+    </output>
+  </success>
+</results>

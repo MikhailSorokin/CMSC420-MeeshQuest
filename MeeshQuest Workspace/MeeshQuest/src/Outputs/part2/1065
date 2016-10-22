@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Charlestown"/>
+      <x value="740"/>
+      <y value="837"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Charlestown"/>
+    </parameters>
+    <output>
+      <roadCreated end="Charlestown" start="Baltimore"/>
+    </output>
+  </success>
+</results>

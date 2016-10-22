@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="part2in.xsd"
+  spatialWidth="1024"
+  spatialHeight="1024"
+  pmOrder="3"
+  g="2">
+
+    <createCity name="A" x="1024" y="0" color="black" radius="2"/>
+	<createCity name="B" x="512" y="0" color="black" radius="2"/>
+	<createCity name="C" x="1024" y="512" color="black" radius="2"/>
+	<createCity name="D" x="512" y="1024" color="black" radius="2"/>
+	<createCity name="E" x="0" y="512" color="black" radius="2"/>
+	<createCity name="F" x="0" y="1024" color="black" radius="2"/>
+	<createCity name="G" x="1" y="0" color="black" radius="2"/>
+	<createCity name="H" x="1024" y="1023" color="black" radius="2"/>
+	<createCity name="I" x="512" y="512" color="black" radius="2"/>
+	<createCity name="J" x="100" y="800" color="black" radius="2"/>
+	<createCity name="K" x="-124" y="539" color="black" radius="2"/>
+
+    
+    <mapRoad start="A" end="B"/>
+    <mapRoad start="A" end="K"/>
+
+    <mapRoad start="B" end="J"/>
+    <mapRoad start="B" end="K"/>
+
+    <shortestPath saveMap="a" start="A" end="B"/>
+    <printPMQuadtree/>
+
+</commands>

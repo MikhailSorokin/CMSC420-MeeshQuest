@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="a"/>
+      <x value="48"/>
+      <y value="80"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="b"/>
+      <x value="48"/>
+      <y value="48"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="c"/>
+      <x value="80"/>
+      <y value="80"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="d"/>
+      <x value="80"/>
+      <y value="48"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="e"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a"/>
+      <end value="b"/>
+    </parameters>
+    <output>
+      <roadCreated end="b" start="a"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a"/>
+      <end value="c"/>
+    </parameters>
+    <output>
+      <roadCreated end="c" start="a"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="a"/>
+      <end value="e"/>
+    </parameters>
+    <output>
+      <roadCreated end="e" start="a"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="64"/>
+      <y value="64"/>
+    </parameters>
+    <output>
+      <road end="e" start="a"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="e" start="a"/>
+      </roadList>
+    </output>
+  </success>
+</results>

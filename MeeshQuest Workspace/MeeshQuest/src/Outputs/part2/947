@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="mapIsEmpty">
+    <command name="printPMQuadtree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="test"/>
+      <x value="33"/>
+      <y value="33"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="test2"/>
+      <x value="-1"/>
+      <y value="-1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1a"/>
+      <x value="0"/>
+      <y value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A2a"/>
+      <x value="0"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A3a"/>
+      <x value="0"/>
+      <y value="3"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A4a"/>
+      <x value="0"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A5a"/>
+      <x value="0"/>
+      <y value="5"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A6a"/>
+      <x value="0"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A7a"/>
+      <x value="0"/>
+      <y value="7"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A8a"/>
+      <x value="0"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A9a"/>
+      <x value="0"/>
+      <y value="9"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A0b"/>
+      <x value="0"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A1b"/>
+      <x value="0"/>
+      <y value="11"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A2b"/>
+      <x value="0"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A3b"/>
+      <x value="0"/>
+      <y value="13"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A4b"/>
+      <x value="0"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A5b"/>
+      <x value="0"/>
+      <y value="15"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A6b"/>
+      <x value="0"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A7b"/>
+      <x value="0"/>
+      <y value="17"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A8b"/>
+      <x value="0"/>
+      <y value="18"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A9b"/>
+      <x value="0"/>
+      <y value="19"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A11"/>
+      <x value="17"/>
+      <y value="11"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A21"/>
+      <x value="17"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A31"/>
+      <x value="17"/>
+      <y value="13"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A41"/>
+      <x value="17"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A51"/>
+      <x value="17"/>
+      <y value="15"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A61"/>
+      <x value="17"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A71"/>
+      <x value="17"/>
+      <y value="17"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A81"/>
+      <x value="17"/>
+      <y value="18"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A91"/>
+      <x value="17"/>
+      <y value="19"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A02"/>
+      <x value="17"/>
+      <y value="20"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A12"/>
+      <x value="17"/>
+      <y value="21"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A22"/>
+      <x value="17"/>
+      <y value="22"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A32"/>
+      <x value="17"/>
+      <y value="23"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A42"/>
+      <x value="17"/>
+      <y value="24"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A52"/>
+      <x value="17"/>
+      <y value="25"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A62"/>
+      <x value="17"/>
+      <y value="26"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A72"/>
+      <x value="17"/>
+      <y value="27"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A82"/>
+      <x value="17"/>
+      <y value="28"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A92"/>
+      <x value="17"/>
+      <y value="29"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A7a"/>
+      <end value="A71"/>
+    </parameters>
+    <output>
+      <roadCreated end="A71" start="A7a"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A9a"/>
+      <end value="A91"/>
+    </parameters>
+    <output>
+      <roadCreated end="A91" start="A9a"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="test"/>
+      <end value="A92"/>
+    </parameters>
+    <output>
+      <roadCreated end="A92" start="test"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="test"/>
+      <end value="test2"/>
+    </parameters>
+    <output>
+      <roadCreated end="test2" start="test"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="16" y="16">
+          <black cardinality="3">
+            <road end="test2" start="test"/>
+            <road end="A9a" start="A91"/>
+            <road end="A7a" start="A71"/>
+          </black>
+          <gray x="24" y="24">
+            <black cardinality="3">
+              <city color="black" name="A92" radius="0" x="17" y="29"/>
+              <road end="test2" start="test"/>
+              <road end="test" start="A92"/>
+            </black>
+            <black cardinality="2">
+              <road end="test2" start="test"/>
+              <road end="test" start="A92"/>
+            </black>
+            <gray x="20" y="20">
+              <black cardinality="1">
+                <road end="test2" start="test"/>
+              </black>
+              <black cardinality="1">
+                <road end="test2" start="test"/>
+              </black>
+              <gray x="18" y="18">
+                <black cardinality="3">
+                  <city color="black" name="A91" radius="0" x="17" y="19"/>
+                  <road end="test2" start="test"/>
+                  <road end="A9a" start="A91"/>
+                </black>
+                <black cardinality="1">
+                  <road end="test2" start="test"/>
+                </black>
+                <black cardinality="3">
+                  <city color="black" name="A71" radius="0" x="17" y="17"/>
+                  <road end="test2" start="test"/>
+                  <road end="A7a" start="A71"/>
+                </black>
+                <black cardinality="1">
+                  <road end="test2" start="test"/>
+                </black>
+              </gray>
+              <black cardinality="1">
+                <road end="test2" start="test"/>
+              </black>
+            </gray>
+            <black cardinality="1">
+              <road end="test2" start="test"/>
+            </black>
+          </gray>
+          <gray x="8" y="8">
+            <black cardinality="4">
+              <city color="black" name="A9a" radius="0" x="0" y="9"/>
+              <road end="test2" start="test"/>
+              <road end="A9a" start="A91"/>
+              <road end="A7a" start="A71"/>
+            </black>
+            <black cardinality="3">
+              <road end="test2" start="test"/>
+              <road end="A9a" start="A91"/>
+              <road end="A7a" start="A71"/>
+            </black>
+            <black cardinality="3">
+              <city color="black" name="A7a" radius="0" x="0" y="7"/>
+              <road end="test2" start="test"/>
+              <road end="A7a" start="A71"/>
+            </black>
+            <black cardinality="1">
+              <road end="test2" start="test"/>
+            </black>
+          </gray>
+          <black cardinality="1">
+            <road end="test2" start="test"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="test2map"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

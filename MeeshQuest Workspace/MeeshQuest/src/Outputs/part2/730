@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="1"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="2"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <gray x="4" y="12">
+            <white/>
+            <white/>
+            <gray x="2" y="10">
+              <gray x="1" y="11">
+                <white/>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Chicago" radius="0" x="1" y="10"/>
+                </black>
+                <gray x="1" y="10">
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="Chicago" radius="0" x="1" y="10"/>
+                  </black>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="Chicago" radius="0" x="1" y="10"/>
+                  </black>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="Chicago" radius="0" x="1" y="10"/>
+                  </black>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="Chicago" radius="0" x="1" y="10"/>
+                  </black>
+                </gray>
+              </gray>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Baltimore" radius="0" x="2" y="10"/>
+              </black>
+              <gray x="1" y="9">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Chicago" radius="0" x="1" y="10"/>
+                </black>
+                <gray x="1" y="9">
+                  <white/>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Baltimore" radius="0" x="2" y="10"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+          <white/>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

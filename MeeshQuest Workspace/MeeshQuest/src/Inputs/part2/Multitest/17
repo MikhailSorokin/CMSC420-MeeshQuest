@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="part2in.xsd"
+  spatialWidth="64"
+  spatialHeight="64"
+  pmOrder="3"
+  g="1">
+  
+	<createCity id="1" name="A" x="36" y="63" color="black" radius="2"/>
+    <createCity id="2" name="B" x="5" y="12" color="black" radius="2"/>
+<!-- 	<createCity id="3" name="Washington_DC" x="24" y="0" color="green" radius="8"/>
+    <createCity id="4" name="New_York" x="63" y="64" color="blue" radius="10"/>
+  	<createCity id="5" name="Austin" x="56" y="40" color="yellow" radius="9"/> -->
+	
+	<mapRoad id="3" start="A" end="B"/>
+	<listCities id="4" sortBy="coordinate"/>
+</commands>

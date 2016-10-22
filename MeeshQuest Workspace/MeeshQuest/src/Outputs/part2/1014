@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Paris"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="1"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="Paris" radius="0" x="500" y="400"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="122"/>
+      <y value="34"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="Chicago" radius="0" x="133" y="34"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Zurich"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="1000"/>
+      <y value="500"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="Zurich" radius="0" x="1000" y="1000"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="nearestIsolatedCity"/>
+    <parameters>
+      <x value="140"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <isolatedCity color="black" name="Chicago" radius="0" x="133" y="34"/>
+    </output>
+  </success>
+</results>

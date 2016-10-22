@@ -1,0 +1,50 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="128"
+    spatialHeight="128"
+    g="1"
+    pmOrder="3">
+
+ <createCity name="A1" x="32" y="64" radius="0" color="black"/>
+ <createCity name="A2" x="64" y="96" radius="0" color="black"/>
+ <createCity name="A3" x="96" y="64" radius="0" color="black"/>
+ <createCity name="A4" x="64" y="32" radius="0" color="black"/>
+
+ <createCity name="D1" x="100" y="130" radius="0" color="black"/>
+ <createCity name="D2" x="130" y="100" radius="0" color="black"/>
+ <createCity name="D3" x="100" y="150" radius="0" color="black"/>
+ <createCity name="D4" x="150" y="150" radius="0" color="black"/>
+ <createCity name="D5" x="64" y="64" radius="0" color="black"/>
+ <createCity name="D6" x="64" y="150" radius="0" color="black"/>
+ <createCity name="D7" x="100" y="-10" radius="0" color="black"/>
+ <createCity name="D8" x="130" y="30" radius="0" color="black"/>
+ <createCity name="D9" x="-10" y="30" radius="0" color="black"/>
+ <createCity name="D10" x="30" y="-10" radius="0" color="black"/>
+ <createCity name="D11" x="-10" y="90" radius="0" color="black"/>
+ <createCity name="D12" x="30" y="130" radius="0" color="black"/>
+
+ 
+ <printPMQuadtree/>
+ <mapRoad start="D1" end="D2"/>
+ <printPMQuadtree/>
+ <mapRoad start="D3" end="D4"/>
+ <printPMQuadtree/>
+ <mapRoad start="D5" end="D6"/>
+ <printPMQuadtree/>
+ <mapRoad start="D7" end="D8"/>
+ <printPMQuadtree/>
+ <mapRoad start="D9" end="D10"/>
+ <printPMQuadtree/>
+ <mapRoad start="D11" end="D12"/>
+ <printPMQuadtree/>
+ <mapRoad start="A1" end="A2"/>
+ <printPMQuadtree/>
+ <mapRoad start="A2" end="A3"/>
+ <printPMQuadtree/>
+ <mapRoad start="A3" end="A4"/>
+ <printPMQuadtree/>
+ <mapRoad start="A4" end="A1"/>
+ <printPMQuadtree/>
+ 
+</commands>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Charlestown"/>
+      <x value="837"/>
+      <y value="24"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Dar"/>
+      <x value="400"/>
+      <y value="544"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Dex"/>
+      <x value="242"/>
+      <y value="333"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="7" name="mapRoad"/>
+    <parameters>
+      <start value="Dar"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Dar"/>
+    </output>
+  </success>
+  <success>
+    <command id="10" name="rangeRoads"/>
+    <parameters>
+      <x value="500"/>
+      <y value="500"/>
+      <radius value="200"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="Dar" start="Baltimore"/>
+      </roadList>
+    </output>
+  </success>
+</results>

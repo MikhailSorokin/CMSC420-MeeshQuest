@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="jojo"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

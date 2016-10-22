@@ -1,0 +1,67 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="512"
+    spatialHeight="512"
+    pmOrder="3"
+    g="1">
+    <createCity id="1" name="A0" x="34" y="20" radius="30" color="black"/>
+    <createCity id="2" name="A1" x="1" y="1" radius="30" color="black"/>
+    <createCity id="3" name="A2" x="2" y="24" radius="30" color="black"/>
+    <createCity id="4" name="A3" x="3" y="35" radius="30" color="black"/>
+    <createCity id="5" name="A4" x="43" y="4" radius="30" color="black"/>
+    <createCity id="6" name="A5" x="5" y="54" radius="30" color="black"/>
+    <createCity id="7" name="A6" x="62" y="6" radius="30" color="black"/>
+    <createCity id="8" name="A7" x="7" y="75" radius="30" color="black"/>
+    <createCity id="9" name="A8" x="84" y="8" radius="30" color="black"/>
+    <createCity id="10" name="A9" x="9" y="59" radius="30" color="black"/>
+    <createCity id="11" name="A10" x="101" y="10" radius="30" color="black"/>
+    <createCity id="12" name="A11" x="11" y="113" radius="30" color="black"/>
+    <createCity id="13" name="A12" x="124" y="12" radius="30" color="black"/>
+    <createCity id="14" name="A13" x="13" y="134" radius="30" color="black"/>
+    <createCity id="15" name="A14" x="144" y="14" radius="30" color="black"/>
+    <createCity id="16" name="A15" x="15" y="145" radius="30" color="black"/>
+    <createCity id="17" name="A16" x="161" y="156" radius="30" color="black"/>
+    <createCity id="18" name="A17" x="137" y="117" radius="30" color="black"/>
+    <createCity id="19" name="A18" x="186" y="178" radius="30" color="black"/>
+    <createCity id="20" name="A19" x="19" y="19" radius="30" color="black"/>
+    <createCity id="21" name="A20" x="20" y="20" radius="30" color="black"/>
+    <createCity id="22" name="A21" x="21" y="21" radius="30" color="black"/>
+    <createCity id="23" name="A22" x="22" y="22" radius="30" color="black"/>
+    <createCity id="24" name="A23" x="23" y="23" radius="30" color="black"/>
+    <createCity id="25" name="A24" x="24" y="24" radius="30" color="black"/>
+    <createCity id="26" name="A25" x="25" y="25" radius="30" color="black"/>
+    <createCity id="27" name="A26" x="26" y="26" radius="30" color="black"/>
+    <createCity id="28" name="A27" x="27" y="27" radius="30" color="black"/>
+    <createCity id="29" name="A28" x="28" y="28" radius="30" color="black"/>
+    <createCity id="30" name="A29" x="300" y="29" radius="30" color="black"/>
+    <createCity id="31" name="A30" x="30" y="30" radius="30" color="black"/>
+    <createCity id="32" name="A31" x="31" y="31" radius="30" color="black"/>
+    <createCity id="33" name="A32" x="32" y="32" radius="30" color="black"/>
+    <createCity id="34" name="A33" x="33" y="200" radius="30" color="black"/>
+    <createCity id="35" name="A34" x="34" y="34" radius="30" color="black"/>
+    <createCity id="36" name="A35" x="35" y="35" radius="30" color="black"/>
+    <createCity id="37" name="A36" x="354" y="36" radius="30" color="black"/>
+    <createCity id="38" name="A37" x="37" y="37" radius="30" color="black"/>
+    <createCity id="39" name="A38" x="348" y="38" radius="30" color="black"/>
+    
+    <mapCity name="A42"/>
+    <mapCity name="A43"/>
+    <mapCity name="A44"/>
+    <mapCity name="A45"/>
+    <mapCity name="A46"/>
+    <mapCity name="A47"/>
+    <mapCity name="A48"/>
+    <mapCity name="A49"/>
+    <mapCity name="A42"/>
+    <mapCity name="A41"/>
+    <mapCity name="A40"/>
+    <mapCity name="A11"/>
+    <mapCity name="A13"/>
+    <mapCity name="A12"/>
+    <mapCity name="A14"/>
+    <mapCity name="A13"/>
+    <mapCity name="A16"/>
+    
+    <nearestIsolatedCity x="30" y="49"/>
+</commands>

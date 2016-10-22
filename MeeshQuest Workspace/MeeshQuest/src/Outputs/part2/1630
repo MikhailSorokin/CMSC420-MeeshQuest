@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Stuttgart"/>
+      <x value="30"/>
+      <y value="45"/>
+      <radius value="12"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Montreal"/>
+      <x value="70"/>
+      <y value="120"/>
+      <radius value="8"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="25"/>
+      <y value="3"/>
+      <radius value="12"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Berlin"/>
+      <x value="30"/>
+      <y value="30"/>
+      <radius value="5"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Helsinki"/>
+      <x value="35"/>
+      <y value="30"/>
+      <radius value="2"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Stockholm"/>
+      <x value="20"/>
+      <y value="28"/>
+      <radius value="3"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Bonn"/>
+      <x value="23"/>
+      <y value="24"/>
+      <radius value="6"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Munich"/>
+      <x value="24"/>
+      <y value="30"/>
+      <radius value="5"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Munich"/>
+      <end value="Montreal"/>
+    </parameters>
+    <output>
+      <roadCreated end="Montreal" start="Munich"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Helsinki"/>
+      <end value="Montreal"/>
+    </parameters>
+    <output>
+      <roadCreated end="Montreal" start="Helsinki"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Helsinki"/>
+      <end value="Berlin"/>
+    </parameters>
+    <output>
+      <roadCreated end="Berlin" start="Helsinki"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Bonn"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Geneva"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Stuttgart"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Stockholm"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="25"/>
+      <y value="25"/>
+      <radius value="10"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="red" name="Stockholm" radius="3" x="20" y="28"/>
+        <city color="red" name="Munich" radius="5" x="24" y="30"/>
+        <city color="green" name="Bonn" radius="6" x="23" y="24"/>
+        <city color="blue" name="Berlin" radius="5" x="30" y="30"/>
+      </cityList>
+    </output>
+  </success>
+</results>

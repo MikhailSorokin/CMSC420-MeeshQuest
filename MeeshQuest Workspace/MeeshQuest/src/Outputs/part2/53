@@ -1,0 +1,4719 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="90"/>
+      <y value="240"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="85"/>
+      <y value="92"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="noPathExists">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="D"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Z"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="D"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <path hops="3" length="416.504">
+        <road end="C" start="D"/>
+        <left/>
+        <road end="B" start="C"/>
+        <left/>
+        <road end="A" start="B"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="D" start="C"/>
+        <road end="C" start="B"/>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <gray x="64" y="192">
+            <white/>
+            <black cardinality="3">
+              <city color="orange" name="C" radius="0" x="90" y="240"/>
+              <road end="D" start="C"/>
+              <road end="C" start="B"/>
+            </black>
+            <white/>
+            <black cardinality="4">
+              <city color="red" name="A" radius="0" x="128" y="128"/>
+              <road end="D" start="C"/>
+              <road end="C" start="B"/>
+              <road end="B" start="A"/>
+            </black>
+          </gray>
+          <black cardinality="2">
+            <city color="red" name="A" radius="0" x="128" y="128"/>
+            <road end="B" start="A"/>
+          </black>
+          <gray x="64" y="64">
+            <black cardinality="3">
+              <city color="orange" name="B" radius="0" x="64" y="64"/>
+              <road end="C" start="B"/>
+              <road end="B" start="A"/>
+            </black>
+            <gray x="96" y="96">
+              <black cardinality="3">
+                <road end="D" start="C"/>
+                <road end="C" start="B"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="A" radius="0" x="128" y="128"/>
+                <road end="B" start="A"/>
+              </black>
+              <gray x="80" y="80">
+                <black cardinality="2">
+                  <road end="C" start="B"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="D" radius="0" x="85" y="92"/>
+                  <road end="D" start="C"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="B" radius="0" x="64" y="64"/>
+                  <road end="C" start="B"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="1">
+                  <road end="B" start="A"/>
+                </black>
+              </gray>
+              <black cardinality="1">
+                <road end="B" start="A"/>
+              </black>
+            </gray>
+            <gray x="32" y="32">
+              <white/>
+              <black cardinality="3">
+                <city color="orange" name="B" radius="0" x="64" y="64"/>
+                <road end="C" start="B"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="orange" name="Z" radius="0" x="0" y="0"/>
+              </black>
+              <white/>
+            </gray>
+            <black cardinality="3">
+              <city color="orange" name="B" radius="0" x="64" y="64"/>
+              <road end="C" start="B"/>
+              <road end="B" start="A"/>
+            </black>
+          </gray>
+          <black cardinality="2">
+            <city color="red" name="A" radius="0" x="128" y="128"/>
+            <road end="B" start="A"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="5" height="3" maxImbalance="1">
+        <node key="B" value="(64,64)">
+          <node key="D" value="(85,92)">
+            <node key="Z" value="(0,0)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="C" value="(90,240)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="A" value="(128,128)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="clearAll"/>
+    <parameters/>
+    <output/>
+  </success>
+  <error type="mapIsEmpty">
+    <command name="printPMQuadtree"/>
+    <parameters/>
+  </error>
+  <error type="emptyTree">
+    <command name="printAvlTree"/>
+    <parameters/>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+  </error>
+  <error type="noCitiesToList">
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+  </error>
+  <error type="nonExistentStart">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="D"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="0"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="64"/>
+      <y value="64"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="90"/>
+      <y value="240"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="85"/>
+      <y value="92"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="30"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="5"/>
+      <y value="67"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="3"/>
+      <y value="94"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="13"/>
+      <y value="113"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="178"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="4"/>
+      <y value="250"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="6"/>
+      <y value="256"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="45"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="43"/>
+      <y value="37"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="43"/>
+      <y value="58"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="32"/>
+      <y value="69"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="36"/>
+      <y value="101"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="45"/>
+      <y value="131"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="49"/>
+      <y value="157"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="39"/>
+      <y value="177"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="21"/>
+      <y value="203"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="40"/>
+      <y value="246"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="70"/>
+      <y value="10"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="71"/>
+      <y value="40"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="72"/>
+      <y value="79"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="69"/>
+      <y value="88"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="75"/>
+      <y value="121"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="92"/>
+      <y value="163"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="82"/>
+      <y value="205"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="80"/>
+      <y value="239"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="78"/>
+      <y value="249"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="132"/>
+      <y value="1"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="129"/>
+      <y value="11"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="123"/>
+      <y value="26"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="145"/>
+      <y value="57"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="113"/>
+      <y value="81"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="124"/>
+      <y value="110"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="124"/>
+      <y value="134"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="132"/>
+      <y value="157"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="135"/>
+      <y value="179"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="127"/>
+      <y value="201"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="137"/>
+      <y value="235"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="139"/>
+      <y value="255"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="178"/>
+      <y value="3"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="168"/>
+      <y value="7"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="192"/>
+      <y value="25"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="187"/>
+      <y value="37"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="154"/>
+      <y value="52"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="176"/>
+      <y value="71"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="167"/>
+      <y value="93"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="193"/>
+      <y value="116"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="179"/>
+      <y value="127"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="177"/>
+      <y value="145"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="157"/>
+      <y value="172"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="166"/>
+      <y value="199"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="146"/>
+      <y value="205"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="173"/>
+      <y value="230"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="178"/>
+      <y value="256"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="213"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="245"/>
+      <y value="17"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="234"/>
+      <y value="29"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="200"/>
+      <y value="36"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="201"/>
+      <y value="56"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="255"/>
+      <y value="75"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="256"/>
+      <y value="91"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="219"/>
+      <y value="202"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="254"/>
+      <y value="212"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="238"/>
+      <y value="234"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="199"/>
+      <y value="237"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="238"/>
+      <y value="243"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="247"/>
+      <y value="249"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="250"/>
+      <y value="250"/>
+    </parameters>
+  </error>
+  <error type="cityNotFound">
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="230"/>
+      <y value="256"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="30"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="5"/>
+      <y value="67"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="3"/>
+      <y value="94"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="13"/>
+      <y value="113"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="178"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="4"/>
+      <y value="250"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="6"/>
+      <y value="256"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="45"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="43"/>
+      <y value="37"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="43"/>
+      <y value="58"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="32"/>
+      <y value="69"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="36"/>
+      <y value="101"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="45"/>
+      <y value="131"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="49"/>
+      <y value="157"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="39"/>
+      <y value="177"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="21"/>
+      <y value="203"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="40"/>
+      <y value="246"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="70"/>
+      <y value="10"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="71"/>
+      <y value="40"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="72"/>
+      <y value="79"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="69"/>
+      <y value="88"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="75"/>
+      <y value="121"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="92"/>
+      <y value="163"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="82"/>
+      <y value="205"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="80"/>
+      <y value="239"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="78"/>
+      <y value="249"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="132"/>
+      <y value="1"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="129"/>
+      <y value="11"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="123"/>
+      <y value="26"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="145"/>
+      <y value="57"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="113"/>
+      <y value="81"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="124"/>
+      <y value="110"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="124"/>
+      <y value="134"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="132"/>
+      <y value="157"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="135"/>
+      <y value="179"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="127"/>
+      <y value="201"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="137"/>
+      <y value="235"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="139"/>
+      <y value="255"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="178"/>
+      <y value="3"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="168"/>
+      <y value="7"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="192"/>
+      <y value="25"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="187"/>
+      <y value="37"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="154"/>
+      <y value="52"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="176"/>
+      <y value="71"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="167"/>
+      <y value="93"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="193"/>
+      <y value="116"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="179"/>
+      <y value="127"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="177"/>
+      <y value="145"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="157"/>
+      <y value="172"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="166"/>
+      <y value="199"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="146"/>
+      <y value="205"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="173"/>
+      <y value="230"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="178"/>
+      <y value="256"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="213"/>
+      <y value="0"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="245"/>
+      <y value="17"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="234"/>
+      <y value="29"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="200"/>
+      <y value="36"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="201"/>
+      <y value="56"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="255"/>
+      <y value="75"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="256"/>
+      <y value="91"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="219"/>
+      <y value="202"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="254"/>
+      <y value="212"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="238"/>
+      <y value="234"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="199"/>
+      <y value="237"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="238"/>
+      <y value="243"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="247"/>
+      <y value="249"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="250"/>
+      <y value="250"/>
+    </parameters>
+  </error>
+  <error type="roadNotFound">
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="230"/>
+      <y value="256"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="33" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="D" start="C"/>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="D" start="C"/>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noPathExists">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="D"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Z"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="256"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="D" start="C"/>
+        <road end="C" start="B"/>
+        <road end="B" start="A"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <error type="noRoadsExistInRange">
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="100"/>
+      <y value="37"/>
+      <radius value="20"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="30"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="5"/>
+      <y value="67"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="3"/>
+      <y value="94"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="13"/>
+      <y value="113"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="178"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="4"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="6"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="45"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="43"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="43"/>
+      <y value="58"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="32"/>
+      <y value="69"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="36"/>
+      <y value="101"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="45"/>
+      <y value="131"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="49"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="39"/>
+      <y value="177"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="21"/>
+      <y value="203"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="40"/>
+      <y value="246"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="70"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="71"/>
+      <y value="40"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="72"/>
+      <y value="79"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="69"/>
+      <y value="88"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="75"/>
+      <y value="121"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="92"/>
+      <y value="163"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="82"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="80"/>
+      <y value="239"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="78"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="132"/>
+      <y value="1"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="129"/>
+      <y value="11"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="123"/>
+      <y value="26"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="145"/>
+      <y value="57"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="113"/>
+      <y value="81"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="124"/>
+      <y value="110"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="124"/>
+      <y value="134"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="132"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="135"/>
+      <y value="179"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="127"/>
+      <y value="201"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="137"/>
+      <y value="235"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="139"/>
+      <y value="255"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="178"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="168"/>
+      <y value="7"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="192"/>
+      <y value="25"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="187"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="154"/>
+      <y value="52"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="176"/>
+      <y value="71"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="167"/>
+      <y value="93"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="193"/>
+      <y value="116"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="179"/>
+      <y value="127"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="177"/>
+      <y value="145"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="157"/>
+      <y value="172"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="166"/>
+      <y value="199"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="146"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="173"/>
+      <y value="230"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="178"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="213"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="245"/>
+      <y value="17"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="234"/>
+      <y value="29"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="200"/>
+      <y value="36"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="201"/>
+      <y value="56"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="255"/>
+      <y value="75"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="256"/>
+      <y value="91"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="219"/>
+      <y value="202"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="254"/>
+      <y value="212"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="238"/>
+      <y value="234"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="199"/>
+      <y value="237"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="238"/>
+      <y value="243"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="247"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="250"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="230"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="30"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="5"/>
+      <y value="67"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="3"/>
+      <y value="94"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="13"/>
+      <y value="113"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="178"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="4"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="6"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="45"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="43"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="43"/>
+      <y value="58"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="32"/>
+      <y value="69"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="36"/>
+      <y value="101"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="45"/>
+      <y value="131"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="49"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="39"/>
+      <y value="177"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="21"/>
+      <y value="203"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="40"/>
+      <y value="246"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="70"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="71"/>
+      <y value="40"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="72"/>
+      <y value="79"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="69"/>
+      <y value="88"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="75"/>
+      <y value="121"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="92"/>
+      <y value="163"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="82"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="80"/>
+      <y value="239"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="78"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="132"/>
+      <y value="1"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="129"/>
+      <y value="11"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="123"/>
+      <y value="26"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="145"/>
+      <y value="57"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="113"/>
+      <y value="81"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="124"/>
+      <y value="110"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="124"/>
+      <y value="134"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="132"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="135"/>
+      <y value="179"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="127"/>
+      <y value="201"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="137"/>
+      <y value="235"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="139"/>
+      <y value="255"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="178"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="168"/>
+      <y value="7"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="192"/>
+      <y value="25"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="187"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="154"/>
+      <y value="52"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="176"/>
+      <y value="71"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="167"/>
+      <y value="93"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="193"/>
+      <y value="116"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="179"/>
+      <y value="127"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="177"/>
+      <y value="145"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="157"/>
+      <y value="172"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="166"/>
+      <y value="199"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="146"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="173"/>
+      <y value="230"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="178"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="213"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="245"/>
+      <y value="17"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="234"/>
+      <y value="29"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="200"/>
+      <y value="36"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="201"/>
+      <y value="56"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="255"/>
+      <y value="75"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="256"/>
+      <y value="91"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="219"/>
+      <y value="202"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="254"/>
+      <y value="212"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="238"/>
+      <y value="234"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="199"/>
+      <y value="237"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="238"/>
+      <y value="243"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="247"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="250"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="230"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <gray x="64" y="192">
+            <white/>
+            <black cardinality="3">
+              <city color="orange" name="C" radius="0" x="90" y="240"/>
+              <road end="D" start="C"/>
+              <road end="C" start="B"/>
+            </black>
+            <white/>
+            <black cardinality="4">
+              <city color="red" name="A" radius="0" x="128" y="128"/>
+              <road end="D" start="C"/>
+              <road end="C" start="B"/>
+              <road end="B" start="A"/>
+            </black>
+          </gray>
+          <black cardinality="2">
+            <city color="red" name="A" radius="0" x="128" y="128"/>
+            <road end="B" start="A"/>
+          </black>
+          <gray x="64" y="64">
+            <black cardinality="3">
+              <city color="orange" name="B" radius="0" x="64" y="64"/>
+              <road end="C" start="B"/>
+              <road end="B" start="A"/>
+            </black>
+            <gray x="96" y="96">
+              <black cardinality="3">
+                <road end="D" start="C"/>
+                <road end="C" start="B"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="2">
+                <city color="red" name="A" radius="0" x="128" y="128"/>
+                <road end="B" start="A"/>
+              </black>
+              <gray x="80" y="80">
+                <black cardinality="2">
+                  <road end="C" start="B"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="D" radius="0" x="85" y="92"/>
+                  <road end="D" start="C"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="B" radius="0" x="64" y="64"/>
+                  <road end="C" start="B"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="1">
+                  <road end="B" start="A"/>
+                </black>
+              </gray>
+              <black cardinality="1">
+                <road end="B" start="A"/>
+              </black>
+            </gray>
+            <gray x="32" y="32">
+              <white/>
+              <black cardinality="3">
+                <city color="orange" name="B" radius="0" x="64" y="64"/>
+                <road end="C" start="B"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="orange" name="Z" radius="0" x="0" y="0"/>
+              </black>
+              <white/>
+            </gray>
+            <black cardinality="3">
+              <city color="orange" name="B" radius="0" x="64" y="64"/>
+              <road end="C" start="B"/>
+              <road end="B" start="A"/>
+            </black>
+          </gray>
+          <black cardinality="2">
+            <city color="red" name="A" radius="0" x="128" y="128"/>
+            <road end="B" start="A"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="5" height="3" maxImbalance="1">
+        <node key="B" value="(64,64)">
+          <node key="D" value="(85,92)">
+            <node key="Z" value="(0,0)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="C" value="(90,240)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="A" value="(128,128)">
+            <emptyChild/>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+      </cityList>
+    </output>
+  </success>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="H"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="150"/>
+      <y value="150"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="H"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="blue" name="G" radius="0" x="150" y="150"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="orange" name="Z" radius="0" x="0" y="0"/>
+        <city color="orange" name="B" radius="0" x="64" y="64"/>
+        <city color="orange" name="D" radius="0" x="85" y="92"/>
+        <city color="red" name="A" radius="0" x="128" y="128"/>
+        <city color="blue" name="G" radius="0" x="150" y="150"/>
+        <city color="orange" name="C" radius="0" x="90" y="240"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="H"/>
+      <x value="200"/>
+      <y value="150"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="H"/>
+    </parameters>
+    <output>
+      <roadCreated end="H" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="150"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="blue" name="G" radius="0" x="150" y="150"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="150"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="H" start="G"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="160"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="160"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="H" start="G"/>
+      </roadList>
+    </output>
+  </success>
+  <error type="noCitiesExistInRange">
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="199"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="199"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="H" start="G"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeCities"/>
+    <parameters>
+      <x value="200"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="blue" name="H" radius="0" x="200" y="150"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="rangeRoads"/>
+    <parameters>
+      <x value="200"/>
+      <y value="150"/>
+      <radius value="0"/>
+    </parameters>
+    <output>
+      <roadList>
+        <road end="H" start="G"/>
+      </roadList>
+    </output>
+  </success>
+  <success>
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="H"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <path hops="1" length="50.000">
+        <road end="G" start="H"/>
+      </path>
+    </output>
+  </success>
+  <error type="noPathExists">
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="H"/>
+      <end value="A"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="H"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="H"/>
+      <end value="A"/>
+    </parameters>
+    <output>
+      <path hops="2" length="251.420">
+        <road end="B" start="H"/>
+        <right/>
+        <road end="A" start="B"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="I"/>
+      <x value="175"/>
+      <y value="151"/>
+      <radius value="0"/>
+      <color value="blue"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="I"/>
+    </parameters>
+    <output>
+      <roadCreated end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="H"/>
+      <end value="I"/>
+    </parameters>
+    <output>
+      <roadCreated end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="shortestPath"/>
+    <parameters>
+      <start value="H"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <path hops="1" length="50.000">
+        <road end="G" start="H"/>
+      </path>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="30"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="5"/>
+      <y value="67"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="3"/>
+      <y value="94"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="13"/>
+      <y value="113"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="0"/>
+      <y value="178"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="4"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="6"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="45"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="43"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="43"/>
+      <y value="58"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="32"/>
+      <y value="69"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="36"/>
+      <y value="101"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="45"/>
+      <y value="131"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="49"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="39"/>
+      <y value="177"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="21"/>
+      <y value="203"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="40"/>
+      <y value="246"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="70"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="71"/>
+      <y value="40"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="72"/>
+      <y value="79"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="69"/>
+      <y value="88"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="75"/>
+      <y value="121"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="92"/>
+      <y value="163"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="82"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="80"/>
+      <y value="239"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="78"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="132"/>
+      <y value="1"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="129"/>
+      <y value="11"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="123"/>
+      <y value="26"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="145"/>
+      <y value="57"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="113"/>
+      <y value="81"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="124"/>
+      <y value="110"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="124"/>
+      <y value="134"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="132"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <city color="blue" name="G" radius="0" x="150" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="135"/>
+      <y value="179"/>
+    </parameters>
+    <output>
+      <city color="blue" name="G" radius="0" x="150" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="127"/>
+      <y value="201"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="137"/>
+      <y value="235"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="139"/>
+      <y value="255"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="178"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="168"/>
+      <y value="7"/>
+    </parameters>
+    <output>
+      <city color="orange" name="B" radius="0" x="64" y="64"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="192"/>
+      <y value="25"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="187"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="154"/>
+      <y value="52"/>
+    </parameters>
+    <output>
+      <city color="orange" name="D" radius="0" x="85" y="92"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="176"/>
+      <y value="71"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="167"/>
+      <y value="93"/>
+    </parameters>
+    <output>
+      <city color="red" name="A" radius="0" x="128" y="128"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="193"/>
+      <y value="116"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="179"/>
+      <y value="127"/>
+    </parameters>
+    <output>
+      <city color="blue" name="I" radius="0" x="175" y="151"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="177"/>
+      <y value="145"/>
+    </parameters>
+    <output>
+      <city color="blue" name="I" radius="0" x="175" y="151"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="157"/>
+      <y value="172"/>
+    </parameters>
+    <output>
+      <city color="blue" name="G" radius="0" x="150" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="166"/>
+      <y value="199"/>
+    </parameters>
+    <output>
+      <city color="blue" name="I" radius="0" x="175" y="151"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="146"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <city color="blue" name="G" radius="0" x="150" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="173"/>
+      <y value="230"/>
+    </parameters>
+    <output>
+      <city color="blue" name="I" radius="0" x="175" y="151"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="178"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <city color="orange" name="C" radius="0" x="90" y="240"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="213"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="245"/>
+      <y value="17"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="234"/>
+      <y value="29"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="200"/>
+      <y value="36"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="201"/>
+      <y value="56"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="255"/>
+      <y value="75"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="256"/>
+      <y value="91"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="219"/>
+      <y value="202"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="254"/>
+      <y value="212"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="238"/>
+      <y value="234"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="199"/>
+      <y value="237"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="238"/>
+      <y value="243"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="247"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="250"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="230"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <city color="blue" name="H" radius="0" x="200" y="150"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="30"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="5"/>
+      <y value="67"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="3"/>
+      <y value="94"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="13"/>
+      <y value="113"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="0"/>
+      <y value="178"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="4"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="6"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="45"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="43"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="43"/>
+      <y value="58"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="32"/>
+      <y value="69"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="36"/>
+      <y value="101"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="45"/>
+      <y value="131"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="49"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="39"/>
+      <y value="177"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="21"/>
+      <y value="203"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="40"/>
+      <y value="246"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="70"/>
+      <y value="10"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="71"/>
+      <y value="40"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="72"/>
+      <y value="79"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="69"/>
+      <y value="88"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="75"/>
+      <y value="121"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="92"/>
+      <y value="163"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="82"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="80"/>
+      <y value="239"/>
+    </parameters>
+    <output>
+      <road end="C" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="78"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="132"/>
+      <y value="1"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="129"/>
+      <y value="11"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="123"/>
+      <y value="26"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="145"/>
+      <y value="57"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="113"/>
+      <y value="81"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="124"/>
+      <y value="110"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="124"/>
+      <y value="134"/>
+    </parameters>
+    <output>
+      <road end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="132"/>
+      <y value="157"/>
+    </parameters>
+    <output>
+      <road end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="135"/>
+      <y value="179"/>
+    </parameters>
+    <output>
+      <road end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="127"/>
+      <y value="201"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="137"/>
+      <y value="235"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="139"/>
+      <y value="255"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="178"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="168"/>
+      <y value="7"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="192"/>
+      <y value="25"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="187"/>
+      <y value="37"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="154"/>
+      <y value="52"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="176"/>
+      <y value="71"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="167"/>
+      <y value="93"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="193"/>
+      <y value="116"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="179"/>
+      <y value="127"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="177"/>
+      <y value="145"/>
+    </parameters>
+    <output>
+      <road end="H" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="157"/>
+      <y value="172"/>
+    </parameters>
+    <output>
+      <road end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="166"/>
+      <y value="199"/>
+    </parameters>
+    <output>
+      <road end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="146"/>
+      <y value="205"/>
+    </parameters>
+    <output>
+      <road end="I" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="173"/>
+      <y value="230"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="178"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <road end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="213"/>
+      <y value="0"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="245"/>
+      <y value="17"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="234"/>
+      <y value="29"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="200"/>
+      <y value="36"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="201"/>
+      <y value="56"/>
+    </parameters>
+    <output>
+      <road end="H" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="255"/>
+      <y value="75"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="256"/>
+      <y value="91"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="219"/>
+      <y value="202"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="254"/>
+      <y value="212"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="238"/>
+      <y value="234"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="199"/>
+      <y value="237"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="238"/>
+      <y value="243"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="247"/>
+      <y value="249"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="250"/>
+      <y value="250"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestRoad"/>
+    <parameters>
+      <x value="230"/>
+      <y value="256"/>
+    </parameters>
+    <output>
+      <road end="I" start="H"/>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="all1_1"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

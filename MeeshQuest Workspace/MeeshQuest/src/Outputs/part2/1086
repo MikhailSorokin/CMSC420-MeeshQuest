@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="89" name="createCity"/>
+    <parameters>
+      <name value="Alpha"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="90" name="createCity"/>
+    <parameters>
+      <name value="Bravo"/>
+      <x value="0"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="91" name="createCity"/>
+    <parameters>
+      <name value="Charlie"/>
+      <x value="1024"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="92" name="createCity"/>
+    <parameters>
+      <name value="Delta"/>
+      <x value="1024"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="116" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Charlie"/>
+    </parameters>
+    <output>
+      <roadCreated end="Charlie" start="Alpha"/>
+    </output>
+  </success>
+  <success>
+    <command id="117" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Bravo"/>
+    </parameters>
+    <output>
+      <roadCreated end="Bravo" start="Alpha"/>
+    </output>
+  </success>
+  <success>
+    <command id="118" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Delta"/>
+    </parameters>
+    <output>
+      <roadCreated end="Delta" start="Alpha"/>
+    </output>
+  </success>
+  <error type="roadAlreadyMapped">
+    <command id="146" name="mapRoad"/>
+    <parameters>
+      <start value="Charlie"/>
+      <end value="Alpha"/>
+    </parameters>
+  </error>
+  <error type="startEqualsEnd">
+    <command id="147" name="mapRoad"/>
+    <parameters>
+      <start value="Charlie"/>
+      <end value="Charlie"/>
+    </parameters>
+  </error>
+  <error type="roadIsNotMapped">
+    <command id="166" name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Yankee"/>
+    </parameters>
+  </error>
+</results>

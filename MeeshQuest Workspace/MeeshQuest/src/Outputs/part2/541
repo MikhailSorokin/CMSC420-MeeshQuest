@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="76"/>
+      <y value="39"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="81"/>
+      <y value="47"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="84"/>
+      <y value="33"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Los_Angeles"/>
+      <x value="118"/>
+      <y value="33"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="Miami"/>
+      <x value="80"/>
+      <y value="25"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="6" name="createCity"/>
+    <parameters>
+      <name value="Boston"/>
+      <x value="71"/>
+      <y value="42"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="6" height="2" maxImbalance="1">
+        <node key="Chicago" value="(81,47)">
+          <node key="Los_Angeles" value="(118,33)">
+            <node key="Miami" value="(80,25)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node key="Baltimore" value="(76,39)">
+            <node key="Boston" value="(71,42)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="Atlanta" value="(84,33)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

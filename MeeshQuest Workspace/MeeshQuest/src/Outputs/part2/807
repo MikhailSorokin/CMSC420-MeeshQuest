@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="4"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="0"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="4"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="2"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <black cardinality="1">
+          <isolatedCity color="black" name="A" radius="0" x="4" y="0"/>
+        </black>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="B"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="2" y="2">
+          <black cardinality="1">
+            <isolatedCity color="black" name="B" radius="0" x="0" y="4"/>
+          </black>
+          <white/>
+          <white/>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A" radius="0" x="4" y="0"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="2" y="2">
+          <black cardinality="1">
+            <isolatedCity color="black" name="B" radius="0" x="0" y="4"/>
+          </black>
+          <white/>
+          <black cardinality="1">
+            <isolatedCity color="black" name="C" radius="0" x="0" y="0"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A" radius="0" x="4" y="0"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="D"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="2" y="2">
+          <black cardinality="1">
+            <isolatedCity color="black" name="B" radius="0" x="0" y="4"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="D" radius="0" x="4" y="4"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="C" radius="0" x="0" y="0"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="A" radius="0" x="4" y="0"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="E"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="2" y="2">
+          <gray x="1" y="3">
+            <black cardinality="1">
+              <isolatedCity color="black" name="B" radius="0" x="0" y="4"/>
+            </black>
+            <white/>
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="E" radius="0" x="2" y="2"/>
+            </black>
+          </gray>
+          <gray x="3" y="3">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="D" radius="0" x="4" y="4"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="E" radius="0" x="2" y="2"/>
+            </black>
+            <white/>
+          </gray>
+          <gray x="1" y="1">
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="E" radius="0" x="2" y="2"/>
+            </black>
+            <black cardinality="1">
+              <isolatedCity color="black" name="C" radius="0" x="0" y="0"/>
+            </black>
+            <white/>
+          </gray>
+          <gray x="3" y="1">
+            <black cardinality="1">
+              <isolatedCity color="black" name="E" radius="0" x="2" y="2"/>
+            </black>
+            <white/>
+            <white/>
+            <black cardinality="1">
+              <isolatedCity color="black" name="A" radius="0" x="4" y="0"/>
+            </black>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="test8"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

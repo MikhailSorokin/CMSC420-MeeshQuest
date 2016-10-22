@@ -1,0 +1,59 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	localSpatialWidth="1024"
+	localSpatialHeight="1024"
+	remoteSpatialWidth="1024"
+	remoteSpatialHeight="1024"
+	g="3"
+	pmOrder="1">
+	
+	 <createCity id="1" name="Baltimore" localX="140" localY="37" remoteX="140" remoteY="37" radius="0" color="black"/>
+	 <createCity id="1" name="Chicago" localX="133" localY="34" remoteX="28" remoteY="111" radius="0" color="black"/>
+	 <createCity id="1" name="New_York" localX="200" localY="300" remoteX="600" remoteY="600" radius="0" color="black"/>
+	 <createCity id="1" name="Toronto" localX="100" localY="400" remoteX="300" remoteY="500" radius="0" color="black"/>
+	 <createCity id="1" name="Zurich" localX="1000" localY="1000" remoteX="140" remoteY="37" radius="0" color="black"/>
+	 <createCity id="1" name="Paris" localX="500" localY="400" remoteX="140" remoteY="37" radius="0" color="black"/>
+	 <createCity id="1" name="Amsterdam" localX="450" localY="450" remoteX="300" remoteY="500" radius="0" color="black"/>
+	 <createCity id="1" name="Auckland" localX="2000" localY="2" remoteX="140" remoteY="37" radius="0" color="black"/>
+	 <createCity id="1" name="Tokyo" localX="1700" localY="1000" remoteX="600" remoteY="600" radius="0" color="black"/>
+	 <createCity id="1" name="Cairo" localX="1000" localY="200" remoteX="28" remoteY="111" radius="0" color="black"/>
+	 <createCity id="1" name="Vancouver" localX="0" localY="1025" remoteX="600" remoteY="600" radius="0" color="black"/>
+
+
+	 <mapRoad id="1" start="Sydney" end="Auckland"/>
+	 <mapRoad id="2" start="Auckland" end="Sydney"/>
+	 <mapRoad id="3" start="Auckland" end="Auckland"/>
+	 <mapRoad id="4" start="Cairo" end="Chicago"/>
+	 <mapRoad id="5" start="Chicago" end="Cairo"/>
+	 <mapRoad id="6" start="Chicago" end="New_York"/>
+	 <mapRoad id="7" start="Chicago" end="New_York"/>
+	 <mapRoad id="8" start="New_York" end="Chicago"/>
+	 <mapRoad id="9" start="Tokyo" end="Auckland"/> 
+	 <mapRoad id="10" start="Baltimore" end="Chicago"/>
+	 <mapRoad id="11" start="New_York" end="Zurich"/>
+	 <mapRoad id="12" start="Zurich" end="Paris"/>
+	 <mapRoad id="13" start="Paris" end="Amsterdam"/>
+	 <mapRoad id="14" start="Tokyo" end="Paris"/>
+	 <mapRoad id="15" start="Tokyo" end="Vancouver"/>
+
+
+	 <mapAirport id="16" name="Cairo" localX="1000" localY="200" remoteX="28" remoteY="111" terminalName="OJ" terminalX="28" terminalY="111" terminalCity="Chicago"/>
+
+
+	 
+	 <saveMap id="17" name="part2.public.ACTfile12" remoteX="140" remoteY="37"/>
+
+	 <printPMQuadtree id="18" remoteX="140" remoteY="37"/>
+	 <printPMQuadtree id="19" remoteX="28" remoteY="111"/>
+	 <printPMQuadtree id="20" remoteX="600" remoteY="600"/>
+	 <printPMQuadtree id="21" remoteX="300" remoteY="500"/>
+
+	 <nearestCity id="22" localX="0" localY="0" remoteX="600" remoteY="600" />
+	 <nearestCity id="23" localX="1024" localY="1024" remoteX="140" remoteY="37" />
+	 <nearestCity id="24" localX="475" localY="425" remoteX="140" remoteY="37" />
+	 <nearestCity id="25" localX="1700" localY="1000" remoteX="600" remoteY="600" />
+	 <nearestCity id="26" localX="1000" localY="200" remoteX="300" remoteY="500"  />
+	 <nearestCity id="27" localX="450" localY="450" remoteX="28" remoteY="111" />
+ 
+</commands>

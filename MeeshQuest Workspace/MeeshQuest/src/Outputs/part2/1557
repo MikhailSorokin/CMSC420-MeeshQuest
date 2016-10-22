@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="200"/>
+      <y value="200"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="150"/>
+      <y value="50"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Denver"/>
+      <x value="50"/>
+      <y value="190"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Boston"/>
+      <x value="100"/>
+      <y value="100"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="200"/>
+      <y value="220"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="120"/>
+      <y value="120"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="5"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="7" height="3" maxImbalance="2">
+        <node key="Baltimore" value="(200,200)">
+          <node key="Chicago" value="(150,50)">
+            <node key="Denver" value="(50,190)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="Boston" value="(100,100)">
+              <node key="C" value="(1000,1000)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="A" value="(200,220)">
+            <node key="B" value="(120,120)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="Denver"/>
+    </parameters>
+    <output>
+      <roadCreated end="Denver" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="Denver"/>
+    </parameters>
+    <output>
+      <roadCreated end="Denver" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Chicago"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="128" y="128">
+          <black cardinality="4">
+            <city color="black" name="Denver" radius="5" x="50" y="190"/>
+            <road end="Denver" start="B"/>
+            <road end="Denver" start="A"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="4">
+            <city color="black" name="A" radius="5" x="200" y="220"/>
+            <road end="Denver" start="A"/>
+            <road end="C" start="A"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="3">
+            <city color="black" name="B" radius="5" x="120" y="120"/>
+            <road end="Denver" start="B"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="1">
+            <isolatedCity color="black" name="Chicago" radius="5" x="150" y="50"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" name="Denver" radius="5" x="50" y="190"/>
+        <city color="black" name="Chicago" radius="5" x="150" y="50"/>
+        <city color="black" name="C" radius="5" x="1000" y="1000"/>
+        <city color="black" name="Boston" radius="5" x="100" y="100"/>
+        <city color="black" name="Baltimore" radius="5" x="200" y="200"/>
+        <city color="black" name="B" radius="5" x="120" y="120"/>
+        <city color="black" name="A" radius="5" x="200" y="220"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="NeverGoingToGiveYouUp"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

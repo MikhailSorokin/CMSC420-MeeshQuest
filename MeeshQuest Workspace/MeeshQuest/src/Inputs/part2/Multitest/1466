@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" spatialHeight="16" spatialWidth="16" pmOrder="3" xsi:noNamespaceSchemaLocation="part2in.xsd">
+ 
+<createCity id="1" color="red" x="9" y="9" name="A" radius="0" />
+<createCity id="2" color="red" x="9" y="7" name="B" radius="0" />
+<createCity id="3" color="red" x="7" y="7" name="C" radius="0" />
+<createCity id="4" color="red" x="7" y="9" name="D" radius="0" />
+
+<mapRoad id="12" start="A" end="B"/>
+<mapRoad id="13" start="B" end="C"/>
+<mapRoad id="14" start="C" end="D"/>
+<mapRoad id="15" start="D" end="A"/>
+
+<printPMQuadtree id="23"/>
+<shortestPath start="A" end="C"/>
+<shortestPath start="C" end="A"/>
+<shortestPath start="B" end="D"/>
+<shortestPath start="D" end="A"/>
+<clearAll/>
+
+<createCity id="31" color="red" x="10" y="9" name="A" radius="0" />
+<createCity id="32" color="red" x="10" y="7" name="B" radius="0" />
+<createCity id="33" color="red" x="7" y="7" name="C" radius="0" />
+<createCity id="34" color="red" x="7" y="9" name="D" radius="0" />
+
+<mapRoad id="42" start="A" end="B"/>
+<mapRoad id="43" start="B" end="C"/>
+<mapRoad id="44" start="C" end="D"/>
+<mapRoad id="45" start="D" end="A"/>
+
+<printPMQuadtree id="53"/>
+<shortestPath start="A" end="C"/>
+<shortestPath start="C" end="A"/>
+<shortestPath start="B" end="D"/>
+<shortestPath start="D" end="B"/>
+
+<createCity id="54" color="red" x="17" y="17" name="E" radius="0" />
+<shortestPath start="D" end="E"/>
+
+
+</commands>

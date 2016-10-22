@@ -1,0 +1,47 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part2in.xsd"
+	spatialWidth="1024"
+	spatialHeight="1024"
+	g="3"
+	pmOrder="3">
+	
+<createCity name="A" x="500" y="500" color="black" radius="2"/>
+<createCity name="B" x="200" y="420" color="black" radius="2"/>
+<createCity name="C" x="100" y="320" color="black" radius="2"/>
+<createCity name="E" x="600" y="740" color="black" radius="2"/>
+<createCity name="F" x="800" y="20" color="black" radius="2"/>
+<createCity name="FA" x="82" y="20" color="black" radius="2"/>
+<createCity name="BA" x="400" y="220" color="black" radius="2"/>
+ <mapRoad start="A" end="F"/>
+ <nearestCityToRoad start="A" end="E"/>
+ <mapRoad start="B" end="E"/>
+ <mapRoad start="B" end="A"/>
+ <nearestCityToRoad start="A" end="E"/>
+ <nearestRoad x="500" y="50"/>
+ <mapRoad start="B" end="E"/>
+ <nearestRoad x="200" y="300"/>
+ <mapRoad start="C" end="E"/>
+ <nearestRoad x="100" y="50"/>
+ <mapCity name="FA"/>
+ <mapCity name="BA"/>
+  <nearestCityToRoad start="A" end="FA"/>
+    <nearestCityToRoad start="BA" end="E"/>
+ <mapRoad start="F" end="A"/>
+ <nearestRoad x="800" y="50"/>
+ <mapRoad start="A" end="B"/>
+ <nearestRoad x="800" y="50"/>
+ <mapRoad start="M" end="N"/>
+  <nearestCityToRoad start="A" end="C"/>
+ <createCity name="Zurich" x="1000" y="1000" radius="0" color="black"/>
+ <createCity name="Paris" x="1000" y="1000" radius="0" color="black"/>
+ <createCity name="Amsterdam" x="450" y="450" radius="0" color="black"/>
+ <mapRoad start="Paris" end="Zurich"/>
+   <nearestRoad x="1000" y="1000"/>
+  <mapRoad start="Paris" end="Amsterdam"/>
+  <nearestRoad x="450" y="430"/>
+   <nearestCityToRoad start="Zurich" end="Paris"/>
+ <nearestRoad x="0" y="50"/>
+  <nearestCityToRoad start="A" end="F"/>
+  
+</commands>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="16"/>
+      <y value="2"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="35"/>
+      <y value="49"/>
+      <radius value="2"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCity"/>
+    <parameters>
+      <x value="17"/>
+      <y value="3"/>
+    </parameters>
+    <output>
+      <city color="black" name="A" radius="2" x="16" y="2"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="32" y="32">
+          <black cardinality="1">
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="B" radius="2" x="35" y="49"/>
+            <road end="B" start="A"/>
+          </black>
+          <black cardinality="2">
+            <city color="black" name="A" radius="2" x="16" y="2"/>
+            <road end="B" start="A"/>
+          </black>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="image"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

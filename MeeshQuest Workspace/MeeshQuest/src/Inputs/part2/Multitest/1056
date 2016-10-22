@@ -1,0 +1,39 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="128"
+    spatialHeight="128"
+    g="1"
+    pmOrder="3">
+ <createCity id="4" name="A1" x="1" y="50" radius="0" color="black"/>
+ <createCity id="4" name="A2" x="100" y="50" radius="0" color="black"/>
+ <createCity id="4" name="A3" x="50" y="50" radius="0" color="black"/>
+ <createCity id="4" name="A4" x="1" y="100" radius="0" color="black"/>
+ <createCity id="4" name="A5" x="50" y="100" radius="0" color="black"/>
+ <createCity id="4" name="A6" x="100" y="100" radius="0" color="black"/>
+ <createCity id="4" name="A7" x="105" y="105" radius="0" color="black"/>
+ <createCity id="4" name="B7" x="125" y="125" radius="0" color="black"/>
+ 
+ <mapRoad id="4" start="A1" end="A2"/>
+ <mapRoad id="4" start="A1" end="A4"/>
+ <mapRoad id="4" start="A1" end="A5"/>
+ <mapRoad id="4" start="A1" end="A6"/>
+ 
+ <mapCity id="4" name="B1"/>
+ <mapCity id="4" name="B7"/>
+  <mapCity id="4" name="B7"/>
+ 
+ 
+ <rangeCities id="4" x="50" y="50" radius="20" saveMap="part2.public.range.1"/>
+ 
+ <mapRoad id="4" start="A2" end="A6"/>
+ <mapRoad id="4" start="A4" end="A5"/>
+ <mapRoad id="4" start="A5" end="A6"/>
+ 
+ <rangeRoads id="4"  x="100" y="100" radius="15" saveMap="part2.public.range.2"/>
+ 
+ <mapRoad id="4" start="A6" end="A7"/>
+ 
+ <rangeCities id="2" x="100" y="100" radius="0" saveMap="part2.public.range.3"/>
+ <rangeRoads  id="3" x="1" y="50" radius="5" saveMap="part2.public.range.4"/>
+</commands>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="8"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="24"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Denver"/>
+      <x value="12"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="7"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="Albuquerque"/>
+      <x value="25"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="saveMap"/>
+    <parameters>
+      <name value="part2.public.ACTfile15"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Chicago"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Denver"/>
+    </parameters>
+    <output>
+      <roadCreated end="Denver" start="Chicago"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Albuquerque"/>
+    </parameters>
+    <output>
+      <roadCreated end="Albuquerque" start="Chicago"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Denver"/>
+      <end value="Atlanta"/>
+    </parameters>
+    <output>
+      <roadCreated end="Atlanta" start="Denver"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <city color="black" name="Atlanta" radius="0" x="7" y="16"/>
+    </output>
+  </success>
+  <success>
+    <command name="nearestCityToRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Denver"/>
+    </parameters>
+    <output>
+      <city color="black" name="Albuquerque" radius="0" x="25" y="16"/>
+    </output>
+  </success>
+</results>

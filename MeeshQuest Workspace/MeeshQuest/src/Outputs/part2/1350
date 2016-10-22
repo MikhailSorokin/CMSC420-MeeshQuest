@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Bal"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="140"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chic"/>
+      <x value="13"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="New"/>
+      <x value="200"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <x value="1000"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Pa"/>
+      <x value="500"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <x value="450"/>
+      <y value="450"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Balt"/>
+      <x value="14"/>
+      <y value="37"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chica"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="New_Y"/>
+      <x value="20"/>
+      <y value="300"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Zur"/>
+      <x value="100"/>
+      <y value="1000"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Pari"/>
+      <x value="50"/>
+      <y value="400"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <x value="450"/>
+      <y value="50"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="140"/>
+      <y value="67"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="133"/>
+      <y value="345"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="N"/>
+      <x value="200"/>
+      <y value="320"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="10"/>
+      <y value="100"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="P"/>
+      <x value="0"/>
+      <y value="40"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Am"/>
+      <x value="4"/>
+      <y value="45"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Batimore"/>
+      <x value="76"/>
+      <y value="39"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Cicago"/>
+      <x value="81"/>
+      <y value="47"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="84"/>
+      <y value="33"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Los_Angeles"/>
+      <x value="118"/>
+      <y value="33"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Miami"/>
+      <x value="80"/>
+      <y value="25"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Boston"/>
+      <x value="71"/>
+      <y value="42"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="24" height="5" maxImbalance="3">
+        <node key="Chicago" value="(133,34)">
+          <node key="New_York" value="(200,300)">
+            <node key="Zur" value="(100,1000)">
+              <node key="Zurich" value="(1000,1000)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="Pa" value="(500,400)">
+                <node key="Pari" value="(50,400)">
+                  <node key="Z" value="(10,100)">
+                    <emptyChild/>
+                    <emptyChild/>
+                  </node>
+                  <emptyChild/>
+                </node>
+                <node key="P" value="(0,40)">
+                  <emptyChild/>
+                  <emptyChild/>
+                </node>
+              </node>
+            </node>
+            <node key="N" value="(200,320)">
+              <node key="New_Y" value="(20,300)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="Cicago" value="(81,47)">
+                <node key="Los_Angeles" value="(118,33)">
+                  <node key="Miami" value="(80,25)">
+                    <emptyChild/>
+                    <emptyChild/>
+                  </node>
+                  <emptyChild/>
+                </node>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+          <node key="Bal" value="(140,37)">
+            <node key="C" value="(133,345)">
+              <node key="Chic" value="(13,34)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <node key="Balt" value="(14,37)">
+                <node key="Batimore" value="(76,39)">
+                  <node key="Boston" value="(71,42)">
+                    <emptyChild/>
+                    <emptyChild/>
+                  </node>
+                  <emptyChild/>
+                </node>
+                <emptyChild/>
+              </node>
+            </node>
+            <node key="Amsterdam" value="(450,450)">
+              <node key="B" value="(140,67)">
+                <emptyChild/>
+                <node key="Atlanta" value="(84,33)">
+                  <emptyChild/>
+                  <emptyChild/>
+                </node>
+              </node>
+              <node key="A" value="(450,50)">
+                <node key="Am" value="(4,45)">
+                  <emptyChild/>
+                  <emptyChild/>
+                </node>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

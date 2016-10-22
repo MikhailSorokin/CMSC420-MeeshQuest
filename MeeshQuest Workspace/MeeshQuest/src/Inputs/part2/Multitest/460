@@ -1,0 +1,39 @@
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part2in.xsd"
+    spatialWidth="256"
+    spatialHeight="256"
+    g="1"
+    pmOrder="3">
+    
+ 
+ 
+
+
+ <createCity id="34"  name="a3" x="16" y="0" radius="7" color="black"  />
+ <createCity id="35"  name="a2" x="0" y="2" radius="7" color="black"  />
+ 
+ <createCity id="999" name="b1" x="128" y="64" radius="2" color="black"  />
+ <createCity id="1000" name="b2" x="128" y="32" radius="2" color="black"  />
+ <createCity id="1001" name="b3" x="96" y="64" radius="2" color="black"  />
+ <createCity id="1002" name="b4" x="96" y="32" radius="2" color="black"  />
+ 
+
+ <mapRoad start="a2" end="a3" />
+ 
+ 
+ <mapRoad start="b2" end="b1" />
+ 
+
+<printPMQuadtree/>
+ 
+ <nearestCity id="108" x="1" y="1"  />
+ 
+ 
+ 
+ 
+ <saveMap  name="dan.nearestcity1" />
+ 
+
+ 
+</commands>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="76"/>
+      <y value="39"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+      <x value="84"/>
+      <y value="33"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Atlanta"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="256" y="256">
+          <white/>
+          <white/>
+          <gray x="128" y="128">
+            <white/>
+            <white/>
+            <gray x="64" y="64">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="96" y="32">
+                <gray x="80" y="48">
+                  <white/>
+                  <white/>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="Baltimore" radius="0" x="76" y="39"/>
+                  </black>
+                  <black cardinality="1">
+                    <isolatedCity color="black" name="Atlanta" radius="0" x="84" y="33"/>
+                  </black>
+                </gray>
+                <white/>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <x value="750"/>
+      <y value="750"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <x value="133"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="Orlando"/>
+      <x value="550"/>
+      <y value="34"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="TestCity"/>
+      <x value="1"/>
+      <y value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Chicago"/>
+    </parameters>
+    <output>
+      <roadCreated end="Chicago" start="Baltimore"/>
+    </output>
+  </success>
+  <error type="roadAlreadyMapped">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Chicago"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="Orlando"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapCity"/>
+    <parameters>
+      <name value="TestCity"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <black cardinality="2">
+            <city color="black" name="Baltimore" radius="0" x="750" y="750"/>
+            <road end="Chicago" start="Baltimore"/>
+          </black>
+          <gray x="256" y="256">
+            <white/>
+            <black cardinality="1">
+              <road end="Chicago" start="Baltimore"/>
+            </black>
+            <gray x="128" y="128">
+              <white/>
+              <black cardinality="1">
+                <road end="Chicago" start="Baltimore"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="TestCity" radius="0" x="1" y="1"/>
+              </black>
+              <black cardinality="2">
+                <city color="black" name="Chicago" radius="0" x="133" y="34"/>
+                <road end="Chicago" start="Baltimore"/>
+              </black>
+            </gray>
+            <black cardinality="1">
+              <road end="Chicago" start="Baltimore"/>
+            </black>
+          </gray>
+          <black cardinality="2">
+            <isolatedCity color="black" name="Orlando" radius="0" x="550" y="34"/>
+            <road end="Chicago" start="Baltimore"/>
+          </black>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="1025"/>
+      <y value="1025"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="-1"/>
+      <y value="-1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="B"/>
+    </output>
+  </success>
+</results>

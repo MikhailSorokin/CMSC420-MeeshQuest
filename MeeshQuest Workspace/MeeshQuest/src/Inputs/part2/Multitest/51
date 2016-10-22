@@ -1,0 +1,53 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:noNamespaceSchemaLocation="part2in.xsd"
+ 	pmOrder="3"
+ 	g="1" 
+ 	spatialWidth="256" 
+ 	spatialHeight="256">
+ <createCity id="1"  name="A" x="0" y="128" radius="0" color="red"/>
+ <createCity id="2"  name="B" x="128" y="128" radius="0" color="orange"/>
+ <createCity id="3"  name="C" radius="0" x="192" y="192" color="yellow"/>
+ <createCity id="4"  name="D" x="191" color="green" y="192" radius="0" />
+ <createCity id="4"  name="E" x="192" color="green" y="64" radius="0" />
+ <createCity id="4"  name="F" x="192" color="green" y="65" radius="0" />
+ <createCity id="4"  name="G" x="192" color="green" y="140" radius="0" />
+ <createCity id="4"  name="H" x="140" color="green" y="192" radius="0" />
+ <createCity id="4"  name="I" x="100" color="green" y="140" radius="0" />
+ <createCity id="4"  name="J" x="100" color="green" y="129" radius="0" />
+ <createCity id="4"  name="K" x="100" color="green" y="127" radius="0" />
+ <createCity id="4"  name="L" x="0" color="green" y="0" radius="0" />
+ <createCity id="4"  name="M" x="100" color="green" y="65" radius="0" />
+ <createCity id="4"  name="N" x="192" color="green" y="0" radius="0" />
+ <createCity id="4"  name="O" x="256" color="green" y="128" radius="0" />
+
+ <mapRoad id="33"  start="A" end="B"/>
+ <mapRoad id="33"  start="B" end="C"/>
+ <mapRoad id="34"  start="B" end="D"/>
+ <mapRoad id="34"  start="B" end="E"/>
+ <mapRoad id="34"  start="B" end="F"/>
+ <mapRoad id="34"  start="B" end="G"/>
+ <mapRoad id="34"  start="B" end="H"/>
+ <mapRoad id="34"  start="B" end="I"/>
+ <mapRoad id="34"  start="B" end="J"/>
+ <mapRoad id="34"  start="B" end="K"/>
+ <mapRoad id="34"  start="B" end="L"/>
+ <mapRoad id="34"  start="B" end="M"/>
+ <mapRoad id="34"  start="B" end="N"/>
+ <mapRoad id="34"  start="B" end="O"/>
+ 
+ <shortestPath id="57"  start="A" end="C" />
+ <shortestPath id="57"  start="A" end="D" />
+ <shortestPath id="57"  start="A" end="E" />
+ <shortestPath id="57"  start="A" end="F" />
+ <shortestPath id="57"  start="A" end="G" />
+ <shortestPath id="57"  start="A" end="H" />
+ <shortestPath id="57"  start="A" end="I" />
+ <shortestPath id="57"  start="A" end="J" />
+ <shortestPath id="57"  start="A" end="K" />
+ <shortestPath id="57"  start="A" end="L" />
+ <shortestPath id="57"  start="A" end="M" />
+ <shortestPath id="57"  start="A" end="N" />
+ <shortestPath id="57"  start="A" end="O" />
+
+</commands>

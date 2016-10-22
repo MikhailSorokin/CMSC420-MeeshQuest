@@ -1,0 +1,2627 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Geneva"/>
+      <x value="10"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Gaithersburg"/>
+      <x value="16"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Germantown"/>
+      <x value="8"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="orange"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Madrid"/>
+      <x value="12"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="yellow"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Andorra"/>
+      <x value="16"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Edge"/>
+      <x value="8"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Top"/>
+      <x value="12"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Mid"/>
+      <x value="8"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Blah"/>
+      <x value="16"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Med"/>
+      <x value="16"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="M"/>
+      <x value="16"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <x value="14"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <x value="10"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <x value="12"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <x value="14"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Z"/>
+      <x value="8"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="X"/>
+      <x value="8"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Y"/>
+      <x value="12"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="W"/>
+      <x value="10"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="U"/>
+      <x value="14"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="K"/>
+      <x value="10"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="T"/>
+      <x value="14"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <x value="12"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Q"/>
+      <x value="10"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="O"/>
+      <x value="14"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AA"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="BB"/>
+      <x value="0"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="CC"/>
+      <x value="0"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="DD"/>
+      <x value="0"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="EE"/>
+      <x value="0"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="FF"/>
+      <x value="0"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="GG"/>
+      <x value="0"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="HH"/>
+      <x value="0"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="JJ"/>
+      <x value="0"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="KK"/>
+      <x value="2"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="LL"/>
+      <x value="2"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="MM"/>
+      <x value="2"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="NN"/>
+      <x value="2"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="OO"/>
+      <x value="2"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="PP"/>
+      <x value="2"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="QQ"/>
+      <x value="2"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="RR"/>
+      <x value="2"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="SS"/>
+      <x value="2"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="KKKK"/>
+      <x value="6"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="LLLL"/>
+      <x value="6"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="MMMM"/>
+      <x value="6"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="NNNN"/>
+      <x value="6"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="OOOO"/>
+      <x value="6"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="PPPP"/>
+      <x value="6"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="QQQQ"/>
+      <x value="6"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="RRRR"/>
+      <x value="6"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="SSSS"/>
+      <x value="6"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AKKKK"/>
+      <x value="4"/>
+      <y value="16"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="ALLLL"/>
+      <x value="4"/>
+      <y value="14"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AMMMM"/>
+      <x value="4"/>
+      <y value="12"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="ANNNN"/>
+      <x value="4"/>
+      <y value="10"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AOOOO"/>
+      <x value="4"/>
+      <y value="8"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="APPPP"/>
+      <x value="4"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AQQQQ"/>
+      <x value="4"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="ARRRR"/>
+      <x value="4"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="ASSSS"/>
+      <x value="4"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="APPPPA"/>
+      <x value="8"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AQQQQA"/>
+      <x value="8"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="ARRRRA"/>
+      <x value="8"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="ASSSSA"/>
+      <x value="8"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AAPPPPA"/>
+      <x value="10"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AAQQQQA"/>
+      <x value="10"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AARRRRA"/>
+      <x value="10"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="AASSSSA"/>
+      <x value="10"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="CAAPPPPA"/>
+      <x value="12"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="CAAQQQQA"/>
+      <x value="12"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="CAARRRRA"/>
+      <x value="12"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="CAASSSSA"/>
+      <x value="12"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="VCAAPPPPA"/>
+      <x value="14"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="VCAAQQQQA"/>
+      <x value="14"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="VCAARRRRA"/>
+      <x value="14"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="VCAASSSSA"/>
+      <x value="14"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="QVCAAPPPPA"/>
+      <x value="16"/>
+      <y value="6"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="QVCAAQQQQA"/>
+      <x value="16"/>
+      <y value="4"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="QVCAARRRRA"/>
+      <x value="16"/>
+      <y value="2"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="QVCAASSSSA"/>
+      <x value="16"/>
+      <y value="0"/>
+      <radius value="0"/>
+      <color value="green"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Andorra"/>
+      <end value="Madrid"/>
+    </parameters>
+    <output>
+      <roadCreated end="Madrid" start="Andorra"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Geneva"/>
+      <end value="Gaithersburg"/>
+    </parameters>
+    <output>
+      <roadCreated end="Gaithersburg" start="Geneva"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Germantown"/>
+      <end value="Edge"/>
+    </parameters>
+    <output>
+      <roadCreated end="Edge" start="Germantown"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Top"/>
+      <end value="Mid"/>
+    </parameters>
+    <output>
+      <roadCreated end="Mid" start="Top"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Blah"/>
+      <end value="Med"/>
+    </parameters>
+    <output>
+      <roadCreated end="Med" start="Blah"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="M"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="M"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="G"/>
+    </parameters>
+    <output>
+      <roadCreated end="G" start="E"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="Z"/>
+    </parameters>
+    <output>
+      <roadCreated end="Z" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="X"/>
+      <end value="Y"/>
+    </parameters>
+    <output>
+      <roadCreated end="Y" start="X"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="W"/>
+      <end value="U"/>
+    </parameters>
+    <output>
+      <roadCreated end="U" start="W"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="K"/>
+      <end value="T"/>
+    </parameters>
+    <output>
+      <roadCreated end="T" start="K"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="Q"/>
+      <end value="O"/>
+    </parameters>
+    <output>
+      <roadCreated end="O" start="Q"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="AA"/>
+    </parameters>
+    <output>
+      <roadCreated end="AA" start="B"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="BB"/>
+      <end value="CC"/>
+    </parameters>
+    <output>
+      <roadCreated end="CC" start="BB"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="DD"/>
+      <end value="EE"/>
+    </parameters>
+    <output>
+      <roadCreated end="EE" start="DD"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="FF"/>
+      <end value="GG"/>
+    </parameters>
+    <output>
+      <roadCreated end="GG" start="FF"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="HH"/>
+      <end value="JJ"/>
+    </parameters>
+    <output>
+      <roadCreated end="JJ" start="HH"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="KK"/>
+      <end value="LL"/>
+    </parameters>
+    <output>
+      <roadCreated end="LL" start="KK"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="MM"/>
+      <end value="NN"/>
+    </parameters>
+    <output>
+      <roadCreated end="NN" start="MM"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="OO"/>
+      <end value="PP"/>
+    </parameters>
+    <output>
+      <roadCreated end="PP" start="OO"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="QQ"/>
+      <end value="RR"/>
+    </parameters>
+    <output>
+      <roadCreated end="RR" start="QQ"/>
+    </output>
+  </success>
+  <error type="endPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="SS"/>
+      <end value="KKK"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="LLL"/>
+      <end value="MMM"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="NNN"/>
+      <end value="OOO"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="PPP"/>
+      <end value="QQQ"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="RRR"/>
+      <end value="SSS"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="KKKK"/>
+      <end value="LLLL"/>
+    </parameters>
+    <output>
+      <roadCreated end="LLLL" start="KKKK"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="MMMM"/>
+      <end value="NNNN"/>
+    </parameters>
+    <output>
+      <roadCreated end="NNNN" start="MMMM"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="OOOO"/>
+      <end value="PPPP"/>
+    </parameters>
+    <output>
+      <roadCreated end="PPPP" start="OOOO"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="QQQQ"/>
+      <end value="RRRR"/>
+    </parameters>
+    <output>
+      <roadCreated end="RRRR" start="QQQQ"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="SSSS"/>
+      <end value="AKKKK"/>
+    </parameters>
+    <output>
+      <roadCreated end="AKKKK" start="SSSS"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="ALLLL"/>
+      <end value="AMMMM"/>
+    </parameters>
+    <output>
+      <roadCreated end="AMMMM" start="ALLLL"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="ANNNN"/>
+      <end value="AOOOO"/>
+    </parameters>
+    <output>
+      <roadCreated end="AOOOO" start="ANNNN"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="APPPP"/>
+      <end value="AQQQQ"/>
+    </parameters>
+    <output>
+      <roadCreated end="AQQQQ" start="APPPP"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="ARRRR"/>
+      <end value="ASSSS"/>
+    </parameters>
+    <output>
+      <roadCreated end="ASSSS" start="ARRRR"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="APPPPA"/>
+      <end value="AQQQQA"/>
+    </parameters>
+    <output>
+      <roadCreated end="AQQQQA" start="APPPPA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="ARRRRA"/>
+      <end value="ASSSSA"/>
+    </parameters>
+    <output>
+      <roadCreated end="ASSSSA" start="ARRRRA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="AAPPPPA"/>
+      <end value="AAQQQQA"/>
+    </parameters>
+    <output>
+      <roadCreated end="AAQQQQA" start="AAPPPPA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="AARRRRA"/>
+      <end value="AASSSSA"/>
+    </parameters>
+    <output>
+      <roadCreated end="AASSSSA" start="AARRRRA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="CAAPPPPA"/>
+      <end value="CAAQQQQA"/>
+    </parameters>
+    <output>
+      <roadCreated end="CAAQQQQA" start="CAAPPPPA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="CAARRRRA"/>
+      <end value="CAASSSSA"/>
+    </parameters>
+    <output>
+      <roadCreated end="CAASSSSA" start="CAARRRRA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="VCAAPPPPA"/>
+      <end value="VCAAQQQQA"/>
+    </parameters>
+    <output>
+      <roadCreated end="VCAAQQQQA" start="VCAAPPPPA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="VCAARRRRA"/>
+      <end value="VCAASSSSA"/>
+    </parameters>
+    <output>
+      <roadCreated end="VCAASSSSA" start="VCAARRRRA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="QVCAAPPPPA"/>
+      <end value="QVCAAQQQQA"/>
+    </parameters>
+    <output>
+      <roadCreated end="QVCAAQQQQA" start="QVCAAPPPPA"/>
+    </output>
+  </success>
+  <success>
+    <command name="mapRoad"/>
+    <parameters>
+      <start value="QVCAARRRRA"/>
+      <end value="QVCAASSSSA"/>
+    </parameters>
+    <output>
+      <roadCreated end="QVCAASSSSA" start="QVCAARRRRA"/>
+    </output>
+  </success>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <gray x="4" y="12">
+            <gray x="2" y="14">
+              <gray x="1" y="15">
+                <black cardinality="2">
+                  <city color="green" name="HH" radius="0" x="0" y="16"/>
+                  <road end="JJ" start="HH"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="KK" radius="0" x="2" y="16"/>
+                  <road end="LL" start="KK"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="GG" radius="0" x="0" y="14"/>
+                  <road end="JJ" start="HH"/>
+                  <road end="GG" start="FF"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="LL" radius="0" x="2" y="14"/>
+                  <road end="LL" start="KK"/>
+                </black>
+              </gray>
+              <gray x="3" y="15">
+                <black cardinality="2">
+                  <city color="green" name="KK" radius="0" x="2" y="16"/>
+                  <road end="LL" start="KK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AKKKK" radius="0" x="4" y="16"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="LL" radius="0" x="2" y="14"/>
+                  <road end="LL" start="KK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ALLLL" radius="0" x="4" y="14"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                </black>
+              </gray>
+              <gray x="1" y="13">
+                <black cardinality="3">
+                  <city color="green" name="GG" radius="0" x="0" y="14"/>
+                  <road end="JJ" start="HH"/>
+                  <road end="GG" start="FF"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="LL" radius="0" x="2" y="14"/>
+                  <road end="LL" start="KK"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="JJ" radius="0" x="0" y="12"/>
+                  <road end="JJ" start="HH"/>
+                  <road end="GG" start="FF"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="MM" radius="0" x="2" y="12"/>
+                  <road end="NN" start="MM"/>
+                </black>
+              </gray>
+              <gray x="3" y="13">
+                <black cardinality="2">
+                  <city color="green" name="LL" radius="0" x="2" y="14"/>
+                  <road end="LL" start="KK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ALLLL" radius="0" x="4" y="14"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="MM" radius="0" x="2" y="12"/>
+                  <road end="NN" start="MM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AMMMM" radius="0" x="4" y="12"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="6" y="14">
+              <gray x="5" y="15">
+                <black cardinality="2">
+                  <city color="green" name="AKKKK" radius="0" x="4" y="16"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="KKKK" radius="0" x="6" y="16"/>
+                  <road end="LLLL" start="KKKK"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="ALLLL" radius="0" x="4" y="14"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="LLLL" radius="0" x="6" y="14"/>
+                  <road end="LLLL" start="KKKK"/>
+                </black>
+              </gray>
+              <gray x="7" y="15">
+                <black cardinality="2">
+                  <city color="green" name="KKKK" radius="0" x="6" y="16"/>
+                  <road end="LLLL" start="KKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="Mid" radius="0" x="8" y="16"/>
+                  <road end="Top" start="Mid"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="LLLL" radius="0" x="6" y="14"/>
+                  <road end="LLLL" start="KKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="X" radius="0" x="8" y="14"/>
+                  <road end="Y" start="X"/>
+                </black>
+              </gray>
+              <gray x="5" y="13">
+                <black cardinality="3">
+                  <city color="green" name="ALLLL" radius="0" x="4" y="14"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="LLLL" radius="0" x="6" y="14"/>
+                  <road end="LLLL" start="KKKK"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="AMMMM" radius="0" x="4" y="12"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="MMMM" radius="0" x="6" y="12"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+              </gray>
+              <gray x="7" y="13">
+                <black cardinality="2">
+                  <city color="green" name="LLLL" radius="0" x="6" y="14"/>
+                  <road end="LLLL" start="KKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="X" radius="0" x="8" y="14"/>
+                  <road end="Y" start="X"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="MMMM" radius="0" x="6" y="12"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="Edge" radius="0" x="8" y="12"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="2" y="10">
+              <gray x="1" y="11">
+                <black cardinality="3">
+                  <city color="green" name="JJ" radius="0" x="0" y="12"/>
+                  <road end="JJ" start="HH"/>
+                  <road end="GG" start="FF"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="MM" radius="0" x="2" y="12"/>
+                  <road end="NN" start="MM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="FF" radius="0" x="0" y="10"/>
+                  <road end="GG" start="FF"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="NN" radius="0" x="2" y="10"/>
+                  <road end="NN" start="MM"/>
+                </black>
+              </gray>
+              <gray x="3" y="11">
+                <black cardinality="2">
+                  <city color="green" name="MM" radius="0" x="2" y="12"/>
+                  <road end="NN" start="MM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AMMMM" radius="0" x="4" y="12"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="NN" radius="0" x="2" y="10"/>
+                  <road end="NN" start="MM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ANNNN" radius="0" x="4" y="10"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                </black>
+              </gray>
+              <gray x="1" y="9">
+                <black cardinality="2">
+                  <city color="green" name="FF" radius="0" x="0" y="10"/>
+                  <road end="GG" start="FF"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="NN" radius="0" x="2" y="10"/>
+                  <road end="NN" start="MM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="EE" radius="0" x="0" y="8"/>
+                  <road end="EE" start="DD"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="OO" radius="0" x="2" y="8"/>
+                  <road end="PP" start="OO"/>
+                </black>
+              </gray>
+              <gray x="3" y="9">
+                <black cardinality="2">
+                  <city color="green" name="NN" radius="0" x="2" y="10"/>
+                  <road end="NN" start="MM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ANNNN" radius="0" x="4" y="10"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="OO" radius="0" x="2" y="8"/>
+                  <road end="PP" start="OO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AOOOO" radius="0" x="4" y="8"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="6" y="10">
+              <gray x="5" y="11">
+                <black cardinality="3">
+                  <city color="green" name="AMMMM" radius="0" x="4" y="12"/>
+                  <road end="AMMMM" start="ALLLL"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="MMMM" radius="0" x="6" y="12"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="ANNNN" radius="0" x="4" y="10"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="NNNN" radius="0" x="6" y="10"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+              </gray>
+              <gray x="7" y="11">
+                <black cardinality="2">
+                  <city color="green" name="MMMM" radius="0" x="6" y="12"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="Edge" radius="0" x="8" y="12"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="NNNN" radius="0" x="6" y="10"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Z" radius="0" x="8" y="10"/>
+                  <road end="Germantown" start="Edge"/>
+                  <road end="Z" start="C"/>
+                </black>
+              </gray>
+              <gray x="5" y="9">
+                <black cardinality="3">
+                  <city color="green" name="ANNNN" radius="0" x="4" y="10"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="NNNN" radius="0" x="6" y="10"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="AOOOO" radius="0" x="4" y="8"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="OOOO" radius="0" x="6" y="8"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+              </gray>
+              <gray x="7" y="9">
+                <black cardinality="2">
+                  <city color="green" name="NNNN" radius="0" x="6" y="10"/>
+                  <road end="NNNN" start="MMMM"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="Z" radius="0" x="8" y="10"/>
+                  <road end="Germantown" start="Edge"/>
+                  <road end="Z" start="C"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="OOOO" radius="0" x="6" y="8"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="Germantown" radius="0" x="8" y="8"/>
+                  <road end="Germantown" start="Edge"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="12" y="12">
+            <gray x="10" y="14">
+              <gray x="9" y="15">
+                <black cardinality="2">
+                  <city color="green" name="Mid" radius="0" x="8" y="16"/>
+                  <road end="Top" start="Mid"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="K" radius="0" x="10" y="16"/>
+                  <road end="Top" start="Mid"/>
+                  <road end="T" start="K"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="X" radius="0" x="8" y="14"/>
+                  <road end="Y" start="X"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="E" radius="0" x="10" y="14"/>
+                  <road end="G" start="E"/>
+                </black>
+              </gray>
+              <gray x="11" y="15">
+                <black cardinality="3">
+                  <city color="green" name="K" radius="0" x="10" y="16"/>
+                  <road end="Top" start="Mid"/>
+                  <road end="T" start="K"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Top" radius="0" x="12" y="16"/>
+                  <road end="Top" start="Mid"/>
+                  <road end="T" start="K"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="E" radius="0" x="10" y="14"/>
+                  <road end="G" start="E"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="B" radius="0" x="12" y="14"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+              <gray x="9" y="13">
+                <black cardinality="2">
+                  <city color="green" name="X" radius="0" x="8" y="14"/>
+                  <road end="Y" start="X"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="E" radius="0" x="10" y="14"/>
+                  <road end="G" start="E"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Edge" radius="0" x="8" y="12"/>
+                  <road end="Y" start="X"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Q" radius="0" x="10" y="12"/>
+                  <road end="Y" start="X"/>
+                  <road end="Q" start="O"/>
+                </black>
+              </gray>
+              <gray x="11" y="13">
+                <black cardinality="2">
+                  <city color="green" name="E" radius="0" x="10" y="14"/>
+                  <road end="G" start="E"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="B" radius="0" x="12" y="14"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="Q" radius="0" x="10" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="G" start="E"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="5">
+                  <city color="yellow" name="Madrid" radius="0" x="12" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="G" start="E"/>
+                  <road end="Madrid" start="Andorra"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="14" y="14">
+              <gray x="13" y="15">
+                <black cardinality="3">
+                  <city color="green" name="Top" radius="0" x="12" y="16"/>
+                  <road end="Top" start="Mid"/>
+                  <road end="T" start="K"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="T" radius="0" x="14" y="16"/>
+                  <road end="T" start="K"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="B" radius="0" x="12" y="14"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="D" radius="0" x="14" y="14"/>
+                  <road end="M" start="D"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+              </gray>
+              <gray x="15" y="15">
+                <black cardinality="3">
+                  <city color="green" name="T" radius="0" x="14" y="16"/>
+                  <road end="T" start="K"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="Andorra" radius="0" x="16" y="16"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="D" radius="0" x="14" y="14"/>
+                  <road end="M" start="D"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Med" radius="0" x="16" y="14"/>
+                  <road end="Med" start="Blah"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+              </gray>
+              <gray x="13" y="13">
+                <black cardinality="3">
+                  <city color="green" name="B" radius="0" x="12" y="14"/>
+                  <road end="Madrid" start="Andorra"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="D" radius="0" x="14" y="14"/>
+                  <road end="M" start="D"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="3">
+                  <city color="yellow" name="Madrid" radius="0" x="12" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="O" radius="0" x="14" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+              </gray>
+              <gray x="15" y="13">
+                <black cardinality="3">
+                  <city color="green" name="D" radius="0" x="14" y="14"/>
+                  <road end="M" start="D"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="Med" radius="0" x="16" y="14"/>
+                  <road end="Med" start="Blah"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="O" radius="0" x="14" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="M" start="D"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="Gaithersburg" radius="0" x="16" y="12"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Med" start="Blah"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="10" y="10">
+              <gray x="9" y="11">
+                <black cardinality="2">
+                  <city color="green" name="Edge" radius="0" x="8" y="12"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="Q" radius="0" x="10" y="12"/>
+                  <road end="Y" start="X"/>
+                  <road end="Q" start="O"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="Z" radius="0" x="8" y="10"/>
+                  <road end="Germantown" start="Edge"/>
+                  <road end="Z" start="C"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="5">
+                  <city color="orange" name="Geneva" radius="0" x="10" y="10"/>
+                  <road end="Y" start="X"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Z" start="C"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+              <gray x="11" y="11">
+                <black cardinality="5">
+                  <city color="green" name="Q" radius="0" x="10" y="12"/>
+                  <road end="Y" start="X"/>
+                  <road end="Q" start="O"/>
+                  <road end="G" start="E"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="4">
+                  <city color="yellow" name="Madrid" radius="0" x="12" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="G" start="E"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="4">
+                  <city color="orange" name="Geneva" radius="0" x="10" y="10"/>
+                  <road end="Y" start="X"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="G" radius="0" x="12" y="10"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="G" start="E"/>
+                  <road end="Z" start="C"/>
+                </black>
+              </gray>
+              <gray x="9" y="9">
+                <black cardinality="4">
+                  <city color="green" name="Z" radius="0" x="8" y="10"/>
+                  <road end="Germantown" start="Edge"/>
+                  <road end="Z" start="C"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="orange" name="Geneva" radius="0" x="10" y="10"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="2">
+                  <city color="orange" name="Germantown" radius="0" x="8" y="8"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="W" radius="0" x="10" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+              </gray>
+              <gray x="11" y="9">
+                <black cardinality="4">
+                  <city color="orange" name="Geneva" radius="0" x="10" y="10"/>
+                  <road end="Y" start="X"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="G" radius="0" x="12" y="10"/>
+                  <road end="Y" start="X"/>
+                  <road end="G" start="E"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="W" radius="0" x="10" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Y" radius="0" x="12" y="8"/>
+                  <road end="Y" start="X"/>
+                  <road end="W" start="U"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="14" y="10">
+              <gray x="13" y="11">
+                <black cardinality="4">
+                  <city color="yellow" name="Madrid" radius="0" x="12" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Madrid" start="Andorra"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="O" radius="0" x="14" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="G" radius="0" x="12" y="10"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="G" start="E"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="C" radius="0" x="14" y="10"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="Z" start="C"/>
+                </black>
+              </gray>
+              <gray x="15" y="11">
+                <black cardinality="4">
+                  <city color="green" name="O" radius="0" x="14" y="12"/>
+                  <road end="Q" start="O"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="M" start="D"/>
+                </black>
+                <black cardinality="4">
+                  <city color="orange" name="Gaithersburg" radius="0" x="16" y="12"/>
+                  <road end="Geneva" start="Gaithersburg"/>
+                  <road end="M" start="D"/>
+                  <road end="Med" start="Blah"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="C" radius="0" x="14" y="10"/>
+                  <road end="M" start="D"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Blah" radius="0" x="16" y="10"/>
+                  <road end="M" start="D"/>
+                  <road end="Med" start="Blah"/>
+                </black>
+              </gray>
+              <gray x="13" y="9">
+                <black cardinality="3">
+                  <city color="green" name="G" radius="0" x="12" y="10"/>
+                  <road end="G" start="E"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="C" radius="0" x="14" y="10"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Y" radius="0" x="12" y="8"/>
+                  <road end="Y" start="X"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="U" radius="0" x="14" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+              </gray>
+              <gray x="15" y="9">
+                <black cardinality="2">
+                  <city color="green" name="C" radius="0" x="14" y="10"/>
+                  <road end="Z" start="C"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Blah" radius="0" x="16" y="10"/>
+                  <road end="M" start="D"/>
+                  <road end="Med" start="Blah"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="U" radius="0" x="14" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="M" radius="0" x="16" y="8"/>
+                  <road end="M" start="D"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="4" y="4">
+            <gray x="2" y="6">
+              <gray x="1" y="7">
+                <black cardinality="2">
+                  <city color="green" name="EE" radius="0" x="0" y="8"/>
+                  <road end="EE" start="DD"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="OO" radius="0" x="2" y="8"/>
+                  <road end="PP" start="OO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="DD" radius="0" x="0" y="6"/>
+                  <road end="EE" start="DD"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="PP" radius="0" x="2" y="6"/>
+                  <road end="PP" start="OO"/>
+                </black>
+              </gray>
+              <gray x="3" y="7">
+                <black cardinality="2">
+                  <city color="green" name="OO" radius="0" x="2" y="8"/>
+                  <road end="PP" start="OO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AOOOO" radius="0" x="4" y="8"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="PP" radius="0" x="2" y="6"/>
+                  <road end="PP" start="OO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="APPPP" radius="0" x="4" y="6"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                </black>
+              </gray>
+              <gray x="1" y="5">
+                <black cardinality="2">
+                  <city color="green" name="DD" radius="0" x="0" y="6"/>
+                  <road end="EE" start="DD"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="PP" radius="0" x="2" y="6"/>
+                  <road end="PP" start="OO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CC" radius="0" x="0" y="4"/>
+                  <road end="CC" start="BB"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QQ" radius="0" x="2" y="4"/>
+                  <road end="RR" start="QQ"/>
+                </black>
+              </gray>
+              <gray x="3" y="5">
+                <black cardinality="2">
+                  <city color="green" name="PP" radius="0" x="2" y="6"/>
+                  <road end="PP" start="OO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="APPPP" radius="0" x="4" y="6"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QQ" radius="0" x="2" y="4"/>
+                  <road end="RR" start="QQ"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="AQQQQ" radius="0" x="4" y="4"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="6" y="6">
+              <gray x="5" y="7">
+                <black cardinality="3">
+                  <city color="green" name="AOOOO" radius="0" x="4" y="8"/>
+                  <road end="AOOOO" start="ANNNN"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="OOOO" radius="0" x="6" y="8"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="SSSS" start="AKKKK"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="APPPP" radius="0" x="4" y="6"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="PPPP" radius="0" x="6" y="6"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="SSSS" start="AKKKK"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+              <gray x="7" y="7">
+                <black cardinality="3">
+                  <city color="green" name="OOOO" radius="0" x="6" y="8"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="orange" name="Germantown" radius="0" x="8" y="8"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="PPPP" radius="0" x="6" y="6"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="APPPPA" radius="0" x="8" y="6"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+              </gray>
+              <gray x="5" y="5">
+                <black cardinality="3">
+                  <city color="green" name="APPPP" radius="0" x="4" y="6"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="4">
+                  <city color="green" name="PPPP" radius="0" x="6" y="6"/>
+                  <road end="PPPP" start="OOOO"/>
+                  <road end="SSSS" start="AKKKK"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="AQQQQ" radius="0" x="4" y="4"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="QQQQ" radius="0" x="6" y="4"/>
+                  <road end="RRRR" start="QQQQ"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+              </gray>
+              <gray x="7" y="5">
+                <black cardinality="2">
+                  <city color="green" name="PPPP" radius="0" x="6" y="6"/>
+                  <road end="PPPP" start="OOOO"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="APPPPA" radius="0" x="8" y="6"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QQQQ" radius="0" x="6" y="4"/>
+                  <road end="RRRR" start="QQQQ"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AQQQQA" radius="0" x="8" y="4"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="2" y="2">
+              <gray x="1" y="3">
+                <black cardinality="2">
+                  <city color="green" name="CC" radius="0" x="0" y="4"/>
+                  <road end="CC" start="BB"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QQ" radius="0" x="2" y="4"/>
+                  <road end="RR" start="QQ"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="BB" radius="0" x="0" y="2"/>
+                  <road end="CC" start="BB"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="RR" radius="0" x="2" y="2"/>
+                  <road end="RR" start="QQ"/>
+                  <road end="B" start="AA"/>
+                </black>
+              </gray>
+              <gray x="3" y="3">
+                <black cardinality="3">
+                  <city color="green" name="QQ" radius="0" x="2" y="4"/>
+                  <road end="RR" start="QQ"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="AQQQQ" radius="0" x="4" y="4"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="RR" radius="0" x="2" y="2"/>
+                  <road end="RR" start="QQ"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ARRRR" radius="0" x="4" y="2"/>
+                  <road end="ASSSS" start="ARRRR"/>
+                </black>
+              </gray>
+              <gray x="1" y="1">
+                <black cardinality="3">
+                  <city color="green" name="BB" radius="0" x="0" y="2"/>
+                  <road end="CC" start="BB"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="RR" radius="0" x="2" y="2"/>
+                  <road end="RR" start="QQ"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AA" radius="0" x="0" y="0"/>
+                  <road end="B" start="AA"/>
+                </black>
+                <white/>
+              </gray>
+              <gray x="3" y="1">
+                <black cardinality="2">
+                  <city color="green" name="RR" radius="0" x="2" y="2"/>
+                  <road end="RR" start="QQ"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ARRRR" radius="0" x="4" y="2"/>
+                  <road end="ASSSS" start="ARRRR"/>
+                </black>
+                <white/>
+                <black cardinality="2">
+                  <city color="green" name="ASSSS" radius="0" x="4" y="0"/>
+                  <road end="ASSSS" start="ARRRR"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="6" y="2">
+              <gray x="5" y="3">
+                <black cardinality="2">
+                  <city color="green" name="AQQQQ" radius="0" x="4" y="4"/>
+                  <road end="AQQQQ" start="APPPP"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="QQQQ" radius="0" x="6" y="4"/>
+                  <road end="RRRR" start="QQQQ"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ARRRR" radius="0" x="4" y="2"/>
+                  <road end="ASSSS" start="ARRRR"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="RRRR" radius="0" x="6" y="2"/>
+                  <road end="RRRR" start="QQQQ"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+              </gray>
+              <gray x="7" y="3">
+                <black cardinality="2">
+                  <city color="green" name="QQQQ" radius="0" x="6" y="4"/>
+                  <road end="RRRR" start="QQQQ"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AQQQQA" radius="0" x="8" y="4"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="RRRR" radius="0" x="6" y="2"/>
+                  <road end="RRRR" start="QQQQ"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ARRRRA" radius="0" x="8" y="2"/>
+                  <road end="ASSSSA" start="ARRRRA"/>
+                </black>
+              </gray>
+              <gray x="5" y="1">
+                <black cardinality="2">
+                  <city color="green" name="ARRRR" radius="0" x="4" y="2"/>
+                  <road end="ASSSS" start="ARRRR"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="RRRR" radius="0" x="6" y="2"/>
+                  <road end="RRRR" start="QQQQ"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ASSSS" radius="0" x="4" y="0"/>
+                  <road end="ASSSS" start="ARRRR"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="SSSS" radius="0" x="6" y="0"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+              </gray>
+              <gray x="7" y="1">
+                <black cardinality="2">
+                  <city color="green" name="RRRR" radius="0" x="6" y="2"/>
+                  <road end="RRRR" start="QQQQ"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ARRRRA" radius="0" x="8" y="2"/>
+                  <road end="ASSSSA" start="ARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="SSSS" radius="0" x="6" y="0"/>
+                  <road end="SSSS" start="AKKKK"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ASSSSA" radius="0" x="8" y="0"/>
+                  <road end="ASSSSA" start="ARRRRA"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="12" y="4">
+            <gray x="10" y="6">
+              <gray x="9" y="7">
+                <black cardinality="2">
+                  <city color="orange" name="Germantown" radius="0" x="8" y="8"/>
+                  <road end="Germantown" start="Edge"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="W" radius="0" x="10" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="APPPPA" radius="0" x="8" y="6"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AAPPPPA" radius="0" x="10" y="6"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+              </gray>
+              <gray x="11" y="7">
+                <black cardinality="2">
+                  <city color="green" name="W" radius="0" x="10" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="3">
+                  <city color="green" name="Y" radius="0" x="12" y="8"/>
+                  <road end="Y" start="X"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AAPPPPA" radius="0" x="10" y="6"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAAPPPPA" radius="0" x="12" y="6"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+              </gray>
+              <gray x="9" y="5">
+                <black cardinality="2">
+                  <city color="green" name="APPPPA" radius="0" x="8" y="6"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AAPPPPA" radius="0" x="10" y="6"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AQQQQA" radius="0" x="8" y="4"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AAQQQQA" radius="0" x="10" y="4"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+              </gray>
+              <gray x="11" y="5">
+                <black cardinality="2">
+                  <city color="green" name="AAPPPPA" radius="0" x="10" y="6"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAAPPPPA" radius="0" x="12" y="6"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AAQQQQA" radius="0" x="10" y="4"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAAQQQQA" radius="0" x="12" y="4"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="14" y="6">
+              <gray x="13" y="7">
+                <black cardinality="3">
+                  <city color="green" name="Y" radius="0" x="12" y="8"/>
+                  <road end="Y" start="X"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="U" radius="0" x="14" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAAPPPPA" radius="0" x="12" y="6"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAAPPPPA" radius="0" x="14" y="6"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+              </gray>
+              <gray x="15" y="7">
+                <black cardinality="2">
+                  <city color="green" name="U" radius="0" x="14" y="8"/>
+                  <road end="W" start="U"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="M" radius="0" x="16" y="8"/>
+                  <road end="M" start="D"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAAPPPPA" radius="0" x="14" y="6"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAAPPPPA" radius="0" x="16" y="6"/>
+                  <road end="QVCAAQQQQA" start="QVCAAPPPPA"/>
+                </black>
+              </gray>
+              <gray x="13" y="5">
+                <black cardinality="2">
+                  <city color="green" name="CAAPPPPA" radius="0" x="12" y="6"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAAPPPPA" radius="0" x="14" y="6"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAAQQQQA" radius="0" x="12" y="4"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAAQQQQA" radius="0" x="14" y="4"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+              </gray>
+              <gray x="15" y="5">
+                <black cardinality="2">
+                  <city color="green" name="VCAAPPPPA" radius="0" x="14" y="6"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAAPPPPA" radius="0" x="16" y="6"/>
+                  <road end="QVCAAQQQQA" start="QVCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAAQQQQA" radius="0" x="14" y="4"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAAQQQQA" radius="0" x="16" y="4"/>
+                  <road end="QVCAAQQQQA" start="QVCAAPPPPA"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="10" y="2">
+              <gray x="9" y="3">
+                <black cardinality="2">
+                  <city color="green" name="AQQQQA" radius="0" x="8" y="4"/>
+                  <road end="AQQQQA" start="APPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AAQQQQA" radius="0" x="10" y="4"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ARRRRA" radius="0" x="8" y="2"/>
+                  <road end="ASSSSA" start="ARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AARRRRA" radius="0" x="10" y="2"/>
+                  <road end="AASSSSA" start="AARRRRA"/>
+                </black>
+              </gray>
+              <gray x="11" y="3">
+                <black cardinality="2">
+                  <city color="green" name="AAQQQQA" radius="0" x="10" y="4"/>
+                  <road end="AAQQQQA" start="AAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAAQQQQA" radius="0" x="12" y="4"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AARRRRA" radius="0" x="10" y="2"/>
+                  <road end="AASSSSA" start="AARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAARRRRA" radius="0" x="12" y="2"/>
+                  <road end="CAASSSSA" start="CAARRRRA"/>
+                </black>
+              </gray>
+              <gray x="9" y="1">
+                <black cardinality="2">
+                  <city color="green" name="ARRRRA" radius="0" x="8" y="2"/>
+                  <road end="ASSSSA" start="ARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AARRRRA" radius="0" x="10" y="2"/>
+                  <road end="AASSSSA" start="AARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="ASSSSA" radius="0" x="8" y="0"/>
+                  <road end="ASSSSA" start="ARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AASSSSA" radius="0" x="10" y="0"/>
+                  <road end="AASSSSA" start="AARRRRA"/>
+                </black>
+              </gray>
+              <gray x="11" y="1">
+                <black cardinality="2">
+                  <city color="green" name="AARRRRA" radius="0" x="10" y="2"/>
+                  <road end="AASSSSA" start="AARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAARRRRA" radius="0" x="12" y="2"/>
+                  <road end="CAASSSSA" start="CAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="AASSSSA" radius="0" x="10" y="0"/>
+                  <road end="AASSSSA" start="AARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAASSSSA" radius="0" x="12" y="0"/>
+                  <road end="CAASSSSA" start="CAARRRRA"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="14" y="2">
+              <gray x="13" y="3">
+                <black cardinality="2">
+                  <city color="green" name="CAAQQQQA" radius="0" x="12" y="4"/>
+                  <road end="CAAQQQQA" start="CAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAAQQQQA" radius="0" x="14" y="4"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAARRRRA" radius="0" x="12" y="2"/>
+                  <road end="CAASSSSA" start="CAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAARRRRA" radius="0" x="14" y="2"/>
+                  <road end="VCAASSSSA" start="VCAARRRRA"/>
+                </black>
+              </gray>
+              <gray x="15" y="3">
+                <black cardinality="2">
+                  <city color="green" name="VCAAQQQQA" radius="0" x="14" y="4"/>
+                  <road end="VCAAQQQQA" start="VCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAAQQQQA" radius="0" x="16" y="4"/>
+                  <road end="QVCAAQQQQA" start="QVCAAPPPPA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAARRRRA" radius="0" x="14" y="2"/>
+                  <road end="VCAASSSSA" start="VCAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAARRRRA" radius="0" x="16" y="2"/>
+                  <road end="QVCAASSSSA" start="QVCAARRRRA"/>
+                </black>
+              </gray>
+              <gray x="13" y="1">
+                <black cardinality="2">
+                  <city color="green" name="CAARRRRA" radius="0" x="12" y="2"/>
+                  <road end="CAASSSSA" start="CAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAARRRRA" radius="0" x="14" y="2"/>
+                  <road end="VCAASSSSA" start="VCAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="CAASSSSA" radius="0" x="12" y="0"/>
+                  <road end="CAASSSSA" start="CAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAASSSSA" radius="0" x="14" y="0"/>
+                  <road end="VCAASSSSA" start="VCAARRRRA"/>
+                </black>
+              </gray>
+              <gray x="15" y="1">
+                <black cardinality="2">
+                  <city color="green" name="VCAARRRRA" radius="0" x="14" y="2"/>
+                  <road end="VCAASSSSA" start="VCAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAARRRRA" radius="0" x="16" y="2"/>
+                  <road end="QVCAASSSSA" start="QVCAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="VCAASSSSA" radius="0" x="14" y="0"/>
+                  <road end="VCAASSSSA" start="VCAARRRRA"/>
+                </black>
+                <black cardinality="2">
+                  <city color="green" name="QVCAASSSSA" radius="0" x="16" y="0"/>
+                  <road end="QVCAASSSSA" start="QVCAARRRRA"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

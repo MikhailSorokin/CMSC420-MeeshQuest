@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="Alpha"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Bravo"/>
+      <x value="0"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="Charlie"/>
+      <x value="1024"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="6" name="createCity"/>
+    <parameters>
+      <name value="Delta"/>
+      <x value="1024"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="7" name="createCity"/>
+    <parameters>
+      <name value="Echo"/>
+      <x value="0"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="8" name="createCity"/>
+    <parameters>
+      <name value="Foxtrot"/>
+      <x value="512"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="9" name="createCity"/>
+    <parameters>
+      <name value="Golf"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="10" name="createCity"/>
+    <parameters>
+      <name value="Hotel"/>
+      <x value="512"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="11" name="createCity"/>
+    <parameters>
+      <name value="India"/>
+      <x value="1024"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="12" name="createCity"/>
+    <parameters>
+      <name value="Juliett"/>
+      <x value="0"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="13" name="createCity"/>
+    <parameters>
+      <name value="Kilo"/>
+      <x value="256"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="14" name="createCity"/>
+    <parameters>
+      <name value="Lima"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="15" name="createCity"/>
+    <parameters>
+      <name value="Mike"/>
+      <x value="768"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="16" name="createCity"/>
+    <parameters>
+      <name value="November"/>
+      <x value="256"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="17" name="createCity"/>
+    <parameters>
+      <name value="Oscar"/>
+      <x value="768"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="18" name="createCity"/>
+    <parameters>
+      <name value="Papa"/>
+      <x value="0"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="19" name="createCity"/>
+    <parameters>
+      <name value="Quebec"/>
+      <x value="768"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="20" name="createCity"/>
+    <parameters>
+      <name value="Romeo"/>
+      <x value="768"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="21" name="createCity"/>
+    <parameters>
+      <name value="Sierra"/>
+      <x value="1024"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="22" name="createCity"/>
+    <parameters>
+      <name value="Tango"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="23" name="createCity"/>
+    <parameters>
+      <name value="Uniform"/>
+      <x value="128"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="24" name="createCity"/>
+    <parameters>
+      <name value="Victor"/>
+      <x value="0"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="25" name="createCity"/>
+    <parameters>
+      <name value="Whiskey"/>
+      <x value="0"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="26" name="createCity"/>
+    <parameters>
+      <name value="Xray"/>
+      <x value="384"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="27" name="createCity"/>
+    <parameters>
+      <name value="Yankee"/>
+      <x value="384"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="28" name="createCity"/>
+    <parameters>
+      <name value="Zulu"/>
+      <x value="512"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="31" name="mapCity"/>
+    <parameters>
+      <name value="Alpha"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="32" name="mapCity"/>
+    <parameters>
+      <name value="Bravo"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="33" name="mapCity"/>
+    <parameters>
+      <name value="Charlie"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="34" name="mapCity"/>
+    <parameters>
+      <name value="Delta"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="35" name="mapCity"/>
+    <parameters>
+      <name value="Echo"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="36" name="mapCity"/>
+    <parameters>
+      <name value="Foxtrot"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="37" name="mapCity"/>
+    <parameters>
+      <name value="Golf"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="38" name="mapCity"/>
+    <parameters>
+      <name value="Hotel"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="39" name="mapCity"/>
+    <parameters>
+      <name value="India"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="40" name="mapCity"/>
+    <parameters>
+      <name value="Juliett"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="41" name="mapCity"/>
+    <parameters>
+      <name value="Kilo"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="42" name="mapCity"/>
+    <parameters>
+      <name value="Lima"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="43" name="mapCity"/>
+    <parameters>
+      <name value="Mike"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="44" name="mapCity"/>
+    <parameters>
+      <name value="November"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="45" name="mapCity"/>
+    <parameters>
+      <name value="Oscar"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="46" name="mapCity"/>
+    <parameters>
+      <name value="Papa"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="47" name="mapCity"/>
+    <parameters>
+      <name value="Quebec"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="48" name="mapCity"/>
+    <parameters>
+      <name value="Romeo"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="49" name="mapCity"/>
+    <parameters>
+      <name value="Sierra"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="50" name="mapCity"/>
+    <parameters>
+      <name value="Tango"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="51" name="mapCity"/>
+    <parameters>
+      <name value="Uniform"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="52" name="mapCity"/>
+    <parameters>
+      <name value="Victor"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="53" name="mapCity"/>
+    <parameters>
+      <name value="Whiskey"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="54" name="mapCity"/>
+    <parameters>
+      <name value="Xray"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="55" name="mapCity"/>
+    <parameters>
+      <name value="Yankee"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="56" name="mapCity"/>
+    <parameters>
+      <name value="Zulu"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="duplicateCityName">
+    <command id="57" name="createCity"/>
+    <parameters>
+      <name value="Yankee"/>
+      <x value="123"/>
+      <y value="456"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="58" name="createCity"/>
+    <parameters>
+      <name value="Zolo"/>
+      <x value="512"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="59" name="createCity"/>
+    <parameters>
+      <name value="Weirdo"/>
+      <x value="385"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityAlreadyMapped">
+    <command id="62" name="mapCity"/>
+    <parameters>
+      <name value="Zulu"/>
+    </parameters>
+  </error>
+  <error type="nameNotInDictionary">
+    <command id="63" name="mapCity"/>
+    <parameters>
+      <name value="Beta"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="64" name="createCity"/>
+    <parameters>
+      <name value="Beta"/>
+      <x value="2048"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="cityOutOfBounds">
+    <command id="65" name="mapCity"/>
+    <parameters>
+      <name value="Beta"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="66" name="mapRoad"/>
+    <parameters>
+      <start value="Beta"/>
+      <end value="Whiskey"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="67" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Beta"/>
+    </parameters>
+  </error>
+  <error type="startEqualsEnd">
+    <command id="68" name="mapRoad"/>
+    <parameters>
+      <start value="Charlie"/>
+      <end value="Charlie"/>
+    </parameters>
+  </error>
+  <error type="startPointDoesNotExist">
+    <command id="69" name="mapRoad"/>
+    <parameters>
+      <start value="Zolo"/>
+      <end value="Beta"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="70" name="mapRoad"/>
+    <parameters>
+      <start value="Beta"/>
+      <end value="Weirdo"/>
+    </parameters>
+    <output>
+      <roadCreated end="Weirdo" start="Beta"/>
+    </output>
+  </success>
+  <error type="duplicateCityCoordinates">
+    <command id="89" name="createCity"/>
+    <parameters>
+      <name value="Alpha"/>
+      <x value="0"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="90" name="createCity"/>
+    <parameters>
+      <name value="Bravo"/>
+      <x value="0"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="91" name="createCity"/>
+    <parameters>
+      <name value="Charlie"/>
+      <x value="1024"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="92" name="createCity"/>
+    <parameters>
+      <name value="Delta"/>
+      <x value="1024"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="93" name="createCity"/>
+    <parameters>
+      <name value="Echo"/>
+      <x value="0"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="94" name="createCity"/>
+    <parameters>
+      <name value="Foxtrot"/>
+      <x value="512"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="95" name="createCity"/>
+    <parameters>
+      <name value="Golf"/>
+      <x value="512"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="96" name="createCity"/>
+    <parameters>
+      <name value="Hotel"/>
+      <x value="512"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="97" name="createCity"/>
+    <parameters>
+      <name value="India"/>
+      <x value="1024"/>
+      <y value="512"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="98" name="createCity"/>
+    <parameters>
+      <name value="Juliett"/>
+      <x value="0"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="99" name="createCity"/>
+    <parameters>
+      <name value="Kilo"/>
+      <x value="256"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="100" name="createCity"/>
+    <parameters>
+      <name value="Lima"/>
+      <x value="256"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="101" name="createCity"/>
+    <parameters>
+      <name value="Mike"/>
+      <x value="768"/>
+      <y value="256"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="102" name="createCity"/>
+    <parameters>
+      <name value="November"/>
+      <x value="256"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="103" name="createCity"/>
+    <parameters>
+      <name value="Oscar"/>
+      <x value="768"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="104" name="createCity"/>
+    <parameters>
+      <name value="Papa"/>
+      <x value="0"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="105" name="createCity"/>
+    <parameters>
+      <name value="Quebec"/>
+      <x value="768"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="106" name="createCity"/>
+    <parameters>
+      <name value="Romeo"/>
+      <x value="768"/>
+      <y value="1024"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="107" name="createCity"/>
+    <parameters>
+      <name value="Sierra"/>
+      <x value="1024"/>
+      <y value="768"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="108" name="createCity"/>
+    <parameters>
+      <name value="Tango"/>
+      <x value="128"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="109" name="createCity"/>
+    <parameters>
+      <name value="Uniform"/>
+      <x value="128"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="110" name="createCity"/>
+    <parameters>
+      <name value="Victor"/>
+      <x value="0"/>
+      <y value="128"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="111" name="createCity"/>
+    <parameters>
+      <name value="Whiskey"/>
+      <x value="0"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="112" name="createCity"/>
+    <parameters>
+      <name value="Xray"/>
+      <x value="384"/>
+      <y value="0"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="113" name="createCity"/>
+    <parameters>
+      <name value="Yankee"/>
+      <x value="384"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="duplicateCityCoordinates">
+    <command id="114" name="createCity"/>
+    <parameters>
+      <name value="Zulu"/>
+      <x value="512"/>
+      <y value="384"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="116" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Charlie"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="117" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Bravo"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="118" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Delta"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="119" name="mapRoad"/>
+    <parameters>
+      <start value="Bravo"/>
+      <end value="Delta"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="120" name="mapRoad"/>
+    <parameters>
+      <start value="Delta"/>
+      <end value="Hotel"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="121" name="mapRoad"/>
+    <parameters>
+      <start value="Hotel"/>
+      <end value="Alpha"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="122" name="mapRoad"/>
+    <parameters>
+      <start value="Oscar"/>
+      <end value="Bravo"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="123" name="mapRoad"/>
+    <parameters>
+      <start value="Zulu"/>
+      <end value="Juliett"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="124" name="mapRoad"/>
+    <parameters>
+      <start value="Juliett"/>
+      <end value="Hotel"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="125" name="mapRoad"/>
+    <parameters>
+      <start value="Alpha"/>
+      <end value="Xray"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="126" name="mapRoad"/>
+    <parameters>
+      <start value="Victor"/>
+      <end value="Mike"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="127" name="mapRoad"/>
+    <parameters>
+      <start value="Mike"/>
+      <end value="Lima"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="128" name="mapRoad"/>
+    <parameters>
+      <start value="Lima"/>
+      <end value="Golf"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="129" name="mapRoad"/>
+    <parameters>
+      <start value="Golf"/>
+      <end value="Charlie"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="130" name="mapRoad"/>
+    <parameters>
+      <start value="Juliett"/>
+      <end value="Romeo"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="131" name="mapRoad"/>
+    <parameters>
+      <start value="Quebec"/>
+      <end value="Delta"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="132" name="mapRoad"/>
+    <parameters>
+      <start value="Delta"/>
+      <end value="Uniform"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="133" name="mapRoad"/>
+    <parameters>
+      <start value="Kilo"/>
+      <end value="Hotel"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="134" name="mapRoad"/>
+    <parameters>
+      <start value="Oscar"/>
+      <end value="Tango"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="135" name="mapRoad"/>
+    <parameters>
+      <start value="Tango"/>
+      <end value="Foxtrot"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="136" name="mapRoad"/>
+    <parameters>
+      <start value="Foxtrot"/>
+      <end value="India"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="137" name="mapRoad"/>
+    <parameters>
+      <start value="Tango"/>
+      <end value="Charlie"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="138" name="mapRoad"/>
+    <parameters>
+      <start value="Yankee"/>
+      <end value="Alpha"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="139" name="mapRoad"/>
+    <parameters>
+      <start value="Sierra"/>
+      <end value="Yankee"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="140" name="mapRoad"/>
+    <parameters>
+      <start value="Zulu"/>
+      <end value="Echo"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="141" name="mapRoad"/>
+    <parameters>
+      <start value="Whiskey"/>
+      <end value="Echo"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="142" name="mapRoad"/>
+    <parameters>
+      <start value="Tango"/>
+      <end value="Delta"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="143" name="mapRoad"/>
+    <parameters>
+      <start value="Kilo"/>
+      <end value="Golf"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="144" name="mapRoad"/>
+    <parameters>
+      <start value="November"/>
+      <end value="Uniform"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="145" name="mapRoad"/>
+    <parameters>
+      <start value="Yankee"/>
+      <end value="Zulu"/>
+    </parameters>
+  </error>
+  <error type="startOrEndIsIsolated">
+    <command id="146" name="mapRoad"/>
+    <parameters>
+      <start value="Charlie"/>
+      <end value="Alpha"/>
+    </parameters>
+  </error>
+  <error type="startEqualsEnd">
+    <command id="147" name="mapRoad"/>
+    <parameters>
+      <start value="Charlie"/>
+      <end value="Charlie"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="148" name="createCity"/>
+    <parameters>
+      <name value="Outlaw"/>
+      <x value="1024"/>
+      <y value="1025"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="149" name="createCity"/>
+    <parameters>
+      <name value="Bandit"/>
+      <x value="1026"/>
+      <y value="1026"/>
+      <radius value="1"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="roadOutOfBounds">
+    <command id="147" name="mapRoad"/>
+    <parameters>
+      <start value="Outlaw"/>
+      <end value="Bandit"/>
+    </parameters>
+  </error>
+  <success>
+    <command name="printPMQuadtree"/>
+    <parameters/>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <gray x="256" y="768">
+            <gray x="128" y="896">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Bravo" radius="1" x="0" y="1024"/>
+              </black>
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Papa" radius="1" x="0" y="768"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="November" radius="1" x="256" y="768"/>
+              </black>
+            </gray>
+            <gray x="384" y="896">
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Hotel" radius="1" x="512" y="1024"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="November" radius="1" x="256" y="768"/>
+              </black>
+              <white/>
+            </gray>
+            <gray x="128" y="640">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Papa" radius="1" x="0" y="768"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="November" radius="1" x="256" y="768"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Echo" radius="1" x="0" y="512"/>
+              </black>
+              <white/>
+            </gray>
+            <gray x="384" y="640">
+              <black cardinality="1">
+                <isolatedCity color="black" name="November" radius="1" x="256" y="768"/>
+              </black>
+              <white/>
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Golf" radius="1" x="512" y="512"/>
+              </black>
+            </gray>
+          </gray>
+          <gray x="768" y="768">
+            <gray x="640" y="896">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Hotel" radius="1" x="512" y="1024"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Romeo" radius="1" x="768" y="1024"/>
+              </black>
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Oscar" radius="1" x="768" y="768"/>
+              </black>
+            </gray>
+            <gray x="896" y="896">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Romeo" radius="1" x="768" y="1024"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Delta" radius="1" x="1024" y="1024"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Oscar" radius="1" x="768" y="768"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Sierra" radius="1" x="1024" y="768"/>
+              </black>
+            </gray>
+            <gray x="640" y="640">
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Oscar" radius="1" x="768" y="768"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Golf" radius="1" x="512" y="512"/>
+              </black>
+              <white/>
+            </gray>
+            <gray x="896" y="640">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Oscar" radius="1" x="768" y="768"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Sierra" radius="1" x="1024" y="768"/>
+              </black>
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="India" radius="1" x="1024" y="512"/>
+              </black>
+            </gray>
+          </gray>
+          <gray x="256" y="256">
+            <gray x="128" y="384">
+              <gray x="64" y="448">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Echo" radius="1" x="0" y="512"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Whiskey" radius="1" x="0" y="384"/>
+                </black>
+                <white/>
+              </gray>
+              <white/>
+              <gray x="64" y="320">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Whiskey" radius="1" x="0" y="384"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Juliett" radius="1" x="0" y="256"/>
+                </black>
+                <white/>
+              </gray>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Lima" radius="1" x="256" y="256"/>
+              </black>
+            </gray>
+            <gray x="384" y="384">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Yankee" radius="1" x="384" y="384"/>
+              </black>
+              <gray x="448" y="448">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Golf" radius="1" x="512" y="512"/>
+                </black>
+                <gray x="416" y="416">
+                  <white/>
+                  <white/>
+                  <gray x="400" y="400">
+                    <white/>
+                    <white/>
+                    <gray x="392" y="392">
+                      <white/>
+                      <white/>
+                      <gray x="388" y="388">
+                        <white/>
+                        <white/>
+                        <gray x="386" y="386">
+                          <white/>
+                          <white/>
+                          <gray x="385" y="385">
+                            <white/>
+                            <white/>
+                            <gray x="384" y="384">
+                              <black cardinality="1">
+                                <isolatedCity color="black" name="Yankee" radius="1" x="384" y="384"/>
+                              </black>
+                              <black cardinality="1">
+                                <isolatedCity color="black" name="Yankee" radius="1" x="384" y="384"/>
+                              </black>
+                              <black cardinality="1">
+                                <isolatedCity color="black" name="Yankee" radius="1" x="384" y="384"/>
+                              </black>
+                              <black cardinality="1">
+                                <isolatedCity color="black" name="Yankee" radius="1" x="384" y="384"/>
+                              </black>
+                            </gray>
+                            <black cardinality="2">
+                              <city color="black" name="Weirdo" radius="1" x="385" y="384"/>
+                              <road end="Weirdo" start="Beta"/>
+                            </black>
+                          </gray>
+                          <black cardinality="1">
+                            <road end="Weirdo" start="Beta"/>
+                          </black>
+                        </gray>
+                        <black cardinality="1">
+                          <road end="Weirdo" start="Beta"/>
+                        </black>
+                      </gray>
+                      <black cardinality="1">
+                        <road end="Weirdo" start="Beta"/>
+                      </black>
+                    </gray>
+                    <black cardinality="1">
+                      <road end="Weirdo" start="Beta"/>
+                    </black>
+                  </gray>
+                  <black cardinality="1">
+                    <road end="Weirdo" start="Beta"/>
+                  </black>
+                </gray>
+                <black cardinality="2">
+                  <isolatedCity color="black" name="Zulu" radius="1" x="512" y="384"/>
+                  <road end="Weirdo" start="Beta"/>
+                </black>
+              </gray>
+              <gray x="320" y="320">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Yankee" radius="1" x="384" y="384"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Lima" radius="1" x="256" y="256"/>
+                </black>
+                <white/>
+              </gray>
+              <gray x="448" y="320">
+                <gray x="416" y="352">
+                  <gray x="400" y="368">
+                    <gray x="392" y="376">
+                      <gray x="388" y="380">
+                        <gray x="386" y="382">
+                          <gray x="385" y="383">
+                            <gray x="384" y="383">
+                              <white/>
+                              <white/>
+                              <white/>
+                              <white/>
+                            </gray>
+                            <black cardinality="2">
+                              <city color="black" name="Weirdo" radius="1" x="385" y="384"/>
+                              <road end="Weirdo" start="Beta"/>
+                            </black>
+                            <white/>
+                            <white/>
+                          </gray>
+                          <white/>
+                          <white/>
+                          <white/>
+                        </gray>
+                        <white/>
+                        <white/>
+                        <white/>
+                      </gray>
+                      <white/>
+                      <white/>
+                      <white/>
+                    </gray>
+                    <white/>
+                    <white/>
+                    <white/>
+                  </gray>
+                  <white/>
+                  <white/>
+                  <white/>
+                </gray>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Zulu" radius="1" x="512" y="384"/>
+                </black>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+            <gray x="128" y="128">
+              <gray x="64" y="192">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Juliett" radius="1" x="0" y="256"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Victor" radius="1" x="0" y="128"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Tango" radius="1" x="128" y="128"/>
+                </black>
+              </gray>
+              <gray x="192" y="192">
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Lima" radius="1" x="256" y="256"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Tango" radius="1" x="128" y="128"/>
+                </black>
+                <white/>
+              </gray>
+              <gray x="64" y="64">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Victor" radius="1" x="0" y="128"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Tango" radius="1" x="128" y="128"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Alpha" radius="1" x="0" y="0"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Uniform" radius="1" x="128" y="0"/>
+                </black>
+              </gray>
+              <gray x="192" y="64">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Tango" radius="1" x="128" y="128"/>
+                </black>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Uniform" radius="1" x="128" y="0"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Kilo" radius="1" x="256" y="0"/>
+                </black>
+              </gray>
+            </gray>
+            <gray x="384" y="128">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Lima" radius="1" x="256" y="256"/>
+              </black>
+              <white/>
+              <gray x="320" y="64">
+                <white/>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Kilo" radius="1" x="256" y="0"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Xray" radius="1" x="384" y="0"/>
+                </black>
+              </gray>
+              <gray x="448" y="64">
+                <white/>
+                <white/>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Xray" radius="1" x="384" y="0"/>
+                </black>
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Foxtrot" radius="1" x="512" y="0"/>
+                </black>
+              </gray>
+            </gray>
+          </gray>
+          <gray x="768" y="256">
+            <gray x="640" y="384">
+              <gray x="576" y="448">
+                <black cardinality="1">
+                  <isolatedCity color="black" name="Golf" radius="1" x="512" y="512"/>
+                </black>
+                <white/>
+                <black cardinality="2">
+                  <isolatedCity color="black" name="Zulu" radius="1" x="512" y="384"/>
+                  <road end="Weirdo" start="Beta"/>
+                </black>
+                <black cardinality="1">
+                  <road end="Weirdo" start="Beta"/>
+                </black>
+              </gray>
+              <black cardinality="1">
+                <road end="Weirdo" start="Beta"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Zulu" radius="1" x="512" y="384"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Mike" radius="1" x="768" y="256"/>
+              </black>
+            </gray>
+            <gray x="896" y="384">
+              <black cardinality="1">
+                <road end="Weirdo" start="Beta"/>
+              </black>
+              <black cardinality="2">
+                <isolatedCity color="black" name="India" radius="1" x="1024" y="512"/>
+                <road end="Weirdo" start="Beta"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Mike" radius="1" x="768" y="256"/>
+              </black>
+              <white/>
+            </gray>
+            <gray x="640" y="128">
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Mike" radius="1" x="768" y="256"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Foxtrot" radius="1" x="512" y="0"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Quebec" radius="1" x="768" y="0"/>
+              </black>
+            </gray>
+            <gray x="896" y="128">
+              <black cardinality="1">
+                <isolatedCity color="black" name="Mike" radius="1" x="768" y="256"/>
+              </black>
+              <white/>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Quebec" radius="1" x="768" y="0"/>
+              </black>
+              <black cardinality="1">
+                <isolatedCity color="black" name="Charlie" radius="1" x="1024" y="0"/>
+              </black>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,50 @@
+<commands
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="part2in.xsd"
+        spatialWidth="1024"
+        spatialHeight="1024"
+        g="3"
+        pmOrder="3">
+    <printAvlTree/>
+    <createCity name="a" x="1" y="1" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="b" x="1" y="2" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="c" x="1" y="3" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="d" x="1" y="4" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="e" x="1" y="5" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="f" x="1" y="6" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="g" x="1" y="7" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="h" x="1" y="8" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="i" x="1" y="9" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="j" x="1" y="10" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="k" x="1" y="11" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="l" x="1" y="12" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="m" x="1" y="13" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="n" x="1" y="14" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="o" x="1" y="15" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="p" x="1" y="16" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="q" x="1" y="17" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="r" x="1" y="18" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="s" x="1" y="3" radius="0" color="black"/>
+    <printAvlTree/>
+    <createCity name="t" x="1" y="4" radius="0" color="black"/>
+
+    <printAvlTree/>
+</commands>
