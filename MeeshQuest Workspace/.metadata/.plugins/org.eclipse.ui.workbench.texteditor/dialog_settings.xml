@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rangeCities" key="selection"/>
+		<item value="shortestPath" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="rangecities"/>
-			<item value="processprintpm"/>
-			<item value="processprint"/>
-			<item value="addCityNode"/>
-			<item value="status 1"/>
+			<item value="shortestpath"/>
+			<item value="cl"/>
 			<item value="clear"/>
-			<item value="clera"/>
-			<item value="processprintpmquad"/>
+			<item value="clearall"/>
+			<item value="rangecities"/>
+			<item value="system.out.prin"/>
+			<item value="containsedge"/>
+			<item value="maproad"/>
 		</list>
 		<list key="replacehistory">
 			<item value="compareVal"/>
@@ -25,7 +25,7 @@
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="384" key="DIALOG_HEIGHT"/>
-		<item value="696" key="DIALOG_X_ORIGIN"/>
-		<item value="272" key="DIALOG_Y_ORIGIN"/>
+		<item value="170" key="DIALOG_X_ORIGIN"/>
+		<item value="275" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

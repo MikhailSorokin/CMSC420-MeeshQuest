@@ -8,7 +8,7 @@ package cmsc420.meeshquest.datastructures;
  *
  * @param <V>
  */
-public class Edge <V extends Comparable<V>> {
+public class Edge <V> {
 
   //These variables are all of the components that comprise
   //an Edge object.

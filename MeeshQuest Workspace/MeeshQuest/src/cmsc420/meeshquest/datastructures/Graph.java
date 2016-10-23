@@ -13,6 +13,8 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.TreeMap;
 
+import cmsc420.meeshquest.citymapobjects.City;
+
 /*Author: Mikhail Sorokin, University of Maryland College Park
  msorokin, 113198021, Discussion section: 0203. */
 
@@ -25,7 +27,7 @@ import java.util.TreeMap;
  *  costs.associated with each edge lying in between two vertices.
  */
 
-public class Graph<V extends Comparable<V>> {
+public class Graph<V> {
 
   /*All the vertices are stored in the vertices list*/
   private List<V> allVertices;
@@ -152,6 +154,23 @@ public class Graph<V extends Comparable<V>> {
       throw new IllegalArgumentException();
     } else
       edges.add(edge);
+  }
+  
+  public boolean containsEdge(V source, V dest, int cost) {
+	  for (Edge<V> edge: edges) {
+		  City start = (City)edge.getSource();
+		  City end = (City)edge.getDest();
+		  
+		  City sourceCity = (City)source;
+		  City destCity = (City)dest;
+		  
+		  if (start.getName().compareTo(sourceCity.getName()) == 0
+				  && end.getName().compareTo(destCity.getName()) == 0) {
+			  return true;
+		  }
+	  }
+
+	  return false;
   }
 
   /**
@@ -373,12 +392,12 @@ public class Graph<V extends Comparable<V>> {
     shortestPath.removeAll(shortestPath);
 
     // First check if source and dest are the same
-    if (sourceVertex.compareTo(destVertex) == 0) {
+    /*if (sourceVertex.compareTo(destVertex) == 0) {
       shortestPath = Collections.emptyList();
       return 0;
     } // Else, check if there is even a sourceVertex or
     // destVertex
-    else if (!allVertices.contains(sourceVertex)
+    else*/ if (!allVertices.contains(sourceVertex)
         || !allVertices.contains(destVertex)) {
       throw new IllegalArgumentException();
     }  else {
@@ -484,7 +503,7 @@ public class Graph<V extends Comparable<V>> {
       return -1;
     }
     return minValue;
-  }
+  } 
 
   public String toString() {
     String empty = "";

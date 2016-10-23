@@ -30,4 +30,12 @@ public class Line implements Geometry2D {
 		return endCity;
 	}
 
+	public void setStartCity(City city) {
+		startCity = city;
+	}
+	
+	public void setEndCity(City city) {
+		endCity = city;
+	}
+
 }

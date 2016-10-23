@@ -15,6 +15,7 @@
  <nearestCity x="50" y="10"/>
  
  <mapRoad start="Baltimore" end="Chicago"/>
+ </printPMQuadtree>
  <nearestCity x="100" y="100"/>
  
  <mapRoad start="Chicago" end="New_York"/>

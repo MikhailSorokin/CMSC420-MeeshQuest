@@ -35,7 +35,7 @@ public class MeeshQuest {
 	 *  whether to open local XML test file or test on submit server. -Ruofei 
 	 */
 	private static String pathName = "src/Inputs/part2/SingleTest/";
-	private static final boolean LOCAL_TEST = true; 
+	private static final boolean LOCAL_TEST = false; 
 	private static final boolean GENERATE_JUNIT_SRC = false;
 	private static String testName = "";
 	
@@ -189,6 +189,8 @@ public class MeeshQuest {
 			command.processRangeCities(commandNode);
 		} else if (name.equals("nearestCity")) {
 			command.processNearestCity(commandNode);
+		} else if (name.equals("nearestIsolatedCity")) {
+			command.processNearestIsolatedCity(commandNode);
 		} else if (name.equals("printAvlTree")) {
 			command.processPrintAvlTree(commandNode);
 		} else if (name.equals("mapRoad")) {
