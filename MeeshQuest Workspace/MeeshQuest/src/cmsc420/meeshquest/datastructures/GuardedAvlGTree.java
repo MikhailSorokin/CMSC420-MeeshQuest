@@ -2,6 +2,8 @@ package cmsc420.meeshquest.datastructures;
 
 import java.util.Comparator;
 import java.util.TreeMap;
+
+import cmsc420.sortedmap.AvlGTree;
     
 public class GuardedAvlGTree<K, V> extends AvlGTree<K, V> {
     private TreeMap<K, V> guard;

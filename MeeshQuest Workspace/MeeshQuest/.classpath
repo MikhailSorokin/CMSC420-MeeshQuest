@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="C:/Users/Mikhail Sorokin/Desktop/Junior First Semester/Classes/CMSC420/CMSC420-MeeshQuest/Util Jars/cmsc420util.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mikhail Sorokin/Desktop/Junior First Semester/Classes/CMSC420/CMSC420-MeeshQuest/Util Jars/SortedMapExample.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

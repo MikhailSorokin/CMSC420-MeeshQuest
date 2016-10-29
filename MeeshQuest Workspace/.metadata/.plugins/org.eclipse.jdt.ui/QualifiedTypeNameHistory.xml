@@ -4,10 +4,7 @@
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="meeshquestp1.utilities.MeeshQuestGUI"/>
 <fullyQualifiedTypeName name="cmsc420.xml.XmlUtility"/>
-<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="java.awt.geom.Point2D.Float"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.utilities.XmlParser"/>
 <fullyQualifiedTypeName name="cmsc420.util.SkipList.Node"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.InputStream"/>
@@ -24,8 +21,24 @@
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.Node"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.Line"/>
-<fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.Point"/>
 <fullyQualifiedTypeName name="cmsc420.geom.Geometry2D"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.City"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.Graph"/>
+<fullyQualifiedTypeName name="java.awt.geom.Rectangle2D.Float"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.exception.CityOutOfBoundsException"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.exception.RoadOutOfBoundsException"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.Point"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D.Float"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.util.ConcurrentModificationException"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.CityNameComparator"/>
+<fullyQualifiedTypeName name="java.awt.geom.Arc2D"/>
+<fullyQualifiedTypeName name="java.awt.geom.Arc2D.Double"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.AvlGTree"/>
 </qualifiedTypeNameHistroy>

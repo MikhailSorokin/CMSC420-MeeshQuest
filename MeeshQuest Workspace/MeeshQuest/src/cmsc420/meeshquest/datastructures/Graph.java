@@ -51,16 +51,10 @@ public class Graph<V> {
    *
    * @param vertex - data to add to current object Graph
    */
-  public void addVertex(V vertex) throws IllegalArgumentException {
+  public void addVertex(V vertex) {
     if (vertex == null) {
       throw new NullPointerException();
-    } else if (allVertices.contains(vertex)) {
-      /*
-       * If the current graph object already has this vertex, then throw an
-       * exception.
-       */
-      throw new IllegalArgumentException();
-    } else {
+    } else if (!allVertices.contains(vertex)) {
       allVertices.add(vertex);
     }
   }

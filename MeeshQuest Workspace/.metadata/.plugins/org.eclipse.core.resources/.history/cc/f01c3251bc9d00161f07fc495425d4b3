@@ -1,0 +1,11 @@
+package cmsc420.meeshquest.junittests;
+
+import static org.junit.Assert;
+
+public class AvlGTreeTests {
+
+	public void test() {
+		assert(true);
+	}
+	
+}

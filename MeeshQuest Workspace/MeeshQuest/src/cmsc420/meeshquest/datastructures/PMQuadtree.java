@@ -11,6 +11,7 @@ import cmsc420.meeshquest.citymapobjects.Line;
 import cmsc420.meeshquest.citymapobjects.Point;
 import cmsc420.meeshquest.exception.CityAlreadyMappedException;
 import cmsc420.meeshquest.exception.CityOutOfBoundsException;
+import cmsc420.meeshquest.exception.RoadOutOfBoundsException;
 
 public class PMQuadtree {
 
@@ -100,8 +101,7 @@ public class PMQuadtree {
 	 * @throws CityOutOfBoundsException
 	 *             city's location is outside the bounds of the spatial map
 	 */
-	public void add(City city) throws CityAlreadyMappedException,
-			CityOutOfBoundsException {
+	public void add(City city) throws CityOutOfBoundsException {
 		/* check bounds */
 		int x = (int) city.getX();
 		int y = (int) city.getY();
@@ -128,29 +128,39 @@ public class PMQuadtree {
 	 * @throws CityOutOfBoundsException
 	 *             city's location is outside the bounds of the spatial map
 	 */
-	public void add(City startCity, City endCity) throws CityAlreadyMappedException,
-			CityOutOfBoundsException {
-		/* check bounds */
+	public void add(City startCity, City endCity) throws RoadOutOfBoundsException {
+		/* check bounds (with roads too!)*/
 		int startX = (int) startCity.getX();
 		int startY = (int) startCity.getY();
-		if (startX < spatialOrigin.x || startX >= spatialWidth || startY < spatialOrigin.y
-				|| startY >= spatialHeight) {
-			/* city out of bounds */
-			throw new CityOutOfBoundsException();
-		} else {
-			//Need a check to see if a point is already contained;
-			Point start = new Point(startCity);
-			Point end = new Point(endCity);
-			
-			if (!contains(startCity.getName()))
+		int endX = (int) endCity.getX();
+		int endY = (int) endCity.getY();
+
+		//FIXED - Need a check to see if a point is already contained;
+		Point start = new Point(startCity);
+		Point end = new Point(endCity);
+		Line road = new Line(startCity, endCity);
+		Rectangle2D.Double spatialMapRect = new Rectangle2D.Double(spatialOrigin.getX(),
+				spatialOrigin.getY(), (double)spatialWidth, (double)spatialHeight);
+		
+		if (spatialMapRect.intersectsLine(road.getLine())) {
+			//See which points can be added and used
+			if (startX >= spatialOrigin.x && startX <= spatialWidth && startY >= spatialOrigin.y 
+					&& startY <= spatialHeight && !contains(startCity.getName())) {
 				root = root.add(start, spatialOrigin, spatialWidth, spatialHeight);
-			if (!contains(endCity.getName()))
+				cityNames.add(startCity.getName());
+			} 
+			
+			if (endX >= spatialOrigin.x && endX <= spatialWidth && endY >= spatialOrigin.y 
+					&& endY <= spatialHeight && !contains(endCity.getName())) {
 				root = root.add(end, spatialOrigin, spatialWidth, spatialHeight);
-			root = root.add(new Line(startCity, endCity), spatialOrigin, spatialWidth, spatialHeight);
-	
-			/* insert city into PRQuadTree */
-			cityNames.add(startCity.getName());
-			cityNames.add(endCity.getName());
+				cityNames.add(endCity.getName());
+			}
+			
+			//Set the new line here
+			root = root.add(road, spatialOrigin, spatialWidth, spatialHeight);
+		
+		}  else {
+			throw new RoadOutOfBoundsException();
 		}
 	}
 	/**
@@ -187,8 +197,6 @@ public class PMQuadtree {
 	public boolean contains(String name) {
 		return cityNames.contains(name);
 	}
-
-
 	/**
 	 * Returns if any part of a circle lies within a given rectangular bounds
 	 * according to the rules of the PR Quadtree.
@@ -249,7 +257,8 @@ public class PMQuadtree {
 
 
 	private double currDistance; 
-	private City closestCity;       
+	private City closestCity;    
+	private City[] closestCities;
 	
 	public City findClosestPoint(int givenX, int givenY, boolean usingIsolatedCity) { 
 		currDistance = Double.MAX_VALUE; 
@@ -287,6 +296,112 @@ public class PMQuadtree {
 								closestCity = point.getCity(); 
 							} 
 						} 
+					}
+				}
+			} 
+		} 
+		return closestCity; 
+	}
+	
+	public City[] findClosestRoad(int givenX, int givenY) { 
+		Point2D.Double givenPoint = new Point2D.Double(givenX, givenY);
+		currDistance = Double.MAX_VALUE;
+		closestCities = new City[2]; 
+		return findClosestRoad(givenPoint, root); 
+	} 
+
+	private City[] findClosestRoad(Point2D givenPoint, Node node) {
+		if (node.getType() != Node.EMPTY) { 
+			if (node.getType() == Node.INTERNAL) { 
+				GreyNode greyNode = (GreyNode)node; 
+				for (int i = 0; i < 4; i++) {
+					findClosestRoad(givenPoint, greyNode.children[i]); 
+				}
+			} else if (node.getType() == Node.LEAF) {  
+				for (Geometry2D g : ((BlackNode) node).getAllList()) {
+					if (g.getType() == Geometry2D.SEGMENT) {
+						Line line = (Line)g;
+						double distance = line.getLine().ptLineDist(givenPoint);
+						//System.out.println("Start: " + line.getStartCity().getName() + ", End: " + line.getEndCity().getName() + ", Distance: " + distance);
+						
+						if (distance < currDistance) { 
+							if (line.getStartCity().getName().compareTo(line.getEndCity().getName()) < 0) {
+								closestCities[0] = line.getStartCity(); 
+								closestCities[1] = line.getEndCity(); 
+							} else {
+								closestCities[0] = line.getEndCity(); 
+								closestCities[1] = line.getStartCity(); 
+							}
+							currDistance = distance; 
+						} else if (distance == currDistance && closestCities[0] != null && closestCities[1] != null) { 
+							int firstComparator = closestCities[0].getName().compareTo
+									(line.getStartCity().getName()); 
+							if (firstComparator == 0) { 
+								int secondComparator = closestCities[1].getName().compareTo
+										(line.getEndCity().getName()); 
+								if (secondComparator < 0) {
+									//Only when endCity is larger, 
+									if (line.getStartCity().getName().compareTo(line.getEndCity().getName()) < 0) {
+										closestCities[0] = line.getStartCity(); 
+										closestCities[1] = line.getEndCity(); 
+									} else {
+										closestCities[0] = line.getEndCity(); 
+										closestCities[1] = line.getStartCity(); 
+									}
+								}
+							} else if (firstComparator < 0) {
+								if (line.getStartCity().getName().compareTo(line.getEndCity().getName()) < 0) {
+									closestCities[0] = line.getStartCity(); 
+									closestCities[1] = line.getEndCity(); 
+								} else {
+									closestCities[0] = line.getEndCity(); 
+									closestCities[1] = line.getStartCity(); 
+								}
+							}
+						} 
+					}
+				}
+			} 
+		} 
+		return closestCities; 
+	} 
+	
+	public City findClosestRoad(City start, City end) { 
+		Line road = new Line(start, end);
+		currDistance = Double.MAX_VALUE; 
+		closestCity = null; 
+		return findClosestRoad(road, root); 
+	} 
+
+	private City findClosestRoad(Line road, Node node) {
+		if (node.getType() != Node.EMPTY) { 
+			if (node.getType() == Node.INTERNAL) { 
+				GreyNode greyNode = (GreyNode)node; 
+				for (int i = 0; i < 4; i++) {
+					findClosestRoad(road, greyNode.children[i]); 
+				}
+			} else if (node.getType() == Node.LEAF) {  
+				for (Geometry2D g : ((BlackNode) node).getAllList()) {
+					//Might need to include points as well
+					if (g.getType() == Geometry2D.POINT) {
+						Point point = (Point)g;
+						
+						if (road.getStartCity().getName().compareTo(point.getCity().getName()) != 0
+							&& road.getEndCity().getName().compareTo(point.getCity().getName()) != 0) {
+							double distance = road.getLine().ptLineDist(point.getPoint());
+							//System.out.println("Start: " + point.getCity().getName() + ", Distance: " + distance);
+							
+							if (distance < currDistance) { 
+								closestCity = point.getCity(); 
+								currDistance = distance; 
+							} else if (distance == currDistance && closestCity != null) { 
+								int value = closestCity.getName().compareTo
+										(point.getCity().getName()); 
+								if (value < 0) { 
+									closestCity = point.getCity(); 
+								} 
+							} 
+						}
 					}
 				}
 			} 
