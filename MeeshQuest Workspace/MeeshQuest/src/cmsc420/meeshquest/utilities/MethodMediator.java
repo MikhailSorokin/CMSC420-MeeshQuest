@@ -638,12 +638,25 @@ public class MethodMediator {
 	}
 	
 	public static Comparator<? super Geometry2D> getCompByRoad() {
+		CityNameComparator cnc = new CityNameComparator();
 		Comparator<Geometry2D> comp = new Comparator<Geometry2D>() {
 			@Override
 			public int compare(Geometry2D s1, Geometry2D s2) {
 				if (s1.getType() == Geometry2D.SEGMENT && s2.getType() == Geometry2D.SEGMENT) {
-					return ((Line)s2).getStartCity().getName().compareTo(
-						((Line)s1).getStartCity().getName());
+					if (cnc.compare(((Line)s1).getStartCity(), ((Line)s2).getStartCity()) < 0) {
+						return -1;
+					} else if (cnc.compare(((Line)s1).getStartCity(), ((Line)s2).getStartCity()) > 0) {
+						return 1;
+					} else {
+					//When all the starts are equal, do the end road comparison
+						if (cnc.compare(((Line)s1).getEndCity(), ((Line)s2).getEndCity()) < 0) {
+							return -1;
+						} else if (cnc.compare(((Line)s1).getEndCity(), ((Line)s2).getEndCity()) > 0) {
+							return 1;
+						} else {
+							return 0;
+						}
+					}
 				} else {
 					return 0;
 				}
@@ -674,6 +687,7 @@ public class MethodMediator {
 
 				for (Geometry2D g : blackNode.getAllList()) {
 					if (g.getType() == Geometry2D.SEGMENT) {
+						
 						Line road = ((Line)g);
 						if (road.getStartCity().getName().toLowerCase().compareTo
 								(road.getEndCity().getName().toLowerCase()) > 0) {
@@ -1087,7 +1101,7 @@ public class MethodMediator {
 				if (g.getType() == Geometry2D.SEGMENT) {
 					Line road = (Line)g;
 					//TODO: Need to calculate roads that are tangent to the circle
-					final double distance = road.getLine().ptLineDist(point);
+					final double distance = road.getLine().ptSegDist(point);
 					
 					if (distance <= radius) {
 						/* city is in range */

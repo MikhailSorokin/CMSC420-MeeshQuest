@@ -321,7 +321,7 @@ public class PMQuadtree {
 				for (Geometry2D g : ((BlackNode) node).getAllList()) {
 					if (g.getType() == Geometry2D.SEGMENT) {
 						Line line = (Line)g;
-						double distance = line.getLine().ptLineDist(givenPoint);
+						double distance = line.getLine().ptSegDist(givenPoint);
 						//System.out.println("Start: " + line.getStartCity().getName() + ", End: " + line.getEndCity().getName() + ", Distance: " + distance);
 						
 						if (distance < currDistance) { 
@@ -388,7 +388,7 @@ public class PMQuadtree {
 						
 						if (road.getStartCity().getName().compareTo(point.getCity().getName()) != 0
 							&& road.getEndCity().getName().compareTo(point.getCity().getName()) != 0) {
-							double distance = road.getLine().ptLineDist(point.getPoint());
+							double distance = road.getLine().ptSegDist(point.getPoint());
 							//System.out.println("Start: " + point.getCity().getName() + ", Distance: " + distance);
 							
 							if (distance < currDistance) { 

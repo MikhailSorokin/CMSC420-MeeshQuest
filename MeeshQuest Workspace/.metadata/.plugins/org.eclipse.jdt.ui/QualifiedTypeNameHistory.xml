@@ -41,4 +41,6 @@
 <fullyQualifiedTypeName name="java.awt.geom.Arc2D.Double"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.AvlGTree"/>
+<fullyQualifiedTypeName name="java.rmi.UnexpectedException"/>
+<fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
 </qualifiedTypeNameHistroy>

@@ -2,6 +2,7 @@ package cmsc420.sortedmap;
 
 import java.util.AbstractMap;
 import java.util.AbstractSet;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -411,16 +412,167 @@ public class AvlGTree<K, V> extends AbstractMap<K,V> implements SortedMap<K,V> {
 			return lastElem.getKey();
 	}
 
+	//This class must return a SortedMap class, so must make one in the
+	//first place.
 	@Override
-	public SortedMap<K, V> subMap(K arg0, K arg1) {
-		// TODO Auto-generated method stub
-		return null;
+	public SortedMap<K, V> subMap(K startKey, K endKey) {
+		return new SubMap(startKey, endKey);
+	}
+	
+	protected class SubMap implements SortedMap<K,V> {
+
+		K startKey;
+		K endKey;
+		
+		public SubMap(K startKey, K endKey) {
+			if (startKey == null || endKey == null)
+				throw new NullPointerException("Cannot have null keys!");
+			if (AvlGTree.this.compare(startKey, endKey) > 0)
+				throw new IllegalArgumentException("StartKey must be less than EndKey.");
+			this.startKey = startKey;
+			this.endKey = endKey;
+		}
+
+		@Override
+		public void clear() {
+			AvlGTree.this.clear();
+		}
+
+		@Override
+		public boolean containsKey(Object o) {
+			Object key = ((Map.Entry) o).getKey();
+			return AvlGTree.this.containsKey(key);
+		}
+
+		@Override
+		public boolean containsValue(Object o) {
+			Object value = ((Map.Entry) o).getKey();
+			return AvlGTree.this.containsValue(value);
+		}
+
+		@Override
+		public V get(Object key) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public boolean isEmpty() {
+			return AvlGTree.this.isEmpty();
+		}
+
+		//TODO: Implement in part 3
+		@Override
+		public Object put(Object key, Object value) {
+			throw new UnsupportedOperationException();
+		}
+
+		//TODO: Implement in part 3
+		@Override
+		public void putAll(Map m) {
+			throw new UnsupportedOperationException();
+		}
+
+		//TODO: Implement in part 3
+		@Override
+		public V remove(Object key) {
+			throw new UnsupportedOperationException();
+		}
+
+		@Override
+		public Comparator comparator() {
+			return AvlGTree.this.comparator;
+		}
+
+		@Override
+		public Set entrySet() {
+			return new AbstractSet() {
+
+
+				@Override
+				public int size() {
+					return SubMap.this.size();
+				}
+				
+				@Override
+				public Iterator iterator() {
+					return null;
+					//return AvlGTree.this.
+				}
+				
+			};
+		}
+		
+
+		@Override
+		public int size() {
+			/*int subsize = 0;
+			if (size() <= 0)
+				return null;
+			Node curr = SkipList.this.head;
+			for (int i = (SkipList.this.head.next.length - 1); i >= 0; --i) {
+				while ((curr.next[i] != null)
+						&& (SkipList.this.comp.compare(fromKey,
+								curr.next[i].key) >= 0))
+					curr = curr.next[i];
+			}
+			return curr.next[0];
+			while ((curr != null)
+					&& (AvlGTree.this.compare(curr.key, endKey) < 0)) {
+				++subsize;
+				curr = curr.next[0];
+			}
+			return subsize;*/
+			return 0;
+		}
+
+		@Override
+		public K firstKey() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public SortedMap headMap(Object toKey) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public Set keySet() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public K lastKey() {
+			return null;
+		}
+
+		@Override
+		public SortedMap subMap(Object fromKey, Object toKey) {
+			return null;
+		}
+
+		//TODO: Implement in part 3
+		@Override
+		public SortedMap tailMap(Object fromKey) {
+			throw new UnsupportedOperationException();
+		}
+
+		//TODO: Implement in part 3
+		@Override
+		public Collection values() {
+			throw new UnsupportedOperationException();
+		}
+
+		
 	}
 
+	//TODO: Implement in part 3
 	@Override
 	public SortedMap<K, V> tailMap(K arg0) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	//Looked at the GC: AbstractMap class on grep

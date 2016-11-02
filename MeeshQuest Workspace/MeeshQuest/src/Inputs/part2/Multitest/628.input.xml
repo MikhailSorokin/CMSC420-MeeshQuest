@@ -58,7 +58,8 @@
 	 <mapRoad start="Tokyo" end="Paris"/>
 	 <mapRoad start="Tokyo" end="Vancouver"/>
 	 
-	 
+ <printPMQuadtree />
+
  <rangeRoads x="600" y="300" radius="415" saveMap="rangeRoads"/>
  <rangeRoads x="880" y="700" radius="150" saveMap="rangeRoads"/>
  <rangeRoads x="500" y="600" radius="225" saveMap="rangeRoads"/>
