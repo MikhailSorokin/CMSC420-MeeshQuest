@@ -5,9 +5,11 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.awt.geom.Rectangle2D;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -958,7 +960,7 @@ public class MethodMediator {
 			addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
 		} else if (startCityName.equals(endCityName)) {
 			addErrorNode("startEqualsEnd", commandNode, parametersNode);
-		} else if (cityGraph.containsEdge(citiesByName.get(startCityName), citiesByName.get(endCityName), 0)) {
+		} else if (cityGraph.containsEdge(citiesByName.get(startCityName), citiesByName.get(endCityName))) {
 			addErrorNode("roadAlreadyMapped", commandNode, parametersNode);	
 		} else if (isolatedCities.contains(citiesByName.get(startCityName))
 				|| isolatedCities.contains(citiesByName.get(endCityName))) {
@@ -966,9 +968,15 @@ public class MethodMediator {
 		} else {
 			//FIXED: Rename to addRoadCreatedNode
 			try {
-				pmQuadtree.add(citiesByName.get(startCityName), citiesByName.get(endCityName));
-				cityGraph.addEdge(citiesByName.get(startCityName), citiesByName.get(endCityName), 0);
-				cityGraph.addEdge(citiesByName.get(endCityName), citiesByName.get(startCityName), 0);
+				City startCity = citiesByName.get(startCityName);
+				City endCity = citiesByName.get(endCityName);
+				pmQuadtree.add(startCity, endCity);
+				
+				//TODO: FIX - EW WHY DO YOU THIS MIKHAIL!!! DISGUSTING CODE for distance :(
+				double distanceBetweenCities = Math.sqrt((startCity.getX()-endCity.getX())*(startCity.getX()-endCity.getX())
+						+ (startCity.getY()-endCity.getY())*(startCity.getY()-endCity.getY()));
+				cityGraph.addEdge(citiesByName.get(startCityName), citiesByName.get(endCityName), distanceBetweenCities);
+				cityGraph.addEdge(citiesByName.get(endCityName), citiesByName.get(startCityName), distanceBetweenCities);
 				
 				addRoadCreatedNode(outputNode, citiesByName.get(startCityName), citiesByName.get(endCityName));
 				
@@ -1015,7 +1023,7 @@ public class MethodMediator {
 		final String endCityName = processStringAttribute(node, "end", parametersNode);
 
 		if (pmQuadtree.getRoot().getType() == Node.EMPTY &&
-				(!cityGraph.containsEdge(citiesByName.get(startCityName), citiesByName.get(endCityName), 0))) {
+				(!cityGraph.containsEdge(citiesByName.get(startCityName), citiesByName.get(endCityName)))) {
 			//FIXED: Need to do a test to see if the road is contained in the graph
 			addErrorNode("roadIsNotMapped", commandNode, parametersNode);
 		} else {
@@ -1137,141 +1145,111 @@ public class MethodMediator {
 		}
 	}
 
-	//	/**
-	//	 * Examines the distance from each city in a MX Quadtree node from the given
-	//	 * point.
-	//	 * 
-	//	 * @param node
-	//	 *            MX Quadtree node being examined
-	//	 * @param point
-	//	 *            point
-	//	 * @param nearCities
-	//	 *            priority queue of cities organized by how close they are to
-	//	 *            the point
-	//	 */
-	//	private void nearestCityHelper(Node node, Point2D.Float point,
-	//			PriorityQueue<NearestCity> nearCities) {
-	//		if (node.getType() == Node.LEAF) {
-	//			LeafNode leaf = (LeafNode) node;
-	//			NearestCity nearCity = new NearestCity(leaf.getCity(), point
-	//					.distance(leaf.getCity().toPoint2D()));
-	//			if (nearCity.compareTo(nearCities.peek()) < 0) {
-	//				nearCities.add(nearCity);
-	//			}
-	//		} else if (node.getType() == Node.INTERNAL) {
-	//			InternalNode internal = (InternalNode) node;
-	//			TreeSet<NearestQuadrant> nearestQuadrants = new TreeSet<NearestQuadrant>();
-	//			for (int i = 0; i < 4; i++) {
-	//				nearestQuadrants.add(new NearestQuadrant(Shape2DDistanceCalculator.distance(point, internal
-	//						.getChildRegion(i)), i));
-	//			}
-	//			
-	//			for (NearestQuadrant nearQuadrant : nearestQuadrants) {
-	//				final int i = nearQuadrant.getQuadrant(); 
-	//				
-	//				if (Shape2DDistanceCalculator.distance(point, internal
-	//						.getChildRegion(i)) <= nearCities.peek().getDistance()) {
-	//
-	//					nearestCityHelper(internal.getChild(i), point, nearCities);
-	//				}
-	//			}
-	//		}
-	//	}
-	//	
-	//	private class NearestQuadrant implements Comparable<NearestQuadrant> {
-	//
-	//		private double distance;
-	//		
-	//		private int quadrant;
-	//		
-	//		public NearestQuadrant(double distance, int quadrant) {
-	//			this.distance = distance;
-	//			this.quadrant = quadrant;
-	//		}
-	//
-	//		public int getQuadrant() {
-	//			return quadrant;
-	//		}
-	//
-	//		public int compareTo(NearestQuadrant o) {
-	//			if (distance < o.distance) {
-	//				return -1;
-	//			} else if (distance > o.distance) {
-	//				return 1;
-	//			} else {
-	//				if (quadrant < o.quadrant) {
-	//					return -1;
-	//				} else if (quadrant > o.quadrant) {
-	//					return 1;
-	//				} else {
-	//					return 0;
-	//				}
-	//			}
-	//		}
-	//		
-	//	}
-	//
-	//	/**
-	//	 * Used with the nearestCity command. Each NearestCity contains a city and
-	//	 * the city's distance from a give point. A NearestCity is less than another
-	//	 * if it's distance is smaller than the other's.
-	//	 * 
-	//	 * @author Ben Zoller
-	//	 * @version 1.0
-	//	 */
-	//	private class NearestCity implements Comparable<NearestCity> {
-	//		/** city */
-	//		private final City city;
-	//
-	//		/** city's distance to a point */
-	//		private final double distance;
-	//
-	//		/**
-	//		 * Constructs a city and it's distance from a point.
-	//		 * 
-	//		 * @param city
-	//		 *            city
-	//		 * @param distance
-	//		 *            distance from a point
-	//		 */
-	//		private NearestCity(final City city, final double distance) {
-	//			this.city = city;
-	//			this.distance = distance;
-	//		}
-	//
-	//		/**
-	//		 * Gets the city
-	//		 * 
-	//		 * @return city
-	//		 */
-	//		private City getCity() {
-	//			return city;
-	//		}
-	//
-	//		/**
-	//		 * Compares one city to another based on their distances.
-	//		 * 
-	//		 * @param otherNearCity
-	//		 *            other city
-	//		 * @return distance comparison results
-	//		 */
-	//		public int compareTo(final NearestCity otherNearCity) {
-	//			if (distance < otherNearCity.distance) {
-	//				return -1;
-	//			} else if (distance > otherNearCity.distance) {
-	//				return 1;
-	//			} else {
-	//				return city.getName().compareTo(otherNearCity.city.getName());
-	//			}
-	//		}
-	//
-	//		/**
-	//		 * Gets the distance
-	//		 * 
-	//		 * @return distance
-	//		 */
-	//		public double getDistance() {
-	//			return distance;
-	//		}
-	//	}
+	public void processShortestPath(Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+		final Element outputNode = results.createElement("output");
+
+		/* extract attribute values from command */
+		final String startCityName = processStringAttribute(node, "start", parametersNode);
+		final String endCityName = processStringAttribute(node, "end", parametersNode);
+
+		if (node.getAttribute("saveMap").compareTo("") != 0) {
+			processStringAttribute(node, "saveMap", parametersNode);
+		}
+		
+		if (node.getAttribute("saveHTML").compareTo("") != 0) {
+			processStringAttribute(node, "saveHTML", parametersNode);
+		}
+
+		/* print out cities within range */
+		if (citiesByName.get(startCityName) == null || !cityGraph.isVertex(citiesByName.get(startCityName))
+				|| !cityGraph.containsSourceVertexInEdge(citiesByName.get(startCityName))) {
+			addErrorNode("nonExistentStart", commandNode, parametersNode);
+		} else if (citiesByName.get(endCityName) == null || !cityGraph.isVertex(citiesByName.get(endCityName))
+				|| !cityGraph.containsDestVertexInEdge(citiesByName.get(endCityName))) {
+			addErrorNode("nonExistentEnd", commandNode, parametersNode);
+		} else if (startCityName.compareTo(endCityName) == 0) {
+			final Element pathNode = results.createElement("path");
+			
+			pathNode.setAttribute("length", "0.000");
+			pathNode.setAttribute("hops", "0");
+
+			outputNode.appendChild(pathNode);
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		} else {
+			double shortestPathCost = 0.0;
+			Element pathNode = null;
+
+			pathNode = results.createElement("path");
+			shortestPathCost = cityGraph.dijkstra(citiesByName.get(startCityName), 
+				citiesByName.get(endCityName));
+
+			if ((int)shortestPathCost == -1) {
+				addErrorNode("noPathExists", commandNode, parametersNode);
+			}  else {
+				LinkedList<City> path = cityGraph.getPath(citiesByName.get(endCityName));
+				DecimalFormat decimalFormat = new DecimalFormat("#.000");
+				pathNode.setAttribute("length", decimalFormat.format(shortestPathCost));
+				int hops = path.size() - 1;
+				pathNode.setAttribute("hops", Integer.toString(hops));
+				
+				int indexPoint = 0;
+				boolean isOdd = hops % 2 != 0 ? true: false;
+			    Arc2D.Double arc = new Arc2D.Double();
+				if (hops > 1) {
+					for (int i = 0; i < hops; i += 1) {
+						if (isOdd && indexPoint < hops - 2) {			
+							Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
+					    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
+					    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
+					    	
+						    arc.setArcByTangent(p1, p2, p3, 1);
+	    
+							indexPoint++;
+						} else if (!isOdd && indexPoint < hops - 2) {
+							Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
+					    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
+					    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
+					    	
+						    arc.setArcByTangent(p1, p2, p3, 1);
+						    
+							indexPoint++;
+						} else {
+							Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
+					    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
+					    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
+
+						    arc.setArcByTangent(p1, p2, p3, 1);
+						    
+						}
+
+						addRoadCreatedNode(pathNode, "road", path.get(i), path.get(i + 1));
+						if (i != hops - 1) {
+						    if (arc.getAngleExtent() >= -45.0 && arc.getAngleExtent() <= 45.0) {
+						    	final Element straightNode = results.createElement("straight");
+						    	pathNode.appendChild(straightNode);
+						    } else if (arc.getAngleExtent() >= -180.0 && arc.getAngleExtent() <= -45.0) {
+						    	final Element leftNode = results.createElement("left");
+						    	pathNode.appendChild(leftNode);
+						    } else if (arc.getAngleExtent() >= 45.0 && arc.getAngleExtent() <= 180.0) {
+						    	final Element rightNode = results.createElement("right");
+						    	pathNode.appendChild(rightNode);
+						    }
+						}
+					}
+				} else {
+					addRoadCreatedNode(pathNode, "road", path.get(0), path.get(1));
+				}
+
+				outputNode.appendChild(pathNode);
+
+				/* add success node to results */
+				addSuccessNode(commandNode, parametersNode, outputNode);
+			}
+		}
+	}
+	
 }

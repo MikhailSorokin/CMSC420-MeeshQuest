@@ -13,20 +13,20 @@ public class Edge <V> {
   //These variables are all of the components that comprise
   //an Edge object.
   private V source, dest;
-  private int weight;
+  private double weight;
   
   public Edge(V source, V dest) {
     this.source = source;
     this.dest = dest;
   }
   
-  public Edge(V source, V dest, int cost) {
+  public Edge(V source, V dest, double cost) {
     this.source = source;
     this.dest = dest;
     weight = cost;
   }
 
-  public int getWeight() {
+  public double getWeight() {
     return weight;
   }
   
@@ -46,8 +46,8 @@ public class Edge <V> {
     this.dest = dest;
   }
 
-  public void setCost(int weight) {
-    this.weight = weight;
+  public void setCost(double newCost) {
+    this.weight = newCost;
   }
 
   
