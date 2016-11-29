@@ -419,7 +419,7 @@ public class AvlGTree<K, V> extends AbstractMap<K,V> implements SortedMap<K,V> {
 		return new SubMap(startKey, endKey);
 	}
 	
-	protected class SubMap implements SortedMap<K,V> {
+	protected class SubMap extends AbstractMap<K, V> implements SortedMap<K,V> {
 
 		K startKey;
 		K endKey;
@@ -439,26 +439,42 @@ public class AvlGTree<K, V> extends AbstractMap<K,V> implements SortedMap<K,V> {
 		}
 
 		@Override
-		public boolean containsKey(Object o) {
-			Object key = ((Map.Entry) o).getKey();
+		public boolean containsKey(Object key) {
 			return AvlGTree.this.containsKey(key);
 		}
 
 		@Override
 		public boolean containsValue(Object o) {
-			Object value = ((Map.Entry) o).getKey();
-			return AvlGTree.this.containsValue(value);
+			return containsValueHelper(AvlGTree.this.root, o);
+		}
+		
+		private boolean containsValueHelper(AvlNode<K, V> node, Object val) {
+			V value = (V) val;
+			if (node == null) {
+				return false;
+			} else {
+				return (node.value.equals(value)) ? true : this.containsValueHelper(node.left, value) || this.containsValueHelper(node.right, value);
+			}
 		}
 
 		@Override
 		public V get(Object key) {
-			// TODO Auto-generated method stub
+			K key2 = (K)key;
+			AvlNode<K,V> value = findKey(key2);
+			return value == null ? null : value.value;
+		}
+		
+		private AvlNode<K,V> findKey(K Key) {
 			return null;
+		}
+		
+		public int hashCode() {
+			return System.identityHashCode(this); 
 		}
 
 		@Override
 		public boolean isEmpty() {
-			return AvlGTree.this.isEmpty();
+			return size() == 0;
 		}
 
 		//TODO: Implement in part 3
@@ -485,19 +501,93 @@ public class AvlGTree<K, V> extends AbstractMap<K,V> implements SortedMap<K,V> {
 		}
 
 		@Override
-		public Set entrySet() {
-			return new AbstractSet() {
+		public Set<Entry<K,V>> entrySet() {
+			return new AbstractSet<Entry<K,V>>() {
 
-
+				// Returns true if this set contains the specified element.
+				public boolean contains(Object o) {
+					return SubMap.this.containsKey(o);
+				}
+				
 				@Override
 				public int size() {
 					return SubMap.this.size();
 				}
 				
+				//Looked at the GC: AbstractMap class on grep
+				final class SubmapIterator implements Iterator<Map.Entry<K, V>> {
+					AvlNode<K, V> next;
+					int expectedModCount;
+					
+					SubmapIterator(AvlNode<K,V> firstElem) {
+						next = firstElem;
+						expectedModCount = modCount;
+					}
+
+					@Override
+					public boolean hasNext() {
+						return next != null;
+					}
+
+					@Override
+					public Map.Entry<K, V> next() {
+						AvlNode<K, V> elem = next;
+						if (hasNext()) {
+							next = getNextElem(elem);
+						}
+						return elem;
+					}
+					
+					AvlNode<K, V> getNextElem(AvlNode<K, V> curr) {
+						if (curr == null) 
+							throw new NoSuchElementException();
+						if (modCount != expectedModCount)
+							throw new ConcurrentModificationException();
+						if (curr.right != null) {
+							AvlNode<K, V> parent = curr.right;
+							while (parent.left != null)
+								parent = parent.left;
+							return parent;
+						} else {
+							AvlNode<K, V> parent = curr.parent;
+							AvlNode<K, V> child = curr;
+							while (parent != null && child == parent.right) {
+								child = parent;
+								parent = parent.parent;
+							}
+							return parent;
+						}
+					}
+				}
+				
 				@Override
-				public Iterator iterator() {
-					return null;
-					//return AvlGTree.this.
+				public Iterator<Entry<K,V>> iterator() {
+					AvlNode<K, V> firstElem = root;
+					if (firstElem != null)
+						while (firstElem.left != null)
+							//This gets the leftmost, or lowest element
+							firstElem = firstElem.left;
+					return new SubmapIterator(firstElem);
+				}
+				
+				// Compares the specified object with this set for equality.
+				public boolean equals(Object o) {
+					if (!(o instanceof Collection))
+						return false;
+					Collection s = (Collection) o;
+					if (s.size() == SubMap.this.size() && this.containsAll(s))
+						return true;
+					return false;
+				}
+
+				// Returns the hash code value for this set.
+				public int hashCode() {
+					return System.identityHashCode(this);
+				}
+
+				// Returns true if this set contains no elements.
+				public boolean isEmpty() {
+					return SubMap.this.size() == 0;
 				}
 				
 			};
@@ -506,52 +596,73 @@ public class AvlGTree<K, V> extends AbstractMap<K,V> implements SortedMap<K,V> {
 
 		@Override
 		public int size() {
-			/*int subsize = 0;
-			if (size() <= 0)
-				return null;
-			Node curr = SkipList.this.head;
-			for (int i = (SkipList.this.head.next.length - 1); i >= 0; --i) {
-				while ((curr.next[i] != null)
-						&& (SkipList.this.comp.compare(fromKey,
-								curr.next[i].key) >= 0))
-					curr = curr.next[i];
+			return sizeHelper(AvlGTree.this.root);
+		}
+		
+		private int sizeHelper(AvlNode<K, V> currentNode) {
+			if (currentNode == null) {
+				return 0;
 			}
-			return curr.next[0];
-			while ((curr != null)
-					&& (AvlGTree.this.compare(curr.key, endKey) < 0)) {
-				++subsize;
-				curr = curr.next[0];
+			
+			int subSize = 0;
+			if (AvlGTree.this.compare(startKey, currentNode.key) > 0 || AvlGTree.this.compare(endKey, currentNode.key) <= 0) {
+				subSize = 0;
+			} else {
+				subSize = 1;
 			}
-			return subsize;*/
-			return 0;
+			if (AvlGTree.this.comparator.compare(currentNode.key, startKey) > 0) {
+				subSize += this.sizeHelper(currentNode.left);
+			}
+			if (AvlGTree.this.comparator.compare(currentNode.key, endKey) < 0) {
+				subSize += this.sizeHelper(currentNode.right);
+			}
+			
+			return subSize;
 		}
 
 		@Override
 		public K firstKey() {
-			// TODO Auto-generated method stub
-			return null;
+			if (size() <= 0 || AvlGTree.this.root == null) {
+				throw new NoSuchElementException();
+			} else {
+				return firstKeyHelper(AvlGTree.this.root);
+			}
+		}
+		
+		private K firstKeyHelper(AvlNode<K, V> currNode) {
+			return currNode.left == null ? currNode.key : this.firstKeyHelper(currNode.left);
 		}
 
+		//TODO: Implement in part 3
 		@Override
 		public SortedMap headMap(Object toKey) {
-			// TODO Auto-generated method stub
-			return null;
+			throw new UnsupportedOperationException();
 		}
 
+		//TODO: Implement in part 3
 		@Override
 		public Set keySet() {
-			// TODO Auto-generated method stub
-			return null;
+			throw new UnsupportedOperationException();
 		}
 
 		@Override
 		public K lastKey() {
-			return null;
+			if (size() <= 0 || AvlGTree.this.root == null) {
+				throw new NoSuchElementException();
+			} else {
+				return lastKeyHelper(AvlGTree.this.root);
+			}
+		}
+		
+		private K lastKeyHelper(AvlNode<K, V> currNode) {
+			return currNode.right == null ? currNode.key : this.firstKeyHelper(currNode.right);
 		}
 
 		@Override
-		public SortedMap subMap(Object fromKey, Object toKey) {
-			return null;
+		public SortedMap<K,V> subMap(K fromKey, K toKey) {
+			if (AvlGTree.this.compare(startKey, fromKey) > 0 || AvlGTree.this.compare(endKey, toKey) <= 0) 
+				throw new IllegalArgumentException("StartKey must be less than EndKey.");
+			return AvlGTree.this.subMap(fromKey, toKey);
 		}
 
 		//TODO: Implement in part 3

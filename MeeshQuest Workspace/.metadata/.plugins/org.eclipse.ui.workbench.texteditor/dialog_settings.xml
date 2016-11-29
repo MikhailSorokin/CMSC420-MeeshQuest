@@ -2,22 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="shortestPath" key="selection"/>
+		<item value="Iterator" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="shortestpath"/>
+			<item value="Iterator"/>
+			<item value="iterator"/>
+			<item value="open 654"/>
 			<item value="open"/>
-			<item value="public"/>
-			<item value="system.out.print"/>
-			<item value="system.out.println"/>
-			<item value="system.out.pr"/>
-			<item value="processshortestpat"/>
-			<item value="rangeroads"/>
+			<item value="open 685"/>
+			<item value="mapcity"/>
+			<item value="open 6845"/>
+			<item value="open 68"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Double.MAX_VALUE"/>
 			<item value="compareVal"/>
 		</list>
 	</section>
@@ -26,6 +27,6 @@
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="384" key="DIALOG_HEIGHT"/>
 		<item value="661" key="DIALOG_X_ORIGIN"/>
-		<item value="591" key="DIALOG_Y_ORIGIN"/>
+		<item value="534" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

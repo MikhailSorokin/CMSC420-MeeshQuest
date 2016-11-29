@@ -4,6 +4,8 @@ import java.awt.geom.Arc2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Double;
 import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -33,6 +38,7 @@ import cmsc420.meeshquest.datastructures.Node;
 import cmsc420.meeshquest.datastructures.PMQuadtree;
 import cmsc420.meeshquest.exception.CityOutOfBoundsException;
 import cmsc420.meeshquest.exception.RoadOutOfBoundsException;
+import cmsc420.xml.XmlUtility;
 
 /**
  * @(#)Command.java        1.1 
@@ -89,7 +95,7 @@ public class MethodMediator {
 	protected final PMQuadtree pmQuadtree = new PMQuadtree();
 	
 	/** stores all cities in a Graph structure */
-	protected final Graph<City> cityGraph = new Graph<City>();
+	protected final Graph cityGraph = new Graph();
 
 	/* Mikhail Add - g and pmOrder*/
 	protected int g, pmOrder;
@@ -223,7 +229,42 @@ public class MethodMediator {
 		success.appendChild(output);
 		resultsNode.appendChild(success);
 	}
+	
+	private void addSuccessNode(final Element command,
+			final Element parameters, final Element output, String saveHTMLName) {
+		final Element success = results.createElement("success");
+		success.appendChild(command);
+		success.appendChild(parameters);
+		success.appendChild(output);
+		resultsNode.appendChild(success);
+		
+		if (saveHTMLName.compareTo("") != 0) {
+			org.w3c.dom.Document shortestPathDoc = null;
+			try {
+				shortestPathDoc = XmlUtility.getDocumentBuilder().newDocument();
+			} catch (ParserConfigurationException e) {
+				addFatalError();
+			}
+			org.w3c.dom.Node spNode = shortestPathDoc.importNode(success, true);
+			shortestPathDoc.appendChild(spNode);
+			try {
+				XmlUtility.transform(shortestPathDoc, new File("shortestPath.xsl"), new File(saveHTMLName + ".html"));
+			} catch (FileNotFoundException | TransformerException e) {
+				addFatalError();
+			}
+		}
+	}
 
+    private void addFatalError() {
+        try {
+            results = XmlUtility.getDocumentBuilder().newDocument();
+            final Element fatalError = results.createElement("fatalError");
+            results.appendChild(fatalError);
+        } catch (ParserConfigurationException e) {
+            System.exit(-1);
+        }
+    }
+	
 	/**
 	 * Processes the commands node (root of all commands). Gets the spatial
 	 * width and height of the map and send the data to the appropriate data
@@ -233,6 +274,7 @@ public class MethodMediator {
 	 *            commands node to be processed
 	 */
 	public void processCommands(final Element node) {
+		//TODO: Make remoteSpatialWidth, remoteSpatialHeight, localSpatialWidth, localSpatialHeight
 		spatialWidth = Integer.parseInt(node.getAttribute("spatialWidth"));
 		spatialHeight = Integer.parseInt(node.getAttribute("spatialHeight"));
 		g = Integer.parseInt(node.getAttribute("g"));
@@ -285,7 +327,7 @@ public class MethodMediator {
 			citiesByName.put(name, city);
 			citiesByLocation.add(city);
 			allMappedCitiesByName.put(city, city.getRadius());
-
+			
 			/* add success node to results */
 			addSuccessNode(commandNode, parametersNode, outputNode);
 		}
@@ -453,7 +495,7 @@ public class MethodMediator {
 
 		if (!citiesByName.containsKey(name)) {
 			addErrorNode("nameNotInDictionary", commandNode, parametersNode);
-		} else if (isolatedCities.contains(citiesByName.get(name)) || cityGraph.isVertex(citiesByName.get(name))) {
+		} else if (isolatedCities.contains(citiesByName.get(name)) || cityGraph.containsVertex(name)) {
 			addErrorNode("cityAlreadyMapped", commandNode, parametersNode);
 		} else {
 			City city = citiesByName.get(name);
@@ -463,7 +505,7 @@ public class MethodMediator {
 				pmQuadtree.add(city);
 				allMappedCitiesByName.put(city, city.getRadius());
 				isolatedCities.add(city);
-				cityGraph.addVertex(city);
+				cityGraph.addVertex(name);
 				
 				/* add success node to results */
 				addSuccessNode(commandNode, parametersNode, outputNode);
@@ -514,7 +556,7 @@ public class MethodMediator {
 		final Element commandNode = getCommandNode(node);
 		final Element parametersNode = results.createElement("parameters");
 
-		final String name = processStringAttribute(node, "name", parametersNode);
+		processStringAttribute(node, "name", parametersNode);
 
 		final Element outputNode = results.createElement("output");
 
@@ -754,9 +796,8 @@ public class MethodMediator {
 		final int radius = processIntegerAttribute(node, "radius",
 				parametersNode);
 
-		String pathFile = "";
 		if (node.getAttribute("saveMap").compareTo("") != 0) {
-			pathFile = processStringAttribute(node, "saveMap", parametersNode);
+			processStringAttribute(node, "saveMap", parametersNode);
 		}
 		/* get cities within range */
 		final Point2D.Double point = new Point2D.Double(x, y);
@@ -960,7 +1001,7 @@ public class MethodMediator {
 			addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
 		} else if (startCityName.equals(endCityName)) {
 			addErrorNode("startEqualsEnd", commandNode, parametersNode);
-		} else if (cityGraph.containsEdge(citiesByName.get(startCityName), citiesByName.get(endCityName))) {
+		} else if (cityGraph.containsEdge(startCityName, endCityName)) {
 			addErrorNode("roadAlreadyMapped", commandNode, parametersNode);	
 		} else if (isolatedCities.contains(citiesByName.get(startCityName))
 				|| isolatedCities.contains(citiesByName.get(endCityName))) {
@@ -975,9 +1016,8 @@ public class MethodMediator {
 				//TODO: FIX - EW WHY DO YOU THIS MIKHAIL!!! DISGUSTING CODE for distance :(
 				double distanceBetweenCities = Math.sqrt((startCity.getX()-endCity.getX())*(startCity.getX()-endCity.getX())
 						+ (startCity.getY()-endCity.getY())*(startCity.getY()-endCity.getY()));
-				cityGraph.addEdge(citiesByName.get(startCityName), citiesByName.get(endCityName), distanceBetweenCities);
-				cityGraph.addEdge(citiesByName.get(endCityName), citiesByName.get(startCityName), distanceBetweenCities);
-				
+				cityGraph.addEdge(startCityName, endCityName, distanceBetweenCities);
+
 				addRoadCreatedNode(outputNode, citiesByName.get(startCityName), citiesByName.get(endCityName));
 				
 				addSuccessNode(commandNode, parametersNode, outputNode);
@@ -1000,7 +1040,6 @@ public class MethodMediator {
 			addErrorNode("roadNotFound", commandNode, parametersNode);
 		} else {
 			City[] n = pmQuadtree.findClosestRoad(x, y);
-			//System.out.println(n[0].getName());
 			if (n.length == 0) {
 				addErrorNode("roadNotFound", commandNode, parametersNode);
 			} else {
@@ -1022,8 +1061,9 @@ public class MethodMediator {
 		final String startCityName = processStringAttribute(node, "start", parametersNode);
 		final String endCityName = processStringAttribute(node, "end", parametersNode);
 
-		if (pmQuadtree.getRoot().getType() == Node.EMPTY &&
-				(!cityGraph.containsEdge(citiesByName.get(startCityName), citiesByName.get(endCityName)))) {
+		if (pmQuadtree.getRoot().getType() == Node.EMPTY && citiesByName.get(startCityName) != null
+				&& citiesByName.get(endCityName) != null &&
+				(!cityGraph.containsEdge(startCityName, endCityName))) {
 			//FIXED: Need to do a test to see if the road is contained in the graph
 			addErrorNode("roadIsNotMapped", commandNode, parametersNode);
 		} else {
@@ -1076,9 +1116,8 @@ public class MethodMediator {
 		final int radius = processIntegerAttribute(node, "radius",
 				parametersNode);
 
-		String pathFile = "";
 		if (node.getAttribute("saveMap").compareTo("") != 0) {
-			pathFile = processStringAttribute(node, "saveMap", parametersNode);
+			processStringAttribute(node, "saveMap", parametersNode);
 		}
 		/* get roads within range */
 		final Point2D.Double point = new Point2D.Double(x, y);
@@ -1158,16 +1197,19 @@ public class MethodMediator {
 			processStringAttribute(node, "saveMap", parametersNode);
 		}
 		
+		String htmlToUse = "";
 		if (node.getAttribute("saveHTML").compareTo("") != 0) {
-			processStringAttribute(node, "saveHTML", parametersNode);
+			htmlToUse = processStringAttribute(node, "saveHTML", parametersNode);
 		}
 
+		if (isolatedCities.contains(citiesByName.get(startCityName))
+				&& isolatedCities.contains(citiesByName.get(endCityName))) {
+			addErrorNode("noPathExists", commandNode, parametersNode);
+		} 
 		/* print out cities within range */
-		if (citiesByName.get(startCityName) == null || !cityGraph.isVertex(citiesByName.get(startCityName))
-				|| !cityGraph.containsSourceVertexInEdge(citiesByName.get(startCityName))) {
+		else if (citiesByName.get(startCityName) == null || !cityGraph.containsVertex(startCityName)) {
 			addErrorNode("nonExistentStart", commandNode, parametersNode);
-		} else if (citiesByName.get(endCityName) == null || !cityGraph.isVertex(citiesByName.get(endCityName))
-				|| !cityGraph.containsDestVertexInEdge(citiesByName.get(endCityName))) {
+		} else if (citiesByName.get(endCityName) == null || !cityGraph.containsVertex(endCityName)) {
 			addErrorNode("nonExistentEnd", commandNode, parametersNode);
 		} else if (startCityName.compareTo(endCityName) == 0) {
 			final Element pathNode = results.createElement("path");
@@ -1178,76 +1220,84 @@ public class MethodMediator {
 			outputNode.appendChild(pathNode);
 
 			/* add success node to results */
-			addSuccessNode(commandNode, parametersNode, outputNode);
+			addSuccessNode(commandNode, parametersNode, outputNode, htmlToUse);
 		} else {
 			double shortestPathCost = 0.0;
 			Element pathNode = null;
 
 			pathNode = results.createElement("path");
-			shortestPathCost = cityGraph.dijkstra(citiesByName.get(startCityName), 
-				citiesByName.get(endCityName));
+			shortestPathCost = cityGraph.dijkstra(startCityName, endCityName);
 
 			if ((int)shortestPathCost == -1) {
 				addErrorNode("noPathExists", commandNode, parametersNode);
 			}  else {
-				LinkedList<City> path = cityGraph.getPath(citiesByName.get(endCityName));
-				DecimalFormat decimalFormat = new DecimalFormat("#.000");
-				pathNode.setAttribute("length", decimalFormat.format(shortestPathCost));
-				int hops = path.size() - 1;
-				pathNode.setAttribute("hops", Integer.toString(hops));
-				
-				int indexPoint = 0;
-				boolean isOdd = hops % 2 != 0 ? true: false;
-			    Arc2D.Double arc = new Arc2D.Double();
-				if (hops > 1) {
-					for (int i = 0; i < hops; i += 1) {
-						if (isOdd && indexPoint < hops - 2) {			
-							Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
-					    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
-					    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
-					    	
-						    arc.setArcByTangent(p1, p2, p3, 1);
-	    
-							indexPoint++;
-						} else if (!isOdd && indexPoint < hops - 2) {
-							Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
-					    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
-					    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
-					    	
-						    arc.setArcByTangent(p1, p2, p3, 1);
-						    
-							indexPoint++;
-						} else {
-							Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
-					    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
-					    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
-
-						    arc.setArcByTangent(p1, p2, p3, 1);
-						    
-						}
-
-						addRoadCreatedNode(pathNode, "road", path.get(i), path.get(i + 1));
-						if (i != hops - 1) {
-						    if (arc.getAngleExtent() >= -45.0 && arc.getAngleExtent() <= 45.0) {
-						    	final Element straightNode = results.createElement("straight");
-						    	pathNode.appendChild(straightNode);
-						    } else if (arc.getAngleExtent() >= -180.0 && arc.getAngleExtent() <= -45.0) {
-						    	final Element leftNode = results.createElement("left");
-						    	pathNode.appendChild(leftNode);
-						    } else if (arc.getAngleExtent() >= 45.0 && arc.getAngleExtent() <= 180.0) {
-						    	final Element rightNode = results.createElement("right");
-						    	pathNode.appendChild(rightNode);
-						    }
-						}
-					}
+				LinkedList<String> stringPath = cityGraph.getPath(endCityName);
+				if (stringPath.size() == 0) {
+					addErrorNode("noPathExists", commandNode, parametersNode);
 				} else {
-					addRoadCreatedNode(pathNode, "road", path.get(0), path.get(1));
+					ArrayList<City> path = new ArrayList<City>();
+					for (String cityString : stringPath) {
+						path.add(citiesByName.get(cityString));
+					}
+	
+					DecimalFormat decimalFormat = new DecimalFormat("#.000");
+					pathNode.setAttribute("length", decimalFormat.format(shortestPathCost));
+					int hops = path.size() - 1;
+					pathNode.setAttribute("hops", Integer.toString(hops));
+					
+					int indexPoint = 0;
+					boolean isOdd = hops % 2 != 0 ? true: false;
+				    Arc2D.Double arc = new Arc2D.Double();
+					if (hops > 1) {
+						for (int i = 0; i < hops; i += 1) {
+							if (isOdd && indexPoint < hops - 2) {			
+								Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
+						    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
+						    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
+						    	
+							    arc.setArcByTangent(p1, p2, p3, 1);
+		    
+								indexPoint++;
+							} else if (!isOdd && indexPoint < hops - 2) {
+								Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
+						    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
+						    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
+						    	
+							    arc.setArcByTangent(p1, p2, p3, 1);
+							    
+								indexPoint++;
+							} else {
+								Point2D.Double p1 = new Point2D.Double(path.get(indexPoint).getX(),path.get(indexPoint).getY());
+						    	Point2D.Double p2 = new Point2D.Double(path.get(indexPoint + 1).getX(),path.get(indexPoint + 1).getY());
+						    	Point2D.Double p3 = new Point2D.Double(path.get(indexPoint + 2).getX(),path.get(indexPoint + 2).getY());
+	
+							    arc.setArcByTangent(p1, p2, p3, 1);
+							    
+							}
+	
+							addRoadCreatedNode(pathNode, "road", path.get(i), path.get(i + 1));
+							if (i != hops - 1) {
+							    if (arc.getAngleExtent() >= -45.0 && arc.getAngleExtent() <= 45.0) {
+							    	final Element straightNode = results.createElement("straight");
+							    	pathNode.appendChild(straightNode);
+							    } else if (arc.getAngleExtent() >= -180.0 && arc.getAngleExtent() <= -45.0) {
+							    	final Element leftNode = results.createElement("left");
+							    	pathNode.appendChild(leftNode);
+							    } else if (arc.getAngleExtent() >= 45.0 && arc.getAngleExtent() <= 180.0) {
+							    	final Element rightNode = results.createElement("right");
+							    	pathNode.appendChild(rightNode);
+							    }
+							}
+						}
+					} else {
+						addRoadCreatedNode(pathNode, "road", path.get(0), path.get(1));
+					}
+
+					outputNode.appendChild(pathNode);
+
+					/* add success node to results */
+					addSuccessNode(commandNode, parametersNode, outputNode, htmlToUse);
 				}
-
-				outputNode.appendChild(pathNode);
-
-				/* add success node to results */
-				addSuccessNode(commandNode, parametersNode, outputNode);
 			}
 		}
 	}

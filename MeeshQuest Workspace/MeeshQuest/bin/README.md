@@ -21,10 +21,11 @@ Part 2:
 I am using pretty much all of the canonical, and modifying it to fit me
 and to work for part 2.
 
-As far as most AVLGTree functions, I heavily referenced them through this link
+As far as most AVLGTree functions, I heavily referenced them through this link with a similar AbstractMap implementation.
 Thanks to Ivan, you da real MVP :):
 http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/util/AbstractMap.java#AbstractMap.hashCode%28%29
 
-The dijkstra algorithm was grabbed from my CMSC132 class and was combined with this dijkstra link I found online:
-http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
+I found the dijkstra algorithm from a student on the piazza post and modified it to fit my code.
+The link to it is here:
+https://rosettacode.org/wiki/Dijkstra%27s_algorithm#Java
 

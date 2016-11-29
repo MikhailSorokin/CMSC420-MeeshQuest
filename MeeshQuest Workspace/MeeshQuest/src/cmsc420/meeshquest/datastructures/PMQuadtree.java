@@ -105,8 +105,8 @@ public class PMQuadtree {
 		/* check bounds */
 		int x = (int) city.getX();
 		int y = (int) city.getY();
-		if (x < spatialOrigin.x || x >= spatialWidth || y < spatialOrigin.y
-				|| y >= spatialHeight) {
+		if (x < spatialOrigin.x || x > spatialWidth || y < spatialOrigin.y
+				|| y > spatialHeight) {
 			/* city out of bounds */
 			throw new CityOutOfBoundsException();
 		}
