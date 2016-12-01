@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Iterator" key="selection"/>
+		<item value="spatialWidth" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="listcities"/>
+			<item value="spatialWidth"/>
 			<item value="Iterator"/>
 			<item value="iterator"/>
 			<item value="open 654"/>
 			<item value="open"/>
 			<item value="open 685"/>
 			<item value="mapcity"/>
-			<item value="open 6845"/>
-			<item value="open 68"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Double.MAX_VALUE"/>

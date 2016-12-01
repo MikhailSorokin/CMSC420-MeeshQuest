@@ -18,7 +18,7 @@ This was his comment on the original file:
 
 Part 2: 
 
-I am using pretty much all of the canonical, and modifying it to fit me
+I am using pretty much all of the part 1 canonical, and modifying it to fit me
 and to work for part 2.
 
 As far as most AVLGTree functions, I heavily referenced them through this link with a similar AbstractMap implementation.
@@ -29,3 +29,6 @@ I found the dijkstra algorithm from a student on the piazza post and modified it
 The link to it is here:
 https://rosettacode.org/wiki/Dijkstra%27s_algorithm#Java
 
+Part 3:
+
+Using part 2 canonical for my work.
