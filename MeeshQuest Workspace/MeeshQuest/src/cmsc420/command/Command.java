@@ -27,6 +27,7 @@ import cmsc420.drawing.CanvasPlus;
 import cmsc420.geom.Circle2D;
 import cmsc420.geom.Inclusive2DIntersectionVerifier;
 import cmsc420.geom.Shape2DDistanceCalculator;
+import cmsc420.geometry.Airport;
 import cmsc420.geometry.City;
 import cmsc420.geometry.CityLocationComparator;
 import cmsc420.geometry.Geometry;
@@ -36,10 +37,10 @@ import cmsc420.pmquadtree.IsolatedCityAlreadyExistsThrowable;
 import cmsc420.pmquadtree.OutOfBoundsThrowable;
 import cmsc420.pmquadtree.PM3Quadtree;
 import cmsc420.pmquadtree.PMQuadtree;
-import cmsc420.pmquadtree.RoadAlreadyExistsThrowable;
 import cmsc420.pmquadtree.PMQuadtree.Black;
 import cmsc420.pmquadtree.PMQuadtree.Gray;
 import cmsc420.pmquadtree.PMQuadtree.Node;
+import cmsc420.pmquadtree.RoadAlreadyExistsThrowable;
 import cmsc420.sortedmap.GuardedAvlGTree;
 import cmsc420.xml.XmlUtility;
 
@@ -59,14 +60,16 @@ public class Command {
 	 * command)
 	 */
 	protected GuardedAvlGTree<String, City> citiesByName;
-
+	
+	protected GuardedAvlGTree<String, Airport> airportsByName;
+	
 	/**
 	 * stores created cities sorted by their locations (used with listCities
 	 * command)
 	 */
 	protected final TreeSet<City> citiesByLocation = new TreeSet<City>(
 			new CityLocationComparator());
-
+	
 	private final RoadAdjacencyList roads = new RoadAdjacencyList();
 
 	/** stores mapped cities in a spatial data structure */
@@ -234,7 +237,7 @@ public class Command {
 			pmQuadtree = new PM3Quadtree(localSpatialWidth, localSpatialHeight);
 		}
         citiesByName = new GuardedAvlGTree<String, City>(new Comparator<String>() {
-
+        	
     		@Override
     		public int compare(String o1, String o2) {
     			return o2.compareTo(o1);
@@ -242,6 +245,13 @@ public class Command {
     		
     	},
                 Integer.parseInt(node.getAttribute("g")));
+        
+        airportsByName = new GuardedAvlGTree<String, Airport>(new Comparator<String>() {
+        	@Override
+    		public int compare(String o1, String o2) {
+    			return o2.compareTo(o1);
+    		}
+        }, Integer.parseInt(node.getAttribute("g")));
 	}
 
 	/**
@@ -258,18 +268,16 @@ public class Command {
 
 		final String name = processStringAttribute(node, "name", parametersNode);
 		final int localX = processIntegerAttribute(node, "localX", parametersNode);
-		final int localY = processIntegerAttribute(node, "localY", parametersNode);
+		final int localY = processIntegerAttribute  (node, "localY", parametersNode);
 		final int remoteX = processIntegerAttribute(node, "remoteX", parametersNode);
 		final int remoteY = processIntegerAttribute(node, "remoteY", parametersNode);
-		final int radius = processIntegerAttribute(node, "radius",
-				parametersNode);
-		final String color = processStringAttribute(node, "color",
-				parametersNode);
+		final int radius = processIntegerAttribute(node, "radius", parametersNode);
+		final String color = processStringAttribute(node, "color", parametersNode);
 
 		/* create the city */
 		final City city = new City(name, localX, localY, remoteX, remoteY, radius, color);
 
-		if (citiesByLocation.contains(city)) {
+		if (hasSameLocation(city)) {
 			addErrorNode("duplicateCityCoordinates", commandNode, parametersNode);
 		} else if (citiesByName.containsKey(name)) {
 			addErrorNode("duplicateCityName", commandNode, parametersNode);
@@ -284,7 +292,48 @@ public class Command {
 			addSuccessNode(commandNode, parametersNode, outputNode);
 		}
 	}
+	
+	private boolean hasSameLocation(City cityToAdd) {
+		for (City city : citiesByName.values()) {
+			if (city.getLocalX() == cityToAdd.getLocalX()
+					&& city.getLocalY() == cityToAdd.getLocalY()
+					&& city.getRemoteX() == cityToAdd.getRemoteX() 
+					&& city.getRemoteY() == cityToAdd.getRemoteY()) {
+				return true;
+			}
+		}
+		return false;		
+	}
 
+	/**
+	 * Processes a deleteCity command. Deletes a city in the dictionary (Note:
+	 * does not map the city). An error occurs if a city with that name or
+	 * location is already in the dictionary.
+	 * 
+	 * @param node
+	 *            deleteCity node to be processed
+	 */
+	public void processDeleteCity(final Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String name = processStringAttribute(node, "name", parametersNode);
+
+		if (citiesByName.isEmpty()) {
+			addErrorNode("noCitiesToList", commandNode, parametersNode);
+		} else {
+			final Element outputNode = results.createElement("output");
+
+			/* remove city from this dictionary */
+			citiesByName.remove(name);
+			
+			//TODO: Need to remove from pm quadtree as well
+
+			/* add success node to results */
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
+	}
+	
 	/**
 	 * Clears all the data structures do there are not cities or roads in
 	 * existence in the dictionary or on the map.
@@ -365,11 +414,12 @@ public class Command {
 			final City city) {
 		final Element cityNode = results.createElement(cityNodeName);
 		cityNode.setAttribute("name", city.getName());
-		cityNode.setAttribute("x", Integer.toString((int) city.getX()));
-		cityNode.setAttribute("y", Integer.toString((int) city.getY()));
-		cityNode.setAttribute("radius",
-				Integer.toString((int) city.getRadius()));
+		cityNode.setAttribute("localX", Integer.toString((int) city.getLocalX()));
+		cityNode.setAttribute("localY", Integer.toString((int) city.getLocalY()));
+		cityNode.setAttribute("remoteX", Integer.toString((int) city.getRemoteX()));
+		cityNode.setAttribute("remoteY", Integer.toString((int) city.getRemoteY()));
 		cityNode.setAttribute("color", city.getColor());
+		cityNode.setAttribute("radius", Integer.toString((int) city.getRadius()));
 		node.appendChild(cityNode);
 	}
 
@@ -478,6 +528,32 @@ public class Command {
 			} catch (OutOfBoundsThrowable e) {
 				addErrorNode("cityOutOfBounds", commandNode, parametersNode);
 			}
+		}
+	}
+	
+	public void processMapAirport(Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String name = processStringAttribute(node, "name", parametersNode);
+		final Element outputNode = results.createElement("output");
+
+		if (!airportsByName.containsKey(name)) {
+			addErrorNode("duplicateAirportName", commandNode, parametersNode);
+		} else {
+			addSuccessNode(commandNode, parametersNode, outputNode);
+
+			/*try {
+				//pmQuadtree.addIsolatedCity(airportsByName.get(name));
+				//add success node to results
+				addSuccessNode(commandNode, parametersNode, outputNode);
+			} catch (RoadAlreadyExistsThrowable e) {
+				addErrorNode("airplaneAlreadyMapped", commandNode, parametersNode);
+			} catch (IsolatedCityAlreadyExistsThrowable e) {
+				addErrorNode("airplaneAlreadyMapped", commandNode, parametersNode);
+			} catch (OutOfBoundsThrowable e) {
+				addErrorNode("airportOutOfBounds", commandNode, parametersNode);
+			}*/
 		}
 	}
 
@@ -656,12 +732,12 @@ public class Command {
 		City city1 = it.next();
 
 		/* map green starting point */
-		map.addPoint(city1.getName(), city1.getX(), city1.getY(), Color.GREEN);
+		map.addPoint(city1.getName(), city1.getLocalX(), city1.getLocalY(), Color.GREEN);
 
 		if (it.hasNext()) {
 			City city2 = it.next();
 			/* map blue road */
-			map.addLine(city1.getX(), city1.getY(), city2.getX(), city2.getY(),
+			map.addLine(city1.getLocalX(), city1.getLocalY(), city2.getLocalX(), city2.getLocalY(),
 					Color.BLUE);
 
 			while (it.hasNext()) {
@@ -670,16 +746,16 @@ public class Command {
 				city2 = it.next();
 
 				/* map point */
-				map.addPoint(city1.getName(), city1.getX(), city1.getY(),
+				map.addPoint(city1.getName(), city1.getLocalX(), city1.getLocalY(),
 						Color.BLUE);
 
 				/* map blue road */
-				map.addLine(city1.getX(), city1.getY(), city2.getX(),
-						city2.getY(), Color.BLUE);
+				map.addLine(city1.getLocalX(), city1.getLocalY(), city2.getLocalX(),
+						city2.getLocalY(), Color.BLUE);
 			}
 
 			/* map red end point */
-			map.addPoint(city2.getName(), city2.getX(), city2.getY(), Color.RED);
+			map.addPoint(city2.getName(), city2.getLocalX(), city2.getLocalY(), Color.RED);
 
 		}
 
@@ -738,13 +814,13 @@ public class Command {
 			for (Geometry g : blackNode.getGeometry()) {
 				if (g.isCity()) {
 					City city = (City) g;
-					canvas.addPoint(city.getName(), city.getX(), city.getY(),
+					canvas.addPoint(city.getName(), city.getLocalX(), city.getLocalY(),
 							Color.BLACK);
 				} else {
 					Road road = (Road) g;
-					canvas.addLine(road.getStart().getX(), road.getStart()
-							.getY(), road.getEnd().getX(),
-							road.getEnd().getY(), Color.BLACK);
+					canvas.addLine(road.getStart().getLocalX(), road.getStart()
+							.getLocalY(), road.getEnd().getLocalX(),
+							road.getEnd().getLocalY(), Color.BLACK);
 				}
 			}
 		} else if (node.getType() == Node.GRAY) {
@@ -767,6 +843,10 @@ public class Command {
 	public void processPrintPMQuadtree(final Element node) {
 		final Element commandNode = getCommandNode(node);
 		final Element parametersNode = results.createElement("parameters");
+		
+		processIntegerAttribute(node, "remoteX", parametersNode);
+		processIntegerAttribute(node, "remoteY", parametersNode);
+		
 		final Element outputNode = results.createElement("output");
 
 		if (pmQuadtree.isEmpty()) {
@@ -810,11 +890,12 @@ public class Command {
 					Element city = results.createElement(pmQuadtree
 							.isIsolatedCity(c) ? "isolatedCity" : "city");
 					city.setAttribute("name", c.getName());
-					city.setAttribute("x", Integer.toString((int) c.getX()));
-					city.setAttribute("y", Integer.toString((int) c.getY()));
-					city.setAttribute("radius",
-							Integer.toString((int) c.getRadius()));
+					city.setAttribute("localX", Integer.toString((int) c.getLocalX()));
+					city.setAttribute("localY", Integer.toString((int) c.getLocalY()));
+					city.setAttribute("radius", Integer.toString((int) c.getRadius()));
 					city.setAttribute("color", c.getColor());
+					city.setAttribute("remoteX", Integer.toString((int) c.getRemoteX()));
+					city.setAttribute("remoteY", Integer.toString((int) c.getRemoteY()));
 					blackNode.appendChild(city);
 				} else {
 					City c1 = ((Road) g).getStart();
@@ -989,10 +1070,12 @@ public class Command {
 		final Element outputNode = results.createElement("output");
 
 		/* extract attribute values from command */
-		final int x = processIntegerAttribute(node, "x", parametersNode);
-		final int y = processIntegerAttribute(node, "y", parametersNode);
-
-		final Point2D.Float point = new Point2D.Float(x, y);
+		final int localX = processIntegerAttribute(node, "localX", parametersNode);
+		final int localY = processIntegerAttribute(node, "localY", parametersNode);
+		processIntegerAttribute(node, "remoteX", parametersNode);
+		processIntegerAttribute(node, "remoteY", parametersNode);
+		
+		final Point2D.Float point = new Point2D.Float(localX, localY);
 
 		if (pmQuadtree.getNumCities() - pmQuadtree.getNumIsolatedCities() == 0) {
 			addErrorNode("cityNotFound", commandNode, parametersNode);

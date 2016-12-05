@@ -891,7 +891,7 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
         final Element rootNode = parent.getOwnerDocument().createElement(
                 "AvlGTree");
         rootNode.setAttribute("height",
-                root == null ? "-1" : String.valueOf(root.getHeight()-1));
+                root == null ? "-1" : String.valueOf(root.getHeight()));
         rootNode.setAttribute("maxImbalance", String.valueOf(g));
         rootNode.setAttribute("cardinality", String.valueOf(size()));
         rootNode.appendChild(root == null ? parent.getOwnerDocument()

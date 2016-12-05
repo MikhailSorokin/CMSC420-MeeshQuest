@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C304"/>
+      <localX value="516"/>
+      <localY value="867"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C301"/>
+      <localX value="110"/>
+      <localY value="230"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C306"/>
+      <localX value="478"/>
+      <localY value="954"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C300"/>
+      <localX value="168"/>
+      <localY value="535"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C303"/>
+      <localX value="509"/>
+      <localY value="416"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="22" name="createCity"/>
+    <parameters>
+      <name value="C305"/>
+      <localX value="698"/>
+      <localY value="623"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C30"/>
+      <localX value="999"/>
+      <localY value="916"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C302"/>
+      <localX value="173"/>
+      <localY value="529"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C310"/>
+      <localX value="512"/>
+      <localY value="520"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C311"/>
+      <localX value="512"/>
+      <localY value="508"/>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <error type="metropoleIsEmpty">
+    <command id="1" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="180"/>
+      <remoteY value="616"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="1" name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="10" height="4" maxImbalance="1">
+        <node key="C304" value="(516,867)">
+          <node key="C306" value="(478,954)">
+            <node key="C310" value="(512,520)">
+              <node key="C311" value="(512,508)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+            <node key="C305" value="(698,623)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="C301" value="(110,230)">
+            <node key="C303" value="(509,416)">
+              <emptyChild/>
+              <node key="C302" value="(173,529)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+            <node key="C300" value="(168,535)">
+              <emptyChild/>
+              <node key="C30" value="(999,916)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="deleteCity"/>
+    <parameters>
+      <name value="C302"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="9" height="4" maxImbalance="1">
+        <node key="C304" value="(516,867)">
+          <node key="C306" value="(478,954)">
+            <node key="C310" value="(512,520)">
+              <node key="C311" value="(512,508)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+            <node key="C305" value="(698,623)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="C301" value="(110,230)">
+            <node key="C303" value="(509,416)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="C300" value="(168,535)">
+              <emptyChild/>
+              <node key="C30" value="(999,916)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

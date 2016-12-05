@@ -23,14 +23,15 @@ public class City extends Geometry {
 	protected String name;
 
 	/** 2D coordinates of this city */
-	protected Point2D.Float pt;
+	protected Point2D.Float localPt;
+	protected Point2D.Float remotePt;
 
 	/** radius of this city */
 	protected int radius;
 
 	/** color of this city */
 	protected String color;
-
+	
 	/**
 	 * Constructs a city.
 	 * 
@@ -45,26 +46,21 @@ public class City extends Geometry {
 	 * @param color
 	 *            color of the city
 	 */
-	public City(final String name, final int x, final int y, final int radius,
-			final String color) {
+
+	public City(String name, int localX, int localY, int remoteX, int remoteY, int radius, String color) {
 		this.name = name;
-		pt = new Point2D.Float(x, y);
+		localPt = new Point2D.Float(localX, localY);
+		remotePt = new Point2D.Float(remoteX, remoteY);
 		this.radius = radius;
 		this.color = color;
 	}
 	
 	public City(final City city) {
 		this.name = city.name;
-		this.pt = city.pt;
+		this.localPt = city.localPt;
+		this.remotePt = city.remotePt;
 		this.radius = city.radius;
 		this.color = city.color;
-	}
-
-	public City(String name, int localX, int localY, int remoteX, int remoteY, int radius, String color) {
-		this.name = name;
-		pt = new Point2D.Float(localX, localY);
-		this.radius = radius;
-		this.color = color;
 	}
 
 	/**
@@ -77,21 +73,39 @@ public class City extends Geometry {
 	}
 
 	/**
-	 * Gets the X coordinate of this city.
+	 * Gets the local X coordinate of this city.
 	 * 
-	 * @return X coordinate of this city
+	 * @return local X coordinate of this city
 	 */
-	public int getX() {
-		return (int) pt.x;
+	public int getLocalX() {
+		return (int) localPt.x;
 	}
 
 	/**
-	 * Gets the Y coordinate of this city.
+	 * Gets the local Y coordinate of this city.
 	 * 
-	 * @return Y coordinate of this city
+	 * @return local Y coordinate of this city
 	 */
-	public int getY() {
-		return (int) pt.y;
+	public int getLocalY() {
+		return (int) localPt.y;
+	}
+	
+	/**
+	 * Gets the remote X coordinate of this city.
+	 * 
+	 * @return remote X coordinate of this city
+	 */
+	public int getRemoteX() {
+		return (int) remotePt.x;
+	}
+
+	/**
+	 * Gets the local Y coordinate of this city.
+	 * 
+	 * @return local Y coordinate of this city
+	 */
+	public int getRemoteY() {
+		return (int) remotePt.y;
 	}
 
 	/**
@@ -127,8 +141,8 @@ public class City extends Geometry {
 			return true;
 		if (obj != null && (obj.getClass().equals(this.getClass()))) {
 			City c = (City) obj;
-			return (pt.equals(c.pt) && (radius == c.radius) && color
-					.equals(c.color));
+			return (localPt.equals(c.localPt) && remotePt.equals(c.remotePt) 
+					&& (radius == c.radius) && color.equals(c.color));
 		}
 		return false;
 	}
@@ -141,7 +155,8 @@ public class City extends Geometry {
 	public int hashCode() {
 		int hash = 12;
 		hash = 37 * hash + name.hashCode();
-		hash = 37 * hash + pt.hashCode();
+		hash = 37 * hash + localPt.hashCode();
+		hash = 37 * hash + remotePt.hashCode();
 		hash = 37 * hash + radius;
 		hash = 37 * hash + color.hashCode();
 		return hash;
@@ -156,10 +171,16 @@ public class City extends Geometry {
 	public String getLocationString() {
 		final StringBuilder location = new StringBuilder();
 		location.append("(");
-		location.append(getX());
+		location.append(getLocalX());
 		location.append(",");
-		location.append(getY());
+		location.append(getLocalY());
 		location.append(")");
+		/*location.append(",");
+		location.append("(");
+		location.append(getRemoteX());
+		location.append(",");
+		location.append(getRemoteY());
+		location.append(")");*/
 		return location.toString();
 
 	}
@@ -170,7 +191,7 @@ public class City extends Geometry {
 	 * @return location of this city
 	 */
 	public Point2D toPoint2D() {
-		return new Point2D.Float(pt.x, pt.y);
+		return new Point2D.Float(localPt.x, localPt.y);
 	}
 	
 	public String toString() {

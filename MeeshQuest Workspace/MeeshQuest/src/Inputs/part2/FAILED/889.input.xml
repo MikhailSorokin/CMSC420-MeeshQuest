@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<commands g="1" pmOrder="3" spatialHeight="1024" spatialWidth="512">
-    <createCity color="red" name="C1" radius="10" x="0" y="0"/>
-    <createCity color="white" name="C2" radius="25" x="512" y="1024"/>
-    <createCity color="red" name="C3" radius="25" x="0" y="1024"/>
-    <createCity color="white" name="C4" radius="25" x="512" y="0"/>
-    <mapRoad end="C4" start="C3"/>
-    <mapRoad end="C2" start="C1"/>
-</commands>

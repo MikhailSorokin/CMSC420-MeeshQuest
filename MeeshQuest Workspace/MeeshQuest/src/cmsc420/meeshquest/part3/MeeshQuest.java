@@ -32,6 +32,7 @@ public class MeeshQuest {
 	 */
 	private static final boolean LOCAL_TEST = false; 
 	private static final boolean GENERATE_JUNIT_SRC = false;
+	private static String pathName = "src/Inputs/part3/MultiTest/";
 	private static String testName = "";
 	
 	/**
@@ -42,10 +43,6 @@ public class MeeshQuest {
 	 * The XML input file
 	 */
 	private File xmlInput;
-	/**
-	 * The XML output file
-	 */
-	private File xmlOutput;	
 
 	/**
 	 * output DOM Document tree 
@@ -58,13 +55,13 @@ public class MeeshQuest {
 	private Command command;
 
     public static void main(String[] args) {
-        final MeeshQuest m = new MeeshQuest();
-        
+		final MeeshQuest m = new MeeshQuest();
+	    
 		if (LOCAL_TEST) {
-			File[] files = new File("testfiles/").listFiles();
-
+			File[] files = new File(pathName).listFiles();
+	
 			PrintWriter JUnitWriter = null;
-
+	
 			if(GENERATE_JUNIT_SRC) {
 				try {
 					JUnitWriter = new PrintWriter("junit.txt");
@@ -74,6 +71,7 @@ public class MeeshQuest {
 			}
 			
 			Pattern p = Pattern.compile(".*input.xml$");
+			
 			for (File file : files) {
 				testName = file.getName();
 				Matcher matcher = p.matcher(testName);
@@ -95,74 +93,66 @@ public class MeeshQuest {
 		} else {
 			m.processInput();
 		}
-    }
+	}
 
-    public void processInput() {
-        try {
+	public void processInput() {
+	    try {
 			
 			if (LOCAL_TEST) {
-				System.out.println("Open " + "part3." + testName);
-				xmlInput = new File("testfiles/" + testName + ".input.xml");
+				System.out.println("Open " + testName);
+				xmlInput = new File(pathName + testName + ".input.xml");
 			}
 			Document doc = LOCAL_TEST ? XmlUtility.validateNoNamespace(xmlInput) : XmlUtility.validateNoNamespace(systemInput); 
-
-            /* create output */
-            results = XmlUtility.getDocumentBuilder().newDocument();
-            command = new Command();
-            command.setResults(results);
-
-            /* process commands element */
-            Element commandNode = doc.getDocumentElement();
-            processCommand(commandNode);
-
-            /* process each command */
-            final NodeList nl = commandNode.getChildNodes();
-            for (int i = 0; i < nl.getLength(); i++) {
-                if (nl.item(i).getNodeType() == Document.ELEMENT_NODE) {
-                    /* need to check if Element (ignore comments) */
-                    commandNode = (Element) nl.item(i);
-                    processCommand(commandNode);
-                }
-            }
-        } catch (SAXException e) {
-            e.printStackTrace();
-            addFatalError();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-            addFatalError();
-        } catch (IOException e) {
-            e.printStackTrace();
-            addFatalError();
-        } catch (TransformerException e) {
+	
+	        /* create output */
+	        results = XmlUtility.getDocumentBuilder().newDocument();
+	        command = new Command();
+	        command.setResults(results);
+	
+	        /* process commands element */
+	        Element commandNode = doc.getDocumentElement();
+	        processCommand(commandNode);
+	
+	        /* process each command */
+	        final NodeList nl = commandNode.getChildNodes();
+	        for (int i = 0; i < nl.getLength(); i++) {
+	            if (nl.item(i).getNodeType() == Document.ELEMENT_NODE) {
+	                /* need to check if Element (ignore comments) */
+	                commandNode = (Element) nl.item(i);
+	                processCommand(commandNode);
+	            }
+	        }
+	    } catch (SAXException e) {
+	        e.printStackTrace();
+	        addFatalError();
+	    } catch (ParserConfigurationException e) {
+	        e.printStackTrace();
+	        addFatalError();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        addFatalError();
+	    } catch (TransformerException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			if (LOCAL_TEST) {
-				try {
-					xmlOutput = new File("testfiles/" + testName + ".output.xml");
-					XmlUtility.write(results, xmlOutput);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			} else {
-				try {
-					XmlUtility.print(results);
-				} catch (TransformerException e) {
-					e.printStackTrace();
-					System.exit(-1);
-				}
+			try {
+				XmlUtility.print(results);
+			} catch (TransformerException e) {
+				e.printStackTrace();
+				System.exit(-1);
 			}
-        }
-    }
+	    }
+	}
 
-    private void addFatalError() {
-        try {
-            results = XmlUtility.getDocumentBuilder().newDocument();
-            final Element fatalError = results.createElement("fatalError");
-            results.appendChild(fatalError);
-        } catch (ParserConfigurationException e) {
-            System.exit(-1);
-        }
-    }
+	private void addFatalError() {
+	    try {
+	        results = XmlUtility.getDocumentBuilder().newDocument();
+	        final Element fatalError = results.createElement("fatalError");
+	        results.appendChild(fatalError);
+	    } catch (ParserConfigurationException e) {
+	        System.exit(-1);
+	    }
+	}
 
     private void processCommand(final Element commandNode) throws IOException, ParserConfigurationException,
             TransformerException {
@@ -172,7 +162,9 @@ public class MeeshQuest {
             command.processCommands(commandNode);
         } else if (name.equals("createCity")) {
             command.processCreateCity(commandNode);
-        } else if (name.equals("clearAll")) {
+        } else if (name.equals("deleteCity")) {
+            command.processDeleteCity(commandNode);
+        }else if (name.equals("clearAll")) {
             command.processClearAll(commandNode);
         } else if (name.equals("listCities")) {
             command.processListCities(commandNode);
@@ -182,6 +174,8 @@ public class MeeshQuest {
             command.processMapRoad(commandNode);
         } else if (name.equals("mapCity")) {
             command.processMapCity(commandNode);
+        } else if (name.equals("mapAirport")) {
+            command.processMapAirport(commandNode);
         } else if (name.equals("printPMQuadtree")) {
             command.processPrintPMQuadtree(commandNode);
         } else if (name.equals("saveMap")) {
