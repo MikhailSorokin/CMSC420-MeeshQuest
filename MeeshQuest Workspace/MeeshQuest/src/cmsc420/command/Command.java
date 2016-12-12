@@ -12,7 +12,9 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -33,13 +35,16 @@ import cmsc420.geometry.CityLocationComparator;
 import cmsc420.geometry.Geometry;
 import cmsc420.geometry.Road;
 import cmsc420.geometry.RoadAdjacencyList;
+import cmsc420.geometry.Terminal;
 import cmsc420.pmquadtree.IsolatedCityAlreadyExistsThrowable;
 import cmsc420.pmquadtree.OutOfBoundsThrowable;
+import cmsc420.pmquadtree.PM1Quadtree;
 import cmsc420.pmquadtree.PM3Quadtree;
 import cmsc420.pmquadtree.PMQuadtree;
 import cmsc420.pmquadtree.PMQuadtree.Black;
 import cmsc420.pmquadtree.PMQuadtree.Gray;
 import cmsc420.pmquadtree.PMQuadtree.Node;
+import cmsc420.pmquadtree.PMRuleViolationThrowable;
 import cmsc420.pmquadtree.RoadAlreadyExistsThrowable;
 import cmsc420.sortedmap.GuardedAvlGTree;
 import cmsc420.xml.XmlUtility;
@@ -61,7 +66,9 @@ public class Command {
 	 */
 	protected GuardedAvlGTree<String, City> citiesByName;
 	
-	protected GuardedAvlGTree<String, Airport> airportsByName;
+	protected Map<String, Airport> airportsByName;
+	
+	protected Map<String, Terminal> terminalsByName;
 	
 	/**
 	 * stores created cities sorted by their locations (used with listCities
@@ -235,6 +242,8 @@ public class Command {
 		
 		if (pmOrder == 3) {
 			pmQuadtree = new PM3Quadtree(localSpatialWidth, localSpatialHeight);
+		} else if (pmOrder == 1) {
+			pmQuadtree = new PM1Quadtree(localSpatialWidth, localSpatialHeight);
 		}
         citiesByName = new GuardedAvlGTree<String, City>(new Comparator<String>() {
         	
@@ -246,12 +255,19 @@ public class Command {
     	},
                 Integer.parseInt(node.getAttribute("g")));
         
-        airportsByName = new GuardedAvlGTree<String, Airport>(new Comparator<String>() {
+        airportsByName = new TreeMap<String, Airport>(new Comparator<String>() {
         	@Override
     		public int compare(String o1, String o2) {
     			return o2.compareTo(o1);
     		}
-        }, Integer.parseInt(node.getAttribute("g")));
+        });
+        
+        terminalsByName = new TreeMap<String, Terminal>(new Comparator<String>() {
+        	@Override
+    		public int compare(String o1, String o2) {
+    			return o2.compareTo(o1);
+    		}
+        });
 	}
 
 	/**
@@ -304,6 +320,31 @@ public class Command {
 		}
 		return false;		
 	}
+	
+	private boolean hasSameLocation(Airport airportToAdd) {
+		for (Airport airport : airportsByName.values()) {
+			if (airport.getLocalX() == airportToAdd.getLocalX()
+					&& airport.getLocalY() == airportToAdd.getLocalY()
+					&& airport.getRemoteX() == airportToAdd.getRemoteX() 
+					&& airport.getRemoteY() == airportToAdd.getRemoteY()) {
+				return true;
+			}
+		}
+		return false;		
+	}
+	
+	private boolean hasSameLocation(Terminal terminalToAdd) {
+		for (Terminal terminal : terminalsByName.values()) {
+			if (terminal.getLocalX() == terminalToAdd.getLocalX()
+					&& terminal.getLocalY() == terminalToAdd.getLocalY()
+					&& terminal.getRemoteX() == terminalToAdd.getRemoteX() 
+					&& terminal.getRemoteY() == terminalToAdd.getRemoteY()) {
+				return true;
+			}
+		}
+		return false;		
+	}
+
 
 	/**
 	 * Processes a deleteCity command. Deletes a city in the dictionary (Note:
@@ -319,8 +360,8 @@ public class Command {
 
 		final String name = processStringAttribute(node, "name", parametersNode);
 
-		if (citiesByName.isEmpty()) {
-			addErrorNode("noCitiesToList", commandNode, parametersNode);
+		if (citiesByName.get(name) == null) {
+			addErrorNode("cityDoesNotExist", commandNode, parametersNode);
 		} else {
 			final Element outputNode = results.createElement("output");
 
@@ -490,6 +531,9 @@ public class Command {
 				addErrorNode("roadAlreadyMapped", commandNode, parametersNode);
 			} catch (OutOfBoundsThrowable e) {
 				addErrorNode("roadOutOfBounds", commandNode, parametersNode);
+			} catch (PMRuleViolationThrowable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
@@ -506,41 +550,59 @@ public class Command {
             addSuccessNode(commandNode, parametersNode, outputNode);
         }
     }
-    
-	public void processMapCity(Element node) {
-		final Element commandNode = getCommandNode(node);
-		final Element parametersNode = results.createElement("parameters");
-
-		final String name = processStringAttribute(node, "name", parametersNode);
-		final Element outputNode = results.createElement("output");
-
-		if (!citiesByName.containsKey(name)) {
-			addErrorNode("nameNotInDictionary", commandNode, parametersNode);
-		} else {
-			try {
-				pmQuadtree.addIsolatedCity(citiesByName.get(name));
-				/* add success node to results */
-				addSuccessNode(commandNode, parametersNode, outputNode);
-			} catch (RoadAlreadyExistsThrowable e) {
-				addErrorNode("cityAlreadyMapped", commandNode, parametersNode);
-			} catch (IsolatedCityAlreadyExistsThrowable e) {
-				addErrorNode("cityAlreadyMapped", commandNode, parametersNode);
-			} catch (OutOfBoundsThrowable e) {
-				addErrorNode("cityOutOfBounds", commandNode, parametersNode);
-			}
-		}
-	}
 	
 	public void processMapAirport(Element node) {
 		final Element commandNode = getCommandNode(node);
 		final Element parametersNode = results.createElement("parameters");
 
-		final String name = processStringAttribute(node, "name", parametersNode);
+		final String airportName = processStringAttribute(node, "name", parametersNode);
+		final int localX = processIntegerAttribute(node, "localX", parametersNode);
+		final int localY = processIntegerAttribute(node, "localY", parametersNode);
+		final int remoteX = processIntegerAttribute(node, "remoteX", parametersNode);
+		final int remoteY = processIntegerAttribute(node, "remoteY", parametersNode);
+		final String terminalName = processStringAttribute(node, "terminalName", parametersNode);
+		final int terminalX = processIntegerAttribute(node, "terminalX", parametersNode);
+		final int terminalY = processIntegerAttribute(node, "terminalY", parametersNode);
+		final String terminalCityName = processStringAttribute(node, "terminalCity", parametersNode);
+		
 		final Element outputNode = results.createElement("output");
 
-		if (!airportsByName.containsKey(name)) {
+		if (airportsByName.containsKey(airportName)) {
 			addErrorNode("duplicateAirportName", commandNode, parametersNode);
+		} else if (hasSameLocation(airportsByName.get(airportName))) {
+			addErrorNode("duplicateAirportCoordinates", commandNode, parametersNode);
 		} else {
+			airportsByName.put(airportName, new Airport(airportName, localX, localY, remoteX, remoteY));
+
+			try {
+				pmQuadtree.addAirport(airportsByName.get(airportName));
+			} catch (OutOfBoundsThrowable e) {
+				addErrorNode("airportOutOfBounds", commandNode, parametersNode);
+			} catch (PMRuleViolationThrowable e) {
+				addErrorNode("airportViolatesPMRules ", commandNode, parametersNode);
+			}
+			
+			if (terminalsByName.containsKey(terminalName)) {
+				addErrorNode("duplicateTerminalName", commandNode, parametersNode);
+			} else if (hasSameLocation(terminalsByName.get(terminalName))) {
+				addErrorNode("duplicateTerminalCoordinates", commandNode, parametersNode);
+			} 
+			
+			terminalsByName.put(terminalName, new Terminal(airportName, terminalName, localX, localY, terminalX, terminalY, citiesByName.get(terminalCityName)));
+			
+			try {
+				pmQuadtree.addTerminal(terminalsByName.get(terminalName));
+				if (!citiesByName.containsKey(terminalCityName)) {
+					addErrorNode("connectingCityDoesNotExist", commandNode, parametersNode);
+				}
+			} catch (OutOfBoundsThrowable e) {
+				addErrorNode("terminalOutOfBounds", commandNode, parametersNode);
+			} catch (PMRuleViolationThrowable e) {
+				addErrorNode("terminalViolatesPMRules", commandNode, parametersNode);
+			}
+			
+			//TODO: Need a connectingCityNotInSameMetropole error detection
+			
 			addSuccessNode(commandNode, parametersNode, outputNode);
 
 			/*try {
@@ -777,6 +839,8 @@ public class Command {
 		final Element commandNode = getCommandNode(node);
 		final Element parametersNode = results.createElement("parameters");
 
+		final int remoteX = processIntegerAttribute(node, "remoteX", parametersNode);
+		final int remoteY = processIntegerAttribute(node, "remoteY", parametersNode);
 		final String name = processStringAttribute(node, "name", parametersNode);
 
 		final Element outputNode = results.createElement("output");
@@ -851,7 +915,7 @@ public class Command {
 
 		if (pmQuadtree.isEmpty()) {
 			/* empty PR Quadtree */
-			addErrorNode("mapIsEmpty", commandNode, parametersNode);
+			addErrorNode("metropoleIsEmpty", commandNode, parametersNode);
 		} else {
 			/* print PR Quadtree */
 			final Element quadtreeNode = results.createElement("quadtree");
@@ -885,25 +949,55 @@ public class Command {
 			blackNode.setAttribute("cardinality",
 					Integer.toString(currentLeaf.getGeometry().size()));
 			for (Geometry g : currentLeaf.getGeometry()) {
-				if (g.isCity()) {
-					City c = (City) g;
-					Element city = results.createElement(pmQuadtree
-							.isIsolatedCity(c) ? "isolatedCity" : "city");
-					city.setAttribute("name", c.getName());
-					city.setAttribute("localX", Integer.toString((int) c.getLocalX()));
-					city.setAttribute("localY", Integer.toString((int) c.getLocalY()));
-					city.setAttribute("radius", Integer.toString((int) c.getRadius()));
-					city.setAttribute("color", c.getColor());
-					city.setAttribute("remoteX", Integer.toString((int) c.getRemoteX()));
-					city.setAttribute("remoteY", Integer.toString((int) c.getRemoteY()));
-					blackNode.appendChild(city);
-				} else {
-					City c1 = ((Road) g).getStart();
-					City c2 = ((Road) g).getEnd();
-					Element road = results.createElement("road");
-					road.setAttribute("start", c1.getName());
-					road.setAttribute("end", c2.getName());
-					blackNode.appendChild(road);
+				if (g.isCity() || g.isAirport()) {
+					try {
+						City c = (City) g;
+						Element city = results.createElement(pmQuadtree
+								.isIsolatedCity(c) ? "isolatedCity" : "city");
+						city.setAttribute("name", c.getName());
+						city.setAttribute("localX", Integer.toString((int) c.getLocalX()));
+						city.setAttribute("localY", Integer.toString((int) c.getLocalY()));
+						city.setAttribute("radius", Integer.toString((int) c.getRadius()));
+						city.setAttribute("color", c.getColor());
+						city.setAttribute("remoteX", Integer.toString((int) c.getRemoteX()));
+						city.setAttribute("remoteY", Integer.toString((int) c.getRemoteY()));
+						blackNode.appendChild(city);
+					} catch (ClassCastException e) {
+						Airport a = (Airport) g;
+						Element airport = results.createElement("airport");
+						airport.setAttribute("name", a.getName());
+						airport.setAttribute("airlineName", a.getName()); //TODO: Should be a.getTerminalName
+						airport.setAttribute("localX", Integer.toString((int) a.getLocalX()));
+						airport.setAttribute("localY", Integer.toString((int) a.getLocalY()));
+						airport.setAttribute("remoteX", Integer.toString((int) a.getRemoteX()));
+						airport.setAttribute("remoteY", Integer.toString((int) a.getRemoteY()));
+						blackNode.appendChild(airport);
+					}
+				} else if (g.isTerminal() || g.isRoad()) {
+					try {
+						Terminal t = (Terminal) g;
+						Element terminal = results.createElement("terminal");
+						terminal.setAttribute("airportName", t.getAirportName());
+						terminal.setAttribute("cityName", t.getEnd().getName());
+						terminal.setAttribute("localX", Integer.toString((int) t.getLocalX()));
+						terminal.setAttribute("localY", Integer.toString((int) t.getLocalY()));
+						terminal.setAttribute("name", t.getTerminalName());
+						terminal.setAttribute("remoteX", Integer.toString((int) t.getRemoteX()));
+						terminal.setAttribute("remoteY", Integer.toString((int) t.getRemoteY()));
+						blackNode.appendChild(terminal);
+						
+						Element road = results.createElement("road");
+						road.setAttribute("start", t.getTerminalName());
+						road.setAttribute("end", t.getEnd().getName());
+						blackNode.appendChild(road);
+					} catch (ClassCastException e) {
+						City c1 = ((Road) g).getStart();
+						City c2 = ((Road) g).getEnd();
+						Element road = results.createElement("road");
+						road.setAttribute("start", c1.getName());
+						road.setAttribute("end", c2.getName());
+						blackNode.appendChild(road);
+					}
 				}
 			}
 			xmlNode.appendChild(blackNode);

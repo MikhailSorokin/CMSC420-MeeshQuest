@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="256" localSpatialWidth="256" pmOrder="3" remoteSpatialHeight="256" remoteSpatialWidth="256" xsi:noNamespaceSchemaLocation="part3in.xsd">
+	<createCity color="black" id="2" localX="50" localY="20" name="A" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="50" localY="50" name="B" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="100" localY="80" name="C" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="90" localY="60" name="D" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="150" localY="100" name="E" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="180" localY="200" name="F" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="200" localY="50" name="G" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="10" localY="10" name="H" radius="0" remoteX="1" remoteY="0"/>
+
+	<createCity color="black" id="3" localX="50" localY="90" name="I" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="85" localY="60" name="J" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="98" localY="32" name="K" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="14" localY="236" name="L" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="98" localY="12" name="M" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="254" localY="62" name="N" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="40" localY="35" name="O" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="52" localY="60" name="P" radius="0" remoteX="120" remoteY="120"/>
+	<createCity color="black" id="3" localX="75" localY="75" name="Q" radius="0" remoteX="120" remoteY="120"/>
+
+	<createCity color="black" id="4" localX="50" localY="50" name="R" radius="0" remoteX="10" remoteY="200"/>
+	<createCity color="black" id="4" localX="100" localY="100" name="S" radius="0" remoteX="10" remoteY="200"/>
+
+	
+	<mapRoad end="A" id="3" start="B"/>
+	<mapRoad end="B" id="3" start="C"/>
+	<mapRoad end="C" id="3" start="D"/>
+	<mapRoad end="D" id="3" start="E"/>
+	<mapRoad end="E" id="3" start="F"/>
+	<mapRoad end="F" id="3" start="G"/>
+	<mapRoad end="A" id="3" start="F"/>
+	<mapRoad end="A" id="3" start="H"/>
+	<mapRoad end="H" id="3" start="D"/>
+
+
+	<mapRoad end="I" id="3" start="J"/>
+	<mapRoad end="I" id="3" start="K"/>
+	<mapRoad end="K" id="3" start="L"/>
+	<mapRoad end="M" id="3" start="N"/>
+	<mapRoad end="O" id="3" start="I"/>
+	<mapRoad end="K" id="3" start="P"/>
+	<mapRoad end="Q" id="3" start="N"/>
+
+	<mapRoad end="R" id="3" start="S"/>
+
+
+	<mapAirport id="5" localX="250" localY="250" name="AirportA" remoteX="1" remoteY="0" terminalName = "TerminalAA" terminalX = "240" terminalY = "240" terminalCity = "F"/>
+	
+	<mapAirport id="5" localX="2" localY="200" name="AirportAA" remoteX="1" remoteY="0" terminalName = "TerminalAB" terminalX = "50" terminalY = "100" terminalCity = "H"/>
+	<saveMap id="333" name="test1" remoteX="1" remoteY="0"/>
+	
+	
+	<mapAirport id="5" localX="120" localY="200" name="AirportB" remoteX="200" remoteY="200" terminalName = "TerminalBC" terminalX = "50" terminalY = "100" terminalCity = "R"/>
+
+
+	<mapAirport id="5" localX="50" localY="120" name="AirportC" remoteX="120" remoteY="120" terminalName = "TerminalCD" terminalX = "50" terminalY = "100" terminalCity = "I"/>
+	<mapAirport id="5" localX="200" localY="200" name="AirportCC" remoteX="120" remoteY="120" terminalName = "TerminalCF" terminalX = "180" terminalY = "150" terminalCity = "J"/>
+
+	
+	<mapTerminal id="7" name="TerminalAC" localX="100" localY="50" remoteX="1" remoteY="0" cityName="C" airportName="AirportA"/>
+	<mapTerminal id="7" name="TerminalAD" localX="80" localY="50" remoteX="1" remoteY="0" cityName="D" airportName="AirportA"/>
+	<mapTerminal id="7" name="TerminalAE" localX="250" localY="100" remoteX="1" remoteY="0" cityName="G" airportName="AirportAA"/>
+	<mapTerminal id="7" name="TerminalAF" localX="52" localY="52" remoteX="1" remoteY="0" cityName="B" airportName="AirportAA"/>
+
+	<mapTerminal id="7" name="TerminalAC" localX="12" localY="12" remoteX="120" remoteY="120" cityName="K" airportName="AirportCD"/>
+	<mapTerminal id="7" name="TerminalAC" localX="50" localY="120" remoteX="120" remoteY="120" cityName="L" airportName="AirportCD"/>
+	<mapTerminal id="7" name="TerminalAC" localX="120" localY="1" remoteX="120" remoteY="120" cityName="M" airportName="AirportCF"/>
+	<mapTerminal id="7" name="TerminalAC" localX="50" localY="90" remoteX="120" remoteY="120" cityName="N" airportName="AirportCF"/>
+	
+	
+	<saveMap id="333" name="test" remoteX="1" remoteY="0"/>
+		<saveMap id="333" name="test2" remoteX="120" remoteY="120"/>
+		<saveMap id="333" name="test3" remoteX="10" remoteY="200"/>
+	
+	<printPMQuadtree id="100" remoteX="1" remoteY="0" />
+		<printPMQuadtree id="100" remoteX="120" remoteY="120" />
+	
+
+</commands>

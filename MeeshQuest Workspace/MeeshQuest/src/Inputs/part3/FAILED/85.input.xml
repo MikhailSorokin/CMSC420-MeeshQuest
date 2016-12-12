@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+    
+<createCity id="1" color="red" localX="1" localY="10" name="A" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="1" color="red" localX="17" localY="10" name="B" radius="0" remoteX="0" remoteY="0"/>
+
+<mapRoad id="3" start="A" end="B"/>
+<mapRoad id="3" start="A" end="B"/>
+<mapRoad id="3" start="B" end="A"/>
+
+
+<!--<mapRoad id="3" end="C" start="A"/>-->
+<!---->
+<!--<mapAirport id="4" localX="16" localY="0" name="P" remoteX="0" remoteY="0" terminalName="T1" terminalCity="A" terminalX="4" terminalY="4"/>-->
+<!---->
+<!--<createCity id="5" color="red" localX="16" localY="0" name="AAA" radius="0" remoteX="0" remoteY="0"/>-->
+<!--<createCity id="6" color="red" localX="11" localY="11" name="P" radius="0" remoteX="0" remoteY="0"/>-->
+<!---->
+<!--<createCity id="7" color="red" localX="4" localY="4" name="BBB" radius="0" remoteX="0" remoteY="0"/>-->
+<!--<createCity id="8" color="red" localX="16" localY="16" name="T1" radius="0" remoteX="0" remoteY="0"/>-->
+
+</commands>

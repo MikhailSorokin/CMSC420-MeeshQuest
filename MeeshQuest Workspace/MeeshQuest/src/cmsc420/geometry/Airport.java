@@ -8,27 +8,27 @@ public class Airport extends Geometry {
 	protected String name;
 
 	/** 2D coordinates of this city */
-	protected Point2D.Float pt;
-
-	/** radius of this city */
-	protected int radius;
-
-	/** color of this city */
-	protected String color;
+	protected Point2D.Float localPt;
+	protected Point2D.Float remotePt;
 
 	/**
 	 * Constructs a city.
 	 * 
 	 * @param name
 	 *            name of the city
+	 * @param localX
+	 *            localX coordinate within the Metropole
+	 * @param localY
+	 *            localY coordinate within the Metropole
 	 * @param remoteX
 	 *            remoteX coordinate of the Metropole
-	 * @param y
+	 * @param remoteY
 	 *            remoteY coordinate of the Metropole
 	 */
-	public Airport(String name, int remoteX, int remoteY) {
+	public Airport(String name, int localX, int localY, int remoteX, int remoteY) {
 		this.name = name;
-		pt = new Point2D.Float(remoteX, remoteY);
+		localPt = new Point2D.Float(localX, localY);
+		remotePt = new Point2D.Float(remoteX, remoteY);
 	}
 
 	/**
@@ -45,8 +45,8 @@ public class Airport extends Geometry {
 	 * 
 	 * @return X coordinate of this city
 	 */
-	public int getX() {
-		return (int) pt.x;
+	public int getLocalX() {
+		return (int) localPt.x;
 	}
 
 	/**
@@ -54,26 +54,26 @@ public class Airport extends Geometry {
 	 * 
 	 * @return Y coordinate of this city
 	 */
-	public int getY() {
-		return (int) pt.y;
+	public int getLocalY() {
+		return (int) localPt.y;
+	}
+	
+	/**
+	 * Gets the X coordinate of this city.
+	 * 
+	 * @return X coordinate of this city
+	 */
+	public int getRemoteX() {
+		return (int) remotePt.x;
 	}
 
 	/**
-	 * Gets the color of this city.
+	 * Gets the Y coordinate of this city.
 	 * 
-	 * @return color of this city
+	 * @return Y coordinate of this city
 	 */
-	public String getColor() {
-		return color;
-	}
-
-	/**
-	 * Gets the radius of this city.
-	 * 
-	 * @return radius of this city.
-	 */
-	public int getRadius() {
-		return radius;
+	public int getRemoteY() {
+		return (int) remotePt.y;
 	}
 
 	/**
@@ -91,8 +91,7 @@ public class Airport extends Geometry {
 			return true;
 		if (obj != null && (obj.getClass().equals(this.getClass()))) {
 			City c = (City) obj;
-			return (pt.equals(c.localPt) && (radius == c.radius) && color
-					.equals(c.color));
+			return (localPt.equals(c.localPt) && remotePt.equals(c.remotePt));
 		}
 		return false;
 	}
@@ -105,9 +104,8 @@ public class Airport extends Geometry {
 	public int hashCode() {
 		int hash = 12;
 		hash = 37 * hash + name.hashCode();
-		hash = 37 * hash + pt.hashCode();
-		hash = 37 * hash + radius;
-		hash = 37 * hash + color.hashCode();
+		hash = 37 * hash + localPt.hashCode();
+		hash = 37 * hash + remotePt.hashCode();
 		return hash;
 	}
 
@@ -120,9 +118,9 @@ public class Airport extends Geometry {
 	public String getLocationString() {
 		final StringBuilder location = new StringBuilder();
 		location.append("(");
-		location.append(getX());
+		location.append(getRemoteX());
 		location.append(",");
-		location.append(getY());
+		location.append(getRemoteY());
 		location.append(")");
 		return location.toString();
 
@@ -133,8 +131,12 @@ public class Airport extends Geometry {
 	 * 
 	 * @return location of this city
 	 */
-	public Point2D toPoint2D() {
-		return new Point2D.Float(pt.x, pt.y);
+	public Point2D localPoint2D() {
+		return new Point2D.Float(localPt.x, localPt.y);
+	}
+
+	public Point2D remotePoint2D() {
+		return new Point2D.Float(remotePt.x, remotePt.y);
 	}
 	
 	public String toString() {

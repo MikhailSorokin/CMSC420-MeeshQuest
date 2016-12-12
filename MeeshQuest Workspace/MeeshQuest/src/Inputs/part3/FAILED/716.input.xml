@@ -1,0 +1,26 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part3in.xsd"
+	localSpatialWidth="1024"
+	localSpatialHeight="1024"
+	remoteSpatialWidth="32"
+	remoteSpatialHeight="32"
+	g="3"
+	pmOrder="3">
+ <createCity name="Baltimore" localX="140" localY="37" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Chicago" localX="133" localY="34" remoteX="5" remoteY="5" radius="0" color="black" id="2"/>
+ <createCity name="New_York" localX="200" localY="300" remoteX="5" remoteY="5" radius="0" color="black" id="3"/>
+ <createCity name="Zurich" localX="1000" localY="1000" remoteX="5" remoteY="5" radius="0" color="black" id="4"/>
+ <createCity name="Paris" localX="500" localY="400" remoteX="5" remoteY="5" radius="0" color="black" id="5"/>
+ <createCity name="Amsterdam" localX="450" localY="450" remoteX="5" remoteY="5" radius="0" color="black" id="6"/>
+ <printAvlTree id="61"/>
+ 
+ 
+ <createCity name="Bowie" localX="143" localY="38" remoteX="5" remoteY="5" radius="0" color="black" id="7"/>
+ <createCity name="College_Park" localX="139" localY="39" remoteX="5" remoteY="5" radius="0" color="black" id="8"/>
+ <createCity name="Miami" localX="206" localY="307" remoteX="5" remoteY="5" radius="0" color="black" id="9"/>
+ <createCity name="Lappe" localX="1001" localY="1005" remoteX="5" remoteY="5" radius="0" color="black" id="10"/>
+ <createCity name="Paris" localX="504" localY="409" remoteX="5" remoteY="5" radius="0" color="black" id="11"/>
+ <createCity name="Amsterdam" localX="453" localY="455" remoteX="5" remoteY="5" radius="0" color="black" id="12"/>
+ <printAvlTree id="61"/>
+</commands>

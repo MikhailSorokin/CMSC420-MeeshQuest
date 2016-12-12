@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity color="black" id="1" localX="140" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+<createCity color="black" id="1" localX="280" localY="72" name="Austin" radius="0" remoteX="1" remoteY="0"/>
+<mapRoad end="Baltimore" id="7" start="Austin"/>
+<mapAirport id="9" localX="190" localY="300" name="C0" remoteX="1" remoteY="0" terminalName="T0" terminalX="195" terminalY="290" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C1" remoteX="1" remoteY="0" terminalName="T1" terminalX="0" terminalY="120" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C2" remoteX="1" remoteY="0" terminalName="T2" terminalX="767" terminalY="447" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C3" remoteX="1" remoteY="0" terminalName="T3" terminalX="825" terminalY="641" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C4" remoteX="1" remoteY="0" terminalName="T4" terminalX="230" terminalY="534" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C5" remoteX="1" remoteY="0" terminalName="T5" terminalX="659" terminalY="189" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C6" remoteX="1" remoteY="0" terminalName="T6" terminalX="994" terminalY="509" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C7" remoteX="1" remoteY="0" terminalName="T7" terminalX="667" terminalY="899" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C8" remoteX="1" remoteY="0" terminalName="T8" terminalX="273" terminalY="1020" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C9" remoteX="1" remoteY="0" terminalName="T9" terminalX="515" terminalY="927" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C10" remoteX="1" remoteY="0" terminalName="T10" terminalX="946" terminalY="897" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C10" remoteX="1" remoteY="0" terminalName="T10" terminalX="0" terminalY="0" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C10" remoteX="1" remoteY="0" terminalName="T11" terminalX="946" terminalY="897" terminalCity="Baltimore"/>
+<mapAirport id="9" localX="190" localY="300" name="C10" remoteX="1" remoteY="0" terminalName="T12" terminalX="1024" terminalY="1024" terminalCity="Chicago"/>
+<printPMQuadtree id="100" remoteX="1" remoteY="0" />
+</commands>

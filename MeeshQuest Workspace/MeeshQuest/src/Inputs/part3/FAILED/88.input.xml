@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+    
+<createCity id="1" color="red" localX="1" localY="10" name="A" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="17" localY="10" name="B" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="3" color="red" localX="1" localY="10" name="X" radius="0" remoteX="1" remoteY="1"/>
+
+<createCity id="4" color="red" localX="31" localY="1" name="E" radius="0" remoteX="1" remoteY="1"/>
+<createCity id="5" color="red" localX="30" localY="1" name="F" radius="0" remoteX="1" remoteY="1"/>
+
+<createCity id="6" color="red" localX="4" localY="1" name="G" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="7" color="red" localX="4" localY="9" name="H" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="8" color="red" localX="4" localY="10" name="I" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="9" color="red" localX="4" localY="11" name="J" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="10" color="red" localX="4" localY="8" name="K" radius="0" remoteX="0" remoteY="0"/>
+
+<mapRoad id="11" start="C" end="B"/>
+<mapRoad id="12" start="A" end="D"/>
+<mapRoad id="13" start="C" end="C"/>
+<mapRoad id="14" start="A" end="A"/>
+<mapRoad id="15" start="A" end="X"/>
+<mapRoad id="16" start="E" end="F"/>
+
+<mapRoad id="17" start="A" end="B"/>
+<mapRoad id="18" start="B" end="A"/>
+
+<mapRoad id="19" start="G" end="I"/>
+<mapRoad id="20" start="G" end="J"/>
+<mapRoad id="21" start="G" end="H"/>
+<mapRoad id="22" start="G" end="K"/>
+
+<listCities id="23" sortBy="name"/>
+<listCities id="24" sortBy="coordinate"/>
+
+<clearAll/>
+
+<createCity id="25" color="red" localX="0" localY="0" name="H" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="26" color="red" localX="0" localY="8" name="I" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="27" color="red" localX="1" localY="0" name="J" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="29" color="red" localX="1" localY="8" name="K" radius="0" remoteX="0" remoteY="0"/>
+
+<mapRoad id="20" start="I" end="H"/>
+<mapRoad id="30" start="J" end="K"/>
+
+
+<!--<mapRoad id="3" end="C" start="A"/>-->
+<!---->
+<!--<mapAirport id="4" localX="16" localY="0" name="P" remoteX="0" remoteY="0" terminalName="T1" terminalCity="A" terminalX="4" terminalY="4"/>-->
+<!---->
+<!--<createCity id="5" color="red" localX="16" localY="0" name="AAA" radius="0" remoteX="0" remoteY="0"/>-->
+<!--<createCity id="6" color="red" localX="11" localY="11" name="P" radius="0" remoteX="0" remoteY="0"/>-->
+<!---->
+<!--<createCity id="7" color="red" localX="4" localY="4" name="BBB" radius="0" remoteX="0" remoteY="0"/>-->
+<!--<createCity id="8" color="red" localX="16" localY="16" name="T1" radius="0" remoteX="0" remoteY="0"/>-->
+
+</commands>

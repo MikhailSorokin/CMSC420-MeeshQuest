@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+	<createCity color="black" id="1" localX="2" localY="6" name="A" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="4" localY="2" name="B" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="4" localY="2" name="C" radius="0" remoteX="1" remoteY="1"/>
+	<createCity color="black" id="2" localX="4" localY="4" name="D" radius="0" remoteX="1" remoteY="1"/>
+	<createCity color="black" id="2" localX="5" localY="2" name="E" radius="0" remoteX="1" remoteY="0"/>
+		<createCity color="black" id="2" localX="7" localY="3" name="AA" radius="0" remoteX="1" remoteY="0"/>
+	<mapRoad end="A" id="3" start="B"/>
+	<mapRoad end="C" id="3" start="D"/>
+	
+	<mapAirport id="5" localX="2" localY="14" 
+	name="AirportA" remoteX="1" remoteY="0" terminalName = "TerminalAA" terminalX = "6"
+	 terminalY = "10" terminalCity = "A"/>
+	 
+	<mapAirport id="5" localX="2" localY="14" name="AirportB" remoteX="1" remoteY="1" terminalName = "TerminalBC"
+	 terminalX = "6" terminalY = "10" terminalCity = "C"/>
+	 
+	
+	 	 	<mapAirport id="5" localX="2" localY="10" name="AirportT" remoteX="1" remoteY="1" terminalName = "TerminalBT"
+	 terminalX = "6" terminalY = "11" terminalCity = "E"/>
+	  	 	<mapAirport id="5" localX="2" localY="10" name="AirportT" remoteX="1" remoteY="1" terminalName = "TerminalBT"
+	 terminalX = "6" terminalY = "10" terminalCity = "E"/>
+	 	<mapRoad end="A" id="3" start="AA"/>
+	  <mapAirport id="5" localX="1" localY="3" name="AirportT" remoteX="1" remoteY="0" terminalName = "TerminalBT"
+	 terminalX = "6" terminalY = "11" terminalCity = "AA"/>
+	 <!-- passes -->
+	   <mapAirport id="5" localX="1" localY="3" name="AirportT" remoteX="1" remoteY="0" terminalName = "TerminalBT"
+	 terminalX = "9" terminalY = "1" terminalCity = "AA"/>
+	 <!--fails-->
+	  <mapAirport id="5" localX="6" localY="8" name="AirportT" remoteX="1" remoteY="0" terminalName = "TerminalBT"
+	 terminalX = "6" terminalY = "11" terminalCity = "AA"/>
+	<mapTerminal id="7" name="TerminalAB" localX="2" localY="10" remoteX="1" remoteY="0" cityName="A" airportName="AirportA"/>
+		<mapTerminal id="7" name="TerminalT" localX="5" localY="7" remoteX="1" remoteY="0" cityName="A" airportName="AirportT"/>
+	<mapTerminal id="7" name="TerminalAC" localX="12" localY="10" remoteX="17" remoteY="17" cityName="A" airportName="AirportA"/>
+	<mapTerminal id="7" name="TerminalAC" localX="17" localY="17" remoteX="1" remoteY="0" cityName="A" airportName="AirportA"/>
+
+</commands>

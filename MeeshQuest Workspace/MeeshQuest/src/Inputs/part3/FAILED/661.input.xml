@@ -1,0 +1,33 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part3in.xsd"
+	localSpatialWidth="1024"
+	localSpatialHeight="1024"
+	remoteSpatialWidth="32"
+	remoteSpatialHeight="32"
+	g="3"
+	pmOrder="3">
+ <createCity name="Baltimore" localX="140" localY="37" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Chicago" localX="133" localY="34" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="New_York" localX="200" localY="300" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Zurich" localX="1000" localY="1000" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Paris" localX="500" localY="400" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Amsterdam" localX="450" localY="450" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ 
+ <nearestCity localX="50" localY="10" remoteX="5" remoteY="5" id="1"/>
+ 
+ <mapRoad start="Baltimore" end="Chicago" id="1"/>
+ <nearestCity localX="100" localY="100" remoteX="5" remoteY="5" id="1"/>
+ 
+ <mapRoad start="Chicago" end="New_York" id="1"/>
+ <nearestCity localX="300" localY="500" remoteX="5" remoteY="5" id="1"/>
+ 
+ <mapRoad start="New_York" end="Zurich" id="1"/>
+ <nearestCity localX="10" localY="10" remoteX="5" remoteY="5" id="1"/>
+ 
+ <mapRoad start="Zurich" end="Paris" id="1"/>
+ <nearestCity localX="1000" localY="1000" remoteX="5" remoteY="5" id="1"/>
+ 
+ <mapRoad start="Paris" end="Amsterdam" id="1"/>
+ <nearestCity localX="500" localY="500" remoteX="5" remoteY="5" id="1"/>
+</commands>

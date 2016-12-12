@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<commands xsi:noNamespaceSchemaLocation="part3in.xsd" remoteSpatialWidth="16" remoteSpatialHeight="16" pmOrder="3" localSpatialWidth="16" localSpatialHeight="16" g="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<createCity remoteY="0" remoteX="0" radius="0" name="A" localY="0" localX="0" color="red" id="1"/>
+
+<createCity remoteY="0" remoteX="0" radius="0" name="B" localY="0" localX="1" color="red" id="2"/>
+
+<createCity remoteY="0" remoteX="0" radius="0" name="C" localY="0" localX="4" color="red" id="3"/>
+<createCity radius="0" localY="0" localX="2" color="red" name="p" remoteY="0" remoteX="0" id="5"/>
+<createCity radius="0" localY="4" localX="4" color="red" name="terminal" remoteY="0" remoteX="0" id="10"/>
+<mapRoad id="6" start="A" end="C"/>
+<mapRoad end="terminal" start="p" id="1"/>
+<saveMap name="a" remoteY="0" remoteX="0" id="1"/>
+
+
+</commands>

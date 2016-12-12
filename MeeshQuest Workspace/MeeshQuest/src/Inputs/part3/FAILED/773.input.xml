@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024"
+    localSpatialWidth="1024"
+    pmOrder="3" remoteSpatialHeight="1024" remoteSpatialWidth="1024"
+    xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+    <createCity id="1" radius="0" color="black" name="C304" localX="516" localY="867"
+        remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C301" localX="110"
+        localY="230" remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C306" localX="478"
+        localY="954" remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C300" localX="168"
+        localY="535" remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C303" localX="509"
+        localY="416" remoteX="180" remoteY="616"/>
+    <createCity id="22" radius="0" color="black" name="C305"
+        localX="698" localY="623" remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C30"
+        localX="999" localY="916" remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C302"
+        localX="173" localY="529" remoteX="180"
+        remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C310"
+        localX="1023" localY="512" remoteX="180" remoteY="616"/>
+    <createCity id="1" radius="0" color="black" name="C311"
+        localX="0" localY="512" remoteX="180" remoteY="616"/>
+        
+    <listCities id="10" sortBy="name"/>
+    
+    <printAvlTree id="11"/>
+
+</commands>

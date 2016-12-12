@@ -120,8 +120,55 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
     }
 
     public V remove(Object key) {
-        throw new UnsupportedOperationException();
+        if (key == null) throw new NullPointerException();
+       
+        AvlNode<K, V> keyNode = getNode(key);
+        
+        AvlNode<K, V> rootKey = root;
+        size--;
+        remove(rootKey, keyNode);
+    	updateHeight(root);
+        return keyNode.value;
     }
+    
+    private AvlNode<K,V> remove(AvlNode<K,V> curr, AvlNode<K, V> findValue) {
+    	int comparatorValue = compare(findValue.key, curr.key);
+    	if (comparatorValue < 0) {
+    		curr.left = remove(curr.left, findValue);
+    	} else if (comparatorValue > 0) {
+    		curr.right = remove(curr.right, findValue);
+    	} else {
+    		//Once found, restructure stuff
+    		if (curr.left == null) {
+    			return curr.right; 
+    		} else if (curr.right == null) {
+    			return curr.left; 
+    			//delete the left side
+    		} else {
+    			AvlNode<K, V> temp = curr;
+    			if (!isEmpty()) {
+    				curr = leftMost(temp.right);
+    				curr.right = removeMin(temp.right);
+    				curr.left = temp.right;
+    				fixAfterModification(curr);
+    			}
+    		}
+    	}
+		return curr;
+    }
+    
+    private AvlNode<K, V> removeMin(AvlNode<K, V> curr) {
+    	if (curr.left == null) return curr.right;
+    	curr.left = removeMin(curr.left);
+		return curr;
+    }
+    
+    private AvlNode<K, V> leftMost(AvlNode<K,V> leftest) {
+    	if (leftest.left == null) 
+    		return leftest;
+    	return leftMost(leftest.left);
+    }
+    
 
     public K firstKey() {
         return key(getFirstNode());
@@ -380,7 +427,7 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
                 e = rotateLeft(e);
             else
                 e = rotateRightLeft(e);
-        }
+        }  
 
         if (e.parent != null)
             fixAfterModification(e.parent);

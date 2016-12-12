@@ -1,6 +1,7 @@
 package cmsc420.pmquadtree;
 
 import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Float;
 import java.awt.geom.Rectangle2D;
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,10 +9,12 @@ import java.util.LinkedList;
 import java.util.TreeSet;
 
 import cmsc420.geom.Inclusive2DIntersectionVerifier;
+import cmsc420.geometry.Airport;
 import cmsc420.geometry.City;
 import cmsc420.geometry.Geometry;
 import cmsc420.geometry.Road;
 import cmsc420.geometry.RoadNameComparator;
+import cmsc420.geometry.Terminal;
 
 public abstract class PMQuadtree {
 
@@ -23,6 +26,12 @@ public abstract class PMQuadtree {
 	
 	/** number of isolated cities */
 	protected int numIsolatedCities;
+	
+	/** number of airports */
+	protected int numAirports;
+	
+	/** number of terminals */
+	protected int numTerminals;
 	
 	/** root of the PM Quadtree */
 	protected Node root;
@@ -89,13 +98,18 @@ public abstract class PMQuadtree {
 		 * @param height
 		 *            height of the rectangular bounds of this node
 		 * @return this node after the city has been added
+		 * @throws PMRuleViolationThrowable 
 		 * @throws InvalidPartitionThrowable
 		 *             if the map if partitioned too deeply
 		 * @throws IntersectingRoadsThrowable
 		 *             if this road intersects with another road
 		 */
 		public Node add(final Geometry g, final Point2D.Float origin,
-				final int width, final int height) {
+				final int width, final int height) throws PMRuleViolationThrowable {
+			throw new UnsupportedOperationException();
+		}
+		
+		public Node remove(Geometry g, Float float1, int halfWidth, int halfHeight) {
 			throw new UnsupportedOperationException();
 		}
 
@@ -134,15 +148,21 @@ public abstract class PMQuadtree {
 		 * @param height
 		 *            height of the rectangular bounds of this node
 		 * @return this node after the city has been added
+		 * @throws PMRuleViolationThrowable 
 		 * @throws InvalidPartitionThrowable
 		 *             if the map if partitioned too deeply
 		 * @throws IntersectingRoadsThrowable
 		 *             if this road intersects with another road
 		 */
 		public Node add(final Geometry g, final Point2D.Float origin,
-				final int width, final int height) {
+				final int width, final int height) throws PMRuleViolationThrowable {
 			final Black blackNode = new Black();
 			return blackNode.add(g, origin, width, height);
+		}
+		
+		public Node remove(final Geometry g, final Point2D.Float origin,
+				final int width, final int height) {
+			throw new UnsupportedOperationException("Never should get here!");
 		}
 
 		/**
@@ -212,9 +232,10 @@ public abstract class PMQuadtree {
 		/**
 		 * Adds a road to this black node. After insertion, if the node becomes
 		 * invalid, it will be split into a Gray node.
+		 * @throws PMRuleViolationThrowable 
 		 */
 		public Node add(final Geometry g, final Point2D.Float origin,
-				final int width, final int height) {
+				final int width, final int height) throws PMRuleViolationThrowable {
 			if (g.isRoad()) {
 				// g is a road
 				Road r = (Road)g;
@@ -243,9 +264,17 @@ public abstract class PMQuadtree {
 				/* valid so return this black node */
 				return this;
 			} else {
+				//throw new PMRuleViolationThrowable();
 				/* invalid so partition into a Gray node */
 				return partition(origin, width, height);
 			}
+		}
+		
+		public Node remove(final Geometry g, final Point2D.Float origin,
+				final int width, final int height) {
+			geometry.remove(g);
+			if (geometry.isEmpty()) return white;
+			else return this;
 		}
 
 		/**
@@ -301,14 +330,15 @@ public abstract class PMQuadtree {
 		 * @param height
 		 *            height of the rectangular bounds of this node
 		 * @return the new gray node
+		 * @throws PMRuleViolationThrowable 
 		 * @throws InvalidPartitionThrowable
 		 *             if the quadtree was partitioned too deeply
 		 * @throws IntersectingRoadsThrowable
 		 *             if two roads intersect
 		 */
-		private Node partition(final Point2D.Float origin, final int width, final int height) 
-		{
+		private Node partition(final Point2D.Float origin, final int width, final int height) throws PMRuleViolationThrowable {
 			//][			
+
 			/* create new gray node */
 			Node gray = new Gray(origin, width, height);
 
@@ -442,24 +472,77 @@ public abstract class PMQuadtree {
 		 * @param height
 		 *            height of the rectangular bounds of this node
 		 * @return this node after the city has been added
+		 * @throws PMRuleViolationThrowable 
 		 * @throws InvalidPartitionThrowable
 		 *             if the map if partitioned too deeply
 		 * @throws IntersectingRoadsThrowable
 		 *             if this road intersects with another road
 		 */
 		public Node add(final Geometry g, final Point2D.Float origin,
+				final int width, final int height) throws PMRuleViolationThrowable {
+			
+			if (halfWidth < 1 || halfHeight < 1)
+				throw new PMRuleViolationThrowable();
+			
+			for (int i = 0; i < 4; i++) {
+				//TODO: Need support for airport and terminal stuff
+				try {
+					if (g.isRoad() && Inclusive2DIntersectionVerifier.intersects(
+							((Road)g).toLine2D(),regions[i]) 
+							|| g.isCity() && Inclusive2DIntersectionVerifier.intersects(
+									((City)g).toPoint2D(),regions[i])) {
+						children[i] = children[i].add(g, origins[i], halfWidth,
+								halfHeight);
+					}
+				} catch (ClassCastException e) {
+					if (g.isTerminal() && Inclusive2DIntersectionVerifier.intersects(
+							((Terminal)g).toLine2D(),regions[i]) 
+							|| g.isAirport() && Inclusive2DIntersectionVerifier.intersects(
+									((Airport)g).localPoint2D(),regions[i])) {
+						children[i] = children[i].add(g, origins[i], halfWidth,
+								halfHeight);
+					}
+				}
+			}
+			return this;
+		}
+		
+		public Node remove(final Geometry g, final Point2D.Float origin,
 				final int width, final int height) {
+			
+			int numWhite = 0;
+			int numBlack = 0;
+			Black blackNode = null;
 			
 			for (int i = 0; i < 4; i++) {
 				if (g.isRoad() && Inclusive2DIntersectionVerifier.intersects(
 						((Road)g).toLine2D(),regions[i]) 
 						|| g.isCity() && Inclusive2DIntersectionVerifier.intersects(
 								((City)g).toPoint2D(),regions[i])) {
-					children[i] = children[i].add(g, origins[i], halfWidth,
+					children[i] = children[i].remove(g, origins[i], halfWidth,
 							halfHeight);
 				}
+				
+				if (children[i] == white) numWhite++;
+				if (children[i].type == Node.BLACK) {
+					numBlack++;
+					blackNode = (Black)children[i];
+				}
 			}
-			return this;
+			
+			if (numWhite == 4) return white;
+			if (numBlack == 3 && numWhite == 1) return blackNode; 
+			else {
+				Black newBlack = new Black();
+				//Add all geometry in this subtree into b
+				for (int i = 0; i < 4; i++) {
+					if (children[i].type == Node.BLACK) {
+						newBlack.geometry.addAll(((Black)children[i]).geometry);
+					}
+				}
+				if (newBlack.isValid()) return newBlack;
+				else return this; //gray necessary, so keep in tree.
+			}
 		}
 
 		/**
@@ -573,7 +656,7 @@ public abstract class PMQuadtree {
 	}
 	
 	public void addRoad(final Road g) 
-			throws RoadAlreadyExistsThrowable, IsolatedCityAlreadyExistsThrowable, OutOfBoundsThrowable {
+			throws RoadAlreadyExistsThrowable, IsolatedCityAlreadyExistsThrowable, OutOfBoundsThrowable, PMRuleViolationThrowable {
 		if (isIsolatedCity(g.getStart()) || isIsolatedCity(g.getEnd())) {
 			throw new IsolatedCityAlreadyExistsThrowable();
 		}
@@ -601,8 +684,55 @@ public abstract class PMQuadtree {
 
 	}
 	
+	public void addAirport(final Airport airport) 
+			throws OutOfBoundsThrowable, PMRuleViolationThrowable {
+
+		if (!Inclusive2DIntersectionVerifier.intersects(airport.localPoint2D(), 
+				new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+						spatialWidth, spatialHeight))) {
+			throw new OutOfBoundsThrowable();
+		}
+		
+		if (!Inclusive2DIntersectionVerifier.intersects(airport.remotePoint2D(), 
+				new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+						spatialWidth, spatialHeight))) {
+			throw new OutOfBoundsThrowable();
+		}
+
+		numAirports++;	
+
+		root = root.add(airport, spatialOrigin, spatialWidth, spatialHeight);		
+
+	}
+	
+	public void addTerminal(final Terminal terminal) 
+			throws OutOfBoundsThrowable, PMRuleViolationThrowable {
+		/*Rectangle2D.Float world = new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+				spatialWidth, spatialHeight);
+		if (!Inclusive2DIntersectionVerifier.intersects(termi.toLine2D(), world)) {
+			throw new OutOfBoundsThrowable();
+		}*/
+		
+		if (!Inclusive2DIntersectionVerifier.intersects(terminal.localPoint2D(), 
+				new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+						spatialWidth, spatialHeight))) {
+			throw new OutOfBoundsThrowable();
+		}
+		
+		if (!Inclusive2DIntersectionVerifier.intersects(terminal.remotePoint2D(), 
+				new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+						spatialWidth, spatialHeight))) {
+			throw new OutOfBoundsThrowable();
+		}
+
+		numTerminals++;	
+
+		root = root.add(terminal, spatialOrigin, spatialWidth, spatialHeight);		
+
+	}
+	
 	public void addIsolatedCity(final City c) 
-			throws IsolatedCityAlreadyExistsThrowable, RoadAlreadyExistsThrowable, OutOfBoundsThrowable {
+			throws IsolatedCityAlreadyExistsThrowable, RoadAlreadyExistsThrowable, OutOfBoundsThrowable, PMRuleViolationThrowable {
 		if (numRoadsForCity.get(c.getName()) != null) {
 			if (numRoadsForCity.get(c.getName()) > 0) {
 				throw new RoadAlreadyExistsThrowable();

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" 
+localSpatialHeight="1024" localSpatialWidth="1024" 
+pmOrder="1" 
+remoteSpatialHeight="1024" remoteSpatialWidth="1024" 
+xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity color="black" id="1" localX="140" localY="37" name="A" radius="5" remoteX="1" remoteY="0"/>
+<createCity color="black" id="2" localX="133" localY="834" name="B" radius="5" remoteX="1" remoteY="0"/>
+<createCity color="black" id="3" localX="200" localY="300" name="C" radius="5" remoteX="1" remoteY="0"/>
+<createCity color="black" id="4" localX="1000" localY="1000" name="D" radius="5" remoteX="0" remoteY="2"/>
+<createCity color="black" id="5" localX="500" localY="400" name="E" radius="5" remoteX="0" remoteY="2"/>
+<createCity color="black" id="6" localX="450" localY="450" name="F" radius="5" remoteX="0" remoteY="2"/>
+
+<!-- Test errors -->
+
+<!-- same remote, same local, same name -->
+<!-- dup coord -->
+<createCity color="black" id="11" localX="500" localY="400" name="E" radius="5" remoteX="0" remoteY="2"/>
+
+<!-- same remote, same local, diff name -->
+<!-- dup coord -->
+<createCity color="black" id="12" localX="450" localY="450" name="NewCity" radius="5" remoteX="0" remoteY="2"/>
+
+<!-- same remote, diff local, diff name -->
+<!-- success -->
+<createCity color="black" id="13" localX="10" localY="10" name="NewName" radius="5" remoteX="0" remoteY="2"/>
+
+<!-- same remote, diff local, diff name -->
+<!-- success -->
+<createCity color="black" id="14" localX="450" localY="450" name="NewName2" radius="10" remoteX="10" remoteY="10"/>
+
+<!-- diff remote, diff local, same name -->
+<!-- dup city name -->
+<createCity color="black" id="15" localX="0" localY="0" name="F" radius="5" remoteX="0" remoteY="0"/>
+
+<printAvlTree id="20"/>
+
+<listCities sortBy="coordinate" id="22"/>
+<listCities sortBy="name" id="23"/>
+
+
+
+</commands>

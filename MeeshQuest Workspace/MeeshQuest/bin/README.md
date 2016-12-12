@@ -32,3 +32,4 @@ https://rosettacode.org/wiki/Dijkstra%27s_algorithm#Java
 Part 3:
 
 Using part 2 canonical for my work.
+Used as reference for AVL Tree delete: http://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/AVLTreeST.java.html

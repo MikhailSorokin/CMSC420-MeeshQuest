@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="256" localSpatialWidth="256" pmOrder="1" remoteSpatialHeight="256" remoteSpatialWidth="256" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity id="1"  name="Berlin" localX="128" localY="128" radius="0" color="red" remoteX="0" remoteY="0"/>
+ <createCity id="2"  name="Geneva" localX="90" localY="70" radius="0" color="orange" remoteX="0" remoteY="0"/>
+ <createCity id="3"  name="Madrid" radius="0" localX="45" localY="50" color="yellow" remoteX="0" remoteY="0"/>
+ <createCity id="4"  name="Andorra" localX="55" color="green" localY="50" radius="0" remoteX="0" remoteY="0"/>
+ <createCity id="5"  name="London" localX="70" localY="140" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="6"  name="Edinburgh" localX="70" localY="165" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="7"  name="Athens" localX="200" localY="40" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="8"  name="Varna" localX="210" localY="100" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="9"  name="Moscow" localX="220" localY="220" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="10"  name="St_Petersburg" localX="225" localY="225" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="11"  name="Stockholm" localX="140" localY="190" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="12"  name="Paris" localX="94" localY="98" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="13"  name="Zurich" localX="98" localY="94" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="14"  name="Lisbon" localX="20" localY="20" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="15"  name="Seville" localX="30" localY="10" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="16"  name="Warsaw" localX="200" localY="150" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="17"  name="Nantes" localX="75" localY="80" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="18"  name="Brussels" localX="100" localY="105" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="19"  name="Amsterdam" localX="110" localY="118" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="20"  name="Kiev" localX="240" localY="95" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="21"  name="Coppenhagen" localX="120" localY="140" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="22"  name="Prague" localX="130" localY="100" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="23"  name="Milan" localX="100" localY="75" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="24"  name="Rome" localX="50" localY="120" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="25"  name="Minsk" localX="200" localY="160" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="26"  name="Istanbul" localX="250" localY="20" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="27"  name="Belgrade" localX="75" localY="220" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="28"  name="Helsinki" localX="150" localY="200" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="29"  name="Bergen" localX="120" localY="200" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="30"  name="Stavanger" localX="120" localY="190" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="31"  name="Oslo" localX="130" localY="190" radius="0" color="blue" remoteX="0" remoteY="0"/>
+ <createCity id="32"  name="Trondheim" localX="130" localY="200" radius="0" color="blue" remoteX="0" remoteY="0"/>
+
+
+<printAvlTree id="1"/>
+
+<deleteCity id="12" name="Varna"/>
+
+<printAvlTree id="1"/>
+
+<deleteCity id="12" name="Warsaw"/>
+
+<printAvlTree id="1"/>
+
+<deleteCity id="12" name="Rome"/>
+<deleteCity id="12" name="Moscow"/>
+
+<printAvlTree id="1"/>
+
+</commands>

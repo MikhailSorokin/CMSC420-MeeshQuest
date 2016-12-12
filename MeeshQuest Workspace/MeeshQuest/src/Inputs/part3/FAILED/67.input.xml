@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity name="X" color="black" id="1" localX="500" localY="500" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Y" color="black" id="1" localX="510" localY="480" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Z" color="black" id="1" localX="490" localY="480" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Q" color="black" id="1" localX="515" localY="471" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="V" color="black" id="1" localX="10" localY="0" radius="0" remoteX="2" remoteY="1"/>
+<createCity name="W" color="black" id="1" localX="1024" localY="1024" radius="0" remoteX="2" remoteY="1"/>
+
+<mapRoad id="2" start="Z" end="X"/>
+<mapRoad id="2" start="Y" end="Q"/>
+<mapRoad id="2" start="V" end="W"/>
+
+<mapAirport id="9" localX="500" localY="480" name="A1" remoteX="1" remoteY="0" terminalName="A1T1" terminalX="500" terminalY="490" terminalCity="X"/>
+<mapTerminal id="9" name="A1T2" localX="490" localY="470" remoteX="1" remoteY="0" cityName="Z" airportName="A1"/>
+<mapTerminal id="9" name="A1T2" localX="510" localY="490" remoteX="1" remoteY="0" cityName="Y" airportName="A1"/>
+<mapAirport id="9" localX="0" localY="0" name="A2" remoteX="2" remoteY="1" terminalName="A2T1" terminalX="5" terminalY="0" terminalCity="V"/>
+
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<mst id="1" start="Q"/>
+<mst id="1" start="V"/>
+<mst id="1" start="W"/>
+
+</commands>

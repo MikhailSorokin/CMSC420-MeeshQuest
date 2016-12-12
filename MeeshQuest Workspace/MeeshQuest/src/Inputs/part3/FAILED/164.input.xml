@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="part3in.xsd"	
+	g="1" 
+	pmOrder="3" 
+	localSpatialHeight="1024" 
+	localSpatialWidth="1024" 
+	remoteSpatialHeight="1024" 
+	remoteSpatialWidth="1024">
+	
+	<printPMQuadtree id="1" remoteX="1024" remoteY="0"/>
+</commands>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="A" color="black" id="1" localX="500" localY="512" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="550" localY="512" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C" color="black" id="1" localX="550" localY="612" radius="0" remoteX="1" remoteY="0"/>
+
+<mapRoad id="2" start="A" end="B"/>
+
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="301" terminalY="512" terminalName="T1" terminalCity="B"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="300" terminalY="512" terminalName="T1" terminalCity="B"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="301" terminalY="512" terminalName="T1" terminalCity="A"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="300" terminalY="512" terminalName="T1" terminalCity="A"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="525" localY="512" terminalX="500" terminalY="500" terminalName="T1" terminalCity="A"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="300" terminalY="1030" terminalName="T1" terminalCity="A"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="1030" terminalX="300" terminalY="512" terminalName="T1" terminalCity="A"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="400" terminalY="512" terminalName="T1" terminalCity="A"/>
+
+<mapTerminal id="1" name="T2" remoteX="1" remoteY="0" localX="400" localY="512" airportName="A" cityName="C"/>
+
+<unmapAirport id="1" name="Air1"/>
+<mapAirport id="1" name="Air1" remoteX="1" remoteY="0" localX="300" localY="512" terminalX="400" terminalY="512" terminalName="T1" terminalCity="A"/>
+
+<mapRoad id="2" start="B" end="C"/>
+
+<mapAirport id="1" name="Air2" remoteX="1" remoteY="0" localX="600" localY="550" terminalX="600" terminalY="550" terminalName="Air2" terminalCity="A"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+
+</commands>

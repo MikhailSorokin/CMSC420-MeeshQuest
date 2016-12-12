@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+	<createCity color="black" id="1" localX="2" localY="6" name="A" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="4" localY="2" name="B" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="4" localY="2" name="C" radius="0" remoteX="1" remoteY="1"/>
+	<createCity color="black" id="2" localX="4" localY="4" name="D" radius="0" remoteX="1" remoteY="1"/>
+	<createCity color="black" id="2" localX="5" localY="2" name="E" radius="0" remoteX="1" remoteY="0"/>
+	
+	<createCity color="black" id="2" localX="1" localY="1" name="F" radius="0" remoteX="5" remoteY="5"/>
+	<createCity color="black" id="2" localX="2" localY="2" name="G" radius="0" remoteX="5" remoteY="5"/>
+	
+
+	<mapRoad end="A" id="3" start="B"/>
+	<mapRoad end="C" id="3" start="D"/>
+	<globalRangeCities id="10" remoteX="1" remoteY="0" radius="20"/>
+	<mapRoad end="G" id="3" start="F"/>
+		<globalRangeCities id="10" remoteX="1" remoteY="0" radius="20"/>
+	
+
+</commands>

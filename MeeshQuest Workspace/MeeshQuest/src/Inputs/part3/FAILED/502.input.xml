@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity id="1" name="city0" localX="283" localY="131" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="2" name="city1" localX="473" localY="227" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="3" name="city2" localX="182" localY="389" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="4" name="city3" localX="322" localY="126" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="5" name="city4" localX="336" localY="486" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="6" name="city5" localX="219" localY="99" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="7" name="city6" localX="319" localY="471" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="8" name="city7" localX="140" localY="194" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="9" name="city8" localX="280" localY="508" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="10" name="city9" localX="230" localY="426" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="11" name="city10" localX="240" localY="152" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="12" name="city11" localX="266" localY="6" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="13" name="city12" localX="394" localY="25" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="14" name="city13" localX="294" localY="473" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="15" name="city14" localX="362" localY="318" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="16" name="city15" localX="228" localY="358" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="17" name="city16" localX="408" localY="491" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="18" name="city17" localX="139" localY="321" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="19" name="city18" localX="391" localY="249" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="20" name="city19" localX="500" localY="362" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="21" name="city20" localX="229" localY="89" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="22" name="city21" localX="170" localY="420" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="23" name="city22" localX="196" localY="61" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="24" name="city23" localX="274" localY="303" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="25" name="city24" localX="26" localY="471" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="26" name="city25" localX="135" localY="296" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="27" name="city26" localX="460" localY="334" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="28" name="city27" localX="69" localY="22" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="29" name="city28" localX="285" localY="53" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="30" name="city29" localX="267" localY="244" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="31" name="city30" localX="137" localY="478" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="32" name="city31" localX="404" localY="74" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="33" name="city32" localX="157" localY="35" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="34" name="city33" localX="71" localY="364" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="35" name="city34" localX="2" localY="301" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="36" name="city35" localX="419" localY="214" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="37" name="city36" localX="73" localY="302" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="38" name="city37" localX="393" localY="166" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="39" name="city38" localX="273" localY="262" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="40" name="city39" localX="502" localY="216" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="41" name="city40" localX="189" localY="155" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="42" name="city41" localX="509" localY="337" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="43" name="city42" localX="225" localY="442" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="44" name="city43" localX="337" localY="456" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="45" name="city44" localX="149" localY="184" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="46" name="city45" localX="207" localY="426" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="47" name="city46" localX="297" localY="201" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="48" name="city47" localX="149" localY="317" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="49" name="city48" localX="356" localY="406" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="50" name="city49" localX="54" localY="123" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="51" name="city50" localX="456" localY="172" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="52" name="city51" localX="316" localY="186" remoteX="202" remoteY="390" radius="0" color="black"/>
+<createCity id="53" name="city52" localX="64" localY="91" remoteX="202" remoteY="390" radius="0" color="black"/>
+<deleteCity id="99" name="city46"/>
+<deleteCity id="100" name="city3"/>
+<deleteCity id="101" name="city19"/>
+<deleteCity id="102" name="city7"/>
+<printAvlTree id="12"/>
+<deleteCity id="103" name="city10"/>
+<deleteCity id="104" name="city20"/>
+<printAvlTree id="12"/>
+<deleteCity id="105" name="city30"/>
+<deleteCity id="106" name="city28"/>
+<printAvlTree id="12"/>
+<deleteCity id="107" name="city68"/>
+<deleteCity id="108" name="city23"/>
+<printAvlTree id="12"/>
+<deleteCity id="99" name="city0"/>
+<deleteCity id="100" name="city1"/>
+<deleteCity id="101" name="city2"/>
+<deleteCity id="99" name="city3"/>
+<deleteCity id="100" name="city4"/>
+<deleteCity id="101" name="city5"/>
+<deleteCity id="99" name="city6"/>
+<deleteCity id="100" name="city7"/>
+<deleteCity id="101" name="city8"/>
+<deleteCity id="99" name="city9"/>
+<deleteCity id="100" name="city10"/>
+<deleteCity id="101" name="city11"/>
+<deleteCity id="99" name="city12"/>
+<deleteCity id="100" name="city13"/>
+<deleteCity id="101" name="city14"/>
+<deleteCity id="99" name="city15"/>
+<deleteCity id="100" name="city16"/>
+<deleteCity id="101" name="city17"/>
+<deleteCity id="99" name="city18"/>
+<deleteCity id="100" name="city19"/>
+<printAvlTree id="12"/>
+<deleteCity id="101" name="city20"/>
+<deleteCity id="99" name="city21"/>
+<deleteCity id="100" name="city22"/>
+<deleteCity id="101" name="city23"/>
+<deleteCity id="99" name="city24"/>
+<deleteCity id="100" name="city25"/>
+<deleteCity id="101" name="city26"/>
+<deleteCity id="99" name="city27"/>
+<deleteCity id="100" name="city28"/>
+<deleteCity id="101" name="city29"/>
+<deleteCity id="99" name="city30"/>
+<deleteCity id="100" name="city31"/>
+<printAvlTree id="12"/>
+<deleteCity id="101" name="city32"/>
+<deleteCity id="99" name="city33"/>
+<deleteCity id="100" name="city34"/>
+<deleteCity id="101" name="city35"/>
+<deleteCity id="99" name="city36"/>
+<deleteCity id="100" name="city37"/>
+<deleteCity id="101" name="city38"/>
+<deleteCity id="99" name="city39"/>
+<deleteCity id="100" name="city40"/>
+<deleteCity id="101" name="city41"/>
+<deleteCity id="99" name="city42"/>
+<deleteCity id="100" name="city43"/>
+<printAvlTree id="12"/>
+<deleteCity id="101" name="city44"/>
+<deleteCity id="99" name="city45"/>
+<deleteCity id="100" name="city46"/>
+<deleteCity id="101" name="city47"/>
+<deleteCity id="100" name="city48"/>
+<deleteCity id="101" name="city49"/>
+<deleteCity id="99" name="city50"/>
+<deleteCity id="100" name="city51"/>
+<deleteCity id="101" name="city52"/>
+<printAvlTree id="12"/>
+<printPMQuadtree id="100" remoteX="0" remoteY="0" />
+</commands>

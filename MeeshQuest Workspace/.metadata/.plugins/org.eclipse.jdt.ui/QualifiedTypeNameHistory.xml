@@ -34,7 +34,6 @@
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.CityNameComparator"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.AvlGTree"/>
-<fullyQualifiedTypeName name="java.rmi.UnexpectedException"/>
 <fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
 <fullyQualifiedTypeName name="java.awt.geom.Arc2D.Double"/>
 <fullyQualifiedTypeName name="java.awt.geom.Arc2D"/>
@@ -44,7 +43,13 @@
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.Graph"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.awt.geom.Point2D.Float"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+<fullyQualifiedTypeName name="cmsc420.pmquadtree.PMQuadtree.Node"/>
+<fullyQualifiedTypeName name="cmsc420.geometry.Geometry"/>
+<fullyQualifiedTypeName name="java.rmi.UnexpectedException"/>
+<fullyQualifiedTypeName name="cmsc420.pmquadtree.PM1Quadtree"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.awt.geom.Point2D.Float"/>
 </qualifiedTypeNameHistroy>

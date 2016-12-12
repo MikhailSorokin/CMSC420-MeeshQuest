@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="128" localSpatialWidth="128" pmOrder="3" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity name="A" color="black" id="1" localX="2" localY="37" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="128" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C" color="black" id="1" localX="64" localY="64" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="D" color="black" id="1" localX="79" localY="124" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="E" color="black" id="1" localX="32" localY="100" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="F" color="black" id="1" localX="14" localY="37" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="G" color="black" id="1" localX="51" localY="47" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="H" color="black" id="1" localX="100" localY="10" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="I" color="black" id="1" localX="20" localY="80" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="J" color="black" id="1" localX="120" localY="67" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="K" color="black" id="1" localX="12" localY="104" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="L" color="black" id="1" localX="12" localY="128" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="M" color="black" id="1" localX="12" localY="105" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="N" color="black" id="1" localX="120" localY="120" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="O" color="black" id="1" localX="125" localY="130" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="P" color="black" id="1" localX="130" localY="125" radius="0" remoteX="1" remoteY="0"/>
+
+<mapRoad id="2" start="I" end="E"/>
+<mapRoad id="2" start="E" end="D"/>
+<mapRoad id="2" start="C" end="D"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="F" end="C"/>
+<mapRoad id="2" start="G" end="C"/>
+<mapRoad id="2" start="C" end="J"/>
+<mapRoad id="2" start="J" end="B"/>
+<mapRoad id="2" start="H" end="B"/>
+<mapRoad id="2" start="L" end="K"/>
+<mapRoad id="2" start="M" end="K"/>
+<mapRoad id="2" start="I" end="J"/>
+<mapRoad id="2" start="C" end="N"/>
+<mapRoad id="2" start="O" end="P"/>
+<mapRoad id="2" start="D" end="O"/>
+
+<mapAirport id="9" localX="112" localY="112" name="A1" remoteX="1" remoteY="0" terminalName="A1T1" terminalX="90" terminalY="113" terminalCity="D"/>
+<mapAirport id="9" localX="48" localY="16" name="A2" remoteX="1" remoteY="0" terminalName="A2T1" terminalX="80" terminalY="16" terminalCity="H"/>
+<mapTerminal id="9" name="A1T2" localX="100" localY="91" remoteX="1" remoteY="0" cityName="J" airportName="A1"/>
+<mapTerminal id="9" name="A2T2" localX="75" localY="32" remoteX="1" remoteY="0" cityName="B" airportName="A2"/>
+
+<saveMap id="1" remoteX="1" remoteY="0" name="myPrintPMQuad6"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+<deleteCity id="12" name="C"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+<unmapRoad id="2" start="E" end="D"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+<unmapTerminal id="2" name="A1T2"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+<unmapTerminal id="2" name="A1T1"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+<unmapAirport id="2" name="A2"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+
+</commands>

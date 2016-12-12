@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="F" color="black" id="1" localX="140" localY="37" radius="0" remoteX="2" remoteY="0"/>
+<createCity name="G" color="black" id="1" localX="512" localY="512" radius="0" remoteX="2" remoteY="0"/>
+
+<mapRoad id="2" start="F" end="G"/>
+
+<mapAirport id="9" localX="145" localY="37" name="A3" remoteX="2" remoteY="0" terminalName="A3T1" terminalX="142" terminalY="40" terminalCity="F"/>
+
+</commands>

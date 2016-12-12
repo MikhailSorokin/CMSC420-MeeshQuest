@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="part3in.xsd"
+    localSpatialWidth="128"
+    localSpatialHeight="128"
+	remoteSpatialWidth="128"
+    remoteSpatialHeight="128"
+    g="1"
+    pmOrder="3">
+<createCity color="black" id="1" localX="120" localY="90" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+<createCity color="black" id="2" localX="120" localY="90" name="Chicago" radius="0" remoteX="1" remoteY="1"/>
+
+</commands>

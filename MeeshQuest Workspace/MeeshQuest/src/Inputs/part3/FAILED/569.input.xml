@@ -1,0 +1,14 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part3in.xsd"
+ 	spatialWidth="512"
+ 	spatialHeight="512"
+ 	pmOrder="3"
+ 	g="1">
+ <createCity id="1" name="Baltimore" y="100" x="100" radius="0" color="black"/>
+ <createCity id="2" name="Chicago" y="100" x="50" radius="0"  color="black"/>
+ <createCity id="5" name="Baltimor" y="125" x="75" radius="0" color="black"/>
+ <createCity id="6" name="Chicag" y="75" x="75" radius="0"  color="black"/>
+ <mapRoad id="3" start="Baltimore" end="Chicago"/>
+ <mapRoad id="4" end="Baltimor" start="Chicag"/>
+</commands>
