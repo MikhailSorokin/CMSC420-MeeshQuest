@@ -53,6 +53,8 @@ public abstract class PMQuadtree {
 
 	/** order of the PM Quadtree (one of: {1,2,3}) */
 	final protected int order;
+	
+	protected boolean needToThrowPMRuleException = false;
 
 	public abstract class Node {
 		/** Type flag for an empty PM Quadtree leaf node */
@@ -195,7 +197,7 @@ public abstract class PMQuadtree {
 		/** list of cities and roads contained within black node */
 		final protected LinkedList<Geometry> geometry;
 
-		/** number of cities contained within this black node */
+		/** number of airpoints contained within this black node */
 		protected int numPoints;
 
 		/**
@@ -236,6 +238,7 @@ public abstract class PMQuadtree {
 		 */
 		public Node add(final Geometry g, final Point2D.Float origin,
 				final int width, final int height) throws PMRuleViolationThrowable {
+			
 			if (g.isRoad()) {
 				// g is a road
 				Road r = (Road)g;
@@ -244,35 +247,61 @@ public abstract class PMQuadtree {
 						origin.y, width, height);
 				
 				/* check if start point intersects with region */
-				if (Inclusive2DIntersectionVerifier.intersects(r.getStart().toPoint2D(), rect)) {
-					addGeometryToList(r.getStart());
-				}
-	
-				/* check if end point intersects with region */
-				if (Inclusive2DIntersectionVerifier.intersects(r.getEnd().toPoint2D(), rect)) {
-					addGeometryToList(r.getEnd());
+				if (r.getStartTerminal() != null) {
+					if (Inclusive2DIntersectionVerifier.intersects(r.getStartTerminal().localPoint2D(), rect)) {
+						addGeometryToList(r.getStartTerminal());
+					}
+				} else {
+					if (Inclusive2DIntersectionVerifier.intersects(r.getStart().toPoint2D(), rect)) {
+						addGeometryToList(r.getStart());
+					}
 				}
 				
+				/* check if end point intersects with region */
+				if (r.getEndTerminal() != null) {
+					if (Inclusive2DIntersectionVerifier.intersects(r.getEndTerminal().localPoint2D(), rect)) {
+						addGeometryToList(r.getEndTerminal());
+					}
+				} else {
+					if (Inclusive2DIntersectionVerifier.intersects(r.getEnd().toPoint2D(), rect)) {
+						addGeometryToList(r.getEnd());
+					}
+				}
+					
 			}
 
-			/* add the road or isolated city to the geometry list */
+			/* add the road or airport to the geometry list */
 			addGeometryToList(g);
 			
-			//][
 			/* check if this node is valid */
 			if (isValid()) {
 				/* valid so return this black node */
 				return this;
 			} else {
-				//throw new PMRuleViolationThrowable();
 				/* invalid so partition into a Gray node */
 				return partition(origin, width, height);
 			}
 		}
 		
+		private boolean removeGeometryToList(final Geometry g) {
+			/* search for the non-existent item */
+			final int index = getIndex(g);
+
+			if (index < 0) return false;
+			
+			geometry.remove(index);
+
+			if (g.isCity() || g.isAirport() || g.isTerminal()) {
+					// g is an ISO city or airport
+				numPoints--;
+			}
+			
+			return true;
+		}
+		
 		public Node remove(final Geometry g, final Point2D.Float origin,
 				final int width, final int height) {
-			geometry.remove(g);
+			removeGeometryToList(g);
 			if (geometry.isEmpty()) return white;
 			else return this;
 		}
@@ -291,8 +320,8 @@ public abstract class PMQuadtree {
 			if (index < 0) {
 				geometry.add(-index - 1, g);
 
-				if (g.isCity()) {
-					// g is a city
+				if (g.isCity() || g.isAirport() || g.isTerminal()) {
+					// g is an ISO city or airport
 					numPoints++;
 				}
 				return true;
@@ -342,11 +371,11 @@ public abstract class PMQuadtree {
 			/* create new gray node */
 			Node gray = new Gray(origin, width, height);
 
-			// add isolated cities only; endpoints of roads are added in recursive calls
+			// add airports/terminals only; endpoints of roads are added in recursive calls
 			// to black.add()
 			for (int i = 0; i < numPoints; i++) {
 				final Geometry g = geometry.get(i);
-				if (isIsolatedCity(g)) {
+				if (g.isAirport()) {
 					gray = gray.add(g, origin, width, height);
 				}
 			}			
@@ -478,30 +507,28 @@ public abstract class PMQuadtree {
 		 * @throws IntersectingRoadsThrowable
 		 *             if this road intersects with another road
 		 */
+		
 		public Node add(final Geometry g, final Point2D.Float origin,
-				final int width, final int height) throws PMRuleViolationThrowable {
+				final int width, final int height) throws PMRuleViolationThrowable  {
 			
-			if (halfWidth < 1 || halfHeight < 1)
-				throw new PMRuleViolationThrowable();
+			if (halfWidth < 1 || halfHeight < 1) {
+				needToThrowPMRuleException = true;
+				/*return this;
+				throw new PMRuleViolationThrowable();*/
+			}
 			
 			for (int i = 0; i < 4; i++) {
 				//TODO: Need support for airport and terminal stuff
-				try {
-					if (g.isRoad() && Inclusive2DIntersectionVerifier.intersects(
-							((Road)g).toLine2D(),regions[i]) 
-							|| g.isCity() && Inclusive2DIntersectionVerifier.intersects(
-									((City)g).toPoint2D(),regions[i])) {
-						children[i] = children[i].add(g, origins[i], halfWidth,
-								halfHeight);
-					}
-				} catch (ClassCastException e) {
-					if (g.isTerminal() && Inclusive2DIntersectionVerifier.intersects(
-							((Terminal)g).toLine2D(),regions[i]) 
-							|| g.isAirport() && Inclusive2DIntersectionVerifier.intersects(
-									((Airport)g).localPoint2D(),regions[i])) {
-						children[i] = children[i].add(g, origins[i], halfWidth,
-								halfHeight);
-					}
+				if (g.isRoad() && Inclusive2DIntersectionVerifier.intersects(
+						((Road)g).toLine2D(),regions[i]) 
+						|| g.isCity() && Inclusive2DIntersectionVerifier.intersects(
+								((City)g).toPoint2D(),regions[i])
+						|| g.isTerminal() && Inclusive2DIntersectionVerifier.intersects(
+								((Terminal)g).toLine2D(),regions[i]) 
+								|| g.isAirport() && Inclusive2DIntersectionVerifier.intersects(
+										((Airport)g).localPoint2D(),regions[i])) {
+					children[i] = children[i].add(g, origins[i], halfWidth,
+							halfHeight);
 				}
 			}
 			return this;
@@ -512,36 +539,54 @@ public abstract class PMQuadtree {
 			
 			int numWhite = 0;
 			int numBlack = 0;
+			int numGray = 0;
 			Black blackNode = null;
 			
 			for (int i = 0; i < 4; i++) {
 				if (g.isRoad() && Inclusive2DIntersectionVerifier.intersects(
 						((Road)g).toLine2D(),regions[i]) 
 						|| g.isCity() && Inclusive2DIntersectionVerifier.intersects(
-								((City)g).toPoint2D(),regions[i])) {
+								((City)g).toPoint2D(),regions[i])
+						|| g.isTerminal() && Inclusive2DIntersectionVerifier.intersects(
+								((Terminal)g).toLine2D(),regions[i]) 
+								|| g.isAirport() && Inclusive2DIntersectionVerifier.intersects(
+										((Airport)g).localPoint2D(),regions[i])) {
 					children[i] = children[i].remove(g, origins[i], halfWidth,
 							halfHeight);
 				}
 				
-				if (children[i] == white) numWhite++;
-				if (children[i].type == Node.BLACK) {
-					numBlack++;
-					blackNode = (Black)children[i];
-				}
 			}
 			
-			if (numWhite == 4) return white;
-			if (numBlack == 3 && numWhite == 1) return blackNode; 
-			else {
+			for (int i = 0; i < 4; i++) {
+				if (children[i] == white) numWhite++;
+				else if (children[i].type == Node.BLACK) {
+					numBlack++;
+					blackNode = (Black)children[i];
+				} else if (children[i].type == Node.GRAY) {
+					numGray++;
+				}
+			}
+
+			if (numWhite == 4) { 
+				return white;
+			}
+			else if (numWhite == 3 && numBlack == 1) {
+				return blackNode; 
+			}
+			else if (numGray == 0) {
 				Black newBlack = new Black();
 				//Add all geometry in this subtree into b
 				for (int i = 0; i < 4; i++) {
 					if (children[i].type == Node.BLACK) {
-						newBlack.geometry.addAll(((Black)children[i]).geometry);
+						for (Geometry blackGeometry : ((Black)children[i]).geometry) {
+							newBlack.addGeometryToList(blackGeometry);
+						}
 					}
 				}
 				if (newBlack.isValid()) return newBlack;
 				else return this; //gray necessary, so keep in tree.
+			} else { 
+				return this;
 			}
 		}
 
@@ -655,25 +700,48 @@ public abstract class PMQuadtree {
 		return root;
 	}
 	
+	public void setRoot(Node newRoot) {
+		root = newRoot;
+	}
+	
 	public void addRoad(final Road g) 
-			throws RoadAlreadyExistsThrowable, IsolatedCityAlreadyExistsThrowable, OutOfBoundsThrowable, PMRuleViolationThrowable {
-		if (isIsolatedCity(g.getStart()) || isIsolatedCity(g.getEnd())) {
-			throw new IsolatedCityAlreadyExistsThrowable();
-		}
+			throws RoadAlreadyExistsThrowable, OutOfBoundsThrowable, 
+			PMRuleViolationThrowable, RoadIntersectingThrowable {
 
+
+		Rectangle2D.Float world = new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+				spatialWidth, spatialHeight);
+		if (!Inclusive2DIntersectionVerifier.intersects(g.toLine2D(), world)) {
+			throw new OutOfBoundsThrowable();
+		}
+		
 		final Road g2 = new Road(g.getEnd(), g.getStart());
 
 		if (allRoads.contains(g) || allRoads.contains(g2)) {
 			throw new RoadAlreadyExistsThrowable();
 		}
 		
-		Rectangle2D.Float world = new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
-				spatialWidth, spatialHeight);
-		if (!Inclusive2DIntersectionVerifier.intersects(g.toLine2D(), world)) {
-			throw new OutOfBoundsThrowable();
-		}
-
+		/*for (Road r : allRoads) {
+			if ((g.getStart() != r.getStart() && g.getEnd() != r.getEnd())
+				|| (g2.getStart() != r.getStart() && g2.getEnd() != r.getEnd())
+					|| r.toLine2D().intersectsLine(g.toLine2D())) {
+				throw new RoadIntersectingThrowable();
+			}
+		}*/
+		
+		//If road intersects with airport, discount it
+		/*if (Inclusive2DIntersectionVerifier.intersects(airport.localPoint2D(), 
+				terminal.toLine2D())) {
+			throw new PMRuleViolationThrowable();
+		}*/
+		
+		needToThrowPMRuleException = false;
 		root = root.add(g, spatialOrigin, spatialWidth, spatialHeight);
+		
+		if (needToThrowPMRuleException) {
+			throw new PMRuleViolationThrowable();
+		}
+		
 		allRoads.add(g);
 		if (Inclusive2DIntersectionVerifier.intersects(g.getStart().toPoint2D(), world)) {
 			increaseNumRoadsMap(g.getStart().getName());
@@ -684,7 +752,7 @@ public abstract class PMQuadtree {
 
 	}
 	
-	public void addAirport(final Airport airport) 
+	public void addAirport(final Airport airport, final Terminal terminal) 
 			throws OutOfBoundsThrowable, PMRuleViolationThrowable {
 
 		if (!Inclusive2DIntersectionVerifier.intersects(airport.localPoint2D(), 
@@ -698,37 +766,122 @@ public abstract class PMQuadtree {
 						spatialWidth, spatialHeight))) {
 			throw new OutOfBoundsThrowable();
 		}
+		
+		for (Road r : allRoads) {
+			if (Inclusive2DIntersectionVerifier.intersects(airport.localPoint2D(), 
+					r.toLine2D())) {
+				throw new PMRuleViolationThrowable();
+			}
+		}
+		/*if (Inclusive2DIntersectionVerifier.intersects(airport.localPoint2D(), 
+				terminal.toLine2D())) {
+			throw new PMRuleViolationThrowable();
+		}*/
 
 		numAirports++;	
-
-		root = root.add(airport, spatialOrigin, spatialWidth, spatialHeight);		
+		numRoadsForCity.put(airport.getName(), 0);
+		
+		needToThrowPMRuleException = false;
+		root = root.add(airport, spatialOrigin, spatialWidth, spatialHeight);
+		
+		if (needToThrowPMRuleException) {
+			throw new PMRuleViolationThrowable();
+		}
 
 	}
 	
-	public void addTerminal(final Terminal terminal) 
-			throws OutOfBoundsThrowable, PMRuleViolationThrowable {
-		/*Rectangle2D.Float world = new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
-				spatialWidth, spatialHeight);
-		if (!Inclusive2DIntersectionVerifier.intersects(termi.toLine2D(), world)) {
-			throw new OutOfBoundsThrowable();
-		}*/
-		
+	public void addTerminal(final Terminal terminal, City terminalConnectingCity) 
+			throws OutOfBoundsThrowable, PMRuleViolationThrowable,
+			CityDoesNotExistThrowable, NotSameMetropoleThrowable {
+
 		if (!Inclusive2DIntersectionVerifier.intersects(terminal.localPoint2D(), 
 				new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
 						spatialWidth, spatialHeight))) {
 			throw new OutOfBoundsThrowable();
 		}
 		
-		if (!Inclusive2DIntersectionVerifier.intersects(terminal.remotePoint2D(), 
+		if (terminalConnectingCity == null) {
+			throw new CityDoesNotExistThrowable();
+		}
+		
+		if (terminalConnectingCity.getRemoteX() != terminal.getRemoteX() || terminalConnectingCity.getRemoteY() != terminal.getRemoteY()) {
+			throw new NotSameMetropoleThrowable();
+		}
+
+
+		Road r = new Road(terminal);
+		
+		allRoads.add(r);
+		Rectangle2D.Float world = new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+				spatialWidth, spatialHeight);
+
+		if (Inclusive2DIntersectionVerifier.intersects(terminal.localPoint2D(), world)) {
+			increaseNumRoadsMap(terminal.getTerminalName());
+		}
+		
+		City nonNullCity = r.getStart() != null ? r.getStart() : r.getEnd();
+		if (Inclusive2DIntersectionVerifier.intersects(nonNullCity.toPoint2D(), world)) {
+			increaseNumRoadsMap(nonNullCity.getName());
+		}
+		
+		//root = root.add(terminal, spatialOrigin, spatialWidth, spatialHeight);		
+		needToThrowPMRuleException = false;
+		root = root.add(r, spatialOrigin, spatialWidth, spatialHeight);
+		
+		if (needToThrowPMRuleException) {
+			throw new PMRuleViolationThrowable();
+		}
+	}
+	
+	public void addTerminal(final Terminal terminal, Airport airport, City terminalConnectingCity) 
+			throws OutOfBoundsThrowable, PMRuleViolationThrowable, AirportDoesNotExistThrowable,
+			CityDoesNotExistThrowable, AirportNotSameMetropoleThrowable, NotSameMetropoleThrowable {
+
+		if (!Inclusive2DIntersectionVerifier.intersects(terminal.localPoint2D(), 
 				new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
 						spatialWidth, spatialHeight))) {
 			throw new OutOfBoundsThrowable();
 		}
+		
+		if (airport == null) {
+			throw new AirportDoesNotExistThrowable();
+		}
+		
+		if (terminalConnectingCity == null) {
+			throw new CityDoesNotExistThrowable();
+		}
+		
+		if (airport.getRemoteX() != terminal.getRemoteX() || airport.getRemoteY() != terminal.getRemoteY()) {
+			throw new AirportNotSameMetropoleThrowable();
+		}
+		
+		if (terminalConnectingCity.getRemoteX() != terminal.getRemoteX() || terminalConnectingCity.getRemoteY() != terminal.getRemoteY()) {
+			throw new NotSameMetropoleThrowable();
+		}
 
-		numTerminals++;	
 
-		root = root.add(terminal, spatialOrigin, spatialWidth, spatialHeight);		
+		Road r = new Road(terminal);
+		
+		allRoads.add(r);
+		Rectangle2D.Float world = new Rectangle2D.Float(spatialOrigin.x, spatialOrigin.y, 
+				spatialWidth, spatialHeight);
 
+		if (Inclusive2DIntersectionVerifier.intersects(terminal.localPoint2D(), world)) {
+			increaseNumRoadsMap(terminal.getTerminalName());
+		}
+		
+		City nonNullCity = r.getStart() != null ? r.getStart() : r.getEnd();
+		if (Inclusive2DIntersectionVerifier.intersects(nonNullCity.toPoint2D(), world)) {
+			increaseNumRoadsMap(nonNullCity.getName());
+		}
+		
+		//root = root.add(terminal, spatialOrigin, spatialWidth, spatialHeight);		
+		needToThrowPMRuleException = false;
+		root = root.add(r, spatialOrigin, spatialWidth, spatialHeight);
+		
+		if (needToThrowPMRuleException) {
+			throw new PMRuleViolationThrowable();
+		}
 	}
 	
 	public void addIsolatedCity(final City c) 
@@ -760,6 +913,17 @@ public abstract class PMQuadtree {
 			numRoadsForCity.put(name, numRoads);
 		} else {
 			numRoadsForCity.put(name, 1);
+		}
+	}
+	
+	private void decreaseNumRoadsMap(final String name) {
+		Integer numRoads = numRoadsForCity.get(name);
+		if (numRoads != null) {
+			numRoads--;
+			numRoadsForCity.replace(name, numRoads);
+			if (numRoads == 0) {
+				numRoadsForCity.remove(name);
+			}
 		}
 	}
 
@@ -809,5 +973,61 @@ public abstract class PMQuadtree {
 			return false;
 		}
 		return true;
+	}
+
+	public void deleteGeometry(Road road) throws StartDoesNotExistThrowable, EndDoesNotExistThrowable {
+		//TODO: Make the road throw an error when encountering a terminalCity
+		if (road.getStartTerminal() != null) {
+			throw new StartDoesNotExistThrowable();
+		} else if (road.getEndTerminal() != null) {
+			throw new EndDoesNotExistThrowable();
+		}
+		
+		root = root.remove(road, spatialOrigin, spatialWidth, spatialHeight);
+		
+		boolean cannotRemoveStart = false, cannotRemoveEnd = false;
+		
+		for (Road existingRoad : allRoads) {
+			if (!existingRoad.equals(road)) {
+				if (existingRoad.getStart() != null) {
+					if (road.getStart().equals(existingRoad.getStart()) || 
+							road.getStart().equals(existingRoad.getEnd())) {
+						cannotRemoveStart = true;
+					}
+				}
+				
+				if (existingRoad.getEnd() != null) {
+					if (road.getEnd().equals(existingRoad.getEnd())
+							|| road.getEnd().equals(existingRoad.getStart())) {
+						cannotRemoveEnd = true;
+					}
+				}
+			}
+		}
+		
+		if (!cannotRemoveStart) {
+			root = root.remove(road.getStart(), spatialOrigin, spatialWidth, spatialHeight);
+			decreaseNumRoadsMap(road.getStart().getName());
+		}
+		
+		if (!cannotRemoveEnd) {
+			root = root.remove(road.getEnd(), spatialOrigin, spatialWidth, spatialHeight);
+			if (cannotRemoveStart) 	
+				decreaseNumRoadsMap(road.getEnd().getName());
+		}
+
+	}
+
+	public void deleteGeometry(Airport airport) {
+		root = root.remove(airport, spatialOrigin, spatialWidth, spatialHeight);
+	}
+
+	public void deleteGeometry(Terminal terminal) {
+		root = root.remove(terminal, spatialOrigin, spatialWidth, spatialHeight);
+		root = root.remove(new Road(terminal), spatialOrigin, spatialWidth, spatialHeight);
+	}
+
+	public void deleteGeometry(City city) {
+		root = root.remove(city, spatialOrigin, spatialWidth, spatialHeight);
 	}
 }

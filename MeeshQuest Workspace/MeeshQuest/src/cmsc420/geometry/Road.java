@@ -14,6 +14,9 @@ public class Road extends Geometry {
 	/** start city */
 	protected City start;
 
+	protected Terminal startTerminal;
+	protected Terminal endTerminal;
+	
 	/** end city */
 	protected City end;
 
@@ -39,6 +42,22 @@ public class Road extends Geometry {
 		}
 		distance = start.toPoint2D().distance(end.toPoint2D());
 	}
+	
+	public Road(final Terminal t) {
+		if (t.getEnd().getName().compareTo(t.getTerminalName()) < 0) {
+			this.start = t.getEnd();
+			this.endTerminal = t;
+		} else {
+			this.startTerminal = t;
+			this.end = t.getEnd();
+		}
+		
+		if (startTerminal != null) {
+			distance = startTerminal.localPt.distance(end.toPoint2D());
+		} else {
+			distance = endTerminal.localPt.distance(start.toPoint2D());
+		}
+	}
 
 	/**
 	 * Gets the start city.
@@ -47,6 +66,14 @@ public class Road extends Geometry {
 	 */
 	public City getStart() {
 		return start;
+	}
+	
+	public Terminal getStartTerminal() {
+		return startTerminal;
+	}
+	
+	public Terminal getEndTerminal() {
+		return endTerminal;
 	}
 
 	/**
@@ -89,9 +116,9 @@ public class Road extends Geometry {
 	 *             city name passed in was not contained by the road
 	 */
 	public City getOtherCity(final String cityName) {
-		if (start.getName().equals(cityName)) {
+		if (start != null && start.getName().equals(cityName)) {
 			return end;
-		} else if (end.getName().equals(cityName)) {
+		} else if (end != null && end.getName().equals(cityName)) {
 			return start;
 		} else {
 			throw new IllegalArgumentException();
@@ -105,7 +132,14 @@ public class Road extends Geometry {
 	 * @return line segment representation of road
 	 */
 	public Line2D toLine2D() {
-		return new Line2D.Float(start.toPoint2D(), end.toPoint2D());
+		if (getStartTerminal() != null) {
+			return new Line2D.Float(startTerminal.localPoint2D(), end.toPoint2D());
+		} else if (getEndTerminal() != null) {
+			return new Line2D.Float(start.toPoint2D(), endTerminal.localPoint2D());
+		} else {
+			return new Line2D.Float(start.toPoint2D(), end.toPoint2D());
+		}
+
 	}
 
 	/**
@@ -121,7 +155,9 @@ public class Road extends Geometry {
 		}
 		if (obj != null && (obj.getClass().equals(this.getClass()))) {
 			Road r = (Road) obj;
-			return (start.equals(r.start) && end.equals(r.end) && distance == r.distance);
+			boolean comparingStarts = (start != null) ? start.equals(r.start) : startTerminal.equals(r.startTerminal);
+			boolean comparingEnds = (end != null) ? end.equals(r.end) : endTerminal.equals(r.endTerminal);
+			return (comparingStarts && comparingEnds && distance == r.distance);
 		}
 		return false;
 	}
@@ -132,14 +168,20 @@ public class Road extends Geometry {
 	public int hashCode() {
 		final long dBits = Double.doubleToLongBits(distance);
 		int hash = 35;
-		hash = 37 * hash + start.hashCode();
-		hash = 37 * hash + end.hashCode();
+		hash = 37 * hash + ((start != null) ? start.hashCode() : startTerminal.hashCode());
+		hash = 37 * hash + ((end != null) ? end.hashCode() : endTerminal.hashCode());
 		hash = 37 * hash + (int) (dBits ^ (dBits >>> 32));
 		return hash;
 	}
 
 	public boolean contains(City city) {
-		return (city.equals(start) || city.equals(end));
+		boolean startEquals = false, endEquals = false;
+		
+		if (start != null)
+			startEquals = city.equals(start);
+		if (end != null)
+			endEquals = city.equals(end);
+		return (startEquals || endEquals);
 	}
 	
 	public String toString() {

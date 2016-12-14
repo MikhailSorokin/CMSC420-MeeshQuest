@@ -37,7 +37,8 @@ public class Terminal extends Geometry {
 		localPt = new Point2D.Float(localX, localY);
 		remotePt = new Point2D.Float(remoteX, remoteY);
 		end = endCity;
-		distance = localPt.distance(endCity.toPoint2D());
+		if (endCity != null)
+			distance = localPt.distance(endCity.toPoint2D());
 	}
 	
 	/**
@@ -179,7 +180,7 @@ public class Terminal extends Geometry {
 
 	@Override
 	public int getType() {
-		return SEGMENT;
+		return RECTANGLE;
 	}
 	
 }

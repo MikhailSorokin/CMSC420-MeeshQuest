@@ -74,15 +74,21 @@ public class RoadNameComparator implements Comparator<Road> {
 			two = orderRoad(two);
 		}
 
-		final int startCityNameCompare = two.getStart().getName().compareTo(
-				one.getStart().getName());
+		final String twoStartName = two.getStart() != null ? two.getStart().getName() : two.getStartTerminal().getTerminalName();
+		final String oneStartName = one.getStart() != null ? one.getStart().getName() : one.getStartTerminal().getTerminalName();
+
+		final int startCityNameCompare = twoStartName.compareTo(
+				oneStartName);
 
 		if (startCityNameCompare != 0) {
 			/* return result of comparison of start city names */
 			return startCityNameCompare;
 		} else {
+			final String twoEndName = two.getEnd() != null ? two.getEnd().getName() : two.getEndTerminal().getTerminalName();
+			final String oneEndName = one.getEnd() != null ? one.getEnd().getName() : one.getEndTerminal().getTerminalName();
+
 			/* return result of comparison of end city names */
-			return two.getEnd().getName().compareTo(one.getEnd().getName());
+			return twoEndName.compareTo(oneEndName);
 		}
 	}
 
@@ -95,11 +101,17 @@ public class RoadNameComparator implements Comparator<Road> {
 	 * @return reordered road
 	 */
 	protected Road orderRoad(final Road road) {
-		final String startName = road.getStart().getName();
-		final String endName = road.getEnd().getName();
-
+		final String startName = road.getStart() != null ? road.getStart().getName() : road.getStartTerminal().getTerminalName();
+		final String endName = road.getEnd() != null ? road.getEnd().getName() : road.getEndTerminal().getTerminalName();
+		
 		if (startName.compareTo(endName) > 0) {
-			return new Road(road.getEnd(), road.getStart());
+			if (road.getStartTerminal() != null) {
+				return new Road(road.getStartTerminal());
+			} else if (road.getEndTerminal() != null) {
+				return new Road(road.getEndTerminal());
+			} else {
+				return new Road(road.getEnd(), road.getStart());
+			}
 		} else {
 			return road;
 		}

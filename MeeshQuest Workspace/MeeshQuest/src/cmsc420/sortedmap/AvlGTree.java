@@ -120,19 +120,24 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
     }
 
     public V remove(Object key) {
-        if (key == null) throw new NullPointerException();
-       
         AvlNode<K, V> keyNode = getNode(key);
+        if (key == null) throw new NullPointerException();
         
         AvlNode<K, V> rootKey = root;
+        if (!nodeContainsValue(rootKey, keyNode.getValue())) {
+        	throw new NoSuchElementException();
+        }
+        
+        root = remove(rootKey, keyNode.key);
         size--;
-        remove(rootKey, keyNode);
-    	updateHeight(root);
         return keyNode.value;
     }
     
-    private AvlNode<K,V> remove(AvlNode<K,V> curr, AvlNode<K, V> findValue) {
-    	int comparatorValue = compare(findValue.key, curr.key);
+    private AvlNode<K,V> remove(AvlNode<K,V> curr, K findValue) {
+    	if (curr == null)
+    		return curr;
+    	
+    	int comparatorValue = compare(findValue, curr.key);
     	if (comparatorValue < 0) {
     		curr.left = remove(curr.left, findValue);
     	} else if (comparatorValue > 0) {
@@ -145,28 +150,36 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
     			return curr.left; 
     			//delete the left side
     		} else {
-    			AvlNode<K, V> temp = curr;
     			if (!isEmpty()) {
-    				curr = leftMost(temp.right);
-    				curr.right = removeMin(temp.right);
-    				curr.left = temp.right;
-    				fixAfterModification(curr);
+    				curr.key = leftMost(curr.right);
+    				curr.right = remove(curr.right, curr.key);
     			}
     		}
     	}
-		return curr;
+		return balance(curr);
     }
     
-    private AvlNode<K, V> removeMin(AvlNode<K, V> curr) {
-    	if (curr.left == null) return curr.right;
-    	curr.left = removeMin(curr.left);
-		return curr;
+    private AvlNode<K,V> balance(AvlNode<K, V> e) {
+        if (e.getBalance() > g) {
+            if (e.left.getBalance() >= 0)
+                e = rotateRight(e);
+            else
+                e = rotateLeftRight(e);
+        } else if (e.getBalance() < -g) {
+            if (e.right.getBalance() <= 0)
+                e = rotateLeft(e);
+            else
+                e = rotateRightLeft(e);
+        }  
+        
+    	updateHeight(e);
+        return e;
     }
     
-    private AvlNode<K, V> leftMost(AvlNode<K,V> leftest) {
-    	if (leftest.left == null) 
-    		return leftest;
-    	return leftMost(leftest.left);
+    private K leftMost(AvlNode<K,V> curr) {
+    	if (curr.left == null) 
+    		return curr.key;
+    	return leftMost(curr.left);
     }
     
 

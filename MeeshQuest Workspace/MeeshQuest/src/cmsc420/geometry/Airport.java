@@ -145,7 +145,7 @@ public class Airport extends Geometry {
 	
 	@Override
 	public int getType() {
-		return POINT;
+		return CIRCLE; //circle as in point, tee-hee
 	}
 
 }

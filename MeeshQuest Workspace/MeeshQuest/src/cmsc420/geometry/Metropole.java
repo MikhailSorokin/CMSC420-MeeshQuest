@@ -2,19 +2,13 @@ package cmsc420.geometry;
 
 import java.awt.geom.Point2D;
 
-public class Metropole extends Geometry {
+public class Metropole {
 
 	/** name of this city */
 	protected String name;
 
 	/** 2D coordinates of this city */
 	protected Point2D.Float pt;
-
-	/** radius of this city */
-	protected int radius;
-
-	/** color of this city */
-	protected String color;
 
 	/**
 	 * Constructs a city.
@@ -59,24 +53,6 @@ public class Metropole extends Geometry {
 	}
 
 	/**
-	 * Gets the color of this city.
-	 * 
-	 * @return color of this city
-	 */
-	public String getColor() {
-		return color;
-	}
-
-	/**
-	 * Gets the radius of this city.
-	 * 
-	 * @return radius of this city.
-	 */
-	public int getRadius() {
-		return radius;
-	}
-
-	/**
 	 * Determines if this city is equal to another object. The result is true if
 	 * and only if the object is not null and a City object that contains the
 	 * same name, X and Y coordinates, radius, and color.
@@ -90,9 +66,8 @@ public class Metropole extends Geometry {
 		if (obj == this)
 			return true;
 		if (obj != null && (obj.getClass().equals(this.getClass()))) {
-			City c = (City) obj;
-			return (pt.equals(c.localPt) && (radius == c.radius) && color
-					.equals(c.color));
+			Metropole m = (Metropole) obj;
+			return (name.equals(m.name) && pt.equals(m.pt));
 		}
 		return false;
 	}
@@ -106,8 +81,6 @@ public class Metropole extends Geometry {
 		int hash = 12;
 		hash = 37 * hash + name.hashCode();
 		hash = 37 * hash + pt.hashCode();
-		hash = 37 * hash + radius;
-		hash = 37 * hash + color.hashCode();
 		return hash;
 	}
 
@@ -139,11 +112,6 @@ public class Metropole extends Geometry {
 	
 	public String toString() {
 		return getLocationString();
-	}
-	
-	@Override
-	public int getType() {
-		return POINT;
 	}
 
 }

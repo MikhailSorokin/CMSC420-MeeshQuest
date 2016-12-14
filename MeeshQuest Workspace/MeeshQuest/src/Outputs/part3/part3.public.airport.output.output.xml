@@ -170,7 +170,7 @@
       <remoteY value="0"/>
     </parameters>
     <output>
-      <quadtree order="3">
+      <quadtree order="1">
         <gray x="8" y="8">
           <white/>
           <white/>

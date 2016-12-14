@@ -18,5 +18,5 @@
 	<mapTerminal id="7" name="TerminalAC" localX="12" localY="12" remoteX="1" remoteY="0" cityName="C" airportName="AirportA"/>
 	<mapTerminal id="7" name="TerminalAC" localX="12" localY="12" remoteX="1" remoteY="0" cityName="E" airportName="AirportA"/>
 	<printPMQuadtree id="100" remoteX="1" remoteY="0" />
-	<mst start="B" id="200"/>
+	<!--<mst start="B" id="200"/>-->
 </commands>

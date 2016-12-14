@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="A" color="red" radius="2" remoteX="0" remoteY="0" localX="3" localY="5" id="3"/>
+<createCity name="B" color="red" radius="2" remoteX="0" remoteY="0" localX="11" localY="2" id="14"/>
+<createCity name="C" color="red" radius="2" remoteX="0" remoteY="0" localX="3" localY="15" id="3"/>
+<createCity name="D" color="red" radius="2" remoteX="0" remoteY="0" localX="14" localY="15" id="14"/>
+<createCity name="E" color="red" radius="2" remoteX="0" remoteY="0" localX="3" localY="13" id="3"/>
+<createCity name="F" color="red" radius="2" remoteX="0" remoteY="0" localX="14" localY="13" id="14"/>
+<createCity name="G" color="red" radius="2" remoteX="0" remoteY="0" localX="3" localY="11" id="3"/>
+<createCity name="H" color="red" radius="2" remoteX="0" remoteY="0" localX="14" localY="11" id="14"/>
+<mapRoad start="A" end="B" id="2"/>
+<mapRoad start="C" end="D" id="13"/>
+<mapAirport name="airport" remoteX="0" remoteY="0" localX="10" localY="4" terminalName="termA" terminalX="0" terminalY="0" terminalCity="A" id="3"/>
+<mapRoad start="G" end="H" id="13"/>
+
+<printPMQuadtree remoteX="0" remoteY="0" id="2"/>
+<listCities sortBy="name" id="4"/>
+<listCities sortBy="coordinate" id="2"/>
+<deleteCity name="A" id="12"/>
+<printPMQuadtree remoteX="0" remoteY="0" id="10"/>
+
+</commands>

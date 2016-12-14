@@ -1,0 +1,53 @@
+package cmsc420.pmquadtree;
+
+import cmsc420.geometry.City;
+import cmsc420.geometry.Geometry;
+import cmsc420.geometry.Road;
+import cmsc420.pmquadtree.PMQuadtree.Black;
+
+public class PM1Validator implements Validator {
+
+	//Node only valid when there is one city/airport/terminal in a quadrant (can have multiple roads), or
+	//when there is ONLY one road.
+	@Override
+	public boolean valid(final Black node) {
+		int numCities = 0;
+		City nodeCity = null;
+		
+		for (Geometry g : node.getGeometry()) {
+			if (g.isCity()) {
+				numCities++;
+				nodeCity = (City)g;
+			}
+		}
+		
+		if (numCities == 1) {
+			for (Geometry g : node.getGeometry()) {
+				if (g.isRoad()) {
+					Road road = (Road)g;
+					final String startName = road.getStart() != null ? road.getStart().getName() : road.getStartTerminal().getTerminalName();
+					final String endName = road.getEnd() != null ? road.getEnd().getName() : road.getEndTerminal().getTerminalName();
+					
+					if (!node.getCity().getName().equals(startName) || !node.getCity().getName().equals(endName)) {
+						return false;
+					}
+
+				}
+			}
+			return true;
+		} else if (node.getNumPoints() < 1) {
+			int countRoads = 0;
+			
+			for (Geometry g : node.getGeometry()) {
+				if (g.isRoad()) {
+					countRoads++;
+				}
+			}
+			
+			return (countRoads > 1) ? false : true; 
+		} else {
+			return false;
+		}
+	}
+
+}
