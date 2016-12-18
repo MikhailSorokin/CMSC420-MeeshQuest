@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.TreeMap;
@@ -28,9 +29,13 @@ import cmsc420.geometry.Road;
 import cmsc420.geometry.RoadAdjacencyList;
 import cmsc420.geometry.Terminal;
 import cmsc420.mxquadtree.MXQuadtree;
+import cmsc420.pmquadtree.AddOutOfBoundsThrowable;
 import cmsc420.pmquadtree.AirportDoesNotExistThrowable;
 import cmsc420.pmquadtree.AirportNotSameMetropoleThrowable;
 import cmsc420.pmquadtree.CityDoesNotExistThrowable;
+import cmsc420.pmquadtree.CityNotMappedThrowable;
+import cmsc420.pmquadtree.DuplicateCoordinateThrowable;
+import cmsc420.pmquadtree.DuplicateNameThrowable;
 import cmsc420.pmquadtree.EndDoesNotExistThrowable;
 import cmsc420.pmquadtree.NotSameMetropoleThrowable;
 import cmsc420.pmquadtree.OutOfBoundsThrowable;
@@ -79,7 +84,7 @@ public class Command {
 	private final RoadAdjacencyList roads = new RoadAdjacencyList();
 
 	/** stores mapped cities in a spatial data structure */
-	protected MXQuadtree remoteSpatialMap;
+	public static MXQuadtree remoteSpatialMap;
 
 	/** order of the PM Quadtree */
 	protected int pmOrder;
@@ -91,10 +96,10 @@ public class Command {
 	protected static int localSpatialHeight;
 	
 	/** spatial width of the cities */
-	protected int remoteSpatialWidth;
+	public static int remoteSpatialWidth;
 
 	/** spatial height of the PM Quadtree */
-	protected int remoteSpatialHeight;
+	public static int remoteSpatialHeight;
 	
 	/**
 	 * Set the DOM Document tree to send the results of processed commands to.
@@ -404,32 +409,22 @@ public class Command {
 				try {
 					localPMToUse.deleteGeometry(adjRoad);
 					order.add(adjRoad);
-					/*final Element roadUnmappedNode = results
-							.createElement("roadUnmapped");
-					roadUnmappedNode.setAttribute("start", adjRoad.getStart().getName());
-					roadUnmappedNode.setAttribute("end", adjRoad.getEnd().getName());
-					outputNode.appendChild(roadUnmappedNode);*/
 				} catch (StartDoesNotExistThrowable | EndDoesNotExistThrowable e) {
 					e.printStackTrace();
 				}
 			}
+			
+			HashSet<Terminal> terminalsToEliminate = new HashSet<Terminal>();
 			for (Terminal terminal : terminalsByName.values()) {
-				if (terminal.getEnd() != null && terminal.getEnd() == citiesByName.get(name)) {
-					localPMToUse.deleteGeometry(terminal);
+				if (terminal.getEnd() != null && terminal.getEnd().equals(citiesByName.get(name))) {
+					localPMToUse.deleteGeometry(terminal, false);
+					terminalsToEliminate.add(terminal);
 					order.add(new Road(terminal));
-					/*final Element roadUnmappedNode = results
-							.createElement("roadUnmapped");
-					String start = terminal.getTerminalName(), end = terminal.getEnd().getName();
-					if (end.compareTo(start) < 0) {
-						String temp = "";
-						temp = start;
-						start = end;
-						end = temp;
-					} 
-					roadUnmappedNode.setAttribute("start", start);
-					roadUnmappedNode.setAttribute("end", end);
-					outputNode.appendChild(roadUnmappedNode);*/
 				}
+			}
+			
+			for (Terminal temp : terminalsToEliminate) {
+				terminalsByName.remove(temp.getTerminalName());
 			}
 			
 			for (Road r : order) {
@@ -438,6 +433,8 @@ public class Command {
 				City c2 = ((Road) r).getEnd();
 				roadUnmappedNode.setAttribute("start", c1 != null ? c1.getName() : ((Road) r).getStartTerminal().getTerminalName());
 				roadUnmappedNode.setAttribute("end", c2 != null ? c2.getName() : ((Road) r).getEndTerminal().getTerminalName());
+				if (adjacentRoads.contains(r))
+					adjacentRoads.remove(r);
 				
 				outputNode.appendChild(roadUnmappedNode);
 			}
@@ -545,19 +542,19 @@ public class Command {
 	private void addCityNode(final Element node, final City city) {
 		addCityNode(node, "city", city);
 	}
-	
-	private void addTerminalNode(final Element node, final String cityNodeName,
-			final City city) {
-		final Element cityNode = results.createElement(cityNodeName);
-		cityNode.setAttribute("airport", city.getName());
-		cityNode.setAttribute("cityName", Integer.toString((int) city.getLocalX()));
-		cityNode.setAttribute("localX", Integer.toString((int) city.getLocalY()));
-		cityNode.setAttribute("localY", Integer.toString((int) city.getRemoteX()));
-		cityNode.setAttribute("remoteY", Integer.toString((int) city.getRemoteY()));
-		cityNode.setAttribute("color", city.getColor());
-		cityNode.setAttribute("radius", Integer.toString((int) city.getRadius()));
-		node.appendChild(cityNode);
-	}
+
+    public void processPrintAvlTree(Element node) {
+        final Element commandNode = getCommandNode(node);
+        final Element parametersNode = results.createElement("parameters");
+        final Element outputNode = results.createElement("output");
+
+        if (citiesByName.isEmpty()) {
+            addErrorNode("emptyTree", commandNode, parametersNode);
+        } else {
+            outputNode.appendChild(citiesByName.createXml(outputNode));
+            addSuccessNode(commandNode, parametersNode, outputNode);
+        }
+    }
 
 	public void processMapRoad(Element node) {
 		final Element commandNode = getCommandNode(node);
@@ -571,10 +568,13 @@ public class Command {
 
 		if (!citiesByName.containsKey(start)) {
 			addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
+			return;
 		} else if (!citiesByName.containsKey(end)) {
 			addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
+			return;
 		} else if (start.equals(end)) {
 			addErrorNode("startEqualsEnd", commandNode, parametersNode);
+			return;
 		} else {
 			PMQuadtree localPMToUse = null;
 			Road road = null;
@@ -617,111 +617,24 @@ public class Command {
 				outputNode.appendChild(roadCreatedNode);
 				// add success node to results
 				addSuccessNode(commandNode, parametersNode, outputNode);
-			} catch (RoadAlreadyExistsThrowable e) {
-				addErrorNode("roadAlreadyMapped", commandNode, parametersNode);
 			} catch (OutOfBoundsThrowable e) {
 				addErrorNode("roadOutOfBounds", commandNode, parametersNode);
+			} catch (RoadAlreadyExistsThrowable e) {
+				addErrorNode("roadAlreadyMapped", commandNode, parametersNode);
+			} catch (RoadIntersectingThrowable e) {
+				addErrorNode("roadIntersectsAnotherRoad", commandNode, parametersNode);
 			} catch (PMRuleViolationThrowable e) {
 				try {
 					localPMToUse.deleteGeometry(road);
-				} catch (StartDoesNotExistThrowable lee) {
-					addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
-					return;
-				} catch (EndDoesNotExistThrowable lee) {
-					addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
+				} catch (StartDoesNotExistThrowable | EndDoesNotExistThrowable lee) {
+					addErrorNode("roadViolatesPMRules", commandNode, parametersNode);
 					return;
 				}
 				addErrorNode("roadViolatesPMRules", commandNode, parametersNode);
-			} catch (RoadIntersectingThrowable e) {
-				addErrorNode("roadIntersectsAnotherRoad", commandNode, parametersNode);
+				return;
 			}
 		}
 	}
-	
-	public void processUnmapRoad(Element node) {
-		final Element commandNode = getCommandNode(node);
-		final Element parametersNode = results.createElement("parameters");
-
-		final String start = processStringAttribute(node, "start",
-				parametersNode);
-		final String end = processStringAttribute(node, "end", parametersNode);
-
-		final Element outputNode = results.createElement("output");
-
-		if (!citiesByName.containsKey(start)) {
-			addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
-		} else if (!citiesByName.containsKey(end)) {
-			addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
-		} else if (start.equals(end)) {
-			addErrorNode("startEqualsEnd", commandNode, parametersNode);
-		} else {
-			Road roadToRemove = null;
-			boolean hasRoadBetweenStartEnd = false;
-			
-			TreeSet<Road> adjacentRoads = roads.getRoadSet(citiesByName.get(start));
-
-			for (Road adjRoad : adjacentRoads) {
-				if (adjRoad.getStart().equals(citiesByName.get(end)) || adjRoad.getEnd().equals(citiesByName.get(end))) {
-					roadToRemove = adjRoad;
-					hasRoadBetweenStartEnd = true;
-				}
-			}
-			
-			if (!hasRoadBetweenStartEnd) {
-				addErrorNode("roadNotMapped", commandNode, parametersNode);
-				return;
-			}
-			
-			PMQuadtree localPMToUse = null;
-			Metropole metropoleToUpdate = null;
-			for (Metropole metropole : remotetoLocalMap.keySet()) {
-				if (metropole.getX() == roadToRemove.getStart().getRemoteX() &&
-						metropole.getY() == roadToRemove.getStart().getRemoteY()
-						&& metropole.getX() == roadToRemove.getEnd().getRemoteX() 
-						&& metropole.getY() == roadToRemove.getEnd().getRemoteY()) {
-					localPMToUse = remotetoLocalMap.get(metropole);
-					metropoleToUpdate = metropole;
-				}
-			}
-			
-			// add to spatial structure
-			try {
-				localPMToUse.deleteGeometry(roadToRemove);
-			} catch (StartDoesNotExistThrowable e) {
-				addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
-				return;
-			} catch (EndDoesNotExistThrowable e) {
-				addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
-				return;
-			}
-
-			if (metropoleToUpdate != null) {
-				remotetoLocalMap.replace(metropoleToUpdate, localPMToUse);
-			}
-			
-			// create roadCreated element
-			final Element roadUnmappedNode = results
-					.createElement("roadDeleted");
-			roadUnmappedNode.setAttribute("start", start);
-			roadUnmappedNode.setAttribute("end", end);
-			outputNode.appendChild(roadUnmappedNode);
-			// add success node to results
-			addSuccessNode(commandNode, parametersNode, outputNode);
-		}
-	}
-    
-    public void processPrintAvlTree(Element node) {
-        final Element commandNode = getCommandNode(node);
-        final Element parametersNode = results.createElement("parameters");
-        final Element outputNode = results.createElement("output");
-
-        if (citiesByName.isEmpty()) {
-            addErrorNode("emptyTree", commandNode, parametersNode);
-        } else {
-            outputNode.appendChild(citiesByName.createXml(outputNode));
-            addSuccessNode(commandNode, parametersNode, outputNode);
-        }
-    }
 	
 	public void processMapAirport(Element node) {
 		final Element commandNode = getCommandNode(node);
@@ -748,40 +661,35 @@ public class Command {
 			Terminal t = new Terminal(airportName, terminalName, terminalX, terminalY, remoteX, remoteY, citiesByName.get(terminalCityName)); 
 			Airport a = new Airport(airportName, localX, localY, remoteX, remoteY);
 			
-			Metropole metropoleToUse = null;
 			PMQuadtree localPMToUse = null;
 			for (Metropole metropole : remotetoLocalMap.keySet()) {
 				if (metropole.getX() == a.getRemoteX() &&
 						metropole.getY() == a.getRemoteY()) {
 					localPMToUse = remotetoLocalMap.get(metropole);
-					metropoleToUse = metropole;
 				}
 			}
 
+			if (a.remotePoint2D().getX() < 0 || a.remotePoint2D().getY() < 0
+					|| a.remotePoint2D().getX() >= remoteSpatialWidth || a.remotePoint2D().getY() >= remoteSpatialHeight) {
+				addErrorNode("airportOutOfBounds", commandNode, parametersNode);	
+				return;
+			}
 			
 			if (localPMToUse != null) {
 				try {
-					localPMToUse.addAirport(a, t);
+					localPMToUse.addAirport(a, t, terminalsByName.containsKey(terminalName), 
+							hasSameLocation(terminalX, terminalY, remoteX, remoteY),
+							citiesByName.get(terminalCityName));
 				} catch (OutOfBoundsThrowable e) {
 					addErrorNode("airportOutOfBounds", commandNode, parametersNode);
 					return;
-				} catch (PMRuleViolationThrowable e) {
-					localPMToUse.deleteGeometry(a);
-					addErrorNode("airportViolatesPMRules", commandNode, parametersNode);
-					return;
-				}
-				
-				if (terminalsByName.containsKey(terminalName)) {
+				} catch (DuplicateNameThrowable e) {
 					addErrorNode("duplicateTerminalName", commandNode, parametersNode);
 					return;
-				} else if (hasSameLocation(terminalX, terminalY, remoteX, remoteY)) {
+				} catch (DuplicateCoordinateThrowable e) {
 					addErrorNode("duplicateTerminalCoordinates", commandNode, parametersNode);
 					return;
-				} 
-				
-				try {
-					localPMToUse.addTerminal(t, citiesByName.get(terminalCityName));
-				} catch (OutOfBoundsThrowable e) {
+				}  catch (AddOutOfBoundsThrowable e) {
 					addErrorNode("terminalOutOfBounds", commandNode, parametersNode);
 					return;
 				} catch (CityDoesNotExistThrowable e) {
@@ -790,8 +698,23 @@ public class Command {
 				} catch (NotSameMetropoleThrowable e) {
 					addErrorNode("connectingCityNotInSameMetropole", commandNode, parametersNode);
 					return;
+				}  catch (PMRuleViolationThrowable e) {
+					localPMToUse.deleteGeometry(a);
+					addErrorNode("airportViolatesPMRules", commandNode, parametersNode);
+					return;
+				}
+			
+				
+				try {
+					localPMToUse.addTerminal(t, citiesByName.get(terminalCityName));
+				} catch (CityNotMappedThrowable e) {
+					addErrorNode("connectingCityNotMapped", commandNode, parametersNode);
+					return;
+				} catch (RoadIntersectingThrowable e) {
+					addErrorNode("roadIntersectsAnotherRoad", commandNode, parametersNode);
+					return;
 				} catch (PMRuleViolationThrowable e) {
-					localPMToUse.deleteGeometry(t);
+					localPMToUse.deleteGeometry(t, false);
 					addErrorNode("terminalViolatesPMRules", commandNode, parametersNode);
 					return;
 				}
@@ -834,7 +757,6 @@ public class Command {
 
 		Terminal t = new Terminal(airportName, name, localX, localY, remoteX, remoteY, citiesByName.get(terminalCityName)); 
 
-		Metropole metropoleToUse = null;
 		PMQuadtree localPMToUse = null;
 		
 		if (t.remotePoint2D().getX() < 0 || t.remotePoint2D().getY() < 0
@@ -848,7 +770,6 @@ public class Command {
 			if (metropole.getX() == t.getRemoteX() &&
 					metropole.getY() == t.getRemoteY()) {
 				localPMToUse = remotetoLocalMap.get(metropole);
-				metropoleToUse = metropole;
 			}
 		}
 		
@@ -871,8 +792,14 @@ public class Command {
 		} catch (NotSameMetropoleThrowable e) {
 			addErrorNode("connectingCityNotInSameMetropole", commandNode, parametersNode);
 			return;
+		} catch (CityNotMappedThrowable e) {
+			addErrorNode("connectingCityNotMapped", commandNode, parametersNode);
+			return;
+		} catch (RoadIntersectingThrowable e) {
+			addErrorNode("roadIntersectsAnotherRoad", commandNode, parametersNode);
+			return;
 		} catch (PMRuleViolationThrowable e) {
-			localPMToUse.deleteGeometry(t);
+			localPMToUse.deleteGeometry(t, false);
 			addErrorNode("terminalViolatesPMRules", commandNode, parametersNode);
 			return;
 		}
@@ -882,6 +809,74 @@ public class Command {
 		
 		addSuccessNode(commandNode, parametersNode, outputNode);
 
+	}
+	
+	public void processUnmapRoad(Element node) {
+		final Element commandNode = getCommandNode(node);
+		final Element parametersNode = results.createElement("parameters");
+
+		final String start = processStringAttribute(node, "start",
+				parametersNode);
+		final String end = processStringAttribute(node, "end", parametersNode);
+
+		final Element outputNode = results.createElement("output");
+
+		if (!citiesByName.containsKey(start)) {
+			addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
+		} else if (!citiesByName.containsKey(end)) {
+			addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
+		} else if (start.equals(end)) {
+			addErrorNode("startEqualsEnd", commandNode, parametersNode);
+		} else {
+			Road roadToRemove = null;
+			boolean hasRoadBetweenStartEnd = false;
+			
+			TreeSet<Road> adjacentRoads = roads.getRoadSet(citiesByName.get(start));
+
+			for (Road adjRoad : adjacentRoads) {
+				if (adjRoad.getStart().equals(citiesByName.get(end)) || adjRoad.getEnd().equals(citiesByName.get(end))) {
+					roadToRemove = adjRoad;
+					hasRoadBetweenStartEnd = true;
+				}
+			}
+			
+			if (!hasRoadBetweenStartEnd) {
+				addErrorNode("roadNotMapped", commandNode, parametersNode);
+				return;
+			}
+			
+			PMQuadtree localPMToUse = null;
+			for (Metropole metropole : remotetoLocalMap.keySet()) {
+				if (metropole.getX() == roadToRemove.getStart().getRemoteX() &&
+						metropole.getY() == roadToRemove.getStart().getRemoteY()
+						&& metropole.getX() == roadToRemove.getEnd().getRemoteX() 
+						&& metropole.getY() == roadToRemove.getEnd().getRemoteY()) {
+					localPMToUse = remotetoLocalMap.get(metropole);
+				}
+			}
+			
+			// add to spatial structure
+			try {
+				localPMToUse.deleteGeometry(roadToRemove);
+			} catch (StartDoesNotExistThrowable e) {
+				addErrorNode("startPointDoesNotExist", commandNode, parametersNode);
+				return;
+			} catch (EndDoesNotExistThrowable e) {
+				addErrorNode("endPointDoesNotExist", commandNode, parametersNode);
+				return;
+			}
+			
+			adjacentRoads.remove(roadToRemove);
+			
+			// create roadCreated element
+			final Element roadUnmappedNode = results
+					.createElement("roadDeleted");
+			roadUnmappedNode.setAttribute("start", start);
+			roadUnmappedNode.setAttribute("end", end);
+			outputNode.appendChild(roadUnmappedNode);
+			// add success node to results
+			addSuccessNode(commandNode, parametersNode, outputNode);
+		}
 	}
 	
 	public void processUnmapAirport(Element node) {
@@ -894,6 +889,7 @@ public class Command {
 		
 		if (!airportsByName.containsKey(name)) {
 			addErrorNode("airportDoesNotExist", commandNode, parametersNode);
+			return;
 		} else {
 			PMQuadtree localPMToUse = null;
 			for (Metropole metropole : remotetoLocalMap.keySet()) {
@@ -903,17 +899,38 @@ public class Command {
 				}
 			}
 			// add to spatial structure
-			localPMToUse.deleteGeometry(airportsByName.get(name));
+			localPMToUse.deleteGeometry(airportsByName.get(name));			
+			airportsByName.remove(name);
+
 			//FIXED: Remove all terminals associated with this airport
 			
+			HashSet<Terminal> terminalsToEliminate = new HashSet<Terminal>();
 			for (Terminal terminal : terminalsByName.values()) {
 				if (terminal.getAirportName().equals(name)) {
-					localPMToUse.deleteGeometry(terminal);
+					localPMToUse.deleteGeometry(terminal, false);
+					//TODO: Uhh... don't know if I should delete a city from here but who knows...
+					/*localPMToUse.deleteGeometry(terminal.getEnd());
+					citiesByName.remove(terminal.getEnd().getName());*/
+					
+					terminalsToEliminate.add(terminal);
+					
 					final Element terminalUnmappedNode = results.createElement("terminalUnmapped");
+					terminalUnmappedNode.setAttribute("airportName", terminal.getAirportName());
+					terminalUnmappedNode.setAttribute("cityName", terminal.getEnd().getName());
+					terminalUnmappedNode.setAttribute("localX", Integer.toString(terminal.getLocalX()));
+					terminalUnmappedNode.setAttribute("localY", Integer.toString(terminal.getLocalY()));
 					terminalUnmappedNode.setAttribute("name", terminal.getTerminalName());
+					terminalUnmappedNode.setAttribute("remoteX", Integer.toString(terminal.getRemoteX()));
+					terminalUnmappedNode.setAttribute("remoteY", Integer.toString(terminal.getRemoteY()));
+					
 					outputNode.appendChild(terminalUnmappedNode);
 				}
 			}
+			
+			for (Terminal temp : terminalsToEliminate) {
+				terminalsByName.remove(temp.getTerminalName());
+			}
+
 		}
 		
 		addSuccessNode(commandNode, parametersNode, outputNode);
@@ -929,6 +946,7 @@ public class Command {
 		
 		if (!terminalsByName.containsKey(name)) {
 			addErrorNode("terminalDoesNotExist", commandNode, parametersNode);
+			return;
 		} else {
 			PMQuadtree localPMToUse = null;
 			for (Metropole metropole : remotetoLocalMap.keySet()) {
@@ -939,7 +957,7 @@ public class Command {
 			}
 			
 			// add to spatial structure
-			localPMToUse.deleteGeometry(terminalsByName.get(name));
+			localPMToUse.deleteGeometry(terminalsByName.get(name), false);
 			//TODO: Remove all airports associated with terminal
 			
 			int airportOfTerminalNum = 0;
@@ -950,11 +968,21 @@ public class Command {
 			}
 			
 			if (airportOfTerminalNum == 0) {
-				localPMToUse.deleteGeometry(airportsByName.get(terminalsByName.get(name).getAirportName()));
-				final Element airportUnmappedNode = results.createElement("terminalUnmapped");
-				airportUnmappedNode.setAttribute("name", terminalsByName.get(name).getAirportName());
+				Airport airport = airportsByName.get(terminalsByName.get(name).getAirportName());
+				localPMToUse.deleteGeometry(airport);
+				airportsByName.remove(airport.getName());
+				final Element airportUnmappedNode = results.createElement("airportUnmapped");
+				airportUnmappedNode.setAttribute("name", airport.getName());
+				airportUnmappedNode.setAttribute("localX", Integer.toString(airport.getLocalX()));
+				airportUnmappedNode.setAttribute("localY", Integer.toString(airport.getLocalY()));
+				airportUnmappedNode.setAttribute("remoteX", Integer.toString(airport.getRemoteX()));
+				airportUnmappedNode.setAttribute("remoteY", Integer.toString(airport.getRemoteY()));
+				
 				outputNode.appendChild(airportUnmappedNode);
 			}
+			
+			
+			terminalsByName.remove(name);
 		}
 		
 		addSuccessNode(commandNode, parametersNode, outputNode);
@@ -972,11 +1000,28 @@ public class Command {
 		final Element commandNode = getCommandNode(node);
 		final Element parametersNode = results.createElement("parameters");
 
-		//TODO: Use the remoteX and remoteY for saveMap
-		processIntegerAttribute(node, "remoteX", parametersNode);
-		processIntegerAttribute(node, "remoteY", parametersNode);
+		int remoteX = processIntegerAttribute(node, "remoteX", parametersNode);
+		int remoteY = processIntegerAttribute(node, "remoteY", parametersNode);
 		final String name = processStringAttribute(node, "name", parametersNode);
 
+		PMQuadtree localPMToUse = null;
+		for (Metropole metropole : remotetoLocalMap.keySet()) {
+			if (metropole.getX() == remoteX &&
+					metropole.getY() == remoteY) {
+				localPMToUse = remotetoLocalMap.get(metropole);
+			}
+		}
+		
+		if (remoteX < 0 || remoteY < 0
+				|| remoteX >= Command.remoteSpatialWidth || remoteY >= Command.remoteSpatialHeight) {
+			addErrorNode("metropoleOutOfBounds", commandNode, parametersNode);
+			return;
+		} else if (localPMToUse == null || localPMToUse.isEmpty()) {
+			/* empty PR Quadtree */
+			addErrorNode("metropoleIsEmpty", commandNode, parametersNode);
+			return;
+		} 
+		
 		final Element outputNode = results.createElement("output");
 
 		CanvasPlus canvas = drawPMQuadtree();
@@ -1030,9 +1075,14 @@ public class Command {
 			}
 		}
 		
-		if (localPMToUse == null || localPMToUse.isEmpty()) {
+		if (remoteX < 0 || remoteY < 0
+				|| remoteX > Command.remoteSpatialWidth || remoteY > Command.remoteSpatialHeight) {
+			addErrorNode("metropoleOutOfBounds", commandNode, parametersNode);
+			return;
+		} else if (localPMToUse == null || localPMToUse.isEmpty()) {
 			/* empty PR Quadtree */
 			addErrorNode("metropoleIsEmpty", commandNode, parametersNode);
+			return;
 		} else {
 			/* print PR Quadtree */
 			final Element quadtreeNode = results.createElement("quadtree");

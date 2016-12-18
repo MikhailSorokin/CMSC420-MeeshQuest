@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="cmsc420.meeshquest.utilities.XmlParser"/>
-<fullyQualifiedTypeName name="cmsc420.util.SkipList.Node"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.portable.InputStream"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.part2.MeeshQuest"/>
@@ -26,7 +24,6 @@
 <fullyQualifiedTypeName name="cmsc420.meeshquest.citymapobjects.CityNameComparator"/>
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="cmsc420.meeshquest.datastructures.AvlGTree"/>
-<fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
 <fullyQualifiedTypeName name="java.awt.geom.Arc2D.Double"/>
 <fullyQualifiedTypeName name="java.awt.geom.Arc2D"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
@@ -39,13 +36,10 @@
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 <fullyQualifiedTypeName name="cmsc420.pmquadtree.PMQuadtree.Node"/>
 <fullyQualifiedTypeName name="cmsc420.geometry.Geometry"/>
-<fullyQualifiedTypeName name="java.rmi.UnexpectedException"/>
 <fullyQualifiedTypeName name="cmsc420.pmquadtree.PM1Quadtree"/>
 <fullyQualifiedTypeName name="java.lang.ClassCastException"/>
 <fullyQualifiedTypeName name="cmsc420.geom.Geometry2D"/>
 <fullyQualifiedTypeName name="cmsc420.pmquadtree.RoadAlreadyExistsThrowable"/>
-<fullyQualifiedTypeName name="cmsc420.pmquadtree.RoadIntersectingThrowable"/>
-<fullyQualifiedTypeName name="cmsc420.command.Command"/>
 <fullyQualifiedTypeName name="cmsc420.pmquadtree.PMRuleViolationThrowable"/>
 <fullyQualifiedTypeName name="cmsc420.structure.mxquadtree.MXQuadtree"/>
 <fullyQualifiedTypeName name="java.awt.Point"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="java.awt.geom.Point2D.Double"/>
 <fullyQualifiedTypeName name="java.awt.geom.Point2D.Float"/>
 <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
+<fullyQualifiedTypeName name="cmsc420.geom.Inclusive2DIntersectionVerifier"/>
+<fullyQualifiedTypeName name="java.rmi.UnexpectedException"/>
+<fullyQualifiedTypeName name="java.lang.UnsupportedOperationException"/>
+<fullyQualifiedTypeName name="cmsc420.pmquadtree.RoadIntersectingThrowable"/>
+<fullyQualifiedTypeName name="cmsc420.command.Command"/>
+<fullyQualifiedTypeName name="cmsc420.pmquadtree.AddOutOfBoundsThrowable"/>
 </qualifiedTypeNameHistroy>

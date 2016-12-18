@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <localX value="140"/>
+      <localY value="37"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Austin"/>
+      <localX value="280"/>
+      <localY value="72"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Miami"/>
+      <localX value="523"/>
+      <localY value="923"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Washington"/>
+      <localX value="489"/>
+      <localY value="873"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="7" name="mapRoad"/>
+    <parameters>
+      <start value="Washington"/>
+      <end value="Miami"/>
+    </parameters>
+    <output>
+      <roadCreated end="Miami" start="Washington"/>
+    </output>
+  </success>
+  <success>
+    <command id="7" name="mapRoad"/>
+    <parameters>
+      <start value="Austin"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadCreated end="Baltimore" start="Austin"/>
+    </output>
+  </success>
+  <success>
+    <command id="9" name="mapAirport"/>
+    <parameters>
+      <name value="C0"/>
+      <localX value="1013"/>
+      <localY value="120"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <terminalName value="T0"/>
+      <terminalX value="195"/>
+      <terminalY value="290"/>
+      <terminalCity value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="9" name="mapAirport"/>
+    <parameters>
+      <name value="C1"/>
+      <localX value="984"/>
+      <localY value="72"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <terminalName value="T1"/>
+      <terminalX value="0"/>
+      <terminalY value="120"/>
+      <terminalCity value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="9" name="mapAirport"/>
+    <parameters>
+      <name value="C2"/>
+      <localX value="316"/>
+      <localY value="427"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <terminalName value="T2"/>
+      <terminalX value="767"/>
+      <terminalY value="447"/>
+      <terminalCity value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="9" name="mapAirport"/>
+    <parameters>
+      <name value="C3"/>
+      <localX value="336"/>
+      <localY value="269"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <terminalName value="T3"/>
+      <terminalX value="825"/>
+      <terminalY value="641"/>
+      <terminalCity value="Baltimore"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="100" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <black cardinality="2">
+            <city color="black" localX="489" localY="873" name="Washington" radius="0" remoteX="1" remoteY="0"/>
+            <road end="Washington" start="Miami"/>
+          </black>
+          <gray x="768" y="768">
+            <black cardinality="2">
+              <city color="black" localX="523" localY="923" name="Miami" radius="0" remoteX="1" remoteY="0"/>
+              <road end="Washington" start="Miami"/>
+            </black>
+            <white/>
+            <black cardinality="1">
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <terminal airportName="C3" cityName="Baltimore" localX="825" localY="641" name="T3" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+            </black>
+          </gray>
+          <gray x="256" y="256">
+            <black cardinality="2">
+              <terminal airportName="C0" cityName="Baltimore" localX="195" localY="290" name="T0" remoteX="1" remoteY="0"/>
+              <road end="T0" start="Baltimore"/>
+            </black>
+            <gray x="384" y="384">
+              <black cardinality="1">
+                <airport localX="316" localY="427" name="C2" remoteX="1" remoteY="0"/>
+              </black>
+              <white/>
+              <black cardinality="1">
+                <airport localX="336" localY="269" name="C3" remoteX="1" remoteY="0"/>
+              </black>
+              <black cardinality="2">
+                <road end="T3" start="Baltimore"/>
+                <road end="T2" start="Baltimore"/>
+              </black>
+            </gray>
+            <gray x="128" y="128">
+              <white/>
+              <black cardinality="2">
+                <road end="T3" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+              </black>
+              <black cardinality="2">
+                <terminal airportName="C1" cityName="Baltimore" localX="0" localY="120" name="T1" remoteX="1" remoteY="0"/>
+                <road end="T1" start="Baltimore"/>
+              </black>
+              <black cardinality="6">
+                <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+                <road end="T3" start="Baltimore"/>
+                <road end="T2" start="Baltimore"/>
+                <road end="T1" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+                <road end="Baltimore" start="Austin"/>
+              </black>
+            </gray>
+            <black cardinality="4">
+              <city color="black" localX="280" localY="72" name="Austin" radius="0" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+              <road end="T2" start="Baltimore"/>
+              <road end="Baltimore" start="Austin"/>
+            </black>
+          </gray>
+          <gray x="768" y="256">
+            <black cardinality="3">
+              <terminal airportName="C2" cityName="Baltimore" localX="767" localY="447" name="T2" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+              <road end="T2" start="Baltimore"/>
+            </black>
+            <white/>
+            <white/>
+            <gray x="896" y="128">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="960" y="64">
+                <white/>
+                <gray x="992" y="96">
+                  <white/>
+                  <black cardinality="1">
+                    <airport localX="1013" localY="120" name="C0" remoteX="1" remoteY="0"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="984" localY="72" name="C1" remoteX="1" remoteY="0"/>
+                  </black>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="9" name="unmapAirport"/>
+    <parameters>
+      <name value="C2"/>
+    </parameters>
+    <output>
+      <terminalUnmapped airportName="C2" cityName="Baltimore" localX="767" localY="447" name="T2" remoteX="1" remoteY="0"/>
+    </output>
+  </success>
+  <success>
+    <command id="100" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <black cardinality="2">
+            <city color="black" localX="489" localY="873" name="Washington" radius="0" remoteX="1" remoteY="0"/>
+            <road end="Washington" start="Miami"/>
+          </black>
+          <gray x="768" y="768">
+            <black cardinality="2">
+              <city color="black" localX="523" localY="923" name="Miami" radius="0" remoteX="1" remoteY="0"/>
+              <road end="Washington" start="Miami"/>
+            </black>
+            <white/>
+            <black cardinality="1">
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <terminal airportName="C3" cityName="Baltimore" localX="825" localY="641" name="T3" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+            </black>
+          </gray>
+          <gray x="256" y="256">
+            <black cardinality="2">
+              <terminal airportName="C0" cityName="Baltimore" localX="195" localY="290" name="T0" remoteX="1" remoteY="0"/>
+              <road end="T0" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <airport localX="336" localY="269" name="C3" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <gray x="128" y="128">
+              <white/>
+              <black cardinality="2">
+                <road end="T3" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+              </black>
+              <black cardinality="2">
+                <terminal airportName="C1" cityName="Baltimore" localX="0" localY="120" name="T1" remoteX="1" remoteY="0"/>
+                <road end="T1" start="Baltimore"/>
+              </black>
+              <black cardinality="5">
+                <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+                <road end="T3" start="Baltimore"/>
+                <road end="T1" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+                <road end="Baltimore" start="Austin"/>
+              </black>
+            </gray>
+            <black cardinality="3">
+              <city color="black" localX="280" localY="72" name="Austin" radius="0" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+              <road end="Baltimore" start="Austin"/>
+            </black>
+          </gray>
+          <gray x="768" y="256">
+            <black cardinality="1">
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <white/>
+            <white/>
+            <gray x="896" y="128">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="960" y="64">
+                <white/>
+                <gray x="992" y="96">
+                  <white/>
+                  <black cardinality="1">
+                    <airport localX="1013" localY="120" name="C0" remoteX="1" remoteY="0"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="984" localY="72" name="C1" remoteX="1" remoteY="0"/>
+                  </black>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <error type="terminalDoesNotExist">
+    <command id="9" name="unmapTerminal"/>
+    <parameters>
+      <name value="T8"/>
+    </parameters>
+  </error>
+  <success>
+    <command id="100" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <black cardinality="2">
+            <city color="black" localX="489" localY="873" name="Washington" radius="0" remoteX="1" remoteY="0"/>
+            <road end="Washington" start="Miami"/>
+          </black>
+          <gray x="768" y="768">
+            <black cardinality="2">
+              <city color="black" localX="523" localY="923" name="Miami" radius="0" remoteX="1" remoteY="0"/>
+              <road end="Washington" start="Miami"/>
+            </black>
+            <white/>
+            <black cardinality="1">
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <terminal airportName="C3" cityName="Baltimore" localX="825" localY="641" name="T3" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+            </black>
+          </gray>
+          <gray x="256" y="256">
+            <black cardinality="2">
+              <terminal airportName="C0" cityName="Baltimore" localX="195" localY="290" name="T0" remoteX="1" remoteY="0"/>
+              <road end="T0" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <airport localX="336" localY="269" name="C3" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <gray x="128" y="128">
+              <white/>
+              <black cardinality="2">
+                <road end="T3" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+              </black>
+              <black cardinality="2">
+                <terminal airportName="C1" cityName="Baltimore" localX="0" localY="120" name="T1" remoteX="1" remoteY="0"/>
+                <road end="T1" start="Baltimore"/>
+              </black>
+              <black cardinality="5">
+                <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+                <road end="T3" start="Baltimore"/>
+                <road end="T1" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+                <road end="Baltimore" start="Austin"/>
+              </black>
+            </gray>
+            <black cardinality="3">
+              <city color="black" localX="280" localY="72" name="Austin" radius="0" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+              <road end="Baltimore" start="Austin"/>
+            </black>
+          </gray>
+          <gray x="768" y="256">
+            <black cardinality="1">
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <white/>
+            <white/>
+            <gray x="896" y="128">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="960" y="64">
+                <white/>
+                <gray x="992" y="96">
+                  <white/>
+                  <black cardinality="1">
+                    <airport localX="1013" localY="120" name="C0" remoteX="1" remoteY="0"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="984" localY="72" name="C1" remoteX="1" remoteY="0"/>
+                  </black>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="10" name="unmapRoad"/>
+    <parameters>
+      <start value="Miami"/>
+      <end value="Washington"/>
+    </parameters>
+    <output>
+      <roadDeleted end="Washington" start="Miami"/>
+    </output>
+  </success>
+  <success>
+    <command id="100" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <black cardinality="2">
+            <terminal airportName="C3" cityName="Baltimore" localX="825" localY="641" name="T3" remoteX="1" remoteY="0"/>
+            <road end="T3" start="Baltimore"/>
+          </black>
+          <gray x="256" y="256">
+            <black cardinality="2">
+              <terminal airportName="C0" cityName="Baltimore" localX="195" localY="290" name="T0" remoteX="1" remoteY="0"/>
+              <road end="T0" start="Baltimore"/>
+            </black>
+            <black cardinality="2">
+              <airport localX="336" localY="269" name="C3" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <gray x="128" y="128">
+              <white/>
+              <black cardinality="2">
+                <road end="T3" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+              </black>
+              <black cardinality="2">
+                <terminal airportName="C1" cityName="Baltimore" localX="0" localY="120" name="T1" remoteX="1" remoteY="0"/>
+                <road end="T1" start="Baltimore"/>
+              </black>
+              <black cardinality="5">
+                <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+                <road end="T3" start="Baltimore"/>
+                <road end="T1" start="Baltimore"/>
+                <road end="T0" start="Baltimore"/>
+                <road end="Baltimore" start="Austin"/>
+              </black>
+            </gray>
+            <black cardinality="3">
+              <city color="black" localX="280" localY="72" name="Austin" radius="0" remoteX="1" remoteY="0"/>
+              <road end="T3" start="Baltimore"/>
+              <road end="Baltimore" start="Austin"/>
+            </black>
+          </gray>
+          <gray x="768" y="256">
+            <black cardinality="1">
+              <road end="T3" start="Baltimore"/>
+            </black>
+            <white/>
+            <white/>
+            <gray x="896" y="128">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="960" y="64">
+                <white/>
+                <gray x="992" y="96">
+                  <white/>
+                  <black cardinality="1">
+                    <airport localX="1013" localY="120" name="C0" remoteX="1" remoteY="0"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="984" localY="72" name="C1" remoteX="1" remoteY="0"/>
+                  </black>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="11" name="deleteCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+      <roadUnmapped end="T3" start="Baltimore"/>
+      <roadUnmapped end="T1" start="Baltimore"/>
+      <roadUnmapped end="T0" start="Baltimore"/>
+      <roadUnmapped end="Baltimore" start="Austin"/>
+    </output>
+  </success>
+  <success>
+    <command id="100" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <black cardinality="1">
+            <airport localX="336" localY="269" name="C3" remoteX="1" remoteY="0"/>
+          </black>
+          <gray x="768" y="256">
+            <white/>
+            <white/>
+            <white/>
+            <gray x="896" y="128">
+              <white/>
+              <white/>
+              <white/>
+              <gray x="960" y="64">
+                <white/>
+                <gray x="992" y="96">
+                  <white/>
+                  <black cardinality="1">
+                    <airport localX="1013" localY="120" name="C0" remoteX="1" remoteY="0"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="984" localY="72" name="C1" remoteX="1" remoteY="0"/>
+                  </black>
+                  <white/>
+                </gray>
+                <white/>
+                <white/>
+              </gray>
+            </gray>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+</results>

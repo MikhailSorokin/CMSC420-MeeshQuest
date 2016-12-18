@@ -78,7 +78,7 @@ public class Road extends Geometry {
 
 	/**
 	 * Gets the end city.
-	 * 
+	 * getEndTerminal
 	 * @return end city
 	 */
 	public City getEnd() {

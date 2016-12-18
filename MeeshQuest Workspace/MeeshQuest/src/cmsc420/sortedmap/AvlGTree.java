@@ -123,10 +123,11 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
         AvlNode<K, V> keyNode = getNode(key);
         if (key == null) throw new NullPointerException();
         
-        AvlNode<K, V> rootKey = root;
-        if (!nodeContainsValue(rootKey, keyNode.getValue())) {
+        /*if (!containsKey(keyNode.key)) {
         	throw new NoSuchElementException();
-        }
+        }*/
+        
+        AvlNode<K, V> rootKey = root;
         
         root = remove(rootKey, keyNode.key);
         size--;
@@ -156,7 +157,9 @@ public class AvlGTree<K, V> extends AbstractMap<K, V> implements
     			}
     		}
     	}
-		return balance(curr);
+    	fixAfterModification(curr);
+    	updateHeight(curr);
+		return curr;
     }
     
     private AvlNode<K,V> balance(AvlNode<K, V> e) {
