@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="3" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity id="1" radius="0" color="black" name="C0" localX="639" localY="30" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C1" localX="672" localY="494" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C2" localX="667" localY="261" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C3" localX="484" localY="365" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C4" localX="1020" localY="391" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C5" localX="229" localY="720" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C6" localX="359" localY="332" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C7" localX="605" localY="452" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C8" localX="207" localY="304" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C9" localX="823" localY="50" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C10" localX="242" localY="140" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C11" localX="1010" localY="864" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C12" localX="530" localY="944" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C13" localX="330" localY="74" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C14" localX="574" localY="146" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C15" localX="714" localY="764" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C16" localX="500" localY="342" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C17" localX="950" localY="350" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C18" localX="450" localY="252" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C19" localX="160" localY="472" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C20" localX="619" localY="365" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C21" localX="22" localY="384" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C22" localX="275" localY="995" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C23" localX="804" localY="490" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C24" localX="661" localY="581" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C25" localX="576" localY="1" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C26" localX="292" localY="643" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C27" localX="292" localY="680" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C28" localX="374" localY="509" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C29" localX="526" localY="144" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C30" localX="472" localY="10" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C31" localX="18" localY="871" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C32" localX="263" localY="123" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C33" localX="4" localY="695" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C34" localX="812" localY="376" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C35" localX="25" localY="480" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C36" localX="465" localY="123" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C37" localX="824" localY="346" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C38" localX="754" localY="322" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C39" localX="171" localY="685" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C40" localX="318" localY="100" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C41" localX="677" localY="451" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C42" localX="259" localY="151" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C43" localX="14" localY="464" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C44" localX="255" localY="924" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C45" localX="729" localY="381" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C46" localX="785" localY="1022" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C47" localX="603" localY="211" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C48" localX="88" localY="679" remoteX="145" remoteY="891"/>
+<createCity id="1" radius="0" color="black" name="C49" localX="158" localY="748" remoteX="145" remoteY="891"/>
+<mapRoad id="1" start="C24" end="C33"/>
+<mapRoad id="1" start="C13" end="C46"/>
+<mapRoad id="1" start="C3" end="C1"/>
+<mapRoad id="1" start="C42" end="C21"/>
+<mapRoad id="1" start="C23" end="C46"/>
+<mapRoad id="1" start="C20" end="C34"/>
+<mapRoad id="1" start="C14" end="C29"/>
+<mapRoad id="1" start="C18" end="C22"/>
+<mapRoad id="1" start="C39" end="C0"/>
+<mapRoad id="1" start="C17" end="C19"/>
+<mapRoad id="1" start="C26" end="C18"/>
+<mapRoad id="1" start="C41" end="C43"/>
+<mapRoad id="1" start="C6" end="C17"/>
+<mapRoad id="1" start="C4" end="C14"/>
+<mapRoad id="1" start="C40" end="C41"/>
+<mapRoad id="1" start="C5" end="C40"/>
+<mapRoad id="1" start="C7" end="C33"/>
+<mapRoad id="1" start="C16" end="C6"/>
+<mapRoad id="1" start="C31" end="C36"/>
+<mapRoad id="1" start="C37" end="C28"/>
+<mapRoad id="1" start="C2" end="C20"/>
+<mapRoad id="1" start="C12" end="C3"/>
+<mapRoad id="1" start="C9" end="C30"/>
+<mapRoad id="1" start="C27" end="C47"/>
+<mapRoad id="1" start="C45" end="C32"/>
+<mapRoad id="1" start="C10" end="C11"/>
+<mapRoad id="1" start="C35" end="C15"/>
+<mapRoad id="1" start="C19" end="C17"/>
+<mapRoad id="1" start="C27" end="C47"/>
+<mapRoad id="1" start="C31" end="C36"/>
+<mapRoad id="1" start="C25" end="C2"/>
+<mapRoad id="1" start="C48" end="C47"/>
+<mapRoad id="1" start="C38" end="C41"/>
+<mapRoad id="1" start="C40" end="C41"/>
+<mapRoad id="1" start="C49" end="C0"/>
+<mapRoad id="1" start="C29" end="C14"/>
+<mapRoad id="1" start="C8" end="C34"/>
+<mapRoad id="1" start="C44" end="C42"/>
+<mapRoad id="1" start="C5" end="C40"/>
+<mapRoad id="1" start="C44" end="C42"/>
+<mapRoad id="1" start="C26" end="C18"/>
+<mapRoad id="1" start="C39" end="C0"/>
+<mapRoad id="1" start="C28" end="C37"/>
+<mapRoad id="1" start="C38" end="C41"/>
+<mapRoad id="1" start="C47" end="C27"/>
+<mapRoad id="1" start="C43" end="C41"/>
+<mapRoad id="1" start="C21" end="C42"/>
+<mapRoad id="1" start="C34" end="C20"/>
+<mapRoad id="1" start="C22" end="C18"/>
+<mapRoad id="1" start="C23" end="C46"/>
+<mapRoad id="1" start="C9" end="C30"/>
+<mapRoad id="1" start="C20" end="C2"/>
+<mapRoad id="1" start="C4" end="C14"/>
+<mapRoad id="1" start="C25" end="C2"/>
+<mapRoad id="1" start="C9" end="C30"/>
+<mapRoad id="1" start="C14" end="C4"/>
+<mapRoad id="1" start="C22" end="C18"/>
+<mapRoad id="1" start="C37" end="C28"/>
+<mapRoad id="1" start="C34" end="C8"/>
+<mapRoad id="1" start="C17" end="C19"/>
+<mapRoad id="1" start="C46" end="C13"/>
+<mapRoad id="1" start="C37" end="C28"/>
+<mapRoad id="1" start="C41" end="C38"/>
+<mapRoad id="1" start="C27" end="C47"/>
+<mapRoad id="1" start="C21" end="C42"/>
+<mapRoad id="1" start="C2" end="C25"/>
+<mapRoad id="1" start="C42" end="C44"/>
+<mapRoad id="1" start="C9" end="C30"/>
+<mapRoad id="1" start="C41" end="C43"/>
+<mapRoad id="1" start="C39" end="C0"/>
+<mapRoad id="1" start="C1" end="C3"/>
+<mapRoad id="1" start="C47" end="C48"/>
+<mapRoad id="1" start="C2" end="C20"/>
+<mapRoad id="1" start="C23" end="C46"/>
+<mapRoad id="1" start="C30" end="C9"/>
+<mapRoad id="1" start="C41" end="C38"/>
+<mapRoad id="1" start="C14" end="C4"/>
+<mapRoad id="1" start="C46" end="C13"/>
+<mapRoad id="1" start="C19" end="C17"/>
+<mapRoad id="1" start="C15" end="C35"/>
+<mapRoad id="1" start="C9" end="C30"/>
+<mapRoad id="1" start="C25" end="C2"/>
+<mapRoad id="1" start="C23" end="C46"/>
+<mapRoad id="1" start="C21" end="C42"/>
+<mapRoad id="1" start="C18" end="C22"/>
+<mapRoad id="1" start="C17" end="C6"/>
+<mapRoad id="1" start="C11" end="C10"/>
+<mapRoad id="1" start="C16" end="C6"/>
+<mapRoad id="1" start="C32" end="C45"/>
+<mapRoad id="1" start="C44" end="C42"/>
+<mapRoad id="1" start="C13" end="C46"/>
+<mapRoad id="1" start="C13" end="C46"/>
+<mapRoad id="1" start="C17" end="C6"/>
+<mapAirport id="1" name="A0" localX="813" localY="1012" terminalName="T0" terminalX="813" terminalY="1012" terminalCity="C48" remoteX="145" remoteY="891"/>
+</commands>

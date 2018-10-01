@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <localX value="0"/>
+      <localY value="0"/>
+      <remoteX value="1"/>
+      <remoteY value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <localX value="2"/>
+      <localY value="2"/>
+      <remoteX value="1"/>
+      <remoteY value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <localX value="2"/>
+      <localY value="1"/>
+      <remoteX value="1"/>
+      <remoteY value="1"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <error type="roadViolatesPMRules">
+    <command id="5" name="mapRoad"/>
+    <parameters>
+      <start value="B"/>
+      <end value="C"/>
+    </parameters>
+  </error>
+  <error type="airportViolatesPMRules">
+    <command id="5" name="mapAirport"/>
+    <parameters>
+      <name value="D"/>
+      <localX value="1"/>
+      <localY value="0"/>
+      <remoteX value="1"/>
+      <remoteY value="1"/>
+      <terminalName value="T"/>
+      <terminalX value="1"/>
+      <terminalY value="1"/>
+      <terminalCity value="C"/>
+    </parameters>
+  </error>
+</results>

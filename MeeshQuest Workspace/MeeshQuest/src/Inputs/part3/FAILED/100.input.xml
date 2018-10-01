@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+    
+<createCity id="1" color="red" localX="0" localY="8" name="D" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="0" localY="0" name="F" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="3" color="red" localX="8" localY="8" name="E" radius="0" remoteX="0" remoteY="0"/>
+
+<createCity id="1" color="red" localX="1" localY="1" name="B" radius="0" remoteX="1" remoteY="1"/>
+<createCity id="2" color="red" localX="1" localY="3" name="A" radius="0" remoteX="1" remoteY="1"/>
+<createCity id="3" color="red" localX="1" localY="2" name="C" radius="0" remoteX="1" remoteY="1"/>
+
+<createCity id="1" color="red" localX="4" localY="1" name="I" radius="0" remoteX="0" remoteY="1"/>
+<createCity id="2" color="red" localX="1" localY="4" name="G" radius="0" remoteX="0" remoteY="1"/>
+<createCity id="3" color="red" localX="3" localY="3" name="H" radius="0" remoteX="0" remoteY="1"/>
+
+<createCity id="1" color="red" localX="2" localY="2" name="K" radius="0" remoteX="1" remoteY="0"/>
+<createCity id="2" color="red" localX="1" localY="5" name="L" radius="0" remoteX="1" remoteY="0"/>
+<createCity id="3" color="red" localX="2" localY="3" name="J" radius="0" remoteX="1" remoteY="0"/>
+
+<listCities id="13" sortBy="name"/>
+<listCities id="13" sortBy="coordinate"/>
+<printAvlTree id="8"/>
+
+<deleteCity id="6" name="A"/>
+<printAvlTree id="8"/>
+<!---->
+<!--<createCity id="5" color="red" localX="16" localY="0" name="AAA" radius="0" remoteX="0" remoteY="0"/>-->
+<!--<createCity id="6" color="red" localX="11" localY="11" name="P" radius="0" remoteX="0" remoteY="0"/>-->
+<!---->
+<!--<createCity id="7" color="red" localX="4" localY="4" name="BBB" radius="0" remoteX="0" remoteY="0"/>-->
+<!--<createCity id="8" color="red" localX="16" localY="16" name="T1" radius="0" remoteX="0" remoteY="0"/>-->
+
+</commands>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity name="A" color="black" id="1" localX="500" localY="500" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="B" color="black" id="1" localX="10" localY="480" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="C" color="black" id="1" localX="1000" localY="480" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="D" color="black" id="1" localX="515" localY="471" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="E" color="black" id="1" localX="1000" localY="5" radius="0" remoteX="200" remoteY="10"/>
+<createCity name="F" color="black" id="1" localX="20" localY="50" radius="0" remoteX="200" remoteY="10"/>
+<createCity name="G" color="black" id="1" localX="80" localY="200" radius="0" remoteX="200" remoteY="10"/>
+<createCity name="H" color="black" id="1" localX="200" localY="200" radius="0" remoteX="200" remoteY="10"/>
+<createCity name="I" color="black" id="1" localX="500" localY="900" radius="0" remoteX="50" remoteY="70"/>
+<createCity name="J" color="black" id="1" localX="5" localY="59" radius="0" remoteX="50" remoteY="70"/>
+<createCity name="K" color="black" id="1" localX="300" localY="50" radius="0" remoteX="50" remoteY="70"/>
+<createCity name="L" color="black" id="1" localX="500" localY="1000" radius="0" remoteX="50" remoteY="70"/>
+<createCity name="M" color="black" id="1" localX="600" localY="700" radius="0" remoteX="50" remoteY="70"/>
+<createCity name="N" color="black" id="1" localX="500" localY="500" radius="0" remoteX="1000" remoteY="500"/>
+<createCity name="O" color="black" id="1" localX="200" localY="300" radius="0" remoteX="1000" remoteY="500"/>
+<createCity name="P" color="black" id="1" localX="500" localY="500" radius="0" remoteX="55" remoteY="50"/>
+<createCity name="Q" color="black" id="1" localX="200" localY="600" radius="0" remoteX="55" remoteY="50"/>
+<createCity name="R" color="black" id="1" localX="500" localY="500" radius="0" remoteX="90" remoteY="200"/>
+<createCity name="S" color="black" id="1" localX="500" localY="800" radius="0" remoteX="90" remoteY="200"/>
+<createCity name="U" color="black" id="1" localX="500" localY="500" radius="0" remoteX="500" remoteY="400"/>
+<createCity name="V" color="black" id="1" localX="500" localY="900" radius="0" remoteX="500" remoteY="400"/>
+
+<mapRoad id="2" start="V" end="U"/>
+<mapRoad id="2" start="S" end="R"/>
+<mapRoad id="2" start="Q" end="P"/>
+<mapRoad id="2" start="N" end="O"/>
+<mapRoad id="2" start="I" end="J"/>
+<mapRoad id="2" start="J" end="K"/>
+<mapRoad id="2" start="L" end="M"/>
+<mapRoad id="2" start="J" end="M"/>
+
+<mapRoad id="2" start="F" end="G"/>
+<mapRoad id="2" start="F" end="I"/>
+
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="C" end="B"/>
+<mapRoad id="2" start="A" end="D"/>
+
+
+<mapAirport id="9" localX="500" localY="480" name="A1" remoteX="55" remoteY="50" terminalName="A1T1" terminalX="500" terminalY="490" terminalCity="P"/>
+<mapTerminal id="9" name="A1T2" localX="490" localY="470" remoteX="55" remoteY="50" cityName="Q" airportName="A1"/>
+<mapAirport id="9" localX="0" localY="0" name="A2" remoteX="200" remoteY="10" terminalName="A2T1" terminalX="5" terminalY="0" terminalCity="F"/>
+
+<globalRangeCities id="5" remoteX="500" remoteY="500" radius="500"/>
+<globalRangeCities id="5" remoteX="500" remoteY="500" radius="100"/>
+<globalRangeCities id="5" remoteX="100" remoteY="100" radius="100"/>
+<globalRangeCities id="5" remoteX="100" remoteY="200" radius="0"/>
+
+</commands>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity id="1" radius="0" color="black" name="C0" localX="665" localY="61" remoteX="234" remoteY="648"/>
+<listCities id="11" sortBy="name"/>
+<deleteCity id="1" name="C0"/>
+<listCities id="11" sortBy="name"/>
+<createCity id="1" radius="0" color="black" name="C1" localX="387" localY="150" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C2" localX="437" localY="520" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C3" localX="774" localY="953" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C4" localX="969" localY="123" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C5" localX="516" localY="498" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C6" localX="34" localY="362" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C7" localX="353" localY="360" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C8" localX="806" localY="581" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C9" localX="685" localY="781" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C10" localX="493" localY="693" remoteX="234" remoteY="648"/>
+<listCities id="11" sortBy="name"/>
+<createCity id="1" radius="0" color="black" name="C11" localX="126" localY="117" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C12" localX="446" localY="1004" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C13" localX="856" localY="925" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C14" localX="367" localY="585" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C15" localX="766" localY="246" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C16" localX="789" localY="309" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C17" localX="873" localY="526" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C18" localX="896" localY="37" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C19" localX="667" localY="329" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C20" localX="977" localY="211" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C21" localX="429" localY="142" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C22" localX="97" localY="536" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C23" localX="944" localY="425" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C24" localX="226" localY="371" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C25" localX="589" localY="990" remoteX="234" remoteY="648"/>
+<deleteCity id="1" name="C12"/>
+<deleteCity id="1" name="C23"/>
+<deleteCity id="1" name="C6"/>
+<listCities id="11" sortBy="name"/>
+<createCity id="1" radius="0" color="black" name="C26" localX="59" localY="651" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C27" localX="966" localY="221" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C28" localX="165" localY="905" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C29" localX="360" localY="55" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C30" localX="831" localY="34" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C31" localX="519" localY="903" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C32" localX="199" localY="611" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C33" localX="28" localY="17" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C34" localX="335" localY="938" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C35" localX="376" localY="632" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C36" localX="633" localY="639" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C37" localX="747" localY="812" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C38" localX="856" localY="358" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C39" localX="797" localY="789" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C40" localX="788" localY="493" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C41" localX="109" localY="794" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C42" localX="524" localY="568" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C43" localX="79" localY="485" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C44" localX="5" localY="43" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C45" localX="8" localY="909" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C46" localX="590" localY="994" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C47" localX="799" localY="440" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C48" localX="773" localY="244" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C49" localX="893" localY="489" remoteX="234" remoteY="648"/>
+<deleteCity id="1" name="C0"/>
+<deleteCity id="1" name="C1"/>
+<deleteCity id="1" name="C2"/>
+<deleteCity id="1" name="C3"/>
+<deleteCity id="1" name="C4"/>
+<deleteCity id="1" name="C5"/>
+<deleteCity id="1" name="C6"/>
+<deleteCity id="1" name="C9"/>
+<deleteCity id="1" name="C10"/>
+<deleteCity id="1" name="C11"/>
+<deleteCity id="1" name="C12"/>
+<deleteCity id="1" name="C23"/>
+<deleteCity id="1" name="C33"/>
+<deleteCity id="1" name="C44"/>
+<deleteCity id="1" name="C48"/>
+<deleteCity id="1" name="C100"/>
+<listCities id="11" sortBy="name"/>
+<listCities id="11" sortBy="coordinate"/>
+<clearAll id="2"/>
+<createCity id="1" radius="0" color="black" name="C1" localX="387" localY="150" remoteX="234" remoteY="648"/>
+<deleteCity id="1" name="C1"/>
+<createCity id="1" radius="0" color="black" name="C2" localX="437" localY="520" remoteX="234" remoteY="648"/>
+<deleteCity id="1" name="C2"/>
+<createCity id="1" radius="0" color="black" name="C3" localX="774" localY="953" remoteX="234" remoteY="648"/>
+<deleteCity id="1" name="C3"/>
+<createCity id="1" radius="0" color="black" name="C4" localX="969" localY="123" remoteX="234" remoteY="648"/>
+<deleteCity id="1" name="C4"/>
+<listCities id="11" sortBy="name"/>
+</commands>

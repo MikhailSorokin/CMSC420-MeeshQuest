@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <localX value="320"/>
+      <localY value="512"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <localX value="244"/>
+      <localY value="578"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <localX value="320"/>
+      <localY value="780"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <localX value="522"/>
+      <localY value="578"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <localX value="600"/>
+      <localY value="770"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <localX value="800"/>
+      <localY value="770"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="C"/>
+    </parameters>
+    <output>
+      <roadCreated end="C" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="mapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadCreated end="F" start="E"/>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="mapAirport"/>
+    <parameters>
+      <name value="Air1"/>
+      <localX value="384"/>
+      <localY value="650"/>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <terminalName value="T1"/>
+      <terminalX value="550"/>
+      <terminalY value="770"/>
+      <terminalCity value="E"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="12" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="1">
+        <gray x="512" y="512">
+          <gray x="256" y="768">
+            <white/>
+            <black cardinality="2">
+              <city color="black" localX="320" localY="780" name="C" radius="0" remoteX="1" remoteY="0"/>
+              <road end="C" start="A"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" localX="244" localY="578" name="B" radius="0" remoteX="1" remoteY="0"/>
+              <road end="B" start="A"/>
+            </black>
+            <gray x="384" y="640">
+              <gray x="320" y="704">
+                <black cardinality="1">
+                  <road end="C" start="A"/>
+                </black>
+                <black cardinality="1">
+                  <road end="C" start="A"/>
+                </black>
+                <black cardinality="1">
+                  <road end="C" start="A"/>
+                </black>
+                <gray x="352" y="672">
+                  <black cardinality="1">
+                    <road end="C" start="A"/>
+                  </black>
+                  <white/>
+                  <black cardinality="1">
+                    <road end="C" start="A"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="384" localY="650" name="Air1" remoteX="1" remoteY="0"/>
+                  </black>
+                </gray>
+              </gray>
+              <black cardinality="1">
+                <airport localX="384" localY="650" name="Air1" remoteX="1" remoteY="0"/>
+              </black>
+              <black cardinality="4">
+                <city color="black" localX="320" localY="512" name="A" radius="0" remoteX="1" remoteY="0"/>
+                <road end="D" start="A"/>
+                <road end="C" start="A"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="1">
+                <road end="D" start="A"/>
+              </black>
+            </gray>
+          </gray>
+          <gray x="768" y="768">
+            <gray x="640" y="896">
+              <white/>
+              <white/>
+              <gray x="576" y="832">
+                <white/>
+                <white/>
+                <black cardinality="2">
+                  <terminal airportName="Air1" cityName="E" localX="550" localY="770" name="T1" remoteX="1" remoteY="0"/>
+                  <road end="T1" start="E"/>
+                </black>
+                <black cardinality="3">
+                  <city color="black" localX="600" localY="770" name="E" radius="0" remoteX="1" remoteY="0"/>
+                  <road end="T1" start="E"/>
+                  <road end="F" start="E"/>
+                </black>
+              </gray>
+              <black cardinality="1">
+                <road end="F" start="E"/>
+              </black>
+            </gray>
+            <black cardinality="2">
+              <city color="black" localX="800" localY="770" name="F" radius="0" remoteX="1" remoteY="0"/>
+              <road end="F" start="E"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" localX="522" localY="578" name="D" radius="0" remoteX="1" remoteY="0"/>
+              <road end="D" start="A"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="4">
+            <city color="black" localX="320" localY="512" name="A" radius="0" remoteX="1" remoteY="0"/>
+            <road end="D" start="A"/>
+            <road end="C" start="A"/>
+            <road end="B" start="A"/>
+          </black>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="saveMap"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <name value="printPM12_1"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="unmapRoad"/>
+    <parameters>
+      <start value="E"/>
+      <end value="F"/>
+    </parameters>
+    <output>
+      <roadDeleted end="F" start="E"/>
+    </output>
+  </success>
+  <success>
+    <command id="12" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="1">
+        <gray x="512" y="512">
+          <gray x="256" y="768">
+            <white/>
+            <black cardinality="2">
+              <city color="black" localX="320" localY="780" name="C" radius="0" remoteX="1" remoteY="0"/>
+              <road end="C" start="A"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" localX="244" localY="578" name="B" radius="0" remoteX="1" remoteY="0"/>
+              <road end="B" start="A"/>
+            </black>
+            <gray x="384" y="640">
+              <gray x="320" y="704">
+                <black cardinality="1">
+                  <road end="C" start="A"/>
+                </black>
+                <black cardinality="1">
+                  <road end="C" start="A"/>
+                </black>
+                <black cardinality="1">
+                  <road end="C" start="A"/>
+                </black>
+                <gray x="352" y="672">
+                  <black cardinality="1">
+                    <road end="C" start="A"/>
+                  </black>
+                  <white/>
+                  <black cardinality="1">
+                    <road end="C" start="A"/>
+                  </black>
+                  <black cardinality="1">
+                    <airport localX="384" localY="650" name="Air1" remoteX="1" remoteY="0"/>
+                  </black>
+                </gray>
+              </gray>
+              <black cardinality="1">
+                <airport localX="384" localY="650" name="Air1" remoteX="1" remoteY="0"/>
+              </black>
+              <black cardinality="4">
+                <city color="black" localX="320" localY="512" name="A" radius="0" remoteX="1" remoteY="0"/>
+                <road end="D" start="A"/>
+                <road end="C" start="A"/>
+                <road end="B" start="A"/>
+              </black>
+              <black cardinality="1">
+                <road end="D" start="A"/>
+              </black>
+            </gray>
+          </gray>
+          <gray x="768" y="768">
+            <gray x="640" y="896">
+              <white/>
+              <white/>
+              <gray x="576" y="832">
+                <white/>
+                <white/>
+                <black cardinality="2">
+                  <terminal airportName="Air1" cityName="E" localX="550" localY="770" name="T1" remoteX="1" remoteY="0"/>
+                  <road end="T1" start="E"/>
+                </black>
+                <black cardinality="2">
+                  <city color="black" localX="600" localY="770" name="E" radius="0" remoteX="1" remoteY="0"/>
+                  <road end="T1" start="E"/>
+                </black>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+            <black cardinality="2">
+              <city color="black" localX="522" localY="578" name="D" radius="0" remoteX="1" remoteY="0"/>
+              <road end="D" start="A"/>
+            </black>
+            <white/>
+          </gray>
+          <black cardinality="4">
+            <city color="black" localX="320" localY="512" name="A" radius="0" remoteX="1" remoteY="0"/>
+            <road end="D" start="A"/>
+            <road end="C" start="A"/>
+            <road end="B" start="A"/>
+          </black>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="saveMap"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <name value="printPM12_2"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="1" name="deleteCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="black" localX="320" localY="512" name="A" radius="0" remoteX="1" remoteY="0"/>
+      <roadUnmapped end="D" start="A"/>
+      <roadUnmapped end="C" start="A"/>
+      <roadUnmapped end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="12" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="1">
+        <gray x="512" y="512">
+          <black cardinality="1">
+            <airport localX="384" localY="650" name="Air1" remoteX="1" remoteY="0"/>
+          </black>
+          <gray x="768" y="768">
+            <gray x="640" y="896">
+              <white/>
+              <white/>
+              <gray x="576" y="832">
+                <white/>
+                <white/>
+                <black cardinality="2">
+                  <terminal airportName="Air1" cityName="E" localX="550" localY="770" name="T1" remoteX="1" remoteY="0"/>
+                  <road end="T1" start="E"/>
+                </black>
+                <black cardinality="2">
+                  <city color="black" localX="600" localY="770" name="E" radius="0" remoteX="1" remoteY="0"/>
+                  <road end="T1" start="E"/>
+                </black>
+              </gray>
+              <white/>
+            </gray>
+            <white/>
+            <white/>
+            <white/>
+          </gray>
+          <white/>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="1" name="saveMap"/>
+    <parameters>
+      <remoteX value="1"/>
+      <remoteY value="0"/>
+      <name value="printPM12_3"/>
+    </parameters>
+    <output/>
+  </success>
+</results>

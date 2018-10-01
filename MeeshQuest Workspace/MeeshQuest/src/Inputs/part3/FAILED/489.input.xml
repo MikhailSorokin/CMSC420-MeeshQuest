@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+g="1" 
+localSpatialHeight="16" localSpatialWidth="16" 
+pmOrder="3" 
+remoteSpatialHeight="16" remoteSpatialWidth="16" 
+xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity id="1" color="red" localX="0" localY="0" name="A" radius="1" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="1" localY="0" name="B" radius="1" remoteX="0" remoteY="0"/>
+<createCity id="3" color="red" localX="4" localY="0" name="C" radius="1" remoteX="0" remoteY="0"/>
+
+
+<mapAirport id="5" airlineName="Air_A" localX="0" localY="1" name="airplane01" remoteX="0" remoteY="0"/>
+
+<mapAirport id="6" airlineName="Air_B" localX="1" localY="0" name="airplane02" remoteX="0" remoteY="0"/>
+
+<!-- errors -->
+<mapAirport id="7" airlineName="Air_A" localX="100" localY="1" name="airplane03" remoteX="0" remoteY="0"/>
+<mapAirport id="8" airlineName="Air_A" localX="0" localY="1" name="airplane04" remoteX="100" remoteY="0"/>
+<mapAirport id="9" airlineName="Air_A" localX="1" localY="1" name="airplane05" remoteX="0" remoteY="0"/>
+
+<printPMQuadtree remoteX="0" remoteY="0" id="10"/>
+
+</commands>

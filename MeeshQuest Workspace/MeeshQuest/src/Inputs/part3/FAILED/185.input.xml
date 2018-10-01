@@ -1,0 +1,20 @@
+ <commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="512" localSpatialWidth="512" pmOrder="3" remoteSpatialHeight="512" remoteSpatialWidth="512" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity id="1"  name="Berlin" localX="128" localY="128" remoteX="128" remoteY="128" radius="0" color="red"/>
+
+<printAvlTree id="1"/>
+ 
+<deleteCity id="5" name="Berlin" />
+
+<createCity id="3"  name="Madrid" radius="0" localX="45" localY="50" remoteX="45" remoteY="50" color="yellow"/>
+ <createCity id="4"  name="Andorra" localX="55" color="green" localY="50" remoteX="55" remoteY="50" radius="0" />
+ <createCity id="5"  name="London" localX="70" localY="140" remoteX="70" remoteY="140" radius="0" color="blue"/>
+ <createCity id="6"  name="Edinburgh" localX="70" localY="165" radius="0" remoteX="70" remoteY="165" color="blue"/>
+ <createCity id="7"  name="Athens" localX="200" localY="40" radius="0" remoteX="200" remoteY="40" color="blue"/>
+
+ <deleteCity id="8" name="London" />
+
+<printAvlTree id="1"/>
+
+
+</commands>

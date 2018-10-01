@@ -1,8 +1,0 @@
-<commands
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="part1in.xsd"
- 	spatialWidth="512"
- 	spatialHeight="512">
-	<createCity name="Boston" x="71" y="42" radius="50"  color="black"/>
-	<createCity name="Boston" x="72" y="43" radius="50"  color="red"/>
-</commands>

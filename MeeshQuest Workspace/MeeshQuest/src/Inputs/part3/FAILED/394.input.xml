@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity id="1" radius="0" color="black" name="C0" localX="665" localY="61" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C1" localX="387" localY="150" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C2" localX="437" localY="520" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C3" localX="774" localY="953" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C4" localX="969" localY="123" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C5" localX="516" localY="498" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C6" localX="34" localY="362" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C7" localX="353" localY="360" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C8" localX="806" localY="581" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C9" localX="685" localY="781" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C10" localX="493" localY="693" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C11" localX="126" localY="117" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C12" localX="446" localY="1004" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C13" localX="856" localY="925" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C14" localX="367" localY="585" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C15" localX="766" localY="246" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C16" localX="789" localY="309" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C17" localX="873" localY="526" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C18" localX="896" localY="37" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C19" localX="667" localY="329" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C20" localX="977" localY="211" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C21" localX="429" localY="142" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C22" localX="97" localY="536" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C23" localX="944" localY="425" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C24" localX="226" localY="371" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C25" localX="589" localY="990" remoteX="234" remoteY="648"/>
+<mapRoad end="C0" id="7" start="C1"/>
+<mapRoad end="C0" id="7" start="C2"/>
+<mapRoad end="C0" id="7" start="C3"/>
+<mapRoad end="C1" id="7" start="C5"/>
+<mapRoad end="C4" id="7" start="C6"/>
+<mapRoad end="C5" id="7" start="C4"/>
+<mapRoad end="C6" id="7" start="C23"/>
+<mapRoad end="C11" id="7" start="C22"/>
+<mapRoad end="C7" id="7" start="C20"/>
+<mapRoad end="C8" id="7" start="C15"/>
+<mapRoad end="C9" id="7" start="C3"/>
+<mapRoad end="C10" id="7" start="C19"/>
+<mapRoad end="C20" id="7" start="C25"/>
+<mapRoad end="C21" id="7" start="C16"/>
+<mapRoad end="C22" id="7" start="C13"/>
+<mapRoad end="C23" id="7" start="C21"/>
+<mapRoad end="C15" id="7" start="C2"/>
+<mapRoad end="C18" id="7" start="C17"/>
+<mapRoad end="C5" id="7" start="C21"/>
+<mapRoad end="C6" id="7" start="C23"/>
+<mapRoad end="C11" id="7" start="C17"/>
+<mapRoad end="C23" id="7" start="C0"/>
+<printPMQuadtree id="100" remoteX="234" remoteY="648" />
+</commands>

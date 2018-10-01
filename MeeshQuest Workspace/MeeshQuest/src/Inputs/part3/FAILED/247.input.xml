@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="A0" color="black" id="1" localX="8" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B0" color="black" id="1" localX="50" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="D0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="E0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="F0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="G0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="H0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="I0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="J0" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1" remoteY="0"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A1" color="black" id="1" localX="8" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="B1" color="black" id="1" localX="50" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="C1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="D1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="E1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="F1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="G1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="H1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="I1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+<createCity name="J1" color="black" id="1" localX="100" localY="50" radius="0" remoteX="917" remoteY="100"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A2" color="black" id="1" localX="8" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="B2" color="black" id="1" localX="50" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="C2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="D2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="E2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="F2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="G2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="H2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="I2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+<createCity name="J2" color="black" id="1" localX="100" localY="50" radius="0" remoteX="257" remoteY="493"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A3" color="black" id="1" localX="8" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="B3" color="black" id="1" localX="50" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="C3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="D3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="E3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="F3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="G3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="H3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="I3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+<createCity name="J3" color="black" id="1" localX="100" localY="50" radius="0" remoteX="13" remoteY="777"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A4" color="black" id="1" localX="8" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="B4" color="black" id="1" localX="50" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="C4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="D4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="E4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="F4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="G4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="H4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="I4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+<createCity name="J4" color="black" id="1" localX="100" localY="50" radius="0" remoteX="845" remoteY="606"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A5" color="black" id="1" localX="8" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="B5" color="black" id="1" localX="50" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="C5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="D5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="E5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="F5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="G5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="H5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="I5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+<createCity name="J5" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1020" remoteY="389"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A6" color="black" id="1" localX="8" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="B6" color="black" id="1" localX="50" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="C6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="D6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="E6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="F6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="G6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="H6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="I6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+<createCity name="J6" color="black" id="1" localX="100" localY="50" radius="0" remoteX="888" remoteY="512"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A7" color="black" id="1" localX="8" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="B7" color="black" id="1" localX="50" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="C7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="D7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="E7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="F7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="G7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="H7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="I7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+<createCity name="J7" color="black" id="1" localX="100" localY="50" radius="0" remoteX="590" remoteY="210"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A8" color="black" id="1" localX="8" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="B8" color="black" id="1" localX="50" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="C8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="D8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="E8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="F8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="G8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="H8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="I8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+<createCity name="J8" color="black" id="1" localX="100" localY="50" radius="0" remoteX="37" remoteY="671"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<createCity name="A9" color="black" id="1" localX="8" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="B9" color="black" id="1" localX="50" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="C9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="D9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="E9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="F9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="G9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="H9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="I9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+<createCity name="J9" color="black" id="1" localX="100" localY="50" radius="0" remoteX="1023" remoteY="439"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<printPMQuadtree id="12" remoteX="917" remoteY="100"/>
+<printPMQuadtree id="12" remoteX="257" remoteY="493"/>
+<printPMQuadtree id="12" remoteX="13" remoteY="777"/>
+<printPMQuadtree id="12" remoteX="845" remoteY="606"/>
+<printPMQuadtree id="12" remoteX="1020" remoteY="389"/>
+<printPMQuadtree id="12" remoteX="888" remoteY="512"/>
+<printPMQuadtree id="12" remoteX="590" remoteY="210"/>
+<printPMQuadtree id="12" remoteX="37" remoteY="671"/>
+<printPMQuadtree id="12" remoteX="1023" remoteY="439"/>
+
+
+
+</commands>

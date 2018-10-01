@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity id="1" radius="0" color="black" name="C0" localX="665" localY="61" remoteX="234" remoteY="648"/>
+<listCities id="11" sortBy="name"/>
+<deleteCity id="1" name="C0"/>
+<listCities id="11" sortBy="name"/>
+<createCity id="1" radius="0" color="black" name="C1" localX="387" localY="150" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C2" localX="437" localY="520" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C3" localX="774" localY="953" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C4" localX="969" localY="123" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C5" localX="516" localY="498" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C6" localX="34" localY="362" remoteX="234" remoteY="648"/>
+<createCity id="1" radius="0" color="black" name="C7" localX="353" localY="360" remoteX="234" remoteY="648"/>
+
+<globalRangeCities id="1" remoteX="234" remoteY="648" radius="289"/>
+
+</commands>

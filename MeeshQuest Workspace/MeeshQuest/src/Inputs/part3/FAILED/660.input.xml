@@ -1,0 +1,43 @@
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part3in.xsd"
+	remoteSpatialWidth="32"
+	remoteSpatialHeight="32"
+	localSpatialWidth="1024"
+	localSpatialHeight="1024"
+	g="3"
+	pmOrder="3">
+ <printAvlTree id="1"/>
+ 
+ <createCity name="Baltimore" localX="140" localY="37" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ 
+ <printAvlTree id="1"/>
+ 
+ <createCity name="Chicago" localX="133" localY="34" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ 
+ <printAvlTree id="1"/>
+ 
+ <createCity name="New_York" localX="200" localY="300" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ 
+ <printAvlTree id="1"/>
+ 
+ <clearAll id="1"/>
+ 
+ <createCity name="Baltimore" localX="37" localY="140" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Chicago" localX="133" localY="34" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="New_York" localX="200" localY="300" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ 
+ <printAvlTree id="1"/>
+ 
+ <createCity name="Zurich" localX="1000" localY="1000" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Paris" localX="500" localY="400" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ <createCity name="Amsterdam" localX="450" localY="450" remoteX="5" remoteY="5" radius="0" color="black" id="1"/>
+ 
+ <printAvlTree id="1"/>
+ 
+ <clearAll id="1"/>
+ 
+ <printAvlTree id="1"/>
+ 
+ <clearAll id="1"/>
+</commands>

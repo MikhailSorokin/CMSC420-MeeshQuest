@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="A" color="black" id="1" localX="517" localY="507" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="251" localY="773" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C" color="black" id="1" localX="417" localY="507" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="D" color="black" id="1" localX="251" localY="673" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="E" color="black" id="1" localX="400" localY="700" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="F" color="black" id="1" localX="600" localY="900" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="X" color="black" id="1" localX="1000" localY="900" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Y" color="black" id="1" localX="1020" localY="1028" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Z" color="black" id="1" localX="1028" localY="1020" radius="0" remoteX="1" remoteY="0"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="C" end="D"/>
+<mapRoad id="2" start="E" end="F"/>
+<mapRoad id="2" start="Y" end="Z"/>
+<mapRoad id="2" start="X" end="Z"/>
+<mapRoad id="2" start="B" end="D"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="E" end="B"/>
+<mapRoad id="2" start="E" end="A"/>
+<mapRoad id="2" start="X" end="F"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<mst id="1" start="A"/>
+<mst id="1" start="B"/>
+<mst id="1" start="C"/>
+<mst id="1" start="D"/>
+<mst id="1" start="E"/>
+<mst id="1" start="F"/>
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<saveMap id="1" remoteX="1" remoteY="0" name="all3_1"/>
+
+<unmapRoad id="1" start="E" end="F"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<mst id="1" start="A"/>
+<mst id="1" start="B"/>
+<mst id="1" start="C"/>
+<mst id="1" start="D"/>
+<mst id="1" start="E"/>
+<mst id="1" start="F"/>
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<saveMap id="1" remoteX="1" remoteY="0" name="all3_2"/>
+
+<unmapRoad id="1" start="D" end="C"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<mst id="1" start="A"/>
+<mst id="1" start="B"/>
+<mst id="1" start="C"/>
+<mst id="1" start="D"/>
+<mst id="1" start="E"/>
+<mst id="1" start="F"/>
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<saveMap id="1" remoteX="1" remoteY="0" name="all3_3"/>
+
+</commands>

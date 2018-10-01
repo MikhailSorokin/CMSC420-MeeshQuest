@@ -1,0 +1,12 @@
+ <commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="512" localSpatialWidth="512" pmOrder="3" remoteSpatialHeight="512" remoteSpatialWidth="512" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity id="1"  name="Berlin" localX="128" localY="128" remoteX="128" remoteY="128" radius="0" color="red"/>
+
+<printAvlTree id="1"/>
+ 
+<deleteCity id="5" name="Berlin" />
+
+<printAvlTree id="1"/>
+
+
+</commands>

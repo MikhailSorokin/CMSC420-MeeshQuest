@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="part3in.xsd"
+ 	localSpatialWidth="512"
+ 	localSpatialHeight="512"
+ 	remoteSpatialHeight="512"
+ 	remoteSpatialWidth="512"
+ 	pmOrder="3"
+ 	g="1">
+ <createCity id="1" name="Baltimore" localY="39" localX="76" remoteX="0" remoteY="0" radius="0" color="black"/>
+ <createCity id="2" name="Chicago" localX="81" localY="47" remoteX="0" remoteY="0" radius="0"  color="black"/>
+ <createCity id="3" name="Atlanta" localX="84" localY="33" remoteX="0" remoteY="0" radius="0"  color="black"/>
+ <createCity id="4" name="Los_Angeles" localX="118" localY="33" remoteX="0" remoteY="0" radius="0"  color="black"/>
+ <createCity id="5" name="Miami" localX="80" localY="25" radius="0" remoteX="0" remoteY="0" color="black"/>
+ <createCity id="6" name="Boston" localX="71" localY="42" radius="0" remoteX="0" remoteY="0" color="black"/>
+ <listCities id="7" sortBy="coordinate"/>
+</commands>

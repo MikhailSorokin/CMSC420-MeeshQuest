@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="A"/>
+      <localX value="3"/>
+      <localY value="5"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="14" name="createCity"/>
+    <parameters>
+      <name value="B"/>
+      <localX value="11"/>
+      <localY value="2"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="C"/>
+      <localX value="3"/>
+      <localY value="15"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="14" name="createCity"/>
+    <parameters>
+      <name value="D"/>
+      <localX value="14"/>
+      <localY value="15"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="E"/>
+      <localX value="3"/>
+      <localY value="13"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="14" name="createCity"/>
+    <parameters>
+      <name value="F"/>
+      <localX value="14"/>
+      <localY value="13"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="G"/>
+      <localX value="3"/>
+      <localY value="11"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="14" name="createCity"/>
+    <parameters>
+      <name value="H"/>
+      <localX value="14"/>
+      <localY value="11"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <radius value="2"/>
+      <color value="red"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="mapRoad"/>
+    <parameters>
+      <start value="A"/>
+      <end value="B"/>
+    </parameters>
+    <output>
+      <roadCreated end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="13" name="mapRoad"/>
+    <parameters>
+      <start value="C"/>
+      <end value="D"/>
+    </parameters>
+    <output>
+      <roadCreated end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="3" name="mapAirport"/>
+    <parameters>
+      <name value="airport"/>
+      <localX value="10"/>
+      <localY value="4"/>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+      <terminalName value="termA"/>
+      <terminalX value="0"/>
+      <terminalY value="0"/>
+      <terminalCity value="A"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="13" name="mapRoad"/>
+    <parameters>
+      <start value="G"/>
+      <end value="H"/>
+    </parameters>
+    <output>
+      <roadCreated end="H" start="G"/>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="0"/>
+      <remoteY value="0"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="8" y="8">
+          <gray x="4" y="12">
+            <black cardinality="2">
+              <city color="red" localX="3" localY="15" name="C" radius="2" remoteX="0" remoteY="0"/>
+              <road end="D" start="C"/>
+            </black>
+            <black cardinality="1">
+              <road end="D" start="C"/>
+            </black>
+            <black cardinality="2">
+              <city color="red" localX="3" localY="11" name="G" radius="2" remoteX="0" remoteY="0"/>
+              <road end="H" start="G"/>
+            </black>
+            <black cardinality="1">
+              <road end="H" start="G"/>
+            </black>
+          </gray>
+          <gray x="12" y="12">
+            <black cardinality="1">
+              <road end="D" start="C"/>
+            </black>
+            <black cardinality="2">
+              <city color="red" localX="14" localY="15" name="D" radius="2" remoteX="0" remoteY="0"/>
+              <road end="D" start="C"/>
+            </black>
+            <black cardinality="1">
+              <road end="H" start="G"/>
+            </black>
+            <black cardinality="2">
+              <city color="red" localX="14" localY="11" name="H" radius="2" remoteX="0" remoteY="0"/>
+              <road end="H" start="G"/>
+            </black>
+          </gray>
+          <gray x="4" y="4">
+            <black cardinality="3">
+              <city color="red" localX="3" localY="5" name="A" radius="2" remoteX="0" remoteY="0"/>
+              <road end="termA" start="A"/>
+              <road end="B" start="A"/>
+            </black>
+            <black cardinality="1">
+              <road end="B" start="A"/>
+            </black>
+            <black cardinality="2">
+              <terminal airportName="airport" cityName="A" localX="0" localY="0" name="termA" remoteX="0" remoteY="0"/>
+              <road end="termA" start="A"/>
+            </black>
+            <black cardinality="1">
+              <road end="B" start="A"/>
+            </black>
+          </gray>
+          <gray x="12" y="4">
+            <black cardinality="1">
+              <airport localX="10" localY="4" name="airport" remoteX="0" remoteY="0"/>
+            </black>
+            <white/>
+            <gray x="10" y="2">
+              <black cardinality="2">
+                <airport localX="10" localY="4" name="airport" remoteX="0" remoteY="0"/>
+                <road end="B" start="A"/>
+              </black>
+              <gray x="11" y="3">
+                <black cardinality="1">
+                  <airport localX="10" localY="4" name="airport" remoteX="0" remoteY="0"/>
+                </black>
+                <white/>
+                <black cardinality="2">
+                  <city color="red" localX="11" localY="2" name="B" radius="2" remoteX="0" remoteY="0"/>
+                  <road end="B" start="A"/>
+                </black>
+                <black cardinality="2">
+                  <city color="red" localX="11" localY="2" name="B" radius="2" remoteX="0" remoteY="0"/>
+                  <road end="B" start="A"/>
+                </black>
+              </gray>
+              <white/>
+              <black cardinality="2">
+                <city color="red" localX="11" localY="2" name="B" radius="2" remoteX="0" remoteY="0"/>
+                <road end="B" start="A"/>
+              </black>
+            </gray>
+            <white/>
+          </gray>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="4" name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="red" localX="14" localY="11" name="H" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="11" name="G" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="14" localY="13" name="F" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="13" name="E" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="14" localY="15" name="D" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="15" name="C" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="11" localY="2" name="B" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="5" name="A" radius="2" remoteX="0" remoteY="0"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command id="2" name="listCities"/>
+    <parameters>
+      <sortBy value="coordinate"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="red" localX="11" localY="2" name="B" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="5" name="A" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="11" name="G" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="14" localY="11" name="H" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="13" name="E" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="14" localY="13" name="F" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="3" localY="15" name="C" radius="2" remoteX="0" remoteY="0"/>
+        <city color="red" localX="14" localY="15" name="D" radius="2" remoteX="0" remoteY="0"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command id="50" name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="8" height="4" maxImbalance="1">
+        <node key="D" value="(14,15)">
+          <node key="F" value="(14,13)">
+            <node key="G" value="(3,11)">
+              <node key="H" value="(14,11)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+            <node key="E" value="(3,13)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="B" value="(11,2)">
+            <node key="C" value="(3,15)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="A" value="(3,5)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command id="12" name="deleteCity"/>
+    <parameters>
+      <name value="A"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="red" localX="3" localY="5" name="A" radius="2" remoteX="0" remoteY="0"/>
+      <roadUnmapped end="termA" start="A"/>
+      <roadUnmapped end="B" start="A"/>
+    </output>
+  </success>
+  <success>
+    <command id="50" name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="7" height="4" maxImbalance="1">
+        <node key="D" value="(14,15)">
+          <node key="F" value="(14,13)">
+            <node key="G" value="(3,11)">
+              <node key="H" value="(14,11)">
+                <emptyChild/>
+                <emptyChild/>
+              </node>
+              <emptyChild/>
+            </node>
+            <node key="E" value="(3,13)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="B" value="(11,2)">
+            <node key="C" value="(3,15)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command id="12" name="deleteCity"/>
+    <parameters>
+      <name value="C"/>
+    </parameters>
+    <output>
+      <cityUnmapped color="red" localX="3" localY="15" name="C" radius="2" remoteX="0" remoteY="0"/>
+      <roadUnmapped end="D" start="C"/>
+    </output>
+  </success>
+  <success>
+    <command id="50" name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="6" height="3" maxImbalance="1">
+        <node key="F" value="(14,13)">
+          <node key="G" value="(3,11)">
+            <node key="H" value="(14,11)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <emptyChild/>
+          </node>
+          <node key="D" value="(14,15)">
+            <node key="E" value="(3,13)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="B" value="(11,2)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+</results>

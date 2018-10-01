@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity name="A" color="black" id="1" localX="500" localY="500" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="B" color="black" id="1" localX="700" localY="700" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="C" color="black" id="1" localX="700" localY="702" radius="0" remoteX="100" remoteY="200"/>
+<createCity name="D" color="black" id="1" localX="515" localY="471" radius="0" remoteX="100" remoteY="200"/>
+
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="B" end="C"/>
+
+
+<mapAirport id="9" localX="500" localY="480" name="A1" remoteX="55" remoteY="50" terminalName="A1T1" terminalX="500" terminalY="490" terminalCity="P"/>
+<mapTerminal id="9" name="A1T2" localX="490" localY="470" remoteX="55" remoteY="50" cityName="Q" airportName="A1"/>
+<mapAirport id="9" localX="0" localY="0" name="A2" remoteX="200" remoteY="10" terminalName="A2T1" terminalX="5" terminalY="0" terminalCity="F"/>
+<saveMap id="1" remoteX="100" remoteY="200" name="map1"/>
+
+
+</commands>

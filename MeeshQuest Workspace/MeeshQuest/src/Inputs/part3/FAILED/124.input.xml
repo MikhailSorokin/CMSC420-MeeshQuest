@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity name="A" color="black" id="1" localX="140" localY="37" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="130" localY="800" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C" color="black" id="1" localX="467" localY="209" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="D" color="black" id="1" localX="800" localY="42" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="E" color="black" id="1" localX="300" localY="1001" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="F" color="black" id="1" localX="140" localY="37" radius="0" remoteX="2" remoteY="0"/>
+<createCity name="G" color="black" id="1" localX="512" localY="512" radius="0" remoteX="2" remoteY="0"/>
+<createCity name="H" color="black" id="1" localX="10" localY="1000" radius="0" remoteX="2" remoteY="0"/>
+<createCity name="I" color="black" id="1" localX="20" localY="1010" radius="0" remoteX="2" remoteY="0"/>
+<createCity name="J" color="black" id="1" localX="150" localY="37" radius="0" remoteX="1" remoteY="0"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="C" end="D"/>
+<mapRoad id="2" start="D" end="E"/>
+<mapRoad id="2" start="E" end="A"/>
+<mapRoad id="2" start="A" end="F"/>
+<mapRoad id="2" start="F" end="G"/>
+<mapRoad id="2" start="H" end="I"/>
+
+<saveMap id="111" name="test1" remoteX="1" remoteY="0"/>
+<saveMap id="111" name="test2" remoteX="2" remoteY="0"/>
+
+<mapAirport id="9" localX="145" localY="820" name="A1" remoteX="1" remoteY="0" terminalName="A1T1" terminalX="145" terminalY="810" terminalCity="B"/>
+<mapAirport id="9" localX="850" localY="42" name="A2" remoteX="1" remoteY="0" terminalName="A2T1" terminalX="825" terminalY="42" terminalCity="D"/>
+<mapAirport id="9" localX="145" localY="37" name="A3" remoteX="2" remoteY="0" terminalName="A3T1" terminalX="142" terminalY="34" terminalCity="F"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<printPMQuadtree id="12" remoteX="2" remoteY="0"/>
+
+
+<deleteCity id="12" name="B"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<printPMQuadtree id="12" remoteX="2" remoteY="0"/>
+<saveMap id="111" name="test5" remoteX="1" remoteY="0"/>
+<saveMap id="111" name="test6" remoteX="2" remoteY="0"/>
+
+<!--
+<deleteCity id="12" name="C"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<printPMQuadtree id="12" remoteX="2" remoteY="0"/>
+-->
+
+</commands>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity name="A" color="black" id="1" localX="720" localY="37" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="728" localY="50" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="L" color="black" id="1" localX="12" localY="128" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="M" color="black" id="1" localX="12" localY="105" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="W" color="black" id="1" localX="12" localY="105" radius="0" remoteX="1000" remoteY="1000"/>
+<createCity name="X" color="black" id="1" localX="550" localY="789" radius="0" remoteX="1000" remoteY="1000"/>
+<createCity name="Y" color="black" id="1" localX="50" localY="105" radius="0" remoteX="1" remoteY="1"/>
+<createCity name="Z" color="black" id="1" localX="12" localY="1024" radius="0" remoteX="1" remoteY="1"/>
+<createCity name="NA" color="black" id="1" localX="12" localY="1024" radius="0" remoteX="512" remoteY="512"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="L" end="M"/>
+<mapRoad id="2" start="W" end="X"/>
+<mapRoad id="2" start="Y" end="Z"/>
+
+<mapAirport id="9" localX="412" localY="212" name="A1" remoteX="1" remoteY="0" terminalName="A1T1" terminalX="30" terminalY="113" terminalCity="M"/>
+<mapAirport id="9" localX="600" localY="898" name="A2" remoteX="1000" remoteY="1000" terminalName="A2T1" terminalX="550" terminalY="1898" terminalCity="D"/>
+<mapAirport id="9" localX="112" localY="110" name="A3" remoteX="1" remoteY="0" terminalName="A3T1" terminalX="90" terminalY="113" terminalCity="D"/>
+
+<mapTerminal id="9" name="A1T2" localX="600" localY="75" remoteX="1" remoteY="0" cityName="A" airportName="A1"/>
+<mapTerminal id="9" name="A1T3" localX="300" localY="1" remoteX="1" remoteY="0" cityName="A1T2" airportName="A1"/>
+
+<printPMQuadtree id="1" remoteX="1" remoteY="0"/>
+
+<mst id="42" start="A"/>
+<mst id="42" start="B"/>
+<mst id="42" start="L"/>
+<mst id="42" start="M"/>
+<mst id="42" start="W"/>
+<mst id="42" start="X"/>
+<mst id="42" start="Y"/>
+<mst id="42" start="Z"/>
+<mst id="42" start="A1"/>
+<mst id="42" start="A2"/>
+<mst id="42" start="A3"/>
+<mst id="42" start="A1T1"/>
+<mst id="42" start="A1T2"/>
+<mst id="42" start="A2T1"/>
+<mst id="42" start="A3T1"/>
+
+<globalRangeCities id="1" remoteX="2" remoteY="1" radius="1"/>
+<globalRangeCities id="1" remoteX="512" remoteY="512" radius="1500"/>
+<globalRangeCities id="1" remoteX="600" remoteY="473" radius="256"/>
+
+<unmapTerminal id="1" name="A2T1"/>
+<deleteCity id="1" name="NA"/>
+
+<mst id="42" start="A"/>
+<mst id="42" start="B"/>
+<mst id="42" start="L"/>
+<mst id="42" start="M"/>
+<mst id="42" start="W"/>
+<mst id="42" start="X"/>
+<mst id="42" start="Y"/>
+<mst id="42" start="Z"/>
+<mst id="42" start="A1"/>
+<mst id="42" start="A2"/>
+<mst id="42" start="A3"/>
+<mst id="42" start="A1T1"/>
+<mst id="42" start="A1T2"/>
+<mst id="42" start="A2T1"/>
+<mst id="42" start="A3T1"/>
+
+<globalRangeCities id="1" remoteX="2" remoteY="1" radius="1"/>
+<globalRangeCities id="1" remoteX="512" remoteY="512" radius="1500"/>
+<globalRangeCities id="1" remoteX="600" remoteY="473" radius="256"/>
+
+</commands>

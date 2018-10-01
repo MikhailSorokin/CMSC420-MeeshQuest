@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+<createCity id="1" color="red" localX="66" localY="14" remoteX="500" remoteY="500" name="A0B0" radius="0"/>
+<createCity id="2" color="red" localX="93" localY="141" remoteX="500" remoteY="500" name="A0B1" radius="0"/>
+<createCity id="3" color="red" localX="14" localY="240" remoteX="500" remoteY="500" name="A0B2" radius="0"/>
+<createCity id="4" color="red" localX="47" localY="307" remoteX="500" remoteY="500" name="A0B3" radius="0"/>
+<createCity id="5" color="red" localX="12" localY="482" remoteX="500" remoteY="500" name="A0B4" radius="0"/>
+<createCity id="6" color="red" localX="14" localY="573" remoteX="500" remoteY="500" name="A0B5" radius="0"/>
+<createCity id="7" color="red" localX="1" localY="613" remoteX="500" remoteY="500" name="A0B6" radius="0"/>
+<createCity id="8" color="red" localX="83" localY="702" remoteX="500" remoteY="500" name="A0B7" radius="0"/>
+<createCity id="9" color="red" localX="32" localY="805" remoteX="500" remoteY="500" name="A0B8" radius="0"/>
+<createCity id="10" color="red" localX="50" localY="937" remoteX="500" remoteY="500" name="A0B9" radius="0"/>
+<createCity id="11" color="red" localX="148" localY="18" remoteX="500" remoteY="500" name="A1B0" radius="0"/>
+<createCity id="12" color="red" localX="175" localY="117" remoteX="500" remoteY="500" name="A1B1" radius="0"/>
+<createCity id="13" color="red" localX="155" localY="287" remoteX="500" remoteY="500" name="A1B2" radius="0"/>
+<createCity id="14" color="red" localX="184" localY="359" remoteX="500" remoteY="500" name="A1B3" radius="0"/>
+<createCity id="15" color="red" localX="168" localY="415" remoteX="500" remoteY="500" name="A1B4" radius="0"/>
+<createCity id="16" color="red" localX="157" localY="520" remoteX="500" remoteY="500" name="A1B5" radius="0"/>
+<createCity id="17" color="red" localX="126" localY="672" remoteX="500" remoteY="500" name="A1B6" radius="0"/>
+<createCity id="18" color="red" localX="146" localY="796" remoteX="500" remoteY="500" name="A1B7" radius="0"/>
+<createCity id="19" color="red" localX="110" localY="818" remoteX="500" remoteY="500" name="A1B8" radius="0"/>
+<createCity id="20" color="red" localX="157" localY="942" remoteX="500" remoteY="500" name="A1B9" radius="0"/>
+<createCity id="21" color="red" localX="232" localY="97" remoteX="500" remoteY="500" name="A2B0" radius="0"/>
+<createCity id="22" color="red" localX="278" localY="159" remoteX="500" remoteY="500" name="A2B1" radius="0"/>
+<createCity id="23" color="red" localX="291" localY="201" remoteX="500" remoteY="500" name="A2B2" radius="0"/>
+<createCity id="24" color="red" localX="239" localY="353" remoteX="500" remoteY="500" name="A2B3" radius="0"/>
+<createCity id="25" color="red" localX="235" localY="478" remoteX="500" remoteY="500" name="A2B4" radius="0"/>
+<createCity id="26" color="red" localX="207" localY="557" remoteX="500" remoteY="500" name="A2B5" radius="0"/>
+<createCity id="27" color="red" localX="201" localY="631" remoteX="500" remoteY="500" name="A2B6" radius="0"/>
+<createCity id="28" color="red" localX="270" localY="757" remoteX="500" remoteY="500" name="A2B7" radius="0"/>
+<createCity id="29" color="red" localX="255" localY="890" remoteX="500" remoteY="500" name="A2B8" radius="0"/>
+<createCity id="30" color="red" localX="220" localY="951" remoteX="500" remoteY="500" name="A2B9" radius="0"/>
+<createCity id="31" color="red" localX="364" localY="61" remoteX="500" remoteY="500" name="A3B0" radius="0"/>
+<createCity id="32" color="red" localX="353" localY="105" remoteX="500" remoteY="500" name="A3B1" radius="0"/>
+<createCity id="33" color="red" localX="337" localY="288" remoteX="500" remoteY="500" name="A3B2" radius="0"/>
+<createCity id="34" color="red" localX="335" localY="302" remoteX="500" remoteY="500" name="A3B3" radius="0"/>
+<createCity id="35" color="red" localX="306" localY="476" remoteX="500" remoteY="500" name="A3B4" radius="0"/>
+<createCity id="36" color="red" localX="390" localY="575" remoteX="500" remoteY="500" name="A3B5" radius="0"/>
+<createCity id="37" color="red" localX="343" localY="618" remoteX="500" remoteY="500" name="A3B6" radius="0"/>
+<createCity id="38" color="red" localX="367" localY="759" remoteX="500" remoteY="500" name="A3B7" radius="0"/>
+<createCity id="39" color="red" localX="373" localY="859" remoteX="500" remoteY="500" name="A3B8" radius="0"/>
+<createCity id="40" color="red" localX="366" localY="929" remoteX="500" remoteY="500" name="A3B9" radius="0"/>
+<createCity id="41" color="red" localX="450" localY="67" remoteX="500" remoteY="500" name="A4B0" radius="0"/>
+<createCity id="42" color="red" localX="486" localY="134" remoteX="500" remoteY="500" name="A4B1" radius="0"/>
+<createCity id="43" color="red" localX="487" localY="284" remoteX="500" remoteY="500" name="A4B2" radius="0"/>
+<createCity id="44" color="red" localX="484" localY="366" remoteX="500" remoteY="500" name="A4B3" radius="0"/>
+<createCity id="45" color="red" localX="467" localY="461" remoteX="500" remoteY="500" name="A4B4" radius="0"/>
+<createCity id="46" color="red" localX="477" localY="563" remoteX="500" remoteY="500" name="A4B5" radius="0"/>
+<createCity id="47" color="red" localX="400" localY="628" remoteX="500" remoteY="500" name="A4B6" radius="0"/>
+<createCity id="48" color="red" localX="483" localY="794" remoteX="500" remoteY="500" name="A4B7" radius="0"/>
+<createCity id="49" color="red" localX="467" localY="831" remoteX="500" remoteY="500" name="A4B8" radius="0"/>
+<createCity id="50" color="red" localX="440" localY="985" remoteX="500" remoteY="500" name="A4B9" radius="0"/>
+<createCity id="51" color="red" localX="517" localY="0" remoteX="500" remoteY="500" name="A5B0" radius="0"/>
+<createCity id="52" color="red" localX="546" localY="156" remoteX="500" remoteY="500" name="A5B1" radius="0"/>
+<createCity id="53" color="red" localX="580" localY="240" remoteX="500" remoteY="500" name="A5B2" radius="0"/>
+<createCity id="54" color="red" localX="545" localY="384" remoteX="500" remoteY="500" name="A5B3" radius="0"/>
+<createCity id="55" color="red" localX="506" localY="475" remoteX="500" remoteY="500" name="A5B4" radius="0"/>
+<createCity id="56" color="red" localX="593" localY="513" remoteX="500" remoteY="500" name="A5B5" radius="0"/>
+<createCity id="57" color="red" localX="518" localY="633" remoteX="500" remoteY="500" name="A5B6" radius="0"/>
+<createCity id="58" color="red" localX="531" localY="709" remoteX="500" remoteY="500" name="A5B7" radius="0"/>
+<createCity id="59" color="red" localX="596" localY="802" remoteX="500" remoteY="500" name="A5B8" radius="0"/>
+<createCity id="60" color="red" localX="527" localY="956" remoteX="500" remoteY="500" name="A5B9" radius="0"/>
+<createCity id="61" color="red" localX="682" localY="49" remoteX="500" remoteY="500" name="A6B0" radius="0"/>
+<createCity id="62" color="red" localX="610" localY="154" remoteX="500" remoteY="500" name="A6B1" radius="0"/>
+<createCity id="63" color="red" localX="684" localY="279" remoteX="500" remoteY="500" name="A6B2" radius="0"/>
+<createCity id="64" color="red" localX="626" localY="333" remoteX="500" remoteY="500" name="A6B3" radius="0"/>
+<createCity id="65" color="red" localX="607" localY="476" remoteX="500" remoteY="500" name="A6B4" radius="0"/>
+<createCity id="66" color="red" localX="653" localY="576" remoteX="500" remoteY="500" name="A6B5" radius="0"/>
+<createCity id="67" color="red" localX="691" localY="650" remoteX="500" remoteY="500" name="A6B6" radius="0"/>
+<createCity id="68" color="red" localX="647" localY="733" remoteX="500" remoteY="500" name="A6B7" radius="0"/>
+<createCity id="69" color="red" localX="665" localY="815" remoteX="500" remoteY="500" name="A6B8" radius="0"/>
+<createCity id="70" color="red" localX="616" localY="960" remoteX="500" remoteY="500" name="A6B9" radius="0"/>
+<createCity id="71" color="red" localX="761" localY="36" remoteX="500" remoteY="500" name="A7B0" radius="0"/>
+<createCity id="72" color="red" localX="748" localY="173" remoteX="500" remoteY="500" name="A7B1" radius="0"/>
+<createCity id="73" color="red" localX="762" localY="296" remoteX="500" remoteY="500" name="A7B2" radius="0"/>
+<createCity id="74" color="red" localX="771" localY="327" remoteX="500" remoteY="500" name="A7B3" radius="0"/>
+<createCity id="75" color="red" localX="722" localY="415" remoteX="500" remoteY="500" name="A7B4" radius="0"/>
+<createCity id="76" color="red" localX="792" localY="569" remoteX="500" remoteY="500" name="A7B5" radius="0"/>
+<createCity id="77" color="red" localX="780" localY="661" remoteX="500" remoteY="500" name="A7B6" radius="0"/>
+<createCity id="78" color="red" localX="707" localY="757" remoteX="500" remoteY="500" name="A7B7" radius="0"/>
+<createCity id="79" color="red" localX="721" localY="848" remoteX="500" remoteY="500" name="A7B8" radius="0"/>
+<createCity id="80" color="red" localX="749" localY="995" remoteX="500" remoteY="500" name="A7B9" radius="0"/>
+<createCity id="81" color="red" localX="855" localY="29" remoteX="500" remoteY="500" name="A8B0" radius="0"/>
+<createCity id="82" color="red" localX="845" localY="127" remoteX="500" remoteY="500" name="A8B1" radius="0"/>
+<createCity id="83" color="red" localX="854" localY="221" remoteX="500" remoteY="500" name="A8B2" radius="0"/>
+<createCity id="84" color="red" localX="884" localY="336" remoteX="500" remoteY="500" name="A8B3" radius="0"/>
+<createCity id="85" color="red" localX="820" localY="440" remoteX="500" remoteY="500" name="A8B4" radius="0"/>
+<createCity id="86" color="red" localX="840" localY="522" remoteX="500" remoteY="500" name="A8B5" radius="0"/>
+<createCity id="87" color="red" localX="863" localY="694" remoteX="500" remoteY="500" name="A8B6" radius="0"/>
+<createCity id="88" color="red" localX="864" localY="797" remoteX="500" remoteY="500" name="A8B7" radius="0"/>
+<createCity id="89" color="red" localX="886" localY="862" remoteX="500" remoteY="500" name="A8B8" radius="0"/>
+<createCity id="90" color="red" localX="861" localY="909" remoteX="500" remoteY="500" name="A8B9" radius="0"/>
+<createCity id="91" color="red" localX="933" localY="77" remoteX="500" remoteY="500" name="A9B0" radius="0"/>
+<createCity id="92" color="red" localX="941" localY="188" remoteX="500" remoteY="500" name="A9B1" radius="0"/>
+<createCity id="93" color="red" localX="922" localY="275" remoteX="500" remoteY="500" name="A9B2" radius="0"/>
+<createCity id="94" color="red" localX="921" localY="315" remoteX="500" remoteY="500" name="A9B3" radius="0"/>
+<createCity id="95" color="red" localX="915" localY="430" remoteX="500" remoteY="500" name="A9B4" radius="0"/>
+<createCity id="96" color="red" localX="914" localY="527" remoteX="500" remoteY="500" name="A9B5" radius="0"/>
+<createCity id="97" color="red" localX="953" localY="693" remoteX="500" remoteY="500" name="A9B6" radius="0"/>
+<createCity id="98" color="red" localX="949" localY="721" remoteX="500" remoteY="500" name="A9B7" radius="0"/>
+<createCity id="99" color="red" localX="988" localY="827" remoteX="500" remoteY="500" name="A9B8" radius="0"/>
+<createCity id="100" color="red" localX="939" localY="945" remoteX="500" remoteY="500" name="A9B9" radius="0"/>
+<mapRoad id="101" start="A0B2" end="A0B1"/>
+<deleteCity id="102" name="A0B2"/>
+<unmapTerminal id="104" name="TerminalA0B2"/>
+<mapRoad id="105" start="A0B4" end="A0B3"/>
+<mapRoad id="106" start="A0B5" end="A0B4"/>
+<mapRoad id="107" start="A1B0" end="A0B0"/>
+<mapRoad id="108" start="A1B1" end="A0B1"/>
+<mapRoad id="109" start="A1B1" end="A1B0"/>
+<mapRoad id="110" start="A1B1" end="A0B0"/>
+<mapRoad id="111" start="A1B2" end="A0B2"/>
+<mapRoad id="112" start="A1B2" end="A0B1"/>
+<mapRoad id="113" start="A1B3" end="A1B2"/>
+<mapRoad id="114" start="A1B3" end="A0B2"/>
+<mapRoad id="115" start="A1B4" end="A1B3"/>
+<mapRoad id="116" start="A1B5" end="A0B4"/>
+<mapRoad id="117" start="A1B6" end="A0B5"/>
+<mapRoad id="118" start="A1B7" end="A0B7"/>
+<mapRoad id="119" start="A1B7" end="A1B6"/>
+<mapRoad id="120" start="A1B8" end="A0B8"/>
+<mapRoad id="121" start="A1B8" end="A0B7"/>
+<mapRoad id="122" start="A1B9" end="A0B8"/>
+<mapRoad id="123" start="A2B1" end="A1B1"/>
+<mapRoad id="124" start="A2B1" end="A1B0"/>
+<mapRoad id="125" start="A2B2" end="A1B2"/>
+<deleteCity id="126" name="A2B2"/>
+<mapAirport id="127" localX="202" localY="232" remoteX="500" remoteY="500" name="AirportA2B2" terminalName="TerminalA2B2" terminalX="256" terminalY="293" terminalCity="A1B2"/>
+<mapTerminal id="128" localX="208" localY="244" remoteX="500" remoteY="500" name="Terminal2A2B2" airportName="AirportA2B2" cityName="A1B1"/>
+<mapRoad id="129" start="A2B3" end="A2B2"/>
+<mapRoad id="130" start="A2B3" end="A1B2"/>
+<deleteCity id="131" name="A2B3"/>
+<mapAirport id="132" localX="243" localY="389" remoteX="500" remoteY="500" name="AirportA2B3" terminalName="TerminalA2B3" terminalX="203" terminalY="301" terminalCity="A2B2"/>
+<mapTerminal id="133" localX="268" localY="380" remoteX="500" remoteY="500" name="Terminal2A2B3" airportName="AirportA2B3" cityName="A1B2"/>
+<mapRoad id="134" start="A2B4" end="A1B4"/>
+<mapRoad id="135" start="A2B4" end="A1B3"/>
+<deleteCity id="136" name="A2B4"/>
+<mapAirport id="137" localX="238" localY="450" remoteX="500" remoteY="500" name="AirportA2B4" terminalName="TerminalA2B4" terminalX="243" terminalY="457" terminalCity="A2B3"/>
+<mapTerminal id="138" localX="269" localY="422" remoteX="500" remoteY="500" name="Terminal2A2B4" airportName="AirportA2B4" cityName="A1B3"/>
+<mapRoad id="139" start="A2B5" end="A1B4"/>
+<mapRoad id="140" start="A2B6" end="A1B6"/>
+<mapRoad id="141" start="A2B6" end="A1B5"/>
+<deleteCity id="142" name="A2B6"/>
+<mapAirport id="143" localX="270" localY="691" remoteX="500" remoteY="500" name="AirportA2B6" terminalName="TerminalA2B6" terminalX="209" terminalY="616" terminalCity="A2B5"/>
+<mapRoad id="144" start="A2B7" end="A1B7"/>
+<mapRoad id="145" start="A2B8" end="A1B8"/>
+<mapRoad id="146" start="A2B8" end="A2B7"/>
+<mapRoad id="147" start="A2B8" end="A1B7"/>
+<deleteCity id="148" name="A2B8"/>
+<mapAirport id="149" localX="224" localY="876" remoteX="500" remoteY="500" name="AirportA2B8" terminalName="TerminalA2B8" terminalX="246" terminalY="804" terminalCity="A1B8"/>
+<mapTerminal id="150" localX="268" localY="879" remoteX="500" remoteY="500" name="Terminal2A2B8" airportName="AirportA2B8" cityName="A1B7"/>
+<mapRoad id="151" start="A2B9" end="A2B8"/>
+<mapRoad id="152" start="A2B9" end="A1B8"/>
+<mapRoad id="153" start="A3B1" end="A3B0"/>
+<mapRoad id="154" start="A3B3" end="A2B3"/>
+<mapRoad id="155" start="A3B3" end="A2B2"/>
+<mapRoad id="156" start="A3B4" end="A3B3"/>
+<mapRoad id="157" start="A3B6" end="A2B6"/>
+<mapRoad id="158" start="A3B6" end="A3B5"/>
+<mapRoad id="159" start="A3B6" end="A2B5"/>
+<mapRoad id="160" start="A3B7" end="A2B7"/>
+<mapRoad id="161" start="A3B7" end="A2B6"/>
+<mapRoad id="162" start="A3B8" end="A2B8"/>
+<mapRoad id="163" start="A3B8" end="A2B7"/>
+<mapRoad id="164" start="A3B9" end="A2B8"/>
+<mapRoad id="165" start="A4B1" end="A3B1"/>
+<mapRoad id="166" start="A4B1" end="A4B0"/>
+<mapRoad id="167" start="A4B2" end="A4B1"/>
+<mapRoad id="168" start="A4B2" end="A3B1"/>
+<mapRoad id="169" start="A4B3" end="A3B3"/>
+<mapRoad id="170" start="A4B4" end="A3B4"/>
+<mapRoad id="171" start="A4B4" end="A3B3"/>
+<mapRoad id="172" start="A4B5" end="A3B5"/>
+<mapRoad id="173" start="A4B5" end="A4B4"/>
+<mapRoad id="174" start="A4B5" end="A3B4"/>
+<mapRoad id="175" start="A4B6" end="A3B6"/>
+<mapRoad id="176" start="A4B6" end="A3B5"/>
+<mapRoad id="177" start="A4B8" end="A4B7"/>
+<deleteCity id="178" name="A4B8"/>
+<mapAirport id="179" localX="421" localY="812" remoteX="500" remoteY="500" name="AirportA4B8" terminalName="TerminalA4B8" terminalX="469" terminalY="876" terminalCity="A4B7"/>
+<unmapTerminal id="180" name="TerminalA4B8"/>
+<mapRoad id="181" start="A4B9" end="A3B9"/>
+<mapRoad id="182" start="A4B9" end="A4B8"/>
+<mapRoad id="183" start="A4B9" end="A3B8"/>
+<mapRoad id="184" start="A5B0" end="A4B0"/>
+<mapRoad id="185" start="A5B1" end="A4B1"/>
+<mapRoad id="186" start="A5B1" end="A4B0"/>
+<mapRoad id="187" start="A5B2" end="A4B2"/>
+<mapRoad id="188" start="A5B3" end="A5B2"/>
+<mapRoad id="189" start="A5B3" end="A4B2"/>
+<mapRoad id="190" start="A5B5" end="A4B4"/>
+<mapRoad id="191" start="A5B6" end="A4B6"/>
+<mapRoad id="192" start="A5B6" end="A5B5"/>
+<mapRoad id="193" start="A5B6" end="A4B5"/>
+<mapRoad id="194" start="A5B7" end="A5B6"/>
+<mapRoad id="195" start="A5B7" end="A4B6"/>
+<mapRoad id="196" start="A5B8" end="A4B8"/>
+<mapRoad id="197" start="A5B8" end="A5B7"/>
+<mapRoad id="198" start="A6B0" end="A5B0"/>
+<mapRoad id="199" start="A6B1" end="A5B1"/>
+<mapRoad id="200" start="A6B1" end="A5B0"/>
+<deleteCity id="201" name="A6B1"/>
+<mapAirport id="202" localX="652" localY="147" remoteX="500" remoteY="500" name="AirportA6B1" terminalName="TerminalA6B1" terminalX="694" terminalY="191" terminalCity="A5B1"/>
+<mapRoad id="203" start="A6B2" end="A5B2"/>
+<mapRoad id="204" start="A6B2" end="A6B1"/>
+<deleteCity id="205" name="A6B2"/>
+<mapAirport id="206" localX="678" localY="228" remoteX="500" remoteY="500" name="AirportA6B2" terminalName="TerminalA6B2" terminalX="666" terminalY="292" terminalCity="A5B2"/>
+<mapTerminal id="207" localX="642" localY="272" remoteX="500" remoteY="500" name="Terminal2A6B2" airportName="AirportA6B2" cityName="A5B1"/>
+<mapRoad id="208" start="A6B3" end="A5B3"/>
+<mapRoad id="209" start="A6B3" end="A5B2"/>
+<deleteCity id="210" name="A6B3"/>
+<mapAirport id="211" localX="694" localY="315" remoteX="500" remoteY="500" name="AirportA6B3" terminalName="TerminalA6B3" terminalX="657" terminalY="332" terminalCity="A5B3"/>
+<mapRoad id="212" start="A6B4" end="A5B4"/>
+<mapRoad id="213" start="A6B4" end="A5B3"/>
+<mapRoad id="214" start="A6B5" end="A5B5"/>
+<mapRoad id="215" start="A6B7" end="A5B7"/>
+<mapRoad id="216" start="A6B8" end="A5B8"/>
+<mapRoad id="217" start="A6B8" end="A6B7"/>
+<deleteCity id="218" name="A6B8"/>
+<mapAirport id="219" localX="644" localY="835" remoteX="500" remoteY="500" name="AirportA6B8" terminalName="TerminalA6B8" terminalX="654" terminalY="850" terminalCity="A5B8"/>
+<mapTerminal id="220" localX="607" localY="831" remoteX="500" remoteY="500" name="Terminal2A6B8" airportName="AirportA6B8" cityName="A5B7"/>
+<mapRoad id="221" start="A6B9" end="A6B8"/>
+<mapRoad id="222" start="A6B9" end="A5B8"/>
+<mapRoad id="223" start="A7B0" end="A6B0"/>
+<deleteCity id="224" name="A7B0"/>
+<mapAirport id="225" localX="708" localY="44" remoteX="500" remoteY="500" name="AirportA7B0" terminalName="TerminalA7B0" terminalX="770" terminalY="42" terminalCity="A6B0"/>
+<mapRoad id="227" start="A7B1" end="A6B1"/>
+<mapRoad id="228" start="A7B2" end="A6B2"/>
+<mapRoad id="229" start="A7B4" end="A7B3"/>
+<mapRoad id="230" start="A7B5" end="A6B5"/>
+<mapRoad id="231" start="A7B5" end="A7B4"/>
+<mapRoad id="232" start="A7B6" end="A6B5"/>
+<mapRoad id="233" start="A7B7" end="A6B7"/>
+<mapRoad id="234" start="A7B8" end="A6B7"/>
+<mapRoad id="235" start="A7B9" end="A6B8"/>
+<deleteCity id="236" name="A7B9"/>
+<mapAirport id="237" localX="724" localY="966" remoteX="500" remoteY="500" name="AirportA7B9" terminalName="TerminalA7B9" terminalX="764" terminalY="919" terminalCity="A6B9"/>
+<mapTerminal id="238" localX="777" localY="943" remoteX="500" remoteY="500" name="Terminal2A7B9" airportName="AirportA7B9" cityName="A6B8"/>
+<mapRoad id="239" start="A8B0" end="A7B0"/>
+<mapRoad id="240" start="A8B1" end="A8B0"/>
+<mapRoad id="241" start="A8B1" end="A7B0"/>
+<mapRoad id="242" start="A8B2" end="A8B1"/>
+<mapRoad id="243" start="A8B3" end="A7B3"/>
+<mapRoad id="244" start="A8B4" end="A7B4"/>
+<mapRoad id="245" start="A8B5" end="A8B4"/>
+<mapRoad id="246" start="A8B6" end="A7B6"/>
+<mapRoad id="247" start="A8B6" end="A7B5"/>
+<mapRoad id="248" start="A8B7" end="A7B7"/>
+<mapRoad id="249" start="A8B7" end="A8B6"/>
+<mapRoad id="250" start="A8B8" end="A7B8"/>
+<mapRoad id="251" start="A8B9" end="A7B9"/>
+<mapRoad id="252" start="A9B1" end="A8B1"/>
+<mapRoad id="253" start="A9B1" end="A9B0"/>
+<mapRoad id="254" start="A9B1" end="A8B0"/>
+<mapRoad id="255" start="A9B2" end="A9B1"/>
+<mapRoad id="256" start="A9B2" end="A8B1"/>
+<mapRoad id="257" start="A9B3" end="A8B3"/>
+<mapRoad id="258" start="A9B3" end="A8B2"/>
+<mapRoad id="259" start="A9B5" end="A8B4"/>
+<mapRoad id="260" start="A9B6" end="A8B6"/>
+<mapRoad id="261" start="A9B6" end="A8B5"/>
+<mapRoad id="262" start="A9B7" end="A8B7"/>
+<mapRoad id="263" start="A9B7" end="A8B6"/>
+<mapRoad id="264" start="A9B8" end="A8B8"/>
+<mapRoad id="265" start="A9B8" end="A8B7"/>
+<mapRoad id="266" start="A9B9" end="A8B8"/>
+<mst id="267" start="A0B0"/>
+<mst id="268" start="A0B1"/>
+<mst id="269" start="A0B2"/>
+<mst id="270" start="A0B3"/>
+<mst id="271" start="A0B4"/>
+<mst id="272" start="A0B5"/>
+<mst id="273" start="A0B6"/>
+<mst id="274" start="A0B7"/>
+<mst id="275" start="A0B8"/>
+<mst id="276" start="A0B9"/>
+<mst id="277" start="A1B0"/>
+<mst id="278" start="A1B1"/>
+<mst id="279" start="A1B2"/>
+<mst id="280" start="A1B3"/>
+<mst id="281" start="A1B4"/>
+<mst id="282" start="A1B5"/>
+<mst id="283" start="A1B6"/>
+<mst id="284" start="A1B7"/>
+<mst id="285" start="A1B8"/>
+<mst id="286" start="A1B9"/>
+<mst id="287" start="A2B0"/>
+<mst id="288" start="A2B1"/>
+<mst id="289" start="A2B2"/>
+<mst id="290" start="A2B3"/>
+<mst id="291" start="A2B4"/>
+<mst id="292" start="A2B5"/>
+<mst id="293" start="A2B6"/>
+<mst id="294" start="A2B7"/>
+<mst id="295" start="A2B8"/>
+<mst id="296" start="A2B9"/>
+<mst id="297" start="A3B0"/>
+<mst id="298" start="A3B1"/>
+<mst id="299" start="A3B2"/>
+<mst id="300" start="A3B3"/>
+<mst id="301" start="A3B4"/>
+<mst id="302" start="A3B5"/>
+<mst id="303" start="A3B6"/>
+<mst id="304" start="A3B7"/>
+<mst id="305" start="A3B8"/>
+<mst id="306" start="A3B9"/>
+<mst id="307" start="A4B0"/>
+<mst id="308" start="A4B1"/>
+<mst id="309" start="A4B2"/>
+<mst id="310" start="A4B3"/>
+<mst id="311" start="A4B4"/>
+<mst id="312" start="A4B5"/>
+<mst id="313" start="A4B6"/>
+<mst id="314" start="A4B7"/>
+<mst id="315" start="A4B8"/>
+<mst id="316" start="A4B9"/>
+<mst id="317" start="A5B0"/>
+<mst id="318" start="A5B1"/>
+<mst id="319" start="A5B2"/>
+<mst id="320" start="A5B3"/>
+<mst id="321" start="A5B4"/>
+<mst id="322" start="A5B5"/>
+<mst id="323" start="A5B6"/>
+<mst id="324" start="A5B7"/>
+<mst id="325" start="A5B8"/>
+<mst id="326" start="A5B9"/>
+<mst id="327" start="A6B0"/>
+<mst id="328" start="A6B1"/>
+<mst id="329" start="A6B2"/>
+<mst id="330" start="A6B3"/>
+<mst id="331" start="A6B4"/>
+<mst id="332" start="A6B5"/>
+<mst id="333" start="A6B6"/>
+<mst id="334" start="A6B7"/>
+<mst id="335" start="A6B8"/>
+<mst id="336" start="A6B9"/>
+<mst id="337" start="A7B0"/>
+<mst id="338" start="A7B1"/>
+<mst id="339" start="A7B2"/>
+<mst id="340" start="A7B3"/>
+<mst id="341" start="A7B4"/>
+<mst id="342" start="A7B5"/>
+<mst id="343" start="A7B6"/>
+<mst id="344" start="A7B7"/>
+<mst id="345" start="A7B8"/>
+<mst id="346" start="A7B9"/>
+<mst id="347" start="A8B0"/>
+<mst id="348" start="A8B1"/>
+<mst id="349" start="A8B2"/>
+<mst id="350" start="A8B3"/>
+<mst id="351" start="A8B4"/>
+<mst id="352" start="A8B5"/>
+<mst id="353" start="A8B6"/>
+<mst id="354" start="A8B7"/>
+<mst id="355" start="A8B8"/>
+<mst id="356" start="A8B9"/>
+<mst id="357" start="A9B0"/>
+<mst id="358" start="A9B1"/>
+<mst id="359" start="A9B2"/>
+<mst id="360" start="A9B3"/>
+<mst id="361" start="A9B4"/>
+<mst id="362" start="A9B5"/>
+<mst id="363" start="A9B6"/>
+<mst id="364" start="A9B7"/>
+<mst id="365" start="A9B8"/>
+<mst id="366" start="A9B9"/>
+<printPMQuadtree id="367" remoteX="500" remoteY="500"/>
+<saveMap id="368" remoteX="500" remoteY="500" name="test"/>
+<createCity name="A" color="black" id="1" localX="517" localY="507" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="251" localY="773" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C" color="black" id="1" localX="417" localY="507" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="D" color="black" id="1" localX="251" localY="673" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="E" color="black" id="1" localX="400" localY="700" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="F" color="black" id="1" localX="600" localY="900" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="X" color="black" id="1" localX="1000" localY="900" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Y" color="black" id="1" localX="1020" localY="1028" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="Z" color="black" id="1" localX="1028" localY="1020" radius="0" remoteX="1" remoteY="0"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="C" end="D"/>
+<mapRoad id="2" start="E" end="F"/>
+<mapRoad id="2" start="Y" end="Z"/>
+<mapRoad id="2" start="X" end="Z"/>
+<mapRoad id="2" start="B" end="D"/>
+<mapRoad id="2" start="A" end="C"/>
+<mapRoad id="2" start="E" end="B"/>
+<mapRoad id="2" start="E" end="A"/>
+<mapRoad id="2" start="X" end="F"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<mst id="1" start="A"/>
+<mst id="1" start="B"/>
+<mst id="1" start="C"/>
+<mst id="1" start="D"/>
+<mst id="1" start="E"/>
+<mst id="1" start="F"/>
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<saveMap id="1" remoteX="1" remoteY="0" name="all3_1"/>
+
+<unmapRoad id="1" start="E" end="F"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<mst id="1" start="A"/>
+<mst id="1" start="B"/>
+<mst id="1" start="C"/>
+<mst id="1" start="D"/>
+<mst id="1" start="E"/>
+<mst id="1" start="F"/>
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<saveMap id="1" remoteX="1" remoteY="0" name="all3_2"/>
+
+<unmapRoad id="1" start="D" end="C"/>
+
+<printPMQuadtree id="12" remoteX="1" remoteY="0"/>
+<mst id="1" start="A"/>
+<mst id="1" start="B"/>
+<mst id="1" start="C"/>
+<mst id="1" start="D"/>
+<mst id="1" start="E"/>
+<mst id="1" start="F"/>
+<mst id="1" start="X"/>
+<mst id="1" start="Y"/>
+<mst id="1" start="Z"/>
+<saveMap id="1" remoteX="1" remoteY="0" name="all3_3"/>
+</commands>

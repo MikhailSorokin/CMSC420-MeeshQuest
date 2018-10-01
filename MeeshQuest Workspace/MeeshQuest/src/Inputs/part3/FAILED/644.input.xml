@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="A0" color="black" id="1" localX="0" localY="512" radius="0" remoteX="256" remoteY="256"/>
+<createCity name="B0" color="black" id="1" localX="1024" localY="512" radius="0" remoteX="256" remoteY="256"/>
+
+<mapRoad id="2" start="A0" end="B0"/>
+<mapAirport id="2" name="AP01" remoteX="256" remoteY="256" localX="512" localY="768" terminalName="AP01T1" terminalX="512" terminalY="640" terminalCity="A0"/>
+<mapAirport id="2" name="AP02" remoteX="256" remoteY="256" localX="512" localY="256" terminalName="AP02T1" terminalX="512" terminalY="384" terminalCity="B0"/>
+
+<createCity name="A1" color="black" id="1" localX="0" localY="512" radius="0" remoteX="768" remoteY="256"/>
+<createCity name="B1" color="black" id="1" localX="1024" localY="512" radius="0" remoteX="768" remoteY="256"/>
+
+<mapRoad id="2" start="A1" end="B1"/>
+<mapAirport id="2" name="AP11" remoteX="768" remoteY="256" localX="512" localY="768" terminalName="AP11T1" terminalX="512" terminalY="640" terminalCity="A1"/>
+<mapAirport id="2" name="AP12" remoteX="768" remoteY="256" localX="512" localY="256" terminalName="AP12T1" terminalX="512" terminalY="384" terminalCity="B1"/>
+
+<createCity name="A2" color="black" id="1" localX="0" localY="512" radius="0" remoteX="256" remoteY="768"/>
+<createCity name="B2" color="black" id="1" localX="1024" localY="512" radius="0" remoteX="256" remoteY="768"/>
+
+<mapRoad id="2" start="A2" end="B2"/>
+<mapAirport id="2" name="AP21" remoteX="256" remoteY="768" localX="512" localY="768" terminalName="AP21T1" terminalX="512" terminalY="640" terminalCity="A2"/>
+<mapAirport id="2" name="AP22" remoteX="256" remoteY="768" localX="512" localY="256" terminalName="AP22T1" terminalX="512" terminalY="384" terminalCity="B2"/>
+
+<createCity name="A3" color="black" id="1" localX="0" localY="512" radius="0" remoteX="768" remoteY="768"/>
+<createCity name="B3" color="black" id="1" localX="1024" localY="512" radius="0" remoteX="768" remoteY="768"/>
+
+<mapRoad id="2" start="A3" end="B3"/>
+<mapAirport id="2" name="AP31" remoteX="768" remoteY="768" localX="512" localY="768" terminalName="AP31T1" terminalX="512" terminalY="640" terminalCity="A3"/>
+<mapAirport id="2" name="AP32" remoteX="768" remoteY="768" localX="512" localY="256" terminalName="AP32T1" terminalX="512" terminalY="384" terminalCity="B3"/>
+
+<saveMap id="12" remoteX="256" remoteY="256" name="quad1"/>
+<saveMap id="12" remoteX="256" remoteY="768" name="quad2"/>
+<saveMap id="12" remoteX="768" remoteY="256" name="quad3"/>
+<saveMap id="12" remoteX="768" remoteY="768" name="quad4"/>
+
+<mst id="1" start="A0"/>
+
+</commands>

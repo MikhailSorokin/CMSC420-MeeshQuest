@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<results>
+  <success>
+    <command id="1" name="createCity"/>
+    <parameters>
+      <name value="Baltimore"/>
+      <localX value="140"/>
+      <localY value="37"/>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="2" name="createCity"/>
+    <parameters>
+      <name value="Chicago"/>
+      <localX value="133"/>
+      <localY value="834"/>
+      <remoteX value="3"/>
+      <remoteY value="3"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="3" name="createCity"/>
+    <parameters>
+      <name value="New_York"/>
+      <localX value="200"/>
+      <localY value="300"/>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="4" name="createCity"/>
+    <parameters>
+      <name value="Zurich"/>
+      <localX value="1000"/>
+      <localY value="1000"/>
+      <remoteX value="10"/>
+      <remoteY value="2"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="5" name="createCity"/>
+    <parameters>
+      <name value="Paris"/>
+      <localX value="500"/>
+      <localY value="400"/>
+      <remoteX value="3"/>
+      <remoteY value="3"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="6" name="createCity"/>
+    <parameters>
+      <name value="Amsterdam"/>
+      <localX value="450"/>
+      <localY value="450"/>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+      <radius value="0"/>
+      <color value="black"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="7" name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="New_York"/>
+    </parameters>
+    <output>
+      <roadCreated end="New_York" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command id="8" name="mapRoad"/>
+    <parameters>
+      <start value="Chicago"/>
+      <end value="Paris"/>
+    </parameters>
+    <output>
+      <roadCreated end="Paris" start="Chicago"/>
+    </output>
+  </success>
+  <success>
+    <command id="8" name="mapRoad"/>
+    <parameters>
+      <start value="Baltimore"/>
+      <end value="Amsterdam"/>
+    </parameters>
+    <output>
+      <roadCreated end="Amsterdam" start="Baltimore"/>
+    </output>
+  </success>
+  <success>
+    <command id="3" name="mapAirport"/>
+    <parameters>
+      <name value="airport"/>
+      <localX value="50"/>
+      <localY value="300"/>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+      <terminalName value="termA"/>
+      <terminalX value="100"/>
+      <terminalY value="500"/>
+      <terminalCity value="Amsterdam"/>
+    </parameters>
+    <output/>
+  </success>
+  <success>
+    <command id="9" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <gray x="128" y="384">
+              <black cardinality="2">
+                <terminal airportName="airport" cityName="Amsterdam" localX="100" localY="500" name="termA" remoteX="5" remoteY="5"/>
+                <road end="termA" start="Amsterdam"/>
+              </black>
+              <black cardinality="1">
+                <road end="termA" start="Amsterdam"/>
+              </black>
+              <black cardinality="1">
+                <airport localX="50" localY="300" name="airport" remoteX="5" remoteY="5"/>
+              </black>
+              <black cardinality="2">
+                <city color="black" localX="200" localY="300" name="New_York" radius="0" remoteX="5" remoteY="5"/>
+                <road end="New_York" start="Baltimore"/>
+              </black>
+            </gray>
+            <black cardinality="3">
+              <city color="black" localX="450" localY="450" name="Amsterdam" radius="0" remoteX="5" remoteY="5"/>
+              <road end="termA" start="Amsterdam"/>
+              <road end="Baltimore" start="Amsterdam"/>
+            </black>
+            <black cardinality="3">
+              <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="5" remoteY="5"/>
+              <road end="New_York" start="Baltimore"/>
+              <road end="Baltimore" start="Amsterdam"/>
+            </black>
+            <black cardinality="1">
+              <road end="Baltimore" start="Amsterdam"/>
+            </black>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="200" name="unmapRoad"/>
+    <parameters>
+      <start value="Amsterdam"/>
+      <end value="Baltimore"/>
+    </parameters>
+    <output>
+      <roadDeleted end="Baltimore" start="Amsterdam"/>
+    </output>
+  </success>
+  <success>
+    <command id="9" name="printPMQuadtree"/>
+    <parameters>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+    </parameters>
+    <output>
+      <quadtree order="3">
+        <gray x="512" y="512">
+          <white/>
+          <white/>
+          <gray x="256" y="256">
+            <gray x="128" y="384">
+              <black cardinality="2">
+                <terminal airportName="airport" cityName="Amsterdam" localX="100" localY="500" name="termA" remoteX="5" remoteY="5"/>
+                <road end="termA" start="Amsterdam"/>
+              </black>
+              <black cardinality="1">
+                <road end="termA" start="Amsterdam"/>
+              </black>
+              <black cardinality="1">
+                <airport localX="50" localY="300" name="airport" remoteX="5" remoteY="5"/>
+              </black>
+              <black cardinality="2">
+                <city color="black" localX="200" localY="300" name="New_York" radius="0" remoteX="5" remoteY="5"/>
+                <road end="New_York" start="Baltimore"/>
+              </black>
+            </gray>
+            <black cardinality="2">
+              <city color="black" localX="450" localY="450" name="Amsterdam" radius="0" remoteX="5" remoteY="5"/>
+              <road end="termA" start="Amsterdam"/>
+            </black>
+            <black cardinality="2">
+              <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="5" remoteY="5"/>
+              <road end="New_York" start="Baltimore"/>
+            </black>
+            <white/>
+          </gray>
+          <white/>
+        </gray>
+      </quadtree>
+    </output>
+  </success>
+  <success>
+    <command id="10" name="printAvlTree"/>
+    <parameters/>
+    <output>
+      <AvlGTree cardinality="6" height="3" maxImbalance="1">
+        <node key="Chicago" value="(133,834)">
+          <node key="Paris" value="(500,400)">
+            <node key="Zurich" value="(1000,1000)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+            <node key="New_York" value="(200,300)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+          <node key="Baltimore" value="(140,37)">
+            <emptyChild/>
+            <node key="Amsterdam" value="(450,450)">
+              <emptyChild/>
+              <emptyChild/>
+            </node>
+          </node>
+        </node>
+      </AvlGTree>
+    </output>
+  </success>
+  <success>
+    <command id="11" name="listCities"/>
+    <parameters>
+      <sortBy value="name"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" localX="1000" localY="1000" name="Zurich" radius="0" remoteX="10" remoteY="2"/>
+        <city color="black" localX="500" localY="400" name="Paris" radius="0" remoteX="3" remoteY="3"/>
+        <city color="black" localX="200" localY="300" name="New_York" radius="0" remoteX="5" remoteY="5"/>
+        <city color="black" localX="133" localY="834" name="Chicago" radius="0" remoteX="3" remoteY="3"/>
+        <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="5" remoteY="5"/>
+        <city color="black" localX="450" localY="450" name="Amsterdam" radius="0" remoteX="5" remoteY="5"/>
+      </cityList>
+    </output>
+  </success>
+  <success>
+    <command id="100" name="globalRangeCities"/>
+    <parameters>
+      <remoteX value="5"/>
+      <remoteY value="5"/>
+      <radius value="5"/>
+    </parameters>
+    <output>
+      <cityList>
+        <city color="black" localX="500" localY="400" name="Paris" radius="0" remoteX="3" remoteY="3"/>
+        <city color="black" localX="200" localY="300" name="New_York" radius="0" remoteX="5" remoteY="5"/>
+        <city color="black" localX="133" localY="834" name="Chicago" radius="0" remoteX="3" remoteY="3"/>
+        <city color="black" localX="140" localY="37" name="Baltimore" radius="0" remoteX="5" remoteY="5"/>
+        <city color="black" localX="450" localY="450" name="Amsterdam" radius="0" remoteX="5" remoteY="5"/>
+      </cityList>
+    </output>
+  </success>
+</results>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="1024" localSpatialWidth="1024" pmOrder="1" remoteSpatialHeight="1024" remoteSpatialWidth="1024" xsi:noNamespaceSchemaLocation="part3in.xsd">
+
+<createCity name="A" color="black" id="1" localX="500" localY="512" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="B" color="black" id="1" localX="550" localY="512" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="C" color="black" id="1" localX="600" localY="512" radius="0" remoteX="2000" remoteY="0"/>
+<createCity name="D" color="black" id="1" localX="700" localY="512" radius="0" remoteX="2000" remoteY="0"/>
+
+<mapRoad id="2" start="A" end="B"/>
+<mapRoad id="2" start="C" end="B"/>
+<mapRoad id="2" start="C" end="D"/>
+
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="500" localY="512" terminalX="500" terminalY="400" terminalCity="C" terminalName="T1"/>
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="500" localY="512" terminalX="500" terminalY="400" terminalCity="E" terminalName="T1"/>
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="400" localY="512" terminalX="500" terminalY="400" terminalCity="E" terminalName="T1"/>
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="400" localY="512" terminalX="499" terminalY="512" terminalCity="C" terminalName="T1"/>
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="400" localY="512" terminalX="400" terminalY="512" terminalCity="A" terminalName="T1"/>
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="400" localY="512" terminalX="500" terminalY="512" terminalCity="A" terminalName="T1"/>
+<mapTerminal id="1" name="T2" remoteX="1" remoteY="0" localX="400" localY="400" cityName="B" airportName="A"/>
+
+<mapAirport id="2" name="A1" remoteX="1" remoteY="0" localX="400" localY="512" terminalX="500" terminalY="400" terminalCity="A" terminalName="T1"/>
+<mapTerminal id="1" name="A2" remoteX="1" remoteY="0" localX="600" localY="400" cityName="B" airportName="A"/>
+<mapTerminal id="1" name="T3" remoteX="1" remoteY="0" localX="700" localY="400" cityName="B" airportName="A"/>
+<mapTerminal id="1" name="Z2" remoteX="1" remoteY="0" localX="800" localY="400" cityName="B" airportName="A"/>
+<deleteCity id="1" name="A1"/>
+<createCity name="E" color="black" id="1" localX="400" localY="512" radius="0" remoteX="1" remoteY="0"/>
+<createCity name="A1" color="black" id="1" localX="100" localY="512" radius="0" remoteX="1" remoteY="0"/>
+
+<unmapAirport id="1" name="A1"/>
+
+</commands>

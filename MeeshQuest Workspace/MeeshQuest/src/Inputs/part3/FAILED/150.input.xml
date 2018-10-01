@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="part3in.xsd"	
+	g="1" 
+	pmOrder="3" 
+	localSpatialHeight="64" 
+	localSpatialWidth="64" 
+	remoteSpatialHeight="64" 
+	remoteSpatialWidth="64">
+	
+	<createCity color="black" id="1" localX="70" localY="37" name="Baltimore" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="2" localX="70" localY="50" name="Chicago" radius="0" remoteX="1" remoteY="0"/>
+<!-- 	<createCity color="black" id="3" localX="200" localY="300" name="New_York" radius="0" remoteX="1" remoteY="0"/>
+	<createCity color="black" id="4" localX="1000" localY="1000" name="Zurich" radius="0" remoteX="0" remoteY="2"/>
+	<createCity color="black" id="5" localX="500" localY="400" name="Paris" radius="0" remoteX="0" remoteY="2"/>
+	<createCity color="black" id="6" localX="450" localY="450" name="Amsterdam" radius="0" remoteX="0" remoteY="2"/> -->
+	
+	<listCities id="11" sortBy="name"/>
+	
+	<mapRoad end="Chicago" id="7" start="Baltimore"/>
+	<mapRoad end="Paris" id="8" start="Zurich"/>
+</commands>

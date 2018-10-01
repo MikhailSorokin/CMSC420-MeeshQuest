@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<commands xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" g="1" localSpatialHeight="16" localSpatialWidth="16" pmOrder="3" remoteSpatialHeight="16" remoteSpatialWidth="16" xsi:noNamespaceSchemaLocation="part3in.xsd">
+    
+<createCity id="1" color="red" localX="1" localY="1" name="A" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="0" localY="0" name="B" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="1" localY="16" name="C" radius="0" remoteX="0" remoteY="0"/>
+
+<createCity id="1" color="red" localX="15" localY="15" name="D" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="15" localY="2" name="E" radius="0" remoteX="0" remoteY="0"/>
+<createCity id="2" color="red" localX="8" localY="8" name="F" radius="0" remoteX="0" remoteY="0"/>
+
+<mapRoad id="3" start="A" end="C"/>
+<mapRoad id="3" start="C" end="D"/>
+<mapRoad id="3" start="D" end="E"/>
+<mapRoad id="3" start="A" end="E"/>
+
+<mapRoad id="3" start="A" end="F"/>
+<mapRoad id="3" start="C" end="F"/>
+<mapRoad id="3" start="D" end="F"/>
+<mapRoad id="3" start="E" end="F"/>
+
+<nearestCity id="4" remoteX="0" remoteY="0" localX="4" localY="4" />
+<nearestCity id="4" remoteX="0" remoteY="0" localX="4" localY="10" />
+<nearestCity id="4" remoteX="0" remoteY="0" localX="10" localY="4" />
+<nearestCity id="4" remoteX="0" remoteY="0" localX="10" localY="10" />
+
+<printPMQuadtree remoteX="0" remoteY="0" id="6"/>
+
+</commands>
